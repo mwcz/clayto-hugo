@@ -1,10 +1,12 @@
 {{ partial "header.html" . }}
-<h2 class="c-title p-tag-title">{{ .Title }}</h2>
+<section>
+<h2 class="">{{ .Title }}</h2>
 {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts")).Pages }}
 {{ if ne $index 0 }}
 {{ end }}
 {{ .Render "li" }}
 {{ end }}
+</section>
 {{ partial "pagination.html" .Paginator }}
 {{ partial "siteinfo.html" . }}
 {{ partial "footer.html" . }}

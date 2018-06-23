@@ -1,0 +1,34 @@
+@import "variables.less";
+
+.pbp-article-li {
+  display: grid;
+  grid-template-areas:
+  "thum title"
+  "thum summ"
+  "thum meta";
+
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2em 1fr auto;
+  grid-gap: @padding-base-vertical;
+
+  .pbp-article-title {
+    grid-area: title;
+    font-size: 1.6rem;
+  }
+  .pbp-article-meta {
+    grid-area: meta;
+  }
+  .pbp-article-thumbnail {
+    grid-area: thum;
+  }
+  .pbp-article-summary {
+    grid-area: summ;
+    display: flex;
+    align-items: center;
+  }
+
+  margin-bottom: @padding-large-vertical;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

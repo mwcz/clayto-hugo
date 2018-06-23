@@ -1,20 +1,18 @@
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-        {{ .Date.Format "Jan 2, 2006" }}
-      </time>
-    </p>
-  </header>
-  {{ with .Params.thumbnail }}
-    <img src="{{ . }}" alt="thumbnail" class="p-article__thumbnail">
-  {{ end }}
-  <div class="c-article__summary">
-    {{ .Summary | plainify | safeHTML }}
+<article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  <div class="pbp-article-summary">
+    {{ if .Description }}
+      {{ .Description | plainify | safeHTML }}
+    {{ else }}
+      {{ .Summary | plainify | safeHTML }}
+    {{ end }}
   </div>
-  {{ if .Truncated }}
-  <a href="{{ .Permalink }}" class="c-article__btn p-list-article__btn">Read more</a>
+  <div class="pbp-article-meta">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      {{ .Date.Format "Jan 2, 2006" }}
+    </time>
+  </div>
+  {{ if .Params.thumbnail }}
+  <img src="{{ .Permalink }}{{ .Params.thumbnail }}" alt="thumbnail" class="pbp-article-thumbnail">
   {{ end }}
 </article>

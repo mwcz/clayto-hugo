@@ -15,7 +15,7 @@ Tags:
  -  web
  -  kimotion
 description: "Kimotion-powered interactive art at SPARKcon 2016."
-thumbnail: ./thumb.jpg
+thumbnail: thumb.jpg
 Mwc: 44
 ---
 
