@@ -1,5 +1,5 @@
 ---
-Title: "Open Jam Workshop at East Coast Game Conference"
+Title: "Open Jam Workshop"
 Date: 2018-03-14
 Tags:
  -  programming

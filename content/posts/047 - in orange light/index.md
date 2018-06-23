@@ -9,7 +9,7 @@ Tags:
  -  ludum-dare
  -  ld39
  -  in-orange-light
-description: "A WebGL-based visualizer for LED displays."
+description: "An atmospheric survival game built in 48 hours for Ludum Dare 39."
 thumbnail: ./iol-square-logo.jpg
 Mwc: 47
 ---

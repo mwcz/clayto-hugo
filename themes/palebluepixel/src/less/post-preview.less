@@ -1,33 +1,52 @@
-@import "variables.less";
+@import "variables";
+@import "colors";
 
 .pbp-article-li {
   display: grid;
+
+  // default layout
   grid-template-areas:
   "thum title"
   "thum summ"
   "thum meta";
+  grid-template-columns: minmax(200px, 1fr) 2fr;
+  grid-template-rows: 1.6rem 1fr auto;
+  grid-gap: @padding-base-vertical * 1.2;
 
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 2em 1fr auto;
-  grid-gap: @padding-base-vertical;
+  // tight layout
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "thum"
+      "title"
+      "summ"
+      "meta";
+    .pbp-article-thumbnail {
+      width: 100%;
+    }
+  }
 
   .pbp-article-title {
     grid-area: title;
     font-size: 1.6rem;
+    margin: 0;
   }
   .pbp-article-meta {
     grid-area: meta;
+    color: darken(@pbp-fg-color, 22%);
   }
   .pbp-article-thumbnail {
     grid-area: thum;
   }
   .pbp-article-summary {
     grid-area: summ;
+    color: darken(@pbp-fg-color, 22%);
     display: flex;
     align-items: center;
   }
 
-  margin-bottom: @padding-large-vertical;
+  margin-bottom: @padding-large-vertical * 2;
   &:last-child {
     margin-bottom: 0;
   }

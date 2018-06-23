@@ -97,7 +97,7 @@ Ben Pritchett returned this year with Fire Tubes and a remixed soundtrack.  In e
 
 A fresh, fungusy addition to geekSPARK!  Geekery need not be constrained to digital hobbies.  Anna and Krystal, devoted mushroom enthusiasts, brought a huge haul of mushrooms to the event and educated visitors about mushroom eating, hunting, and biology.
 
-<figure><img src="mushrooms.jpg" alt="mushroom booth" /></figure>
+<img src="mushrooms.jpg" alt="mushroom booth" />
 
 ---
 
