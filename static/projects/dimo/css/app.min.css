@@ -1,0 +1,9 @@
+/* line 1, ../../src/css/app.scss */
+body {
+  color: white;
+  background-color: black;
+  font-family: "Lato", serif;
+  font-size: 10em;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }

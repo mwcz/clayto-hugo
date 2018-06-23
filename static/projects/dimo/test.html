@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Geekspark DiMo</title>
+
+<link href="css/app.min.css" rel="stylesheet" type="text/css">
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://zipt.org/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="https://zipt.org/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+</head>
+<body>
+
+<div id="container"></div>
+
+<script src="lib/dat.gui/dat.gui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+var FizzyText = function() {
+
+  this.color0 = "#ffae23"; // CSS string
+  this.color1 = [ 0, 128, 255 ]; // RGB array
+  this.color2 = [ 0, 128, 255, 0.3 ]; // RGB with alpha
+  this.color3 = { h: 350, s: 0.9, v: 0.3 }; // Hue, saturation, value
+
+  // Define render logic ...
+
+};
+
+window.onload = function() {
+
+  var text = new FizzyText();
+  var gui = new dat.GUI();
+
+  gui.addColor(text, 'color0');
+  gui.addColor(text, 'color1');
+  gui.addColor(text, 'color2');
+  gui.addColor(text, 'color3');
+
+};
+</script>
+
+</body>
+</html>

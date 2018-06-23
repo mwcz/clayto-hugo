@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+<body>
+  <!-- <a href="#main" class="skip-link p-screen-reader-text">Skip to content</a> -->
+  <!-- {{ partial "svgpack-sprite.html" . }} -->
+  <!-- <header class="l-header"> -->
+  <!--   {{ if .IsPage }} -->
+  <!--   <p class="c-title p-title"><a href="{{ .Site.BaseURL }}" class="p-title__link">{{ .Site.Title }}</a></p> -->
+  <!--   {{ else }} -->
+  <!--   <h1 class="c-title p-title"><a href="{{ .Site.BaseURL }}" class="p-title__link">{{ .Site.Title }}</a></h1> -->
+  <!--   {{ end }} -->
+  <!--   {{ with .Site.Params.subtitle }} -->
+  <!--   <p class="p-subtitle"> -->
+  <!--     {{ . }} -->
+  <!--   </p> -->
+  <!--   {{ end }} -->
+  <!-- </header> -->
+<header class="pbp-navbar-container">
+    <nav class="pbp-navbar" role="navigation">
+        <div>
+          <a href="{{ .Site.BaseURL }}" title="{{ .Site.BaseURL }} homepage" id="pbp-logo">
+            {{ .Site.Title }}
+          </a>
+        </div>
+        <div class="pbp-navitems">
+            <a class="pbp-navitem" href="/projects" title="Projects">projects</a>
+            <a class="pbp-navitem" href="/posts" title="Blog">blog</a>
+            <a class="pbp-navitem icon-github-alt" href="https://github.com/mwcz" title="Clone my git repos"></a>
+            <a class="pbp-navitem icon-twitter" href="https://twitter.com/mwcz" title="Eat a tweet"></a>
+        </div>
+    </nav>
+</header>
+  <main id="main" role="main" class="container">

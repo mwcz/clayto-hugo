@@ -1,0 +1,29 @@
+@import "variables";
+@import "colors";
+
+ol.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+
+    margin-top: @padding-large-vertical;
+
+    li {
+        padding: 0;
+        margin: 0;
+        a {
+            display: inline-block;
+            padding: @padding-large-vertical @padding-large-horizontal;
+            background-color: darken(@pbp-bg-color, 4%);
+            text-decoration: none;
+            border: 1px solid darken(@pbp-bg-color, 4%);
+            &:hover {
+                border: 1px solid lighten(@pbp-bg-color, 12%);
+            }
+        }
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
+}

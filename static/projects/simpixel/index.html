@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>SimPixel</title>
+
+        <style type="text/css" media="screen">
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+                color: white;
+                background: black;
+                font-family: monospace;
+            }
+            #simpixel-container {
+                position: absolute;
+                z-index: 50;
+                width: 100%;
+                height: 100%;
+            }
+            .conf {
+                color: #555;
+                position: absolute;
+                bottom: 2px;
+                right: 2px;
+                z-index: 100;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="simpixel-container"></div>
+
+        <div id="connection"></div>
+
+        <script type="x-shader/x-vertex" id="vertexshader">
+            uniform float size;
+            attribute vec3 customColor;
+            varying vec3 vColor;
+            void main() {
+                vColor = customColor;
+                vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+                gl_PointSize = size * ( 300.0 / -mvPosition.z );
+                gl_Position = projectionMatrix * mvPosition;
+            }
+        </script>
+
+        <script type="x-shader/x-fragment" id="fragmentshader">
+            uniform vec3 color;
+            uniform sampler2D textureOn;
+            uniform sampler2D textureOff;
+            varying vec3 vColor;
+            void main() {
+                /* if color attribute is not black, use 'on' texture with color*/
+                if (length(vColor) > 0.0) {
+                    gl_FragColor = vec4( (color/255.0) * vColor, 1.0 );
+                    gl_FragColor = gl_FragColor * texture2D( textureOn, gl_PointCoord );
+                }
+                /* if color attribute is black, use 'off' texture and dark grey */
+                else {
+                    gl_FragColor = vec4(0.4);
+                    gl_FragColor = gl_FragColor * texture2D( textureOff, gl_PointCoord );
+                }
+            }
+        </script>
+
+        <!-- third party -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
+        <script src="js/Detector.js"></script>
+        <script src="js/OrbitControls.js"></script>
+        <script src="js/reconnecting-websocket.js"></script>
+
+        <!-- first party -->
+        <script src="js/bp_host.js"></script>
+        <script src="js/conf.js"></script>
+        <script src="js/recording.js"></script>
+        <script src="js/view.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

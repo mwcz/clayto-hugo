@@ -1,0 +1,22 @@
+@import "colors";
+@import "variables";
+
+hr {
+  border: 0;
+  text-align: center;
+  overflow: visible;
+  display: block;
+
+  margin-top: @padding-large-vertical * 2;
+  margin-bottom: @padding-large-vertical * 2.4;
+
+  &::before {
+    content: '▪▪▪';
+    display: inline-block;
+    margin-left: .6em;
+    color: @pbp-blue;
+    position: relative;
+    font-size: 1rem;
+    letter-spacing: @padding-base-horizontal * 2;
+  }
+}

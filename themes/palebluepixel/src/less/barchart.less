@@ -1,0 +1,44 @@
+/*********************************************************************
+*                             Bar chart                             *
+ *********************************************************************/
+
+.pbp-barchart {
+    .pbp-barchart-labels,
+    .pbp-barchart-values {
+        float: left;
+    }
+    .pbp-barchart-bar {
+        position    : relative;
+        font-size   : 1em;
+        margin      : 0 1px;
+        line-height : 1;
+        padding     : 4px;
+        clear       : both;
+        float       : left;
+    }
+    .pbp-barchart-labels {
+        width: 23.4%;
+        .pbp-barchart-bar {
+            float       : right;
+            white-space : nowrap;
+        }
+    }
+    .pbp-barchart-values {
+        width: 76.5%;
+        .pbp-barchart-bar {
+            text-align       : right;
+            background-color : darken(@pbp-blue, 16%);
+            &:hover {
+                background-color : @pbp-blue;
+            }
+        }
+        :visited .pbp-barchart-bar {
+            color            : darken(@pbp-blue, 16%);
+            background-color : darken(@pbp-blue, 32%);
+            &:hover {
+                color            : lighten(@pbp-blue, 16%);
+                background-color : @pbp-blue;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<h1>Leaderboard</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Place</th>
+            <th>Gamer ID</th>
+            <th class="score">Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="leader in vm.leaders" ng-style="{'color': leader.ping.color}">
+            <td>{{::$index + 1 | ordinal}}</td>
+            <td>{{::leader.gamerID}}</td>
+            <td class="score">{{::leader.ping.hiscore}}</td>
+        </tr>
+    </tbody>
+</table>

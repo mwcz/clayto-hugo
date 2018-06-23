@@ -1,0 +1,48 @@
+
+<style type="text/css">
+<!--
+.color_palette {
+    list-style: none;
+}
+.color_palette li {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    float: left;
+    display: inline;
+}
+input.color {
+    border: 1px solid white;
+    height: 58px;
+    width: 58px;
+    margin: 1px;
+    text-align: center;
+    cursor: pointer;
+}
+-->
+</style>
+
+<h1>Canvas indexed color demo</h1>
+
+<canvas id="cnvs" data-bind="updateCanvas: colors"></canvas>
+
+<ol class="color_palette" data-bind="template: { name: 'CIC_ColorPaletteTemplate', foreach: colors }"></ol>
+
+<script type="text/html" id="CIC_ColorPaletteTemplate">
+    <li>
+        <input class="color" data-bind="value: hex" />
+    </li>
+</script>
+
+<ul style="overflow: hidden; clear: both;">
+    <li>
+        <a onclick="location.assign('/projects/canvas_indexed_color/#000000,323232,4C4C4C,#659900,#666666,999999,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,CCCCCC,#cccccc,#e5668c,#e59999,#e5e5b2,E8E8E8,EAEAEA,EAEAEA,EBEBEB,ECECEC,EEEEEE,EFEFEF,F1F1F1,F2F2F2,F3F3F3,F4F4F4,F5F5F5,F8F8F8,F8F8F8,F9F9F9,FAFAFA,FCFCFC,#ff727f,#ffffcc,#ffffff'); location.reload(); return false;" href="/projects/canvas_indexed_color/#000000,323232,4C4C4C,#659900,#666666,999999,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,CCCCCC,#cccccc,#e5668c,#e59999,#e5e5b2,E8E8E8,EAEAEA,EAEAEA,EBEBEB,ECECEC,EEEEEE,EFEFEF,F1F1F1,F2F2F2,F3F3F3,F4F4F4,F5F5F5,F8F8F8,F8F8F8,F9F9F9,FAFAFA,FCFCFC,#ff727f,#ffffcc,#ffffff">White tiger</a>
+    </li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="knockout-2.0.0.js"></script>
+<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
+<script type="text/javascript" src="vector_images.js"></script>
+<script type="text/javascript" src="cic.js"></script>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>

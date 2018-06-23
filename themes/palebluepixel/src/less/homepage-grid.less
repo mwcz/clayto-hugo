@@ -1,0 +1,22 @@
+@import "glass-card";
+
+.pinned-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: @grid-gutter;
+}
+
+.latest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: @grid-gutter;
+
+    // grid-template-columns: auto;
+    // grid-auto-rows: auto;
+    // grid-template-areas:
+    //     "a a b"
+    //     "c d d"
+    //     "c e e";
+}

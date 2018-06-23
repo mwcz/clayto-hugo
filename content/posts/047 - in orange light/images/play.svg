@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="8.6131878mm"
+   height="6.0502687mm"
+   viewBox="0 0 8.6131879 6.0502687"
+   version="1.1"
+   id="svg4700"
+   inkscape:version="0.92+devel unknown"
+   sodipodi:docname="play.svg"
+   inkscape:export-filename="/home/mwc/projects/in-orange-light/src/images/logo-off.png"
+   inkscape:export-xdpi="412.60001"
+   inkscape:export-ydpi="412.60001">
+  <defs
+     id="defs4694">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter5472"
+       x="-0.07811904"
+       width="1.1562381"
+       y="-1.1624866"
+       height="3.3249733">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.92677973"
+         id="feGaussianBlur5474" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="6.6525036"
+     inkscape:cx="69.477983"
+     inkscape:cy="-35.384829"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1413"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4697">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="off"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-79.685675,-127.47615)"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:9.69615078px;font-family:Comfortaa;-inkscape-font-specification:Comfortaa;display:inline;fill:#2b1100;stroke-width:0.24240375"
+       x="80.128632"
+       y="131.4111"
+       id="text5295"
+       inkscape:export-xdpi="412.60001"
+       inkscape:export-ydpi="412.60001"
+       transform="translate(-9.1666665e-7,1.1458334e-6)"><tspan
+         sodipodi:role="line"
+         id="tspan5293"
+         x="80.128632"
+         y="131.4111"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.23205018px;font-family:'Nimbus Mono L';-inkscape-font-specification:'Nimbus Mono L';fill:#2b1100;stroke-width:0.24240375">PLAY</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer18"
+     inkscape:label="on"
+     style="display:inline"
+     transform="translate(-0.34567501,-2.9533461)">
+    <text
+       transform="translate(-79.340001,-124.5228)"
+       inkscape:export-ydpi="412.60001"
+       inkscape:export-xdpi="412.60001"
+       id="text5418"
+       y="131.4111"
+       x="80.128632"
+       style="font-size:9.69615078px;font-family:Comfortaa;-inkscape-font-specification:Comfortaa;fill:#ff6600;stroke-width:0.24240375;filter:url(#filter5472)"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.23205018px;font-family:'Nimbus Mono L';-inkscape-font-specification:'Nimbus Mono L';fill:#ff6600;stroke-width:0.24240375"
+         y="131.4111"
+         x="80.128632"
+         id="tspan5416"
+         sodipodi:role="line">PLAY</tspan></text>
+    <text
+       transform="translate(-79.340001,-124.5228)"
+       inkscape:export-ydpi="412.60001"
+       inkscape:export-xdpi="412.60001"
+       id="text5623"
+       y="131.4111"
+       x="80.128632"
+       style="font-size:9.69615078px;font-family:Comfortaa;-inkscape-font-specification:Comfortaa;display:inline;fill:#ff6600;stroke-width:0.24240375"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.23205018px;font-family:'Nimbus Mono L';-inkscape-font-specification:'Nimbus Mono L';fill:#ff6600;stroke-width:0.24240375"
+         y="131.4111"
+         x="80.128632"
+         id="tspan5621"
+         sodipodi:role="line">PLAY</tspan></text>
+  </g>
+</svg>
