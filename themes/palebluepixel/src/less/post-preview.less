@@ -14,7 +14,7 @@
   grid-gap: @padding-base-vertical * 1.2;
 
   // tight layout
-  @media (max-width: 500px) {
+  &.vertical {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
@@ -25,6 +25,9 @@
     .pbp-article-thumbnail {
       width: 100%;
     }
+  }
+  @media (max-width: 500px) {
+    .vertical();
   }
 
   .pbp-article-title {
@@ -46,7 +49,7 @@
     align-items: center;
   }
 
-  margin-bottom: @padding-large-vertical * 2;
+  margin-bottom: @padding-large-vertical * 4;
   &:last-child {
     margin-bottom: 0;
   }

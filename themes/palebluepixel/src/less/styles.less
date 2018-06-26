@@ -7,6 +7,7 @@
 @import "no-scrollbar-shift";
 @import "container";
 @import "post-preview";
+@import "related";
 @import "code";
 @import "navbar";
 @import "links";
@@ -56,6 +57,13 @@ article, section {
 
 .pbp-article-footer {
   margin-bottom: @padding-large-vertical;
+}
+
+.pbp-article {
+  .pbp-article-meta {
+    background-color: darken(@pbp-bg-color, 8%);
+    padding: @padding-base-vertical @padding-base-horizontal;
+  }
 }
 
 .pbp-thumbnail {

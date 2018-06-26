@@ -17,18 +17,6 @@
   <!--   {{ end }} -->
   <!-- </header> -->
 <header class="pbp-navbar-container">
-    <nav class="pbp-navbar" role="navigation">
-        <div>
-          <a href="{{ .Site.BaseURL }}" title="{{ .Site.BaseURL }} homepage" id="pbp-logo">
-            {{ .Site.Title }}
-          </a>
-        </div>
-        <div class="pbp-navitems">
-            <a class="pbp-navitem" href="/projects" title="Projects">projects</a>
-            <a class="pbp-navitem" href="/posts" title="Blog">blog</a>
-            <a class="pbp-navitem icon-github-alt" href="https://github.com/mwcz" title="Clone my git repos"></a>
-            <a class="pbp-navitem icon-twitter" href="https://twitter.com/mwcz" title="Eat a tweet"></a>
-        </div>
-    </nav>
+  {{ partial "menu.html" . }}
 </header>
   <main id="main" role="main" class="container">

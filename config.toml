@@ -59,32 +59,27 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
     url = "/"
     weight = 1
 
-[[menu.main]]
-    name = "About"
-    url = "/about"
-    weight = 2
+#[[menu.main]]
+#    identifier = "projects"
+#    name = "Projects"
+#    weight = 2
 
 [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    weight = 3
-
-[[menu.main]]
-    parent = "projects"
+    #parent = "projects"
     name = "Games"
     url = "/projects/games"
     weight = 1
 
 [[menu.main]]
-    parent = "projects"
+    #parent = "projects"
     name = "Demos"
     url = "/projects/demos"
     weight = 2
 
-[[menu.main]]
-    name = "Tags"
-    url = "/tags"
-    weight = 4
+#[[menu.main]]
+#    name = "Tags"
+#    url = "/tags"
+#    weight = 3
 
 [related]
   # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.

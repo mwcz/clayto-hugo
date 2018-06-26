@@ -55,7 +55,9 @@ Come up with a name for the mod, let's say `mymod`:
 Open `index.html`, find where it says `<!-- Kimotion mods-->`, and right after
 it add a script tag to include your mod.
 
-   <script src="mods/mymod/main.js"></script>
+```html
+<script src="mods/mymod/main.js"></script>
+```
 
 Open `mods/mymod/main.js` and on the very first line, change `class example2d`
 to `class mymod`.
@@ -102,8 +104,6 @@ a few ways to get help:
  - Tweet [@mwcz][twitter]
  - Open a [Kimotion issue][kimotion-issue]
  - Explore the existing [Kimotion mods][mods]
-
-<img style="display: none !important;" src="thumb.jpg">
 
 [kimotion-web]: http://kimotion.xyz
 [kinect]: http://www.xbox.com/en-US/xbox-360/accessories/kinect

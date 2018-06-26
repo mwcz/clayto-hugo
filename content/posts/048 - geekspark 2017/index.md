@@ -12,9 +12,9 @@ thumbnail: ./ml.jpg
 Mwc: 48
 ---
 
-geekSPARK is a showcase of creative use of technology, taking place each year during the [SPARKcon][sparkcon] art festival.  What lies below is a summary of the festivities at geekSPARK 2017.
-
 ![geekSPARK logo](geekSPARK-icon.png)
+
+geekSPARK is a showcase of creative use of technology, taking place each year during the [SPARKcon][sparkcon] art festival.  What lies below is a summary of the festivities at geekSPARK 2017.
 
 ---
 

@@ -1,24 +1,27 @@
 {{ if .Site.Menus.main }}
-<nav class="l-nav p-menu">
-  <ul class="p-menu__lists">
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="{{ .Site.BaseURL }}" title="{{ .Site.BaseURL }} homepage" id="pbp-logo">
+      {{ .Site.Title }}
+    </a>
+  </div>
+  <div class="pbp-navitems">
     {{ range .Site.Menus.main.ByWeight }}
-      {{ if .HasChildren }}
-        <li class="p-menu__listitem p-menu__parent">
-          <span>{{ .Name }}</span>
-          <ul>
-            {{ range .Children }}
-              <li class="p-menu__listitem p-menu__child"><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-            {{ end }}
-          </ul>
-        </li>
-      {{ else }}
-      <li class="p-menu__listitem">
-        <a href="{{ .URL }}">
-          {{- .Name -}}
-        </a>
-      </li>
-      {{ end }}
+    <a href="{{ .URL }}" class="pbp-navitem">
+      {{- .Name -}}
+    </a>
     {{ end }}
-  </ul>
+  </div>
 </nav>
 {{ end }}
+
+{{/*
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-navitems">
+    <a class="pbp-navitem" href="/projects" title="Projects">projects</a>
+    <a class="pbp-navitem" href="/posts" title="Blog">blog</a>
+    <a class="pbp-navitem icon-github-alt" href="https://github.com/mwcz" title="Clone my git repos"></a>
+    <a class="pbp-navitem icon-twitter" href="https://twitter.com/mwcz" title="Eat a tweet"></a>
+  </div>
+</nav>
+*/}}

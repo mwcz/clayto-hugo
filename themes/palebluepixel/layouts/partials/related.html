@@ -1,18 +1,43 @@
 {{ $related := .Site.RegularPages.Related . | first 6 }}
 {{ with $related }}
-<section class="p-related">
-  <h3>See Also</h3>
-  <ul id="slider" class="p-related__list">
+<section>
+  {{/*
+  <h3>Next up</h3>
+  */}}
+  <ul class="pbp-related">
     {{ range . }}
-    <li class="p-related__item js-related__item">
-      <a href="{{ .RelPermalink }}"
-        {{ with .Params.thumbnail }}
-          style="background-image: url({{ $.Site.BaseURL }}{{ . }});"
-        {{ end }}>
+    <li>
+      {{ if .Params.thumbnail }}
+      <a href="{{ .Permalink }}">
+        <img src="{{ .Permalink }}{{ .Params.thumbnail }}" alt="thumbnail for '{{ .Title }}'">
         <span>{{ .Title }}</span>
       </a>
+      {{ end }}
     </li>
     {{ end }}
   </ul>
 </section>
 {{ end }}
+
+{{/*
+<article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  <div class="pbp-article-summary">
+    {{ if .Description }}
+      {{ .Description | plainify | safeHTML }}
+    {{ else }}
+      {{ .Summary | plainify | safeHTML }}
+    {{ end }}
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      {{ .Date.Format "Jan 2, 2006" }}
+    </time>
+  </div>
+  {{ if .Params.thumbnail }}
+  <a class="pbp-article-thumbnail" href="{{ .Permalink }}">
+    <img src="{{ .Permalink }}{{ .Params.thumbnail }}" alt="thumbnail for '{{ .Title }}'">
+  </a>
+  {{ end }}
+</article>
+*/}}
