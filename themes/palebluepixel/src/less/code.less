@@ -1,22 +1,22 @@
 :not(pre) > code {
-  padding          : 4px 3px 2px 4px;
-  margin           : 0px;
+  padding: 4px 3px 2px 4px;
+  margin: 0px;
   // background-color: lighten(@pbp-bg-color, 12%);
   color: desaturate(@pbp-blue, 10%);
 }
 
 pre > code {
-  font-family      : @pbp-font-mono;
+  font-family: @pbp-font-mono;
   overflow-x: auto;
   max-width: 100%;
   display: block;
-  padding: 0.8*@padding-large-vertical 0.6*@padding-large-horizontal;
+  padding: 0.8 * @padding-large-vertical 0.6 * @padding-large-horizontal;
   background-color: lighten(@pbp-bg-color, 12%);
   color: @pbp-fg-color;
 
   &::-webkit-scrollbar {
-    height: 0.5*@padding-large-vertical;
-    width: 0.5*@padding-large-vertical;
+    height: 0.5 * @padding-large-vertical;
+    width: 0.5 * @padding-large-vertical;
     // background: lighten(@pbp-bg-color, 8%);
   }
 

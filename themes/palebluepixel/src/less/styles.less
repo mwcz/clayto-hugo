@@ -24,7 +24,7 @@ blockquote {
   padding: 0 @padding-large-vertical;
 }
 blockquote cite::before {
-  content: '—';
+  content: "—";
   color: lighten(@pbp-bg-color, 32%);
 }
 
@@ -40,19 +40,20 @@ abbr {
 *                               Posts                               *
  *********************************************************************/
 
-article, section {
+article,
+section {
   & > footer {
-    text-align       : center;
-    background-color : darken(@pbp-bg-color, 50%);
-    padding          : @padding-base-horizontal @padding-large-horizontal;
+    text-align: center;
+    background-color: darken(@pbp-bg-color, 50%);
+    padding: @padding-base-horizontal @padding-large-horizontal;
   }
   img {
-    margin    : 0 auto;
+    margin: 0 auto;
   }
-  img, video {
+  img,
+  video {
     .img-responsive();
   }
-
 }
 
 .pbp-article-footer {
@@ -75,8 +76,6 @@ article, section {
   }
   float: right !important;
 }
-
-
 
 /*********************************************************************
 *                           Project list                            *
@@ -115,28 +114,26 @@ article, section {
     }
   }
   .pbp-project-summary-footer {
-
-    display    : flex;
-    flex-wrap  : wrap;
-    width      : 100%;
-    margin-top : auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: auto;
 
     // add comfort padding only in NxM grid, when it's a single column, don't add padding
     @media (min-width: 500px) {
-      padding-top: 3*@padding-large-vertical;
+      padding-top: 3 * @padding-large-vertical;
     }
 
     a {
-      font-weight : bold;
+      font-weight: bold;
 
       outline: 3px solid darken(@pbp-bg-color, 2%);
 
-      color            : @pbp-blue;
-      background-color : lighten(@pbp-bg-color, 6%);
+      color: @pbp-blue;
+      background-color: lighten(@pbp-bg-color, 6%);
       border-color: darken(@pbp-bg-color, 2%);
       border-width: 0;
     }
-
   }
 }
 
@@ -145,42 +142,40 @@ article, section {
   flex-wrap: wrap;
 }
 
-
 /*********************************************************************
 *                              Header                               *
  *********************************************************************/
 
 .page-header {
-  &, h1 {
+  &,
+  h1 {
     margin-top: 0;
   }
 }
 article h1,
 section h1 {
   &:first-child {
-    margin-top    : 0;
-    margin-bottom : @padding-large-vertical * 3;
-    text-align    : center;
-    font-size     : @pbp-base-font-size * 2.0 * @pbp-title-size-adjust;
+    margin-top: 0;
+    margin-bottom: @padding-large-vertical * 3;
+    text-align: center;
+    font-size: @pbp-base-font-size * 2 * @pbp-title-size-adjust;
   }
 }
 
 // for blog post list
 article {
-
   // for time element direct children of article (ie, blog post list, not
   // blog post full)
   & > .meta {
-    color     : darken(desaturate(@pbp-blue, 100%), 32%);
-    font-size : 12px;
-    padding   : 0;
-    margin    : 0;
+    color: darken(desaturate(@pbp-blue, 100%), 32%);
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
   }
 
   header > h2 {
     margin-top: 0;
   }
-
 }
 
 /*********************************************************************
@@ -189,16 +184,20 @@ article {
 
 figure {
   figcaption {
-    text-align : center;
-    font-size  : 0.8 * @pbp-base-font-size;
+    text-align: center;
+    font-size: 0.8 * @pbp-base-font-size;
     margin-top: 6px;
     font-style: italic;
   }
-  [role=math] {
-    padding : 0.5rem 0;
+  [role="math"] {
+    padding: 0.5rem 0;
     text-align: center;
-    &:first-child { padding-top: 3rem; }
-    &:last-child { padding-bottom: 3rem; }
+    &:first-child {
+      padding-top: 3rem;
+    }
+    &:last-child {
+      padding-bottom: 3rem;
+    }
   }
 }
 
@@ -238,7 +237,9 @@ figure {
 *                          Twitter widget                           *
  *********************************************************************/
 
-.twitter-timeline { width: 100% !important; }
+.twitter-timeline {
+  width: 100% !important;
+}
 
 /*********************************************************************
 *                             Gallery                               *

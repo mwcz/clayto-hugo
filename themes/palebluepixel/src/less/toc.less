@@ -2,19 +2,19 @@
 
 .toc,
 #TableOfContents {
-    &::before {
-        content: "Table of Contents";
-        display: block;
-        margin-bottom: @padding-base-vertical;
-    }
+  &::before {
+    content: "Table of Contents";
+    display: block;
+    margin-bottom: @padding-base-vertical;
+  }
 
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    // no margin on nested lists
     ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-        // no margin on nested lists
-        ul {
-            margin: 0;
-        }
+      margin: 0;
     }
+  }
 }

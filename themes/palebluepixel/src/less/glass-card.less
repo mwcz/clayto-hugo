@@ -3,101 +3,101 @@
 @import "fonts";
 
 .glass-card-full(@z-index: 1, @shrink-x: 0px, @shrink-y: 0px) {
-    z-index: @z-index;
-    position: absolute;
-    width: calc(100% - @shrink-x);
-    height: calc(100% - @shrink-y);
-    top: 0;
-    left: 0;
+  z-index: @z-index;
+  position: absolute;
+  width: calc(100% - @shrink-x);
+  height: calc(100% - @shrink-y);
+  top: 0;
+  left: 0;
 }
 .glass-card {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 1px 10px rgba(0, 0, 0, 0.2);
+  // glass-card-ratio enforces the aspect ratio of the cards
+  .glass-card-ratio {
+    padding-top: 70%; // aspect ratio hack
     position: relative;
-    overflow: hidden;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4), 0px 1px 10px rgba(0, 0, 0, 0.2);
-    // glass-card-ratio enforces the aspect ratio of the cards
-    .glass-card-ratio {
-        padding-top: 70%; // aspect ratio hack
-        position: relative;
 
-        .glass-card-link {
-            .glass-card-full(20);
-        }
-        .glass-card-title {
-            color: @pbp-fg-color;
-            position: absolute;
-            z-index: 10;
-            @title-pad: 8px;
-            bottom: @title-pad;
-            left: @title-pad;
-            right: @title-pad;
-            font-family: @pbp-font-title;
-            font-size: 1.3*@pbp-base-font-size;
-            // width: calc(100% - 2px);
-            margin: 0;
-            padding: 10px;
-            text-align: center;
-            word-wrap: break-word;
-            // text-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.2);
-            &::after {
-                .glass-card-full(-1);
-                content: "";
-                background-color: rgba(0, 0, 0, 0.75);
-                box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
-            }
-        }
-        .glass-card-border-outer {
-            .glass-card-full(10);
-            border: 2px solid black;
-            &:before {
-                content: " ";
-                position: absolute;
-                z-index: -1;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-        }
-        .glass-card-border-inner {
-            .glass-card-full(15);
-            mix-blend-mode: soft-light;
-            border: 3px solid rgba(255, 255, 255, 1.0);
-            opacity: 0.4;
-            transition: opacity linear 0.04s;
-        }
-        .glass-card-bg {
-            .glass-card-full();
-            object-fit: cover;
-            object-position: center center;
-            height: 100%;
-            width: 100%;
-            // background-image: var(--glass-card-bg);
-            transition: transform ease-out 0.3s;
-            &.glass-card-bg-top {
-                object-position: top center;
-            }
-            &.glass-card-bg-tl {
-                object-position: top left;
-            }
-        }
-        &:hover {
-            .glass-card-border-inner {
-                opacity: 0.9;
-            }
-            // .glass-card-bg {
-            //     transform: scale(1.1);
-            // }
-        }
-        video.glass-card-bg {
-            width: calc(100% - 2px);
-        }
+    .glass-card-link {
+      .glass-card-full(20);
     }
+    .glass-card-title {
+      color: @pbp-fg-color;
+      position: absolute;
+      z-index: 10;
+      @title-pad: 8px;
+      bottom: @title-pad;
+      left: @title-pad;
+      right: @title-pad;
+      font-family: @pbp-font-title;
+      font-size: 1.3 * @pbp-base-font-size;
+      // width: calc(100% - 2px);
+      margin: 0;
+      padding: 10px;
+      text-align: center;
+      word-wrap: break-word;
+      // text-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.2);
+      &::after {
+        .glass-card-full(-1);
+        content: "";
+        background-color: rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.55);
+      }
+    }
+    .glass-card-border-outer {
+      .glass-card-full(10);
+      border: 2px solid black;
+      &:before {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+    .glass-card-border-inner {
+      .glass-card-full(15);
+      mix-blend-mode: soft-light;
+      border: 3px solid rgba(255, 255, 255, 1);
+      opacity: 0.4;
+      transition: opacity linear 0.04s;
+    }
+    .glass-card-bg {
+      .glass-card-full();
+      object-fit: cover;
+      object-position: center center;
+      height: 100%;
+      width: 100%;
+      // background-image: var(--glass-card-bg);
+      transition: transform ease-out 0.3s;
+      &.glass-card-bg-top {
+        object-position: top center;
+      }
+      &.glass-card-bg-tl {
+        object-position: top left;
+      }
+    }
+    &:hover {
+      .glass-card-border-inner {
+        opacity: 0.9;
+      }
+      // .glass-card-bg {
+      //     transform: scale(1.1);
+      // }
+    }
+    video.glass-card-bg {
+      width: calc(100% - 2px);
+    }
+  }
 }
 
 // // nav
 
-// .nav {  
+// .nav {
 //     position: sticky;
 //     z-index: 50;
 //     top: 1px;
@@ -168,4 +168,3 @@
 //         background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, @pbp-bg-color 100%);
 //     }
 // }
-
