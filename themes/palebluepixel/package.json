@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "hugo": "hugo server",
-    "build":
-      "lessc src/less/styles.less | minify --css > static/css/styles.min.css",
+    "build": "lessc src/less/styles.less | minify --css > static/css/styles.min.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mismith0227",

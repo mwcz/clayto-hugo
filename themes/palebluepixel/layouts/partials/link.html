@@ -1,17 +1,14 @@
 {{ if or ( .Site.Params.twitter ) ( .Site.Params.facebook ) ( .Site.Params.instagram ) ( .Site.Params.googleplus ) ( .Site.Params.github ) ( .Site.Params.gitlab ) ( .Site.Params.npm ) ( .Site.Params.codepen ) ( .Site.Params.dribbble ) ( .Site.Params.fivehundredpx ) ( .Site.Params.flickr ) ( .Site.Params.pinterest ) ( .Site.Params.tumblr ) ( .Site.Params.vimeo ) ( .Site.Params.youtube ) ( .Site.Params.linkedin ) }}
-<ul class="c-links">
+<ul class="pbp-social-links">
   {{ with .Site.Params.twitter }}
-  <li class="c-links__item">
+  <li>
     <a href="https://twitter.com/{{ . }}" target="_blank">
-      <svg viewBox="0 0 64 64" class="c-links__icon">
-        <title>twitter</title>
-        <use xlink:href="#icon-twitter"></use>
-      </svg>
+      <span class="demo-icon icon-twitter-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.facebook }}
-  <li class="c-links__item">
+  <li>
     <a href="https://facebook.com/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>facebook</title>
@@ -21,7 +18,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.instagram }}
-  <li class="c-links__item">
+  <li>
     <a href="https://instagram.com/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>instagram</title>
@@ -31,7 +28,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.googleplus }}
-  <li class="c-links__item">
+  <li>
     <a href="{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>googleplus</title>
@@ -41,17 +38,14 @@
   </li>
   {{ end }}
   {{ with .Site.Params.github }}
-  <li class="c-links__item">
+  <li>
     <a href="https://github.com/{{ . }}" target="_blank">
-      <svg viewBox="0 0 64 64" class="c-links__icon">
-        <title>github</title>
-        <use xlink:href="#icon-github"></use>
-      </svg>
+      <span class="demo-icon icon-github-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.gitlab }}
-  <li class="c-links__item">
+  <li>
     <a href="https://gitlab.com/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>gitlab</title>
@@ -61,7 +55,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.npm }}
-  <li class="c-links__item">
+  <li>
     <a href="https://www.npmjs.com/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>npm</title>
@@ -71,17 +65,14 @@
   </li>
   {{ end }}
   {{ with .Site.Params.codepen }}
-  <li class="c-links__item">
+  <li>
     <a href="https://codepen.io/{{ . }}" target="_blank">
-      <svg viewBox="0 0 64 64" class="c-links__icon">
-        <title>codepen</title>
-        <use xlink:href="#icon-codepen"></use>
-      </svg>
+      <span class="demo-icon icon-codepen"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.dribbble }}
-  <li class="c-links__item">
+  <li>
     <a href="https://dribbble.com/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>dribbble</title>
@@ -91,7 +82,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.fivehundredpx }}
-  <li class="c-links__item">
+  <li>
     <a href="https://500px.com/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>500px</title>
@@ -101,7 +92,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.flickr }}
-  <li class="c-links__item">
+  <li>
     <a href="https://www.flickr.com/photos/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>flickr</title>
@@ -111,7 +102,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.pinterest }}
-  <li class="c-links__item">
+  <li>
     <a href="https://www.pinterest.jp/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>pinterest</title>
@@ -121,7 +112,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.tumblr }}
-  <li class="c-links__item">
+  <li>
     <a href="https://www.tumblr.com/blog/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>tumblr</title>
@@ -131,17 +122,14 @@
   </li>
   {{ end }}
   {{ with .Site.Params.vimeo }}
-  <li class="c-links__item">
+  <li>
     <a href="https://vimeo.com/{{ . }}" target="_blank">
-      <svg viewBox="0 0 64 64" class="c-links__icon">
-        <title>vimeo</title>
-        <use xlink:href="#icon-vimeo"></use>
-      </svg>
+      <span class="demo-icon icon-vimeo-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.youtube }}
-  <li class="c-links__item">
+  <li>
     <a href="https://www.youtube.com/user/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>youtube</title>
@@ -151,7 +139,7 @@
   </li>
   {{ end }}
   {{ with .Site.Params.linkedin }}
-  <li class="c-links__item">
+  <li>
     <a href="https://linkedin.com/in/{{ . }}" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>linkedin</title>

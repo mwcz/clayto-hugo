@@ -1,0 +1,12 @@
+.icon-vimeo-squared:before {
+  content: "\f194";
+} /* '' */
+.icon-github-squared:before {
+  content: "\f300";
+} /* '' */
+.icon-twitter-squared:before {
+  content: "\f304";
+} /* '' */
+.icon-codepen:before {
+  content: "\f32c";
+} /* '' */

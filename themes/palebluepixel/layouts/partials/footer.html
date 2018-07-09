@@ -1,6 +1,5 @@
   </main>
-  {{ partial "menu.html" . }}
-  <footer class="l-footer">
+  <footer class="pbp-footer">
     {{ partial "link.html" . }}
 
     <p class="p-copyright">
@@ -15,7 +14,7 @@
           {{ end }}
         {{ end }}
         &nbsp;&bull;&nbsp;
-        {{ .Site.LastChange.Format "2006" }}
+        &copy; {{ .Site.LastChange.Format "2006" }}
 
         {{ if .Site.Title }}
           &nbsp;&bull;&nbsp;
@@ -36,7 +35,7 @@
       ga('send', 'pageview');
     </script>
     {{ end }}
-  {{ end }} 
+  {{ end }}
 
   {{- partial "footer_custom.html" . }}
 </body>
