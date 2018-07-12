@@ -1,8 +1,10 @@
 ---
 Title: "Tracer"
 Date: 2017-01-25
+Categories: Games
 url: /projects/tracer
 thumbnail: ./head.jpg
+description: Tracer is a 3D connect-the-dots game we created for Ludum Dare 37.
 Tags:
  -  programming
  -  javascript
@@ -23,7 +25,7 @@ Ludum Dare 37.
 
 ![menu screen of tracer](/static/images/projects/tracer/title.jpg)
 
-We were very happy with the ratings Tracer received.  In the *Innovation*
+We were very happy with the ratings Tracer received. In the _Innovation_
 category, we placed 5th out of 1,489 games.
 
 ![image of playing tracer](/static/images/projects/tracer/head.jpg)

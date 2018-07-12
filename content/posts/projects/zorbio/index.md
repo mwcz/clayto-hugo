@@ -1,8 +1,10 @@
 ---
 Title: "Zorbio"
 Date: 2016-11-03
+Categories: Games
 url: /projects/zorbio
 thumbnail: ./icon_zorbio.jpg
+thumbpos: top
 Tags:
  -  programming
  -  javascript

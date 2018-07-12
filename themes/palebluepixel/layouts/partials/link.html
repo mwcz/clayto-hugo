@@ -1,5 +1,19 @@
 {{ if or ( .Site.Params.twitter ) ( .Site.Params.facebook ) ( .Site.Params.instagram ) ( .Site.Params.googleplus ) ( .Site.Params.github ) ( .Site.Params.gitlab ) ( .Site.Params.npm ) ( .Site.Params.codepen ) ( .Site.Params.dribbble ) ( .Site.Params.fivehundredpx ) ( .Site.Params.flickr ) ( .Site.Params.pinterest ) ( .Site.Params.tumblr ) ( .Site.Params.vimeo ) ( .Site.Params.youtube ) ( .Site.Params.linkedin ) }}
 <ul class="pbp-social-links">
+  {{ with .Site.Params.github }}
+  <li>
+    <a href="https://github.com/{{ . }}" target="_blank">
+      <span class="demo-icon icon-github-squared"></span>
+    </a>
+  </li>
+  {{ end }}
+  {{ with .Site.Params.codepen }}
+  <li>
+    <a href="https://codepen.io/{{ . }}" target="_blank">
+      <span class="demo-icon icon-codepen"></span>
+    </a>
+  </li>
+  {{ end }}
   {{ with .Site.Params.twitter }}
   <li>
     <a href="https://twitter.com/{{ . }}" target="_blank">
@@ -37,13 +51,6 @@
     </a>
   </li>
   {{ end }}
-  {{ with .Site.Params.github }}
-  <li>
-    <a href="https://github.com/{{ . }}" target="_blank">
-      <span class="demo-icon icon-github-squared"></span>
-    </a>
-  </li>
-  {{ end }}
   {{ with .Site.Params.gitlab }}
   <li>
     <a href="https://gitlab.com/{{ . }}" target="_blank">
@@ -61,13 +68,6 @@
         <title>npm</title>
         <use xlink:href="#icon-npm"></use>
       </svg>
-    </a>
-  </li>
-  {{ end }}
-  {{ with .Site.Params.codepen }}
-  <li>
-    <a href="https://codepen.io/{{ . }}" target="_blank">
-      <span class="demo-icon icon-codepen"></span>
     </a>
   </li>
   {{ end }}

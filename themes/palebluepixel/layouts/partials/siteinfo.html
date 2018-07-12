@@ -8,10 +8,10 @@
   {{ if or ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
   <div class="p-author__body">
     {{ with .Site.Params.author }}
-    <p class="c-title p-author__name ">{{ . }}</p>
+    {{ . }}
     {{ end }}
     {{ with .Site.Params.bio }}
-    <p>{{ . }}</p>
+    is {{ . }}
     {{ end }}
     {{ with .Site.Params.contact }}
     <p>

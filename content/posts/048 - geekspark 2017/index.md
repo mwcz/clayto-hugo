@@ -7,14 +7,15 @@ Tags:
  -  geekspark
  -  dimo
  -  kimotion
-description: "The SPARKcon creativity festival: on the geeky side."
+description: "The geeky side of SPARKcon creativity festival.  A survey of the makery, sciencey, and hackery of 2017."
 thumbnail: ./ml.jpg
+thumbpos: top
 Mwc: 48
 ---
 
 ![geekSPARK logo](geekSPARK-icon.png)
 
-geekSPARK is a showcase of creative use of technology, taking place each year during the [SPARKcon][sparkcon] art festival.  What lies below is a summary of the festivities at geekSPARK 2017.
+geekSPARK is a showcase of creative use of technology, taking place each year during the [SPARKcon][sparkcon] art festival. What lies below is a summary of the festivities at geekSPARK 2017.
 
 ---
 
@@ -22,7 +23,7 @@ geekSPARK is a showcase of creative use of technology, taking place each year du
 
 # RC Speedway
 
-The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from [SplatSpace][splat].  Bill mounted cameras on the RC cars which fed wirelessly into first-person displays.  The cars were *fast*, and the sensation of speed from the first-person view was exhilirating.  I'm kicking myself for not taking any video.
+The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from [SplatSpace][splat]. Bill mounted cameras on the RC cars which fed wirelessly into first-person displays. The cars were _fast_, and the sensation of speed from the first-person view was exhilirating. I'm kicking myself for not taking any video.
 
 <div class="beside">
     <figure>
@@ -47,7 +48,7 @@ The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culv
 
 # Virtual Reality
 
-[Tyler Jackson][tyler] brought his immersive art piece, *Before the War*.  In it, you explore a series of thoughtful, atmospheric vignettes.  This is the first time VR has made an appearance at geekSPARK and I think it's here to stay.
+[Tyler Jackson][tyler] brought his immersive art piece, _Before the War_. In it, you explore a series of thoughtful, atmospheric vignettes. This is the first time VR has made an appearance at geekSPARK and I think it's here to stay.
 
 <figure><img src="tyler-vr.jpg" alt="Tyler Jackson's &quot;Before the War&quot; VR exhibit" /></figure>
 
@@ -57,14 +58,14 @@ I recommend reading [the INDY's review of Before the War][indybtw].
 
 # All Things LED
 
-[Maniacal Labs][ml] returned again, with a bank of dazzling LED displays.  Some were old favorites, but among their new creations were an infinity mirror, a light saber, and an LED Pole (the *LPD8806Pole*).
+[Maniacal Labs][ml] returned again, with a bank of dazzling LED displays. Some were old favorites, but among their new creations were an infinity mirror, a light saber, and an LED Pole (the _LPD8806Pole_).
 
 <figure>
     <img src="ml.jpg" alt="photo of Maniacal Labs' LED creations" />
     <figcaption>Maniacal Labs' LED displays.  </figcaption>
 </figure>
 
-Another new creation was a 1D pong game.  This was a blast to play.  To play, you tap your button to at the exact moment the puck is passing over your paddle.  If you succeed, the puck is sent shooting to the other side, increasing in speed with every deflection.
+Another new creation was a 1D pong game. This was a blast to play. To play, you tap your button to at the exact moment the puck is passing over your paddle. If you succeed, the puck is sent shooting to the other side, increasing in speed with every deflection.
 
 <figure>
     <img src="1dpong.jpg" alt="photo of Maniacal Labs' 1D pong game" />
@@ -84,7 +85,7 @@ Check out [this awesome summary](http://maniacallabs.com/sparkcon-2017/) of all 
 
 # Fire Tubes
 
-Ben Pritchett returned this year with Fire Tubes and a remixed soundtrack.  In essence, this exhibit is four [Ruben's tubes](https://www.youtube.com/watch?v=ynqzeIYA7Iw) put together to form a four-piece organ whose fiery plumes dance with the music being played.  Ben mixes music to isolate each instrument, so you can see, for example, the drum beat reflected in flame.
+Ben Pritchett returned this year with Fire Tubes and a remixed soundtrack. In essence, this exhibit is four [Ruben's tubes](https://www.youtube.com/watch?v=ynqzeIYA7Iw) put together to form a four-piece organ whose fiery plumes dance with the music being played. Ben mixes music to isolate each instrument, so you can see, for example, the drum beat reflected in flame.
 
 <video style="margin: 0 auto" autoplay controls loop>
     <source src="fire-table-anim.mp4" />
@@ -95,7 +96,7 @@ Ben Pritchett returned this year with Fire Tubes and a remixed soundtrack.  In e
 
 # Mushroom Hunters
 
-A fresh, fungusy addition to geekSPARK!  Geekery need not be constrained to digital hobbies.  Anna and Krystal, devoted mushroom enthusiasts, brought a huge haul of mushrooms to the event and educated visitors about mushroom eating, hunting, and biology.
+A fresh, fungusy addition to geekSPARK! Geekery need not be constrained to digital hobbies. Anna and Krystal, devoted mushroom enthusiasts, brought a huge haul of mushrooms to the event and educated visitors about mushroom eating, hunting, and biology.
 
 <img src="mushrooms.jpg" alt="mushroom booth" />
 
@@ -103,7 +104,7 @@ A fresh, fungusy addition to geekSPARK!  Geekery need not be constrained to digi
 
 # Digital Motion
 
-Digital Motion is a perennial geekSPARK exhibit featuring interactive digital displays.  This year's display is powered by [Kimotion][kimo].  Using a variety of sensors, we use visitors' movement to control the display.  There are many displays, ranging from interactive art to a full-blown videogame with a leaderboard (the Fish Game!).
+Digital Motion is a perennial geekSPARK exhibit featuring interactive digital displays. This year's display is powered by [Kimotion][kimo]. Using a variety of sensors, we use visitors' movement to control the display. There are many displays, ranging from interactive art to a full-blown videogame with a leaderboard (the Fish Game!).
 
 <video autoplay controls loop>
     <source src="quick-clip.mp4" />
@@ -116,7 +117,7 @@ Learn more at [Kimotion.xyz][kimo].
 
 # 3D Printing
 
-3D printed parts played a role in most of the exhibits this year.  The RC Speedway's camera mounts, Digital Motion's hand sensor mount, a slew of bits and bobs from All Things LED, all used 3D printed parts.  Most of all, Bill brought in some 3D printers to teach the crowd about printing, including a gigantic printed T-Rex.
+3D printed parts played a role in most of the exhibits this year. The RC Speedway's camera mounts, Digital Motion's hand sensor mount, a slew of bits and bobs from All Things LED, all used 3D printed parts. Most of all, Bill brought in some 3D printers to teach the crowd about printing, including a gigantic printed T-Rex.
 
 <div class="beside">
     <figure>
@@ -133,15 +134,14 @@ Learn more at [Kimotion.xyz][kimo].
 
 # What's next?
 
-geekSPARK 2018!  The two big goals for next year are:
+geekSPARK 2018! The two big goals for next year are:
 
- 1. A prime location
- 2. Excellent signage
+1.  A prime location
+2.  Excellent signage
 
-The current location, Red Hat Annex, has served us very well (thanks [Red Hat][rh]!), however it's far enough from the center of SPARKcon that we only see a tiny fraction of the 60,000 visitors.  Findability is very important at a large art festival, and we're exploring options for a more central location next year.
+The current location, Red Hat Annex, has served us very well (thanks [Red Hat][rh]!), however it's far enough from the center of SPARKcon that we only see a tiny fraction of the 60,000 visitors. Findability is very important at a large art festival, and we're exploring options for a more central location next year.
 
-Signage this year was okay, but a bit rushed.  Even with the maps, many visitors weren't able to find our locations.  Next year's signage will be simple and clear!
-
+Signage this year was okay, but a bit rushed. Even with the maps, many visitors weren't able to find our locations. Next year's signage will be simple and clear!
 
 <div class="beside">
     <figure>
@@ -154,12 +154,11 @@ Signage this year was okay, but a bit rushed.  Even with the maps, many visitors
     </figure>
 </div>
 
-
 ---
 
 # Special thanks
 
-Immense appreciation goes out to all the SPARKcon and geekSPARK volunteers who made the event happen.  In no particular order (randomly sorted, in fact), here is a list of everyone involved with geekSPARK 2017, or geekSPARKs of the past.
+Immense appreciation goes out to all the SPARKcon and geekSPARK volunteers who made the event happen. In no particular order (randomly sorted, in fact), here is a list of everyone involved with geekSPARK 2017, or geekSPARKs of the past.
 
 <ul style="display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr));">
     <li>Jared</li>
@@ -182,7 +181,6 @@ Immense appreciation goes out to all the SPARKcon and geekSPARK volunteers who m
     <li>Truett</li>
     <li>Homa</li>
 </ul>
-
 
 [sparkcon]: https://sparkcon.com
 [tyler]: http://memorymachinecreative.com/

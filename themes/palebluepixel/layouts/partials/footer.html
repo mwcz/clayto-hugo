@@ -1,27 +1,28 @@
   </main>
   <footer class="pbp-footer">
+    {{ partial "siteinfo.html" . }}
     {{ partial "link.html" . }}
 
-    <p class="p-copyright">
-      {{ with .Site.Copyright | safeHTML }}
-        {{ . }}
-      {{ else }}
-        {{ if .Site.Params.author }}
-          {{ if .Site.Params.authorwebsite }}
-            <a href="{{ .Site.Params.authorwebsite }}">{{ .Site.Params.author }}</a>
-          {{ else }}
-            {{ .Site.Params.author }}
-          {{ end }}
-        {{ end }}
-        &nbsp;&bull;&nbsp;
-        &copy; {{ .Site.LastChange.Format "2006" }}
+    <!-- <p class="p-copyright"> -->
+    <!--   {{ with .Site.Copyright | safeHTML }} -->
+    <!--     {{ . }} -->
+    <!--   {{ else }} -->
+    <!--     {{ if .Site.Params.author }} -->
+    <!--       {{ if .Site.Params.authorwebsite }} -->
+    <!--       <a href="{{ .Site.Params.authorwebsite }}">{{ .Site.Params.author }}</a> is {{ .Site.Params.bio }}. -->
+    <!--       {{ else }} -->
+    <!--         {{ .Site.Params.author }} -->
+    <!--       {{ end }} -->
+    <!--     {{ end }} -->
+    <!--     &nbsp;&bull;&nbsp; -->
+    <!--     &copy; {{ .Site.LastChange.Format "2006" }} -->
 
-        {{ if .Site.Title }}
-          &nbsp;&bull;&nbsp;
-          <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
-        {{ end }}
-      {{ end }}
-    </p>
+    <!--     {{ if .Site.Title }} -->
+    <!--       &nbsp;&bull;&nbsp; -->
+    <!--       <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a> -->
+    <!--     {{ end }} -->
+    <!--   {{ end }} -->
+    <!-- </p> -->
   </footer>
 
   {{ if not .Site.IsServer }}
