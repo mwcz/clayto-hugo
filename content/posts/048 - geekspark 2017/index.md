@@ -7,7 +7,7 @@ Tags:
  -  geekspark
  -  dimo
  -  kimotion
-description: "The geeky side of SPARKcon creativity festival.  A survey of the makery, sciencey, and hackery of 2017."
+description: "The geeky side of the SPARKcon creativity festival.  A survey of the makery, hackery, and science of geekSPARK 2017."
 thumbnail: ./ml.jpg
 thumbpos: top
 Mwc: 48

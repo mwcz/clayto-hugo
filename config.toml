@@ -19,9 +19,12 @@ extensions = ["laxHtmlBlocks"]
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; Copyright 2013-2018 Michael Clayton"
 
-[taxonomies]
-  category = "projects"
-  tag = "tags"
+# [taxonomies]
+#   category = "projects"
+#   tag = "tags"
+
+[permalinks]
+    categories = "/:slug/"
 
 [params]
   paginate = 10
@@ -51,7 +54,7 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
   authorwebsite = "clayto.com"
   # avatar = "/path/to/avatar"
   contact = "mailto:mwc@clayto.com"
-  bio = "a primitive lifeform engaged in a losing battle with entropy and delusion"
+  bio = "a primitive lifeform trapped in a losing battle with entropy and delusion"
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Creative coding and web stuff."
   # Logo image. This is displayed ogp image.
@@ -71,13 +74,13 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
 [[menu.main]]
     #parent = "projects"
     name = "Games"
-    url = "/projects/games"
+    url = "/games"
     weight = 1
 
 [[menu.main]]
     #parent = "projects"
     name = "Demos"
-    url = "/projects/demos"
+    url = "/demos"
     weight = 2
 
 #[[menu.main]]

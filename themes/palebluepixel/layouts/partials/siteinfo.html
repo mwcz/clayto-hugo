@@ -1,25 +1,27 @@
 {{ if or ( .Site.Params.avatar ) ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
-<aside class="p-author">
+<aside class="p-author beside">
   {{ with .Site.Params.avatar }}
-  <div class="c-avatar p-author__avatar">
-    <img alt="Author Avatar" src="{{ . }}" />
-  </div>
+  <!-- <div class="c-avatar p-author__avatar"> -->
+  <!--   <img alt="Author Avatar" src="{{ . }}" /> -->
+  <!-- </div> -->
   {{ end }}
   {{ if or ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
-  <div class="p-author__body">
+  <div>
     {{ with .Site.Params.author }}
+    <small>AUTHOR</small>
+    <br>
     {{ . }}
     {{ end }}
     {{ with .Site.Params.bio }}
-    is {{ . }}
+    is {{ . }}.
     {{ end }}
     {{ with .Site.Params.contact }}
-    <p>
-      <a href="{{ . }}">
-        Contact me
-      </a>
-    </p>
+    <a href="{{ . }}">
+      Contact me</a>.
     {{ end }}
+  </div>
+  <div>
+    {{ partial "link.html" . }}
   </div>
   {{ end }}
 </aside>

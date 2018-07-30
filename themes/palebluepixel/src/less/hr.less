@@ -2,21 +2,12 @@
 @import "variables";
 
 hr {
-  border: 0;
-  text-align: center;
-  overflow: visible;
   display: block;
+  border: 0px;
+  height: 16px;
 
-  margin-top: @padding-large-vertical * 2;
-  margin-bottom: @padding-large-vertical * 2.4;
+  margin-top: @padding-large-vertical * 3;
+  margin-bottom: @padding-large-vertical * 3.4;
 
-  &::before {
-    content: "▪▪▪";
-    display: inline-block;
-    margin-left: 0.6em;
-    color: @pbp-blue;
-    position: relative;
-    font-size: 1rem;
-    letter-spacing: @padding-base-horizontal * 2;
-  }
+  background: url("../../images/hr.png") no-repeat center;
 }

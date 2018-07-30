@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 <section>
-<h2 class="">{{ .Title }}</h2>
+<h2>{{ .Title }}</h2>
 {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts")).Pages }}
 {{ if ne $index 0 }}
 {{ end }}
@@ -8,5 +8,4 @@
 {{ end }}
 </section>
 {{ partial "pagination.html" .Paginator }}
-{{ partial "siteinfo.html" . }}
 {{ partial "footer.html" . }}

@@ -520,6 +520,14 @@ a {
 a:visited {
   color: #f1f1f1;
 }
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #f1f1f1;
+}
 address,
 blockquote,
 dl,
@@ -593,21 +601,12 @@ ul {
   list-style-position: inside;
 }
 hr {
-  border: 0;
-  text-align: center;
-  overflow: visible;
   display: block;
-  margin-top: 36px;
-  margin-bottom: 43.2px;
-}
-hr::before {
-  content: "▪▪▪";
-  display: inline-block;
-  margin-left: 0.6em;
-  color: #6fa5f2;
-  position: relative;
-  font-size: 1rem;
-  letter-spacing: 30px;
+  border: 0;
+  height: 16px;
+  margin-top: 54px;
+  margin-bottom: 61.2px;
+  background: url(../../images/hr.png) no-repeat center;
 }
 ol.pagination {
   display: flex;
@@ -666,6 +665,9 @@ ol.pagination li.disabled {
   justify-content: center;
   list-style: none;
   font-size: 28.8px;
+}
+.pbp-social-links a {
+  color: #6fa5f2;
 }
 blockquote {
   color: #868686;
