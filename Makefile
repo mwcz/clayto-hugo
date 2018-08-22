@@ -7,3 +7,8 @@ dev:
 	cd themes/palebluepixel/ && find src/less -name '*.less' | entr npm run build &
 	cd -
 	hugo server -D
+
+build:
+	cd themes/palebluepixel/ && npm run build
+	cd -
+	hugo

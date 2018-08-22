@@ -1,1 +1,5 @@
-{{ .Page.TableOfContents }}
+{{ if eq (.Get 0) "wide" }}
+  {{ safeHTML (replace .Page.TableOfContents "TableOfContents" "TableOfContents\" class=\"wide") }}
+{{ else }}
+  {{ .Page.TableOfContents }}
+{{ end }}

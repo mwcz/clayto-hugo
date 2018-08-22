@@ -1,5 +1,5 @@
 {{ if or ( .Site.Params.avatar ) ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
-<aside class="p-author beside">
+<aside class="beside">
   {{ with .Site.Params.avatar }}
   <!-- <div class="c-avatar p-author__avatar"> -->
   <!--   <img alt="Author Avatar" src="{{ . }}" /> -->
@@ -8,8 +8,7 @@
   {{ if or ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
   <div>
     {{ with .Site.Params.author }}
-    <small>AUTHOR</small>
-    <br>
+    <small class="footer-label">AUTHOR</small>
     {{ . }}
     {{ end }}
     {{ with .Site.Params.bio }}

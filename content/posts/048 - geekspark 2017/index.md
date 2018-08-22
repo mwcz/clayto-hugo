@@ -19,7 +19,9 @@ geekSPARK is a showcase of creative use of technology, taking place each year du
 
 ---
 
-{{< toc >}}
+{{< toc wide >}}
+
+---
 
 # RC Speedway
 

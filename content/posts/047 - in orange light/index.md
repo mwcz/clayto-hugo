@@ -30,7 +30,11 @@ The atmosphere and storytelling from that game have been rolling around in my mi
 
 ---
 
-## Ludum Dare 39
+{{< toc >}}
+
+---
+
+# Ludum Dare 39
 
 Jared and I have participated in the Ludum Dare _Jam_ [three][ld35] [whole][ld37] [times][ld38], and we've been growing curious about the _Compo_ (aka, Hard Mode). Jared decided to sit this one out, so I took the opportunity to enter my first Compo, which is an exclusively solo endeavor. The theme was "Running out of power". Without any further ado, here is my game, [In Orange Light][iol].
 
@@ -40,7 +44,7 @@ Jared and I have participated in the Ludum Dare _Jam_ [three][ld35] [whole][ld37
 
 ---
 
-## Day 1 of 2, the foundation
+# Day 1, the foundation
 
 With Kentucky Route Zero fresh in my mind, I wanted to branch out from my usual arcade-style game and try to make something a little more moody and atmospheric. Based on the "running out of power" theme, my idea was a survival game where you try to balance scant resources to survive winter in a frigid mountain cabin.
 
@@ -50,17 +54,17 @@ To get the math out of the way, I spent the first day implementing a basic simul
 
 ---
 
-## Day 2 of 2, some polish
+# Day 2, some polish
 
 I spent about half of Sunday improving the visuals, and the other half fixing bugs in the simulation I'd created on Saturday.
 
-### Making it mountainous
+## Making it mountainous
 
 Starting with a set of rectangles, and using a photo of the Blue Ridge Mountains as a reference, I tweaked vector paths into something resembling mountains.
 
 <img src="making-mountains.gif">
 
-### Sunrise, day, sunset, night, repeat
+## Sunrise, day, sunset, night, repeat
 
 The plain blue mountains lacked luster, and a day/night cycle seemed like a fitting way to bring them some life.
 
@@ -70,13 +74,13 @@ The plain blue mountains lacked luster, and a day/night cycle seemed like a fitt
 }
 </style>
 
-<figure id="iol-sky-demo"></figure>
+I made the mountain sprites greyscale and multiplied them against two very tall, sliding sky gradients. Here's a visual of the technique, zoomed way out so you can see the two sky images playing leap frog as they slide up the screen. (This is a live demo of the game code, not a video.)
 
-I made the mountain sprites greyscale and multiplied them against two very tall, sliding sky gradients. Here's a visual of the technique, zoomed way out so you can see the two sky images playing leap frog as they slide up the screen. (This is a live demo, not a video.)
+<figure id="iol-sky-demo"></figure>
 
 To see the full sky sunrise and sunset, give [In Orange Light][iol] a play, but don't dismiss the text. That way, time will be paused and you won't starve or freeze.
 
-### Sound effects
+## Sound effects
 
 The game has a few sound effects. The heater's electric hum, the generator's rumble, and the growing, clawing sound of hunger. To create these, I used [BeepBox][bbox], a chiptune music sequencer. It's meant for music, but I was able to coax some sound effects out of it. Here are two of the sound effects, hit `Play` to hear them through the BeepBox synthesizer live on this page.
 
@@ -137,13 +141,13 @@ BeepBox is a very approachable sequencer. Here's what the "generator ran out of 
 
 ---
 
-## Lessons learned
+# Lessons learned
 
-First, working solo is much harder than working on a team, but not only because a team can get more work done. Maintaining the sense of urgency, productivity, and focus was nearly impossible without a co-conspirator.
+First, working solo is much harder than working on a team, and not only because a team can get more work done. Maintaining the sense of urgency, productivity, and focus was nearly impossible without a co-conspirator.
 
-Second, system-of-numbers games need careful design and planning. In Orange Light is essentially a small spreadsheet where you click buttons in order to keep some numbers within a desired range. It seemed very simple at first, but a slew of problems arose after I _thought_ I had finished the simulation.
+Second, system-of-numbers games need careful design and planning. In Orange Light is essentially a small spreadsheet where you click buttons in order to keep some numbers within a desired range. It seemed very simple at first, but a slew of miscalculations arose after I _thought_ I had finished the simulation.
 
-Third, and unsurprisingly, immersion and atmosphere are very difficult to execute on. As a first experiment, I'm pretty happy with how things turned out.
+Third, and unsurprisingly, immersion and atmosphere are very difficult to execute on. Still, as a first experiment, I'm pretty happy with how things turned out.
 
 Fourth, and last, if a game has _meters_, and those meters indicate how Good/Bad something is, make sure they all go in the same direction. In my game, the Warmth meter wants to be high, and the Hunger meter wants to be low. That's been the single biggest point of absolutely understandable confusion.
 

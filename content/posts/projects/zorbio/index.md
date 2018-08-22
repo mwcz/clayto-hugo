@@ -4,6 +4,7 @@ Date: 2016-11-03
 Categories: Games
 url: /projects/zorbio
 thumbnail: ./icon_zorbio.jpg
+description: Zorbio is a free 3D eat-em-up game that you can [play](https://zorb.io) in your browser!
 thumbpos: top
 Tags:
  -  programming
