@@ -2,7 +2,8 @@
 Title: "Pity About Earth..."
 Date: 2017-05-07
 Categories: Games
-url: /projects/pity-about-earth
+url: /games/pity-about-earth
+aliases: /projects/pity-about-earth
 thumbnail: ./logo-notitle.png
 description: "Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong."
 Tags:

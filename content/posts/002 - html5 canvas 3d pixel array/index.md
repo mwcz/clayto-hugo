@@ -1,6 +1,8 @@
 ---
 Title: "HTML5 canvas 3D pixel array"
 Date: 2011-11-16
+thumbnail: kazoo.png
+aliases: /2011/11/16/html5-canvas-3d-pixel-array/
 Tags:
  -  html5
  -  canvas
@@ -10,10 +12,11 @@ Tags:
 Mwc: 2
 ---
 
-This is another demo from 2009-ish.  When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of [CanvasPixelArray](https://developer.mozilla.org/en/DOM/CanvasPixelArray).  I wrote this script to convert it into a more logical format: X by Y by RGBA.  Let me rephrase that.  By "more logical", I mean "more logical, *to me*, *at the time*).  1D is fine, and I can't think of any use for this script.  But, nonetheless, here it is, including the original description.
+This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of [CanvasPixelArray](https://developer.mozilla.org/en/DOM/CanvasPixelArray). I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By "more logical", I mean "more logical, _to me_, _at the time_). 1D is fine, and I can't think of any use for this script. But, nonetheless, here it is, including the original description.
 
 <img style="display: none !important;" src="kazoo.png">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
 $(function() {
@@ -110,52 +113,27 @@ $(function() {
 });
 </script>
 
-
-canvas pixarray
-===============
+# canvas pixarray
 
 After loading an image file into a &lt;canvas&gt; element, you can retrieve its
-pixels with `getImageData()`.  The problem (not really a problem, more an
-inconvenience) is that the array of pixels is one-dimensional.  `getImageData` returns pixels in the following format:
+pixels with `getImageData()`. The problem (not really a problem, more an
+inconvenience) is that the array of pixels is one-dimensional. `getImageData` returns pixels in the following format:
 
-<pre>
 ( R<sub>0</sub>, G<sub>0</sub>, B<sub>0</sub>, A<sub>1</sub>, R<sub>1</sub>, G<sub>1</sub>, B<sub>1</sub>, A<sub>1</sub>, ... )
-</pre>
 
 As a human, that's really tough to work with, so this script converts that to a more
 logical 3D array (X by Y by RGBA)
 
-<input class="btn btn-primary" type="button" value="Convert 1D pixel array into 3D pixel array" onclick="getpixelarray();" />
+Here is the source image, drawn into a canvas directly from the image.
 
-<div class="row">
-    <div class="col-xs-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <b>
-                    Image drawn directly from image file
-                </b>
-            </div>
-            <div class="panel-body">
-                <canvas class="img-responsive" id="c" width="650" height="250">
-                    Your browser does not support the &lt;canvas&gt; element.
-                    Lame.
-                </canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <b>
-                    Image drawn from the 3D image array
-                </b>
-            </div>
-            <div class="panel-body">
-                <canvas class="img-responsive" id="t" width="650" height="250">
-                    Your browser does not support the &lt;canvas&gt; element.
-                    Lame.
-                </canvas>
-            </div>
-        </div>
-    </div>
-</div>
+<canvas id="c" width="650" height="250">
+Your browser does not support the &lt;canvas&gt; element.
+Lame.
+</canvas>
+
+Click <input type="button" value="Convert" onclick="getpixelarray();" /> to convert the 1D pixel array to a 2D pixel array. From there, you could easily do any coordinate-based operations to the pixels. The convert function converts it back from 2D to 1D and draws it into the canvas below.
+
+<canvas id="t" width="650" height="250">
+Your browser does not support the &lt;canvas&gt; element.
+Lame.
+</canvas>

@@ -3,48 +3,50 @@ Title: "clayto.com"
 Date: 2003-01-01
 url: /projects/clayto.com
 Categories: Projects
-thumbnail: ./icon_clayto.jpg
+thumbnail: icon_clayto.jpg
 ---
 
 [clayto.com][1] is my homemade photography website.
 
 ![mwcz.org screenshot]({filename}/static/images/projects/screenshot_clayto.png "clayto.com screenshot")
 
-I started clayto.com in 2003.  Inspired by [Noah Grey's][6] photography
+I started clayto.com in 2003. Inspired by [Noah Grey's][6] photography
 presentation ideas
- -  the site's color scheme always matches the photo being
-viewed
- -  as Noah did (or used to!).
+
+- the site's color scheme always matches the photo being
+  viewed
+- as Noah did (or used to!).
 
 Here are four examples of the color schemes:
 
 ![example of color theme matching images]({filename}/static/images/projects/screenshot_clayto_palettes_small.png "example of color theme matching images")
 
-The color schemes are automatically generated when a photo is posted.  A
+The color schemes are automatically generated when a photo is posted. A
 "suggested palette" is displayed
- -  along with a color picker
- -  and a tool to
-sample colors directly from the image.
+
+- along with a color picker
+- and a tool to
+  sample colors directly from the image.
 
 The site as it exists now was written in 2007-2008
- -  as my first Django project.
-It needs some serious TLC in the form of bringing it into the twenty-tens with
-a responsive UI
- -  [ColorPal][8] integration
- -  visual redesign
- -  and a Django
-upgrade.
+
+- as my first Django project.
+  It needs some serious TLC in the form of bringing it into the twenty-tens with
+  a responsive UI
+- [ColorPal][8] integration
+- visual redesign
+- and a Django
+  upgrade.
 
 The site is currently powered by:
 
- - [Python][2] - an English comedy troupe
- - [Django][3] - Python web development framework
- - [960.gs][4] - a vintage CSS grid
- -  groundbreaking at the time though
- - [Piwik][5] - open-source web analytics
- - and a custom color extraction algorithm that automatically suggests colors
- - 
-   then allows the user to tweak the colors to their liking
+- [Python][2] - an English comedy troupe
+- [Django][3] - Python web development framework
+- [960.gs][4] - a vintage CSS grid
+- groundbreaking at the time though
+- [Piwik][5] - open-source web analytics
+- and a custom color extraction algorithm that automatically suggests colors
+- then allows the user to tweak the colors to their liking
 
 The code is [available here][7]
 

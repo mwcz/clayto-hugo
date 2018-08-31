@@ -9,16 +9,18 @@ Tags:
  -  colorpal
  -  web
  -  javascript
+thumbnail: thumb.jpg
+aliases: /2011/11/16/html5-canvas-area-selection-averaging/
 Mwc: 4
 ---
 
-This is a demo from late 2009.  It's an extension of the single-pixel [eyedropper](/2011/11/16/html5-canvas-eyedropper/) I wrote previously.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-It's powered by an early version of an old JS toolkit I wrote called JSImage.  The latest version is available at my [JSImage github repo](https://github.com/mwcz/jsimage).  Don't be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration.  No guarantees that the histo's are actually correct. :)
+This is a demo from late 2009. It's an extension of the single-pixel [eyedropper](/2011/11/16/html5-canvas-eyedropper/) I wrote previously.
 
-I used an old version of a rectangular selection tool called marquee.  I believe it's still located [here](http://marqueetool.net/) but I can't be totally sure that's the same project.
+It's powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my [JSImage github repo](https://github.com/mwcz/jsimage). Don't be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo's are actually correct. :)
 
-Click, drag, and taste the magic. :|
+Click and drag to set the image border to the average of the selected pixels.
 
 <img style="display: none !important;" src="kazoo.png">
 <canvas id="c0">

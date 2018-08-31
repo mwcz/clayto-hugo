@@ -9,6 +9,7 @@ Tags:
  -  web
  -  mediancut
 thumbnail: after.png
+aliases: /2012/07/30/colorpal-output-update/
 Mwc: 22
 ---
 
@@ -19,7 +20,7 @@ This is a speedy post about a speedy update I made today to
 generates color palettes from a photograph.
 
 Previously, ColorPal provided hex codes for each color extracted from the
-image.  Eight individual &lt;input&gt;s at the bottom of the page displayed the
+image. Eight individual &lt;input&gt;s at the bottom of the page displayed the
 colors.
 
 I use ColorPal a lot (my own dogfood and all that) when designing websites, and
@@ -41,23 +42,23 @@ All eight colors can be pasted out in one fell swoop of the mouse.
 Works in Chrome and Firefox.
 
 **Pro tip**: you can edit the values in the textarea and the palette will be
-instantly updated to reflect your edits.  This means you can also paste in
+instantly updated to reflect your edits. This means you can also paste in
 a list of colors (hex format only for the time being).
 
 If you try out ColorPal, let me know your thoughts on
-[Twitter](https://twitter.com/#!/mwcz).
+[Twitter](https://twitter.com/mwcz).
 
 Here are github repos for [ColorPal](https://github.com/mwcz/ColorPal) and
 [median-cut.js](https://github.com/mwcz/median-cut-js).
 
 This minor update is part of the groundwork for some exciting changes to my
-sorely neglected [photography site](http://clayto.com/).  I still post photos
-regularly, but haven't given it any fresh coding love for about two years.  See
-how the colorscheme of each page matches the photograph?  That's done with an
+sorely neglected [photography site](http://clayto.com/). I still post photos
+regularly, but haven't given it any fresh coding love for about two years. See
+how the colorscheme of each page matches the photograph? That's done with an
 older palette generation implementation (which I should write about someday),
-but pretty soon it'll be ColorPal pumping out those swatches.  
+but pretty soon it'll be ColorPal pumping out those swatches.
 
-That's not the only change.  If you're not excited, don't worry.  I am!
+That's not the only change. If you're not excited, don't worry. I am!
 
 [<img src="colorpal_logo.png" alt="ColorPal logo" title="" />](/projects/colorpal)
 

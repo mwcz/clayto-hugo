@@ -8,19 +8,20 @@ Tags:
  -  web
 description: "Speed-hacking an old project for fun and... fun."
 thumbnail: recording.gif
+aliases: /2014/02/25/introducing-drop64-ezpz-data-uri-generator/
 Mwc: 25
 ---
 
-A few weeks ago, a [coworker][1] of mine ran into some font issues.  Firefox
+A few weeks ago, a [coworker][1] of mine ran into some font issues. Firefox
 doesn't allow cross-origin requests for [web fonts][2], and he was using a tool
 called [Font Squirrel][3] to generate fonts, including [data URIs][4].
 
 Embedding a data URI for a font (or image) inside a CSS file is a common
-technique for reducing the number of HTTP requests.  In this case, it also
+technique for reducing the number of HTTP requests. In this case, it also
 negates the need for a cross-domain request to fetch the font file, because the
 file's contents are already embedded.
 
-There was something screwy about Font Squirrel's data URIs, though.  A change
+There was something screwy about Font Squirrel's data URIs, though. A change
 must have been made to their tool, because all of our icons were suddenly
 shifted up.
 
@@ -31,7 +32,7 @@ I pretty quickly realized that ColorPal is basically a drag-and-drop data URI
 generator.
 
 By dropping a file into ColorPal's dropzone, the user is implicitly giving the
-browser access to that file through the HTML5 File API.  That file's contents
+browser access to that file through the HTML5 File API. That file's contents
 are conveniently (for our purposes, anyway) exposed as a data URI.
 
 ColorPal takes the extra steps of injecting the URI into a canvas element, then
@@ -45,13 +46,13 @@ output box, created a github page for it, and registered [drop64.com][7].
 
 Voila:
 
-![Drop64 recording](/static/images/projects/drop64/recording.gif Drop64 recording)
+![Drop64 recording](recording.gif "Drop64 recording")
 
 It's not exactly a technical marvel, and the code is still rife with ColorPal
-stuff.  I only ripped out what was absolutely necessary to get the tool working
+stuff. I only ripped out what was absolutely necessary to get the tool working
 as fast as possible.
 
-[Try it out][7] or [check out the code][6].  Happy hacking.
+[Try it out][7] or [check out the code][6]. Happy hacking.
 
 [1]: http://www.heyokadesign.com/
 [2]: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face

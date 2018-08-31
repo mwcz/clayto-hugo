@@ -7,6 +7,7 @@ Tags:
  -  web
 thumbnail: ./naming.gif
 description: "Naming things is hard enough, and JavaScript doesn't make it any easier.  Should anonymous functions be considered harmful?"
+aliases: /2015/01/01/naming-names-anonymity-is-dead/
 Mwc: 36
 ---
 
@@ -25,15 +26,15 @@ Published: true
 </blockquote>
 
 Contriving names for things is so commonplace for computer programmers that we
-may be thinking up names more often than any other profession.  Every day,
+may be thinking up names more often than any other profession. Every day,
 usually dozens of times, I find myself trying to imagine the perfect name for a
-function or variable or module.  Then I remember that there's a term for the
-*process* of formulating the perfect name for a thing.
+function or variable or module. Then I remember that there's a term for the
+_process_ of formulating the perfect name for a thing.
 
 I just can't remember what it's called...
 
 Then I find myself sitting there, trying to think of the perfect name for the
-process of creating the perfect name for a thing when I should be *actually*
+process of creating the perfect name for a thing when I should be _actually_
 dreaming up the perfect name for that thing.
 
 <figure>
@@ -41,7 +42,7 @@ dreaming up the perfect name for that thing.
     <figcaption>Naming is hard.</figcaption>
 </figure>
 
-Can you relate?  The word, by the way, is...
+Can you relate? The word, by the way, is...
 
 <dl>
     <dt>onomastics - n.</dt>
@@ -58,19 +59,25 @@ declaration without a name.
 
 A named function:
 
-    function count_sheep() { /* code */ }
+```javascript
+function count_sheep() {
+  /* code */
+}
+```
 
 An anonymous function:
 
-    function () { /* code */ }
+```javascript
+function () { /* code */ }
+```
 
-One has a name, one doesn't.  Other than two low-level (and usually
+One has a name, one doesn't. Other than two low-level (and usually
 inconsequental) behavioral differences, they're drop-in replacements for one
-another.  The primary difference is that one has a name, so you can tell what
-it does.  So, pick the one that has the name!  Easy choice, right?
+another. The primary difference is that one has a name, so you can tell what
+it does. So, pick the one that has the name! Easy choice, right?
 
-I wish!  Choosing a name is a very real mental tax.  Choosing a *good* name
-is time-consuming and often impossible.  That is why, I feel, anonymous
+I wish! Choosing a name is a very real mental tax. Choosing a _good_ name
+is time-consuming and often impossible. That is why, I feel, anonymous
 functions are used so commonly in JavaScript programs.
 
 Anonymous functions **free the programmer from the responsibility of choosing a
@@ -79,49 +86,51 @@ name**.
 As a practical example, here's some code from the [jQuery DataTables example
 page][datatables], with three nested anonymous functions.
 
-    :::javascript
-    $(document).ready(function() {
-        $('#example').dataTable( {
-            "initComplete": function () {
-                var api = this.api();
-                api.$('td').click( function () {
-                    api.search( this.innerHTML ).draw();
-                } );
-            }
-        } );
-    } );
+```javascript
+$(document).ready(function() {
+  $("#example").dataTable({
+    initComplete: function() {
+      var api = this.api();
+      api.$("td").click(function() {
+        api.search(this.innerHTML).draw();
+      });
+    }
+  });
+});
+```
 
 There are much (**much**!) more deeply nested examples of the Pyramid of Doom,
-but this one serves well as an example.  If it had been implemented with short,
+but this one serves well as an example. If it had been implemented with short,
 named functions, it would be something like the following.
 
-    $(document).ready( create_datatable );
+```javascript
+$(document).ready(create_datatable);
 
-    function create_datatable() {
-        $('#example').dataTable( {
-            "initComplete": init_datatable_api
-        } );
-    }
+function create_datatable() {
+  $("#example").dataTable({
+    initComplete: init_datatable_api
+  });
+}
 
-    function init_datatable_api() {
-        var api = this.api();
-        api.$('td').click( filter_datatable );
-    }
+function init_datatable_api() {
+  var api = this.api();
+  api.$("td").click(filter_datatable);
+}
 
-    function filter_datatable() {
-        api.search( this.innerHTML ).draw();
-    }
+function filter_datatable() {
+  api.search(this.innerHTML).draw();
+}
+```
 
 This updated code isn't perfect, to be sure, but the first line really
-exemplifies this benefits of this approach, to me.  `$(document).ready(
-create_datatable )` reads so clearly.
+exemplifies this benefits of this approach, to me. `$(document).ready( create_datatable )` reads so clearly.
 
 The joy of small functions is a discovery I'm making and re-making every day.
-I've been *craving* a programming style like this for years, but it wasn't
+I've been _craving_ a programming style like this for years, but it wasn't
 until I read [Functional JavaScript][funcjs] (and all the FP talk on
 [r/programming][rprog]) that my eyes opened.
 
-Very, very small, reusable functions are a joy to work with.  Give it a try, if
+Very, very small, reusable functions are a joy to work with. Give it a try, if
 you haven't yet!
 
 <script>

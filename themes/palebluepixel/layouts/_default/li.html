@@ -19,7 +19,7 @@
     <div class="pbp-article-thumbnail">
     <div class="glass-card">
       <div class="glass-card-ratio">
-        <img class="glass-card-bg glass-card-bg-{{ index .Params "thumbpos" | default "default" }}" src="{{ .RelPermalink }}{{ .Params.thumbnail }}">
+        <img class="glass-card-bg glass-card-bg-{{ index .Params "thumbpos" | default "default" }}" src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
         <div class="glass-card-border-outer"></div>
         <div class="glass-card-border-inner"></div>
         <!-- <div class="glass-card-cite"> -->

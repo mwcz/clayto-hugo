@@ -9,6 +9,7 @@ Tags:
  -  mediancut
 description: "Tired of creating color palettes with ColorPal's simple, intuitive drag-and-drop interface?  Me too!  Use this handy command instead."
 thumbnail: ./colorpal_cli_logo.png
+aliases: /2013/11/07/colorpal-cli/
 Mwc: 23
 ---
 
@@ -64,11 +65,11 @@ project.
 
 To visualize what just happened, ColorPal turned this:
 
-![hugepic.png]({filename}/static/images/projects/colorpal-cli/hugepic_small.png "hugepic.png")
+![hugepic.png](hugepic_small.png "hugepic.png")
 
 Into this:
 
-![hugepic.png colors]({filename}/static/images/projects/colorpal-cli/hugepic_colors.png "hugepic.png colors")
+![hugepic.png colors](hugepic_colors.png "hugepic.png colors")
 
 Let's try again with a different image.
 
@@ -76,18 +77,18 @@ Let's try again with a different image.
 
     [ [ 165, 219, 144 ], [ 58, 181, 75 ], [ 254, 250, 203 ] ]
 
-Only three colors this time?  This image has very few colors, so ColorPal
+Only three colors this time? This image has very few colors, so ColorPal
 decided to create a smaller palette.
 
-![issue3.png]({filename}/static/images/projects/colorpal-cli/issue3_small.png "issue3.png")
-![issue3.png colors]({filename}/static/images/projects/colorpal-cli/issue3_colors.png "issue3.png colors")
+![issue3.png](issue3_small.png "issue3.png")
+![issue3.png colors](issue3_colors.png "issue3.png colors")
 
 To generate a specific number of colors, use the `-s` option.
 
     # generate 8 colors from the same image
     node cpal.js -s 8 images/issue3.png
 
-You can also specify the output format.  `json` is the default, but several others are available.
+You can also specify the output format. `json` is the default, but several others are available.
 
 #### Hex output:
 
@@ -111,13 +112,11 @@ You can also specify the output format.  `json` is the default, but several othe
     $color2: rgb(254,250,203);
 
 ColorPal also has a [web interface][4] which you might find more convenient,
-depending on your needs  The command-line utility is very convenient if you
+depending on your needs. The command-line utility is very convenient if you
 need to automate palette generation for a large number of images.
 
-All the code is available [on GitHub][6].  Bug reports and pull requests are
+All the code is available [on GitHub][6]. Bug reports and pull requests are
 much appreciated. :)
-
-I've written other [posts about ColorPal][1].
 
 [1]: /tag/colorpal "Posts about ColorPal"
 [2]: http://nodejs.org/ "Node.js official site"

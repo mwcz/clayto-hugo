@@ -13,7 +13,7 @@ AEJS was an experimental Amiga 500 emulator written in JavaScript. The name
 stands for Amiga Emulator JavaScript and is pronounced "aegis".
 
 <div class="beside">
-<img style="height: 168px" src="icon_aejs.png" title="AEJS logo" alt="AEJS logo" />
+<img style="height: 168px" src="icon_aejs.jpg" title="AEJS logo" alt="AEJS logo" />
 <img style="height: 150px" src="log.png" title="AEJS log" alt="AEJS log" />
 </div>
 
