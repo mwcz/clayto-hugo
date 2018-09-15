@@ -1,25 +1,16 @@
 {{ if or ( .Site.Params.avatar ) ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
 <aside class="beside">
-  {{ with .Site.Params.avatar }}
-  <!-- <div class="c-avatar p-author__avatar"> -->
-  <!--   <img alt="Author Avatar" src="{{ . }}" /> -->
-  <!-- </div> -->
-  {{ end }}
   {{ if or ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
   <div>
-    {{ with .Site.Params.author }}
-    <small class="footer-label">AUTHOR</small>
-    {{ . }}
-    {{ end }}
-    {{ with .Site.Params.bio }}
-    is {{ . }}.
-    {{ end }}
-    {{ with .Site.Params.contact }}
-    <a href="{{ . }}">
-      Contact me</a>.
-    {{ end }}
+    <small class="footer-label">POST</small>
   </div>
   <div>
+    <small class="footer-label">AUTHOR</small>
+    <img style="float: left" src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.contact }}?s=100&d=identicon">
+    {{ .Site.Params.author }}
+    {{ with .Site.Params.bio }}
+    is {{ . }}
+    {{ end }}
     {{ partial "link.html" . }}
   </div>
   {{ end }}

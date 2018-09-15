@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+<script>
+  const infScroll = new InfiniteScroll( '.pbp-article-list', {
+    // options
+    path: '.pbp-pagination [rel=prev]',
+    append: '.pbp-article-li',
+    history: 'replace',
+    hideNav: '.pbp-pagination',
+    scrollThreshold: false,
+    button: '.pbp-infscr-more',
+    status: '.pbp-infscr-load-status',
+    checkLastPage: true,
+    // debug: true,
+  });
+</script>

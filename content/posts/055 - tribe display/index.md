@@ -1,6 +1,7 @@
 ---
 Title: "CEE Tribe Display"
 Date: 2018-05-18
+Categories: Demos
 Tags:
  -  programming
  -  javascript
@@ -18,9 +19,9 @@ draft: true
 
 ## Draft topics
 
- - what is a tribe
- - force reactive graph (springy.js)
- - particle system with three.js
- - keeping the graph active
-    - drifting between tribes
-    - spinning particles
+- what is a tribe
+- force reactive graph (springy.js)
+- particle system with three.js
+- keeping the graph active
+  - drifting between tribes
+  - spinning particles

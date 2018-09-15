@@ -1,6 +1,7 @@
 ---
 Title: "Visualizing Network Traffic with WebGL"
 Date: 2016-07-13
+Categories: Demos
 Tags:
  -  programming
  -  javascript
@@ -9,7 +10,6 @@ Tags:
  -  3d
  -  web
  -  redhat
- -  redhat-summit
 description: "Creating a WebGL particle system to convey network traffic patterns to a live audience at [Red Hat Summit](https://www.redhat.com/summit)."
 thumbnail: ./post-thumbnail.jpg
 aliases: /2016/07/13/visualizing-network-traffic-with-webgl/
@@ -30,6 +30,8 @@ traffic flowing through our system.
 Being a web guy, I wanted to accomplish this on a webpage, but with such a
 large audience, the number of network requests would rocket past what could be
 efficiently rendered with HTML and CSS.
+
+---
 
 ### Tiny Particles of Sand
 
@@ -58,6 +60,8 @@ that many particles is often CPU-bottlenecked. Fancy [tricks][gpgpu] can beat
 that limitation, although such tricks are still tedious in WebGL.
 
 Alright, let's make some particles.
+
+---
 
 ### It's Pixel Time
 
@@ -109,6 +113,8 @@ The particles that enter from the right side of the screen represent network
 traffic from the audience. As you can see in the video below, the origin point
 of those particles moves randomly up and down to add more visual interest.
 
+---
+
 ### Together at Last
 
 After months of collaborating from across the world, it was wonderful to meet
@@ -129,6 +135,8 @@ Watch the full keynote here:
 <iframe style="display: block; margin: 0 auto;" width="100%" height="315" src="https://www.youtube.com/embed/ooA6FmTL4Dk" frameborder="0" allowfullscreen></iframe>
 </figure>
 
+---
+
 ### Glow Rope
 
 Early on, before traffic data was available, I had the particles follow the
@@ -140,6 +148,8 @@ mouse instead. It was pretty fun, so I spun it off into a simple demo called
     <figcaption><p><a class="btn btn-default btn-lg" href="/demos/glow-rope">Play Glow Rope</a></p></figcaption>
 </figure>
 
+---
+
 ### Leaderboard
 
 In addition to the network traffic visualization, I helped build a leaderboard
@@ -150,6 +160,8 @@ then created a WebSocket connection to the _score microservice_ to populate the
 data. Here's a shot of the winners from the live audience.
 
 ![photo of final leaderboard](leaderboard-final.jpg)
+
+---
 
 ### Next Year
 

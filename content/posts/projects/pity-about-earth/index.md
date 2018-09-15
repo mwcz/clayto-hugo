@@ -20,7 +20,10 @@ Tags:
  -  games
 ---
 
-<p class="text-center"><a class="btn btn-default btn-lg" href="http://pae.fun/">Play now!</a></p>
+<center>
+<a class="pbp-btn" href="http://pae.fun/">Play now!</a>
+</center>
+<br>
 
 > Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
 
@@ -36,7 +39,9 @@ The weekend before Ludum Dare, I wrote a post about [preparing for Ludum Dare 38
 
 Those words must have put us under some kind of spell, because over the weekend [Jared][jared] and I built a chaotic, harebrained game about protecting the Earth from asteroids on a direct trajectory with Earth.
 
-<p class="text-center"><a class="btn btn-default btn-lg" href="http://pae.fun/">Play now!</a></p>
+<center>
+<button href="http://pae.fun/">Play now!</button>
+</center>
 
 ---
 
@@ -68,11 +73,17 @@ You can listen to the [Pity About Earth OST](https://veuskemini.bandcamp.com/alb
 
 ## Reception
 
-Some kind streamers have already played Pity About Earth for their audiences. Here are links to the VODs, and pictures of their faces while playing.
+Some kind streamers have already played Pity About Earth for their audiences. Here are ~~links to the VODs~~ _(the VODs expired on Twitch)_, and pictures of their faces while playing.
 
-- [![TogisLp plays Pity About Earth](togislp.png) **TogisLp** plays Pity About Earth...][togislp]
-- [![drazil100 plays Pity About Earth](drazil100.png) **drazil100** plays Pity About Earth...][drazil]
-- [![JenniNexus plays Pity  About Earty](jenninexus.png) **JenniNexus** plays Pity About Earth...][jenni]
+<center>
+
+| face                                                  | name       |
+| ----------------------------------------------------- | ---------- |
+| ![TogisLp plays Pity About Earth](togislp.png)        | TogisLp    |
+| ![drazil100 plays Pity About Earth](drazil100.png)    | drazil100  |
+| ![JenniNexus plays Pity  About Earty](jenninexus.png) | JenniNexus |
+
+</center>
 
 Judging is ongoing and we've gotten some good suggestions so far, mostly centering around the fact that the game is too hard. We'll certainly tune that post-jam, but the game at its core is an arcade survival game, so the difficulty _will_ eventually kill you.
 
@@ -90,11 +101,11 @@ As you can probably tell from the screen orientation, the game was designed with
 
 Thanks to our families, the players, the streamers who've played the game, and all othe other LDJAM participants!
 
-<img hidden src="logo-notitle.png">
+<center>
+<a class="pbp-btn" href="http://pae.fun/">Play now!</a>
+</center>
+<br>
 
-[togislp]: https://www.twitch.tv/videos/138433485?t=02h15m09s
-[drazil]: https://www.twitch.tv/videos/138479164?t=01h48m26s
-[jenni]: https://www.twitch.tv/videos/138561326?t=37m15s
 [play]: http://pae.fun/
 [jared]: https://twitter.com/caramelcode
 [lance]: http://lance.gg/

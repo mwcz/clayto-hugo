@@ -1,3 +1,6 @@
+.icon-mail:before {
+  content: "\e800";
+} /* '' */
 .icon-vimeo-squared:before {
   content: "\f194";
 } /* '' */

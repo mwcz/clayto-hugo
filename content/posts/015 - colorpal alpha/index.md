@@ -1,6 +1,7 @@
 ---
 Title: "ColorPal Alpha"
 Date: 2012-01-16
+Categories: Demos
 Tags:
  -  html5
  -  javascript

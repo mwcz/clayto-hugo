@@ -1,6 +1,7 @@
 ---
 Title: "Kimotion Modding 101"
 Date: 2016-08-28
+Categories: Demos
 Tags:
  -  programming
  -  javascript

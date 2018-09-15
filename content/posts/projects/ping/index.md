@@ -9,8 +9,7 @@ Tags:
  -  javascript
  -  phaserjs
  -  games
- -  red hat
- -  red hat summit
+ -  redhat
  -  gamedev
  -  ping
 ---

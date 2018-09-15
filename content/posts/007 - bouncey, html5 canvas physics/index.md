@@ -1,6 +1,7 @@
 ---
 Title: "Bouncey - canvas physics"
 Date: 2011-11-17
+Categories: Demos
 Tags:
  -  html5
  -  canvas
@@ -25,7 +26,8 @@ It covers [Newton's laws of motion](http://en.wikipedia.org/wiki/Newton's_laws_o
 #cnvs {
     margin: 0 auto;
     display: block;
-    border: 1px solid black;
+    width: 100%;
+    border: 1px solid #464646;
     -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
        -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
          -o-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
@@ -90,7 +92,7 @@ window.onload = function() {
     Sorry, your browser does not support HTML5 canvas.  Lame.
 </canvas>
 
-<button onclick="paused++;paused%=2;">Pause</button>
+<button onclick="paused++;paused%=2;this.textContent=paused?'Play':'Pause'">Pause</button>
 
 An updated (but less colorful) version of bouncey is available
 [here]({filename}/posts/008 - bouncey returns/008 - bouncey returns.md).

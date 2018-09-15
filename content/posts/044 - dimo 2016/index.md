@@ -1,6 +1,7 @@
 ---
 Title: "Kimotion at geekSPARK 2016"
 Date: 2017-01-12
+Categories: Demos
 Tags:
  -  programming
  -  javascript

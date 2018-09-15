@@ -11,5 +11,13 @@
   font-size: 1.6 * @pbp-base-font-size;
   a {
     color: @pbp-blue;
+    transition: color 0.2 ease-out;
+    &:hover {
+      color: lighten(@pbp-blue, 32%);
+    }
+    &:active,
+    &:focus {
+      color: darken(@pbp-blue, 16%);
+    }
   }
 }

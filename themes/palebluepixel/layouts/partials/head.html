@@ -2,10 +2,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   {{ with .Title | default .Site.Title }}
-  <title>{{ . }}</title>
   <meta property="og:title" content="{{ . }}" />
   <meta name="twitter:title" content="{{ . }}" />
   {{ end }}
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
 
   {{ with .Description | default .Site.Params.subtitle }}
   <meta name="description" content="{{ . }}">

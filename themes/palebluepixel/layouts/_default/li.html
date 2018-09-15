@@ -15,20 +15,20 @@
     </time>
   </div>
   {{ if .Params.thumbnail }}
-  <a class="pbp-article-thumbnail" href="{{ .Permalink }}">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="{{ .Permalink }}">
     <div class="pbp-article-thumbnail">
-    <div class="glass-card">
-      <div class="glass-card-ratio">
-        <img class="glass-card-bg glass-card-bg-{{ index .Params "thumbpos" | default "default" }}" src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
-        <div class="glass-card-border-outer"></div>
-        <div class="glass-card-border-inner"></div>
-        <!-- <div class="glass-card-cite"> -->
-        <!--     <img class="glass-card-author-img" src="https://pbs.twimg.com/profile_images/504363485363318785/it9hd5ae_400x400.jpeg"> -->
-        <!--     <p class="glass-card-author">Michael Clayton</p> -->
-        <!--     <p class="glass-card-date">Dec 14</p> -->
-        <!-- </div> -->
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-{{ index .Params "thumbpos" | default "default" }}" src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          <!-- <div class="glass-card-cite"> -->
+          <!--     <img class="glass-card-author-img" src="https://pbs.twimg.com/profile_images/504363485363318785/it9hd5ae_400x400.jpeg"> -->
+          <!--     <p class="glass-card-author">Michael Clayton</p> -->
+          <!--     <p class="glass-card-date">Dec 14</p> -->
+          <!-- </div> -->
+        </div>
       </div>
-    </div>
     </div>
   </a>
   {{ end }}

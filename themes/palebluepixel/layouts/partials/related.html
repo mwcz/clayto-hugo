@@ -1,11 +1,11 @@
 {{ $related := .Site.RegularPages.Related . | first 6 }}
 {{ with $related }}
 <section>
-  {{/*
-  <h3>Next up</h3>
-  */}}
-  <ul class="pbp-related">
+  <h3>ALSO OF INTEREST...</h3>
+  <div class="pbp-related">
     {{ range . }}
+    {{ .Render "li" }}
+    {{/*
     <li>
       {{ if .Params.thumbnail }}
       <a href="{{ .Permalink }}">
@@ -14,8 +14,9 @@
       </a>
       {{ end }}
     </li>
+    */}}
     {{ end }}
-  </ul>
+  </div>
 </section>
 {{ end }}
 

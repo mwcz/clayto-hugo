@@ -1,26 +1,30 @@
 {{ if or ( .Site.Params.twitter ) ( .Site.Params.facebook ) ( .Site.Params.instagram ) ( .Site.Params.googleplus ) ( .Site.Params.github ) ( .Site.Params.gitlab ) ( .Site.Params.npm ) ( .Site.Params.codepen ) ( .Site.Params.dribbble ) ( .Site.Params.fivehundredpx ) ( .Site.Params.flickr ) ( .Site.Params.pinterest ) ( .Site.Params.tumblr ) ( .Site.Params.vimeo ) ( .Site.Params.youtube ) ( .Site.Params.linkedin ) }}
-<small class="footer-label">
-  SOCIAL LINKS
-</small>
 <ul class="pbp-social-links">
+  {{ with .Site.Params.contact }}
+  <li>
+    <a title="Email me" href="mailto:{{ . }}">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  {{ end }}
   {{ with .Site.Params.github }}
   <li>
-    <a href="https://github.com/{{ . }}" target="_blank">
-      <span class="demo-icon icon-github-squared"></span>
+    <a title="my GitHub activity" href="https://github.com/{{ . }}" target="_blank">
+      <span class="icon-github-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.codepen }}
   <li>
-    <a href="https://codepen.io/{{ . }}" target="_blank">
-      <span class="demo-icon icon-codepen"></span>
+    <a title="my CodePens" href="https://codepen.io/{{ . }}" target="_blank">
+      <span class="icon-codepen"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.twitter }}
   <li>
-    <a href="https://twitter.com/{{ . }}" target="_blank">
-      <span class="demo-icon icon-twitter-squared"></span>
+    <a title="my Twitter" href="https://twitter.com/{{ . }}" target="_blank">
+      <span class="icon-twitter-squared"></span>
     </a>
   </li>
   {{ end }}
@@ -126,8 +130,8 @@
   {{ end }}
   {{ with .Site.Params.vimeo }}
   <li>
-    <a href="https://vimeo.com/{{ . }}" target="_blank">
-      <span class="demo-icon icon-vimeo-squared"></span>
+    <a title="my Vimeo videos" href="https://vimeo.com/{{ . }}" target="_blank">
+      <span class="icon-vimeo-squared"></span>
     </a>
   </li>
   {{ end }}

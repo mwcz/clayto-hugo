@@ -1,6 +1,7 @@
 ---
 Title: "DiMo: The Deconstruction of Falling Stars"
 Date: 2014-10-30
+Categories: Demos
 Tags:
  -  programming
  -  javascript

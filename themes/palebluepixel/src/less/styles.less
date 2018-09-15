@@ -22,6 +22,9 @@
 @import "toc";
 @import "social-links";
 @import "fade-in";
+@import "button";
+@import "infscr";
+@import "tables";
 
 blockquote {
   color: darken(@pbp-fg-color, 42%);
@@ -272,7 +275,8 @@ figure {
   transition: 0.1s opacity linear;
   text-decoration: none;
   border-bottom: none;
-  &:hover {
+  &:hover,
+  &:focus {
     border-bottom: none;
   }
 }

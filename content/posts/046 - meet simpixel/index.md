@@ -1,6 +1,7 @@
 ---
 Title: "Meet SimPixel"
 Date: 2017-03-10
+Categories: Demos
 Tags:
  -  programming
  -  javascript
@@ -16,14 +17,14 @@ thumbnail: ./thumb.jpg
 Mwc: 46
 ---
 
-I have someone I'd like you to meet.  SimPixel, meet everyone.  Everyone,
+I have someone I'd like you to meet. SimPixel, meet everyone. Everyone,
 SimPixel.
 
 <div id="simpixel-container"></div>
 
 # SimPixel introduces itself
 
-SimPixel is a WebGL visualizer for LED displays, *very* much like the ones Adam
+SimPixel is a WebGL visualizer for LED displays, _very_ much like the ones Adam
 and Dan build over at [Maniacal Labs][mlabs].
 
 <style type="text/css">
@@ -42,10 +43,10 @@ and Dan build over at [Maniacal Labs][mlabs].
 <img src="maniacal.jpg" alt="some Maniacal Labs LED projects" />
 </figure>
 
-My working theory about why it's *so* much like their displays is that I built
-most of SimPixel while sitting at Adam's workbench.  I don't know, there could
-be a connection.  If you too would like to take a seat at Adam's illustrious
-workbench someday, [hack away][source].  You can also try the [fullscreen
+My working theory about why it's _so_ much like their displays is that I built
+most of SimPixel while sitting at Adam's workbench. I don't know, there could
+be a connection. If you too would like to take a seat at Adam's illustrious
+workbench someday, [hack away][source]. You can also try the [fullscreen
 demo][demo].
 
 [BiblioPixel][biblio], <abbr title="Maniacal Labs">ML's</abbr> light animation
@@ -54,8 +55,8 @@ protocol.
 
 # The Protocol
 
-By itself, SimPixel is useless.  To turn on the lights, it connects to a
-WebSocket service.  That service is expected to send certain messages, namely a
+By itself, SimPixel is useless. To turn on the lights, it connects to a
+WebSocket service. That service is expected to send certain messages, namely a
 configuration message followed by a series of color messages.
 
 ## Configuration message
@@ -78,8 +79,7 @@ follows.
 The leading `0x0000` opcode identifies this as a configuration message,
 followed by a series of 16-bit signed integers which indicate the 3D
 coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,Z<sub>2</sub>,
-    ..., X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code>
-
+..., X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code>
 
 ## Color message
 
@@ -104,19 +104,18 @@ of the form:
 <code>R<sub>1</sub>,G<sub>1</sub>,B<sub>1</sub>,R<sub>2</sub>,G<sub>2</sub>,B<sub>2</sub>,
 ..., R<sub>n</sub>,G<sub>n</sub>,B<sub>n</sub></code>
 
-
 For a concise reference, see [PROTOCOL.md][protocol].
 
 # The Ghost in the Recording
 
 The live demo at the top of this post the protocol, but it isn't connected to
-any WebSocket service.  Instead, it's using a recording apparatus that I
-cobbled together.  I pushed a configuration frame and a bunch of color frames
+any WebSocket service. Instead, it's using a recording apparatus that I
+cobbled together. I pushed a configuration frame and a bunch of color frames
 into an array, converted their ArrayBuffers into base64 strings, and saved
 those into [a quite large JSON recording file][rec].
 
-I only mention it to lead up to the following.  While editing the recording
-JSON file, I zoomed out a little and something caught my eye.  I zoomed out
+I only mention it to lead up to the following. While editing the recording
+JSON file, I zoomed out a little and something caught my eye. I zoomed out
 more and a pattern took shape.
 
 Here's a screenshot of the JSON file in my terminal, zoomed out as far as it'll
@@ -125,7 +124,7 @@ go.
 ![image of base64-encoded recording](recording-base64.png)
 
 The waves of red, green, and blue is evident even in this doubly-encoded
-format.  Pretty cool.
+format. Pretty cool.
 
 <!-- SimPixel embedded -->
 

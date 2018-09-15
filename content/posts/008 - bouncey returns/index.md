@@ -53,7 +53,7 @@ Choose an initial state:
     Sorry, your browser does not support HTML5 canvas.  Lame.
 </canvas>
 
-<button onclick="paused++;paused%=2;">Pause</button>
+<button onclick="paused++;paused%=2;this.textContent=paused?'Play':'Pause'">Pause</button>
 
 <pre>
   velocity sum: <span id="txt_velocity_sum">NONE</span>

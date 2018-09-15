@@ -13,7 +13,7 @@
       {{if .HasPrev}}
       <a rel="next" href="{{ .Prev.URL }}">Prev</a>
       {{else}}
-      <a disabled rel="prev">Prev</a>
+      <!-- <a disabled rel="next">Prev</a> -->
       {{end}}
     </div>
     <div class="pbp-pagination-bar pbp-pagination-progress"></div>
@@ -22,8 +22,34 @@
       {{if .HasNext}}
       <a rel="prev" href="{{ .Next.URL }}">Next</a>
       {{else}}
-      <a disabled rel="prev">Next</a>
+      <!-- <a disabled rel="prev">Next</a> -->
       {{end}}
     </div>
   </div>
 </nav>
+
+{{ if .HasNext }}
+<section class="pbp-infscr">
+  <button class="pbp-infscr-more">Load more posts</button>
+  <div class="pbp-infscr-load-status" style="display: none">
+    <p class="infinite-scroll-request">Loading...</p>
+    <p class="infinite-scroll-last">End of content</p>
+    <p class="infinite-scroll-error">No more pages to load</p>
+  </div>
+<section>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+<script>
+  const infScroll = new InfiniteScroll( '.pbp-article-list', {
+    // options
+    path: '.pbp-pagination [rel=prev]',
+    append: '.pbp-article-li',
+    history: 'replace',
+    hideNav: '.pbp-pagination',
+    scrollThreshold: false,
+    button: '.pbp-infscr-more',
+    status: '.pbp-infscr-load-status',
+    checkLastPage: true,
+    debug: true,
+  });
+</script>
+{{ end }}

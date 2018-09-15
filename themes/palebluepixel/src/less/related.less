@@ -3,8 +3,23 @@
 .pbp-related {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: @padding-base-vertical * 1.2;
+  grid-gap: 2 * @padding-large-vertical 1.2 * @padding-base-vertical;
 
   list-style: none;
   padding: 0;
+
+  .pbp-article-li {
+    .pbp-article-li.vertical();
+
+    margin-bottom: 0;
+
+    .pbp-article-title {
+      font-size: 1.2rem;
+    }
+
+    .pbp-article-meta,
+    .pbp-article-summary {
+      display: none;
+    }
+  }
 }

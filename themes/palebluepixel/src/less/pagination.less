@@ -36,7 +36,8 @@
     &:not([disabled]) {
       color: @pbp-fg-color;
       outline-color: darken(@pbp-fg-color, 64%);
-      &:hover {
+      &:hover,
+      &focus {
         background-color: lighten(@pbp-bg-color, 8%);
       }
     }
