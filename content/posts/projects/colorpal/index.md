@@ -11,13 +11,13 @@ Tags:
 thumbnail: ./icon_colorpal.png
 ---
 
-[ColorPal][4] is an HTML5 color palette generator.  Here's a gif demonstrating
-how to use ColorPal.  The color quality in gifs is pretty terrible, but you can
+[ColorPal][4] is an HTML5 color palette generator. Here's a gif demonstrating
+how to use ColorPal. The color quality in gifs is pretty terrible, but you can
 still see the basic usage.
 
 Try it out at [colorpal.org][cpal].
 
-<p class="col-xs-12 col-md-8"><img class="img-responsive" src="{filename}/static/images/projects/recording_colorpal.gif" title="ColorPal recording" alt="ColorPal recording" /></p>
+<p class="col-xs-12 col-md-8"><img class="img-responsive" src="recording_colorpal.gif" title="ColorPal recording" alt="ColorPal recording" /></p>
 
 ColorPal also has a [command-line interface][3], powered by [Node.js][2].
 

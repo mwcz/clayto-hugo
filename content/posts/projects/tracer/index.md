@@ -18,17 +18,21 @@ Tags:
  -  tracer
 ---
 
+<center>
+<a class="pbp-btn pbp-play" href="http://pae.fun/">Play now!</a>
+</center>
+
 Tracer is a 3D connect-the-dots game that [Jared][jared] and I created for
 Ludum Dare 37.
 
 <p class="text-center"><a class="btn btn-default btn-lg" href="http://scripta.co/tracer">Play now!</a></p>
 
-![menu screen of tracer](/static/images/projects/tracer/title.jpg)
+![menu screen of tracer](title.jpg)
 
 We were very happy with the ratings Tracer received. In the _Innovation_
 category, we placed 5th out of 1,489 games.
 
-![image of playing tracer](/static/images/projects/tracer/head.jpg)
+![image of playing tracer](head.jpg)
 
 A more detailed blog post is available at the [Scripta Games blog][blog].
 

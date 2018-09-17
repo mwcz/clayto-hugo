@@ -33,8 +33,8 @@ web-based, you can...
 </style>
 
 <figure class="sqoff-grid">
-    <img src="{filename}/static/images/projects/squareoff/title.png" alt="Square Off title screen" />
-    <img src="{filename}/static/images/projects/squareoff/screenshot.png" alt="Square Off gameplay" />
+    <img src="title.png" alt="Square Off title screen" />
+    <img src="screenshot.png" alt="Square Off gameplay" />
 </figure>
 
 We were both very happy with how the game turned out, especially since this was

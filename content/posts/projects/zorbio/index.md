@@ -25,7 +25,7 @@ Zorbio is brought to you by my good friend Jared Sprague and I, via our small ga
 
 <p class="text-center"><a class="btn btn-default btn-lg" href="http://zor.bio">Play now!</a></p>
 
-<img src="{filename}/static/images/projects/icon_zorbio.jpg" alt="screenshot of Zorbio" />
+<img src="icon_zorbio.jpg" alt="screenshot of Zorbio" />
 
 [fb]: https://www.facebook.com/zorbio/
 [scripta]: http://scripta.co/

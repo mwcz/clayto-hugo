@@ -1,14 +1,15 @@
 ---
 Title: "clayto.com"
 Date: 2003-01-01
-url: /projects/clayto.com
+url: /projects/clayto
+aliases: /projects/clayto.com
 Categories: Projects
 thumbnail: icon_clayto.jpg
 ---
 
 [clayto.com][1] is my homemade photography website.
 
-![mwcz.org screenshot]({filename}/static/images/projects/screenshot_clayto.png "clayto.com screenshot")
+![mwcz.org screenshot](screenshot_clayto.png)
 
 I started clayto.com in 2003. Inspired by [Noah Grey's][6] photography
 presentation ideas
@@ -19,7 +20,7 @@ presentation ideas
 
 Here are four examples of the color schemes:
 
-![example of color theme matching images]({filename}/static/images/projects/screenshot_clayto_palettes_small.png "example of color theme matching images")
+![example of color theme matching images](screenshot_clayto_palettes_small.png)
 
 The color schemes are automatically generated when a photo is posted. A
 "suggested palette" is displayed

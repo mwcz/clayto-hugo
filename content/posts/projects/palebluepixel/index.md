@@ -5,23 +5,24 @@ url: /projects/palebluepixel
 thumbnail: ./icon_palebluepixel.jpg
 ---
 
-[Pale Blue Pixel][9] is this blog.  I write technical posts about web
+[Pale Blue Pixel][9] is this blog. I write technical posts about web
 development
- -  image processing
- -  amateur graphics
- -  and generally celebrating the
-art and craft of programming.  The name *Pale Blue Pixel* is a meek tribute to
-Carl Sagan's [Pale Blue Dot][pbd].
 
-![palebluepixel.org screenshot]({filename}/static/images/projects/screenshot_palebluepixel.png "palebluepixel.org screenshot")
+- image processing
+- amateur graphics
+- and generally celebrating the
+  art and craft of programming. The name _Pale Blue Pixel_ is a meek tribute to
+  Carl Sagan's [Pale Blue Dot][pbd].
+
+![palebluepixel.org screenshot](screenshot_palebluepixel.png "palebluepixel.org screenshot")
 
 It's currently powered by:
 
- - **[Python][2]** - a large and powerful snake
- - **[Pelican][3]** - an awkwardly-shaped sea bird
- - **CSS Grid** - framework-free CSS thanks to grid and flexbox
- - **[LESS][5]** - CSS preprocessor
- - **[GitHub pages][7]** - hosting
+- **[Python][2]** - a large and powerful snake
+- **[Pelican][3]** - an awkwardly-shaped sea bird
+- **CSS Grid** - framework-free CSS thanks to grid and flexbox
+- **[LESS][5]** - CSS preprocessor
+- **[GitHub pages][7]** - hosting
 
 [2]: http://python.org/ "Python website"
 [3]: http://blog.getpelican.com/ "Pelican website"

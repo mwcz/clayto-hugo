@@ -17,7 +17,7 @@ Tags:
  -  physics
 ---
 
-<img class="col-md-7" src="{filename}/static/images/projects/dimo/setup.jpg" alt="night-before setup image" style="padding-left: 0; padding-right: 30px" />
+<img class="col-md-7" src="setup.jpg" alt="night-before setup image" style="padding-left: 0; padding-right: 30px" />
 
 Dimo: Particles is an artistic particle physics simulation and interactive art
 exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben

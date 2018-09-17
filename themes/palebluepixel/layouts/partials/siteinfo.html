@@ -3,6 +3,21 @@
   {{ if or ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
   <div>
     <small class="footer-label">POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}" class="c-tag">#{{ . }}</a>
+        {{ end }}
+      </span>
+    </div>
   </div>
   <div>
     <small class="footer-label">AUTHOR</small>

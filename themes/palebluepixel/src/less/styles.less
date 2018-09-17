@@ -272,11 +272,15 @@ figure {
 }
 
 .heading-anchor {
+  color: darken(@pbp-fg-color, 32%);
   transition: 0.1s opacity linear;
   text-decoration: none;
   border-bottom: none;
   &:hover,
   &:focus {
-    border-bottom: none;
+    color: darken(@pbp-fg-color, 16%);
+  }
+  &:active {
+    color: @pbp-fg-color;
   }
 }

@@ -16,6 +16,11 @@ thumbpos: tl
 Mwc: 47
 ---
 
+<center>
+<a class="pbp-btn" href="http://scripta.co/in-orange-light/">Play now!</a>
+</center>
+<br>
+
 Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend's (now wife's) eye was caught by the same screen, and we crossed the room to investigate.
 
 <img src="kr0-emp.jpg">

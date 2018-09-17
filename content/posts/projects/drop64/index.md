@@ -18,16 +18,16 @@ Check it out at [drop64.com][2].
 
 Here's a demo recording of how easy it is.
 
-![Drop64 recording]({filename}/static/images/projects/drop64/recording.gif)
+![Drop64 recording](recording.gif)
 
 Some benefits of Data URIs are:
 
- - Fewer HTTP requests means faster page loads
- - avoid cross-origin resource loading issues (fonts in Firefox, for example)
- - you can paste the Data URI directly into your web browser URL bar to view the file (occasionally convenient)
+- Fewer HTTP requests means faster page loads
+- avoid cross-origin resource loading issues (fonts in Firefox, for example)
+- you can paste the Data URI directly into your web browser URL bar to view the file (occasionally convenient)
 
-If you noticed the similarity to [ColorPal][3], well done!  I reused a lot of
-ColorPal's code in Drop64.  Almost all of it, in fact.
+If you noticed the similarity to [ColorPal][3], well done! I reused a lot of
+ColorPal's code in Drop64. Almost all of it, in fact.
 
 For more information on Data URIs, check out [MDN][4] or the original [RFC][5].
 

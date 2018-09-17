@@ -17,7 +17,7 @@ Tags:
 Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes
 for your entertainment.
 
-![fireflies title screen](/static/images/projects/fireflies/title.jpg)
+![fireflies title screen](title.jpg)
 
 <p class="text-center"><a class="btn btn-default btn-lg" href="/static/projects/fireflies">Live demo!</a></p>
 
