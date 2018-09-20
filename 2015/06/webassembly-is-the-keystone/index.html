@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="WebAssembly is the Keystone" />
+  <meta name="twitter:title" content="WebAssembly is the Keystone" />
+  
+  <title>WebAssembly is the Keystone - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff.">
+  <meta property="og:description" content="Creative coding and web stuff.">
+  <meta name="twitter:description" content="Creative coding and web stuff.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2015/06/webassembly-is-the-keystone/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/asm.png" />
+  <meta name="twitter:image" content="https://clayto.com/asm.png" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>WebAssembly is the Keystone</h1>
+  </header>
+  
+  
+  <section>
+    <p>Within the last two days, WebAssembly (<strong>wasm</strong>) has graced the eyeballs of
+every JavaScript developer. If wasm is new to you, the articles linked at the
+end of this post fully describe what wasm <em>is</em>.</p>
+
+<p>Since that&rsquo;s been covered, I&rsquo;d like to talk about one impact wasm will
+hopefully have on future of computing. To set the scene, a quote from the man
+himself:</p>
+
+<blockquote>
+    <p>Meanwhile, I took one quick step that would demonstrate the concept of the
+        Web as a universal, all-encompassing space.  I programmed the browser so it
+        could follow links not only to files on HTTP servers, &hellip;</p>
+    <p>In one fell swoop, a huge amount of the information that was already on the
+        Internet was available on the Web.</p>
+    <footer>
+        <cite>
+            Tim Berners-Lee, Weaving the Web, 1999
+        </cite>
+    </footer>
+</blockquote>
+
+<p>Back then, Tim enabled the first Web browser to follow links to newsgroups and
+FTP servers. By linking up a slew of existing content, the Web became much
+more useful.</p>
+
+<p>This realization is pretty potent. The web has taken over the world because of
+the power of linking things together, especially things not yet on the web. I
+was initially surprised that Tim saw the now-humble URL as the most vital Web
+technology and had it standardized before HTTP and HTML.</p>
+
+<p>Today, we can follow URLs to images, videos, articles, text, PDFs; most types
+of media are linkable. Clicking/tapping a link is the most commonplace thing
+in the world.</p>
+
+<p>There&rsquo;s one type of content that still isn&rsquo;t linkable, though: <em>Applications</em>.</p>
+
+<p>For the past ten years, the JavaScript revolution has been trying to make real
+the dream of <strong>following a URL to an application</strong>.</p>
+
+<p>It&rsquo;s been a circuitous, roundabout, and partially successful journey.
+<a href="http://emscripten.org/">Emscripten</a> has made it possible and <a href="http://asmjs.org/">asm.js</a> made it
+faster.</p>
+
+<p>My great hope for WebAssembly is that it can bring the world&rsquo;s teeming vault of
+existing applications onto the web, with very little fuss. Imagine using
+Photoshop merely by going to <code>photoshop.adobe.com</code>, and you&rsquo;ll have some idea
+of where WebAssembly might carry us.</p>
+
+<hr />
+
+<p>After the WebAssembly announcement, I read every bit of documentation currently
+available, about a dozen articles, joined the <a href="https://www.w3.org/community/webassembly/">W3C Community Group</a>,
+and have been hanging out in the IRC channel
+(<code>irc://irc.w3.org:6667/#webassembly</code>). I don&rsquo;t want to speak too soon, but
+I&rsquo;m pretty well convinced that wasm is the next revolution.</p>
+
+<!-- I'm imagining a future where this is a desktop shortcut:
+
+    wasm://adobe.com/photoshop
+
+A few thoughts about the future of wasm:
+
+### Live installs
+
+wasm has the potential to be the LiveCD of applications.  Imagine visiting a
+wasm application in your browser.  If it's great, you might want to install it
+locally.
+
+
+-->
+
+<p>For further reading, here are some of the best articles I&rsquo;ve found:</p>
+
+<ul>
+<li><a href="https://github.com/WebAssembly/design/blob/master/FAQ.md">The wasm FAQ covers nearly everything</a></li>
+<li><a href="https://blog.mozilla.org/luke/2015/06/17/webassembly/">Luke Wagner&rsquo;s initial announcement</a></li>
+<li><a href="https://brendaneich.com/2015/06/from-asm-js-to-webassembly/#buried-lede">Brendan Eich&rsquo;s practical and lighthearted appeal</a></li>
+<li><a href="https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6">Eric Elliot makes a strong and diverse case</a></li>
+<li><a href="http://arstechnica.com/information-technology/2015/06/the-web-is-getting-its-bytecode-webassembly/">ArsTechnica brings wasm to a wider audience</a></li>
+</ul>
+
+<div hidden>
+<img src="asm.png">
+</div>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/01/naming-names---anonymity-is-dead/">Naming Names - Anonymity is Dead</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Naming things is hard enough, and JavaScript doesn&rsquo;t make it any easier.  Should anonymous functions be considered harmful?
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-01-01T00:00:00Z">
+      Jan 1, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/01/naming-names---anonymity-is-dead/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2015/01/naming-names---anonymity-is-dead//./naming.gif">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">DiMo: The Deconstruction of Falling Stars</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The construction of a WebGL particle physics gravity simulation <em>slash</em> interactive art installation.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-10-30T00:00:00Z">
+      Oct 30, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars//swath-colors.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life//./dimo-kids.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/03/rgb-webgl-color-cube/">RGB WebGL Color Cube</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
+Launch live demo! and view the code.
+Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support WebGL, here&rsquo;s a video to enjoy while you download Firefox Nightly.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-03-23T00:00:00Z">
+      Mar 23, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/03/rgb-webgl-color-cube/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/03/rgb-webgl-color-cube//./colorcube.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/">Introducing Drop64, ezpz data URI generator</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Speed-hacking an old project for fun and&hellip; fun.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-02-25T00:00:00Z">
+      Feb 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator//recording.gif">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/07/colorpal-output-update/">ColorPal Output Update</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Hi pals.
+This is a speedy post about a speedy update I made today to ColorPal, an HTML5 tool I wrote that automatically generates color palettes from a photograph.
+Previously, ColorPal provided hex codes for each color extracted from the image. Eight individual &lt;input&gt;s at the bottom of the page displayed the colors.
+I use ColorPal a lot (my own dogfood and all that) when designing websites, and it wasn&rsquo;t long before I got fed up (hah!
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-07-30T00:00:00Z">
+      Jul 30, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/07/colorpal-output-update/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/07/colorpal-output-update//after.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2015-06-20T00:00:00Z">
+          Jun 20, 2015
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/wasm" class="c-tag">#wasm</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

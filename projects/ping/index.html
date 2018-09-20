@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PING ACCESS LABS CHALLENGE</title>
+        <link rel="stylesheet" href="styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://zipt.org/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="https://zipt.org/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+    </head>
+    <body>
+
+        <div id="description">
+            <div class="progress"></div>
+            <p>
+                <a href="http://palebluepixel.org/projects/ping">View project</a> or <a
+                    href="https://github.com/redhataccess/pinglabs/">View
+                    source</a>
+            </p>
+        </div>
+
+        <div id="game-container">
+            <div id="phaser-canvas-wrapper"></div>
+
+            <div id="help">
+                <ul>
+                    <li>
+                        &nbsp;<span class="gamepad-button">&harr;</span> or <span class="gamepad-button">&varr;</span> Move paddle
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;<span class="gamepad-button">Z</span> Select powerup
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;<span class="gamepad-button">X</span> Use powerup
+                    </li>
+                </ul>
+                <p class="help-desc">
+                    Earn points for scoring goals, plus points points just for staying alive.  When someone scores on you, you lose a life.  Don't let that happen.  Move while hitting the puck to angle your shots.
+                </p>
+            </div>
+        </div>
+
+        <div id="pause-btn">Puck paused</div>
+
+        <script src="lib/requirejs/require.js" data-main="require.config.js"></script>
+    </body>
+</html>
+

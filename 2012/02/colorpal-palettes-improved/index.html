@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="ColorPal palettes improved!" />
+  <meta name="twitter:title" content="ColorPal palettes improved!" />
+  
+  <title>ColorPal palettes improved! - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff.">
+  <meta property="og:description" content="Creative coding and web stuff.">
+  <meta name="twitter:description" content="Creative coding and web stuff.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2012/02/colorpal-palettes-improved/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/thumb.png" />
+  <meta name="twitter:image" content="https://clayto.com/thumb.png" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>ColorPal palettes improved!</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>In my <a href="https://clayto.com/2012/01/16/colorpal-alpha/">last post</a> on the subject, I introduced
+ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with
+certain types of images, so I fixed it. :)</p>
+
+<hr />
+
+<p><a href="https://clayto.com/projects/colorpal"><img src="colorpal_logo.png" alt="ColorPal logo" title=""
+/></a></p>
+
+<p>Color palettes will now match the image even better. Especially for images
+with infrequent but <em>important</em> colors. Here&rsquo;s a comparison of the old and new
+methods, on an image that is mostly black:</p>
+
+<p><img src="median-mean-comparison.png" alt="comparison of palettes generated with median and
+mean" /></p>
+
+<p>You can see that with the old method, the black pixels definitely took over the
+palette.</p>
+
+<p><a href="https://clayto.com/projects/colorpal">Try it with your own images!</a></p>
+
+<p>For some images, this change won&rsquo;t affect palettes at all. But for images with
+low-population, high-importance colors, like the one above, palettes will look
+<em>much</em> better!</p>
+
+<p>Technical discussion below.</p>
+
+<h1 id="why-the-median-in-median-cut">Why the &lsquo;median&rsquo; in median-cut?</h1>
+
+<p>Median Cut is an algorithm typically used to reduce the number of colors in an
+image.</p>
+
+<p><img src="median-cut-example.png" alt="16 million colors versus 16 colors" /></p>
+
+<p>The steps to perform median cut are fairly straightforward:</p>
+
+<ol>
+<li>Find the smallest box which contains all the colors.</li>
+<li>Sort the enclosed colors along the longest axis of the box.</li>
+<li>Split the box into two regions at median of the sorted list.</li>
+<li>Repeat the above process until the original color space has been divided into N regions where N is the number of colors you want.</li>
+</ol>
+
+<p>Not too bad, right? The question remains, though, why median?</p>
+
+<p>Mean, median, and mode all attempt to measure the
+<a href="http://en.wikipedia.org/wiki/Location_parameter">location</a> of a probability
+distribution. Worded more intuitively&hellip; they try to find the center of a set
+of numbers. They just employ different definitions of &ldquo;center&rdquo;.</p>
+
+<p><img src="mean_median_mode.png" alt="mean, median, and mode graphed" />
+(Thanks <a href="http://en.wikipedia.org/wiki/Median">Wikipedia</a>)</p>
+
+<p>As you can see clearly in the dashed data set, the mean tends to follow the
+tail. In other words, mean is useful when outliers are important. When
+generating a color palette, outliers are essential. Outliers may be the small
+streak of color in an otherwise drab sky, or a small red rose in the middle of
+a green field.</p>
+
+<p>The goal of median cut is <em>not</em> to generate a color palette. It&rsquo;s to
+efficiently reduce the number of colors in an image. Since my goal with
+ColorPal is to find good-lookin&rsquo; colors, I&rsquo;ve modified the algorithm to split
+boxes at the <strong>mean</strong> instead of the <strong>median</strong>. Mean splits boxes closer to
+the outliers, which keeps low-population colors nicely segregated from the
+high-population colors.</p>
+
+<p>Thus step 3 becomes:</p>
+
+<ul>
+<li>Split the box into two regions at the <b>mean</b> of the sorted list.</li>
+</ul>
+
+<p>The result? Mean Cut! Also: awesome color palettes.</p>
+
+<h2 id="interesting-side-note-on-color-distributions">Interesting side-note on color distributions</h2>
+
+<p>Interestingly, photographs of nature tend to have nice, close-to-normal color
+distributions. A &ldquo;normal distribution&rdquo; is a formal term for a &ldquo;bell curve&rdquo;.</p>
+
+<p>Check out the red, green, and blue distributions for a photograph of a forest.</p>
+
+<p><img src="forest_r.png" alt="Forest red   pixel distribution" />
+<img src="forest_g.png" alt="Forest green pixel distribution" />
+<img src="forest_b.png" alt="Forest blue  pixel distribution" /></p>
+
+<p>For comparison, here are the distributions for a shot of NYC.</p>
+
+<p><img src="city_r.png" alt="City   red   pixel distribution" />
+<img src="city_g.png" alt="City   green pixel distribution" />
+<img src="city_b.png" alt="City   blue  pixel distribution" /></p>
+
+<h2 id="what-s-next-for-colorpal-color-spaces">What&rsquo;s next for ColorPal? Color spaces.</h2>
+
+<p>Mean-cut improves ColorPal dramatically for some images, but it&rsquo;s still not
+perfect. Perfection probably won&rsquo;t be attainable, but there are still many
+ways to improve.</p>
+
+<p>My next test will be converting to a color space other than RGB.</p>
+
+<p>HSL is common, and the RGB/HSL conversion formulas are in my very old JSImage
+project. It may not turn out well, though, as the concept of &ldquo;widest box&rdquo;
+loses most of its meaning when each axis is a completely different unit of
+measure. Although, in a way, I suppose RGB has a similar problem. Red, Green,
+and Blue could be thought of as unrelated units. I&rsquo;ll try it out and see how
+it goes. I wonder if my old JavaScript RGB/HSL code has rotted away yet&hellip;</p>
+
+<p>Most likely, I&rsquo;ll skip HSL and try one of the
+<a href="http://en.wikipedia.org/wiki/Lab_color_space">Lab</a> color spaces first, since
+they are not composed linear values like RGB and HSL. Instead, Lab color
+spaces use non-linear scales that closely match human perception of color.
+Perfect for my purposes. How fortuitious for me that CIE invented it way back
+in 1931.</p>
+
+<p>There are three &ldquo;Lab&rdquo; color spaces: XYZ, Hunter-Lab,
+and CIELAB. XYZ will be first to the plate, since the RGB/XYZ formulas are
+the simplest. Let me take this opportune moment to plug
+<a href="http://www.easyrgb.com/index.php?X=MATH">EasyRGB.com</a>.</p>
+
+<h2 id="lend-a-hand">Lend a hand</h2>
+
+<p>As I&rsquo;ve mentioned before, ColorPal is in an early stage of development. It
+needs testing in multiple browsers, and I&rsquo;m very interested in hearing people&rsquo;s
+feedback. Code development help is welcomed too.</p>
+
+<p>If you try out ColorPal, let me know your thoughts on
+<a href="https://twitter.com/mwcz">Twitter</a>.</p>
+
+<p>Here are github repos for <a href="https://github.com/mwcz/ColorPal">ColorPal</a> and
+<a href="https://github.com/mwcz/median-cut-js">median-cut.js</a>.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing ColorPal, a fast color palette creation tool.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/01/colorpal-alpha//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">HTML5 canvas area selection averaging</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a demo from late 2009. It&rsquo;s an extension of the single-pixel eyedropper I wrote previously.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
+Click and drag to set the image border to the average of the selected pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-area-selection-averaging//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/colorpal/">ColorPal</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        ColorPal is an HTML5 color palette generator. Here&rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
+Try it out at colorpal.org.
+ColorPal also has a command-line interface, powered by Node.js.
+I&rsquo;ve written some posts about ColorPal.
+ 
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/colorpal/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/colorpal//./icon_colorpal.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-point-operations/">HTML5 canvas point operations</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
+Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-point-operations/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-point-operations//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
+  
+In retrospect, it really could have used some narration&hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">HTML5 canvas RGB histogram</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-rgb-histogram//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2012-02-10T00:00:00Z">
+          Feb 10, 2012
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/color" class="c-tag">#color</a>
+        
+        <a href="https://clayto.com/tags/colorpal" class="c-tag">#colorpal</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+        <a href="https://clayto.com/tags/mediancut" class="c-tag">#mediancut</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

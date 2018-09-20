@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="Introducing Canvas Indexed Color" />
+  <meta name="twitter:title" content="Introducing Canvas Indexed Color" />
+  
+  <title>Introducing Canvas Indexed Color - clayto</title>
+
+  
+  <meta name="description" content="A basic implementation of indexed color palettes for HTML5 canvas.">
+  <meta property="og:description" content="A basic implementation of indexed color palettes for HTML5 canvas.">
+  <meta name="twitter:description" content="A basic implementation of indexed color palettes for HTML5 canvas.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2012/07/introducing-canvas-indexed-color/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/thumb.png" />
+  <meta name="twitter:image" content="https://clayto.com/thumb.png" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>Introducing Canvas Indexed Color</h1>
+  </header>
+  
+  
+  <section>
+    <p><em>2018-08-29 update:</em> This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&rsquo;s <a href="http://www.effectgames.com/effect/article-Old_School_Color_Cycling_with_HTML5.html" title="Color cycling in HTML5 canvas">breathtaking color cycling art</a>. from 90s adventure games.</p>
+
+<hr />
+
+<p><img src="hahatiger.png" alt="White SVG Tiger" /></p>
+
+<p>First, I converted the classic SVG tiger into a set of canvas drawing
+instructions using <a href="http://professorcloud.com/svg-to-canvas/" title="Professor Cloud's conversion
+tool">Professor Cloud&rsquo;s conversion
+tool</a>. The output looks like
+<a href="https://github.com/mwcz/palebluepixel/blob/master/content/static/projects/canvas_indexed_color/demo/vector_images.js">this</a>. Each call to <code>cvm.getColor()</code> used to be a string literal.</p>
+
+<p>Vim&rsquo;s regex saved me from having to edit <em>100,000</em> lines of canvas instructions
+by hand to replace the color strings.</p>
+
+<p>The demo uses <a href="http://knockoutjs.com/" title="Knockout JS">Knockout</a> for handling all
+the update/draw events as well as updating the URL hash. Check the <a href="https://github.com/mwcz/palebluepixel/blob/master/content/static/projects/canvas_indexed_color/demo/cic.js">source
+code</a>
+and you&rsquo;ll see that there <em>isn&rsquo;t</em> a vast tangled nest of event
+wirings. Each time one of the colors in this ViewModel is changed, Knockout
+automatically triggers the canvas redraw and the updates the URL with the new
+palette. Conversely, if the URL is changed, the ViewModel will update itself
+with the new value. Knockout calls this a &ldquo;two-way data binding&rdquo;.</p>
+
+<p>I replaced the aforementioned color strings with calls to <code>cvm</code>, which is a
+Knockout ViewModel (in this case, an object that holds all the color data).
+<code>cvm</code> is populated with the SVG tiger&rsquo;s default colors.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observableArray</span>([
+  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#000000&#34;</span>) },
+  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#323232&#34;</span>) },
+  <span style="color:#75715e">// .... many more ....
+</span><span style="color:#75715e"></span>  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#ff727f&#34;</span>) },
+  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#ffffff&#34;</span>) }
+]);
+</code></pre></div>
+<p>Play with the colors, then copy the URL and send your tiger to your friends. :]</p>
+
+<p><a href="https://clayto.com/projects/canvas_indexed_color/#4c0000,#659900,#666666,#992600,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,#cc7226,#cccccc,#e5668c,#e59999,#e5e5b2,B5E8E6,#ea8c4d,#ea8e51,#eb955c,#ec9961,#eea575,#efaa7c,#f1b288,#f2b892,#f3bf9c,#f4c6a8,#f5ccb0,#f8d8c4,#f8dcc8,#f9e2d3,#fae5d7,#fcf2eb,#ff727f,#ffffcc,#ffffff,#000000,#323232" title="Crazy tiger">Crazy tiger</a>.</p>
+
+<p>Please note, this is only a simulation of an indexed color palette. It is not
+a true, usable, indexed-color API for canvas (someday, maybe!).</p>
+
+<p>The color picker is <a href="https://github.com/mattfarina/farbtastic" title="Farbtastic">Farbtastic</a>. If you&rsquo;re interested in reading more about the history of
+indexed color, and a <strong>mind-blowing</strong> canvas demo, go
+<a href="http://www.effectgames.com/effect/article-Old_School_Color_Cycling_with_HTML5.html" title="Color cycling in HTML5 canvas">here</a>.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-point-operations/">HTML5 canvas point operations</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
+Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-point-operations/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-point-operations//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
+  
+In retrospect, it really could have used some narration&hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-eyedropper/">HTML5 Canvas eyedropper</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        An HTML5 Canvas eyedropper.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-eyedropper/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-eyedropper//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">HTML5 canvas RGB histogram</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-rgb-histogram//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">HTML5 canvas 3D pixel array</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &ldquo;more logical&rdquo;, I mean &ldquo;more logical, to me, at the time). 1D is fine, and I can&rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-3d-pixel-array//kazoo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">HTML5 canvas area selection averaging</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a demo from late 2009. It&rsquo;s an extension of the single-pixel eyedropper I wrote previously.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
+Click and drag to set the image border to the average of the selected pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-area-selection-averaging//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2012-07-03T00:00:00Z">
+          Jul 3, 2012
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
+        
+        <a href="https://clayto.com/tags/canvas" class="c-tag">#canvas</a>
+        
+        <a href="https://clayto.com/tags/color" class="c-tag">#color</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+        <a href="https://clayto.com/tags/canvas_indexed_color" class="c-tag">#canvas_indexed_color</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

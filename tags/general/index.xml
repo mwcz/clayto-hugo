@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>General on clayto</title>
+    <link>https://clayto.com/tags/general/</link>
+    <description>Recent content in General on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Jan 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The N9, QR-Codes, and KeePassX</title>
+      <link>https://clayto.com/2012/01/the-n9-qr-codes-and-keepassx/</link>
+      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2012/01/the-n9-qr-codes-and-keepassx/</guid>
+      <description>Update: I happened across a KeePass plugin (not the same as KeePassX) that displays passwords as QR codes, just like my hack below.
+Poor, glorious N9.
+It&amp;rsquo;s impossible not to love the N9 if you&amp;rsquo;re a geek, especially a programming, bash-loving, Linux-hankering geek. It&amp;rsquo;s like a nerd talisman. This post isn&amp;rsquo;t about the N9, specifically, so I&amp;rsquo;ll save the love-fest for another time.
+This post is about how difficult it can be to get text (especially passwords) onto a smartphone securely.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="Lazyloading Web Components" />
+  <meta name="twitter:title" content="Lazyloading Web Components" />
+  
+  <title>Lazyloading Web Components - clayto</title>
+
+  
+  <meta name="description" content="Convenience hacking: Web Components without imports.">
+  <meta property="og:description" content="Convenience hacking: Web Components without imports.">
+  <meta name="twitter:description" content="Convenience hacking: Web Components without imports.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2016/09/lazyloading-web-components/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/lazyload.gif" />
+  <meta name="twitter:image" content="https://clayto.com/lazyload.gif" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>Lazyloading Web Components</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>They say <a href="http://threevirtues.com/">good developers are lazy</a>. A tedious process is no match for a
+lazy developer. Below is an experiment in laziness. It&rsquo;s a proof of concept
+for using Web Components without having to manually import each one.</p>
+
+<p>I&rsquo;m not sure exactly what to call it. It grazes the definitions of
+lazyloading, autoloading, and dependency injection, so I went with the laziest
+term.</p>
+
+<p>Let&rsquo;s set the scene, and find out if it&rsquo;s a worthwhile developer convenience,
+or ease-of-use gone mad&hellip;</p>
+
+<h2 id="scene-1-maximize-simplicity">Scene 1: Maximize Simplicity</h2>
+
+<p>You are the author of &ldquo;Wootstrap&rdquo;, a Bootstrap-like library of useful
+components like navigation, buttons, and alerts. Also like Bootstrap, your
+components are distributed as HTML snippets for users to copy, paste, and
+customize.</p>
+
+<figure>
+    <video style="margin: 0 auto" poster="thumb.png" autoplay controls loop>
+        <source src="bootstrap-paste.webm" />
+        <source src="bootstrap-paste.mp4" />
+    </video>
+</figure>
+
+<p>To improve ease of use, you encapsulate all that HTML into a custom element:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ws-panel</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I am a ws-panel&#34;</span>&gt;Some words.&lt;/<span style="color:#f92672">ws-panel</span>&gt;</code></pre></div>
+<p>The essence of simplicity! One more thing, browsers don&rsquo;t know what
+<code>&lt;ws-panel&gt;</code> is, so your users must import it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/wootstrap/components/ws-panel.html&#34;</span>&gt;</code></pre></div>
+<p>One line, no big deal. But as your users add and remove components from their
+pages, managing imports becomes a finger-aching chore.</p>
+
+<h2 id="scene-2-minimize-finger-ache">Scene 2: Minimize Finger-Ache</h2>
+
+<p>Wouldn&rsquo;t it be cushy if the components were imported when you use them,
+automatically?</p>
+
+<h3 id="live-demo">Live demo</h3>
+
+<style type="text/css">
+.demo-iframe {
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+</style>
+
+<iframe class="demo-iframe" frameborder=0 height="240" width="100%" src="https://clayto.com/demos/043/index.html"></iframe>
+
+<!-- https://gohugo.io/content-management/syntax-highlighting/ -->
+
+<h3 id="demo-code">Demo code</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+    &lt;<span style="color:#f92672">head</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/webcomponents.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/lazy-load/lazy-load.html&#34;</span>&gt;
+</span>    &lt;/<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">body</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">lazy-load</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">            &lt;<span style="color:#f92672">ws-panel</span>&gt;I am a ws-panel.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">            &lt;<span style="color:#f92672">ws-btn</span>&gt;I am ws-button&lt;/<span style="color:#f92672">ws-btn</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">            &lt;<span style="color:#f92672">ws-alert</span>&gt;I am a ws-alert&lt;/<span style="color:#f92672">ws-alert</span>&gt;
+</span><span style="display:block;width:100%;background-color:#3c3d38">        &lt;/<span style="color:#f92672">lazy-load</span>&gt;
+</span>    &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+
+<p>The demo only imports <code>lazy-load</code>, which encapsulates the importing of the rest of the elements so you don&rsquo;t have to specify them by hand. Let&rsquo;s look at how it works.</p>
+
+<h2 id="scene-3-behind-the-scenes">Scene 3: Behind the Scenes</h2>
+
+<p>To lazyload, we need a list of all our component names and where to find them.
+I created a small &ldquo;registry&rdquo; object for the demo. In the real-world, this
+object could be auto-generated by the component library&rsquo;s build system, or by
+the build system of the user&rsquo;s app, including all available components.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">LazyComponents</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">names</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ws-panel,ws-btn,ws-alert&#34;</span>,
+  <span style="color:#a6e22e">paths</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#34;ws-panel&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-panel/ws-panel.html&#34;</span>,
+    <span style="color:#e6db74">&#34;ws-btn&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-btn/ws-btn.html&#34;</span>,
+    <span style="color:#e6db74">&#34;ws-alert&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-alert/ws-alert.html&#34;</span>
+  }
+};
+</code></pre></div>
+<p>First we have <code>names</code>, a comma-separated list of component names which doubles
+as a selector. It is passed into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll()</a> to find any
+occurrences of our elements on the page. Second is <code>paths</code>, a mapping from
+each component&rsquo;s name to its HTML template file.</p>
+
+<h3 id="the-lazy-load-element">The lazy-load element</h3>
+
+<p>Here&rsquo;s the Polymer definition for the <code>lazy-load</code> element:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Polymer</span>({
+
+    <span style="color:#a6e22e">is</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lazy-load&#39;</span>,
+
+    <span style="color:#a6e22e">attached</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lazyLoadAttached</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lazyLoad</span>();
+    },
+
+    <span style="color:#a6e22e">lazyLoad</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lazyLoad</span>() {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">els</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">LazyComponents</span>.<span style="color:#a6e22e">names</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>; <span style="color:#a6e22e">els</span>.<span style="color:#a6e22e">length</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">els</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">nodeName</span>.<span style="color:#a6e22e">toLowerCase</span>();
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">importHref</span>(<span style="color:#a6e22e">LazyComponents</span>.<span style="color:#a6e22e">paths</span>[<span style="color:#a6e22e">name</span>]);
+        }
+    },
+
+});
+</code></pre></div>
+<p>When <code>lazy-load</code> is <a href="https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks">attached to the DOM</a>, it finds any children in
+the <code>names</code> list and imports their HTML templates (using Polymer&rsquo;s handy
+<a href="https://www.polymer-project.org/1.0/docs/devguide/instance-methods#imports-and-urls">importHref()</a> function).</p>
+
+<p>Now any element in the registry object can be used without an explicit import.</p>
+
+<h2 id="tradeoffs">Tradeoffs</h2>
+
+<p>There are some things that may outweigh the convenience.</p>
+
+<ul>
+<li><strong>Unvulcanized</strong> - Lazy loading is the opposite of <a href="https://www.polymer-project.org/1.0/docs/tools/optimize-for-production">Vulcanize</a>. Vulcanize can still be used, but lazyloaded components won&rsquo;t be inlined.</li>
+<li><strong>Delayed loading</strong> - Explicit imports begin downloading before lazyloaded imports, since they don&rsquo;t have to wait for <code>lazy-load</code> to be attached to the DOM.</li>
+<li><strong>Paths must be absolute</strong> - Imports typically use relative paths, but lazyloaded paths are defined in only one spot, not per-page, so they must be absolute, <em>or</em> relative to <code>lazy-load.html</code>.</li>
+<li><strong>Late to the party?</strong> - Any custom elements added to the page after <code>lazyLoad()</code> has run won&rsquo;t be imported. That didn&rsquo;t seem necessary for a proof of concept, but running <code>lazyLoad()</code> on each state change would be an easy solution.</li>
+<li><strong>HTTP/2 Server Push?</strong> - I haven&rsquo;t tested this, but I suspect lazyloaded components won&rsquo;t benefit from HTTP/2 Server Push.</li>
+</ul>
+
+<p>I&rsquo;m not sure yet which camp lazyloading will fall into: best practice, or
+antipattern. My hope is that developer tooling will be written that injects
+imports as you code, rather than at runtime.</p>
+
+<p>Thanks to Kyle Buchanan for pointers and corrections!</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/08/kimotion-modding-101/">Kimotion Modding 101</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        How to create an interactive art display with Kimotion.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-08-28T00:00:00Z">
+      Aug 28, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/08/kimotion-modding-101/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2016/08/kimotion-modding-101//./thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">Visualizing Network Traffic with WebGL</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Creating a WebGL particle system to convey network traffic patterns to a live audience at <a href="https://www.redhat.com/summit">Red Hat Summit</a>.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl//./post-thumbnail.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/squareoff/">Square Off</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Square Off is a 1v1 airhockey-style game, built in 72 hours for <a href="http://ludumdare.com/compo/2016/04/13/welcome-to-ludum-dare-35/">LD35</a>.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-04-19T00:00:00Z">
+      Apr 19, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/squareoff/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/squareoff//./square-off-logo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/kimotion/">Kimotion</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion is a framework for building reactive digital art displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-09-26T00:00:00Z">
+      Sep 26, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/kimotion/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/kimotion//./thumb.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/09/make-a-kimotion/">Make a Kimotion!</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &ldquo;Warrior Poet&rdquo;, but with keyboards.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-09-26T00:00:00Z">
+      Sep 26, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/09/make-a-kimotion/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2015/09/make-a-kimotion//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/ping/">Ping</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Ping is a 4-player pong-style game with crazy abilities.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-06-23T00:00:00Z">
+      Jun 23, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/ping/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/ping//./icon_ping.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2016-09-06T00:00:00Z">
+          Sep 6, 2016
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/html" class="c-tag">#html</a>
+        
+        <a href="https://clayto.com/tags/web-components" class="c-tag">#web-components</a>
+        
+        <a href="https://clayto.com/tags/polymer" class="c-tag">#polymer</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

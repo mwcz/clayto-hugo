@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Requirejs on clayto</title>
+    <link>https://clayto.com/tags/requirejs/</link>
+    <description>Recent content in Requirejs on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Oct 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/requirejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DiMo: The Deconstruction of Falling Stars</title>
+      <link>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</link>
+      <pubDate>Thu, 30 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</guid>
+      <description>Imagine a solitary blue dot.
+Unless you let your imagination run away with itself, this is going to be a pretty boring dot. Now, imagine a second, larger dot (you can pick the color).
+Red, nice choice! The scene is now slightly more interesting, since now you&amp;rsquo;ve got two dots to think about. You can ponder their positions, and relative sizes. No motion though; still pretty boring!
+Pretty soon, your keen and restless mind will imagine that the larger dot exerts a gravitational pull on the smaller one.</description>
+    </item>
+    
+    <item>
+      <title>DiMo: Particles</title>
+      <link>https://clayto.com/projects/dimo/</link>
+      <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/dimo/</guid>
+      <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+$GALLERY
+After the event, I wrote this opensource.com article about the experience.
+The source code is, of course, open.</description>
+    </item>
+    
+    <item>
+      <title>Particles and π - DiMo Comes to Life</title>
+      <link>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</link>
+      <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</guid>
+      <description>A player walks up Fayetteville St in Raleigh, North Carolina. SPARKcon has begun, and dozens of artists are strewn along the street, hard at work creating elaborate chalk art on the asphalt. A light rain is falling, and some artists are holding umbrellas over their work, some have draped tarps over themselves and their sketches, but most don&amp;rsquo;t seem to care, as if creating their art is more important than how long it lasts.</description>
+    </item>
+    
+  </channel>
+</rss>

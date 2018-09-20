@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Led on clayto</title>
+    <link>https://clayto.com/tags/led/</link>
+    <description>Recent content in Led on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/led/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Meet SimPixel</title>
+      <link>https://clayto.com/2017/03/meet-simpixel/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
+      <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
+ SimPixel introduces itself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    My working theory about why it&amp;rsquo;s so much like their displays is that I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,2803 @@
+SplineFontDB: 3.0
+FontName: LinLibertine
+FullName: Linux Libertine
+FamilyName: Linux Libertine
+Weight: Book
+Copyright: Linux Libertine by Philipp H. Poll,\nOpen Font under Terms of following Free Software Licenses:\nGPL (General Public License) with font-exception and OFL (Open Font License).\nCreated with FontForge (http://fontforge.sf.net)\nSept 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011
+Version: 5.1.3
+ItalicAngle: 0
+UnderlinePosition: -201
+UnderlineWidth: 81
+Ascent: 1638
+Descent: 410
+InvalidEm: 0
+sfntRevision: 0x00051999
+LayerCount: 2
+Layer: 0 1 "Back" 1
+Layer: 1 1 "Fore" 0
+XUID: [1021 985 -383482074 8314384]
+FSType: 0
+OS2Version: 4
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1156455862
+ModificationTime: 1308637567
+PfmFamily: 17
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 0
+VLineGap: 0
+Panose: 2 0 5 3 0 0 0 0 0 0
+OS2TypoAscent: 1831
+OS2TypoAOffset: 0
+OS2TypoDescent: -504
+OS2TypoDOffset: 0
+OS2TypoLinegap: 0
+OS2WinAscent: 1831
+OS2WinAOffset: 0
+OS2WinDescent: 504
+OS2WinDOffset: 0
+HheadAscent: 1831
+HheadAOffset: 0
+HheadDescent: -504
+HheadDOffset: 0
+OS2SubXSize: 1331
+OS2SubYSize: 1433
+OS2SubXOff: 0
+OS2SubYOff: 286
+OS2SupXSize: 1331
+OS2SupYSize: 1433
+OS2SupXOff: 0
+OS2SupYOff: 983
+OS2StrikeYSize: 102
+OS2StrikeYPos: 530
+OS2CapHeight: 0
+OS2XHeight: 0
+OS2FamilyClass: 261
+OS2Vendor: 'PfEd'
+OS2CodePages: 600001bf.00000000
+OS2UnicodeRanges: e0000aff.5200e5fb.02000020.00000000
+Lookup: 3 0 0 "'aalt' Access All Alternates lookup 0" { "'aalt' Access All Alternates lookup 0 subtable"  } ['aalt' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'locl' Localized Forms in Latin lookup 1" { "'locl' Localized Forms in Latin lookup 1 subtable"  } ['locl' ('latn' <'MOL ' 'ROM ' > ) ]
+Lookup: 1 0 0 "'locl' Localized Forms in Cyrillic lookup 2" { "'locl' Localized Forms in Cyrillic lookup 2 subtable"  } ['locl' ('cyrl' <'SRB ' > ) ]
+Lookup: 1 0 0 "'smcp' Lowercase to Small Capitals lookup 3" { "'smcp' Lowercase to Small Capitals lookup 3 subtable"  } ['smcp' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'DEU ' 'MOL ' 'ROM ' 'dflt' > ) ]
+Lookup: 1 0 0 "'smcp' Lowercase to Small Capitals lookup 4" { "'smcp' Lowercase to Small Capitals lookup 4 subtable"  } ['smcp' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'smcp' Lowercase to Small Capitals in Latin lookup 5" { "'smcp' Lowercase to Small Capitals in Latin lookup 5 subtable"  } ['smcp' ('latn' <'AZE ' 'CRT ' 'TRK ' > ) ]
+Lookup: 1 0 0 "'fina' Terminal Forms lookup 6" { "'fina' Terminal Forms lookup 6 subtable"  } ['fina' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 6 0 0 "'frac' Diagonal Fractions lookup 7" { "'frac' Diagonal Fractions lookup 7 contextual 0"  "'frac' Diagonal Fractions lookup 7 contextual 1"  } ['frac' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 4 0 0 "'frac' Diagonal Fractions lookup 8" { "'frac' Diagonal Fractions lookup 8 subtable"  } ['frac' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'sups' Superscript lookup 9" { "'sups' Superscript lookup 9 subtable" ("superior") } ['sups' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'sinf' Scientific Inferiors lookup 10" { "'sinf' Scientific Inferiors lookup 10 subtable"  } ['sinf' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'c2sc' Capitals to Small Capitals lookup 11" { "'c2sc' Capitals to Small Capitals lookup 11 subtable"  } ['c2sc' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 4 0 1 "'liga' Standard Ligatures lookup 12" { "'liga' Standard Ligatures lookup 12 subtable"  } ['liga' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'DEU ' 'MOL ' 'ROM ' 'dflt' > ) ]
+Lookup: 4 0 1 "'liga' Standard Ligatures lookup 13" { "'liga' Standard Ligatures lookup 13 subtable"  } ['liga' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 4 0 0 "'hlig' Historic Ligatures lookup 14" { "'hlig' Historic Ligatures lookup 14 subtable"  } ['hlig' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 4 0 0 "'dlig' Discretionary Ligatures lookup 15" { "'dlig' Discretionary Ligatures lookup 15 subtable"  } ['dlig' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'onum' Oldstyle Figures lookup 16" { "'onum' Oldstyle Figures lookup 16 subtable" ("oldstyle") } ['onum' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'lnum' Lining Figures lookup 17" { "'lnum' Lining Figures lookup 17 subtable"  } ['lnum' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'pnum' Proportional Numbers lookup 18" { "'pnum' Proportional Numbers lookup 18 subtable"  } ['pnum' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'tnum' Tabular Numbers lookup 19" { "'tnum' Tabular Numbers lookup 19 subtable"  } ['tnum' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'zero' Slashed Zero lookup 20" { "'zero' Slashed Zero lookup 20 subtable"  } ['zero' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'salt' Stylistic Alternatives lookup 21" { "'salt' Stylistic Alternatives lookup 21 subtable"  } ['salt' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 6 0 0 "'ccmp' Glyph Composition/Decomposition lookup 22" { "'ccmp' Glyph Composition/Decomposition lookup 22 subtable"  } ['ccmp' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss01' Style Set 1 lookup 23" { "'ss01' Style Set 1 lookup 23 subtable"  } ['ss01' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss02' Style Set 2 lookup 24" { "'ss02' Style Set 2 lookup 24 subtable"  } ['ss02' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss03' Style Set 3 lookup 25" { "'ss03' Style Set 3 lookup 25 subtable"  } ['ss03' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss04' Style Set 4 lookup 26" { "'ss04' Style Set 4 lookup 26 subtable"  } ['ss04' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss05' Style Set 5 lookup 27" { "'ss05' Style Set 5 lookup 27 subtable"  } ['ss05' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'ss06' Style Set 6 lookup 28" { "'ss06' Style Set 6 lookup 28 subtable"  } ['ss06' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'case' Case-Sensitive Forms lookup 29" { "'case' Case-Sensitive Forms lookup 29 subtable"  } ['case' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "'nalt' Alternate Annotation Forms lookup 30" { "'nalt' Alternate Annotation Forms lookup 30 subtable"  } ['nalt' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 1 0 0 "Single Substitution lookup 31" { "Single Substitution lookup 31 subtable"  } []
+Lookup: 1 0 0 "Single Substitution lookup 32" { "Single Substitution lookup 32 subtable"  } []
+Lookup: 1 0 0 "Single Substitution lookup 33" { "Single Substitution lookup 33 subtable"  } []
+Lookup: 257 0 0 "'cpsp' Capital Spacing lookup 0" { "'cpsp' Capital Spacing lookup 0 subtable"  } ['cpsp' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 260 0 0 "'mark' Mark Positioning lookup 1" { "'mark' Mark Positioning lookup 1 anchor 0"  "'mark' Mark Positioning lookup 1 anchor 1"  "'mark' Mark Positioning lookup 1 anchor 2"  "'mark' Mark Positioning lookup 1 anchor 3"  "'mark' Mark Positioning lookup 1 anchor 4"  "'mark' Mark Positioning lookup 1 anchor 5"  "'mark' Mark Positioning lookup 1 anchor 6"  } ['mark' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 262 0 0 "'mkmk' Mark to Mark lookup 2" { "'mkmk' Mark to Mark lookup 2 subtable"  } ['mkmk' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 258 0 0 "'kern' Horizontal Kerning lookup 3" { "'kern' Horizontal Kerning lookup 3 subtable"  } ['kern' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
+Lookup: 257 0 0 "'rtbd' Right Bounds lookup 4" { "'rtbd' Right Bounds lookup 4 subtable"  } ['rtbd' ('DFLT' <'dflt' > 'cyrl' <'SRB ' 'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > 'math' <'dflt' > ) ]
+Lookup: 257 0 0 "'lfbd' Left Bounds lookup 5" { "'lfbd' Left Bounds lookup 5 subtable"  } ['lfbd' ('DFLT' <'dflt' > 'cyrl' <'SRB ' 'dflt' > 'grek' <'dflt' > 'hebr' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > 'math' <'dflt' > ) ]
+MarkAttachClasses: 2
+"MarkClass-1" 3 i j
+DEI: 91125
+KernClass2: 25 25 "'kern' Horizontal Kerning lookup 3 subtable"
+ 19 f longs uni1E1F f_f
+ 17 f.short f_f.short
+ 144 T Tcedilla Tcaron uni01AC Tcommaaccent Gamma Tau afii10052 afii10020 afii10036 afii10050 uni0492 uni04AC uni04F6 uni1E6A uni1E6C uni1E6E uni1E70
+ 261 question Y Yacute Ycircumflex Ydieresis Upsilontonos Upsilon Upsilondieresis Upsilon1 uni03D3 uni03D4 afii10062 afii10037 uni04EE uni04F0 uni04F2 uni1E8E Ygrave uni1EF4 uni1EF6 uni1EF8 uni1F59 uni1F5B uni1F5D uni1F5F uni1FE8 uni1FE9 uni1FEA uni1FEB seven.fitted
+ 109 V W Wcircumflex afii10148 uni0476 uni1E7C uni1E7E Wgrave Wacute Wdieresis uni1E86 uni1E88 W.alt uniE0E9 V.alt
+ 184 K X Kcommaaccent Kappa Chi afii10061 afii10024 afii10028 afii10039 uni0496 uni049A uni049C uni049E uni04A0 uni04B2 uni04C1 uni04DC uni1E30 uni1E32 uni1E34 uni1E8A uni1E8C uni2C69 K.alt
+ 457 at D O Q Ograve Oacute Ocircumflex Otilde Odieresis Oslash Dcaron Dcroat Omacron Obreve Ohungarumlaut uni0186 uni0189 uni018A uni018F uni01EA uni01EC uni020C uni020E uni022A uni022C uni022E uni0230 Omicrontonos Theta Omicron Phi uni03D8 uni03F4 uni03FD uni03FF afii10032 afii10048 afii10147 uni04DA uni04E6 uni04E8 uni04EA uni04EC uni1E0A uni1E0C uni1E0E uni1E10 uni1E12 uni1E4C uni1E4E uni1E50 uni1E52 zero.slashfitted zero.fitted nine.fitted Odieresis.alt
+ 238 r v w y Thorn yacute ydieresis racute rcommaaccent rcaron wcircumflex ycircumflex gamma afii10085 afii10110 uni04EF uni04F1 uni1E7D uni1E7F wgrave wacute wdieresis uni1E87 uni1E89 uni1E8F uni1E98 t.sc v.sc w.sc y.sc yacute.sc ydieresis.sc
+ 218 g k x gcircumflex gbreve gdotaccent gcommaaccent kcommaaccent kgreenlandic gcaron uni01E9 zeta kappa uni03DB afii10072 afii10076 afii10109 uni049F uni04A1 uni04B3 uni04DD uni1E31 uni1E33 uni1E35 f_f_k f_k c_k k.sc x.sc
+ 43 b agrave egrave thorn afii10086 uni0450 f_b
+ 250 e o p eacute ecircumflex edieresis ograve oacute ocircumflex otilde odieresis omicron rho phi omicrontonos phi1 afii10070 afii10080 afii10082 afii10071 uni04E7 uni04E9 d.sc o.sc q.sc ograve.sc oacute.sc ocircumflex.sc otilde.sc odieresis.sc oslash.sc
+ 90 L Lacute Lcommaaccent Ldot Lslash afii10044 afii10046 uni1E36 uni1E38 uni1E3A uni1E3C l.sc
+ 92 a.sc agrave.sc aacute.sc acircumflex.sc atilde.sc adieresis.sc aring.sc abreve.sc aogonek.sc
+ 394 A Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni01CD uni01DE uni01E0 Aringacute uni0200 uni0202 uni0226 Alphatonos Alpha Delta Lambda afii10017 uni04D2 uni1E00 uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni1EAC uni1EAE uni1EB0 uni1EB2 uni1EB4 uni1EB6 uni1F08 uni1F09 uni1F0A uni1F0B uni1F0C uni1F0D uni1F0E uni1F0F uni1FB8 uni1FB9 uni1FBA uni1FBB Adieresis.alt
+ 216 comma period underscore enquad emquad enspace emspace threeperemspace fourperemspace sixperemspace figurespace punctuationspace underscoredbl quotesinglbase quotedblbase onedotenleader twodotenleader ellipsis uni202F
+ 235 zero.inferior one.inferior two.inferior three.inferior four.inferior five.inferior six.inferior seven.inferior eight.inferior nine.inferior plus.inferior minus.inferior equal.inferior a.inferior e.inferior o.inferior x.inferior uni2094
+ 283 plus hyphen less equal greater asciitilde guillemotleft uni00AD periodcentered guillemotright divide hyphentwo hyphennobreak figuredash endash emdash horizontalbar guilsinglleft guilsinglright hyphen.sc guillemotleft.sc guillemotright.sc guilsinglleft.sc guilsinglright.sc hyphen.cap
+ 72 parenleft bracketleft braceleft parenleft.sc bracketleft.sc braceleft.sc
+ 239 U Ugrave Uacute Ucircumflex Udieresis Utilde Umacron Ubreve Uring Uhungarumlaut Uogonek uni01D3 uni01D5 uni01D7 uni01D9 uni01DB uni0214 uni0216 uni1E72 uni1E74 uni1E76 uni1E78 uni1E7A uni1EE4 uni1EE6 uni1EE8 uni1EEA uni1EEC uni1EEE uni1EF0
+ 646 H I N Igrave Iacute Icircumflex Idieresis Ntilde Hcircumflex Hbar Imacron Ibreve Iogonek Idotaccent IJ Jcircumflex Nacute Ncommaaccent Ncaron Eng uni018E uni021E Eta Iota Nu Pi afii10055 afii10056 afii10057 uni040D afii10145 afii10021 afii10026 afii10027 afii10029 afii10031 afii10033 afii10040 afii10042 afii10043 afii10045 afii10049 uni04A2 uni04E2 uni04E4 uni04F8 uni1E22 uni1E24 uni1E26 uni1E28 uni1E2A uni1E2C uni1E2E uni1E44 uni1E46 uni1E48 uni1E4A uni1EC8 uni1ECA uni1F28 uni1F29 uni1F2A uni1F2B uni1F2C uni1F2D uni1F2E uni1F2F uni1F38 uni1F39 uni1F3A uni1F3B uni1F3C uni1F3D uni1F3E uni1F3F uni1FCA uni1FCB uni1FD8 uni1FD9 uni1FDA uni1FDB
+ 49 F P uni01A4 Rho afii10034 uni1E1E uni1E54 uni1E56
+ 103 quotedbl quotesingle asterisk quoteleft quoteright quotereversed quotedblleft quotedblright quotedblrev
+ 83 f.sc u.sc ugrave.sc uacute.sc ucircumflex.sc udieresis.sc uring.sc uhungarumlaut.sc
+ 4 p.sc
+ 114 T Tcedilla Tcaron Tcommaaccent Tau afii10051 afii10060 afii10036 afii10044 uni04AC uni1E6A uni1E6C uni1E6E uni1E70
+ 42 Y Yacute Ydieresis Upsilon Upsilondieresis
+ 121 V W Wcircumflex afii10041 afii10148 uni0476 uni04B6 uni1E7C uni1E7E Wgrave Wacute Wdieresis uni1E86 uni1E88 uniE0E9 V.alt
+ 623 C G O Q Ccedilla Ograve Oacute Ocircumflex Otilde Odieresis Oslash Cacute Ccircumflex Cdotaccent Ccaron Gcircumflex Gbreve Gdotaccent Gcommaaccent Omacron Obreve Ohungarumlaut OE uni0187 uni0193 uni019F Ohorn Gcaron uni01EA uni01EC uni01F4 Oslashacute uni020C uni020E uni022A uni022C uni022E uni0230 uni0298 Theta Omicron Phi uni03D8 uni03F4 uni03F9 afii10053 afii10032 afii10035 afii10038 afii10147 uni04A8 uni04AA uni04E6 uni04E8 uni04EA uni1E08 uni1E20 uni1E4C uni1E4E uni1E50 uni1E52 uni1ECC uni1ECE uni1ED0 uni1ED2 uni1ED4 uni1ED6 uni1ED8 uni1EDA uni1EDC uni1EDE uni1EE0 uni1EE2 zero.slashfitted zero.fitted six.fitted
+ 131 v w wcircumflex gamma nu uni1E7D uni1E7F wgrave wacute wdieresis uni1E87 uni1E89 uni1E98 t.sc v.sc w.sc y.sc yacute.sc ydieresis.sc
+ 75 x y yacute ydieresis chi afii10072 afii10085 afii10110 uni04B3 uni04DD x.sc
+ 103 quotedbl quotesingle asterisk quoteleft quoteright quotereversed quotedblleft quotedblright quotedblrev
+ 330 A Agrave Aacute Acircumflex Atilde Adieresis Aring AE Amacron Abreve Aogonek uni01CD uni01DE uni01E0 uni01E2 Aringacute AEacute uni0200 uni0202 uni0226 Alpha Delta Lambda afii10017 uni04D2 uni1E00 uni1EA0 uni1EA2 uni1EA4 uni1EA6 uni1EA8 uni1EAA uni1EAC uni1EAE uni1EB0 uni1EB2 uni1EB4 uni1EB6 uni1FB8 uni1FB9 uni1FBC Adieresis.alt
+ 66 comma period quotesinglbase onedotenleader twodotenleader ellipsis
+ 251 c e o q ccedilla eogonek oe uni0188 uni018D ohorn eturned alpha omicron sigma1 sigma phi omega omegatonos uni03F2 uni03F5 afii10070 afii10080 afii10083 afii10101 afii10846 uni04E9 uni1E19 uni1E1B uni1EB9 uni1ECD c_k c_h c.sc g.sc o.sc q.sc ccedilla.sc
+ 215 a d aacute ae eacute oacute oslash aogonek cacute edotaccent omacron uni022F alphatonos rho omicrontonos phi1 uni03F1 afii10065 afii10073 afii10086 afii10095 afii10097 uni04D5 uni1E0F uni1EA1 uni1F71 uni1F73 uni1F79
+ 179 g m n p r s z mu uni03F0 afii10067 afii10068 afii10074 afii10076 afii10078 afii10079 afii10081 afii10082 afii10087 afii10088 afii10090 afii10091 afii10107 afii10193 germandbls.alt
+ 78 parenright bracketright braceright parenright.sc bracketright.sc braceright.sc
+ 42 J j Jcircumflex jcircumflex afii10105 j.sc
+ 283 plus hyphen less equal greater asciitilde guillemotleft uni00AD periodcentered guillemotright divide hyphentwo hyphennobreak figuredash endash emdash horizontalbar guilsinglleft guilsinglright hyphen.sc guillemotleft.sc guillemotright.sc guilsinglleft.sc guilsinglright.sc hyphen.cap
+ 101 exclam question exclamdbl interrobang question_question question_exclam exclam_question exclamdown.sc
+ 210 b h k l thorn hcircumflex hbar kcommaaccent lacute lcommaaccent lcaron ldot lslash uni0180 uni1E03 uni1E05 uni1E07 uni1E23 uni1E25 uni1E27 uni1E29 uni1E2B uni1E31 uni1E33 uni1E35 uni1E37 uni1E39 uni1E3B uni1E3D
+ 239 U Ugrave Uacute Ucircumflex Udieresis Utilde Umacron Ubreve Uring Uhungarumlaut Uogonek uni01D3 uni01D5 uni01D7 uni01D9 uni01DB uni0214 uni0216 uni1E72 uni1E74 uni1E76 uni1E78 uni1E7A uni1EE4 uni1EE6 uni1EE8 uni1EEA uni1EEC uni1EEE uni1EF0
+ 1201 B D E F H I K L N P R Egrave Eacute Ecircumflex Edieresis Igrave Iacute Icircumflex Idieresis Eth Ntilde Dcaron Dcroat Emacron Ebreve Edotaccent Eogonek Ecaron Hcircumflex Hbar Itilde Imacron Ibreve Iogonek Idotaccent IJ Kcommaaccent Lacute Lcommaaccent Lcaron Ldot Lslash Nacute Ncommaaccent Ncaron Eng Racute Rcommaaccent Rcaron uni0182 uni0189 uni01C4 uni01C5 uni01CA uni01CB uni01E8 uni01F6 uni0204 uni0206 uni020A uni0210 uni0212 uni021E Beta Gamma Epsilon Eta Iota Kappa Nu Pi Rho Iotadieresis uni0400 afii10023 afii10052 afii10055 afii10056 afii10059 afii10061 uni040D afii10145 afii10018 afii10019 afii10020 afii10022 afii10026 afii10027 afii10028 afii10031 afii10033 afii10034 afii10040 afii10042 afii10043 afii10045 afii10046 afii10048 uni0494 uni049A uni04A2 uni04A4 uni04A6 uni04E2 uni04E4 uni04F6 uni04F8 uni1E02 uni1E04 uni1E06 uni1E0A uni1E0C uni1E0E uni1E10 uni1E12 uni1E14 uni1E16 uni1E18 uni1E1A uni1E1C uni1E1E uni1E22 uni1E24 uni1E26 uni1E28 uni1E2A uni1E2C uni1E2E uni1E30 uni1E32 uni1E34 uni1E36 uni1E38 uni1E3A uni1E3C uni1E44 uni1E46 uni1E48 uni1E4A uni1E54 uni1E56 uni1E58 uni1E5A uni1E5C uni1E5E uni1EB8 uni1EBA uni1EBC uni1EBE uni1EC0 uni1EC2 uni1EC4 uni1EC6 uni1EC8 uni1ECA
+ 92 a.sc agrave.sc aacute.sc acircumflex.sc atilde.sc adieresis.sc aring.sc abreve.sc aogonek.sc
+ 278 degree two.superior three.superior one.superior zero.superior i.superior four.superior five.superior six.superior seven.superior eight.superior nine.superior plus.superior minus.superior equal.superior parenleft.superior parenright.superior n.superior uni2098 uni2099 q.superior
+ 78 u.sc ugrave.sc uacute.sc ucircumflex.sc udieresis.sc uring.sc uhungarumlaut.sc
+ 40 u eta iota kappa upsilon uni1EE5 uniF6BE
+ 49 b.sc d.sc f.sc h.sc i.sc k.sc l.sc n.sc p.sc r.sc
+ 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 201 {} 201 {} 201 {} 49 {} 0 {} 0 {} 150 {} 0 {} 0 {} 0 {} 0 {} 0 {} 125 {} 76 {} 0 {} 164 {} 82 {} 0 {} 0 {} 0 {} 180 {} 0 {} 0 {} 0 {} 0 {} 113 {} 133 {} 133 {} 0 {} 0 {} 0 {} 61 {} 0 {} 0 {} 0 {} 0 {} 0 {} 102 {} 102 {} 0 {} 102 {} 102 {} 0 {} 0 {} 0 {} 72 {} 0 {} 0 {} 0 {} 0 {} 49 {} 49 {} 49 {} -10 {} -100 {} -70 {} 0 {} -100 {} -129 {} -129 {} -100 {} -100 {} 0 {} 0 {} -121 {} 20 {} 0 {} 76 {} 49 {} -100 {} 0 {} 0 {} -80 {} 0 {} 0 {} 49 {} 49 {} 49 {} -76 {} -90 {} -49 {} 0 {} -125 {} -90 {} -125 {} -100 {} -100 {} 0 {} 0 {} -100 {} 0 {} 0 {} 49 {} 49 {} -139 {} 0 {} 0 {} -80 {} 0 {} 0 {} 49 {} 49 {} 49 {} -70 {} -100 {} -49 {} 0 {} -229 {} -180 {} -100 {} -90 {} -80 {} 0 {} 0 {} -100 {} 0 {} 0 {} 49 {} 49 {} -229 {} 0 {} 0 {} -49 {} -102 {} 0 {} 0 {} 49 {} 49 {} -49 {} -111 {} 0 {} 0 {} 0 {} 0 {} -41 {} -31 {} 0 {} 0 {} 0 {} -49 {} 0 {} 0 {} 49 {} 76 {} 0 {} 0 {} -31 {} 0 {} 0 {} 0 {} -10 {} -70 {} -49 {} 10 {} 20 {} 20 {} 0 {} -59 {} -59 {} 10 {} 10 {} 0 {} -20 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -76 {} 0 {} 0 {} 0 {} 0 {} 0 {} -80 {} -25 {} -49 {} 20 {} 31 {} 20 {} 0 {} -100 {} -121 {} -16 {} 0 {} 4 {} -35 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -100 {} 0 {} 0 {} 4 {} 0 {} 0 {} 0 {} -25 {} -49 {} 0 {} 0 {} 20 {} 0 {} 0 {} 0 {} -31 {} -10 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -59 {} -76 {} -90 {} 0 {} -10 {} -10 {} -41 {} -41 {} -41 {} 10 {} 0 {} 0 {} -10 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -100 {} -111 {} -111 {} 0 {} -14 {} -14 {} -49 {} -82 {} -20 {} 14 {} 10 {} 0 {} -10 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -100 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -100 {} 0 {} 0 {} 0 {} 0 {} -25 {} 0 {} 0 {} -25 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 20 {} 0 {} -49 {} 0 {} 0 {} 0 {} -129 {} -150 {} -229 {} -70 {} -70 {} 0 {} -150 {} 0 {} 0 {} -25 {} -25 {} 0 {} -25 {} 0 {} -76 {} 0 {} 0 {} -121 {} 0 {} 0 {} 0 {} 0 {} -70 {} 0 {} 0 {} -125 {} -150 {} -150 {} -20 {} 0 {} 0 {} -250 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -150 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -631 {} 0 {} 0 {} 0 {} 0 {} -100 {} -100 {} -100 {} 0 {} 0 {} 0 {} 0 {} -76 {} 0 {} 0 {} 0 {} 0 {} -20 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -20 {} -35 {} 0 {} 0 {} -49 {} 0 {} -35 {} -25 {} 0 {} 0 {} 150 {} -76 {} 0 {} 25 {} 25 {} 25 {} -25 {} 0 {} 0 {} 0 {} 0 {} 0 {} 76 {} 49 {} 49 {} 0 {} 0 {} 0 {} 0 {} -121 {} -49 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 49 {} 49 {} -25 {} 0 {} 0 {} 0 {} 0 {} 0 {} 76 {} 49 {} 49 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 49 {} 49 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 49 {} 0 {} 0 {} 0 {} 49 {} -121 {} -49 {} 0 {} 0 {} 0 {} 10 {} 0 {} 0 {} 20 {} 25 {} 100 {} 59 {} -100 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -100 {} -100 {} -49 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -61 {} -20 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -49 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} 0 {} -102 {} 0 {} 0 {} 0 {} 0 {}
+ChainSub2: class "'ccmp' Glyph Composition/Decomposition lookup 22 subtable" 6 6 6 3
+  Class: 3 i j
+  Class: 410 gravecomb acutecomb circumflexcomb tildecomb macroncomb uni0305 brevecomb uni0307 uni0308 hookabovecomb uni030A uni030B uni030C uni030D uni030E uni030F uni0310 uni0311 uni0312 uni0313 uni0314 uni0315 uni031A uni0351 uni0357 uni0358 grave.cap acute.cap circumflex.cap caron.cap breve.cap hungarumlaut.cap space_uni030F.cap breveinvertedcmb.cap breve.cyrcap breve.cyr dieresis.cap hookabovecomb.cap dotaccent.cap
+  Class: 5 f f_f
+  Class: 409 parenright question T V W Y bracketright bar braceright brokenbar ordfeminine two.superior three.superior pilcrow one.superior Yacute agrave atilde adieresis egrave edieresis igrave idieresis ograve otilde odieresis ugrave udieresis ydieresis amacron abreve emacron ebreve ecaron itilde imacron ibreve ij omacron umacron ubreve quoteleft quoteright quotedblleft quotedblright question_question question_exclam
+  Class: 599 A B C D E F G H I J K L M N O P Q R S U X Z Acircumflex AE Ccedilla Ocircumflex Thorn Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega afii10053 afii10054 afii10055 afii10057 afii10058 afii10059 afii10060 afii10145 afii10017 afii10018 afii10019 afii10020 afii10021 afii10022 afii10024 afii10025 afii10026 afii10028 afii10029 afii10030 afii10031 afii10032 afii10033 afii10034 afii10035 afii10036 afii10037 afii10038 afii10039 afii10040 afii10041 afii10042 afii10043 afii10044 afii10045 afii10046 afii10047 afii10048 afii10049
+  BClass: 3 i j
+  BClass: 410 gravecomb acutecomb circumflexcomb tildecomb macroncomb uni0305 brevecomb uni0307 uni0308 hookabovecomb uni030A uni030B uni030C uni030D uni030E uni030F uni0310 uni0311 uni0312 uni0313 uni0314 uni0315 uni031A uni0351 uni0357 uni0358 grave.cap acute.cap circumflex.cap caron.cap breve.cap hungarumlaut.cap space_uni030F.cap breveinvertedcmb.cap breve.cyrcap breve.cyr dieresis.cap hookabovecomb.cap dotaccent.cap
+  BClass: 5 f f_f
+  BClass: 409 parenright question T V W Y bracketright bar braceright brokenbar ordfeminine two.superior three.superior pilcrow one.superior Yacute agrave atilde adieresis egrave edieresis igrave idieresis ograve otilde odieresis ugrave udieresis ydieresis amacron abreve emacron ebreve ecaron itilde imacron ibreve ij omacron umacron ubreve quoteleft quoteright quotedblleft quotedblright question_question question_exclam
+  BClass: 599 A B C D E F G H I J K L M N O P Q R S U X Z Acircumflex AE Ccedilla Ocircumflex Thorn Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega afii10053 afii10054 afii10055 afii10057 afii10058 afii10059 afii10060 afii10145 afii10017 afii10018 afii10019 afii10020 afii10021 afii10022 afii10024 afii10025 afii10026 afii10028 afii10029 afii10030 afii10031 afii10032 afii10033 afii10034 afii10035 afii10036 afii10037 afii10038 afii10039 afii10040 afii10041 afii10042 afii10043 afii10044 afii10045 afii10046 afii10047 afii10048 afii10049
+  FClass: 3 i j
+  FClass: 410 gravecomb acutecomb circumflexcomb tildecomb macroncomb uni0305 brevecomb uni0307 uni0308 hookabovecomb uni030A uni030B uni030C uni030D uni030E uni030F uni0310 uni0311 uni0312 uni0313 uni0314 uni0315 uni031A uni0351 uni0357 uni0358 grave.cap acute.cap circumflex.cap caron.cap breve.cap hungarumlaut.cap space_uni030F.cap breveinvertedcmb.cap breve.cyrcap breve.cyr dieresis.cap hookabovecomb.cap dotaccent.cap
+  FClass: 5 f f_f
+  FClass: 409 parenright question T V W Y bracketright bar braceright brokenbar ordfeminine two.superior three.superior pilcrow one.superior Yacute agrave atilde adieresis egrave edieresis igrave idieresis ograve otilde odieresis ugrave udieresis ydieresis amacron abreve emacron ebreve ecaron itilde imacron ibreve ij omacron umacron ubreve quoteleft quoteright quotedblleft quotedblright question_question question_exclam
+  FClass: 599 A B C D E F G H I J K L M N O P Q R S U X Z Acircumflex AE Ccedilla Ocircumflex Thorn Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega afii10053 afii10054 afii10055 afii10057 afii10058 afii10059 afii10060 afii10145 afii10017 afii10018 afii10019 afii10020 afii10021 afii10022 afii10024 afii10025 afii10026 afii10028 afii10029 afii10030 afii10031 afii10032 afii10033 afii10034 afii10035 afii10036 afii10037 afii10038 afii10039 afii10040 afii10041 afii10042 afii10043 afii10044 afii10045 afii10046 afii10047 afii10048 afii10049
+ 1 0 1
+  ClsList: 1
+  BClsList:
+  FClsList: 2
+ 1
+  SeqLookup: 0 "Single Substitution lookup 31"
+ 1 1 0
+  ClsList: 2
+  BClsList: 5
+  FClsList:
+ 1
+  SeqLookup: 0 "Single Substitution lookup 32"
+ 1 0 1
+  ClsList: 3
+  BClsList:
+  FClsList: 4
+ 1
+  SeqLookup: 0 "Single Substitution lookup 33"
+  ClassNames: "0" "1" "2" "3" "4" "5"
+  BClassNames: "0" "1" "2" "3" "4" "5"
+  FClassNames: "0" "1" "2" "3" "4" "5"
+EndFPST
+ChainSub2: coverage "'frac' Diagonal Fractions lookup 7 contextual 1" 0 0 0 1
+ 1 0 1
+  Coverage: 55 slash zero one two three four five six seven eight nine
+  FCoverage: 379 slash zero one two three four five six seven eight nine two.superior three.superior one.superior onequarter onehalf threequarters fraction zero.superior four.superior five.superior six.superior seven.superior eight.superior nine.superior onethird twothirds onefifth twofifths threefifths fourfifths onesixth fivesixths oneeighth threeeighths fiveeighths seveneighths onenumerator
+ 1
+  SeqLookup: 0 "'sups' Superscript lookup 9"
+EndFPST
+ChainSub2: coverage "'frac' Diagonal Fractions lookup 7 contextual 0" 0 0 0 1
+ 1 1 0
+  Coverage: 49 zero one two three four five six seven eight nine
+  BCoverage: 379 slash zero one two three four five six seven eight nine onequarter onehalf threequarters fraction zero.inferior one.inferior two.inferior three.inferior four.inferior five.inferior six.inferior seven.inferior eight.inferior nine.inferior onethird twothirds onefifth twofifths threefifths fourfifths onesixth fivesixths oneeighth threeeighths fiveeighths seveneighths onenumerator
+ 1
+  SeqLookup: 0 "'sinf' Scientific Inferiors lookup 10"
+EndFPST
+TtTable: prep
+PUSHW_1
+ 511
+SCANCTRL
+PUSHB_1
+ 1
+SCANTYPE
+SVTCA[y-axis]
+MPPEM
+PUSHB_1
+ 8
+LT
+IF
+PUSHB_2
+ 1
+ 1
+INSTCTRL
+EIF
+PUSHB_2
+ 70
+ 6
+CALL
+IF
+POP
+PUSHB_1
+ 16
+EIF
+MPPEM
+PUSHB_1
+ 20
+GT
+IF
+POP
+PUSHB_1
+ 128
+EIF
+SCVTCI
+PUSHB_1
+ 6
+CALL
+NOT
+IF
+SVTCA[y-axis]
+PUSHB_1
+ 7
+DUP
+RCVT
+PUSHB_1
+ 3
+CALL
+WCVTP
+SVTCA[x-axis]
+PUSHB_1
+ 8
+DUP
+RCVT
+PUSHB_1
+ 3
+CALL
+WCVTP
+PUSHB_1
+ 9
+DUP
+RCVT
+PUSHW_3
+ 8
+ 32767
+ 2
+CALL
+PUSHB_2
+ 3
+ 70
+SROUND
+CALL
+WCVTP
+PUSHB_1
+ 10
+DUP
+RCVT
+PUSHB_3
+ 9
+ 82
+ 2
+CALL
+PUSHB_2
+ 3
+ 70
+SROUND
+CALL
+WCVTP
+EIF
+PUSHB_1
+ 20
+CALL
+EndTTInstrs
+TtTable: fpgm
+PUSHB_1
+ 0
+FDEF
+PUSHB_1
+ 0
+SZP0
+MPPEM
+PUSHB_1
+ 42
+LT
+IF
+PUSHB_1
+ 74
+SROUND
+EIF
+PUSHB_1
+ 0
+SWAP
+MIAP[rnd]
+RTG
+PUSHB_1
+ 6
+CALL
+IF
+RTDG
+EIF
+MPPEM
+PUSHB_1
+ 42
+LT
+IF
+RDTG
+EIF
+DUP
+MDRP[rp0,rnd,grey]
+PUSHB_1
+ 1
+SZP0
+MDAP[no-rnd]
+RTG
+ENDF
+PUSHB_1
+ 1
+FDEF
+DUP
+MDRP[rp0,min,white]
+PUSHB_1
+ 12
+CALL
+ENDF
+PUSHB_1
+ 2
+FDEF
+MPPEM
+GT
+IF
+RCVT
+SWAP
+EIF
+POP
+ENDF
+PUSHB_1
+ 3
+FDEF
+ROUND[Black]
+RTG
+DUP
+PUSHB_1
+ 64
+LT
+IF
+POP
+PUSHB_1
+ 64
+EIF
+ENDF
+PUSHB_1
+ 4
+FDEF
+PUSHB_1
+ 6
+CALL
+IF
+POP
+SWAP
+POP
+ROFF
+IF
+MDRP[rp0,min,rnd,black]
+ELSE
+MDRP[min,rnd,black]
+EIF
+ELSE
+MPPEM
+GT
+IF
+IF
+MIRP[rp0,min,rnd,black]
+ELSE
+MIRP[min,rnd,black]
+EIF
+ELSE
+SWAP
+POP
+PUSHB_1
+ 5
+CALL
+IF
+PUSHB_1
+ 70
+SROUND
+EIF
+IF
+MDRP[rp0,min,rnd,black]
+ELSE
+MDRP[min,rnd,black]
+EIF
+EIF
+EIF
+RTG
+ENDF
+PUSHB_1
+ 5
+FDEF
+GFV
+NOT
+AND
+ENDF
+PUSHB_1
+ 6
+FDEF
+PUSHB_2
+ 34
+ 1
+GETINFO
+LT
+IF
+PUSHB_1
+ 32
+GETINFO
+NOT
+NOT
+ELSE
+PUSHB_1
+ 0
+EIF
+ENDF
+PUSHB_1
+ 7
+FDEF
+PUSHB_2
+ 36
+ 1
+GETINFO
+LT
+IF
+PUSHB_1
+ 64
+GETINFO
+NOT
+NOT
+ELSE
+PUSHB_1
+ 0
+EIF
+ENDF
+PUSHB_1
+ 8
+FDEF
+SRP2
+SRP1
+DUP
+IP
+MDAP[rnd]
+ENDF
+PUSHB_1
+ 9
+FDEF
+DUP
+RDTG
+PUSHB_1
+ 6
+CALL
+IF
+MDRP[rnd,grey]
+ELSE
+MDRP[min,rnd,black]
+EIF
+DUP
+PUSHB_1
+ 3
+CINDEX
+MD[grid]
+SWAP
+DUP
+PUSHB_1
+ 4
+MINDEX
+MD[orig]
+PUSHB_1
+ 0
+LT
+IF
+ROLL
+NEG
+ROLL
+SUB
+DUP
+PUSHB_1
+ 0
+LT
+IF
+SHPIX
+ELSE
+POP
+POP
+EIF
+ELSE
+ROLL
+ROLL
+SUB
+DUP
+PUSHB_1
+ 0
+GT
+IF
+SHPIX
+ELSE
+POP
+POP
+EIF
+EIF
+RTG
+ENDF
+PUSHB_1
+ 10
+FDEF
+PUSHB_1
+ 6
+CALL
+IF
+POP
+SRP0
+ELSE
+SRP0
+POP
+EIF
+ENDF
+PUSHB_1
+ 11
+FDEF
+DUP
+MDRP[rp0,white]
+PUSHB_1
+ 12
+CALL
+ENDF
+PUSHB_1
+ 12
+FDEF
+DUP
+MDAP[rnd]
+PUSHB_1
+ 7
+CALL
+NOT
+IF
+DUP
+DUP
+GC[orig]
+SWAP
+GC[cur]
+SUB
+ROUND[White]
+DUP
+IF
+DUP
+ABS
+DIV
+SHPIX
+ELSE
+POP
+POP
+EIF
+ELSE
+POP
+EIF
+ENDF
+PUSHB_1
+ 13
+FDEF
+SRP2
+SRP1
+DUP
+DUP
+IP
+MDAP[rnd]
+DUP
+ROLL
+DUP
+GC[orig]
+ROLL
+GC[cur]
+SUB
+SWAP
+ROLL
+DUP
+ROLL
+SWAP
+MD[orig]
+PUSHB_1
+ 0
+LT
+IF
+SWAP
+PUSHB_1
+ 0
+GT
+IF
+PUSHB_1
+ 64
+SHPIX
+ELSE
+POP
+EIF
+ELSE
+SWAP
+PUSHB_1
+ 0
+LT
+IF
+PUSHB_1
+ 64
+NEG
+SHPIX
+ELSE
+POP
+EIF
+EIF
+ENDF
+PUSHB_1
+ 14
+FDEF
+PUSHB_1
+ 6
+CALL
+IF
+RTDG
+MDRP[rp0,rnd,white]
+RTG
+POP
+POP
+ELSE
+DUP
+MDRP[rp0,rnd,white]
+ROLL
+MPPEM
+GT
+IF
+DUP
+ROLL
+SWAP
+MD[grid]
+DUP
+PUSHB_1
+ 0
+NEQ
+IF
+SHPIX
+ELSE
+POP
+POP
+EIF
+ELSE
+POP
+POP
+EIF
+EIF
+ENDF
+PUSHB_1
+ 15
+FDEF
+SWAP
+DUP
+MDRP[rp0,rnd,white]
+DUP
+MDAP[rnd]
+PUSHB_1
+ 7
+CALL
+NOT
+IF
+SWAP
+DUP
+IF
+MPPEM
+GTEQ
+ELSE
+POP
+PUSHB_1
+ 1
+EIF
+IF
+ROLL
+PUSHB_1
+ 4
+MINDEX
+MD[grid]
+SWAP
+ROLL
+SWAP
+DUP
+ROLL
+MD[grid]
+ROLL
+SWAP
+SUB
+SHPIX
+ELSE
+POP
+POP
+POP
+POP
+EIF
+ELSE
+POP
+POP
+POP
+POP
+POP
+EIF
+ENDF
+PUSHB_1
+ 16
+FDEF
+DUP
+MDRP[rp0,min,white]
+PUSHB_1
+ 18
+CALL
+ENDF
+PUSHB_1
+ 17
+FDEF
+DUP
+MDRP[rp0,white]
+PUSHB_1
+ 18
+CALL
+ENDF
+PUSHB_1
+ 18
+FDEF
+DUP
+MDAP[rnd]
+PUSHB_1
+ 7
+CALL
+NOT
+IF
+DUP
+DUP
+GC[orig]
+SWAP
+GC[cur]
+SUB
+ROUND[White]
+ROLL
+DUP
+GC[orig]
+SWAP
+GC[cur]
+SWAP
+SUB
+ROUND[White]
+ADD
+DUP
+IF
+DUP
+ABS
+DIV
+SHPIX
+ELSE
+POP
+POP
+EIF
+ELSE
+POP
+POP
+EIF
+ENDF
+PUSHB_1
+ 19
+FDEF
+DUP
+ROLL
+DUP
+ROLL
+SDPVTL[orthog]
+DUP
+PUSHB_1
+ 3
+CINDEX
+MD[orig]
+ABS
+SWAP
+ROLL
+SPVTL[orthog]
+PUSHB_1
+ 32
+LT
+IF
+ALIGNRP
+ELSE
+MDRP[grey]
+EIF
+ENDF
+PUSHB_1
+ 20
+FDEF
+PUSHB_4
+ 0
+ 64
+ 1
+ 64
+WS
+WS
+SVTCA[x-axis]
+MPPEM
+PUSHW_1
+ 4096
+MUL
+SVTCA[y-axis]
+MPPEM
+PUSHW_1
+ 4096
+MUL
+DUP
+ROLL
+DUP
+ROLL
+NEQ
+IF
+DUP
+ROLL
+DUP
+ROLL
+GT
+IF
+SWAP
+DIV
+DUP
+PUSHB_1
+ 0
+SWAP
+WS
+ELSE
+DIV
+DUP
+PUSHB_1
+ 1
+SWAP
+WS
+EIF
+DUP
+PUSHB_1
+ 64
+GT
+IF
+PUSHB_3
+ 0
+ 32
+ 0
+RS
+MUL
+WS
+PUSHB_3
+ 1
+ 32
+ 1
+RS
+MUL
+WS
+PUSHB_1
+ 32
+MUL
+PUSHB_1
+ 25
+NEG
+JMPR
+POP
+EIF
+ELSE
+POP
+POP
+EIF
+ENDF
+PUSHB_1
+ 21
+FDEF
+PUSHB_1
+ 1
+RS
+MUL
+SWAP
+PUSHB_1
+ 0
+RS
+MUL
+SWAP
+ENDF
+EndTTInstrs
+ShortTable: cvt  57
+  -465
+  0
+  879
+  942
+  1229
+  1321
+  1409
+  74
+  162
+  162
+  176
+  77
+  98
+  155
+  169
+  165
+  86
+  64
+  158
+  138
+  68
+  145
+  80
+  153
+  96
+  173
+  53
+  132
+  41
+  82
+  125
+  49
+  84
+  72
+  56
+  60
+  151
+  142
+  194
+  148
+  62
+  46
+  113
+  108
+  128
+  93
+  160
+  16
+  19
+  116
+  110
+  10
+  181
+  91
+  135
+  51
+  102
+EndShort
+ShortTable: maxp 16
+  1
+  0
+  2632
+  729
+  17
+  0
+  0
+  2
+  1
+  2
+  22
+  0
+  256
+  2913
+  0
+  0
+EndShort
+LangName: 1033 "" "" "Regular" "FontForge 2.0 : Linux Libertine : 21-6-2011" "" "" "" "" "Philipp H. Poll" "Philipp H. Poll" "" "http://www.linuxlibertine.org" "http://www.linuxlibertine.org" "GPL- General Public License AND OFL-Open Font License" "http://www.fsf.org/licenses/gpl.html AND http://scripts.sil.org/OFL"
+GaspTable: 3 8 2 17 1 65535 3 0
+MATH:ScriptPercentScaleDown: 80
+MATH:ScriptScriptPercentScaleDown: 60
+MATH:DelimitedSubFormulaMinHeight: 3072
+MATH:DisplayOperatorMinHeight: 2560
+MATH:MathLeading: 307 
+MATH:AxisHeight: 594 
+MATH:AccentBaseHeight: 983 
+MATH:FlattenedAccentBaseHeight: 1325 
+MATH:SubscriptShiftDown: 430 
+MATH:SubscriptTopMax: 737 
+MATH:SubscriptBaselineDropMin: 328 
+MATH:SuperscriptShiftUp: 768 
+MATH:SuperscriptShiftUpCramped: 635 
+MATH:SuperscriptBottomMin: 246 
+MATH:SuperscriptBaselineDropMax: 471 
+MATH:SubSuperscriptGapMin: 307 
+MATH:SuperscriptBottomMaxWithSubscript: 778 
+MATH:SpaceAfterScript: 88 
+MATH:UpperLimitGapMin: 133 
+MATH:UpperLimitBaselineRiseMin: 512 
+MATH:LowerLimitGapMin: 133 
+MATH:LowerLimitBaselineDropMin: 1270 
+MATH:StackTopShiftUp: 963 
+MATH:StackTopDisplayStyleShiftUp: 1536 
+MATH:StackBottomShiftDown: 778 
+MATH:StackBottomDisplayStyleShiftDown: 1434 
+MATH:StackGapMin: 410 
+MATH:StackDisplayStyleGapMin: 676 
+MATH:StretchStackTopShiftUp: 1638 
+MATH:StretchStackBottomShiftDown: 1229 
+MATH:StretchStackGapAboveMin: 133 
+MATH:StretchStackGapBelowMin: 133 
+MATH:FractionNumeratorShiftUp: 1229 
+MATH:FractionNumeratorDisplayStyleShiftUp: 1638 
+MATH:FractionDenominatorShiftDown: 1126 
+MATH:FractionDenominatorDisplayStyleShiftDown: 1434 
+MATH:FractionNumeratorGapMin: 133 
+MATH:FractionNumeratorDisplayStyleGapMin: 266 
+MATH:FractionRuleThickness: 133 
+MATH:FractionDenominatorGapMin: 133 
+MATH:FractionDenominatorDisplayStyleGapMin: 266 
+MATH:SkewedFractionHorizontalGap: 819 
+MATH:SkewedFractionVerticalGap: 133 
+MATH:OverbarVerticalGap: 246 
+MATH:OverbarRuleThickness: 82 
+MATH:OverbarExtraAscender: 82 
+MATH:UnderbarVerticalGap: 246 
+MATH:UnderbarRuleThickness: 82 
+MATH:UnderbarExtraDescender: 82 
+MATH:RadicalVerticalGap: 184 
+MATH:RadicalDisplayStyleVerticalGap: 348 
+MATH:RadicalRuleThickness: 133 
+MATH:RadicalExtraAscender: 133 
+MATH:RadicalKernBeforeDegree: 133 
+MATH:RadicalKernAfterDegree: -1341 
+MATH:RadicalDegreeBottomRaisePercent: 68
+MATH:MinConnectorOverlap: 100
+Encoding: UnicodeFull
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: -48
+AntiAlias: 1
+FitToEm: 1
+WinInfo: 0 29 14
+AnchorClass2: "Anchor-0" "'mark' Mark Positioning lookup 1 anchor 0" "Anchor-1" "'mark' Mark Positioning lookup 1 anchor 1" "Anchor-2" "'mark' Mark Positioning lookup 1 anchor 2" "Anchor-3" "'mark' Mark Positioning lookup 1 anchor 3" "Anchor-4" "'mark' Mark Positioning lookup 1 anchor 4" "Anchor-5" "'mark' Mark Positioning lookup 1 anchor 5" "Anchor-6" "'mark' Mark Positioning lookup 1 anchor 6" "Anchor-7" "'mkmk' Mark to Mark lookup 2 subtable" 
+BeginChars: 1114115 9
+
+StartChar: space
+Encoding: 32 32 0
+Width: 512
+GlyphClass: 2
+Flags: W
+LayerCount: 2
+Back
+Fore
+EndChar
+
+StartChar: A
+Encoding: 65 65 1
+Width: 1423
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 24
+ 1
+ 0
+CALL
+PUSHB_1
+ 42
+SHP[rp1]
+PUSHB_2
+ 27
+ 7
+MIRP[min,black]
+PUSHB_3
+ 17
+ 39
+ 49
+SHP[rp2]
+SHP[rp2]
+SHP[rp2]
+PUSHB_3
+ 33
+ 5
+ 0
+CALL
+PUSHB_5
+ 61
+ 0
+ 24
+ 33
+ 13
+CALL
+PUSHB_5
+ 61
+ 7
+ 0
+ 96
+ 4
+CALL
+SVTCA[x-axis]
+PUSHB_1
+ 65
+MDAP[rnd]
+PUSHB_2
+ 66
+ 1
+CALL
+SVTCA[y-axis]
+PUSHB_2
+ 33
+ 0
+SRP1
+SRP2
+PUSHB_2
+ 2
+ 31
+IP
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 631 -225 basechar 0
+AnchorPoint: "Anchor-5" 238 10 basechar 0
+AnchorPoint: "Anchor-2" 725 1741 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+539 580 m 2,0,-1
+ 901 580 l 1,1,-1
+ 709 1137 l 1,2,-1
+ 696 1137 l 1,3,-1
+ 487 607 l 2,4,5
+ 484 601 484 601 485 596 c 128,-1,6
+ 486 591 486 591 489 588 c 128,-1,7
+ 492 585 492 585 499 583 c 128,-1,8
+ 506 581 506 581 515.5 580.5 c 128,-1,9
+ 525 580 525 580 539 580 c 2,0,-1
+317 162 m 1,10,11
+ 315 142 315 142 311 126.5 c 128,-1,12
+ 307 111 307 111 322.5 100.5 c 128,-1,13
+ 338 90 338 90 347 84 c 128,-1,14
+ 356 78 356 78 381 73 c 128,-1,15
+ 406 68 406 68 420 67 c 128,-1,16
+ 434 66 434 66 459 63 c 1,17,18
+ 467 53 467 53 467 28.5 c 128,-1,19
+ 467 4 467 4 459 -4 c 1,20,21
+ 307 0 307 0 197 0 c 0,22,23
+ 166 0 166 0 14 -4 c 1,24,25
+ 4 4 4 4 4 28.5 c 128,-1,26
+ 4 53 4 53 14 63 c 1,27,28
+ 92 69 92 69 137 95 c 128,-1,29
+ 182 121 182 121 219 209 c 2,30,-1
+ 684 1307 l 1,31,32
+ 729 1307 729 1307 797 1348 c 1,33,-1
+ 1219 176 l 2,34,35
+ 1231 139 1231 139 1248.5 116.5 c 128,-1,36
+ 1266 94 1266 94 1296.5 83 c 128,-1,37
+ 1327 72 1327 72 1342.5 70 c 128,-1,38
+ 1358 68 1358 68 1403 63 c 1,39,40
+ 1413 53 1413 53 1413 28.5 c 128,-1,41
+ 1413 4 1413 4 1403 -4 c 1,42,43
+ 1251 0 1251 0 1169 0 c 0,44,45
+ 1052 0 1052 0 901 -4 c 1,46,47
+ 893 4 893 4 893 28.5 c 128,-1,48
+ 893 53 893 53 901 63 c 1,49,50
+ 913 63 913 63 932.5 64.5 c 128,-1,51
+ 952 66 952 66 962.5 67 c 128,-1,52
+ 973 68 973 68 989.5 70 c 128,-1,53
+ 1006 72 1006 72 1014 74 c 128,-1,54
+ 1022 76 1022 76 1033 80 c 128,-1,55
+ 1044 84 1044 84 1048.5 90 c 128,-1,56
+ 1053 96 1053 96 1056 104.5 c 128,-1,57
+ 1059 113 1059 113 1058 123 c 128,-1,58
+ 1057 133 1057 133 1053 147 c 2,59,-1
+ 934 494 l 1,60,-1
+ 502 494 l 2,61,62
+ 465 494 465 494 451.5 486.5 c 128,-1,63
+ 438 479 438 479 430 459 c 2,64,-1
+ 317 162 l 1,10,11
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" a.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: B
+Encoding: 66 66 2
+Width: 1204
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 43
+ 1
+ 0
+CALL
+PUSHB_2
+ 46
+ 7
+MIRP[min,black]
+PUSHB_1
+ 14
+SHP[rp2]
+PUSHB_3
+ 24
+ 5
+ 0
+CALL
+PUSHB_2
+ 7
+ 7
+MIRP[min,black]
+PUSHB_1
+ 53
+SHP[rp2]
+PUSHB_5
+ 1
+ 11
+ 43
+ 24
+ 13
+CALL
+PUSHB_2
+ 1
+ 7
+MIRP[min,black]
+SVTCA[x-axis]
+PUSHB_1
+ 58
+MDAP[rnd]
+PUSHB_1
+ 49
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 12
+ 10
+MIRP[min,black]
+PUSHB_1
+ 0
+SHP[rp2]
+PUSHB_3
+ 49
+ 12
+ 10
+CALL
+PUSHB_4
+ 64
+ 49
+ 45
+ 9
+CALL
+PUSHB_1
+ 54
+SHP[rp2]
+PUSHB_1
+ 12
+SRP0
+PUSHB_2
+ 17
+ 1
+CALL
+PUSHB_2
+ 33
+ 10
+MIRP[min,black]
+PUSHB_4
+ 26
+ 33
+ 17
+ 8
+CALL
+PUSHB_2
+ 4
+ 8
+MIRP[min,black]
+PUSHB_1
+ 4
+MDAP[rnd]
+PUSHB_2
+ 26
+ 8
+MIRP[min,black]
+PUSHB_2
+ 59
+ 1
+CALL
+PUSHB_2
+ 12
+ 49
+SRP1
+SRP2
+PUSHB_2
+ 21
+ 41
+IP
+IP
+PUSHB_1
+ 4
+SRP1
+PUSHB_4
+ 24
+ 29
+ 30
+ 38
+DEPTH
+SLOOP
+IP
+SVTCA[y-axis]
+PUSHB_2
+ 11
+ 46
+SRP1
+SRP2
+PUSHB_1
+ 33
+IP
+PUSHB_1
+ 1
+SRP1
+PUSHB_2
+ 29
+ 30
+IP
+IP
+PUSHB_1
+ 7
+SRP2
+PUSHB_1
+ 26
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 549 -225 basechar 0
+AnchorPoint: "Anchor-5" 512 0 basechar 0
+AnchorPoint: "Anchor-3" 299 379 basechar 0
+AnchorPoint: "Anchor-2" 547 1741 basechar 0
+AnchorPoint: "Anchor-0" 1042 1499 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+391 1167 m 2,0,-1
+ 391 750 l 1,1,-1
+ 543 750 l 2,2,3
+ 834 750 834 750 834 985 c 0,4,5
+ 834 1126 834 1126 754 1190.5 c 128,-1,6
+ 674 1255 674 1255 569 1255 c 0,7,8
+ 481 1255 481 1255 443.5 1246 c 128,-1,9
+ 406 1237 406 1237 398.5 1221.5 c 128,-1,10
+ 391 1206 391 1206 391 1167 c 2,0,-1
+391 680 m 1,11,-1
+ 391 201 l 2,12,13
+ 391 64 391 64 561 63 c 0,14,15
+ 776 63 776 63 853 136 c 128,-1,16
+ 930 209 930 209 930 338 c 0,17,18
+ 930 488 930 488 830.5 584 c 128,-1,19
+ 731 680 731 680 532 680 c 2,20,-1
+ 391 680 l 1,11,-1
+303 1321 m 0,21,22
+ 348 1321 348 1321 436 1323 c 128,-1,23
+ 524 1325 524 1325 559 1325 c 0,24,25
+ 999 1325 999 1325 999 1010 c 0,26,27
+ 999 930 999 930 943 856 c 128,-1,28
+ 887 782 887 782 805 741 c 1,29,-1
+ 805 737 l 1,30,31
+ 948 696 948 696 1034 606 c 128,-1,32
+ 1120 516 1120 516 1120 377 c 0,33,34
+ 1120 305 1120 305 1095.5 241.5 c 128,-1,35
+ 1071 178 1071 178 1016 120.5 c 128,-1,36
+ 961 63 961 63 855.5 29.5 c 128,-1,37
+ 750 -4 750 -4 604 -4 c 0,38,39
+ 502 -4 502 -4 420 -2 c 128,-1,40
+ 338 0 338 0 305 0 c 0,41,42
+ 239 0 239 0 39 -4 c 1,43,44
+ 29 4 29 4 29 28.5 c 128,-1,45
+ 29 53 29 53 39 63 c 1,46,47
+ 154 67 154 67 185.5 97 c 128,-1,48
+ 217 127 217 127 217 250 c 2,49,-1
+ 217 1071 l 2,50,51
+ 217 1194 217 1194 185.5 1223.5 c 128,-1,52
+ 154 1253 154 1253 39 1257 c 1,53,54
+ 29 1265 29 1265 29 1290 c 128,-1,55
+ 29 1315 29 1315 39 1325 c 1,56,57
+ 244 1321 244 1321 303 1321 c 0,21,22
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" b.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: E
+Encoding: 69 69 3
+Width: 1124
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 31
+ 1
+ 0
+CALL
+PUSHB_2
+ 21
+ 7
+MIRP[min,black]
+PUSHB_3
+ 33
+ 1
+ 0
+CALL
+PUSHB_1
+ 28
+SHP[rp1]
+PUSHB_2
+ 36
+ 7
+MIRP[min,black]
+PUSHB_3
+ 47
+ 5
+ 0
+CALL
+PUSHB_2
+ 60
+ 7
+MIRP[min,black]
+PUSHB_3
+ 46
+ 5
+ 0
+CALL
+PUSHB_2
+ 43
+ 7
+MIRP[min,black]
+PUSHB_3
+ 5
+ 2
+ 0
+CALL
+PUSHB_5
+ 64
+ 18
+ 33
+ 5
+ 13
+CALL
+PUSHB_2
+ 64
+ 7
+MIRP[min,black]
+PUSHB_3
+ 18
+ 64
+ 10
+CALL
+PUSHB_4
+ 64
+ 18
+ 12
+ 9
+CALL
+SVTCA[x-axis]
+PUSHB_1
+ 65
+MDAP[rnd]
+PUSHB_1
+ 39
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 19
+ 10
+MIRP[min,black]
+PUSHB_1
+ 63
+SHP[rp2]
+PUSHB_3
+ 39
+ 19
+ 10
+CALL
+PUSHB_4
+ 64
+ 39
+ 35
+ 9
+CALL
+PUSHB_1
+ 19
+SRP0
+PUSHB_2
+ 13
+ 1
+CALL
+PUSHB_1
+ 3
+SHP[rp2]
+PUSHB_5
+ 10
+ 8
+ 0
+ 19
+ 4
+CALL
+PUSHB_1
+ 10
+SRP0
+PUSHB_2
+ 56
+ 1
+CALL
+PUSHB_5
+ 54
+ 8
+ 0
+ 19
+ 4
+CALL
+PUSHB_1
+ 54
+SRP0
+PUSHB_2
+ 24
+ 1
+CALL
+PUSHB_5
+ 26
+ 8
+ 0
+ 19
+ 4
+CALL
+PUSHB_2
+ 66
+ 1
+CALL
+PUSHB_2
+ 19
+ 39
+SRP1
+SRP2
+PUSHB_1
+ 31
+IP
+PUSHB_2
+ 54
+ 56
+SRP1
+SRP2
+PUSHB_1
+ 50
+IP
+PUSHB_1
+ 24
+SRP1
+PUSHB_1
+ 28
+IP
+SVTCA[y-axis]
+PUSHB_2
+ 18
+ 21
+SRP1
+SRP2
+PUSHB_3
+ 10
+ 25
+ 26
+IP
+IP
+IP
+PUSHB_1
+ 64
+SRP1
+PUSHB_1
+ 8
+IP
+PUSHB_2
+ 60
+ 5
+SRP1
+SRP2
+PUSHB_2
+ 54
+ 55
+IP
+IP
+PUSHB_2
+ 47
+ 43
+SRP1
+SRP2
+PUSHB_1
+ 45
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 571 -225 basechar 0
+AnchorPoint: "Anchor-5" 571 8 basechar 0
+AnchorPoint: "Anchor-2" 559 1741 basechar 0
+AnchorPoint: "Anchor-0" 1063 1499 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+559 739 m 2,0,1
+ 684 739 684 739 712.5 763.5 c 128,-1,2
+ 741 788 741 788 745 879 c 1,3,4
+ 753 889 753 889 778 889 c 128,-1,5
+ 803 889 803 889 813 879 c 1,6,7
+ 809 756 809 756 809 702 c 0,8,9
+ 809 665 809 665 813 522 c 1,10,11
+ 803 512 803 512 778.5 512 c 128,-1,12
+ 754 512 754 512 745 522 c 1,13,14
+ 741 577 741 577 733 601 c 128,-1,15
+ 725 625 725 625 684 643.5 c 128,-1,16
+ 643 662 643 662 559 662 c 2,17,-1
+ 373 662 l 1,18,-1
+ 373 168 l 2,19,20
+ 373 80 373 80 446 80 c 2,21,-1
+ 725 80 l 2,22,23
+ 920 80 920 80 993 348 c 1,24,25
+ 1030 356 1030 356 1065 338 c 1,26,27
+ 1040 176 1040 176 989 -4 c 1,28,29
+ 825 0 825 0 727 0 c 2,30,-1
+ 287 0 l 2,31,32
+ 121 -2 121 -2 20 -4 c 1,33,34
+ 12 4 12 4 12 28.5 c 128,-1,35
+ 12 53 12 53 20 63 c 1,36,37
+ 135 67 135 67 167 97 c 128,-1,38
+ 199 127 199 127 199 250 c 2,39,-1
+ 199 1071 l 2,40,41
+ 199 1194 199 1194 167 1223.5 c 128,-1,42
+ 135 1253 135 1253 20 1257 c 1,43,44
+ 12 1265 12 1265 12 1290 c 128,-1,45
+ 12 1315 12 1315 20 1325 c 1,46,-1
+ 285 1321 l 1,47,-1
+ 807 1321 l 2,48,49
+ 860 1321 860 1321 907 1329 c 0,50,51
+ 915 1329 915 1329 915 1323 c 0,52,53
+ 931 1253 931 1253 961 1026 c 1,54,55
+ 928 1010 928 1010 893 1016 c 1,56,57
+ 854 1139 854 1139 811 1189 c 128,-1,58
+ 768 1239 768 1239 662 1239 c 2,59,-1
+ 446 1239 l 2,60,61
+ 411 1239 411 1239 392 1213.5 c 128,-1,62
+ 373 1188 373 1188 373 1149 c 2,63,-1
+ 373 739 l 1,64,-1
+ 559 739 l 2,0,1
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" e.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: I
+Encoding: 73 73 4
+Width: 608
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 10
+ 1
+ 0
+CALL
+PUSHB_2
+ 13
+ 7
+MIRP[min,black]
+PUSHB_1
+ 3
+SHP[rp2]
+PUSHB_3
+ 23
+ 5
+ 0
+CALL
+PUSHB_2
+ 20
+ 7
+MIRP[min,black]
+PUSHB_1
+ 30
+SHP[rp2]
+SVTCA[x-axis]
+PUSHB_1
+ 34
+MDAP[rnd]
+PUSHB_1
+ 16
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 0
+ 10
+MIRP[min,black]
+PUSHB_3
+ 16
+ 0
+ 10
+CALL
+PUSHB_4
+ 64
+ 16
+ 12
+ 9
+CALL
+PUSHB_1
+ 21
+SHP[rp2]
+PUSHB_2
+ 35
+ 1
+CALL
+PUSHB_2
+ 0
+ 16
+SRP1
+SRP2
+PUSHB_2
+ 8
+ 25
+IP
+IP
+SVTCA[y-axis]
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 301 -225 basechar 0
+AnchorPoint: "Anchor-5" 301 2 basechar 0
+AnchorPoint: "Anchor-3" 303 666 basechar 0
+AnchorPoint: "Anchor-2" 307 1741 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+391 250 m 2,0,1
+ 391 127 391 127 423 97.5 c 128,-1,2
+ 455 68 455 68 569 63 c 1,3,4
+ 577 53 577 53 577.5 28.5 c 128,-1,5
+ 578 4 578 4 569 -4 c 1,6,7
+ 364 0 364 0 305 0 c 0,8,9
+ 239 0 239 0 39 -4 c 1,10,11
+ 29 4 29 4 29 28.5 c 128,-1,12
+ 29 53 29 53 39 63 c 1,13,14
+ 154 67 154 67 185.5 97 c 128,-1,15
+ 217 127 217 127 217 250 c 2,16,-1
+ 217 1071 l 2,17,18
+ 217 1194 217 1194 185.5 1223.5 c 128,-1,19
+ 154 1253 154 1253 39 1257 c 1,20,21
+ 29 1265 29 1265 29 1290 c 128,-1,22
+ 29 1315 29 1315 39 1325 c 1,23,24
+ 244 1321 244 1321 303 1321 c 0,25,26
+ 369 1321 369 1321 569 1325 c 1,27,28
+ 577 1315 577 1315 577.5 1290.5 c 128,-1,29
+ 578 1266 578 1266 569 1257 c 1,30,31
+ 454 1253 454 1253 422.5 1223.5 c 128,-1,32
+ 391 1194 391 1194 391 1071 c 2,33,-1
+ 391 250 l 2,0,1
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" i.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: L
+Encoding: 76 76 5
+Width: 1077
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 0
+ 1
+ 0
+CALL
+PUSHB_2
+ 29
+ 7
+MIRP[min,black]
+PUSHB_3
+ 2
+ 1
+ 0
+CALL
+PUSHB_1
+ 37
+SHP[rp1]
+PUSHB_2
+ 5
+ 7
+MIRP[min,black]
+PUSHB_3
+ 15
+ 5
+ 0
+CALL
+PUSHB_2
+ 12
+ 7
+MIRP[min,black]
+PUSHB_1
+ 22
+SHP[rp2]
+SVTCA[x-axis]
+PUSHB_1
+ 40
+MDAP[rnd]
+PUSHB_1
+ 8
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 26
+ 10
+MIRP[min,black]
+PUSHB_3
+ 26
+ 8
+ 10
+CALL
+PUSHB_4
+ 64
+ 26
+ 21
+ 9
+CALL
+PUSHB_3
+ 8
+ 26
+ 10
+CALL
+PUSHB_4
+ 64
+ 8
+ 4
+ 9
+CALL
+PUSHB_1
+ 13
+SHP[rp2]
+PUSHB_1
+ 26
+SRP0
+PUSHB_2
+ 33
+ 1
+CALL
+PUSHB_5
+ 35
+ 8
+ 0
+ 19
+ 4
+CALL
+PUSHB_2
+ 41
+ 1
+CALL
+PUSHB_2
+ 26
+ 8
+SRP1
+SRP2
+PUSHB_2
+ 0
+ 17
+IP
+IP
+PUSHB_1
+ 33
+SRP1
+PUSHB_1
+ 19
+IP
+PUSHB_1
+ 35
+SRP2
+PUSHB_1
+ 37
+IP
+SVTCA[y-axis]
+PUSHB_2
+ 12
+ 29
+SRP1
+SRP2
+PUSHB_2
+ 34
+ 35
+IP
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 532 -225 basechar 0
+AnchorPoint: "Anchor-5" 532 2 basechar 0
+AnchorPoint: "Anchor-3" 586 645 basechar 0
+AnchorPoint: "Anchor-2" 305 1741 basechar 0
+AnchorPoint: "Anchor-0" 961 1499 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+301 0 m 2,0,1
+ 135 -2 135 -2 35 -4 c 1,2,3
+ 25 4 25 4 25 28.5 c 128,-1,4
+ 25 53 25 53 35 63 c 1,5,6
+ 150 67 150 67 181.5 97 c 128,-1,7
+ 213 127 213 127 213 250 c 2,8,-1
+ 213 1071 l 2,9,10
+ 213 1194 213 1194 181.5 1223.5 c 128,-1,11
+ 150 1253 150 1253 35 1257 c 1,12,13
+ 25 1265 25 1265 25 1290 c 128,-1,14
+ 25 1315 25 1315 35 1325 c 1,15,16
+ 240 1321 240 1321 299 1321 c 0,17,18
+ 365 1321 365 1321 565 1325 c 1,19,20
+ 573 1315 573 1315 573 1290.5 c 128,-1,21
+ 573 1266 573 1266 565 1257 c 1,22,23
+ 450 1253 450 1253 418.5 1223.5 c 128,-1,24
+ 387 1194 387 1194 387 1071 c 2,25,-1
+ 387 182 l 2,26,27
+ 387 135 387 135 412.5 107.5 c 128,-1,28
+ 438 80 438 80 483 80 c 2,29,-1
+ 633 80 l 2,30,31
+ 783 80 783 80 857.5 150.5 c 128,-1,32
+ 932 221 932 221 967 348 c 1,33,34
+ 1002 354 1002 354 1034 338 c 1,35,36
+ 1014 160 1014 160 981 -4 c 1,37,38
+ 792 0 792 0 737 0 c 2,39,-1
+ 301 0 l 2,0,1
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" l.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: P
+Encoding: 80 80 6
+Width: 1087
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 41
+ 1
+ 0
+CALL
+PUSHB_2
+ 38
+ 7
+MIRP[min,black]
+PUSHB_1
+ 48
+SHP[rp2]
+PUSHB_3
+ 22
+ 5
+ 0
+CALL
+PUSHB_1
+ 17
+SHP[rp1]
+PUSHB_2
+ 9
+ 7
+MIRP[min,black]
+PUSHB_1
+ 14
+SHP[rp2]
+PUSHB_5
+ 32
+ 3
+ 41
+ 22
+ 13
+CALL
+PUSHB_2
+ 32
+ 7
+MIRP[min,black]
+SVTCA[x-axis]
+PUSHB_1
+ 52
+MDAP[rnd]
+PUSHB_1
+ 51
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 35
+ 10
+MIRP[min,black]
+PUSHB_1
+ 0
+SHP[rp2]
+PUSHB_3
+ 35
+ 51
+ 10
+CALL
+PUSHB_4
+ 64
+ 35
+ 40
+ 9
+CALL
+PUSHB_3
+ 51
+ 35
+ 10
+CALL
+PUSHB_4
+ 64
+ 51
+ 16
+ 9
+CALL
+PUSHB_1
+ 46
+SHP[rp2]
+PUSHB_1
+ 35
+SRP0
+PUSHB_2
+ 6
+ 1
+CALL
+PUSHB_2
+ 27
+ 10
+MIRP[min,black]
+PUSHB_2
+ 53
+ 1
+CALL
+PUSHB_2
+ 35
+ 51
+SRP1
+SRP2
+PUSHB_2
+ 19
+ 43
+IP
+IP
+PUSHB_1
+ 6
+SRP1
+PUSHB_3
+ 22
+ 32
+ 41
+IP
+IP
+IP
+SVTCA[y-axis]
+PUSHB_2
+ 3
+ 32
+SRP1
+SRP2
+PUSHB_1
+ 34
+IP
+PUSHB_1
+ 9
+SRP1
+PUSHB_5
+ 1
+ 6
+ 13
+ 15
+ 27
+DEPTH
+SLOOP
+IP
+PUSHB_1
+ 22
+SRP2
+PUSHB_1
+ 16
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 492 -225 basechar 0
+AnchorPoint: "Anchor-5" 307 -6 basechar 0
+AnchorPoint: "Anchor-3" 586 950 basechar 0
+AnchorPoint: "Anchor-2" 567 1741 basechar 0
+AnchorPoint: "Anchor-0" 1042 1499 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+387 1135 m 2,0,-1
+ 387 657 l 1,1,2
+ 424 647 424 647 543 647 c 0,3,4
+ 695 647 695 647 771.5 722 c 128,-1,5
+ 848 797 848 797 848 958 c 0,6,7
+ 848 1136 848 1136 770 1201 c 128,-1,8
+ 692 1266 692 1266 565 1266 c 0,9,10
+ 387 1266 387 1266 387 1135 c 2,0,-1
+213 1071 m 2,11,12
+ 213 1194 213 1194 181.5 1223.5 c 128,-1,13
+ 150 1253 150 1253 35 1257 c 1,14,15
+ 25 1265 25 1265 25 1290 c 128,-1,16
+ 25 1315 25 1315 35 1325 c 1,17,18
+ 240 1321 240 1321 299 1321 c 0,19,20
+ 344 1321 344 1321 450.5 1328 c 128,-1,21
+ 557 1335 557 1335 580 1335 c 0,22,23
+ 713 1335 713 1335 809 1300.5 c 128,-1,24
+ 905 1266 905 1266 952 1209.5 c 128,-1,25
+ 999 1153 999 1153 1018.5 1101 c 128,-1,26
+ 1038 1049 1038 1049 1038 995 c 0,27,28
+ 1038 923 1038 923 1013.5 854.5 c 128,-1,29
+ 989 786 989 786 937 721.5 c 128,-1,30
+ 885 657 885 657 785.5 617.5 c 128,-1,31
+ 686 578 686 578 553 578 c 0,32,33
+ 451 578 451 578 387 598 c 1,34,-1
+ 387 250 l 2,35,36
+ 387 129 387 129 426 99.5 c 128,-1,37
+ 465 70 465 70 596 63 c 1,38,39
+ 606 53 606 53 606 28.5 c 128,-1,40
+ 606 4 606 4 596 -4 c 1,41,42
+ 391 0 391 0 301 0 c 0,43,44
+ 235 0 235 0 35 -4 c 1,45,46
+ 25 4 25 4 25 28.5 c 128,-1,47
+ 25 53 25 53 35 63 c 1,48,49
+ 150 67 150 67 181.5 97 c 128,-1,50
+ 213 127 213 127 213 250 c 2,51,-1
+ 213 1071 l 2,11,12
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" p.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: U
+Encoding: 85 85 7
+Width: 1353
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 39
+ 1
+ 0
+CALL
+PUSHB_5
+ 7
+ 7
+ 0
+ 124
+ 4
+CALL
+PUSHB_3
+ 51
+ 5
+ 0
+CALL
+PUSHB_1
+ 22
+SHP[rp1]
+PUSHB_2
+ 48
+ 7
+MIRP[min,black]
+PUSHB_3
+ 19
+ 29
+ 58
+SHP[rp2]
+SHP[rp2]
+SHP[rp2]
+SVTCA[x-axis]
+PUSHB_1
+ 61
+MDAP[rnd]
+PUSHB_1
+ 44
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 1
+ 10
+MIRP[min,black]
+PUSHB_3
+ 1
+ 44
+ 10
+CALL
+PUSHB_4
+ 64
+ 1
+ 57
+ 9
+CALL
+PUSHB_3
+ 44
+ 1
+ 10
+CALL
+PUSHB_4
+ 64
+ 44
+ 50
+ 9
+CALL
+PUSHB_1
+ 1
+SRP0
+PUSHB_2
+ 13
+ 1
+CALL
+PUSHB_5
+ 34
+ 8
+ 0
+ 19
+ 4
+CALL
+PUSHB_3
+ 34
+ 13
+ 10
+CALL
+PUSHB_4
+ 64
+ 34
+ 28
+ 9
+CALL
+PUSHB_3
+ 13
+ 34
+ 10
+CALL
+PUSHB_4
+ 64
+ 13
+ 21
+ 9
+CALL
+PUSHB_2
+ 62
+ 1
+CALL
+PUSHB_2
+ 1
+ 44
+SRP1
+SRP2
+PUSHB_1
+ 53
+IP
+PUSHB_1
+ 13
+SRP1
+PUSHB_3
+ 22
+ 39
+ 55
+IP
+IP
+IP
+PUSHB_1
+ 34
+SRP2
+PUSHB_1
+ 24
+IP
+SVTCA[y-axis]
+PUSHB_2
+ 48
+ 7
+SRP1
+SRP2
+PUSHB_2
+ 34
+ 44
+IP
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 672 -225 basechar 0
+AnchorPoint: "Anchor-5" 672 8 basechar 0
+AnchorPoint: "Anchor-3" 688 657 basechar 0
+AnchorPoint: "Anchor-2" 709 1741 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+352 1071 m 2,0,-1
+ 352 551 l 2,1,2
+ 352 465 352 465 356 409.5 c 128,-1,3
+ 360 354 360 354 385 282.5 c 128,-1,4
+ 410 211 410 211 457 166 c 0,5,6
+ 563 64 563 64 700 63 c 0,7,8
+ 800 63 800 63 872 95 c 128,-1,9
+ 944 127 944 127 983 173 c 128,-1,10
+ 1022 219 1022 219 1044.5 292 c 128,-1,11
+ 1067 365 1067 365 1072 425 c 128,-1,12
+ 1077 485 1077 485 1077 567 c 2,13,-1
+ 1077 1071 l 2,14,15
+ 1077 1137 1077 1137 1071 1170.5 c 128,-1,16
+ 1065 1204 1065 1204 1038.5 1222.5 c 128,-1,17
+ 1012 1241 1012 1241 985 1246 c 128,-1,18
+ 958 1251 958 1251 889 1257 c 1,19,20
+ 881 1265 881 1265 881 1290 c 128,-1,21
+ 881 1315 881 1315 889 1325 c 1,22,23
+ 1094 1321 1094 1321 1126 1321 c 0,24,25
+ 1134 1321 1134 1321 1335 1325 c 1,26,27
+ 1343 1315 1343 1315 1343 1290.5 c 128,-1,28
+ 1343 1266 1343 1266 1335 1257 c 1,29,30
+ 1261 1249 1261 1249 1235.5 1240 c 128,-1,31
+ 1210 1231 1210 1231 1194 1193 c 128,-1,32
+ 1178 1155 1178 1155 1178 1071 c 2,33,-1
+ 1178 604 l 2,34,35
+ 1178 459 1178 459 1155.5 351.5 c 128,-1,36
+ 1133 244 1133 244 1076.5 157 c 128,-1,37
+ 1020 70 1020 70 915.5 25 c 128,-1,38
+ 811 -20 811 -20 657 -20 c 0,39,40
+ 577 -20 577 -20 502.5 1.5 c 128,-1,41
+ 428 23 428 23 350 74 c 128,-1,42
+ 272 125 272 125 225 230.5 c 128,-1,43
+ 178 336 178 336 178 483 c 2,44,-1
+ 178 1071 l 2,45,46
+ 178 1192 178 1192 148.5 1222.5 c 128,-1,47
+ 119 1253 119 1253 20 1257 c 1,48,49
+ 12 1265 12 1265 12 1290 c 128,-1,50
+ 12 1315 12 1315 20 1325 c 1,51,52
+ 225 1321 225 1321 264 1321 c 0,53,54
+ 340 1321 340 1321 541 1325 c 1,55,56
+ 549 1315 549 1315 549 1290.5 c 128,-1,57
+ 549 1266 549 1266 541 1257 c 1,58,59
+ 418 1253 418 1253 385 1223.5 c 128,-1,60
+ 352 1194 352 1194 352 1071 c 2,0,-1
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" u.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+
+StartChar: X
+Encoding: 88 88 8
+Width: 1351
+GlyphClass: 2
+Flags: W
+TtInstrs:
+SVTCA[y-axis]
+PUSHB_3
+ 6
+ 1
+ 0
+CALL
+PUSHB_1
+ 28
+SHP[rp1]
+PUSHB_2
+ 3
+ 7
+MIRP[min,black]
+PUSHB_3
+ 13
+ 25
+ 35
+SHP[rp2]
+SHP[rp2]
+SHP[rp2]
+PUSHB_3
+ 50
+ 5
+ 0
+CALL
+PUSHB_1
+ 76
+SHP[rp1]
+PUSHB_2
+ 47
+ 7
+MIRP[min,black]
+PUSHB_3
+ 57
+ 73
+ 83
+SHP[rp2]
+SHP[rp2]
+SHP[rp2]
+SVTCA[x-axis]
+PUSHB_1
+ 92
+MDAP[rnd]
+PUSHB_1
+ 41
+MDRP[rp0,rnd,white]
+PUSHB_2
+ 89
+ 10
+MIRP[min,black]
+PUSHB_2
+ 93
+ 1
+CALL
+PUSHB_1
+ 54
+SMD
+PUSHW_3
+ 13189
+ -9720
+ 21
+CALL
+SPVFS
+SFVTPV
+PUSHB_1
+ 38
+SRP0
+PUSHB_1
+ 70
+MDRP[grey]
+PUSHB_2
+ 22
+ 12
+MIRP[rp0,min,black]
+PUSHB_1
+ 86
+MDRP[grey]
+PUSHW_3
+ -13359
+ -9485
+ 21
+CALL
+SPVFS
+SFVTPV
+PUSHB_1
+ 43
+SRP0
+PUSHB_1
+ 16
+MDRP[grey]
+PUSHB_2
+ 62
+ 15
+MIRP[rp0,min,black]
+PUSHB_1
+ 0
+MDRP[grey]
+PUSHB_1
+ 43
+SRP0
+PUSHB_4
+ 17
+ 43
+ 16
+ 19
+CALL
+PUSHW_3
+ 13184
+ -9727
+ 21
+CALL
+SFVFS
+PUSHB_1
+ 22
+SRP0
+PUSHB_4
+ 21
+ 22
+ 86
+ 19
+CALL
+PUSHB_1
+ 38
+SRP0
+PUSHB_4
+ 39
+ 38
+ 70
+ 19
+CALL
+PUSHW_3
+ -13364
+ -9479
+ 21
+CALL
+SFVFS
+PUSHB_1
+ 43
+SRP0
+PUSHB_4
+ 42
+ 43
+ 16
+ 19
+CALL
+PUSHB_1
+ 62
+SRP0
+PUSHB_4
+ 63
+ 62
+ 0
+ 19
+CALL
+PUSHB_4
+ 64
+ 62
+ 0
+ 19
+CALL
+PUSHB_4
+ 65
+ 62
+ 0
+ 19
+CALL
+PUSHW_3
+ 13189
+ -9720
+ 21
+CALL
+SFVFS
+PUSHB_1
+ 38
+SRP0
+PUSHB_4
+ 69
+ 38
+ 70
+ 19
+CALL
+PUSHB_1
+ 22
+SRP0
+PUSHB_4
+ 87
+ 22
+ 86
+ 19
+CALL
+PUSHW_3
+ -13326
+ -9532
+ 21
+CALL
+SFVFS
+PUSHB_1
+ 62
+SRP0
+PUSHB_4
+ 91
+ 62
+ 0
+ 19
+CALL
+PUSHB_3
+ 39
+ 38
+ 70
+DUP
+ROLL
+DUP
+ROLL
+SWAP
+SPVTL[parallel]
+SFVTPV
+SRP1
+SRP2
+IP
+PUSHB_1
+ 69
+IP
+PUSHB_3
+ 21
+ 22
+ 86
+SRP1
+SRP2
+IP
+PUSHB_1
+ 87
+IP
+PUSHB_3
+ 63
+ 62
+ 0
+DUP
+ROLL
+DUP
+ROLL
+SWAP
+SPVTL[parallel]
+SFVTPV
+SRP1
+SRP2
+IP
+PUSHB_1
+ 64
+IP
+PUSHB_1
+ 65
+IP
+PUSHB_1
+ 91
+IP
+PUSHB_3
+ 42
+ 43
+ 16
+SRP1
+SRP2
+IP
+PUSHB_1
+ 17
+IP
+SVTCA[y-axis]
+NPUSHB
+ 18
+ 0
+ 16
+ 17
+ 21
+ 22
+ 38
+ 39
+ 42
+ 43
+ 64
+ 65
+ 69
+ 70
+ 86
+ 87
+ 91
+ 62
+ 63
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+SVTCA[x-axis]
+NPUSHB
+ 18
+ 0
+ 16
+ 17
+ 21
+ 22
+ 38
+ 39
+ 42
+ 43
+ 64
+ 65
+ 69
+ 70
+ 86
+ 87
+ 91
+ 62
+ 63
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+MDAP[no-rnd]
+PUSHB_1
+ 64
+SMD
+SVTCA[x-axis]
+SVTCA[y-axis]
+PUSHB_2
+ 47
+ 3
+SRP1
+SRP2
+PUSHB_2
+ 19
+ 67
+IP
+IP
+IUP[y]
+IUP[x]
+EndTTInstrs
+AnchorPoint: "Anchor-6" 629 -225 basechar 0
+AnchorPoint: "Anchor-5" 209 0 basechar 0
+AnchorPoint: "Anchor-3" 668 666 basechar 0
+AnchorPoint: "Anchor-2" 680 1741 basechar 0
+AnchorPoint: "Anchor-0" 1411 1499 basechar 0
+LayerCount: 2
+Back
+Fore
+SplineSet
+1102 209 m 2,0,1
+ 1165 121 1165 121 1204 94.5 c 128,-1,2
+ 1243 68 1243 68 1309 63 c 1,3,4
+ 1319 53 1319 53 1319 29.5 c 128,-1,5
+ 1319 6 1319 6 1311 -4 c 1,6,7
+ 1188 0 1188 0 1102 0 c 0,8,9
+ 1032 0 1032 0 868 -4 c 1,10,11
+ 860 4 860 4 860 28.5 c 128,-1,12
+ 860 53 860 53 868 63 c 1,13,14
+ 950 67 950 67 957 90 c 128,-1,15
+ 964 113 964 113 916 174 c 1,16,-1
+ 664 535 l 2,17,18
+ 648 558 648 558 635 557 c 0,19,20
+ 625 557 625 557 604 528 c 2,21,-1
+ 334 150 l 1,22,23
+ 303 97 303 97 320.5 82.5 c 128,-1,24
+ 338 68 338 68 414 63 c 1,25,26
+ 422 53 422 53 422 28.5 c 128,-1,27
+ 422 4 422 4 414 -4 c 1,28,29
+ 250 0 250 0 199 0 c 0,30,31
+ 138 0 138 0 14 -4 c 1,32,33
+ 4 4 4 4 4 28.5 c 128,-1,34
+ 4 53 4 53 14 63 c 1,35,36
+ 88 69 88 69 140.5 96 c 128,-1,37
+ 193 123 193 123 242 190 c 2,38,-1
+ 545 596 l 2,39,40
+ 565 623 565 623 565 643.5 c 128,-1,41
+ 565 664 565 664 537 705 c 2,42,-1
+ 245 1120 l 2,43,44
+ 203 1179 203 1179 171 1208 c 128,-1,45
+ 139 1237 139 1237 112 1245.5 c 128,-1,46
+ 85 1254 85 1254 37 1257 c 1,47,48
+ 27 1267 27 1267 27 1291 c 128,-1,49
+ 27 1315 27 1315 35 1325 c 1,50,51
+ 158 1321 158 1321 244 1321 c 0,52,53
+ 314 1321 314 1321 477 1325 c 1,54,55
+ 487 1315 487 1315 487 1290.5 c 128,-1,56
+ 487 1266 487 1266 477 1257 c 1,57,58
+ 448 1255 448 1255 429.5 1252.5 c 128,-1,59
+ 411 1250 411 1250 401 1244 c 128,-1,60
+ 391 1238 391 1238 388 1231 c 128,-1,61
+ 385 1224 385 1224 390.5 1210 c 128,-1,62
+ 396 1196 396 1196 404.5 1183 c 128,-1,63
+ 413 1170 413 1170 429 1146 c 2,64,-1
+ 655 811 l 2,65,66
+ 671 788 671 788 680 788 c 0,67,68
+ 696 788 696 788 713 813 c 2,69,-1
+ 965 1171 l 1,70,71
+ 996 1222 996 1222 977 1237.5 c 128,-1,72
+ 958 1253 958 1253 885 1257 c 1,73,74
+ 877 1265 877 1265 877 1290 c 128,-1,75
+ 877 1315 877 1315 885 1325 c 1,76,77
+ 1049 1321 1049 1321 1100 1321 c 0,78,79
+ 1161 1321 1161 1321 1284 1325 c 1,80,81
+ 1294 1315 1294 1315 1294 1290.5 c 128,-1,82
+ 1294 1266 1294 1266 1284 1257 c 1,83,84
+ 1210 1251 1210 1251 1159 1223.5 c 128,-1,85
+ 1108 1196 1108 1196 1057 1130 c 2,86,-1
+ 776 768 l 2,87,88
+ 756 741 756 741 756 707 c 0,89,90
+ 756 684 756 684 788 639 c 2,91,-1
+ 1102 209 l 2,0,1
+EndSplineSet
+Substitution2: "'c2sc' Capitals to Small Capitals lookup 11 subtable" x.sc
+Position2: "'cpsp' Capital Spacing lookup 0 subtable" dx=4 dy=0 dh=10 dv=0
+EndChar
+EndChars
+EndSplineFont

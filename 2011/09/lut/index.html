@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="LUT" />
+  <meta name="twitter:title" content="LUT" />
+  
+  <title>LUT - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff.">
+  <meta property="og:description" content="Creative coding and web stuff.">
+  <meta name="twitter:description" content="Creative coding and web stuff.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2011/09/lut/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/thumb.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/thumb.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>LUT</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>Decoding is easy. Decoding requires a lot of typing. (I am starting to believe this is true of ever aspect of interpreted emulation&hellip;)</p>
+
+<p>For the AEJS decoder, I am creating a <a href="http://en.wikipedia.org/wiki/Lookup_table">look-up table</a> with every possible pattern for each instruction. It was my first idea, but I initially discarded it as &ldquo;wasteful and inelegant&rdquo;. Later, I accepted it as &ldquo;really fast&rdquo;.</p>
+
+<p>I&rsquo;m generating a large set of bit patterns that map to 68k opcodes, like so:</p>
+
+<pre><code>0100101011111010 -&gt; BGND
+0100101011111100 -&gt; ILLEGAL
+0100111001110000 -&gt; RESET
+0100111001110001 -&gt; NOP
+0100111001110010 -&gt; STOP
+0100111001110011 -&gt; RTE
+</code></pre>
+
+<p>The current code can be found <a href="https://github.com/mwcz/AEJS/blob/master/src/genlut.py">here</a>.</p>
+
+<p>Yes, it&rsquo;s written in Python and yes, AEJS is a JavaScript project. There&rsquo;s a reason. I see two approaches to generating the LUT (look-up table).</p>
+
+<h2 id="generate-the-lut-on-launch-dynamic">Generate the LUT on launch (dynamic)</h2>
+
+<p>This has the advantage of being easier to debug. It also might be easier if I ever expand the emulator to other chips, like the <a href="http://en.wikipedia.org/wiki/Motorola_68020">68020</a> or <a href="http://en.wikipedia.org/wiki/Motorola_68030">68030</a>.</p>
+
+<p>It currently takes about 0.466 seconds on my machine to generate ~12,000 patterns. That means it should take less than 2.5s to generate the full LUT.</p>
+
+<h2 id="generate-the-lut-pre-launch-static">Generate the LUT pre-launch (static)</h2>
+
+<p>This is what I&rsquo;m currently working toward. genlut.py is currently generating about 12,000 opcode bit patterns out of a max of I&rsquo;m-not-sure-yet-but-slightly-less-than-65,536.</p>
+
+<p>With this method, I would run genlut.py one final time, pipe the output into a static JS file, and regex the contents into a JS array. The LUT would never have to be generated again, and would exist happily forever-after.</p>
+
+<p>Cons: relies upon the LUT being 100% correct, as any errors would be hard to debug, and would require another run of genlut.py to fix.</p>
+
+<p>Pros: AEJS will launch faster without having to generate the LUT each time. If I can verify that the LUT is 100% correct, this is obviously the right approach.</p>
+
+<p>I&rsquo;ll continue on with the static method for now, and odds are I&rsquo;ll stick with it. 2.5s is too big a price to pay.</p>
+
+<p>Back to work:</p>
+
+<p><a href="workarea.png"><img class="grid_7" src="workarea.png" alt=":)" title="" /></a></p>
+
+<div class="clear"></div>
+
+<p>(This post was copied from my old <a href="http://aejs.blogspot.com/">AEJS blog</a>)</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/09/introducing-aejs/">Introducing AEJS</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing AEJS, an Amiga emulator written in JavaScript. Wait, wording it like that makes it sound like it&rsquo;s finished. It isn&rsquo;t. It won&rsquo;t be for a long time. AEJS is just a hobby, and will never hold a candle to UAE.
+Why the Amiga? Given that this is my first emulator, it would have been much easier to go with a 6502 or 8080 instead, but I didn&rsquo;t grow up with those; I grew up with a 68k powering an Amiga 500.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-09-20T00:00:00Z">
+      Sep 20, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/09/introducing-aejs/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/09/introducing-aejs//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/mediancut/">median-cut.js</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The unfortunately-named median-cut.js is the library that powers ColorPal&rsquo;s palette generation.
+I say it&rsquo;s unfortunately named because it doesn&rsquo;t implement a pure median-cut algorithm. It&rsquo;s identical, except that instead of cutting boxes at their median, they are instead cut at the mean. This results in more pleasing color palettes in most cases.
+Here&rsquo;s a comparison:
+If you&rsquo;re interested in median-cut vs mean-cut, see this post for a technical discussion.
+The code is available on GitHub.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2009-01-01T00:00:00Z">
+      Jan 1, 2009
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/mediancut/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/mediancut//./median-mean-comparison.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/jsimage/">JSImage</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008&frasl;2009 when I first started seriously studying JavaScript.
+A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
+I&rsquo;ve made several posts about JSImage which contain live demos.
+I think I put more work into code formatting than correct output. ;)
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2009-01-01T00:00:00Z">
+      Jan 1, 2009
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/jsimage/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/jsimage//./icon_jsimage.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2011-09-22T00:00:00Z">
+          Sep 22, 2011
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/aejs" class="c-tag">#aejs</a>
+        
+        <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/amiga" class="c-tag">#amiga</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

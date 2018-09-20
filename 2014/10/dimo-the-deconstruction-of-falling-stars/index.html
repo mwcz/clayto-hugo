@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="DiMo: The Deconstruction of Falling Stars" />
+  <meta name="twitter:title" content="DiMo: The Deconstruction of Falling Stars" />
+  
+  <title>DiMo: The Deconstruction of Falling Stars - clayto</title>
+
+  
+  <meta name="description" content="The construction of a WebGL particle physics gravity simulation *slash* interactive art installation.">
+  <meta property="og:description" content="The construction of a WebGL particle physics gravity simulation *slash* interactive art installation.">
+  <meta name="twitter:description" content="The construction of a WebGL particle physics gravity simulation *slash* interactive art installation.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/swath-colors.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/swath-colors.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>DiMo: The Deconstruction of Falling Stars</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>Imagine a solitary blue dot.</p>
+
+<p><img src="smalldot.png" alt="small dot" /></p>
+
+<p>Unless you let your imagination run away with itself, this is going to be a
+pretty boring dot. Now, imagine a second, larger dot (you can pick the color).</p>
+
+<p><img src="smalldot-largedot.png" alt="small dot and large dot" /></p>
+
+<p>Red, nice choice! The scene is now slightly more interesting, since now you&rsquo;ve
+got two dots to think about. You can ponder their positions, and relative
+sizes. No motion though; still pretty boring!</p>
+
+<p>Pretty soon, your keen and restless mind will imagine that the larger dot
+exerts a gravitational pull on the smaller one. The small dot begins moving
+towards the large one. It&rsquo;s speed increases exponentially the closer it gets.
+Now an orbit can form. Thanks, Newton!</p>
+
+<p><img src="orbit.gif" alt="orbit" title="When I recorded this gif, it lined up *completely* by chance.  So lucky.  It would have been a PITA to try to line up the dot so the orbit looped smoothly!  There is a slight jump, but it's subtle." /></p>
+
+<p>The dot&rsquo;s orbit is reminiscent of a planet orbiting a star. Neat.</p>
+
+<p>Wait, did you see that? You just moved the big dot. Look again! Now there
+are thousands and thousands of tiny dots, each being accelerated toward the big
+dot!</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/108714486" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<p>Peculiar. The multitude of dots starts to look <em>oddly</em> reminiscent of fluid
+sloshing around in a container. Or a cloud of gas forming a star. Weird, huh?
+Maybe they&rsquo;re the same thing!</p>
+
+<p>Now, before I ramble on any further, let your imagination take a rest while you
+try out the simulation!</p>
+
+<p><a class="btn btn-default btn-lg" href="https://clayto.com/static/projects/dimo/">Launch live demo!</a></p>
+
+<p>A reasonably recent web browser required. WebGL is required, which means
+Firefox 4+ or Chrome 9+.</p>
+
+<h2 id="the-premise">The Premise</h2>
+
+<p><strong>Players wave illuminated batons around and cool stuff happens!</strong></p>
+
+<p>See <a href="https://clayto.com/2014/08/25/particles-and-p-dimo-comes-to-life/">DiMo Comes to Life</a> for a , not-at-all dramatized
+summary of DiMo.</p>
+
+<p>&ldquo;DiMo&rdquo; is a recurring interactive art exhibit at geekSPARK, which is held
+during SPARKcon each year in Raleigh, NC. This year, I created the particle
+gravity simulation visualization for DiMo. There was also a visualization of
+Conway&rsquo;s Game of Life, and an original game where players eat doritos and spray
+soda at people who eat doritos.</p>
+
+<h2 id="particles">Particles</h2>
+
+<p>The particles&rsquo; main job is to swirl around and look cool. They are pulled
+gravitationally toward the player pieces, but the particles themselves don&rsquo;t
+exert gravity on each other.</p>
+
+<h3 id="gravity">Gravity</h3>
+
+<p>The gravity calculation was written first with inlined calculations, then with
+ThreeJS vector objects, then with <a href="http://glmatrix.net/">glmatrix</a>, and then inlined again. The
+inlined code performance wasn&rsquo;t distinguishable from the glmatrix
+implementation. Since glmatrix is very fast and much more readable, I stuck
+with it for a while.</p>
+
+<p>ThreeJS&rsquo;s vector calculations, on the other hand, were awful. Each function
+call created a new vector object. Each acceleration calculation caused the
+creation of 12 vector objects.</p>
+
+<pre><code> 10,000 particles    *
+    60 fps           *
+    12 objects       *
+     3 player pieces
+---------------------------------
+ 21,600,000 new objects per second
+</code></pre>
+
+<p>Needless to say, the performance was <em>terrible</em>. I then implemented the gravity
+equation using glmatrix&rsquo;s in-place vector operations. glmatrix&rsquo;s vector
+functions insert their output into an existing vector instead of creating a new
+vector for each function call, like ThreeJS&rsquo; API does. The number of new
+objects created per second by the gravity equation dropped from <code>21,600,000</code>
+down to zero.</p>
+
+<p>glmatrix served quite well for a while, but in the end I improved performance
+even more by writing an inline gravity equation by hand. Perhaps it was just
+function call overhead that was hurting performance.</p>
+
+<h3 id="coloring-methods">Coloring methods</h3>
+
+<p>Once the gravity function was implemented, some beautification was in order.</p>
+
+<p>Originally, each particle was randomly assigned either red, green, or blue.</p>
+
+<p><img src="random-colors.png" alt="early dimo image, with randomly assigned colors" /></p>
+
+<p>The gravitational swirls may look kinda cool, but the colors are hectic. This
+<em>isn&rsquo;t</em> one of those rare cases where randomness is beautiful. It occurred to
+me that seeing big swaths of color through all the particles might look
+better.</p>
+
+<h4 id="cololololololors">Cololololololors</h4>
+
+<p>But what criteria should be used to decide what color each particle should
+receive?</p>
+
+<p>The simplest approach would be to color the particles based on their distance
+from the players, and that&rsquo;s essentially what I did. The equations below use
+each particle&rsquo;s speed <em>and</em> acceleration to determine what color they should be
+assigned each frame.</p>
+
+<figure>
+    <div role="math">
+        n = \dfrac{2\pi \cdot \lvert\vec{v}\rvert \cdot \lvert\vec{a}\rvert}{a_{max}}
+    </div>
+    <div role="math">
+        \red{R(n)}   = \dfrac{\cos(n + 1.76714) + 1}{2}
+    </div>
+    <div role="math">
+        \green{G(n)} = \dfrac{\cos(n + 3.92699) + 1}{2}
+    </div>
+    <div role="math">
+        \blue{B(n)} = \dfrac{\cos(n + 5.89048) + 1}{2}
+    </div>
+</figure>
+
+<p><span role="math">\vec{a}</span> is the acceleration vector, and <span
+role="math">\vec{v}</span> is the velocity vector. <span
+role="math">a_{max}</span> is the maximum magnitude an acceleration vector is
+allowed to have (configurable via the &ldquo;max accel&rdquo; parameter in the UI config
+panel). The decimal constants are there to evenly distribute the waves, and
+because I was too lazy to figure out the correct fraction to use.</p>
+
+<p>The range of <code>cos</code> and <code>sin</code> are <code>-1..1</code>, but the color values I needed are
+<code>0..1</code>. The <code>+1</code> addition shifts the output into <code>0..2</code>, and the <code>/2</code> division
+scales it down to <code>0..1</code>.</p>
+
+<p>When graphed, they look like this.</p>
+
+<p><img src="sine_waves.png" alt="Roughly evenly-spaced sine waves" /></p>
+
+<p>The cosine allows the colors to cycle repeatedly (R,G,B,R,G,B,&hellip;) as the
+input, <span role="math">n</span>, increases. Here&rsquo;s the result.</p>
+
+<p><img src="swath-colors.png" alt="image of the swaths of color" /></p>
+
+<p><em>Yes!</em> Swaths of color, cycling through the spectrum like a rainbow.</p>
+
+<h4 id="the-grand-programmers-utopia-gpu">The Grand Programmers&rsquo; Utopia (GPU)</h4>
+
+<p>After bumping up against my CPU&rsquo;s limits while implementing gravity, I was
+certain of one thing: I wanted to rely on the CPU as little as possible.</p>
+
+<p>I had a vague intuition that pixel shaders were the answer, since, hey, pixel
+shaders control the colors of pixels, right? It turned out my understanding of
+shaders was pretty far off, but they <em>are</em> the right tool for the job.</p>
+
+<p>Shaders are small programs that run on your video card&rsquo;s processor(s) (the
+&ldquo;GPU&rdquo;). They come in a variety of languages, but shaders in WebGL are written
+in <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL</a>, a subset of C.</p>
+
+<p>Learning about and writing the shaders was the most fun and educational aspect
+of this project, mostly because graphics programming is uniquely rewarding
+among all types of programming. Often an unanticipated quirk of an equation
+(or even a typo!) will result in a very cool surprise. In short, &ldquo;just trying
+stuff&rdquo; pays off <em>far</em> more than in any other branch of programming.</p>
+
+<h4 id="more-than-colors">More than colors?</h4>
+
+<p>The more particles I add to the visualization, the better it looks. 1,000
+particles just look like a bunch of specks, but 100,000 particles start to look
+like clouds of swirling vapor. Since the gravity calculations are so
+demanding, I wanted to offload as much work as possible onto the GPU.</p>
+
+<p>The Web doesn&rsquo;t currently have an API for doing general-purpose calculations on
+the GPU (although <a href="https://en.wikipedia.org/wiki/WebCL">WebCL</a> is in the pipeline). It is possible to do
+limited calculations, by doing your calculation in a fragment shader and
+encoding the results, as pixel color values, into an in-memory texture (FBO).</p>
+
+<p>Sadly, a combination of limited time and inexperience prevented me from getting
+the gravity calculations onto the GPU.</p>
+
+<p>In 2012, Edouard Coulon created a similar particle gravity simulation called
+<a href="http://www.chromeexperiments.com/detail/gpu-particle-attractors/?f=">GPU Particle Attractors</a>, using the texture approach, and
+achieved 1,000,000 particles. Tragically, his website is gone and I couldn&rsquo;t
+find his demo hosted anywhere else. Edouard, if you read this, please reach
+out to me. I&rsquo;d love to learn from your work.</p>
+
+<p>In the end, I had to settle for 25,000 particles on my laptop. For the art
+installation, we used a pretty beefy gaming rig, and I was able to bump it up
+to 50,000 (thanks Charan!).</p>
+
+<h3 id="what-s-next">What&rsquo;s next?</h3>
+
+<p>Here&rsquo;s my wishlist for further improvements to the visualization.</p>
+
+<ul>
+<li>do gravity calculations on the GPU, which would enable either&hellip;
+
+<ul>
+<li>several orders of magnitude more particles, or</li>
+<li>particles can exert gravity on each other</li>
+</ul></li>
+<li>add a calibration system which would determine how many particles a user&rsquo;s
+computer is capable of rendering</li>
+<li>adjust the canvas sizing code, to allow the visualization to be easily
+embedded in other pages (it currently full-screens itself)</li>
+<li>add even more configuration parameters and presets. DiMo is capable of a
+nice range of effects and patterns, but many of them require nitpicky
+tweaking of sliders</li>
+</ul>
+
+<p>More likely, I&rsquo;ll use what I learned from DiMo on a super-secret future
+project.</p>
+
+<p><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+
+<script>
+    function set_vimeo_iframe_height() {
+        var ifr = document.getElementById('dimo-demo');
+        ifr.height = ifr.offsetWidth / (1280/720);
+    }
+    document.addEventListener('DOMContentLoaded', set_vimeo_iframe_height);
+    window.addEventListener('resize', set_vimeo_iframe_height);
+    function render_math(el) {
+        katex.render(el.textContent, el);
+    }
+    document.querySelectorAll('[role=math]').forEach(render_math);
+</script>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life//./dimo-kids.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/dimo/">DiMo: Particles</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+$GALLERY
+After the event, I wrote this opensource.com article about the experience.
+The source code is, of course, open.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/dimo/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/dimo//./icon_dimo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey---canvas-physics/">Bouncey - canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
+The description for bouncey&rsquo;s github repo is:
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey---canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/bouncey---canvas-physics//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/03/rgb-webgl-color-cube/">RGB WebGL Color Cube</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
+Launch live demo! and view the code.
+Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support WebGL, here&rsquo;s a video to enjoy while you download Firefox Nightly.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-03-23T00:00:00Z">
+      Mar 23, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/03/rgb-webgl-color-cube/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/03/rgb-webgl-color-cube//./colorcube.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing ColorPal, a fast color palette creation tool.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/01/colorpal-alpha//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/">Bouncey returns - more canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a slightly upgraded version of the physics demo I showed in my last post.
+It is still&hellip;
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+This version has:
+ pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
+The code is well commented, so feel free to hack on it.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-18T00:00:00Z">
+      Nov 18, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/bouncey-returns---more-canvas-physics//thumb.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2014-10-30T00:00:00Z">
+          Oct 30, 2014
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/demos" class="c-tag">#demos</a>
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/requirejs" class="c-tag">#requirejs</a>
+        
+        <a href="https://clayto.com/tags/threejs" class="c-tag">#threejs</a>
+        
+        <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
+        
+        <a href="https://clayto.com/tags/3d" class="c-tag">#3d</a>
+        
+        <a href="https://clayto.com/tags/art" class="c-tag">#art</a>
+        
+        <a href="https://clayto.com/tags/sparkcon" class="c-tag">#sparkcon</a>
+        
+        <a href="https://clayto.com/tags/geekspark" class="c-tag">#geekspark</a>
+        
+        <a href="https://clayto.com/tags/dimo" class="c-tag">#dimo</a>
+        
+        <a href="https://clayto.com/tags/physics" class="c-tag">#physics</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

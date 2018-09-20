@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="RGB WebGL Color Cube" />
+  <meta name="twitter:title" content="RGB WebGL Color Cube" />
+  
+  <title>RGB WebGL Color Cube - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff.">
+  <meta property="og:description" content="Creative coding and web stuff.">
+  <meta name="twitter:description" content="Creative coding and web stuff.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2014/03/rgb-webgl-color-cube/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/colorcube.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/colorcube.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>RGB WebGL Color Cube</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>I spent a bit of time this weekend building an RGB color cube for
+<a href="http://colorpal.org">ColorPal</a>, using <a href="http://threejs.org">Three.js</a>. Drag and drop any image, and you&rsquo;ll see a
+cube with all the pixels of your image mapped into 3D space.</p>
+
+<p><img style="display: none !important;" src="colorcube.jpg"></p>
+
+<p><a class="btn btn-default btn-lg"
+href="/static/projects/colorpal_colorcube">Launch live demo!</a> and <a href="https://github.com/mwcz/mwcz/blob/master/content/static/projects/colorpal_colorcube/js/cp-colorcube.js">view the
+code</a>.</p>
+
+<p>Your web browser must support WebGL, which at this point in history means a
+fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support
+WebGL, here&rsquo;s a video to enjoy while you download <a href="https://nightly.mozilla.org/">Firefox Nightly</a>. ;)</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/108080970" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<p><a href="http://threejs.org">Three.js</a> has proven to be pretty fun. The documentation is decent, but
+not comprehensive. Some parts of the API are filled with &ldquo;todo&rdquo; notes instead
+of actual documentation.</p>
+
+<p>Luckily, the omissions in the documentation are made up for by the extensive
+<a href="http://threejs.org/examples/">set of code examples</a>. Any time I couldn&rsquo;t get what I needed from the API
+docs, I skimmed the examples until I found an existing scene that had the
+effect I needed.</p>
+
+<p>For this demo, drawing a cube was easy, and even populating it with dots was easy, but</p>
+
+<h2 id="colored-particles">Colored particles</h2>
+
+<p>The color cube uses a particle system to render 2D color points inside a 3D
+cube.</p>
+
+<p>Eventually I found a <a href="http://threejs.org/examples/#webgl_particles_billboards_colors">particle system demo with colors</a>, which held the key.</p>
+
+<p>By setting <code>vertexColors: true</code> on the <code>ParticleSystemMaterial</code>, Three.js will
+match each vertex in the <code>vertices</code> array with a color in the <code>colors</code> array.
+<code>vertices[1726]</code> will use <code>colors[1726]</code>, for example.</p>
+
+<p><img src="screenshot.png" alt="Screenshot of ColorCube" title="Screenshot of ColorCube" /></p>
+
+<p>A vertex and a color are created for each pixel in the source image. For the
+vertex, <span style="color: red;">red</span> values are mapped to the <code>X</code> axis,
+and similarly <span style="color: green">green</span> to <code>Y</code> and <span
+style="color: blue">blue</span> to <code>Z</code>.</p>
+
+<h2 id="optimization">Optimization</h2>
+
+<p>Rendering a point for each pixel in a huge image image would be overkill, so
+I used the pixel culling already present in ColorPal to scale the number of
+points down to a more reasonable 128<sup>2</sup>. Increasing that number also
+increases the quality of the cube. If you look closely in the video above, the
+ColorPal logo cube has gaps in it. The better the quality, the longer the
+startup time, though.</p>
+
+<p>Now I&rsquo;m racking my brain for an excuse to use WebGL at Red Hat&hellip;</p>
+
+<p>Any ideas?</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/07/colorpal-output-update/">ColorPal Output Update</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Hi pals.
+This is a speedy post about a speedy update I made today to ColorPal, an HTML5 tool I wrote that automatically generates color palettes from a photograph.
+Previously, ColorPal provided hex codes for each color extracted from the image. Eight individual &lt;input&gt;s at the bottom of the page displayed the colors.
+I use ColorPal a lot (my own dogfood and all that) when designing websites, and it wasn&rsquo;t long before I got fed up (hah!
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-07-30T00:00:00Z">
+      Jul 30, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/07/colorpal-output-update/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/07/colorpal-output-update//after.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/02/colorpal-palettes-improved/">ColorPal palettes improved!</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
+
+Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
+You can see that with the old method, the black pixels definitely took over the palette.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-02-10T00:00:00Z">
+      Feb 10, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/02/colorpal-palettes-improved/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/02/colorpal-palettes-improved//thumb.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing ColorPal, a fast color palette creation tool.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/01/colorpal-alpha//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">HTML5 canvas area selection averaging</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a demo from late 2009. It&rsquo;s an extension of the single-pixel eyedropper I wrote previously.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
+Click and drag to set the image border to the average of the selected pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-area-selection-averaging//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2013/11/colorpal-cli/">ColorPal CLI!</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Tired of creating color palettes with ColorPal&rsquo;s simple, intuitive drag-and-drop interface?  Me too!  Use this handy command instead.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2013-11-07T00:00:00Z">
+      Nov 7, 2013
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2013/11/colorpal-cli/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2013/11/colorpal-cli//./colorpal_cli_logo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/colorpal/">ColorPal</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        ColorPal is an HTML5 color palette generator. Here&rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
+Try it out at colorpal.org.
+ColorPal also has a command-line interface, powered by Node.js.
+I&rsquo;ve written some posts about ColorPal.
+ 
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/colorpal/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/colorpal//./icon_colorpal.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2014-03-23T00:00:00Z">
+          Mar 23, 2014
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/color" class="c-tag">#color</a>
+        
+        <a href="https://clayto.com/tags/colorpal" class="c-tag">#colorpal</a>
+        
+        <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

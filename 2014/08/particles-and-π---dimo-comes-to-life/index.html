@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="Particles and π - DiMo Comes to Life" />
+  <meta name="twitter:title" content="Particles and π - DiMo Comes to Life" />
+  
+  <title>Particles and π - DiMo Comes to Life - clayto</title>
+
+  
+  <meta name="description" content="A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are ...">
+  <meta property="og:description" content="A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are ...">
+  <meta name="twitter:description" content="A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are ...">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/dimo-kids.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/dimo-kids.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>Particles and π - DiMo Comes to Life</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>A player walks up Fayetteville St in Raleigh, North Carolina.
+<a href="http://www.sparkcon.com/">SPARKcon</a> has begun, and dozens of artists are strewn along the
+street, hard at work creating elaborate chalk art on the asphalt. A light rain
+is falling, and some artists are holding umbrellas over their work, some have
+draped tarps over themselves and their sketches, but most don&rsquo;t seem to care,
+as if creating their art is more important than how long it lasts.</p>
+
+<p>Up ahead is a gnarly-looking wrought-iron handrail covered in small
+stegasaurus-like spikes. The spikes make its use as a handrail questionable,
+but it does keep pedestrians from plummeting into the stairwell below.</p>
+
+<p>The stairwell looks dingy, but a large green arrow points down, and so she
+descends to escape the rain.</p>
+
+<p>It&rsquo;s dark inside, but on the far wall, swirling clouds of colored dots orbit
+around three circles. The silhouettes of three children stand on pedistals
+near the wall, each one waving an illuminated baton.</p>
+
+<figure>
+    <img src="dimo-kids.jpg" alt="children playing DiMo">
+    <figcaption>photo by Yujin Kim</figcaption>
+</figure>
+
+<p>After watching closely for a few moments, the rules of motion start to come
+together in her mind. Each child&rsquo;s baton is emanating a different color; red,
+green, and blue. As they swing the batons, large red, green, and blue circles
+swoosh through the colored clouds.</p>
+
+<p>The large colored circles seem to exert an attractive gravitational force on
+the particles. Orbits are formed, and tiny solar systems glow brilliantly.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/107405612" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<p>DiMo (short for Digital Motion) is an annual exhibit at GeekSPARK, which itself
+is a branch of SPARKcon. I haven&rsquo;t been to any previous years&rsquo; installations,
+but this year included digital visualizations projected onto a large wall, with
+three LED batons that visitors could use to control the visualizations.</p>
+
+<p>I created one of the three &ldquo;exhibits&rdquo;, the one you see in the video. Each
+exhibit used the same set of input: the coordinates of the colored batons. My
+exhibit is a particle gravity simulation, created with WebGL (<a href="http://threejs.org/">three.js</a>,
+specifically), <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL</a>, and many other tools.</p>
+
+<h3 id="event-photos">Event photos</h3>
+
+<p>Enjoy these photos from Digital Motion at SPARKcon 2014.</p>
+
+<p>
+
+
+
+  
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://clayto.com/js/load-photoswipe.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+
+<link rel="stylesheet" href="https://clayto.com/css/hugo-easy-gallery.css" />
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/001-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/001-thumb.jpg" alt="1st" />
+            </div>
+            <figcaption>
+              <p>1st</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/001.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/002-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/002-thumb.jpg" alt="2nd" />
+            </div>
+            <figcaption>
+              <p>2nd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/002.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/003-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/003-thumb.jpg" alt="3rd" />
+            </div>
+            <figcaption>
+              <p>3rd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/003.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/004-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/004-thumb.jpg" alt="4th" />
+            </div>
+            <figcaption>
+              <p>4th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/004.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/005-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/005-thumb.jpg" alt="5th" />
+            </div>
+            <figcaption>
+              <p>5th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/005.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/006-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/006-thumb.jpg" alt="6th" />
+            </div>
+            <figcaption>
+              <p>6th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/006.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/007-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/007-thumb.jpg" alt="7th" />
+            </div>
+            <figcaption>
+              <p>7th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/007.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/008-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/008-thumb.jpg" alt="8th" />
+            </div>
+            <figcaption>
+              <p>8th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/008.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/009-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/009-thumb.jpg" alt="9th" />
+            </div>
+            <figcaption>
+              <p>9th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/009.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/010-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/010-thumb.jpg" alt="10th" />
+            </div>
+            <figcaption>
+              <p>10th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/010.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/011-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/011-thumb.jpg" alt="11th" />
+            </div>
+            <figcaption>
+              <p>11th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/011.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/012-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/012-thumb.jpg" alt="12th" />
+            </div>
+            <figcaption>
+              <p>12th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/012.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/013-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/013-thumb.jpg" alt="13th" />
+            </div>
+            <figcaption>
+              <p>13th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/013.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/014-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/014-thumb.jpg" alt="14th" />
+            </div>
+            <figcaption>
+              <p>14th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/014.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/015-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/015-thumb.jpg" alt="15th" />
+            </div>
+            <figcaption>
+              <p>15th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/015.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/016-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/016-thumb.jpg" alt="16th" />
+            </div>
+            <figcaption>
+              <p>16th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/016.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/017-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/017-thumb.jpg" alt="17th" />
+            </div>
+            <figcaption>
+              <p>17th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/017.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/018-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/018-thumb.jpg" alt="18th" />
+            </div>
+            <figcaption>
+              <p>18th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/018.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/019-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/019-thumb.jpg" alt="19th" />
+            </div>
+            <figcaption>
+              <p>19th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/019.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/020-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/020-thumb.jpg" alt="20th" />
+            </div>
+            <figcaption>
+              <p>20th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/020.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/021-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/021-thumb.jpg" alt="21st" />
+            </div>
+            <figcaption>
+              <p>21st</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/021.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/022-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/022-thumb.jpg" alt="22nd" />
+            </div>
+            <figcaption>
+              <p>22nd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/022.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/023-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/023-thumb.jpg" alt="23rd" />
+            </div>
+            <figcaption>
+              <p>23rd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/023.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/024-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/024-thumb.jpg" alt="24th" />
+            </div>
+            <figcaption>
+              <p>24th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/024.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/025-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/025-thumb.jpg" alt="25th" />
+            </div>
+            <figcaption>
+              <p>25th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/025.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/026-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/026-thumb.jpg" alt="26th" />
+            </div>
+            <figcaption>
+              <p>26th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/026.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/027-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/027-thumb.jpg" alt="27th" />
+            </div>
+            <figcaption>
+              <p>27th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/027.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/028-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/028-thumb.jpg" alt="28th" />
+            </div>
+            <figcaption>
+              <p>28th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/028.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/029-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/029-thumb.jpg" alt="29th" />
+            </div>
+            <figcaption>
+              <p>29th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/029.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/030-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/030-thumb.jpg" alt="30th" />
+            </div>
+            <figcaption>
+              <p>30th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/030.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/031-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/031-thumb.jpg" alt="31st" />
+            </div>
+            <figcaption>
+              <p>31st</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/031.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/032-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/032-thumb.jpg" alt="32nd" />
+            </div>
+            <figcaption>
+              <p>32nd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/032.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/033-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/033-thumb.jpg" alt="33rd" />
+            </div>
+            <figcaption>
+              <p>33rd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/033.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/034-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/034-thumb.jpg" alt="34th" />
+            </div>
+            <figcaption>
+              <p>34th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/034.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/035-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/035-thumb.jpg" alt="35th" />
+            </div>
+            <figcaption>
+              <p>35th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/035.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/036-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/036-thumb.jpg" alt="36th" />
+            </div>
+            <figcaption>
+              <p>36th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/036.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/037-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/037-thumb.jpg" alt="37th" />
+            </div>
+            <figcaption>
+              <p>37th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/037.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/038-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/038-thumb.jpg" alt="38th" />
+            </div>
+            <figcaption>
+              <p>38th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/038.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/039-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/039-thumb.jpg" alt="39th" />
+            </div>
+            <figcaption>
+              <p>39th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/039.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/040-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/040-thumb.jpg" alt="40th" />
+            </div>
+            <figcaption>
+              <p>40th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/040.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/041-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/041-thumb.jpg" alt="41st" />
+            </div>
+            <figcaption>
+              <p>41st</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/041.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/042-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/042-thumb.jpg" alt="42nd" />
+            </div>
+            <figcaption>
+              <p>42nd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/042.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/043-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/043-thumb.jpg" alt="43rd" />
+            </div>
+            <figcaption>
+              <p>43rd</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/043.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/044-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/044-thumb.jpg" alt="44th" />
+            </div>
+            <figcaption>
+              <p>44th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/044.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/045-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/045-thumb.jpg" alt="45th" />
+            </div>
+            <figcaption>
+              <p>45th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/045.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+        <div class="box">
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <div class="img" style="background-image: url('https://clayto.com//galleries/033/046-thumb.jpg');" >
+              <img itemprop="thumbnail" src="https://clayto.com//galleries/033/046-thumb.jpg" alt="46th" />
+            </div>
+            <figcaption>
+              <p>46th</p>
+            </figcaption>
+            <a href="https://clayto.com//galleries/033/046.jpg" itemprop="contentUrl"></a>
+          </figure>
+        </div>
+</div>
+</p>
+
+<p>I&rsquo;m working on a follow-up post, with technical information about the
+implementation. <em>Update</em> it&rsquo;s
+<a href="{filename}../034 - the deconstruction of falling particles/034 - the deconstruction of falling particles.md">here</a>!</p>
+
+<p>This (2014) was my first year as a volunteer, but it was a tremendously
+educational and <em>fun</em> experience, so I&rsquo;ll definitely be back next year.
+<em>Update</em> <a href="https://clayto.com/2015/09/make-a-kimotion/">2015&rsquo;s exhibit info and pictures!</a>!</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>I&rsquo;ve written mostly about my own contribution to DiMo here, because that&rsquo;s what
+I&rsquo;m most familiar with, but in reality it was only a piece of the DiMo puzzle.
+There were two other visualizations, both of which used the lighted batons as
+input. I would love to link to their creators&rsquo; websites, but I&rsquo;m still waiting
+on URLs. Thanks to them, too!</p>
+
+<p>Ian Hands, for organizing the project, asking me to participate, writing the
+input server, and coming up with the whole idea.</p>
+
+<p>Ben Pritchett for code contributions to the renderer and the server, and for
+his work on two input sources (music BPM and a <em>brain machine</em>) which didn&rsquo;t
+make it into this year&rsquo;s exhibit, but we&rsquo;ll almost certainly use next year.</p>
+
+<p>Justis Peters is the lead coordinator of GeekSPARK, and, I think, the founder
+of DiMo, and none of this would have happened without him.</p>
+
+<p>Thanks also to the <a href="https://www.facebook.com/ncsufishmarket">Raleigh Fish Market Gallery</a> for providing us a
+venue and letting us paint the projection wall white, and to Yujin Kim for
+taking some awesome pictures.</p>
+
+<p>Most of all, thank you to the visitors who descended that dingy stairwell to
+see our exhibits! Seeing their smiles as they waved the batons was incredibly
+rewarding. Everyone seemed to have fun. One kid liked it so much he cried
+when it was time to leave.</p>
+
+<p><img src="ring-anim.gif" alt="ring animation in dimo" /></p>
+
+<p>You can find all the code at our <a href="https://github.com/geekspark-rh/">GitHub group</a>. The
+visualization code described in this post is in the <a href="https://github.com/geekspark-rh/dimo-renderer">dimo-renderer</a>
+repo.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/dimo/">DiMo: Particles</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+$GALLERY
+After the event, I wrote this opensource.com article about the experience.
+The source code is, of course, open.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/dimo/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/dimo//./icon_dimo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey---canvas-physics/">Bouncey - canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
+The description for bouncey&rsquo;s github repo is:
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey---canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/bouncey---canvas-physics//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/03/rgb-webgl-color-cube/">RGB WebGL Color Cube</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
+Launch live demo! and view the code.
+Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support WebGL, here&rsquo;s a video to enjoy while you download Firefox Nightly.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-03-23T00:00:00Z">
+      Mar 23, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/03/rgb-webgl-color-cube/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/03/rgb-webgl-color-cube//./colorcube.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing ColorPal, a fast color palette creation tool.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2012/01/colorpal-alpha//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/">Bouncey returns - more canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a slightly upgraded version of the physics demo I showed in my last post.
+It is still&hellip;
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+This version has:
+ pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
+The code is well commented, so feel free to hack on it.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-18T00:00:00Z">
+      Nov 18, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/bouncey-returns---more-canvas-physics//thumb.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/">Introducing Drop64, ezpz data URI generator</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Speed-hacking an old project for fun and&hellip; fun.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-02-25T00:00:00Z">
+      Feb 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator//recording.gif">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2014-08-25T00:00:00Z">
+          Aug 25, 2014
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/demos" class="c-tag">#demos</a>
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/requirejs" class="c-tag">#requirejs</a>
+        
+        <a href="https://clayto.com/tags/threejs" class="c-tag">#threejs</a>
+        
+        <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
+        
+        <a href="https://clayto.com/tags/3d" class="c-tag">#3d</a>
+        
+        <a href="https://clayto.com/tags/art" class="c-tag">#art</a>
+        
+        <a href="https://clayto.com/tags/sparkcon" class="c-tag">#sparkcon</a>
+        
+        <a href="https://clayto.com/tags/geekspark" class="c-tag">#geekspark</a>
+        
+        <a href="https://clayto.com/tags/dimo" class="c-tag">#dimo</a>
+        
+        <a href="https://clayto.com/tags/physics" class="c-tag">#physics</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+        <a href="https://clayto.com/tags/kimotion" class="c-tag">#kimotion</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

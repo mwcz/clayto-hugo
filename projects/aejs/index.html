@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="AEJS" />
+  <meta name="twitter:title" content="AEJS" />
+  
+  <title>AEJS - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff.">
+  <meta property="og:description" content="Creative coding and web stuff.">
+  <meta name="twitter:description" content="Creative coding and web stuff.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/projects/aejs/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/icon_aejs.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/icon_aejs.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>AEJS</h1>
+  </header>
+  
+  
+  <section>
+    <p>AEJS was an experimental Amiga 500 emulator written in JavaScript. The name
+stands for Amiga Emulator JavaScript and is pronounced &ldquo;aegis&rdquo;.</p>
+
+<div class="beside">
+<img style="height: 168px" src="icon_aejs.jpg" title="AEJS logo" alt="AEJS logo" />
+<img style="height: 150px" src="log.png" title="AEJS log" alt="AEJS log" />
+</div>
+
+<p><img src="splash.png" alt="aejs splash screen" /></p>
+
+<p>My motivation to build AEJS came from these sources:</p>
+
+<ul>
+<li>The HTML5 era introduced new APIs which finally made it possible:
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays" title="JavaScript typed arrays">Typed arrays</a>, <a href="http://www.w3.org/TR/webaudio/" title="Web Audio API">Web Audio</a>, <a href="http://www.w3.org/TR/FileAPI/" title="File API">File</a>, <a href="http://www.w3.org/TR/2dcontext/" title="Canvas 2D context">Canvas</a>, <a href="http://www.w3.org/TR/fullscreen/" title="Fullscreen API">Fullscreen</a>,
+<a href="http://www.w3.org/TR/gamepad/" title="Gamepad API">Gamepad</a></li>
+<li>Fabrice Bellard&rsquo;s <a href="http://bellard.org/jslinux/tech.html">JavaScript PC emulator</a></li>
+<li>JavaScript performance was finally good enough to make it feasible</li>
+<li>It bridged front-end web development with low-level machine code, both of
+which are super awesome</li>
+<li>I still have the Amiga 500 I played with obsessively since 3 years-old</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Motorola_68000" title="Motorola 68000">68000</a> is legendary and I wanted to find out why</li>
+</ul>
+
+<p>I stopped development for these reasons:</p>
+
+<ul>
+<li>This was my first emulator, and the Amiga 500 is a fairly complex set of
+chips, and I quickly realized it would take a very long time to complete. I
+decided to focus on other projects which could be finished in a more
+reasonable timeframe (I&rsquo;m looking at you, <a href="http://colorpal.org/" title="ColorPal">ColorPal</a>)</li>
+<li>The final nail in the coffin was realizing that while JavaScript was
+definitely up to the task, there was pretty much no reason to write it
+entirely in JavaScript when it could be written in C and compiled to JS with
+<a href="http://emscripten.org" title="emscripten">emscripten</a>. The result would be faster, more robust, and type-safe.</li>
+</ul>
+
+<p><a href="https://github.com/naTmeg/ScriptedAmigaEmulator" title="ScriptedAmigaEmulator">Scripted Amiga Emulator</a> came out at around the same time I stopped contributing to AEJS. It&rsquo;s based on
+<a href="https://github.com/tonioni/WinUAE" title="WinUAE">WinUAE</a> and was ported (by hand, I believe) from C++ to JavaScript. A very
+impressive project, but not at all what I was going for with AEJS. AEJS was
+about fueling my curiosity and exploration and was unlikely to ever be a usable emulator.
+works very well, but it didn&rsquo;t demotivate me in any way.</p>
+
+<p>I may come up with the motivation to resume development at some point
+in the future. I still love my old Amiga 500 and want to see it live on in
+some fashion. I don&rsquo;t like having pet projects nipping at my heels that never
+go anywhere, though, so I&rsquo;m calling this one dead (<a href="https://github.com/mwcz/AEJS/" title="AEJS on GitHub">for now</a>).</p>
+
+<p><em>Addendum</em>: I just learned today (2013-12-16) that Christian Stefansen ported
+PUAE (Portable Universal Amiga Emulator) to PNaCl. This allows UAE to run
+inside any Chrome browser. <a href="http://pnacl-amiga-emulator.appspot.com/" title="PNaCl port of PUAE">Check it out</a> or <a href="https://github.com/cstefansen/PUAE" title="PNaCl PUAE port's source code">fork it</a>.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/10/opcode-patterns-70-finished/">Opcode patterns 70% finished</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        genlut.py is really filling out. It generates the LUT for all 68k opcodes (68000 only), and I&rsquo;m about 70% done. 77 down, 34 to go.
+The OPCODES dict defines the first two bytes of each opcode, both static bits and operands. The operand strings act as keys into the PATTERNS struct, which contains all possible values for each operand.
+The recursive function gen() is fed an opcode pattern which may contain operand strings as well as static bits.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-10-13T00:00:00Z">
+      Oct 13, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/10/opcode-patterns-70-finished/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/10/opcode-patterns-70-finished//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/09/lut/">LUT</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Decoding is easy. Decoding requires a lot of typing. (I am starting to believe this is true of ever aspect of interpreted emulation&hellip;)
+For the AEJS decoder, I am creating a look-up table with every possible pattern for each instruction. It was my first idea, but I initially discarded it as &ldquo;wasteful and inelegant&rdquo;. Later, I accepted it as &ldquo;really fast&rdquo;.
+I&rsquo;m generating a large set of bit patterns that map to 68k opcodes, like so:
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-09-22T00:00:00Z">
+      Sep 22, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/09/lut/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/09/lut//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/09/introducing-aejs/">Introducing AEJS</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing AEJS, an Amiga emulator written in JavaScript. Wait, wording it like that makes it sound like it&rsquo;s finished. It isn&rsquo;t. It won&rsquo;t be for a long time. AEJS is just a hobby, and will never hold a candle to UAE.
+Why the Amiga? Given that this is my first emulator, it would have been much easier to go with a 6502 or 8080 instead, but I didn&rsquo;t grow up with those; I grew up with a 68k powering an Amiga 500.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-09-20T00:00:00Z">
+      Sep 20, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/09/introducing-aejs/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/09/introducing-aejs//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/jsimage/">JSImage</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008&frasl;2009 when I first started seriously studying JavaScript.
+A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
+I&rsquo;ve made several posts about JSImage which contain live demos.
+I think I put more work into code formatting than correct output. ;)
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2009-01-01T00:00:00Z">
+      Jan 1, 2009
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/jsimage/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/jsimage//./icon_jsimage.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/mediancut/">median-cut.js</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The unfortunately-named median-cut.js is the library that powers ColorPal&rsquo;s palette generation.
+I say it&rsquo;s unfortunately named because it doesn&rsquo;t implement a pure median-cut algorithm. It&rsquo;s identical, except that instead of cutting boxes at their median, they are instead cut at the mean. This results in more pleasing color palettes in most cases.
+Here&rsquo;s a comparison:
+If you&rsquo;re interested in median-cut vs mean-cut, see this post for a technical discussion.
+The code is available on GitHub.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2009-01-01T00:00:00Z">
+      Jan 1, 2009
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/mediancut/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/mediancut//./median-mean-comparison.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2011-10-13T00:00:00Z">
+          Oct 13, 2011
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

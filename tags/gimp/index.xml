@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gimp on clayto</title>
+    <link>https://clayto.com/tags/gimp/</link>
+    <description>Recent content in Gimp on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Dec 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/gimp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Super easy image resizing in GIMP</title>
+      <link>https://clayto.com/2013/12/super-easy-image-resizing-in-gimp/</link>
+      <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2013/12/super-easy-image-resizing-in-gimp/</guid>
+      <description>Ever been here?
+ I want to double the size of this image
+open calculator
+type in current width * 2
+type in current height * 2
+paste results back into the Create New Image dialog
+ I&amp;rsquo;ve done that countless times. As I was about to do the same thing once more, I thought &amp;ldquo;Hmm, wouldn&amp;rsquo;t it be nice if we could do simple math inside the New Image dialog?</description>
+    </item>
+    
+  </channel>
+</rss>

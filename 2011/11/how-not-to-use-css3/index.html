@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="How not to use CSS3" />
+  <meta name="twitter:title" content="How not to use CSS3" />
+  
+  <title>How not to use CSS3 - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff.">
+  <meta property="og:description" content="Creative coding and web stuff.">
+  <meta name="twitter:description" content="Creative coding and web stuff.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2011/11/how-not-to-use-css3/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/thumb.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/thumb.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>How not to use CSS3</h1>
+  </header>
+  
+  
+  <section>
+    <p>How to ruin a good thing by abusing CSS3 text shadows&hellip;</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<p><span class="css3_demo">CSS3!</span></p>
+
+<p>The code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Random factors to determine x/y offsets for text shadows and amount of blur
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">blur_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+
+<span style="color:#75715e">// Pretty colors
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">the_colors</span> <span style="color:#f92672">=</span> [
+  <span style="color:#e6db74">&#34;#7f9f7f&#34;</span>,
+  <span style="color:#e6db74">&#34;#dca3a3&#34;</span>,
+  <span style="color:#e6db74">&#34;#80d4aa&#34;</span>,
+  <span style="color:#e6db74">&#34;#f8f893&#34;</span>,
+  <span style="color:#e6db74">&#34;#ffcfaf&#34;</span>,
+  <span style="color:#e6db74">&#34;#e89393&#34;</span>,
+  <span style="color:#e6db74">&#34;#9ece9e&#34;</span>,
+  <span style="color:#e6db74">&#34;#c0bed1&#34;</span>,
+  <span style="color:#e6db74">&#34;#6c6c9c&#34;</span>,
+  <span style="color:#e6db74">&#34;#71d3b4&#34;</span>,
+  <span style="color:#e6db74">&#34;#a0afa0&#34;</span>,
+  <span style="color:#e6db74">&#34;#efefef&#34;</span>
+];
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">make_it</span>() {
+  <span style="color:#75715e">// MAKE IT SHINE
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Build a string containing a comma-delimited list of the each shadow we want to apply
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// sprintf would be nice here.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">color_index</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">the_colors</span>) {
+    <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">+=</span>
+      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">+</span>
+      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
+      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y_factor</span> <span style="color:#f92672">+</span>
+      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
+      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">blur_factor</span> <span style="color:#f92672">+</span>
+      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
+      <span style="color:#a6e22e">the_colors</span>[<span style="color:#a6e22e">color_index</span>];
+
+    <span style="color:#75715e">// Add a comma unless we&#39;re at the end of the color set
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">color_index</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;,&#34;</span>;
+  }
+  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.css3_demo&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#34;textShadow&#34;</span>, <span style="color:#a6e22e">shadows</span>); <span style="color:#75715e">// apply the new style
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">shift</span>()); <span style="color:#75715e">// move first color to the end of the list
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//console.log( shadows );
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#e6db74">&#34;make_it()&#34;</span>, <span style="color:#ae81ff">50</span>); <span style="color:#75715e">// make the function async (kinda... effectively...) with setTimeout()
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move_it</span>() {
+  <span style="color:#75715e">// MAKE IT MOVE
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">/* uncomment this to make it move up and down...
+</span><span style="color:#75715e">    $(&#39;.css3_demo&#39;).animate( {top:&#39;+=200&#39;},2000, &#34;linear&#34; )
+</span><span style="color:#75715e">           .animate( {top:&#39;-=200&#39;},2000, &#34;linear&#34;, move_it );
+</span><span style="color:#75715e">    */</span>
+}
+
+<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>() {
+  <span style="color:#a6e22e">make_it</span>();
+  <span style="color:#a6e22e">move_it</span>();
+});
+</code></pre></div>
+<script type="text/javascript">
+
+// Random factors to determine x/y offsets for text shadows and amount of blur
+var x_factor    = Math.floor( 0.6 * 20 ) - 10;
+var y_factor    = Math.floor( 0.6 * 20 ) - 10;
+var blur_factor = Math.floor( 0.2 * 10 ) + 1;
+
+// Pretty colors
+var the_colors =
+                [
+                '#7f9f7f',
+                '#dca3a3',
+                '#80d4aa',
+                '#f8f893',
+                '#ffcfaf',
+                '#e89393',
+                '#9ece9e',
+                '#c0bed1',
+                '#6c6c9c',
+                '#71d3b4',
+                '#a0afa0',
+                '#efefef'
+                ];
+
+function make_it() { // MAKE IT SHINE
+    // Build a string containing a comma-delimited list of the each shadow we want to apply
+    // sprintf would be nice here.
+    var shadows = "";
+    for( var color_index in the_colors ) {
+        shadows +=
+            color_index * x_factor + "px " +
+            color_index * y_factor + "px " +
+            color_index * blur_factor + "px " +
+            the_colors[ color_index ];
+
+        // Add a comma unless we're at the end of the color set
+        if( color_index != the_colors.length - 1 )
+            shadows += ',';
+    }
+    $('.css3_demo').css( 'textShadow', shadows ); // apply the new style
+    the_colors.push( the_colors.shift() ); // move first color to the end of the list
+    //console.log( shadows );
+    setTimeout( 'make_it()', 50 ); // make the function async (kinda... effectively...) with setTimeout()
+}
+
+function move_it() { // MAKE IT MOVE
+    /* uncomment this to make it move up and down...
+    $('.css3_demo').animate( {top:'+=200'},2000, "linear" )
+           .animate( {top:'-=200'},2000, "linear", move_it );
+    */
+}
+
+$(document).ready( function() {
+    make_it();
+    move_it();
+});
+</script>
+
+<style type="text/css">
+
+.css3_demo {
+    font-family: FreeSansBold;
+    text-align: center;
+    color: #efefef;
+    position: relative;
+    top: 0;
+    left: 50px;
+    font-size: 9em;
+    padding: 0;
+}
+
+</style>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-point-operations/">HTML5 canvas point operations</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
+Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-point-operations/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-point-operations//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
+  
+In retrospect, it really could have used some narration&hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey---canvas-physics/">Bouncey - canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
+The description for bouncey&rsquo;s github repo is:
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey---canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/bouncey---canvas-physics//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">HTML5 canvas RGB histogram</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-rgb-histogram//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">HTML5 canvas 3D pixel array</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &ldquo;more logical&rdquo;, I mean &ldquo;more logical, to me, at the time). 1D is fine, and I can&rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-3d-pixel-array//kazoo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">HTML5 canvas area selection averaging</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a demo from late 2009. It&rsquo;s an extension of the single-pixel eyedropper I wrote previously.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
+Click and drag to set the image border to the average of the selected pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2011/11/html5-canvas-area-selection-averaging//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2011-11-17T00:00:00Z">
+          Nov 17, 2011
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
+        
+        <a href="https://clayto.com/tags/css3" class="c-tag">#css3</a>
+        
+        <a href="https://clayto.com/tags/typography" class="c-tag">#typography</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

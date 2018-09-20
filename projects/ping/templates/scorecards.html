@@ -1,0 +1,63 @@
+
+<!-- Create a scorecard for each player -->
+<repeat each="{{ players }}" as="player">
+
+<div id="player-{{ player.name }}-container" class="player-container">
+
+    <show when="{{ player.state === conf.PLAYER_STATE.LOGIN_CHOOSING_LETTER }}">
+    <div class="choosing-letter">
+        First letter of Gamer ID?
+        <span class="selection-large">{{ player.current_letter }}</span>
+    </div>
+    </show>
+
+    <show when="{{ player.state === conf.PLAYER_STATE.LOGIN_CHOOSING_PLAYER }}">
+    <div class="select-gamerid">
+        Gamer IDs under '{{ player.current_letter }}':
+        <span class="selection-large">{{ player.selected_player.gamerID }}</span>
+    </div>
+    </show>
+
+    <show when="{{ player.state === conf.PLAYER_STATE.INACTIVE }}">
+    <div class="press-start animate-flicker" data-player="{{ player.name }}">CLICK HERE TO BE {{ player.color_name }}</div>
+    </show>
+
+    <show when="{{ player.state === conf.PLAYER_STATE.PLAYING }}">
+    <div class="gamer-id">{{ player.id }}</div>
+    <div class="score">{{ player.score.score }}</div>
+    <div class="lives">
+        <span class="dim">
+            <repeat each="{{ player.score.lives_arr }}" as='lives'>♥</repeat>
+        </span>
+    </div>
+    <div class="powerup">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr class="{{ player.selected_powerup_shortname === 'hack' ? 'selection-small' : ''}} {{ player.powerup_counts.hack > 0 ? '' : 'dim' }}">
+                <td width="55%" class="name">HACK</td>
+                <td class="count"><repeat each="{{ player.powerup_count_arrs.hack }}" as='hacks'>&#9642;</repeat></td>
+            </tr>
+            <tr class="{{ player.selected_powerup_shortname === 'kick' ? 'selection-small' : ''}} {{ player.powerup_counts.kick > 0 ? '' : 'dim' }}">
+                <td width="55%" class="name">KICK</td>
+                <td class="count"><repeat each="{{ player.powerup_count_arrs.kick }}" as='kicks'>&#9642;</repeat></td>
+            </tr>
+            <tr class="{{ player.selected_powerup_shortname === 'flip' ? 'selection-small' : ''}} {{ player.powerup_counts.flip > 0 ? '' : 'dim' }}">
+                <td width="55%" class="name">FLIP</td>
+                <td class="count"><repeat each="{{ player.powerup_count_arrs.flip }}" as='flips'>&#9642;</repeat></td>
+            </tr>
+        </table>
+    </div>
+    </show>
+
+    <show when="{{ player.state === conf.PLAYER_STATE.LOGIN_CHOOSING_LETTER
+                || player.state === conf.PLAYER_STATE.LOGIN_CHOOSING_PLAYER }}">
+    <div class="login-controls">
+        <span class="gamepad-button">&varr;</span> Up/Down
+        <span class="gamepad-button">B</span> Back
+        <span class="gamepad-button">A</span> Select
+    </div>
+    </show>
+
+</div>
+
+</repeat>
+

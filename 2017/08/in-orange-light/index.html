@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="In Orange Light" />
+  <meta name="twitter:title" content="In Orange Light" />
+  
+  <title>In Orange Light - clayto</title>
+
+  
+  <meta name="description" content="An atmospheric mountain survival game I built in 48 hours for Ludum Dare 39.">
+  <meta property="og:description" content="An atmospheric mountain survival game I built in 48 hours for Ludum Dare 39.">
+  <meta name="twitter:description" content="An atmospheric mountain survival game I built in 48 hours for Ludum Dare 39.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2017/08/in-orange-light/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/iol-square-logo.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/iol-square-logo.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>In Orange Light</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p><center>
+<a class="pbp-btn" href="http://scripta.co/in-orange-light/">Play now!</a>
+</center>
+<br></p>
+
+<p>Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&rsquo;s (now wife&rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.</p>
+
+<p><img src="kr0-emp.jpg"></p>
+
+<p>We were visiting the <em>Indie Game Revolution</em> exhibit at EMP in Seattle, and what we found on that screen was Scene I, Act I of <a href="http://kentuckyroutezero.com/">Kentucky Route Zero</a>. It took me three years, but I finally rediscovered KR0 a few weeks ago. Now, having (well, nearly) finished it, I&rsquo;m convinced it&rsquo;s a masterpiece. The game&rsquo;s atmosphere is so rich, so effortlessly gripping, that <em>actually being there</em> would be less compelling.</p>
+
+<p><img src="kr0.jpg"></p>
+
+<p>And they accomplished all that with 3D models my Amiga 500 could have rendered (sans lighting). Strategic omission of detail really has a way of setting fire to an imagination.</p>
+
+<p>The atmosphere and storytelling from that game have been rolling around in my mind since then. With Ludum Dare 39 approaching, I&rsquo;d decided to try my novice hand at recreating some of its techniques.</p>
+
+<hr />
+
+
+  <nav id="TableOfContents">
+<ul>
+<li><a href="#ludum-dare-39">Ludum Dare 39</a></li>
+<li><a href="#day-1-the-foundation">Day 1, the foundation</a></li>
+<li><a href="#day-2-some-polish">Day 2, some polish</a>
+<ul>
+<li><a href="#making-it-mountainous">Making it mountainous</a></li>
+<li><a href="#sunrise-day-sunset-night-repeat">Sunrise, day, sunset, night, repeat</a></li>
+<li><a href="#sound-effects">Sound effects</a></li>
+</ul></li>
+<li><a href="#lessons-learned">Lessons learned</a></li>
+</ul>
+</nav>
+
+
+
+<hr />
+
+<h1 id="ludum-dare-39">Ludum Dare 39</h1>
+
+<p>Jared and I have participated in the Ludum Dare <em>Jam</em> <a href="http://ludumdare.com/compo/ludum-dare-35/?action=preview&amp;uid=91554">three</a> <a href="http://ludumdare.com/compo/ludum-dare-37/?action=preview&amp;uid=91554">whole</a> <a href="https://ldjam.com/events/ludum-dare/38/pity-about-earth">times</a>, and we&rsquo;ve been growing curious about the <em>Compo</em> (aka, Hard Mode). Jared decided to sit this one out, so I took the opportunity to enter my first Compo, which is an exclusively solo endeavor. The theme was &ldquo;Running out of power&rdquo;. Without any further ado, here is my game, <a href="http://scripta.co/in-orange-light/">In Orange Light</a>.</p>
+
+<p><img src="in-orange-light-scenery.jpg"></p>
+
+<p><a href="https://ldjam.com/events/ludum-dare/39/in-orange-light">View the Ludum Dare entry</a></p>
+
+<hr />
+
+<h1 id="day-1-the-foundation">Day 1, the foundation</h1>
+
+<p>With Kentucky Route Zero fresh in my mind, I wanted to branch out from my usual arcade-style game and try to make something a little more moody and atmospheric. Based on the &ldquo;running out of power&rdquo; theme, my idea was a survival game where you try to balance scant resources to survive winter in a frigid mountain cabin.</p>
+
+<p>To get the math out of the way, I spent the first day implementing a basic simulation of warmth, food, fuel, a generator, heater, and all their interactions. I also created some placeholder art, so I&rsquo;d have something to click on and cringe at.</p>
+
+<p><img src="placeholder-art.png"></p>
+
+<hr />
+
+<h1 id="day-2-some-polish">Day 2, some polish</h1>
+
+<p>I spent about half of Sunday improving the visuals, and the other half fixing bugs in the simulation I&rsquo;d created on Saturday.</p>
+
+<h2 id="making-it-mountainous">Making it mountainous</h2>
+
+<p>Starting with a set of rectangles, and using a photo of the Blue Ridge Mountains as a reference, I tweaked vector paths into something resembling mountains.</p>
+
+<p><img src="making-mountains.gif"></p>
+
+<h2 id="sunrise-day-sunset-night-repeat">Sunrise, day, sunset, night, repeat</h2>
+
+<p>The plain blue mountains lacked luster, and a day/night cycle seemed like a fitting way to bring them some life.</p>
+
+<style type="text/css" rel="stylesheet">
+#iol-sky-demo > canvas {
+    margin: 0 auto;
+}
+</style>
+
+<p>I made the mountain sprites greyscale and multiplied them against two very tall, sliding sky gradients. Here&rsquo;s a visual of the technique, zoomed way out so you can see the two sky images playing leap frog as they slide up the screen. (This is a live demo of the game code, not a video.)</p>
+
+<figure id="iol-sky-demo"></figure>
+
+<p>To see the full sky sunrise and sunset, give <a href="http://scripta.co/in-orange-light/">In Orange Light</a> a play, but don&rsquo;t dismiss the text. That way, time will be paused and you won&rsquo;t starve or freeze.</p>
+
+<h2 id="sound-effects">Sound effects</h2>
+
+<p>The game has a few sound effects. The heater&rsquo;s electric hum, the generator&rsquo;s rumble, and the growing, clawing sound of hunger. To create these, I used <a href="http://beepbox.co">BeepBox</a>, a chiptune music sequencer. It&rsquo;s meant for music, but I was able to coax some sound effects out of it. Here are two of the sound effects, hit <code>Play</code> to hear them through the BeepBox synthesizer live on this page.</p>
+
+<div id="sfx" class="beside">
+    <p>
+        <button id="generator">Play</button> Generator  <small><a href="http://beepbox.co/#5s7k0l00e00t7m1a7g00j0i1r1w81445111f30222000d11000101c00023000h40000000v20214050o3000b8p1xkNVAWE6CCIdttddsB1xkn3qmrx-GabxL0">(view in BeepBox)</a></small>
+    </p>
+    <p>
+        <button id="heater">Play</button> Heater  <small><a href="http://beepbox.co/#5s7k0l00e00t7m1a7g00j0i1r1w81445111f30222000d11000101c00023000h40000000v20214050o3000bgp1xkNVAWE6CCIdttddsB1xkn3qmrx-GabxL0">(view in BeepBox)</a></small>
+    </p>
+</div>
+
+<p>BeepBox is a very approachable sequencer. Here&rsquo;s what the &ldquo;generator ran out of fuel&rdquo; sound effect looks like inside the tool.</p>
+
+<p><img src="generator-off.png" alt="A screenshot of the 'generator fuel empty' sound in BeepBox"></p>
+
+<style>
+    #sfx button {
+        padding: 10px;
+        text-align: center;
+        font-family: monospace;
+    }
+</style>
+
+<script src="beepbox_synth.js"></script>
+
+<script>
+    var generator = new beepbox.Synth("5s7k0l00e00t7m1a7g00j0i1r1w81445111f30222000d11000101c00023000h40000000v20214050o3000b8p1xkNVAWE6CCIdttddsB1xkn3qmrx-GabxL0");
+    var heater = new beepbox.Synth("5s7k0l00e00t7m1a7g00j0i1r1w81445111f30222000d11000101c00023000h40000000v20214050o3000bgp1xkNVAWE6CCIdttddsB1xkn3qmrx-GabxL0");
+
+    var genEl = document.querySelector('#generator');
+    var heatEl = document.querySelector('#heater');
+
+    genEl.addEventListener('click', function () {
+        if (generator.playing) {
+            genEl.classList.remove('on');
+            genEl.textContent = 'Play ';
+            generator.pause();
+        }
+        else {
+            genEl.classList.add('on');
+            genEl.textContent = 'Pause';
+            generator.play();
+        }
+    });
+    heatEl.addEventListener('click', function () {
+        if (heater.playing) {
+            heatEl.classList.remove('on');
+            heatEl.textContent = 'Play ';
+            heater.pause();
+        }
+        else {
+            heatEl.classList.add('on');
+            heatEl.textContent = 'Pause';
+            heater.play();
+        }
+    });
+</script>
+
+<hr />
+
+<h1 id="lessons-learned">Lessons learned</h1>
+
+<p>First, working solo is much harder than working on a team, and not only because a team can get more work done. Maintaining the sense of urgency, productivity, and focus was nearly impossible without a co-conspirator.</p>
+
+<p>Second, system-of-numbers games need careful design and planning. In Orange Light is essentially a small spreadsheet where you click buttons in order to keep some numbers within a desired range. It seemed very simple at first, but a slew of miscalculations arose after I <em>thought</em> I had finished the simulation.</p>
+
+<p>Third, and unsurprisingly, immersion and atmosphere are very difficult to execute on. Still, as a first experiment, I&rsquo;m pretty happy with how things turned out.</p>
+
+<p>Fourth, and last, if a game has <em>meters</em>, and those meters indicate how Good/Bad something is, make sure they all go in the same direction. In my game, the Warmth meter wants to be high, and the Hunger meter wants to be low. That&rsquo;s been the single biggest point of absolutely understandable confusion.</p>
+
+<p>Lessons learned!</p>
+
+<!-- IOL sky demo -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser-ce/2.8.2/phaser.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+
+<script src="lib/phaser-state-transition-plugin.min.js"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/sim.js"></script>
+
+<script src="js/states/boot.js"></script>
+
+<script src="js/states/preload.js"></script>
+
+<script src="js/states/menu.js"></script>
+
+<script src="js/states/play.js"></script>
+
+<script src="js/game.js"></script>
+
+<script src="js/main.js"></script>
+
+<!-- /IOL sky demo -->
+
+<p><img hidden src="images/big/loading-bar.png">
+<img hidden src="images/sky.png">
+<img hidden src="images/mountain.png">
+<img hidden src="images/mountain1.png">
+<img hidden src="images/mountain2.png">
+<img hidden src="images/mountain3.png">
+<img hidden src="images/mountain4.png">
+<img hidden src="iol-square-logo.jpg"></p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/games/pity-about-earth/">Pity About Earth...</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-05-07T00:00:00Z">
+      May 7, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/games/pity-about-earth/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/games/pity-about-earth//./logo-notitle.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/squareoff/">Square Off</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Square Off is a 1v1 airhockey-style game, built in 72 hours for <a href="http://ludumdare.com/compo/2016/04/13/welcome-to-ludum-dare-35/">LD35</a>.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-04-19T00:00:00Z">
+      Apr 19, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/squareoff/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/squareoff//./square-off-logo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/tracer/">Tracer</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Tracer is a 3D connect-the-dots game we created for Ludum Dare 37.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-25T00:00:00Z">
+      Jan 25, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/tracer/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/tracer//./head.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/zorbio/">Zorbio</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Zorbio is a free 3D eat-em-up game that you can <a href="https://zorb.io">play</a> in your browser!
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-11-03T00:00:00Z">
+      Nov 3, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/zorbio/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-top" src="https://clayto.com/projects/zorbio//./icon_zorbio.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A WebGL-based visualizer for LED displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-03-10T00:00:00Z">
+      Mar 10, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/03/meet-simpixel/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2017/03/meet-simpixel//./thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">Kimotion at geekSPARK 2016</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion-powered interactive art at SPARKcon 2016.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-12T00:00:00Z">
+      Jan 12, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2017/01/kimotion-at-geekspark-2016//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2017-08-04T00:00:00Z">
+          Aug 4, 2017
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+        <a href="https://clayto.com/tags/gamedev" class="c-tag">#gamedev</a>
+        
+        <a href="https://clayto.com/tags/ludum-dare" class="c-tag">#ludum-dare</a>
+        
+        <a href="https://clayto.com/tags/ld39" class="c-tag">#ld39</a>
+        
+        <a href="https://clayto.com/tags/in-orange-light" class="c-tag">#in-orange-light</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+
