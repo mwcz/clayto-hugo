@@ -1,8 +1,8 @@
 ---
 Title: "Fireflies"
 Date: 2017-02-06
-Categories: Demos
 Tags:
+ - demos
  -  programming
  -  javascript
  -  threejs

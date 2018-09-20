@@ -53,11 +53,11 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
   # disqus = ""
   # Google Analytics API key.
   # ga_api_key = "Your Google Analytics tracking id"
-  author = "Michael Clayton"
+  #author = "Michael Clayton"
   authorwebsite = "clayto.com"
-  # avatar = "/path/to/avatar"
+  avatar = false
   contact = "mwc@clayto.com"
-  bio = "a primitive lifeform trapped in a losing battle with entropy and confirmation bias."
+  #bio = "a primitive lifeform trapped in a losing battle with entropy and confirmation bias."
   # Short subtitle/tagline. This is displayed in the header.
   subtitle = "Creative coding and web stuff."
   # Logo image. This is displayed ogp image.
@@ -79,12 +79,6 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
     name = "Games"
     url = "/games"
     weight = 1
-
-[[menu.main]]
-    #parent = "projects"
-    name = "Demos"
-    url = "/demos"
-    weight = 2
 
 #[[menu.main]]
 #    name = "Tags"

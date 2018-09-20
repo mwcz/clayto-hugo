@@ -1,8 +1,8 @@
 ---
 Title: "Bouncey - canvas physics"
 Date: 2011-11-17
-Categories: Demos
 Tags:
+ - demos
  -  html5
  -  canvas
  -  physics
@@ -91,6 +91,8 @@ window.onload = function() {
 <canvas id="cnvs" width="500" height="375">
     Sorry, your browser does not support HTML5 canvas.  Lame.
 </canvas>
+
+<br>
 
 <button onclick="paused++;paused%=2;this.textContent=paused?'Play':'Pause'">Pause</button>
 

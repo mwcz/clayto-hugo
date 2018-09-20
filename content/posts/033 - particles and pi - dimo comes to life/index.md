@@ -1,8 +1,8 @@
 ---
 Title: "Particles and π - DiMo Comes to Life"
 Date: 2014-08-25
-Categories: Demos
 Tags:
+ - demos
  -  programming
  -  javascript
  -  requirejs

@@ -1,9 +1,9 @@
 ---
 Title: "Meet SimPixel"
 Date: 2017-03-10
-Categories: Demos
 Tags:
  -  programming
+ -  demos
  -  javascript
  -  threejs
  -  webgl

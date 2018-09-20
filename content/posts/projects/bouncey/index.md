@@ -4,6 +4,7 @@ Date: 2011-11-17
 url: /projects/bouncey
 thumbnail: ./icon_bouncey.jpg
 Categories: Projects
+description: "A fun, simple, and oddly relaxing hacky simulation of bouncing circles."
 Tags:
  -  html5
  -  javascript
@@ -14,7 +15,7 @@ some contributions and bugfixes from my good friend Greg Gardner.
 
 Fun, simple, and oddly relaxing.
 
--------------------------------------------------------------------
+---
 
 <style type="text/css">
 #cnvs {
@@ -38,7 +39,7 @@ $(function() {
     canvas = canvas_element.getContext('2d');
 
     // create some squares with random velocities in the center of the canvas
-    // objects are stored in the format 
+    // objects are stored in the format
     //      [ X, Y, X_velocity, Y_velocity, width, height, [R,G,B] ]
     var x, y, w, h, v_x, v_y, r, g, b, new_obj;
 
@@ -78,11 +79,11 @@ $(function() {
 
 </script>
 
-<canvas class="img-responsive" id="cnvs" width="500" height="375"> 
+<canvas class="img-responsive" id="cnvs" width="500" height="375">
     Sorry, your browser does not support HTML5 canvas.  Lame.
 </canvas>
 
--------------------------------------------------------------------
+---
 
 [Posts about Bouncey][1]
 

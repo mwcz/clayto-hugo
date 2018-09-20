@@ -1,8 +1,8 @@
 ---
 Title: "DiMo: The Deconstruction of Falling Stars"
 Date: 2014-10-30
-Categories: Demos
 Tags:
+ - demos
  -  programming
  -  javascript
  -  requirejs
@@ -47,15 +47,7 @@ Wait, did you see that? You just moved the big dot. Look again! Now there
 are thousands and thousands of tiny dots, each being accelerated toward the big
 dot!
 
-<figure>
-
-    <iframe id="dimo-demo" src="//player.vimeo.com/video/108714486" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-    <figcaption>
-        <a href="http://vimeo.com/108714486">View on vimeo</a>
-    </figcaption>
-
-</figure>
+{{< vimeo 108714486>}}
 
 Peculiar. The multitude of dots starts to look _oddly_ reminiscent of fluid
 sloshing around in a container. Or a cloud of gas forming a star. Weird, huh?

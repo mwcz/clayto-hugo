@@ -60,11 +60,22 @@ pages, managing imports becomes a finger-aching chore.
 ## Scene 2: Minimize Finger-Ache
 
 Wouldn't it be cushy if the components were imported when you use them,
-automatically? Here's a working demo:
+automatically?
 
-<iframe frameborder=0 height="200" width="100%" src="/demos/043/index.html"></iframe>
+### Live demo
+
+<style type="text/css">
+.demo-iframe {
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+</style>
+
+<iframe class="demo-iframe" frameborder=0 height="240" width="100%" src="/demos/043/index.html"></iframe>
 
 <!-- https://gohugo.io/content-management/syntax-highlighting/ -->
+
+### Demo code
 
 {{< highlight html "hl_lines=3-4 7-11,linenostart=1" >}}
 
@@ -83,8 +94,7 @@ automatically? Here's a working demo:
 </html>
 {{< / highlight >}}
 
-The demo only imports `lazy-load`, which in turn imports the
-three `ws-` elements. Let's look at how it works.
+The demo only imports `lazy-load`, which encapsulates the importing of the rest of the elements so you don't have to specify them by hand. Let's look at how it works.
 
 ## Scene 3: Behind the Scenes
 

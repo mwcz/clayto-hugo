@@ -1,8 +1,8 @@
 ---
 Title: "Visualizing Machine Learning with WebGL"
 Date: 2018-03-14
-Categories: Demos
 Tags:
+ - demos
  -  programming
  -  javascript
  -  threejs

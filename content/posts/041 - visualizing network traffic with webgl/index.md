@@ -1,8 +1,8 @@
 ---
 Title: "Visualizing Network Traffic with WebGL"
 Date: 2016-07-13
-Categories: Demos
 Tags:
+ - demos
  -  programming
  -  javascript
  -  threejs
@@ -131,9 +131,7 @@ shot of my particle visualization from the official recording.
 
 Watch the full keynote here:
 
-<figure>
-<iframe style="display: block; margin: 0 auto;" width="100%" height="315" src="https://www.youtube.com/embed/ooA6FmTL4Dk" frameborder="0" allowfullscreen></iframe>
-</figure>
+{{< youtube ooA6FmTL4Dk >}}
 
 ---
 

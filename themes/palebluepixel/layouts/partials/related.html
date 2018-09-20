@@ -1,7 +1,7 @@
 {{ $related := .Site.RegularPages.Related . | first 6 }}
 {{ with $related }}
 <section>
-  <h3>ALSO OF INTEREST...</h3>
+  <h3>RELATED POSTS</h3>
   <div class="pbp-related">
     {{ range . }}
     {{ .Render "li" }}

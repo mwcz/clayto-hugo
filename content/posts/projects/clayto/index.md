@@ -53,8 +53,7 @@ The code is [available here][7]
 
 [1]: http://clayto.com/ "My photography site"
 [2]: http://python.org/ "Python's website"
-[3]: https://www.djangoproject.com/ "Django
- -  a Python web framework"
+[3]: https://www.djangoproject.com/ "Django -  a Python web framework"
 [4]: http://960.gs/ "960gs CSS grid"
 [5]: http://piwik.org/ "Piwik web analytics tool"
 [6]: http://noahgrey.com/ "Noah Grey's photography site"

@@ -1,7 +1,6 @@
 ---
 Title: "RGB WebGL Color Cube"
 Date: 2014-03-23
-Categories: Demos
 Tags:
  -  html5
  -  javascript
@@ -28,20 +27,7 @@ Your web browser must support WebGL, which at this point in history means a
 fairly recent Firefox or Chrome. In case your web browser doesn't support
 WebGL, here's a video to enjoy while you download [Firefox Nightly][ffn]. ;)
 
-<figure>
-
-    <iframe id="colorcube-demo" src="//player.vimeo.com/video/108080970"
-    width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen
-    allowfullscreen></iframe>
-
-    <figcaption>
-        A <a href="http://vimeo.com/107405612">recording</a> of the colorcube
-        with a couple of sample images, including the <a
-        href="http://colorpal.org/" title="ColorPal, a color palette
-        generator">ColorPal</a> logo.
-    </figcaption>
-
-</figure>
+{{< vimeo 108080970 >}}
 
 [Three.js][1] has proven to be pretty fun. The documentation is decent, but
 not comprehensive. Some parts of the API are filled with "todo" notes instead
@@ -84,15 +70,6 @@ startup time, though.
 Now I'm racking my brain for an excuse to use WebGL at Red Hat...
 
 Any ideas?
-
-<script>
-    function set_vimeo_iframe_height() {
-        var ifr = document.getElementById('colorcube-demo');
-        ifr.height = ifr.offsetWidth / (1280/720);
-    }
-    document.addEventListener('DOMContentLoaded', set_vimeo_iframe_height);
-    window.addEventListener('resize', set_vimeo_iframe_height);
-</script>
 
 [1]: http://threejs.org
 [2]: http://threejs.org/examples/

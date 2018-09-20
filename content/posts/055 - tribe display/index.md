@@ -1,8 +1,8 @@
 ---
 Title: "CEE Tribe Display"
 Date: 2018-05-18
-Categories: Demos
 Tags:
+ - demos
  -  programming
  -  javascript
  -  threejs

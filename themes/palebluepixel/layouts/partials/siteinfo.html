@@ -2,7 +2,7 @@
 <aside class="beside">
   {{ if or ( .Site.Params.author ) ( .Site.Params.bio ) ( .Site.Params.contact ) }}
   <div>
-    <small class="footer-label">POST</small>
+    <small class="footer-label">THIS POST</small>
 
     <div class="pbp-article-meta">
       <div class="pbp-article-date">
@@ -20,8 +20,10 @@
     </div>
   </div>
   <div>
-    <small class="footer-label">AUTHOR</small>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    {{ if .Site.Params.avatar }}
     <img style="float: left" src="https://www.gravatar.com/avatar/{{ md5 .Site.Params.contact }}?s=100&d=identicon">
+    {{ end }}
     {{ .Site.Params.author }}
     {{ with .Site.Params.bio }}
     is {{ . }}
