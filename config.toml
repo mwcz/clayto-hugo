@@ -1,4 +1,4 @@
-baseURL = "https://mwcz.github.io/clayto-hugo/"
+baseURL = "http://clayto.com"
 languageCode = "en-us"
 title = "clayto"
 
