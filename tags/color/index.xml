@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Color on clayto</title>
-    <link>https://clayto.com/tags/color/</link>
+    <link>https://mwcz.github.io/clayto-hugo/tags/color/</link>
     <description>Recent content in Color on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Mar 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://clayto.com/tags/color/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/color/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RGB WebGL Color Cube</title>
-      <link>https://clayto.com/2014/03/rgb-webgl-color-cube/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2014/03/rgb-webgl-color-cube/</link>
       <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
 Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
@@ -24,10 +24,10 @@ Your web browser must support WebGL, which at this point in history means a fair
     
     <item>
       <title>ColorPal CLI!</title>
-      <link>https://clayto.com/2013/11/colorpal-cli/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2013/11/colorpal-cli/</link>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2013/11/colorpal-cli/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2013/11/colorpal-cli/</guid>
       <description>ColorPal CLI is a command-line version of ColorPal, my HTML5 color palette generator.
 Demo! $ node cpal.js -f hex -s 8 MyImage.png #07070b #bac0c4 #d1bd66 #7e8899 #696964 #c4b441 #65683e #394434  Get it! npm install -g canvas requirejs # install dependencies git clone git@github.com:mwcz/colorpal-cli.git cd colorpal-cli  Use it! To display the help text, simply run the command without any arguments.
 node cpal.js Generate a color palette from an image!</description>
@@ -35,10 +35,10 @@ node cpal.js Generate a color palette from an image!</description>
     
     <item>
       <title>ColorPal Output Update</title>
-      <link>https://clayto.com/2012/07/colorpal-output-update/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/07/colorpal-output-update/</link>
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/07/colorpal-output-update/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/07/colorpal-output-update/</guid>
       <description>Hi pals.
 This is a speedy post about a speedy update I made today to ColorPal, an HTML5 tool I wrote that automatically generates color palettes from a photograph.
 Previously, ColorPal provided hex codes for each color extracted from the image. Eight individual &amp;lt;input&amp;gt;s at the bottom of the page displayed the colors.
@@ -47,20 +47,20 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
     
     <item>
       <title>Introducing Canvas Indexed Color</title>
-      <link>https://clayto.com/2012/07/introducing-canvas-indexed-color/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/07/introducing-canvas-indexed-color/</link>
       <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
 First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
     </item>
     
     <item>
       <title>ColorPal palettes improved!</title>
-      <link>https://clayto.com/2012/02/colorpal-palettes-improved/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/02/colorpal-palettes-improved/</link>
       <pubDate>Fri, 10 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
@@ -69,10 +69,10 @@ You can see that with the old method, the black pixels definitely took over the 
     
     <item>
       <title>ColorPal</title>
-      <link>https://clayto.com/projects/colorpal/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/colorpal/</link>
       <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/colorpal/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/colorpal/</guid>
       <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
@@ -82,10 +82,10 @@ I&amp;rsquo;ve written some posts about ColorPal.
     
     <item>
       <title>ColorPal Alpha</title>
-      <link>https://clayto.com/2012/01/colorpal-alpha/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/01/colorpal-alpha/</link>
       <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
  I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
@@ -93,20 +93,20 @@ I&amp;rsquo;ve been toying with color palette generation for years. My photograp
     
     <item>
       <title>HTML5 canvas point operations</title>
-      <link>https://clayto.com/2011/11/html5-canvas-point-operations/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-point-operations/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-point-operations/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-point-operations/</guid>
       <description>This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&amp;rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
 Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.</description>
     </item>
     
     <item>
       <title>HTML5 tool for creating color palettes from an image</title>
-      <link>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
       <description>For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&amp;rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
   
 In retrospect, it really could have used some narration&amp;hellip;</description>
@@ -114,38 +114,38 @@ In retrospect, it really could have used some narration&amp;hellip;</description
     
     <item>
       <title>HTML5 Canvas eyedropper</title>
-      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-eyedropper/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-eyedropper/</guid>
       <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
     </item>
     
     <item>
       <title>HTML5 canvas 3D pixel array</title>
-      <link>https://clayto.com/2011/11/html5-canvas-3d-pixel-array/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-3d-pixel-array/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-3d-pixel-array/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-3d-pixel-array/</guid>
       <description>This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &amp;ldquo;more logical&amp;rdquo;, I mean &amp;ldquo;more logical, to me, at the time). 1D is fine, and I can&amp;rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.</description>
     </item>
     
     <item>
       <title>HTML5 canvas RGB histogram</title>
-      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-rgb-histogram/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-rgb-histogram/</guid>
       <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct.</description>
     </item>
     
     <item>
       <title>HTML5 canvas area selection averaging</title>
-      <link>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-area-selection-averaging/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-area-selection-averaging/</guid>
       <description>This is a demo from late 2009. It&amp;rsquo;s an extension of the single-pixel eyedropper I wrote previously.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)
 Click and drag to set the image border to the average of the selected pixels.</description>
@@ -153,10 +153,10 @@ Click and drag to set the image border to the average of the selected pixels.</d
     
     <item>
       <title>JSImage</title>
-      <link>https://clayto.com/projects/jsimage/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/jsimage/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/jsimage/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/jsimage/</guid>
       <description>JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008&amp;frasl;2009 when I first started seriously studying JavaScript.
 A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
 I&amp;rsquo;ve made several posts about JSImage which contain live demos.
@@ -165,10 +165,10 @@ I think I put more work into code formatting than correct output. ;)</descriptio
     
     <item>
       <title>median-cut.js</title>
-      <link>https://clayto.com/projects/mediancut/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/mediancut/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/mediancut/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/mediancut/</guid>
       <description>The unfortunately-named median-cut.js is the library that powers ColorPal&amp;rsquo;s palette generation.
 I say it&amp;rsquo;s unfortunately named because it doesn&amp;rsquo;t implement a pure median-cut algorithm. It&amp;rsquo;s identical, except that instead of cutting boxes at their median, they are instead cut at the mean. This results in more pleasing color palettes in most cases.
 Here&amp;rsquo;s a comparison:

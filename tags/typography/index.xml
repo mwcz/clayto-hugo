@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Typography on clayto</title>
-    <link>https://clayto.com/tags/typography/</link>
+    <link>https://mwcz.github.io/clayto-hugo/tags/typography/</link>
     <description>Recent content in Typography on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Nov 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://clayto.com/tags/typography/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/typography/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How not to use CSS3</title>
-      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/how-not-to-use-css3/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/how-not-to-use-css3/</guid>
       <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
  CSS3!
 The code:

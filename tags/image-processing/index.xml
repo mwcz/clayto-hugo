@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Image Processing on clayto</title>
-    <link>https://clayto.com/tags/image-processing/</link>
+    <link>https://mwcz.github.io/clayto-hugo/tags/image-processing/</link>
     <description>Recent content in Image Processing on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Nov 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://clayto.com/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTML5 canvas point operations</title>
-      <link>https://clayto.com/2011/11/html5-canvas-point-operations/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-point-operations/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-point-operations/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-point-operations/</guid>
       <description>This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&amp;rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
 Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.</description>
     </item>

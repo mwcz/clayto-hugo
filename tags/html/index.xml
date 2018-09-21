@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Html on clayto</title>
-    <link>https://clayto.com/tags/html/</link>
+    <link>https://mwcz.github.io/clayto-hugo/tags/html/</link>
     <description>Recent content in Html on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Sep 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://clayto.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lazyloading Web Components</title>
-      <link>https://clayto.com/2016/09/lazyloading-web-components/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2016/09/lazyloading-web-components/</link>
       <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2016/09/lazyloading-web-components/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2016/09/lazyloading-web-components/</guid>
       <description>They say good developers are lazy. A tedious process is no match for a lazy developer. Below is an experiment in laziness. It&amp;rsquo;s a proof of concept for using Web Components without having to manually import each one.
 I&amp;rsquo;m not sure exactly what to call it. It grazes the definitions of lazyloading, autoloading, and dependency injection, so I went with the laziest term.
 Let&amp;rsquo;s set the scene, and find out if it&amp;rsquo;s a worthwhile developer convenience, or ease-of-use gone mad&amp;hellip;</description>

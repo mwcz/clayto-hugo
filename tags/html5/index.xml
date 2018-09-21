@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Html5 on clayto</title>
-    <link>https://clayto.com/tags/html5/</link>
+    <link>https://mwcz.github.io/clayto-hugo/tags/html5/</link>
     <description>Recent content in Html5 on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Mar 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://clayto.com/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/html5/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RGB WebGL Color Cube</title>
-      <link>https://clayto.com/2014/03/rgb-webgl-color-cube/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2014/03/rgb-webgl-color-cube/</link>
       <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
 Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
@@ -24,20 +24,20 @@ Your web browser must support WebGL, which at this point in history means a fair
     
     <item>
       <title>Introducing Drop64, ezpz data URI generator</title>
-      <link>https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2014/02/introducing-drop64-ezpz-data-uri-generator/</link>
       <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2014/02/introducing-drop64-ezpz-data-uri-generator/</guid>
       <description>A few weeks ago, a coworker of mine ran into some font issues. Firefox doesn&amp;rsquo;t allow cross-origin requests for web fonts, and he was using a tool called Font Squirrel to generate fonts, including data URIs.
 Embedding a data URI for a font (or image) inside a CSS file is a common technique for reducing the number of HTTP requests. In this case, it also negates the need for a cross-domain request to fetch the font file, because the file&amp;rsquo;s contents are already embedded.</description>
     </item>
     
     <item>
       <title>Drop64</title>
-      <link>https://clayto.com/projects/drop64/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/drop64/</link>
       <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/drop64/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/drop64/</guid>
       <description>Drop64 is an easy drag-and-drop tool for generating Data URIs from any file.
 Check it out at drop64.com.
 Here&amp;rsquo;s a demo recording of how easy it is.
@@ -47,10 +47,10 @@ Some benefits of Data URIs are:
     
     <item>
       <title>ColorPal CLI!</title>
-      <link>https://clayto.com/2013/11/colorpal-cli/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2013/11/colorpal-cli/</link>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2013/11/colorpal-cli/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2013/11/colorpal-cli/</guid>
       <description>ColorPal CLI is a command-line version of ColorPal, my HTML5 color palette generator.
 Demo! $ node cpal.js -f hex -s 8 MyImage.png #07070b #bac0c4 #d1bd66 #7e8899 #696964 #c4b441 #65683e #394434  Get it! npm install -g canvas requirejs # install dependencies git clone git@github.com:mwcz/colorpal-cli.git cd colorpal-cli  Use it! To display the help text, simply run the command without any arguments.
 node cpal.js Generate a color palette from an image!</description>
@@ -58,10 +58,10 @@ node cpal.js Generate a color palette from an image!</description>
     
     <item>
       <title>ColorPal Output Update</title>
-      <link>https://clayto.com/2012/07/colorpal-output-update/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/07/colorpal-output-update/</link>
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/07/colorpal-output-update/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/07/colorpal-output-update/</guid>
       <description>Hi pals.
 This is a speedy post about a speedy update I made today to ColorPal, an HTML5 tool I wrote that automatically generates color palettes from a photograph.
 Previously, ColorPal provided hex codes for each color extracted from the image. Eight individual &amp;lt;input&amp;gt;s at the bottom of the page displayed the colors.
@@ -70,20 +70,20 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
     
     <item>
       <title>Introducing Canvas Indexed Color</title>
-      <link>https://clayto.com/2012/07/introducing-canvas-indexed-color/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/07/introducing-canvas-indexed-color/</link>
       <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
 First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
     </item>
     
     <item>
       <title>ColorPal palettes improved!</title>
-      <link>https://clayto.com/2012/02/colorpal-palettes-improved/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/02/colorpal-palettes-improved/</link>
       <pubDate>Fri, 10 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
@@ -92,10 +92,10 @@ You can see that with the old method, the black pixels definitely took over the 
     
     <item>
       <title>ColorPal</title>
-      <link>https://clayto.com/projects/colorpal/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/colorpal/</link>
       <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/colorpal/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/colorpal/</guid>
       <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
@@ -105,10 +105,10 @@ I&amp;rsquo;ve written some posts about ColorPal.
     
     <item>
       <title>ColorPal Alpha</title>
-      <link>https://clayto.com/2012/01/colorpal-alpha/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2012/01/colorpal-alpha/</link>
       <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
  I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
@@ -116,10 +116,10 @@ I&amp;rsquo;ve been toying with color palette generation for years. My photograp
     
     <item>
       <title>Bouncey returns - more canvas physics</title>
-      <link>https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/bouncey-returns---more-canvas-physics/</link>
       <pubDate>Fri, 18 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/bouncey-returns---more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
 &amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
@@ -130,10 +130,10 @@ The code is well commented, so feel free to hack on it.</description>
     
     <item>
       <title>Bouncey</title>
-      <link>https://clayto.com/projects/bouncey/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/bouncey/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/bouncey/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/bouncey/</guid>
       <description>Bouncey is a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 Fun, simple, and oddly relaxing.
 #cnvs { background-color: #1f1f1f; margin: 0 auto; -webkit-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -o-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.</description>
@@ -141,10 +141,10 @@ Fun, simple, and oddly relaxing.
     
     <item>
       <title>Bouncey - canvas physics</title>
-      <link>https://clayto.com/2011/11/bouncey---canvas-physics/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/bouncey---canvas-physics/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/bouncey---canvas-physics/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/bouncey---canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
 &amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
@@ -154,20 +154,20 @@ It covers Newton&amp;rsquo;s laws of motion.
     
     <item>
       <title>HTML5 canvas point operations</title>
-      <link>https://clayto.com/2011/11/html5-canvas-point-operations/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-point-operations/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-point-operations/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-point-operations/</guid>
       <description>This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&amp;rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
 Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.</description>
     </item>
     
     <item>
       <title>HTML5 tool for creating color palettes from an image</title>
-      <link>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
       <description>For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&amp;rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
   
 In retrospect, it really could have used some narration&amp;hellip;</description>
@@ -175,10 +175,10 @@ In retrospect, it really could have used some narration&amp;hellip;</description
     
     <item>
       <title>How not to use CSS3</title>
-      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/how-not-to-use-css3/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/how-not-to-use-css3/</guid>
       <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
  CSS3!
 The code:
@@ -187,38 +187,38 @@ The code:
     
     <item>
       <title>HTML5 Canvas eyedropper</title>
-      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-eyedropper/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-eyedropper/</guid>
       <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
     </item>
     
     <item>
       <title>HTML5 canvas 3D pixel array</title>
-      <link>https://clayto.com/2011/11/html5-canvas-3d-pixel-array/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-3d-pixel-array/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-3d-pixel-array/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-3d-pixel-array/</guid>
       <description>This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &amp;ldquo;more logical&amp;rdquo;, I mean &amp;ldquo;more logical, to me, at the time). 1D is fine, and I can&amp;rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.</description>
     </item>
     
     <item>
       <title>HTML5 canvas RGB histogram</title>
-      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-rgb-histogram/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-rgb-histogram/</guid>
       <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct.</description>
     </item>
     
     <item>
       <title>HTML5 canvas area selection averaging</title>
-      <link>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-area-selection-averaging/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/11/html5-canvas-area-selection-averaging/</guid>
       <description>This is a demo from late 2009. It&amp;rsquo;s an extension of the single-pixel eyedropper I wrote previously.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)
 Click and drag to set the image border to the average of the selected pixels.</description>
@@ -226,10 +226,10 @@ Click and drag to set the image border to the average of the selected pixels.</d
     
     <item>
       <title>AEJS</title>
-      <link>https://clayto.com/projects/aejs/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/aejs/</link>
       <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/aejs/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/aejs/</guid>
       <description>AEJS was an experimental Amiga 500 emulator written in JavaScript. The name stands for Amiga Emulator JavaScript and is pronounced &amp;ldquo;aegis&amp;rdquo;.
  My motivation to build AEJS came from these sources:
  The HTML5 era introduced new APIs which finally made it possible: Typed arrays, Web Audio, File, Canvas, Fullscreen, Gamepad Fabrice Bellard&amp;rsquo;s JavaScript PC emulator JavaScript performance was finally good enough to make it feasible It bridged front-end web development with low-level machine code, both of which are super awesome I still have the Amiga 500 I played with obsessively since 3 years-old The 68000 is legendary and I wanted to find out why  I stopped development for these reasons:</description>
@@ -237,10 +237,10 @@ Click and drag to set the image border to the average of the selected pixels.</d
     
     <item>
       <title>Opcode patterns 70% finished</title>
-      <link>https://clayto.com/2011/10/opcode-patterns-70-finished/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/10/opcode-patterns-70-finished/</link>
       <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/10/opcode-patterns-70-finished/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/10/opcode-patterns-70-finished/</guid>
       <description>genlut.py is really filling out. It generates the LUT for all 68k opcodes (68000 only), and I&amp;rsquo;m about 70% done. 77 down, 34 to go.
 The OPCODES dict defines the first two bytes of each opcode, both static bits and operands. The operand strings act as keys into the PATTERNS struct, which contains all possible values for each operand.
 The recursive function gen() is fed an opcode pattern which may contain operand strings as well as static bits.</description>
@@ -248,10 +248,10 @@ The recursive function gen() is fed an opcode pattern which may contain operand 
     
     <item>
       <title>LUT</title>
-      <link>https://clayto.com/2011/09/lut/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/09/lut/</link>
       <pubDate>Thu, 22 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/09/lut/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/09/lut/</guid>
       <description>Decoding is easy. Decoding requires a lot of typing. (I am starting to believe this is true of ever aspect of interpreted emulation&amp;hellip;)
 For the AEJS decoder, I am creating a look-up table with every possible pattern for each instruction. It was my first idea, but I initially discarded it as &amp;ldquo;wasteful and inelegant&amp;rdquo;. Later, I accepted it as &amp;ldquo;really fast&amp;rdquo;.
 I&amp;rsquo;m generating a large set of bit patterns that map to 68k opcodes, like so:</description>
@@ -259,20 +259,20 @@ I&amp;rsquo;m generating a large set of bit patterns that map to 68k opcodes, li
     
     <item>
       <title>Introducing AEJS</title>
-      <link>https://clayto.com/2011/09/introducing-aejs/</link>
+      <link>https://mwcz.github.io/clayto-hugo/2011/09/introducing-aejs/</link>
       <pubDate>Tue, 20 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2011/09/introducing-aejs/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/2011/09/introducing-aejs/</guid>
       <description>Introducing AEJS, an Amiga emulator written in JavaScript. Wait, wording it like that makes it sound like it&amp;rsquo;s finished. It isn&amp;rsquo;t. It won&amp;rsquo;t be for a long time. AEJS is just a hobby, and will never hold a candle to UAE.
 Why the Amiga? Given that this is my first emulator, it would have been much easier to go with a 6502 or 8080 instead, but I didn&amp;rsquo;t grow up with those; I grew up with a 68k powering an Amiga 500.</description>
     </item>
     
     <item>
       <title>JSImage</title>
-      <link>https://clayto.com/projects/jsimage/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/jsimage/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/jsimage/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/jsimage/</guid>
       <description>JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008&amp;frasl;2009 when I first started seriously studying JavaScript.
 A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
 I&amp;rsquo;ve made several posts about JSImage which contain live demos.
@@ -281,10 +281,10 @@ I think I put more work into code formatting than correct output. ;)</descriptio
     
     <item>
       <title>median-cut.js</title>
-      <link>https://clayto.com/projects/mediancut/</link>
+      <link>https://mwcz.github.io/clayto-hugo/projects/mediancut/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/projects/mediancut/</guid>
+      <guid>https://mwcz.github.io/clayto-hugo/projects/mediancut/</guid>
       <description>The unfortunately-named median-cut.js is the library that powers ColorPal&amp;rsquo;s palette generation.
 I say it&amp;rsquo;s unfortunately named because it doesn&amp;rsquo;t implement a pure median-cut algorithm. It&amp;rsquo;s identical, except that instead of cutting boxes at their median, they are instead cut at the mean. This results in more pleasing color palettes in most cases.
 Here&amp;rsquo;s a comparison:
