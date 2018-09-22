@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Demos on clayto</title>
-    <link>http://clayto.com/tags/demos/</link>
+    <link>https://clayto.com/tags/demos/</link>
     <description>Recent content in Demos on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clayto.com/tags/demos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clayto.com/tags/demos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Meet SimPixel</title>
-      <link>http://clayto.com/2017/03/meet-simpixel/</link>
+      <link>https://clayto.com/2017/03/meet-simpixel/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2017/03/meet-simpixel/</guid>
+      <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
  SimPixel introduces itself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
 #mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    My working theory about why it&amp;rsquo;s so much like their displays is that I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
@@ -24,20 +24,20 @@
     
     <item>
       <title>Kimotion at geekSPARK 2016</title>
-      <link>http://clayto.com/2017/01/kimotion-at-geekspark-2016/</link>
+      <link>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</link>
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
+      <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
       <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
     <item>
       <title>Kimotion Modding 101</title>
-      <link>http://clayto.com/2016/08/kimotion-modding-101/</link>
+      <link>https://clayto.com/2016/08/kimotion-modding-101/</link>
       <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2016/08/kimotion-modding-101/</guid>
+      <guid>https://clayto.com/2016/08/kimotion-modding-101/</guid>
       <description>Kimotion is a simple framework for creating interactive art exhibits in 2D or 3D and supports both Kinect and Leap Motion for viewer input. This tutorial will focus on the Leap, so to proceed with the tutorial you&amp;rsquo;ll need to set up your Leap.
 Once the leap service is running, you can set up Kimotion!
 Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&amp;rsquo;t know how to use git, no problem, just download and extract the Kimotion zip file instead.</description>
@@ -45,10 +45,10 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
     
     <item>
       <title>Visualizing Network Traffic with WebGL</title>
-      <link>http://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</link>
+      <link>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</link>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</guid>
+      <guid>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</guid>
       <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;ldquo;
 This year, I had the good fortune of contributing to a keynote presentation at Red Hat Summit. During the keynote, an audience of 5,000 played a mobile web game created by our team. The game was backed by several microservices which we modified on stage while the audience played.
 My contribution was to display, in a visual and engaging way, the live network traffic flowing through our system.</description>
@@ -56,10 +56,10 @@ My contribution was to display, in a visual and engaging way, the live network t
     
     <item>
       <title>DiMo: The Deconstruction of Falling Stars</title>
-      <link>http://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</link>
+      <link>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</link>
       <pubDate>Thu, 30 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</guid>
+      <guid>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</guid>
       <description>Imagine a solitary blue dot.
 Unless you let your imagination run away with itself, this is going to be a pretty boring dot. Now, imagine a second, larger dot (you can pick the color).
 Red, nice choice! The scene is now slightly more interesting, since now you&amp;rsquo;ve got two dots to think about. You can ponder their positions, and relative sizes. No motion though; still pretty boring!
@@ -68,19 +68,19 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
     
     <item>
       <title>Particles and π - DiMo Comes to Life</title>
-      <link>http://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</link>
+      <link>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</link>
       <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</guid>
+      <guid>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</guid>
       <description>A player walks up Fayetteville St in Raleigh, North Carolina. SPARKcon has begun, and dozens of artists are strewn along the street, hard at work creating elaborate chalk art on the asphalt. A light rain is falling, and some artists are holding umbrellas over their work, some have draped tarps over themselves and their sketches, but most don&amp;rsquo;t seem to care, as if creating their art is more important than how long it lasts.</description>
     </item>
     
     <item>
       <title>ColorPal Alpha</title>
-      <link>http://clayto.com/2012/01/colorpal-alpha/</link>
+      <link>https://clayto.com/2012/01/colorpal-alpha/</link>
       <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2012/01/colorpal-alpha/</guid>
+      <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
  I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
@@ -88,10 +88,10 @@ I&amp;rsquo;ve been toying with color palette generation for years. My photograp
     
     <item>
       <title>Bouncey - canvas physics</title>
-      <link>http://clayto.com/2011/11/bouncey---canvas-physics/</link>
+      <link>https://clayto.com/2011/11/bouncey---canvas-physics/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2011/11/bouncey---canvas-physics/</guid>
+      <guid>https://clayto.com/2011/11/bouncey---canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
 &amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;

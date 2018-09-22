@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sparkcon on clayto</title>
-    <link>http://clayto.com/tags/sparkcon/</link>
+    <link>https://clayto.com/tags/sparkcon/</link>
     <description>Recent content in Sparkcon on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clayto.com/tags/sparkcon/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clayto.com/tags/sparkcon/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>geekSPARK 2017</title>
-      <link>http://clayto.com/2017/09/geekspark-2017/</link>
+      <link>https://clayto.com/2017/09/geekspark-2017/</link>
       <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2017/09/geekspark-2017/</guid>
+      <guid>https://clayto.com/2017/09/geekspark-2017/</guid>
       <description>geekSPARK is a showcase of creative use of technology, taking place each year during the SPARKcon art festival. What lies below is a summary of the festivities at geekSPARK 2017.
  RC Speedway Virtual Reality All Things LED Fire Tubes Mushroom Hunters Digital Motion 3D Printing What&amp;rsquo;s next? Special thanks   RC Speedway The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from SplatSpace. Bill mounted cameras on the RC cars which fed wirelessly into first-person displays.</description>
     </item>
     
     <item>
       <title>Kimotion at geekSPARK 2016</title>
-      <link>http://clayto.com/2017/01/kimotion-at-geekspark-2016/</link>
+      <link>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</link>
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
+      <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
       <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
     <item>
       <title>Kimotion</title>
-      <link>http://clayto.com/projects/kimotion/</link>
+      <link>https://clayto.com/projects/kimotion/</link>
       <pubDate>Sat, 26 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/projects/kimotion/</guid>
+      <guid>https://clayto.com/projects/kimotion/</guid>
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
@@ -46,20 +46,20 @@ Video clips These images, when played in rapid succession, create the illusion o
     
     <item>
       <title>Make a Kimotion!</title>
-      <link>http://clayto.com/2015/09/make-a-kimotion/</link>
+      <link>https://clayto.com/2015/09/make-a-kimotion/</link>
       <pubDate>Sat, 26 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2015/09/make-a-kimotion/</guid>
+      <guid>https://clayto.com/2015/09/make-a-kimotion/</guid>
       <description>A year ago, I had the joy of working on Digital Motion, an interactive art exhibit for Raleigh&amp;rsquo;s annual art festival, SPARKcon. The month leading up to SPARKcon 2014 was a mad dash of perfecting the graphics and physics equations of my DiMo: Particles display. After a wonderful weekend of watching visitors enjoy the weird things we made, a lesson began congealing itself in my mind.
 Creating interactive art exhibits from scratch is really hard.</description>
     </item>
     
     <item>
       <title>DiMo: The Deconstruction of Falling Stars</title>
-      <link>http://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</link>
+      <link>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</link>
       <pubDate>Thu, 30 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</guid>
+      <guid>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</guid>
       <description>Imagine a solitary blue dot.
 Unless you let your imagination run away with itself, this is going to be a pretty boring dot. Now, imagine a second, larger dot (you can pick the color).
 Red, nice choice! The scene is now slightly more interesting, since now you&amp;rsquo;ve got two dots to think about. You can ponder their positions, and relative sizes. No motion though; still pretty boring!
@@ -68,10 +68,10 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
     
     <item>
       <title>DiMo: Particles</title>
-      <link>http://clayto.com/projects/dimo/</link>
+      <link>https://clayto.com/projects/dimo/</link>
       <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/projects/dimo/</guid>
+      <guid>https://clayto.com/projects/dimo/</guid>
       <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
 Launch live demo!
   Pictures These pictures are from the art exhibit at geekSPARK in 2014.
@@ -82,10 +82,10 @@ The source code is, of course, open.</description>
     
     <item>
       <title>Particles and π - DiMo Comes to Life</title>
-      <link>http://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</link>
+      <link>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</link>
       <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</guid>
+      <guid>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</guid>
       <description>A player walks up Fayetteville St in Raleigh, North Carolina. SPARKcon has begun, and dozens of artists are strewn along the street, hard at work creating elaborate chalk art on the asphalt. A light rain is falling, and some artists are holding umbrellas over their work, some have draped tarps over themselves and their sketches, but most don&amp;rsquo;t seem to care, as if creating their art is more important than how long it lasts.</description>
     </item>
     

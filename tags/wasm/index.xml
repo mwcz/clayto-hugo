@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wasm on clayto</title>
-    <link>http://clayto.com/tags/wasm/</link>
+    <link>https://clayto.com/tags/wasm/</link>
     <description>Recent content in Wasm on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Jun 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clayto.com/tags/wasm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clayto.com/tags/wasm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WebAssembly is the Keystone</title>
-      <link>http://clayto.com/2015/06/webassembly-is-the-keystone/</link>
+      <link>https://clayto.com/2015/06/webassembly-is-the-keystone/</link>
       <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2015/06/webassembly-is-the-keystone/</guid>
+      <guid>https://clayto.com/2015/06/webassembly-is-the-keystone/</guid>
       <description>Within the last two days, WebAssembly (wasm) has graced the eyeballs of every JavaScript developer. If wasm is new to you, the articles linked at the end of this post fully describe what wasm is.
 Since that&amp;rsquo;s been covered, I&amp;rsquo;d like to talk about one impact wasm will hopefully have on future of computing. To set the scene, a quote from the man himself:
  Meanwhile, I took one quick step that would demonstrate the concept of the Web as a universal, all-encompassing space.</description>

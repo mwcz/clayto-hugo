@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bouncey on clayto</title>
-    <link>http://clayto.com/tags/bouncey/</link>
+    <link>https://clayto.com/tags/bouncey/</link>
     <description>Recent content in Bouncey on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Nov 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clayto.com/tags/bouncey/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clayto.com/tags/bouncey/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bouncey returns - more canvas physics</title>
-      <link>http://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</link>
+      <link>https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</link>
       <pubDate>Fri, 18 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</guid>
+      <guid>https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
 &amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
@@ -27,10 +27,10 @@ The code is well commented, so feel free to hack on it.</description>
     
     <item>
       <title>Bouncey - canvas physics</title>
-      <link>http://clayto.com/2011/11/bouncey---canvas-physics/</link>
+      <link>https://clayto.com/2011/11/bouncey---canvas-physics/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2011/11/bouncey---canvas-physics/</guid>
+      <guid>https://clayto.com/2011/11/bouncey---canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
 &amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;

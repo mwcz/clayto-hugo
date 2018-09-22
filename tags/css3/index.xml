@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css3 on clayto</title>
-    <link>http://clayto.com/tags/css3/</link>
+    <link>https://clayto.com/tags/css3/</link>
     <description>Recent content in Css3 on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Feb 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clayto.com/tags/css3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clayto.com/tags/css3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Drop64</title>
-      <link>http://clayto.com/projects/drop64/</link>
+      <link>https://clayto.com/projects/drop64/</link>
       <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/projects/drop64/</guid>
+      <guid>https://clayto.com/projects/drop64/</guid>
       <description>Drop64 is an easy drag-and-drop tool for generating Data URIs from any file.
 Check it out at drop64.com.
 Here&amp;rsquo;s a demo recording of how easy it is.
@@ -26,10 +26,10 @@ Some benefits of Data URIs are:
     
     <item>
       <title>How not to use CSS3</title>
-      <link>http://clayto.com/2011/11/how-not-to-use-css3/</link>
+      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/2011/11/how-not-to-use-css3/</guid>
+      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
       <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
  CSS3!
 The code:

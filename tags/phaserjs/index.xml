@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phaserjs on clayto</title>
-    <link>http://clayto.com/tags/phaserjs/</link>
+    <link>https://clayto.com/tags/phaserjs/</link>
     <description>Recent content in Phaserjs on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Jun 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://clayto.com/tags/phaserjs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clayto.com/tags/phaserjs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ping</title>
-      <link>http://clayto.com/projects/ping/</link>
+      <link>https://clayto.com/projects/ping/</link>
       <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://clayto.com/projects/ping/</guid>
+      <guid>https://clayto.com/projects/ping/</guid>
       <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
 It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
 Play now!</description>
