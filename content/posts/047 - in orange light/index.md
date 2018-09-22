@@ -2,6 +2,7 @@
 Title: "In Orange Light"
 Date: 2017-08-04
 Categories: Games
+aliases: /2017/08/04/in-orange-light/
 Tags:
  -  programming
  -  javascript

@@ -1,6 +1,7 @@
 ---
 Title: "Meet SimPixel"
 Date: 2017-03-10
+aliases: /2017/03/10/meet-simpixel
 Tags:
  -  programming
  -  demos

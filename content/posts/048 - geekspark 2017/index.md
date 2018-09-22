@@ -1,6 +1,7 @@
 ---
 Title: "geekSPARK 2017"
 Date: 2017-09-17
+aliases: /2017/09/17/geekspark-2017/
 Tags:
  -  art
  -  sparkcon
