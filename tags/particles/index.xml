@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Particles on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/tags/particles/</link>
+    <link>http://clayto.com/tags/particles/</link>
     <description>Recent content in Particles on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/particles/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/tags/particles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fireflies</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/fireflies/</link>
+      <link>http://clayto.com/projects/fireflies/</link>
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/fireflies/</guid>
+      <guid>http://clayto.com/projects/fireflies/</guid>
       <description>Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes for your entertainment.
 Live demo!
   Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.

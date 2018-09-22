@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Canvas_indexed_color on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/tags/canvas_indexed_color/</link>
+    <link>http://clayto.com/tags/canvas_indexed_color/</link>
     <description>Recent content in Canvas_indexed_color on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Jul 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/canvas_indexed_color/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/tags/canvas_indexed_color/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Introducing Canvas Indexed Color</title>
-      <link>https://mwcz.github.io/clayto-hugo/2012/07/introducing-canvas-indexed-color/</link>
+      <link>http://clayto.com/2012/07/introducing-canvas-indexed-color/</link>
       <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/2012/07/introducing-canvas-indexed-color/</guid>
+      <guid>http://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
 First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
     </item>

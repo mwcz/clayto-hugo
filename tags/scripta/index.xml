@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripta on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/tags/scripta/</link>
+    <link>http://clayto.com/tags/scripta/</link>
     <description>Recent content in Scripta on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/scripta/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/tags/scripta/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tracer</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/tracer/</link>
+      <link>http://clayto.com/projects/tracer/</link>
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/tracer/</guid>
+      <guid>http://clayto.com/projects/tracer/</guid>
       <description>Play now! 
 Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
 Play now!
@@ -27,10 +27,10 @@ View source</description>
     
     <item>
       <title>Zorbio</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/zorbio/</link>
+      <link>http://clayto.com/projects/zorbio/</link>
       <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/zorbio/</guid>
+      <guid>http://clayto.com/projects/zorbio/</guid>
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
 Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
 Play now!</description>

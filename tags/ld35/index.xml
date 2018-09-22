@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ld35 on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/tags/ld35/</link>
+    <link>http://clayto.com/tags/ld35/</link>
     <description>Recent content in Ld35 on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/ld35/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/tags/ld35/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Square Off</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/squareoff/</link>
+      <link>http://clayto.com/projects/squareoff/</link>
       <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/squareoff/</guid>
+      <guid>http://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
 Play now!
  .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>

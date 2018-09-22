@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Uri on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/tags/data-uri/</link>
+    <link>http://clayto.com/tags/data-uri/</link>
     <description>Recent content in Data Uri on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Feb 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/data-uri/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/tags/data-uri/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Introducing Drop64, ezpz data URI generator</title>
-      <link>https://mwcz.github.io/clayto-hugo/2014/02/introducing-drop64-ezpz-data-uri-generator/</link>
+      <link>http://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/</link>
       <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/2014/02/introducing-drop64-ezpz-data-uri-generator/</guid>
+      <guid>http://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/</guid>
       <description>A few weeks ago, a coworker of mine ran into some font issues. Firefox doesn&amp;rsquo;t allow cross-origin requests for web fonts, and he was using a tool called Font Squirrel to generate fonts, including data URIs.
 Embedding a data URI for a font (or image) inside a CSS file is a common technique for reducing the number of HTTP requests. In this case, it also negates the need for a cross-domain request to fetch the font file, because the file&amp;rsquo;s contents are already embedded.</description>
     </item>
     
     <item>
       <title>Drop64</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/drop64/</link>
+      <link>http://clayto.com/projects/drop64/</link>
       <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/drop64/</guid>
+      <guid>http://clayto.com/projects/drop64/</guid>
       <description>Drop64 is an easy drag-and-drop tool for generating Data URIs from any file.
 Check it out at drop64.com.
 Here&amp;rsquo;s a demo recording of how easy it is.

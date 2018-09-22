@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/tags/games/</link>
+    <link>http://clayto.com/tags/games/</link>
     <description>Recent content in Games on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/tags/games/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/tags/games/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pity About Earth...</title>
-      <link>https://mwcz.github.io/clayto-hugo/games/pity-about-earth/</link>
+      <link>http://clayto.com/games/pity-about-earth/</link>
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/games/pity-about-earth/</guid>
+      <guid>http://clayto.com/games/pity-about-earth/</guid>
       <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
 – The Universe
   The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Tracer</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/tracer/</link>
+      <link>http://clayto.com/projects/tracer/</link>
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/tracer/</guid>
+      <guid>http://clayto.com/projects/tracer/</guid>
       <description>Play now! 
 Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
 Play now!
@@ -38,10 +38,10 @@ View source</description>
     
     <item>
       <title>Zorbio</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/zorbio/</link>
+      <link>http://clayto.com/projects/zorbio/</link>
       <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/zorbio/</guid>
+      <guid>http://clayto.com/projects/zorbio/</guid>
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
 Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
 Play now!</description>
@@ -49,10 +49,10 @@ Play now!</description>
     
     <item>
       <title>Square Off</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/squareoff/</link>
+      <link>http://clayto.com/projects/squareoff/</link>
       <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/squareoff/</guid>
+      <guid>http://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
 Play now!
  .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
@@ -60,10 +60,10 @@ Play now!
     
     <item>
       <title>Ping</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/ping/</link>
+      <link>http://clayto.com/projects/ping/</link>
       <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/ping/</guid>
+      <guid>http://clayto.com/projects/ping/</guid>
       <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
 It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
 Play now!</description>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/projects/</link>
+    <link>http://clayto.com/projects/</link>
     <description>Recent content in Projects on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Aug 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DiMo: Particles</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/dimo/</link>
+      <link>http://clayto.com/projects/dimo/</link>
       <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/dimo/</guid>
+      <guid>http://clayto.com/projects/dimo/</guid>
       <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
 Launch live demo!
   Pictures These pictures are from the art exhibit at geekSPARK in 2014.
@@ -27,10 +27,10 @@ The source code is, of course, open.</description>
     
     <item>
       <title>ColorPal</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/colorpal/</link>
+      <link>http://clayto.com/projects/colorpal/</link>
       <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/colorpal/</guid>
+      <guid>http://clayto.com/projects/colorpal/</guid>
       <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
@@ -40,10 +40,10 @@ I&amp;rsquo;ve written some posts about ColorPal.
     
     <item>
       <title>Bouncey</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/bouncey/</link>
+      <link>http://clayto.com/projects/bouncey/</link>
       <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/bouncey/</guid>
+      <guid>http://clayto.com/projects/bouncey/</guid>
       <description>Bouncey is a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 Fun, simple, and oddly relaxing.
 #cnvs { background-color: #1f1f1f; margin: 0 auto; -webkit-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -o-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.</description>
@@ -51,10 +51,10 @@ Fun, simple, and oddly relaxing.
     
     <item>
       <title>AEJS</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/aejs/</link>
+      <link>http://clayto.com/projects/aejs/</link>
       <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/aejs/</guid>
+      <guid>http://clayto.com/projects/aejs/</guid>
       <description>AEJS was an experimental Amiga 500 emulator written in JavaScript. The name stands for Amiga Emulator JavaScript and is pronounced &amp;ldquo;aegis&amp;rdquo;.
  My motivation to build AEJS came from these sources:
  The HTML5 era introduced new APIs which finally made it possible: Typed arrays, Web Audio, File, Canvas, Fullscreen, Gamepad Fabrice Bellard&amp;rsquo;s JavaScript PC emulator JavaScript performance was finally good enough to make it feasible It bridged front-end web development with low-level machine code, both of which are super awesome I still have the Amiga 500 I played with obsessively since 3 years-old The 68000 is legendary and I wanted to find out why  I stopped development for these reasons:</description>
@@ -62,10 +62,10 @@ Fun, simple, and oddly relaxing.
     
     <item>
       <title>clayto.com</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/clayto/</link>
+      <link>http://clayto.com/projects/clayto/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/clayto/</guid>
+      <guid>http://clayto.com/projects/clayto/</guid>
       <description>clayto.com is my homemade photography website.
 I started clayto.com in 2003. Inspired by Noah Grey&amp;rsquo;s photography presentation ideas
  the site&amp;rsquo;s color scheme always matches the photo being viewed as Noah did (or used to!).  Here are four examples of the color schemes:

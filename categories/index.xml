@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on clayto</title>
-    <link>https://mwcz.github.io/clayto-hugo/categories/</link>
+    <link>http://clayto.com/categories/</link>
     <description>Recent content in Categories on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://mwcz.github.io/clayto-hugo/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://clayto.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Games</title>
-      <link>https://mwcz.github.io/clayto-hugo/games/</link>
+      <link>http://clayto.com/games/</link>
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/games/</guid>
+      <guid>http://clayto.com/games/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://mwcz.github.io/clayto-hugo/projects/</link>
+      <link>http://clayto.com/projects/</link>
       <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://mwcz.github.io/clayto-hugo/projects/</guid>
+      <guid>http://clayto.com/projects/</guid>
       <description></description>
     </item>
     
