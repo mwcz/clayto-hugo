@@ -36,19 +36,39 @@ const pops = {};
 
 const sfx = {
   mousedown: new Howl({
-    src: ["mousedown.ogg", "mousedown.mp3", "mousedown.wav"]
+    src: [
+      "/shortcodes/popup-showdown/mousedown.ogg",
+      "/shortcodes/popup-showdown/mousedown.mp3",
+      "/shortcodes/popup-showdown/mousedown.wav"
+    ]
   }),
   mouseup: new Howl({
-    src: ["mouseup.ogg", "mouseup.mp3", "mouseup.wav"]
+    src: [
+      "/shortcodes/popup-showdown/mouseup.ogg",
+      "/shortcodes/popup-showdown/mouseup.mp3",
+      "/shortcodes/popup-showdown/mouseup.wav"
+    ]
   }),
   open: new Howl({
-    src: ["open.ogg", "open.mp3", "open.wav"]
+    src: [
+      "/shortcodes/popup-showdown/open.ogg",
+      "/shortcodes/popup-showdown/open.mp3",
+      "/shortcodes/popup-showdown/open.wav"
+    ]
   }),
   close: new Howl({
-    src: ["close.ogg", "close.mp3", "close.wav"]
+    src: [
+      "/shortcodes/popup-showdown/close.ogg",
+      "/shortcodes/popup-showdown/close.mp3",
+      "/shortcodes/popup-showdown/close.wav"
+    ]
   }),
   play_music: new Howl({
-    src: ["play-music.ogg", "play-music.mp3", "play-music.wav"],
+    src: [
+      "/shortcodes/popup-showdown/play-music.ogg",
+      "/shortcodes/popup-showdown/play-music.mp3",
+      "/shortcodes/popup-showdown/play-music.wav"
+    ],
     volume: 0.3
   })
 };
@@ -127,7 +147,7 @@ function popup(x, y) {
   const id = romanize(popup_count);
 
   const pop = window.open(
-    `popup.html`,
+    `/shortcodes/popup-showdown/popup.html`,
     `popup-${id}`,
     [
       "scrollbars=no",
@@ -283,7 +303,7 @@ function showWinScreen(win, early) {
 
 function popupsEnabled() {
   const pop = window.open(
-    `./popup.html`,
+    `/shortcodes/popup-showdown/popup.html`,
     "test-popup",
     [
       "scrollbars=no",

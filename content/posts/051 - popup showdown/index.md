@@ -15,6 +15,8 @@ mwc: 51
 
 {{< popup-showdown />}}
 
+_This is not a screenshot, play it!_
+
 ## Backstory
 
 Popup Showdown is a game I created during [Open Jam 2017][oj17]. As an organizer of Open Jam, I wasn't planning to make a game, and certain wouldn't submit one to the competition, but as participants were hard at work on their games, I wanted to join in the fun. The game needed to be bad by design, to avoid taking any attention away from the _good_ games created by Open Jammers.

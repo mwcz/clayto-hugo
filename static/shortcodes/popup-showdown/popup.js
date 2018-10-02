@@ -4,10 +4,18 @@ document
 
 const sfx = {
   mousedown: new Howl({
-    src: ["mousedown.ogg", "mousedown.mp3", "mousedown.wav"]
+    src: [
+      "/shortcodes/popup-showdown/mousedown.ogg",
+      "/shortcodes/popup-showdown/mousedown.mp3",
+      "/shortcodes/popup-showdown/mousedown.wav"
+    ]
   }),
   mouseup: new Howl({
-    src: ["mouseup.ogg", "mouseup.mp3", "mouseup.wav"]
+    src: [
+      "/shortcodes/popup-showdown/mouseup.ogg",
+      "/shortcodes/popup-showdown/mouseup.mp3",
+      "/shortcodes/popup-showdown/mouseup.wav"
+    ]
   })
 };
 [].forEach.call(document.querySelectorAll("button"), function(btn) {
