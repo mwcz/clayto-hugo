@@ -6,10 +6,21 @@
     <description>Recent content in Open Jam on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/open-jam/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Jam Workshop</title>
+      <link>https://clayto.com/2018/04/open-jam-workshop/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2018/04/open-jam-workshop/</guid>
+      <description>The East Coast Game Conference was a lot of fun! Jared and I gave a 6-hour hands-on workshop where led the audience through building a game with entirely open-source gamedev tools.
+Abstract  Join us for a workshop on game jams and open-source game development tools.
+Open-source tools have been lovingly crafted that cover every medium of game development. Through a series of hands-on labs, we will introduce you to many of those tools, with a focus on using them for game jams.</description>
+    </item>
     
     <item>
       <title>Popup Showdown</title>
@@ -22,6 +33,16 @@ Looks like popups are disabled! Please enable them for this URL, look ^^^ in the
 CLOSED: 0 / 45 TIME: s  PLAY! MAKE IT STOP! You closed N/45 popups!
  You are the POPUP BLOCKER!
  Congratulations, you win!   The 1990s called; they want their popups back.  You didn&#39;t close enough popups to win.</description>
+    </item>
+    
+    <item>
+      <title>Open Jam</title>
+      <link>https://clayto.com/2017/10/open-jam/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/10/open-jam/</guid>
+      <description>Open Jam is an open-source themed game jam run by Jared and myself, with a lot of help from opensource.com. Check it out at openjam.io.
+ Open Jam 2018 Open Jam 2017</description>
     </item>
     
   </channel>

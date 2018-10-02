@@ -290,7 +290,7 @@
   
   <url>
     <loc>https://clayto.com/tags/3d/</loc>
-    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -397,7 +397,7 @@
   
   <url>
     <loc>https://clayto.com/tags/gamedev/</loc>
-    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -522,12 +522,6 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/tags/machine-learning/</loc>
-    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://clayto.com/tags/maniacal-labs/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -553,7 +547,7 @@
   
   <url>
     <loc>https://clayto.com/tags/open-jam/</loc>
-    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -631,13 +625,7 @@
   
   <url>
     <loc>https://clayto.com/tags/redhat/</loc>
-    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/tags/redhat-summit/</loc>
-    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2016-07-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -685,7 +673,7 @@
   
   <url>
     <loc>https://clayto.com/tags/threejs/</loc>
-    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -727,7 +715,7 @@
   
   <url>
     <loc>https://clayto.com/tags/webgl/</loc>
-    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
