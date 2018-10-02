@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Jam on clayto</title>
+    <link>https://clayto.com/tags/open-jam/</link>
+    <description>Recent content in Open Jam on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/open-jam/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Popup Showdown</title>
+      <link>https://clayto.com/2017/10/popup-showdown/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/10/popup-showdown/</guid>
+      <description>POPUP SHOWDOWN   Close popups as fast as you can!
+Looks like popups are disabled! Please enable them for this URL, look ^^^ in the URL bar.
+CLOSED: 0 / 45 TIME: s  PLAY! MAKE IT STOP! You closed N/45 popups!
+ You are the POPUP BLOCKER!
+ Congratulations, you win!   The 1990s called; they want their popups back.  You didn&#39;t close enough popups to win.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="PiTiVi High Quality Rendering" />
+  <meta name="twitter:title" content="PiTiVi High Quality Rendering" />
+  
+  <title>PiTiVi High Quality Rendering - clayto</title>
+
+  
+  <meta name="description" content="A short guide on rendering high quality videos from PiTiVi.">
+  <meta property="og:description" content="A short guide on rendering high quality videos from PiTiVi.">
+  <meta name="twitter:description" content="A short guide on rendering high quality videos from PiTiVi.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2018/06/pitivi-high-quality-rendering/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/thumb.jpg" />
+  <meta name="twitter:image" content="https://clayto.com/thumb.jpg" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>PiTiVi High Quality Rendering</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>My first experience with <a href="http://www.pitivi.org/">PiTiVi</a>, eight years ago, was discouraging. Until my dad rediscovered it a few days ago, I hadn&rsquo;t thought of giving it a second chance. I&rsquo;m glad I did. I&rsquo;ve been extremely impressed with the improvements. PiTiVi&rsquo;s formerly rough edges have been sanded down, and what remains is an approachable, capable video editor perfectly suited to hobbyist uses.</p>
+
+<p>One of the few remaining rough edges is low-quality defaults when it comes to rendering quality. Without tweaking settings, you&rsquo;ll have artifacts the size of your fist.</p>
+
+<p>Here are a few steps to dramatically improve the video quality. I&rsquo;m no expert on codecs or compression or <a href="https://slhck.info/video/2017/02/24/crf-guide.html">constant quantization</a>, but this should be a good embarkation point on the quest for perfect video.</p>
+
+
+  <nav id="TableOfContents">
+<ul>
+<li><a href="#steps">Steps</a>
+<ul>
+<li><a href="#1-install-x264">1. Install x264</a></li>
+<li><a href="#2-choose-codec-x264enc">2. Choose codec: x264enc</a></li>
+<li><a href="#3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</a></li>
+<li><a href="#4-before-after">4. Before &amp; After</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<h1 id="steps">Steps</h1>
+
+<h2 id="1-install-x264">1. Install x264</h2>
+
+<div class="beside">
+<div>
+    <p>Fedora/RHEL/CentOS:</p>
+    <pre><code>sudo dnf install x264</code></pre>
+</div>
+
+<div>
+    <p>Debian/Ubuntu:</p>
+    <pre><code>sudo apt-get install x264</code></pre>
+</div>
+
+<p></div></p>
+
+<hr />
+
+<h2 id="2-choose-codec-x264enc">2. Choose codec: x264enc</h2>
+
+<p>Presuming you have a project ready to render, click <em>Render</em> and select <strong>x264enc</strong> under the <em>Codec</em> dropdown. x264enc is only available if your container format is set to <em>MP4</em>.</p>
+
+<p><img src="ss-codec.png" alt="codec dropdown" /></p>
+
+<hr />
+
+<h2 id="3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</h2>
+
+<p>Just underneath the <em>Codec</em> dropdown is an <em>Advanced</em> button. Click it, and pick the following settings.</p>
+
+<ul>
+<li>Set <strong>Encoding pass/type</strong> to &ldquo;Constant Quantizer&rdquo;</li>
+<li>Set <strong>Constant Quantizer</strong> to 18</li>
+</ul>
+
+<p><img src="ss-encoding.png" alt="encoding dropdown" /></p>
+
+<p>For more information on what this means, check out this <a href="https://slhck.info/video/2017/02/24/crf-guide.html">CRF/CQP</a> explainer. In the explainer, the term CQP equates to &ldquo;Constant Quantizer&rdquo; in PiTiVi, and CRF equates to &ldquo;Constant Quality&rdquo;. For some reason, I&rsquo;ve been unable to get &ldquo;Constant Quality&rdquo; to produce good results, even though in theory it should be just as good, with smaller filesize.</p>
+
+<h2 id="4-before-after">4. Before &amp; After</h2>
+
+<p>Here&rsquo;s a before &amp; after video showing the quality difference after making these changes.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/276256445" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<p>The difference in the smoothness of the gradients is pretty dramatic.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2018-06-21T10:10:12-04:00">
+          Jun 21, 2018
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/linux" class="c-tag">#linux</a>
+        
+        <a href="https://clayto.com/tags/pitivi" class="c-tag">#pitivi</a>
+        
+        <a href="https://clayto.com/tags/video" class="c-tag">#video</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

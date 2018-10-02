@@ -6,10 +6,20 @@
     <description>Recent content in 3d on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/3d/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Jam</title>
+      <link>https://clayto.com/2017/10/open-jam/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/10/open-jam/</guid>
+      <description>Open Jam is an open-source themed game jam run by Jared and myself, with a lot of help from opensource.com. Check it out at openjam.io.
+ Open Jam 2018 Open Jam 2017</description>
+    </item>
     
     <item>
       <title>Meet SimPixel</title>
@@ -67,6 +77,15 @@ Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
 Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
 Play now!</description>
+    </item>
+    
+    <item>
+      <title>Glow Rope</title>
+      <link>https://clayto.com/2016/07/glow-rope/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2016/07/glow-rope/</guid>
+      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
     </item>
     
     <item>

@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://clayto.com/2018/06/pitivi-high-quality-rendering/</loc>
+    <lastmod>2018-06-21T10:10:12-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/2018/04/open-jam-workshop/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora-26-/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/2017/10/popup-showdown/</loc>
+    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/2017/10/open-jam/</loc>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -55,6 +75,11 @@
   <url>
     <loc>https://clayto.com/2016/08/kimotion-modding-101/</loc>
     <lastmod>2016-08-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/2016/07/glow-rope/</loc>
+    <lastmod>2016-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -265,7 +290,7 @@
   
   <url>
     <loc>https://clayto.com/tags/3d/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -384,7 +409,7 @@
   
   <url>
     <loc>https://clayto.com/games/</loc>
-    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -438,7 +463,7 @@
   
   <url>
     <loc>https://clayto.com/tags/javascript/</loc>
-    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -486,13 +511,19 @@
   
   <url>
     <loc>https://clayto.com/tags/linux/</loc>
-    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-21T10:10:12-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://clayto.com/tags/ludum-dare/</loc>
     <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/tags/machine-learning/</loc>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -517,6 +548,18 @@
   <url>
     <loc>https://clayto.com/tags/nostalgia/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/tags/open-jam/</loc>
+    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/tags/open-source/</loc>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -551,6 +594,12 @@
   </url>
   
   <url>
+    <loc>https://clayto.com/tags/pitivi/</loc>
+    <lastmod>2018-06-21T10:10:12-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://clayto.com/tags/pity-about-earth/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -564,13 +613,13 @@
   
   <url>
     <loc>https://clayto.com/posts/</loc>
-    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-21T10:10:12-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://clayto.com/tags/programming/</loc>
-    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -582,7 +631,13 @@
   
   <url>
     <loc>https://clayto.com/tags/redhat/</loc>
-    <lastmod>2016-07-13T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://clayto.com/tags/redhat-summit/</loc>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -630,7 +685,7 @@
   
   <url>
     <loc>https://clayto.com/tags/threejs/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -647,6 +702,12 @@
   </url>
   
   <url>
+    <loc>https://clayto.com/tags/video/</loc>
+    <lastmod>2018-06-21T10:10:12-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://clayto.com/tags/wasm/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -654,7 +715,7 @@
   
   <url>
     <loc>https://clayto.com/tags/web/</loc>
-    <lastmod>2017-08-04T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -666,7 +727,7 @@
   
   <url>
     <loc>https://clayto.com/tags/webgl/</loc>
-    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -678,7 +739,7 @@
   
   <url>
     <loc>https://clayto.com/</loc>
-    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-21T10:10:12-04:00</lastmod>
     <priority>0</priority>
   </url>
   

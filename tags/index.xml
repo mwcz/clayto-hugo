@@ -23,7 +23,7 @@
     <item>
       <title>3d</title>
       <link>https://clayto.com/tags/3d/</link>
-      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/3d/</guid>
       <description></description>
@@ -266,7 +266,7 @@
     <item>
       <title>Javascript</title>
       <link>https://clayto.com/tags/javascript/</link>
-      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/javascript/</guid>
       <description></description>
@@ -338,7 +338,7 @@
     <item>
       <title>Linux</title>
       <link>https://clayto.com/tags/linux/</link>
-      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
       
       <guid>https://clayto.com/tags/linux/</guid>
       <description></description>
@@ -350,6 +350,15 @@
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/ludum-dare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://clayto.com/tags/machine-learning/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -386,6 +395,24 @@
       <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/nostalgia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Jam</title>
+      <link>https://clayto.com/tags/open-jam/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/open-jam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Source</title>
+      <link>https://clayto.com/tags/open-source/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/open-source/</guid>
       <description></description>
     </item>
     
@@ -435,6 +462,15 @@
     </item>
     
     <item>
+      <title>Pitivi</title>
+      <link>https://clayto.com/tags/pitivi/</link>
+      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/pitivi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Pity About Earth</title>
       <link>https://clayto.com/tags/pity-about-earth/</link>
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
@@ -455,7 +491,7 @@
     <item>
       <title>Programming</title>
       <link>https://clayto.com/tags/programming/</link>
-      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/programming/</guid>
       <description></description>
@@ -464,9 +500,18 @@
     <item>
       <title>Redhat</title>
       <link>https://clayto.com/tags/redhat/</link>
-      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/redhat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redhat Summit</title>
+      <link>https://clayto.com/tags/redhat-summit/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/redhat-summit/</guid>
       <description></description>
     </item>
     
@@ -527,7 +572,7 @@
     <item>
       <title>Threejs</title>
       <link>https://clayto.com/tags/threejs/</link>
-      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/threejs/</guid>
       <description></description>
@@ -552,6 +597,15 @@
     </item>
     
     <item>
+      <title>Video</title>
+      <link>https://clayto.com/tags/video/</link>
+      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Wasm</title>
       <link>https://clayto.com/tags/wasm/</link>
       <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
@@ -563,7 +617,7 @@
     <item>
       <title>Web</title>
       <link>https://clayto.com/tags/web/</link>
-      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/web/</guid>
       <description></description>
@@ -581,7 +635,7 @@
     <item>
       <title>Webgl</title>
       <link>https://clayto.com/tags/webgl/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/webgl/</guid>
       <description></description>

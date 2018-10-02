@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on clayto</title>
+    <link>https://clayto.com/tags/open-source/</link>
+    <description>Recent content in Open Source on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Open Jam Workshop</title>
+      <link>https://clayto.com/2018/04/open-jam-workshop/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2018/04/open-jam-workshop/</guid>
+      <description>The East Coast Game Conference was a lot of fun! Jared and I gave a 6-hour hands-on workshop where led the audience through building a game with entirely open-source gamedev tools.
+Abstract  Join us for a workshop on game jams and open-source game development tools.
+Open-source tools have been lovingly crafted that cover every medium of game development. Through a series of hands-on labs, we will introduce you to many of those tools, with a focus on using them for game jams.</description>
+    </item>
+    
+  </channel>
+</rss>

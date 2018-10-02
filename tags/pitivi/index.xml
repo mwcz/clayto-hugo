@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pitivi on clayto</title>
+    <link>https://clayto.com/tags/pitivi/</link>
+    <description>Recent content in Pitivi on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jun 2018 10:10:12 -0400</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/pitivi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PiTiVi High Quality Rendering</title>
+      <link>https://clayto.com/2018/06/pitivi-high-quality-rendering/</link>
+      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
+      
+      <guid>https://clayto.com/2018/06/pitivi-high-quality-rendering/</guid>
+      <description>My first experience with PiTiVi, eight years ago, was discouraging. Until my dad rediscovered it a few days ago, I hadn&amp;rsquo;t thought of giving it a second chance. I&amp;rsquo;m glad I did. I&amp;rsquo;ve been extremely impressed with the improvements. PiTiVi&amp;rsquo;s formerly rough edges have been sanded down, and what remains is an approachable, capable video editor perfectly suited to hobbyist uses.
+One of the few remaining rough edges is low-quality defaults when it comes to rendering quality.</description>
+    </item>
+    
+  </channel>
+</rss>

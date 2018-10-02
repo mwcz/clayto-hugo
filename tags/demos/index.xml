@@ -44,6 +44,15 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
     </item>
     
     <item>
+      <title>Glow Rope</title>
+      <link>https://clayto.com/2016/07/glow-rope/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2016/07/glow-rope/</guid>
+      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
+    </item>
+    
+    <item>
       <title>Visualizing Network Traffic with WebGL</title>
       <link>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</link>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>

@@ -6,10 +6,20 @@
     <description>Recent content in Redhat on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/redhat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Jam</title>
+      <link>https://clayto.com/2017/10/open-jam/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/10/open-jam/</guid>
+      <description>Open Jam is an open-source themed game jam run by Jared and myself, with a lot of help from opensource.com. Check it out at openjam.io.
+ Open Jam 2018 Open Jam 2017</description>
+    </item>
     
     <item>
       <title>Visualizing Network Traffic with WebGL</title>

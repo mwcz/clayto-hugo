@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="Popup Showdown" />
+  <meta name="twitter:title" content="Popup Showdown" />
+  
+  <title>Popup Showdown - clayto</title>
+
+  
+  <meta name="description" content="The least fun game you&#39;ll ever play.">
+  <meta property="og:description" content="The least fun game you&#39;ll ever play.">
+  <meta name="twitter:description" content="The least fun game you&#39;ll ever play.">
+  
+
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2017/10/popup-showdown/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/thumb.png" />
+  <meta name="twitter:image" content="https://clayto.com/thumb.png" />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.48" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div>
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      clayto
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>Popup Showdown</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<div class="popup-showdown" data-state="menu">
+    <link rel="stylesheet" href="https://clayto.com/shortcodes/popup-showdown/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+    <div class="window">
+        <div class="menubar">
+            <h1>POPUP SHOWDOWN</h1>
+            <div class="buttons">
+            </div>
+        </div>
+
+        <div class="content">
+            <p class="intro before-playing">Close popups as fast as you can!</p>
+
+            <p class="popups-disabled">Looks like popups are disabled!  Please enable them for this URL, look ^^^ in the URL bar.</p>
+
+            <div class="while-playing" id="stats">
+                CLOSED: <span class="stat" id="close-count">0</span> / 45
+                <br>
+                TIME: <span class="stat" id="time-left"></span>s
+            </div>
+
+            <button class="before-playing" id="start">PLAY!</button>
+            <button class="while-playing" id="stop">MAKE IT STOP!</button>
+
+            <div class="after-playing" id="gameover">
+                <p>You closed <span id="final-close-count">N</span>/45 popups!</p>
+                <div class="won" id="win">
+                    <p> You are <i>the</i> POPUP BLOCKER!</p>
+                    <p> Congratulations, you win! </p>
+                </div>
+                <div class="lost" id="lose">
+                    <p> The 1990s called; they want their popups back. </p>
+                    <p> You didn't close enough popups to win. :( </p>
+                </div>
+            </div>
+
+            <p class="before-playing credits">Built by <a href="https://clayto.com">mwcz</a> during <a href="http://openjam.io">Open Jam</a>.  <a href="https://github.com/mwcz/popup-showdown">View source</a>.</p>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <script defer src="https://clayto.com/shortcodes/popup-showdown/popups.js"></script>
+</div>
+
+
+<p><em>This is not a screenshot, play it!</em></p>
+
+<h2 id="backstory">Backstory</h2>
+
+<p>Popup Showdown is a game I created during <a href="https://itch.io/jam/open-jam-1">Open Jam 2017</a>. As an organizer of Open Jam, I wasn&rsquo;t planning to make a game, and certain wouldn&rsquo;t submit one to the competition, but as participants were hard at work on their games, I wanted to join in the fun. The game needed to be bad by design, to avoid taking any attention away from the <em>good</em> games created by Open Jammers.</p>
+
+<p>Over the course of a few hours, I familiarized myself with decades-old rules on popup creation in JavaScript and was pleased<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> to find that it is indeed possible to control the screen position and size of a popup.</p>
+
+<p>For no particular reason, I chose an Amiga Workbench aesthetic.</p>
+
+<p><img src="./workbench.jpg" alt="Amiga Workbench screenshot" /></p>
+
+<p>&ldquo;Pleased&rdquo; because it enabled the game to be created, but dismayed that popups are/were a thing.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1"> <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/10/open-jam/">Open Jam</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A game jam with heart.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-10-06T00:00:00Z">
+      Oct 6, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/10/open-jam/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2017/10/open-jam//thumb.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/08/in-orange-light/">In Orange Light</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        An atmospheric mountain survival game I built in 48 hours for Ludum Dare 39.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-08-04T00:00:00Z">
+      Aug 4, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/08/in-orange-light/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-tl" src="https://clayto.com/2017/08/in-orange-light//./iol-square-logo.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/games/pity-about-earth/">Pity About Earth...</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-05-07T00:00:00Z">
+      May 7, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/games/pity-about-earth/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/games/pity-about-earth//./logo-notitle.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A WebGL-based visualizer for LED displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-03-10T00:00:00Z">
+      Mar 10, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/03/meet-simpixel/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2017/03/meet-simpixel//./thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/tracer/">Tracer</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Tracer is a 3D connect-the-dots game we created for Ludum Dare 37.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-25T00:00:00Z">
+      Jan 25, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/tracer/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/tracer//./head.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">Kimotion at geekSPARK 2016</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion-powered interactive art at SPARKcon 2016.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-12T00:00:00Z">
+      Jan 12, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2017/01/kimotion-at-geekspark-2016//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2017-10-07T00:00:00Z">
+          Oct 7, 2017
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/open-jam" class="c-tag">#open-jam</a>
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+
