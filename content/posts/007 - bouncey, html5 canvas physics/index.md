@@ -10,7 +10,9 @@ Tags:
  -  bouncey
  -  web
 thumbnail: thumb.jpg
-aliases: /2011/11/17/bouncey-canvas-physics/
+aliases:
+ - /2011/11/17/bouncey-canvas-physics/
+ - /2011/11/17/bouncey---canvas-physics/
 Mwc: 7
 ---
 

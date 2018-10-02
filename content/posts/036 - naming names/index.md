@@ -11,8 +11,6 @@ aliases: /2015/01/01/naming-names-anonymity-is-dead/
 Mwc: 36
 ---
 
-Published: true
-
 <blockquote>
     <p>
     There are only two hard problems in computer science: cache invalidation,

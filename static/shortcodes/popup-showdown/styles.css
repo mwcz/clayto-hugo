@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "early57";
+  src: url("early57-webfont.woff2") format("woff2"),
+    url("early57-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.popup-showdown a {
+  color: #fc8724;
+}
+
+.popup-showdown a:visited {
+  color: #fff;
+}
+
+.popup-showdown {
+  font-family: "early57", serif;
+  font-size: 8vh;
+  text-align: center;
+  background: #1b53a6;
+  color: #fff;
+}
+
+.popup-showdown * {
+  user-select: none;
+}
+
+.popup-showdown .window {
+  border: 5px solid #fff;
+  padding: 0;
+}
+
+.popup-showdown .window .menubar {
+  background: #fff;
+  color: #1b53a6;
+  padding: 0 0 0 5px;
+  margin: 0;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+}
+.popup-showdown .window .menubar * {
+  margin: 0;
+  font-size: 3rem;
+  text-align: left;
+}
+.popup-showdown .window .menubar .buttons {
+  text-align: right;
+  padding: 0px 5px 10px 0;
+}
+.popup-showdown .window .menubar .button {
+  border: 3px solid #1b53a6;
+  padding: 0 8px;
+  font-size: 0.8em;
+  text-align: center;
+}
+.popup-showdown .window .content {
+  padding: 0.8em 0.5em 0.8em;
+}
+.popup-showdown .window .content *:first-child {
+  margin-top: 0;
+}
+.popup-showdown .window .content *:not(button) {
+  user-select: auto;
+}
+
+.popup-showdown #stats {
+  margin-bottom: 0.5em;
+}
+
+.popup-showdown button {
+  background: #fff;
+  color: #1b53a6;
+  border: 5px solid #1b53a6;
+  outline: 5px solid #fff;
+  font-family: "early57", serif;
+  font-size: 8vh;
+  text-align: center;
+  padding: 0 20px;
+}
+.popup-showdown button:active {
+  color: #fff;
+  background: #1b53a6;
+  outline: 5px solid #1b53a6;
+  border: 5px solid #fff;
+}
+
+.popup-showdown:not([data-popups="disabled"]) .popups-disabled {
+  display: none;
+}
+
+.popup-showdown:not([data-state="playing"]) .while-playing {
+  display: none;
+}
+.popup-showdown:not([data-state="menu"]) .before-playing {
+  display: none;
+}
+.popup-showdown:not([data-state="gameover"]) .after-playing {
+  display: none;
+}
+.popup-showdown:not([data-won]) .won {
+  display: none;
+}
+.popup-showdown:not([data-lost]) .lost {
+  display: none;
+}
+
+.popup-showdown.popup {
+  margin: 0;
+  padding: 0 10vw 0;
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  grid-template: 23% 23% 23% 23% / 1fr;
+}
+.popup-showdown.popup h1 {
+}
+.popup-showdown.popup h2 {
+  font-size: 22vh;
+}
+.popup-showdown.popup * {
+  margin: 0;
+}
+.popup-showdown.popup #close {
+  margin: 20px;
+}
+
+.popup-showdown .stat,
+#final-close-count {
+  color: #fc8724;
+}
+
+.popup-showdown .credits {
+  margin-top: 7vh;
+  margin-bottom: 2vh;
+  font-size: 3vh;
+}

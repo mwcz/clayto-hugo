@@ -1,0 +1,9 @@
+#traffic {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(rgba(38, 12, 36, 0.5), transparent);
+  /* 0x1a0818 */
+}
