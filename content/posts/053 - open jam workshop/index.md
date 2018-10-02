@@ -3,6 +3,8 @@ Title: "Open Jam Workshop"
 Date: 2018-04-17
 Tags:
  -  programming
+ -  gamedev
+ -  open-jam
  -  javascript
  -  open-source
  -  web

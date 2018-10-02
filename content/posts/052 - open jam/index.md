@@ -3,14 +3,11 @@ Title: "Open Jam"
 date: 2017-10-06
 Tags:
  -  programming
+ -  gamedev
+ -  open-jam
  -  javascript
- -  threejs
- -  webgl
- -  3d
+ -  open-source
  -  web
- -  redhat
- -  redhat-summit
- -  machine-learning
 description: "A game jam with heart."
 thumbnail: thumb.png
 Mwc: 52
