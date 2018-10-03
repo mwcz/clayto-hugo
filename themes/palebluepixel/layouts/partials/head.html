@@ -17,9 +17,9 @@
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
 
-  {{ with .Params.thumbnail }}
-  <meta property="og:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image" content="{{ . | absURL }}" />
+  {{ if .Params.thumbnail }}
+  <meta property="og:image" content="{{ .Permalink }}{{ .Params.thumbnail }}" />
+  <meta name="twitter:image" content="{{ .Permalink }}{{ .Params.thumbnail }}" />
   {{ end }}
   <meta name="twitter:card" content="summary" />
 

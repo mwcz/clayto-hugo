@@ -7,7 +7,6 @@ Tags:
  -  pitivi
  -  video
 description: "A short guide on rendering high quality videos from PiTiVi."
-thumbnail: thumb.jpg
 Mwc: 56
 ---
 
