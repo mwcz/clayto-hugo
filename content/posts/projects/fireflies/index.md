@@ -16,11 +16,12 @@ Tags:
 ---
 
 Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes
-for your entertainment.
+for your entertainment.  Here are some live demo links, and a video.
 
-![fireflies title screen](title.jpg)
-
-<p class="text-center"><a class="btn btn-default btn-lg" href="/static/projects/fireflies">Live demo!</a></p>
+<div class="beside">
+<a class="pbp-btn" href="/projects/fireflies-original">Watch the original</a>
+<a class="pbp-btn" href="/projects/fireflies-geekspark">Watch the geekSPARK edition</a>
+</div>
 
 {{< vimeo 202827845 >}}
 
@@ -33,3 +34,4 @@ pixel-person avatar.
 [source]: https://github.com/mwcz/fireflies/
 [threejs]: http://threejs.org
 [loren]: https://twitter.com/lorenschmidt
+[geekspark]: /projects/fireflies-geekspark/
