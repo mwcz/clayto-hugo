@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>Fireflies (geekSPARK edition) - WebGL particle shape demo</title>
+
+        <!-- Open Graph tags -->
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="Fireflies - WebGL particle demo"/>
+            <meta property="og:url" content="http://palebluepixel.org/static/projects/fireflies-geekspark/"/>
+            <meta property="og:description" content="These friendly fireflies will draw pictures for you."/>
+            <meta property="og:image" content="http://palebluepixel.org/static/projects/fireflies-geekspark/og-image.png"/>
+
+        <style type="text/css" media="screen">
+            html, body {
+                margin: 0;
+                padding: 0;
+                color: white;
+                font-family: sans-serif;
+                background: #000;
+            }
+            * { user-select: none; }
+            #fireflies-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+            #fireflies-canvas {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            #geekspark-stamp {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                width: 400px;
+                opacity: 0.2;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="fireflies-container">
+            <canvas id="fireflies-canvas"></canvas>
+        </div>
+
+        <img id="geekspark-stamp" src="./this-year-geekspark.png">
+
+
+        
+        
+        
+        
+
+        <script src="js/bundle.min.js"></script>
+        
+        
+        
+        
+        
+    </body>
+</html>

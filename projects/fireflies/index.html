@@ -1,209 +1,509 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <title>Fireflies - WebGL particle shape demo</title>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <meta property="og:title" content="Fireflies" />
+  <meta name="twitter:title" content="Fireflies" />
+  
+  <title>Fireflies - clayto</title>
 
-        <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Fireflies - WebGL particle demo"/>
-            <meta property="og:url" content="http://palebluepixel.org/static/projects/fireflies/"/>
-            <meta property="og:description" content="These friendly fireflies will draw pictures for you."/>
-            <meta property="og:image"
-                  content="http://palebluepixel.org/static/projects/fireflies/og-image.png"/>
+  
+  <meta name="description" content="Fireflies is a WebGL demo in which a frolicking flock of fireflies forms flying figures for your fancy.">
+  <meta property="og:description" content="Fireflies is a WebGL demo in which a frolicking flock of fireflies forms flying figures for your fancy.">
+  <meta name="twitter:description" content="Fireflies is a WebGL demo in which a frolicking flock of fireflies forms flying figures for your fancy.">
+  
 
-        <style type="text/css" media="screen">
-            html, body {
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-                color: white;
-                font-family: sans-serif;
-                font-size: 60%;
-            }
-            canvas { position: absolute; z-index: 50; }
-            #container {
-                position: absolute;
-                z-index: 100;
-                width: 100%;
-                padding: 0px;
-                margin: 0;
-                line-height: 0.8;
-                margin: 8px;
-                background-color: transparent;
-                border-radius: 4px;
-                opacity: 0;
-                font-size: 1.7em;
+  <meta name="author" content=""/>
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/projects/fireflies/" />
 
-                animation-delay: 4.9s;
-                animation-duration: 1s;
-                animation-name: reveal;
-                animation-iteration-count: 1;
-                animation-fill-mode: forwards;
-                animation-timing-function: cubic-bezier(.92,.38,.93,.57);
-            }
-            #menu {
-                display: none;
-            }
-            h1 {
-                letter-spacing: 6px;
-                color: #fd4a3a;
-                text-shadow: 0 0 4px #b53a36;
-                margin-top: 0;
-                margin-bottom: 0;
-                font-weight: normal;
-            }
-            h1 .flies {
-                color: #ffd042;
-                text-shadow: 0 0 4px #FFA180;
-            }
-            p {
-                color: #ffd042;
-                letter-spacing: 1.0px;
-            }
-            a {
-                color: #fd4a3a;
-                text-decoration: none;
-                border-bottom: 1px dotted;
-                border-color: #b53a36;
-            }
-            #thumbs {
-                background: rgba(255,255,255,0.1);
-                padding: 0px 4px;
-                margin-top: 12px;
-            }
-            #thumbs img:first-child {
-                margin-left: 0;
-            }
-            #thumbs img {
-                height: 40px;
-                margin: 4px 2px;
-                border-radius: 6px;
-                outline: none;
-                opacity: 0.4;
-                border: 2px solid transparent;
-            }
-            #thumbs img:hover {
-                cursor: pointer;
-                outline: 2px dotted rgba(255,255,255,1.0);
-            }
-            #thumbs img.active {
-                outline: 2px solid rgba(255,255,255,1.0);
-            }
-            #toggle {
-                cursor: pointer;
-                display: none;
-            }
-            #playpause {
-                font-size: 2.0rem;
-                opacity: 0.8;
-                height: 40px;
-                width: 40px;
-                border-radius: 50%;
-                cursor: pointer;
-                background-color: rgba(255,255,255,0.2);
-                line-height: 39px;
-                text-align: center;
-            }
-            #playpause.playing {
-                font-size: 1.2rem;
-            }
-            @media (min-width: 768px) {
-                body {
-                    font-size: 100%;
-                }
-                #container {
-                    width: 260px;
-                    line-height: 1.218;
-                    background-color: rgba(0,0,0,0.2);
-                    margin: 10px;
-                    padding: 10px;
-                }
-                #menu {
-                    display: block;
-                }
-                #toggle {
-                    display: inline;
-                }
-            }
-            #toggleFleeLabel {
-                color: grey;
-            }
-            @keyframes reveal {
-                from { opacity: 0; }
-                to   { opacity: 1; }
-            }
-        </style>
-    </head>
-    <body>
+  
+  <meta property="og:image" content="https://clayto.com/projects/fireflies/./fireflies-logo.png" />
+  <meta name="twitter:image" content="https://clayto.com/projects/fireflies/./fireflies-logo.png" />
+  
+  <meta name="twitter:card" content="summary" />
 
-        <div id="container"></div>
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+  
 
-        <script type="x-shader/x-vertex" id="vertexshader">
-            attribute float size;
-            attribute float opacity;
-            attribute vec3 customColor;
-            varying vec3 vColor;
-            varying float vOpacity;
-            void main() {
-                vColor = customColor;
-                vOpacity = opacity;
-                vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-                gl_PointSize = size * ( 300.0 / -mvPosition.z );
-                gl_Position = projectionMatrix * mvPosition;
-            }
-        </script>
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.50" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
 
-        <script type="x-shader/x-fragment" id="fragmentshader">
-            uniform vec3 color;
-            uniform sampler2D texture;
-            varying vec3 vColor;
-            varying float vOpacity;
-            void main() {
-                gl_FragColor = vec4( color * vColor, vOpacity );
-                gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
-            }
-        </script>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://clayto.com/images/favicons/apple-touch-icon.png?v=Lby0POEbX9">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://clayto.com/images/favicons/favicon-32x32.png?v=Lby0POEbX9">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://clayto.com/images/favicons/favicon-16x16.png?v=Lby0POEbX9">
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=Lby0POEbX9">
+  <link rel="mask-icon" href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=Lby0POEbX9" color="#121212">
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=Lby0POEbX9">
+  <meta name="msapplication-TileColor" content="#121212">
+  <meta name="msapplication-config" content="/images/favicons/browserconfig.xml?v=Lby0POEbX9">
+  <meta name="theme-color" content="#121212">
+  
 
-        <script id='template' type='text/ractive'>
-            {{ #if show }}
-            <h1>FIRE<span class="flies">FLIES</span></h1>
-            <div id="menu">
-                <p>These friendly fireflies will draw pictures for you.  Chose an image below or <strong>drag and drop your own images.</strong></p>
-                <div title="Play / Pause slidshow" class="{{ rotating ? 'playing' : '' }}" on-click="togglePlay" id="playpause">{{{ playText }}}</div>
-                <div id="thumbs">
-                {{ #each images:i }}
-                    <img on-click="setImageButton" {{ #if activeImage === i }}class="active"{{ /if }} src="{{ images[i] }}">
-                {{ /each }}
-                </div>
-            </div>
-            <p>
-                <label id="toggleFleeLabel"><input type="checkbox" id="toggleFlee" on-click="toggleFlee">Flee from mouse</label>
-            </p>
-            <p>A WebGL demo by <a href="https://twitter.com/mwcz">@mwcz</a>.</p>
-            <p><a href="https://github.com/mwcz/fireflies">&rarr; View source</a></p>
-            <p><a href="http://palebluepixel.org">&larr; More demos</a></p>
-            {{ /if }}
-            <a id="toggle" on-click="toggle">{{ toggleText }}</a>
-        </script>
+  
+  
+  
 
-        <!-- third party -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ractive/0.8.9/ractive.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
-        <script src="js/Drop.js"></script>
-        <script src="js/Detector.js"></script>
+</head>
 
-        <!-- first party -->
-        <script src="js/tweens.js"></script>
-        <script src="js/bitter.js"></script>
-        <script src="js/dotter.js"></script>
-        <script src="js/view.js"></script>
-        <script src="js/ui.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-description">
+    WEB, DEMOSCENE, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.svg">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+  <header>
+    <h1>Fireflies</h1>
+  </header>
+  
+  
+  <section>
+    <p>Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes
+for your entertainment.  Here are some live demo links, and a video.</p>
+
+<div class="beside">
+<a class="pbp-btn" href="https://clayto.com/projects/fireflies-original">Watch the original</a>
+<a class="pbp-btn" href="https://clayto.com/projects/fireflies-geekspark">Watch the geekSPARK edition</a>
+</div>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/202827845" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<p>Thanks to <a href="https://twitter.com/lorenschmidt">Loren Schmidt</a> for agreeing to let me use the awesome
+pixel-person avatar.</p>
+
+<p><a href="https://github.com/mwcz/fireflies/">View source</a>, if you&rsquo;re into that kind of thing.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">Kimotion at geekSPARK 2016</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion-powered interactive art at SPARKcon 2016.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-12T00:00:00Z">
+      Jan 12, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2017/01/kimotion-at-geekspark-2016//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/kimotion/">Kimotion</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion is a framework for building reactive digital art displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-09-26T00:00:00Z">
+      Sep 26, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/kimotion/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/kimotion//./thumb.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/09/make-a-kimotion/">Make a Kimotion!</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &ldquo;Warrior Poet&rdquo;, but with keyboards.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-09-26T00:00:00Z">
+      Sep 26, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/09/make-a-kimotion/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2015/09/make-a-kimotion//thumb.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">DiMo: The Deconstruction of Falling Stars</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The construction of a WebGL particle physics gravity simulation <em>slash</em> interactive art installation.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-10-30T00:00:00Z">
+      Oct 30, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars//swath-colors.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life//./dimo-kids.jpg">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/dimo/">DiMo: Particles</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+$GALLERY
+After the event, I wrote this opensource.com article about the experience.
+The source code is, of course, open.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/dimo/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/dimo//./icon_dimo.png">
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside class="beside">
+  
+  <div>
+    <small class="footer-label">THIS POST</small>
+
+    <div class="pbp-article-meta">
+      <div class="pbp-article-date">
+        This post was published on
+        <time datetime="2017-02-06T00:00:00Z">
+          Feb 6, 2017
+        </time>
+      </div>
+      and filed under
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/threejs" class="c-tag">#threejs</a>
+        
+        <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
+        
+        <a href="https://clayto.com/tags/3d" class="c-tag">#3d</a>
+        
+        <a href="https://clayto.com/tags/art" class="c-tag">#art</a>
+        
+        <a href="https://clayto.com/tags/particles" class="c-tag">#particles</a>
+        
+      </span>
+    </div>
+  </div>
+  <div>
+    <small class="footer-label">AUTHOR CONTACT</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  </div>
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
 </html>
+
