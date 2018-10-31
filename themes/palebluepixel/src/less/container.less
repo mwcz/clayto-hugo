@@ -72,6 +72,20 @@ body {
       .pbp-fullwidth();
     }
   }
+
+  // for list pages, use a grid layout instead
+  .pbp-article-list {
+    width: @pbp-index-width;
+    max-width: 100%;
+
+    margin: 0 auto; // center the grid
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: @padding-large-horizontal;
+    align-items: start;
+  }
 }
 
 #fireflies-container {
