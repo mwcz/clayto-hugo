@@ -37,7 +37,20 @@
   
   <meta name="generator" content="Hugo 0.50" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
-  <link rel='icon' type='image/x-icon' href="https://clayto.com/path/to/favicon" />
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://clayto.com/images/favicons/apple-touch-icon.png?v=Lby0POEbX9">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://clayto.com/images/favicons/favicon-32x32.png?v=Lby0POEbX9">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://clayto.com/images/favicons/favicon-16x16.png?v=Lby0POEbX9">
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=Lby0POEbX9">
+  <link rel="mask-icon" href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=Lby0POEbX9" color="#121212">
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=Lby0POEbX9">
+  <meta name="msapplication-TileColor" content="#121212">
+  <meta name="msapplication-config" content="/images/favicons/browserconfig.xml?v=Lby0POEbX9">
+  <meta name="theme-color" content="#121212">
+  
+
+  
   
   
 
@@ -59,16 +72,33 @@
 <header class="pbp-navbar-container">
   
 <nav class="pbp-navbar" role="navigation">
-  <div>
+  <div class="pbp-nav-description">
+    WEB, DEMOSCENE, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
     <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
-      clayto
+      <img src="https://clayto.com/images/logo.svg">
     </a>
   </div>
   <div class="pbp-navitems">
     
-    <a href="https://clayto.com/" class="pbp-navitem">Blog</a>
     
-    <a href="https://clayto.com/games" class="pbp-navitem">Games</a>
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
     
   </div>
 </nav>
@@ -94,7 +124,7 @@ SimPixel.</p>
 
 <div id="simpixel-container"></div>
 
-<h1 id="simpixel-introduces-itself">SimPixel introduces itself</h1>
+<h1 id="simpixel-introduce-yourself">SimPixel, introduce yourself</h1>
 
 <p>SimPixel is a WebGL visualizer for LED displays, <em>very</em> much like the ones Adam
 and Dan build over at <a href="http://maniacallabs.com/">Maniacal Labs</a>.</p>
@@ -115,7 +145,7 @@ and Dan build over at <a href="http://maniacallabs.com/">Maniacal Labs</a>.</p>
 <img src="maniacal.jpg" alt="some Maniacal Labs LED projects" />
 </figure>
 
-<p>My working theory about why it&rsquo;s <em>so</em> much like their displays is that I built
+<p>Very much alike.  In fact, it&rsquo;s probably <em>so</em> much like their displays because I built
 most of SimPixel while sitting at Adam&rsquo;s workbench. I don&rsquo;t know, there could
 be a connection. If you too would like to take a seat at Adam&rsquo;s illustrious
 workbench someday, <a href="https://github.com/ManiacalLabs/SimPixel">hack away</a>. You can also try the <a href="https://clayto.com/static/projects/simpixel">fullscreen
@@ -125,11 +155,15 @@ demo</a>.</p>
 library, sends layouts and colors to SimPixel using a simple <a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket</a>
 protocol.</p>
 
+<hr />
+
 <h1 id="the-protocol">The Protocol</h1>
 
 <p>By itself, SimPixel is useless. To turn on the lights, it connects to a
 WebSocket service. That service is expected to send certain messages, namely a
 configuration message followed by a series of color messages.</p>
+
+<hr />
 
 <h2 id="configuration-message">Configuration message</h2>
 
@@ -148,6 +182,8 @@ follows.</p>
 followed by a series of 16-bit signed integers which indicate the 3D
 coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,Z<sub>2</sub>,
 &hellip;, X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code></p>
+
+<hr />
 
 <h2 id="color-message">Color message</h2>
 
@@ -170,13 +206,15 @@ of the form:
 
 <p>For a concise reference, see <a href="https://github.com/ManiacalLabs/SimPixel/blob/master/PROTOCOL.md">PROTOCOL.md</a>.</p>
 
+<hr />
+
 <h1 id="the-ghost-in-the-recording">The Ghost in the Recording</h1>
 
-<p>The live demo at the top of this post the protocol, but it isn&rsquo;t connected to
-any WebSocket service. Instead, it&rsquo;s using a recording apparatus that I
-cobbled together. I pushed a configuration frame and a bunch of color frames
-into an array, converted their ArrayBuffers into base64 strings, and saved
-those into <a href="https://github.com/ManiacalLabs/SimPixel/blob/recording-draft/src/recordings/vis.json">a quite large JSON recording file</a>.</p>
+<p>The live demo at the top of this post isn&rsquo;t connected to any WebSocket service.
+Instead, it&rsquo;s using a recording apparatus that I cobbled together. I pushed
+a configuration frame and a bunch of color frames into an array, converted
+their ArrayBuffers into base64 strings, and saved those into <a href="https://github.com/ManiacalLabs/SimPixel/blob/recording-draft/src/recordings/vis.json">a quite large
+JSON recording file</a>.</p>
 
 <p>I only mention it to lead up to the following. While editing the recording
 JSON file, I zoomed out a little and something caught my eye. I zoomed out
@@ -458,11 +496,11 @@ format. Pretty cool.</p>
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/09/make-a-kimotion/">Make a Kimotion!</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/kimotion/">Kimotion</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &ldquo;Warrior Poet&rdquo;, but with keyboards.
+        Kimotion is a framework for building reactive digital art displays.
       
     </section>
   </div>
@@ -472,11 +510,11 @@ format. Pretty cool.</p>
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/09/make-a-kimotion/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/kimotion/">
     <div class="pbp-article-thumbnail">
       <div class="glass-card">
         <div class="glass-card-ratio">
-          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/2015/09/make-a-kimotion//thumb.jpg">
+          <img class="glass-card-bg glass-card-bg-default" src="https://clayto.com/projects/kimotion//./thumb.png">
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
           
