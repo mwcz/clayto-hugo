@@ -13,7 +13,7 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora-26-/</loc>
+    <loc>https://clayto.com/2017/10/noise-echo-cancellation-in-fedora-26-/</loc>
     <lastmod>2017-10-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/2015/01/naming-names---anonymity-is-dead/</loc>
+    <loc>https://clayto.com/2015/01/naming-names-anonymity-is-dead/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/2014/08/particles-and-%CF%80---dimo-comes-to-life/</loc>
+    <loc>https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/</loc>
     <lastmod>2014-08-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/2011/11/bouncey-returns---more-canvas-physics/</loc>
+    <loc>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</loc>
     <lastmod>2011-11-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -208,7 +208,7 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/2011/11/bouncey---canvas-physics/</loc>
+    <loc>https://clayto.com/2011/11/bouncey-canvas-physics/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -402,14 +402,14 @@
   </url>
   
   <url>
-    <loc>https://clayto.com/tags/games/</loc>
-    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
+    <loc>https://clayto.com/games/</loc>
+    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://clayto.com/games/</loc>
-    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
+    <loc>https://clayto.com/tags/games/</loc>
+    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
