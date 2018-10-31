@@ -3,7 +3,6 @@ Title: "clayto.com"
 Date: 2003-01-01
 url: /projects/clayto
 aliases: /projects/clayto.com
-Categories: Projects
 thumbnail: icon_clayto.jpg
 ---
 

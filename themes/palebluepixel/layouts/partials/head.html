@@ -40,9 +40,19 @@
   {{ .Hugo.Generator -}}
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.min.css" />
-  {{- with .Site.Params.favicon }}
-  <link rel='icon' type='image/x-icon' href="{{ . | absURL }}" />
-  {{- end -}}
+
+  {{/* favicon stuff */}}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png?v=Lby0POEbX9">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png?v=Lby0POEbX9">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png?v=Lby0POEbX9">
+  <link rel="manifest" href="/images/favicons/site.webmanifest?v=Lby0POEbX9">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg?v=Lby0POEbX9" color="#121212">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico?v=Lby0POEbX9">
+  <meta name="msapplication-TileColor" content="#121212">
+  <meta name="msapplication-config" content="/images/favicons/browserconfig.xml?v=Lby0POEbX9">
+  <meta name="theme-color" content="#121212">
+  {{/* end favicon stuff */}}
+
   {{ if eq .URL "/" }}
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ end }}

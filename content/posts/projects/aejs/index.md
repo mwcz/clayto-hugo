@@ -2,7 +2,6 @@
 Title: "AEJS"
 Date: 2011-10-13
 url: /projects/aejs
-Categories: Projects
 thumbnail: ./icon_aejs.jpg
 Tags:
  -  html5

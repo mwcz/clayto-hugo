@@ -1,6 +1,7 @@
 ---
 Title: "Kimotion"
 Date: 2015-09-26
+Categories: Demos
 url: /projects/kimotion
 thumbnail: ./thumb.png
 description: Kimotion is a framework for building reactive digital art displays.

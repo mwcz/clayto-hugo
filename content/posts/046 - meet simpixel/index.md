@@ -1,6 +1,7 @@
 ---
 Title: "Meet SimPixel"
 Date: 2017-03-10
+Categories: Demos
 aliases: /2017/03/10/meet-simpixel
 Tags:
  -  programming
@@ -23,7 +24,7 @@ SimPixel.
 
 <div id="simpixel-container"></div>
 
-# SimPixel introduces itself
+# SimPixel, introduce yourself
 
 SimPixel is a WebGL visualizer for LED displays, _very_ much like the ones Adam
 and Dan build over at [Maniacal Labs][mlabs].
@@ -44,7 +45,7 @@ and Dan build over at [Maniacal Labs][mlabs].
 <img src="maniacal.jpg" alt="some Maniacal Labs LED projects" />
 </figure>
 
-My working theory about why it's _so_ much like their displays is that I built
+Very much alike.  In fact, it's probably _so_ much like their displays because I built
 most of SimPixel while sitting at Adam's workbench. I don't know, there could
 be a connection. If you too would like to take a seat at Adam's illustrious
 workbench someday, [hack away][source]. You can also try the [fullscreen
@@ -54,11 +55,15 @@ demo][demo].
 library, sends layouts and colors to SimPixel using a simple [WebSocket][ws]
 protocol.
 
+---
+
 # The Protocol
 
 By itself, SimPixel is useless. To turn on the lights, it connects to a
 WebSocket service. That service is expected to send certain messages, namely a
 configuration message followed by a series of color messages.
+
+---
 
 ## Configuration message
 
@@ -81,6 +86,8 @@ The leading `0x0000` opcode identifies this as a configuration message,
 followed by a series of 16-bit signed integers which indicate the 3D
 coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,Z<sub>2</sub>,
 ..., X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code>
+
+---
 
 ## Color message
 
@@ -107,13 +114,15 @@ of the form:
 
 For a concise reference, see [PROTOCOL.md][protocol].
 
+---
+
 # The Ghost in the Recording
 
-The live demo at the top of this post the protocol, but it isn't connected to
-any WebSocket service. Instead, it's using a recording apparatus that I
-cobbled together. I pushed a configuration frame and a bunch of color frames
-into an array, converted their ArrayBuffers into base64 strings, and saved
-those into [a quite large JSON recording file][rec].
+The live demo at the top of this post isn't connected to any WebSocket service.
+Instead, it's using a recording apparatus that I cobbled together. I pushed
+a configuration frame and a bunch of color frames into an array, converted
+their ArrayBuffers into base64 strings, and saved those into [a quite large
+JSON recording file][rec].
 
 I only mention it to lead up to the following. While editing the recording
 JSON file, I zoomed out a little and something caught my eye. I zoomed out

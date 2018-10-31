@@ -1,8 +1,8 @@
 ---
 Title: "DiMo: Particles"
 Date: 2014-08-25
+Categories: Demos
 url: /projects/dimo
-Categories: Projects
 thumbnail: ./icon_dimo.png
 Tags:
  -  programming

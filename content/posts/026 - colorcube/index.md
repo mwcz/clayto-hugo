@@ -1,6 +1,7 @@
 ---
 Title: "RGB WebGL Color Cube"
 Date: 2014-03-23
+Categories: Demos
 Tags:
  -  html5
  -  javascript

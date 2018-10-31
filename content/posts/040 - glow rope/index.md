@@ -1,6 +1,7 @@
 ---
 title: "Glow Rope"
 Date: 2016-07-13
+Categories: Demos
 draft: false
 Tags:
  - demos

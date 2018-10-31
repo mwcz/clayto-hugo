@@ -1,6 +1,8 @@
 ---
 Title: "Bouncey - canvas physics"
 Date: 2011-11-17
+alias: /projects/bouncey/
+Categories: Demos
 Tags:
  - demos
  -  html5

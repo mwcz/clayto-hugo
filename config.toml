@@ -65,7 +65,7 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
   favicon = "/path/to/favicon"
 
 [[menu.main]]
-    name = "Blog"
+    name = "BLOG"
     url = "/"
     weight = 1
 
@@ -75,8 +75,12 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
 #    weight = 2
 
 [[menu.main]]
-    #parent = "projects"
-    name = "Games"
+    name = "DEMOS"
+    url = "/demos"
+    weight = 1
+
+[[menu.main]]
+    name = "GAMES"
     url = "/games"
     weight = 1
 

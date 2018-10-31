@@ -1,6 +1,22 @@
 {{ partial "header.html" . }}
-<section class="pbp-article-list">
+<section>
 <h2>{{ .Title }}</h2>
+
+<p class="pbp-category-desc">
+
+{{ if eq .Title "Games" }}
+  These are games I made or contributed to.  Most are made for <a href="http://scripta.co">Scripta Games</a>, a gamedev duo which <a href="https://twitter.com/caramelcode">@caramelcode</a> and I founded.
+{{ end }}
+
+{{ if eq .Title "Demos" }}
+I don't think these qualify for the illustrious <a href="http://curio.scene.org/">demoscene</a> pantheon, but I do enjoy creating fun WebGL demos.  Some are interactive and have been installed at <a href="https://sparkcon.com">SPARKcon</a>.  Most are created with <a href="https://threejs.org">three.js</a>.
+{{ end }}
+
+</p>
+
+</section>
+
+<section class="pbp-article-list">
 {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts") .Site.Params.paginate).Pages }}
 {{ if ne $index 0 }}
 {{ end }}

@@ -2,7 +2,7 @@
 Title: "ColorPal"
 Date: 2012-01-16
 url: /projects/colorpal
-Categories: Projects
+Categories: Demos
 Tags:
  -  html5
  -  javascript

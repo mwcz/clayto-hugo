@@ -27,9 +27,7 @@ For no particular reason, I chose an Amiga Workbench aesthetic.
 
 ![Amiga Workbench screenshot](./workbench.jpg)
 
-[^1]:
-
-  "Pleased" because it enabled the game to be created, but dismayed that popups are/were a thing.
+[^1]: "Pleased" because it enabled the game to be created, but dismayed that popups are/were a thing.
 
 [oj]: http://openjam.io
 [oj18]: https://itch.io/jam/open-jam-2018

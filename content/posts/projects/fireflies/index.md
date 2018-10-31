@@ -1,6 +1,7 @@
 ---
 Title: "Fireflies"
 Date: 2017-02-06
+Categories: Demos
 url: /projects/fireflies
 thumbnail: ./fireflies-logo.png
 description: "Fireflies is a WebGL demo in which a frolicking flock of fireflies forms flying figures for your fancy."

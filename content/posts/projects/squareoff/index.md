@@ -2,6 +2,7 @@
 Title: "Square Off"
 Date: 2016-04-19
 url: /projects/squareoff
+Categories: Games
 thumbnail: ./square-off-logo.png
 description: Square Off is a 1v1 airhockey-style game, built in 72 hours for [LD35](http://ludumdare.com/compo/2016/04/13/welcome-to-ludum-dare-35/).
 Tags:

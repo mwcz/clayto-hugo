@@ -1,15 +1,23 @@
 {{ if .Site.Menus.main }}
 <nav class="pbp-navbar" role="navigation">
-  <div>
+  <div class="pbp-nav-description">
+    WEB, DEMOSCENE, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
     <a href="{{ .Site.BaseURL }}" title="{{ .Site.BaseURL }} homepage" id="pbp-logo">
-      {{ .Site.Title }}
+      <img src="/images/logo.svg">
     </a>
   </div>
   <div class="pbp-navitems">
-    {{ range .Site.Menus.main.ByWeight }}
+    {{ $list := (.Site.Menus.main.ByWeight) }}
+    {{ $len := (len $list) }}
+    {{ range $index, $element := $list }}
     <a href="{{ .URL }}" class="pbp-navitem">
-      {{- .Name -}}
+      &nbsp;{{- .Name -}}
     </a>
+    {{ if lt (add $index 1) $len }}
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    {{ end }}
     {{ end }}
   </div>
 </nav>

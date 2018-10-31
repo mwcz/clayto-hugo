@@ -3,7 +3,6 @@ Title: "Bouncey"
 Date: 2011-11-17
 url: /projects/bouncey
 thumbnail: ./icon_bouncey.jpg
-Categories: Projects
 description: "A fun, simple, and oddly relaxing hacky simulation of bouncing circles."
 Tags:
  -  html5
