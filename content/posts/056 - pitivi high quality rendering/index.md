@@ -18,6 +18,8 @@ Here are a few steps to dramatically improve the video quality. I'm no expert on
 
 {{< toc >}}
 
+---
+
 # Steps
 
 ## 1. Install x264
