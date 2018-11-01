@@ -1,6 +1,21 @@
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL | sanitizeurl }}
 <article class="pbp-article">
+
+    <div class="pbp-article-meta">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+        <span class="pbp-blue">&middot;</span>
+        {{ .Page.ReadingTime }} minute read
+        <br>
+      <span class="pbp-article-tags">
+        {{ range .Params.tags }}
+        <a href="/tags/{{ . | urlize }}" class="c-tag">#{{ . }}</a>
+        {{ end }}
+      </span>
+    </div>
+
   <header>
     <h1>{{ .Title }}</h1>
   </header>

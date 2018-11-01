@@ -69,8 +69,22 @@ section {
 
 .pbp-article {
   .pbp-article-meta {
-    background-color: darken(@pbp-bg-color, 8%);
+    // background-color: darken(@pbp-bg-color, 8%);
     padding: @padding-base-vertical @padding-base-horizontal;
+    font-size: 0.85 * @pbp-base-font-size;
+    text-align: center;
+    opacity: 0.7;
+    margin: -@padding-large-vertical 0 2 * @padding-large-vertical;
+    a {
+      color: @pbp-fg-color;
+      &:visited {
+        color: darken(@pbp-fg-color, 8%);
+      }
+      &:active,
+      &:hover {
+        color: lighten(@pbp-fg-color, 8%);
+      }
+    }
   }
 }
 

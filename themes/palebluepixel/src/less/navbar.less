@@ -31,6 +31,7 @@
   padding: 0 12px 0;
 
   .pbp-navbar {
+    @navbar-breakpoint: 820px;
     position: relative;
 
     font-family: @pbp-font-nav;
@@ -42,33 +43,47 @@
     padding: 1.6 * @padding-large-vertical 0 1.6 * @padding-large-vertical;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    @media (max-width: 780px) {
-      grid-template-columns: auto 1fr;
+
+    @media (max-width: @navbar-breakpoint) {
+      grid-template-columns: 1fr;
     }
+
     align-items: center;
 
     .pbp-nav-description {
       text-align: left;
-      padding-bottom: 10px; // bump up to align better with logo (mago3 font has a lot of white space at the top)
-      @media (max-width: 780px) {
+      @media (min-width: @navbar-breakpoint) {
+        padding-bottom: 10px; // bump up to align better with logo (mago3 font has a lot of white space at the top)
+      }
+      @media (max-width: @navbar-breakpoint) {
         display: none;
       }
     }
 
+    .pbp-nav-logo {
+      text-align: center;
+      padding-bottom: 10px; // bump up to align better with logo (mago3 font has a lot of white space at the top)
+      // @media (max-width: @navbar-breakpoint) {
+      //   display: none;
+      // }
+    }
+
     .pbp-nav-separator {
-      color: @pbp-blue;
+      .pbp-blue();
       margin: 5px 0 -5px;
     }
 
     .pbp-navitems {
-      padding-bottom: 10px; // bump up to align better with logo (mago3 font has a lot of white space at the top)
       position: relative;
       display: flex;
       flex-direction: row;
       // align-items: center;
       justify-content: flex-end;
-      @media (max-width: 780px) {
-        justify-content: start;
+      @media (max-width: @navbar-breakpoint) {
+        justify-content: center;
+      }
+      @media (min-width: @navbar-breakpoint) {
+        padding-bottom: 10px; // bump up to align better with logo (mago3 font has a lot of white space at the top)
       }
 
       // colorize the nav items, text and images alike
