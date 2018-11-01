@@ -1,19 +1,24 @@
+.ONESHELL:
+
 default:
-	cd themes/palebluepixel/ && find src/less -name '*.less' | entr npm run build &
-	cd -
+	@cd themes/palebluepixel/
+	find src/less -name '*.less' | entr npm run build &
+	@cd -
 	hugo server
 
 clean:
 	rm -rf public
 
 dev:
-	cd themes/palebluepixel/ && find src/less -name '*.less' | entr npm run build &
-	cd -
+	@cd themes/palebluepixel/ 
+	find src/less -name '*.less' | entr npm run build &
+	@cd -
 	hugo server -D
 
 build: clean
-	cd themes/palebluepixel/ && npm run build
-	cd -
+	@cd themes/palebluepixel/ 
+	npm run build
+	@cd -
 	hugo
 
 github: build
