@@ -1,1 +1,2 @@
-*.min.css   binary
+*.min.css           binary
+package-lock.json   binary
