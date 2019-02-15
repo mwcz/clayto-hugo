@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+  
+  <meta property="og:title" content="Visualizing Machine Learning with WebGL" />
+  <meta name="twitter:title" content="Visualizing Machine Learning with WebGL" />
+  
+  <title>Visualizing Machine Learning with WebGL - clayto</title>
+
+  
+  <meta name="description" content="Building a WebGL particle system to visualize machine learning." />
+  <meta property="og:description" content="Building a WebGL particle system to visualize machine learning." />
+  <meta name="twitter:description" content="Building a WebGL particle system to visualize machine learning." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/thumb.jpg" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/thumb.jpg"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.50" /><link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-description">
+    WEB, DEMOSCENE, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+
+    <div class="pbp-article-meta">
+        <time datetime="2018-03-14T00:00:00Z">
+          Mar 14, 2018
+        </time>
+        <span class="pbp-blue">&middot;</span>
+        5 minute read
+        <br>
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/demos" class="c-tag">#demos</a>
+        
+        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/threejs" class="c-tag">#threejs</a>
+        
+        <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
+        
+        <a href="https://clayto.com/tags/3d" class="c-tag">#3d</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+        <a href="https://clayto.com/tags/redhat" class="c-tag">#redhat</a>
+        
+        <a href="https://clayto.com/tags/redhat-summit" class="c-tag">#redhat-summit</a>
+        
+        <a href="https://clayto.com/tags/machine-learning" class="c-tag">#machine-learning</a>
+        
+      </span>
+    </div>
+
+  <header>
+    <h1>Visualizing Machine Learning with WebGL</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<p>There are few things as thrilling as pulling off a complex live demo in front of a 7,000 person live audience. Technical presenters famously avoid live demos because Murphy always sees to it that they fail.</p>
+
+<p>This year’s demonstration entailed deploying the same mobile game to three different cloud hosting services, asking the audience to play along, and then pulling the plug on one of the cloud services. The killer feature of Red Hat’s offering was showing that audience members who had been routed to the now-dead cloud service would be seamlessly transitioned to one of the remaining two, without losing any application state, connections, or most importantly, data.</p>
+
+<p>The game itself was an image recognition game, where players were asked to take an image photo of certain objects like a person, a bear, an apple. Machine learning is a fairly opaque subject, certainly not explainable within a brief 25-minute demo. My contribution to the demo was creating a helpful visualization of the machine learning training and inference processes. Given that the audience was not likely to be full of machine learning experts, Will and I agreed to prioritize easy understanding over pure technical accuracy.</p>
+
+<h3 id="the-pipes">THE PIPES</h3>
+
+<p>The pipes represent a neural network. Each branch represents a neuron with one input and two outputs.</p>
+
+<p>Players upload images, which flow into the pipe on the left, and are decomposed into a trail of particles which flow to the tagged destination. For example, an uploaded image of an Apple will flow to the &ldquo;Apple&rdquo; pipe.</p>
+
+<h2 id="gpu-based-movement-algorithm-cpu-only-for-timer-achieving-uniform-velocity">GPU-based movement algorithm, CPU only for timer, achieving uniform velocity</h2>
+
+<p>Performance is always foremost in my mind when building demos like this. This time, I decided to experiment with pushing as much as possible on to the GPU. each image uploaded by a player into the system ultimately causes a particle system to be created on the dashboard. once that particle system is created, the CPUs only responsibility is incrementing a timer.</p>
+
+<p>In the end I may have gone a little overboard and rely too much on the GPU. It became the biggest bottleneck to Performance, whereas the CPU was barely tapped at all. I began experimenting with moving motion back to the CPU ( by porting the glsl movement algorithm to JavaScript) But ultimately went with the GPU Overkill approach because performance was good enough.</p>
+
+<p>To accomplish this, I first send a series of paths to the GPU has a uniform array. each path in the array is a series of 2D points. for example, I may want a particle to move from point A to point B to point C and finally to point D. each stream of particles is assigned a path number, which corresponds to the index of the desired path within the paths array. the aforementioned timer is used as a sort of progress meter telling the movement algorithm how far along the particle should be on its path. For example, if I want the particles to go from point A to point D in two seconds, the timer being at one second would cause the particle to be drawn directly in between points B and C.</p>
+
+<p>Things to cover:</p>
+
+<h2 id="the-story-context-of-the-demo-not-experts-viz-tells-story-not-for-nitpickers">the story, context of the demo (not experts, viz tells story, not for nitpickers)</h2>
+
+<p>Within a brief 25-minute demo, there&rsquo;s no time for a neural network primer. That limiation led us to design the viz for a wide audience, not assuming any knowledge of neural networks. It depicts what&rsquo;s going on without a laborious prior explanation, but is certain to leave a machine learning expert wanting more.</p>
+
+<h2 id="getting-input-from-infinispan-jdg-and-gluster-via-microservice-b">getting input from Infinispan/JDG and Gluster (via microservice B)</h2>
+
+<p>A microservice written in <a href="https://vertx.io/">vert.x</a> supplies the data over a WebSocket connection. Each frame represents an uploaded image and contains:</p>
+
+<ol>
+<li>a URL to the image file in Gluster</li>
+<li>the intended subject of the photo, for example &ldquo;Apple&rdquo;</li>
+<li>the score, or how well the player framed the subject (0 if absent)</li>
+</ol>
+
+<p>That&rsquo;s all I need to animate the image through the pipes.</p>
+
+<h2 id="canvas-svg-sandwich-and-the-path-tracer-tool-to-more-easily-encode-paths">Canvas SVG sandwich and the &lsquo;path tracer&rsquo; tool to more easily encode paths</h2>
+
+<p>To create an illusion of the particles being inside the pipes, Matt split the pipes in two, a foreground slice with glassy highlights and a background slice with darkened shadows. The WebGL canvas goes in between.</p>
+
+<p>![angled image of svg canvas sandwich]()</p>
+
+<h2 id="layered-pipes-setup-link-to-andres-and-matt-show-angled-cutaway-of-the-images-can-probably-make-it-with-inkscape-perspective-tool-http-goinkscape-com-using-perspective-for-3d-in-inkscape">layered pipes setup, link to andres and matt (show angled cutaway of the images, can probably make it with inkscape perspective tool: <a href="http://goinkscape.com/using-perspective-for-3d-in-inkscape/">http://goinkscape.com/using-perspective-for-3d-in-inkscape/</a> )</h2>
+
+<h2 id="3542x1144-led-screen">3542x1144 LED screen</h2>
+
+<p>Behind the stage was a truly massive LED screen. It consisted of over <strong>four million</strong> LEDs with a resolution of 3542 x 1144.</p>
+
+<p>![LED SCREEN FRONT]()</p>
+
+<p>![LED SCREEN BACK]()</p>
+
+<p>The resolution was known well ahead of time, so I set up a device profile in Chrome&rsquo;s devtools for 3542 x 1144.</p>
+
+<p>![3542x1144 device profile]()</p>
+
+<h2 id="improving-performance-by-shrinking-then-scaling-up-the-webgl-canvas">improving performance by shrinking then scaling up the webgl canvas</h2>
+
+<p>The A/V crew referred to it as a 4K screen, which I wouldn&rsquo;t have guessed, as the screen was almost 500 pixels short of 4,000. It was still a lot of pixels though, and performance issues had plagued me since the beginning. Even with the absolute simplest of scenes, framerates were still disappointing. Late in the project, I discovered a workaround.</p>
+
+<p>I cut the WebGL canvas width and height in half, render at that size (1771 x 572), then scaled it back up to full-screen with CSS. That cut the GPU&rsquo;s workload to <sup>1</sup>&frasl;<sub>4</sub> of what it was.</p>
+
+<h2 id="pushmanyandres-for-training-viz">pushManyAndres for training viz</h2>
+
+<p>Every major project should have an Easter Egg, something to lighten the mood during crunch time. Ours was during the training phase of the machine learning visualization. The viz displays many images flying into the pipes, which converge on &ldquo;person&rdquo; over several runs. These were intended to be a wide variety of photos of people, but with time running short, I chose to make them all the same image, one of Andrés Galante, who was extraordinarily helpful on this project. He also made sure I had enough food, hydration, and help during the long rehearsals in the days leading up to showtime.</p>
+
+<h2 id="early-screenshots-and-final-screenshots">early screenshots and final screenshots</h2>
+
+<p>![in progress screenshots]()</p>
+
+<h2 id="demo-video-https-youtu-be-hu2bme1wk-q-t-6m24s"><a href="https://youtu.be/hu2BmE1Wk_Q?t=6m24s">demo video</a></h2>
+
+<video autoplay controls loop>
+    <source src="https://media.giphy.com/media/oVlpIBxwuheE/giphy.mp4" />
+</video>
+
+<p>Randomly sorted thank-you&rsquo;s:</p>
+
+<ul style="display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr));">
+    <li>Will Benton</li>
+    <li>Stian Thorgersen</li>
+    <li>Sebastian</li>
+    <li>Matthew Carleton</li>
+    <li>Kyle Buchanan</li>
+    <li>Galder Zamarreno</li>
+    <li>Erin Boyd</li>
+    <li>Clement Escoffier</li>
+    <li>Burr Sutter</li>
+    <li>Boleslaw</li>
+    <li>Andres Galante</li>
+</ul>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">Visualizing Network Traffic with WebGL</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Creating a WebGL particle system to convey network traffic patterns to a live audience at <a href="https://www.redhat.com/summit">Red Hat Summit</a>.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/./post-thumbnail.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A WebGL-based visualizer for LED displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-03-10T00:00:00Z">
+      Mar 10, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/03/meet-simpixel/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2017/03/meet-simpixel/./thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/02/fireflies/">Fireflies</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Drawing shapes with particles.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-02-06T00:00:00Z">
+      Feb 6, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/02/fireflies/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2017/02/fireflies/./fireflies-logo.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">Kimotion at geekSPARK 2016</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion-powered interactive art at SPARKcon 2016.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-12T00:00:00Z">
+      Jan 12, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2017/01/kimotion-at-geekspark-2016/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/glow-rope/">Glow Rope</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A simple WebGL demo of streaming particles.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/glow-rope/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2016/07/glow-rope/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">DiMo: The Deconstruction of Falling Stars</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The construction of a WebGL particle physics gravity simulation <em>slash</em> interactive art installation.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-10-30T00:00:00Z">
+      Oct 30, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/swath-colors.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

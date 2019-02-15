@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+  
+  <meta property="og:title" content="Command Line Bash" />
+  <meta name="twitter:title" content="Command Line Bash" />
+  
+  <title>Command Line Bash - clayto</title>
+
+  
+  <meta name="description" content="A whatsit." />
+  <meta property="og:description" content="A whatsit." />
+  <meta name="twitter:description" content="A whatsit." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2019/02/command-line-bash/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/2019/02/command-line-bash/clh-bash.png" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2019/02/command-line-bash/clh-bash.png"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.50" /><link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-description">
+    WEB, DEMOSCENE, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+
+    <div class="pbp-article-meta">
+        <time datetime="2019-02-15T09:53:53-05:00">
+          Feb 15, 2019
+        </time>
+        <span class="pbp-blue">&middot;</span>
+        3 minute read
+        <br>
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/linux" class="c-tag">#linux</a>
+        
+      </span>
+    </div>
+
+  <header>
+    <h1>Command Line Bash</h1>
+  </header>
+  
+  
+  <section>
+    
+
+<h2 id="summary">Summary</h2>
+
+<p><img src="ibm-5150.png" class="float-comp"></p>
+
+<style>
+.float-comp {
+  shape-outside: url(ibm-5150.png);
+  float: right;
+  shape-margin: 16px;
+  margin-right: -16%;
+  max-width: 60%;
+}
+</style>
+
+<p>Command Line Bash is a game that challenges you to type in as many valid commands as you can in 60 seconds.</p>
+
+<p><center style="margin: 60px auto;">
+<a class="pbp-btn" href="https://www.redhat.com/en/command-line-heroes/bash/index.html">Play now!</a>
+</center></p>
+
+<p>Bash was created with co-conspirator <a href="https://twitter.com/caramelcode">Jared Sprague</a>, along with tremendous help from the <a href="https://www.redhat.com/en/command-line-heroes">Command Line Heroes podcast</a> team, open source contributors, and the <a href="https://discord.gg/DYEGmFc">CLH Discord</a> community.</p>
+
+<p>If you&rsquo;re into code, you&rsquo;re welcome to <a href="https://github.com/CommandLineHeroes/clh-bash">view source</a>.  Contributions welcome!</p>
+
+<hr />
+
+<h2 id="how-to-play">How to play</h2>
+
+<p>The game walks you through the instructions when you play, but here are the basics.  The game challenges you to type in as many commands as you can in 60 seconds.  Commands can be drawn from a variety of languages.</p>
+
+<ul>
+<li>bash shell commands &amp; linux built-ins</li>
+<li>JavaScript keywords, objects, functions</li>
+<li>Python keywords, objects, functions</li>
+<li>HTML5 tags</li>
+</ul>
+
+<p>When play starts, you don&rsquo;t have to choose a language.  All languages are valid.</p>
+
+<hr />
+
+<h2 id="why-we-made-it">Why we made it</h2>
+
+<p>About a year ago, Dan contacted us after seeing some of <a href="http://scripta.co">our games</a>.  After chatting for a while, the idea came up of creating a game based on Command Line Heroes (isn&rsquo;t the name just begging to be a game?).  A few months later, we were neck-deep in code for an adventure game engine called <a href="https://github.com/CommandLineHeroes/hero-engine">Hero Engine</a>.</p>
+
+<p>Adventure games, we discovered, are very time-consuming to create, <em>especially</em> when you start by building an engine from scratch.  To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for <a href="https://www.ibm.com/events/think/">IBM Think</a>, the first conference where the game would be presented.</p>
+
+<p>The strategy succeeded, and we were able to put the finishing touches on the game just before Think began.  Here&rsquo;s a bit about Bash @ Think.</p>
+
+<hr />
+
+<h2 id="cabs-and-confs">Cabs and confs</h2>
+
+<p>Not one to settle for the ordinary, Dan went the extra mile and ordered some classic arcade cabinets.  Fortunately, through my geekSPARK work I met Bill Culverhouse.  Bill is a maker extraordinaire, geekSPARK veteran, and happens to run an arcade cabinet construction company, <a href="https://www.trihg.com/">Triangle Home Gamerooms</a>.</p>
+
+<p>We met with them, toured their impressive facility, determined specs, and placed the order.</p>
+
+<p>Here&rsquo;s what they built for us.</p>
+
+<p><img src="cabs.jpg" alt="Command Line Heroes arcade cabinets" /></p>
+
+<p>Notice the shout-out to <a href="http://openjam.io">Open Jam</a> on the orange side of the cabinets!  If you look closely at the screen, you can spot a few games in the launcher.</p>
+
+<ul>
+<li><a href="https://www.redhat.com/en/command-line-heroes/bash/index.html">CLH Bash</a></li>
+<li><a href="http://pae.fun">Pity About Earth&hellip;</a></li>
+<li><a href="https://itch.io/jam/open-jam-2018/rate/314668">Fleshgod</a></li>
+<li><a href="https://zorb.io">Zorbio</a></li>
+</ul>
+
+<p>Several more games are below the fold.</p>
+
+<p>As I&rsquo;m writing this, Think has just concluded and was a huge success for the Command Line Heroes team.</p>
+
+<hr />
+
+<h2 id="what-s-next">What&rsquo;s next?</h2>
+
+<p>Next up, I&rsquo;m working on a post about the tech we used to create the game.</p>
+
+<p>Until then, here are some ways to get involved.</p>
+
+<h2 id="join-the-community">Join the community</h2>
+
+<p>Discord link.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Camera on clayto</title>
+    <link>https://clayto.com/tags/camera/</link>
+    <description>Recent content in Camera on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 May 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/camera/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi Timelapse Camera</title>
+      <link>https://clayto.com/2014/05/raspberry-pi-timelapse-camera/</link>
+      <pubDate>Thu, 15 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2014/05/raspberry-pi-timelapse-camera/</guid>
+      <description>I built a timelapse camera with a raspberry pi.
+  Hardware:
+ A small gorillapod Raspbery Pi camera Raspberry Pi Model B  Software:
+The scripts I wrote are pretty hasty. I should tidy them up before publishing this post.
+I didn&amp;rsquo;t secure the pi very well when I first framed the shot, and it wound up getting bumped several times. Lesson learned: make sure
+File naming I used Epoch time for the filenames.</description>
+    </item>
+    
+  </channel>
+</rss>

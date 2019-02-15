@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redhat Summit on clayto</title>
+    <link>https://clayto.com/tags/redhat-summit/</link>
+    <description>Recent content in Redhat Summit on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/redhat-summit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CEE Tribe Display</title>
+      <link>https://clayto.com/2018/05/cee-tribe-display/</link>
+      <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2018/05/cee-tribe-display/</guid>
+      <description> Draft topics  what is a tribe force reactive graph (springy.js) particle system with three.js keeping the graph active  drifting between tribes spinning particles   </description>
+    </item>
+    
+    <item>
+      <title>Engage</title>
+      <link>https://clayto.com/2018/05/engage/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2018/05/engage/</guid>
+      <description> Topics  Metaphors (portal, block types, vulns) Badge scanner Printed cards Krystal and Tyler&amp;rsquo;s facelift Music and sfx with beepbox Leap motion  </description>
+    </item>
+    
+    <item>
+      <title>Visualizing Machine Learning with WebGL</title>
+      <link>https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/</link>
+      <pubDate>Wed, 14 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/</guid>
+      <description>There are few things as thrilling as pulling off a complex live demo in front of a 7,000 person live audience. Technical presenters famously avoid live demos because Murphy always sees to it that they fail.
+This year’s demonstration entailed deploying the same mobile game to three different cloud hosting services, asking the audience to play along, and then pulling the plug on one of the cloud services. The killer feature of Red Hat’s offering was showing that audience members who had been routed to the now-dead cloud service would be seamlessly transitioned to one of the remaining two, without losing any application state, connections, or most importantly, data.</description>
+    </item>
+    
+  </channel>
+</rss>

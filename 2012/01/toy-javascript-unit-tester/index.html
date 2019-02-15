@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+  
+  <meta property="og:title" content="Toy javascript unit tester" />
+  <meta name="twitter:title" content="Toy javascript unit tester" />
+  
+  <title>Toy javascript unit tester - clayto</title>
+
+  
+  <meta name="description" content="Creative coding and web stuff." />
+  <meta property="og:description" content="Creative coding and web stuff." />
+  <meta name="twitter:description" content="Creative coding and web stuff." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2012/01/toy-javascript-unit-tester/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/2012/01/toy-javascript-unit-tester/thumb.jpg" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2012/01/toy-javascript-unit-tester/thumb.jpg"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.50" /><link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-description">
+    WEB, DEMOSCENE, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+
+    <div class="pbp-article-meta">
+        <time datetime="2012-01-30T00:00:00Z">
+          Jan 30, 2012
+        </time>
+        <span class="pbp-blue">&middot;</span>
+        4 minute read
+        <br>
+      <span class="pbp-article-tags">
+        
+        <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+        
+        <a href="https://clayto.com/tags/testing" class="c-tag">#testing</a>
+        
+        <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+        
+      </span>
+    </div>
+
+  <header>
+    <h1>Toy javascript unit tester</h1>
+  </header>
+  
+  
+  <section>
+    <p>2018-08-29: set this back to draft because it&rsquo;s not a very good post.</p>
+
+<p>Last week I was sitting in a meeting, thinking about unit testing frameworks (not the subject of the meeting), and had a minor epiphany. In the back of my mind, there has always been a bit of uncertainty as to how unit testing frameworks work. Deep in my brain I knew there was something I didn&rsquo;t understand, but I wasn&rsquo;t quite sure what. I never gave it any conscious thought.</p>
+
+<p>As a developer, I&rsquo;d use a framework, write a bunch of <code>testBlahFoo</code> functions, and the framework would magically run them.</p>
+
+<p>Then I realized&hellip; &ldquo;Oh, it&rsquo;s just introspection.&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Create an object with three properties, all functions
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myfuncs</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">func1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;func it up&#34;</span>);
+  },
+  <span style="color:#a6e22e">func2</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;func&#39;s old brother&#34;</span>);
+  },
+  <span style="color:#a6e22e">func3</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;bring back da func&#34;</span>);
+  }
+};
+
+<span style="color:#75715e">// Run all functions attached to myfuncs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">func</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">myfuncs</span>) {
+  <span style="color:#a6e22e">myfuncs</span>[<span style="color:#a6e22e">func</span>]();
+}
+
+<span style="color:#75715e">// Outputs:
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">// func it up
+</span><span style="color:#75715e">// func&#39;s old brother
+</span><span style="color:#75715e">// bring back da func
+</span><span style="color:#75715e"></span></code></pre></div>
+<p>So simple. Later, I wrote a very basic unit testing framework, purely as an educational excercise.</p>
+
+<p>The guts are almost simple as the example above.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">JTestSuite</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
+    <span style="color:#a6e22e">jt</span>,
+    <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>) {
+      <span style="color:#a6e22e">jt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JTests</span>();
+      <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">callback</span>);
+    },
+    <span style="color:#a6e22e">run</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fn</span>, <span style="color:#a6e22e">prop</span>;
+
+      <span style="color:#75715e">// Run all functions that begin with &#34;test&#34;
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">prop</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">prop</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
+          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">prop</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;test&#34;</span>) {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">prop</span>](<span style="color:#a6e22e">jt</span>));
+          }
+        }
+      }
+    };
+
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#66d9ef">this</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">JTestSuite</span>)) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JTestSuite</span>();
+
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">init</span>,
+    <span style="color:#a6e22e">run</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">run</span>
+  };
+};
+</code></pre></div>
+<p>In the <code>run</code> function&rsquo;s loop, I first check that each property is a function before attemping to run it. This avoids a <code>called_non_callable TypeError</code>. I then check that the name of the property begins with the string &ldquo;test&rdquo;. When dynamically calling functions, it&rsquo;s usually a good idea to call <code>obj.hasOwnProperty(propname)</code> to ensure the property wasn&rsquo;t inherited from some unknown source (especially if the property you wanted to reference may have been <code>delete</code>d, but a property with the same name is now surfacing from a parent object), but in this case I&rsquo;d like to leave open the possibility for inherited Test Suites.</p>
+
+<p>The <code>JTests</code> object created in the <code>init</code> function is a separate object that contains a bunch of assertions. It looks something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">JTests</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
+    <span style="color:#a6e22e">result_callback</span>,
+    <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>) {
+      <span style="color:#a6e22e">result_callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>;
+    };
+
+  <span style="color:#a6e22e">assertTrue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>;
+    <span style="color:#a6e22e">result_callback</span>({
+      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;assertTrue&#34;</span>,
+      <span style="color:#a6e22e">args</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">a</span>],
+      <span style="color:#a6e22e">result</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">result</span>
+    });
+  };
+
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">assertTrue</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">assertTrue</span>
+  };
+};
+</code></pre></div>
+<p>&hellip;except with many more assertions. :)</p>
+
+<p>Both <code>JTestSuite</code> and <code>JTests</code> use the <a href="http://stackoverflow.com/a/5647397/215148">revealing module pattern</a>.</p>
+
+<p>I have a lot of ideas for improvement, like <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>ing up the assertions, so the <code>{name,args,result}</code> object doesn&rsquo;t have to be defined in each assertion. But <a href="http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript">many others</a> have already done a great job, and I don&rsquo;t want to reinvent too many wheels.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Define a custom handler for the result
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test_callback</span>(<span style="color:#a6e22e">result</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);
+}
+
+<span style="color:#75715e">// Create a new JTestSuite object and initialize it with the callback
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">TestSuite</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JTestSuite</span>();
+<span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">test_callback</span>);
+
+<span style="color:#75715e">// Create some tests
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">testMath</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">jt</span>) {
+  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertEquals</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>);
+};
+
+<span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">testFalsy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">jt</span>) {
+  <span style="color:#75715e">// [], &#34;&#34;, and &#34;0&#34; all == false in javascript
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>([]);
+  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>(<span style="color:#e6db74">&#34;0&#34;</span>);
+};
+
+<span style="color:#75715e">// Run all the tests
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">run</span>();
+</code></pre></div>
+<p>The callback allows a user to determine how the results from the unit test should be processed or displayed. Results could be printed to console.log, displayed on a page by adding them to the DOM, sent to a Web service with AJAX, or any arbitrary service with Web Sockets.</p>
+
+<p>After writing this toy framework, and explaining it to a colleague, I was told that the Rails unit tester uses almost the exact same approach. I&rsquo;d wager a few bucks that JUnit uses the Reflection API&rsquo;s <code>Class.getMethods()</code> to find and run all the methods added to a TestCase class. Only a few bucks, though.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing ColorPal, a fast color palette creation tool.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2012/01/colorpal-alpha/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/">Bouncey returns - more canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a slightly upgraded version of the physics demo I showed in my last post.
+It is still&hellip;
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+This version has:
+ pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
+The code is well commented, so feel free to hack on it.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-18T00:00:00Z">
+      Nov 18, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-point-operations/">HTML5 canvas point operations</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
+Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-point-operations/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/html5-canvas-point-operations/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-canvas-physics/">Bouncey - canvas physics</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
+The description for bouncey&rsquo;s github repo is:
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey-canvas-physics/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/bouncey-canvas-physics/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">HTML5 canvas RGB histogram</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/html5-canvas-rgb-histogram/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">HTML5 canvas area selection averaging</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is a demo from late 2009. It&rsquo;s an extension of the single-pixel eyedropper I wrote previously.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
+Click and drag to set the image border to the average of the selected pixels.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/html5-canvas-area-selection-averaging/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

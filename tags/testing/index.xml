@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on clayto</title>
+    <link>https://clayto.com/tags/testing/</link>
+    <description>Recent content in Testing on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jan 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Toy javascript unit tester</title>
+      <link>https://clayto.com/2012/01/toy-javascript-unit-tester/</link>
+      <pubDate>Mon, 30 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2012/01/toy-javascript-unit-tester/</guid>
+      <description>2018-08-29: set this back to draft because it&amp;rsquo;s not a very good post.
+Last week I was sitting in a meeting, thinking about unit testing frameworks (not the subject of the meeting), and had a minor epiphany. In the back of my mind, there has always been a bit of uncertainty as to how unit testing frameworks work. Deep in my brain I knew there was something I didn&amp;rsquo;t understand, but I wasn&amp;rsquo;t quite sure what.</description>
+    </item>
+    
+  </channel>
+</rss>
