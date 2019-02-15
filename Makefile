@@ -19,7 +19,7 @@ build: clean
 	@cd themes/palebluepixel/ 
 	npm run build
 	@cd -
-	hudo -D # build with drafts, so drafts can be linked to
+	hugo -D # build with drafts, so drafts can be linked to
 	hugo # build without drafts so the drafts are unlisted
 
 github: build
