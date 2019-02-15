@@ -19,7 +19,8 @@ build: clean
 	@cd themes/palebluepixel/ 
 	npm run build
 	@cd -
-	hugo
+	hudo -D # build with drafts, so drafts can be linked to
+	hugo # build without drafts so the drafts are unlisted
 
 github: build
 	echo "clayto.com" > public/CNAME
