@@ -19,7 +19,33 @@
     <div class="pbp-article-thumbnail">
       <div class="glass-card">
         <div class="glass-card-ratio">
-          <img class="glass-card-bg glass-card-bg-{{ index .Params "thumbpos" | default "default" }}" src="{{ .RelPermalink }}/{{ .Params.thumbnail }}">
+          <picture>
+            {{ $.Scratch.Set "thumbs" (split .Params.thumbnail " ") }}
+            {{ $.Scratch.Set "fallbackThumb" ( index (last 1 ($.Scratch.Get "thumbs")) 0 ) }}
+            {{ range $index, $thumb := ($.Scratch.Get "thumbs") }}
+               {{ if not (eq $thumb ($.Scratch.Get "fallbackThumb")) }}
+            <source
+              class="glass-card-bg glass-card-bg-{{ index $.Params "thumbpos" | default "default" }}"
+              {{ if eq (last 5 $thumb) ".webp" }}
+              type="image/webp"
+              {{ else if eq (last 5 $thumb) ".apng" }}
+              type="image/apng"
+              {{ else if eq (last 4 $thumb) ".png" }}
+              type="image/png"
+              {{ else if eq (last 4 $thumb) ".gif" }}
+              type="image/gif"
+              {{ else if eq (last 4 $thumb) ".jpg" }}
+              type="image/jpeg"
+              {{ else if eq (last 5 $thumb) ".jpeg" }}
+              type="image/jpeg"
+              {{ end }}
+              srcset="{{ $.RelPermalink }}{{ $thumb }}">
+              {{ end }}
+            {{ end }}
+            <img
+              class="glass-card-bg glass-card-bg-{{ index $.Params "thumbpos" | default "default" }}"
+              src="{{ $.RelPermalink }}{{ $.Scratch.Get "fallbackThumb" }}">
+          </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
           <!-- <div class="glass-card-cite"> -->
