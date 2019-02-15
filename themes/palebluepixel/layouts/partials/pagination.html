@@ -7,21 +7,18 @@
   {{ end }}
   --pagination-progress: {{ div (float .PageNumber) .TotalPages }}fr;
   --pagination-remaining: {{ sub 1 (div (float .PageNumber) .TotalPages) }}fr;
-  ">
+  "
+>
   <div class="pbp-pagination-layout">
     <div>
-      {{if .HasPrev}}
-      <a rel="next" href="{{ .Prev.URL }}">Prev</a>
-      {{else}}
+      {{if .HasPrev}} <a rel="next" href="{{ .Prev.URL }}">Prev</a> {{else}}
       <!-- <a disabled rel="next">Prev</a> -->
       {{end}}
     </div>
     <div class="pbp-pagination-bar pbp-pagination-progress"></div>
     <div class="pbp-pagination-bar pbp-pagination-remaining"></div>
     <div>
-      {{if .HasNext}}
-      <a rel="prev" href="{{ .Next.URL }}">Next</a>
-      {{else}}
+      {{if .HasNext}} <a rel="prev" href="{{ .Next.URL }}">Next</a> {{else}}
       <!-- <a disabled rel="prev">Next</a> -->
       {{end}}
     </div>
@@ -36,20 +33,22 @@
     <p class="infinite-scroll-last">End of content</p>
     <p class="infinite-scroll-error">No more pages to load</p>
   </div>
-<section>
-<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
-<script>
-  const infScroll = new InfiniteScroll( '.pbp-article-list', {
-    // options
-    path: '.pbp-pagination [rel=prev]',
-    append: '.pbp-article-li',
-    history: 'replace',
-    hideNav: '.pbp-pagination',
-    scrollThreshold: false,
-    button: '.pbp-infscr-more',
-    status: '.pbp-infscr-load-status',
-    checkLastPage: true,
-    debug: true,
-  });
-</script>
-{{ end }}
+  <section>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script>
+      const infScroll = new InfiniteScroll(".pbp-article-list", {
+        // options
+        path: ".pbp-pagination [rel=prev]",
+        append: ".pbp-article-li",
+        history: "replace",
+        hideNav: ".pbp-pagination",
+        scrollThreshold: false,
+        button: ".pbp-infscr-more",
+        status: ".pbp-infscr-load-status",
+        checkLastPage: true,
+        debug: false
+      });
+    </script>
+    {{ end }}
+  </section>
+</section>
