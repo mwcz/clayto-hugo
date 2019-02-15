@@ -30,7 +30,7 @@ Command Line Bash is a game that challenges you to type in as many valid command
 <a class="pbp-btn" href="https://www.redhat.com/en/command-line-heroes/bash/index.html">Play now!</a>
 </center>
 
-Bash was created by the usual team of [Jared Sprague][jsprague] and me, along with tremendous help from the [Command Line Heroes podcast][clh] team, open source contributors, and the [CLH Discord][discord] community.
+Bash was created with co-conspirator [Jared Sprague][jsprague], along with tremendous help from the [Command Line Heroes podcast][clh] team, open source contributors, and the [CLH Discord][discord] community.
 
 If you're into code, you're welcome to [view source][source].  Contributions welcome!
 
@@ -45,15 +45,17 @@ The game walks you through the instructions when you play, but here are the basi
  - Python keywords, objects, functions
  - HTML5 tags
 
+When play starts, you don't have to choose a language.  All languages are valid.
+
+
+
 ---
 
 ## Why we made it
 
-About a year ago, Dan contacted Jared and I after seeing some of [our games][scripta].  After chatting for a while, the idea came up of creating a game based on Command Line Heroes.  A few months later, we were neck-deep in code for an adventure game engine called [Hero Engine][hero-eng].
+About a year ago, Dan contacted us after seeing some of [our games][scripta].  After chatting for a while, the idea came up of creating a game based on Command Line Heroes (isn't the name just begging to be a game?).  A few months later, we were neck-deep in code for an adventure game engine called [Hero Engine][hero-eng].
 
-Adventure games, we discovered, are very time-consuming to create, *especially* when you start by building an engine from scratch.
-
-To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for [IBM Think][think], the first conference where the game would be presented.
+Adventure games, we discovered, are very time-consuming to create, *especially* when you start by building an engine from scratch.  To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for [IBM Think][think], the first conference where the game would be presented.
 
 The strategy succeeded, and we were able to put the finishing touches on the game just before Think began.  Here's a bit about Bash @ Think.
 
@@ -61,9 +63,11 @@ The strategy succeeded, and we were able to put the finishing touches on the gam
 
 ## Cabs and confs
 
-Not one to settle for the ordinary, Dan wanted to go the extra mile and present the game in classic arcade cabinets.  Luckily, a friend of mine, maker extraordinaire, and veteran geekSPARK contributor Bill Culverhouse and his brother happen to run an arcade cabinet construction company, [Triangle Home Gamerooms][trihg].
+Not one to settle for the ordinary, Dan went the extra mile and ordered some classic arcade cabinets.  Fortunately, through my geekSPARK work I met Bill Culverhouse.  Bill is a maker extraordinaire, geekSPARK veteran, and happens to run an arcade cabinet construction company, [Triangle Home Gamerooms][trihg].
 
-Before we knew it, here's what they built for us.
+We met with them, toured their impressive facility, determined specs, and placed the order.
+
+Here's what they built for us.
 
 ![Command Line Heroes arcade cabinets](cabs.jpg)
 

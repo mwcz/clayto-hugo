@@ -12,11 +12,12 @@ draft: true
 
 ## How we made it
 
+Topics to cover.
+
  - Tech: Vue & Threejs
  - MTL and OBJ files from Eric
    - challenges with UV coords, flat screen instead
-   -
- - console created with textarea -> canvas -> flat screen plane
+ - the console
+   - the technique of: textarea -> canvas -> flat plane
    - overriding some text editing stuff like copy paste, backspace, left arrow, etc
-   -
- -
+ - Fire
