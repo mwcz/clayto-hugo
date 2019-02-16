@@ -3,10 +3,19 @@ title: "How We Made Command Line Bash"
 date: 2019-02-15T10:21:24-05:00
 categories: Games
 Tags:
+ -  programming
+ -  javascript
+ -  threejs
+ -  webgl
+ -  3d
+ -  web
+ -  scripta
+ -  games
+ -  gamedev
  -  linux
 description: "A whatsit."
-thumbnail: clh-bash-typing.apng clh-bash-thumb.webp clh-bash-thumb.png
-mwc: 56
+thumbnail: clh-bash-thumb.png
+mwc: 59
 draft: true
 ---
 

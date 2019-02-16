@@ -3,10 +3,14 @@ title: "Command Line Bash"
 date: 2019-02-15T09:53:53-05:00
 categories: Games
 Tags:
+ -  web
+ -  scripta
+ -  games
+ -  gamedev
  -  linux
 description: "A whatsit."
 thumbnail: clh-bash.png
-mwc: 56
+mwc: 58
 draft: true
 ---
 
@@ -30,7 +34,7 @@ Command Line Bash is a game that challenges you to type in as many valid command
 <a class="pbp-btn" href="https://www.redhat.com/en/command-line-heroes/bash/index.html">Play now!</a>
 </center>
 
-Bash was created with co-conspirator [Jared Sprague][jsprague], along with tremendous help from the [Command Line Heroes podcast][clh] team, open source contributors, and the [CLH Discord][discord] community.
+Bash was created with co-conspirator illustrious [Jared Sprague][jsprague], along with tremendous help from the [Command Line Heroes podcast][clh] team, open source contributors, and the [CLH Discord][discord] community.
 
 If you're into code, you're welcome to [view source][source].  Contributions welcome!
 
@@ -38,24 +42,44 @@ If you're into code, you're welcome to [view source][source].  Contributions wel
 
 ## How to play
 
-The game walks you through the instructions when you play, but here are the basics.  The game challenges you to type in as many commands as you can in 60 seconds.  Commands can be drawn from a variety of languages.
+The game walks you through the instructions before you play, but here are the basics.  The game challenges you to type in as many commands as you can in 60 seconds.  Commands can be drawn from a variety of languages.
 
  - bash shell commands & linux built-ins
  - JavaScript keywords, objects, functions
  - Python keywords, objects, functions
  - HTML5 tags
 
-When play starts, you don't have to choose a language.  All languages are valid.
+When play starts, you don't have to choose a language.  Any of the above commands can be typed into the same prompt.
 
+The leaderboard isn't networked, so we can't see your high scores unless you share them with us on Twitter!  Tag [#CommandLinePod][clh-tw].
 
+<style>
+twitter-widget {
+  width: 100% !important;
+}
+</style>
+
+<div class="beside">
+ <!--style="
+width: 100%;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 10px;
+"-->
+{{< tweet 1096224221330472965 >}}
+{{< tweet 1096224460305133569 >}}
+{{< tweet 1095722997153857536 >}}
+{{< tweet 1095552527297175555 >}}
+
+</div>
 
 ---
 
 ## Why we made it
 
-About a year ago, Dan contacted us after seeing some of [our games][scripta].  After chatting for a while, the idea came up of creating a game based on Command Line Heroes (isn't the name just begging to be a game?).  A few months later, we were neck-deep in code for an adventure game engine called [Hero Engine][hero-eng].
+About a year ago, Dan contacted Jared and me after seeing some of [our games][scripta].  After chatting for a while, the idea came up of creating a game based on Command Line Heroes (isn't the name just begging to be a game?).
 
-Adventure games, we discovered, are very time-consuming to create, *especially* when you start by building an engine from scratch.  To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for [IBM Think][think], the first conference where the game would be presented.
+A few months later, we were neck-deep in code for an adventure game engine called [Hero Engine][hero-eng]. Adventure games, we discovered, are very time-consuming to create, *especially* when you start by building an engine from scratch.  To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for [IBM Think][think], where we would first present the game to the world.
 
 The strategy succeeded, and we were able to put the finishing touches on the game just before Think began.  Here's a bit about Bash @ Think.
 
@@ -71,7 +95,7 @@ Here's what they built for us.
 
 ![Command Line Heroes arcade cabinets](cabs.jpg)
 
-Notice the shout-out to [Open Jam][oj] on the orange side of the cabinets!  If you look closely at the screen, you can spot a few games in the launcher.
+Notice the shout-out to [Open Jam][oj] (our <abbr title="free and open-source software">FOSS</abbr>-themed game jam) on the orange side of the cabinets!  If you look closely at the screen, you can spot a few games in the launcher.
 
  - [CLH Bash][game]
  - [Pity About Earth...][pae]
@@ -111,3 +135,4 @@ Discord link.
 [fleshgod]: https://itch.io/jam/open-jam-2018/rate/314668
 [pae]: http://pae.fun
 [zorb]: https://zorb.io
+[clh-tw]: https://twitter.com/hashtag/commandlinepod?src=hash
