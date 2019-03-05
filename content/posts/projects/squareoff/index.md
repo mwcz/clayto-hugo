@@ -23,7 +23,9 @@ Square Off is a 1v1 airhockey-style game that [Jared][jared] and [I][mwcz]
 built in 72 hours for the [Ludum Dare 35][ld35] game jam. And beacuse it's
 web-based, you can...
 
-<p class="text-center"><a class="btn btn-default btn-lg" href="http://sqoff.com">Play now!</a></p>
+<center style="margin: 60px auto;">
+<a class="pbp-btn" href="http://sqoff.com">Play now!</a>
+</center>
 
 <style>
 .sqoff-grid {
