@@ -39,7 +39,7 @@ hand tracking.
 </video>
 </figure>
 
-Adam, of Maniacal Labs, built the fantastic adjustable Leap Motion mounting arm
+Adam, of [Maniacal Labs][ml], built the fantastic adjustable Leap Motion mounting arm
 shown above. It allowed visitors of any height to participate comfortably and
 worked like a dream.
 
