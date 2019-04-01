@@ -1,5 +1,5 @@
 ---
-Title: "Noise/Echo Cancellation in Fedora (26+)"
+Title: "Noise/Echo Cancellation in Fedora (26-29)"
 thumbnail: thumb.png
 aliases: /2017/10/12/noiseecho-cancellation-in-fedora-26
 Date: 2017-10-12
@@ -7,7 +7,7 @@ Tags:
  -  linux
  -  fedora
  -  audio
-description: "How to enable PulseAudio noise and echo cancellation in Fedora 26, 27, and 28."
+description: "How to enable PulseAudio noise and echo cancellation in Fedora 26-29."
 thumbnail: ./after.jpg
 Mwc: 48
 ---
@@ -32,8 +32,11 @@ If you're in a rush, here's a script that will set everything up for you.
 sudo dnf install -y webrtc-audio-processing
 echo '.nofail' | sudo tee -a /etc/pulse/default.pa
 echo 'load-module module-echo-cancel aec_method=webrtc' | sudo tee -a /etc/pulse/default.pa
+echo '.fail' | sudo tee -a /etc/pulse/default.pa
 pulseaudio -k
 ```
+
+Your noise-cancelled input device should now be available.  If it disappears when you reboot, see the [missing input device addendum][#startup-addendum].
 
 ---
 
@@ -50,6 +53,7 @@ Then add these two lines to the end of `/etc/pulse/default.pa`.
 ```sh
 .nofail
 load-module module-echo-cancel aec_method=webrtc
+.fail
 ```
 
 Then restart PulseAudio.
@@ -76,6 +80,27 @@ Select the device that says "echo cancelled" and your audio background hiss shou
         <figcaption>Spectrum analysis <b>with</b> noise cancellation.</figcaption>
     </figure>
 </div>
+
+# Missing input device addendum
+
+After using this trick for the past few Fedora releases, I've been stumped by why the noise-cancelled input device doesn't automatically show up after a fresh boot.  I always have to run `pulseaudio -k` manually after rebooting to get the device to appear.
+
+I haven't found a solution for the core problem yet, but a workaround is to automatically restart PulseAudio upon loggin in.  Here's a script which sets that up.
+
+```sh
+mkdir -p ~/.config/autostart
+cat > ~/.config/autostart/restart-pulseaudio.desktop << EOF
+[Desktop Entry]
+Comment=Kill pulseaudio to trigger automatic restart, so that my config will be loaded properly.  I don't know why.
+Terminal=false
+Name=Restart PulseAudio
+Exec=bash -c "pulseaudio -k"
+Type=Application
+EOF
+```
+
+Good luck!  I hope this advice *is sound*.
+
 
 [fedora]: https://getfedora.org/
 [breddy]: https://chrisbredesen.com/
