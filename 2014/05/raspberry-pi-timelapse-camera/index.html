@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.50" /><link
+  <meta name="generator" content="Hugo 0.54.0" /><link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -137,31 +137,35 @@
 
 <article class="pbp-article">
 
-    <div class="pbp-article-meta">
-        <time datetime="2014-05-15T00:00:00Z">
-          May 15, 2014
-        </time>
-        <span class="pbp-blue">&middot;</span>
-        2 minute read
-        <br>
-      <span class="pbp-article-tags">
-        
-        <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
-        
-        <a href="https://clayto.com/tags/raspberry-pi" class="c-tag">#raspberry pi</a>
-        
-        <a href="https://clayto.com/tags/photography" class="c-tag">#photography</a>
-        
-        <a href="https://clayto.com/tags/timelapse" class="c-tag">#timelapse</a>
-        
-        <a href="https://clayto.com/tags/camera" class="c-tag">#camera</a>
-        
-      </span>
-    </div>
-
   <header>
     <h1>Raspberry Pi Timelapse Camera</h1>
   </header>
+
+  
+
+  <div class="pbp-article-meta">
+    <time datetime="2014-05-15T00:00:00Z">
+      May 15, 2014
+    </time>
+    
+    <span class="pbp-blue">&middot;</span>
+    2 minute read
+    <br>
+    <span class="pbp-article-tags">
+      
+      <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+      
+      <a href="https://clayto.com/tags/raspberry-pi" class="c-tag">#raspberry pi</a>
+      
+      <a href="https://clayto.com/tags/photography" class="c-tag">#photography</a>
+      
+      <a href="https://clayto.com/tags/timelapse" class="c-tag">#timelapse</a>
+      
+      <a href="https://clayto.com/tags/camera" class="c-tag">#camera</a>
+      
+    </span>
+  </div>
+
   
   
   <section>
@@ -207,8 +211,8 @@ getting bumped several times.  Lesson learned: make sure</p>
 <p>Doing some modulo math on the epoch times made isolating the dark hours easy.
 Since Epoch time is measured in seconds, all we need to know is the number of
 seconds in a minute, hour, and day.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># number of seconds in a minute/hour/day
-</span><span style="color:#75715e"></span>minute <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># number of seconds in a minute/hour/day</span>
+minute <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>
 hour   <span style="color:#f92672">=</span> <span style="color:#ae81ff">3600</span>
 day    <span style="color:#f92672">=</span> <span style="color:#ae81ff">86400</span></code></pre></div>
 <p>Now that we have those values, we can play around with <a href="https://en.wikipedia.org/wiki/Modulo_operation">modulo</a> math to find some cool stuff.</p>
