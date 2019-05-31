@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web Components on clayto</title>
+    <title>web-components on clayto</title>
     <link>https://clayto.com/tags/web-components/</link>
-    <description>Recent content in Web Components on clayto</description>
+    <description>Recent content in web-components on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Sep 2016 00:00:00 +0000</lastBuildDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Requirejs on clayto</title>
+    <title>requirejs on clayto</title>
     <link>https://clayto.com/tags/requirejs/</link>
-    <description>Recent content in Requirejs on clayto</description>
+    <description>Recent content in requirejs on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Oct 2014 00:00:00 +0000</lastBuildDate>
