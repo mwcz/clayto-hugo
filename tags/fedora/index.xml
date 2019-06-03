@@ -6,10 +6,20 @@
     <description>Recent content in fedora on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 14:17:57 -0400</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Low-tech Laptop Disk Cloning</title>
+      <link>https://clayto.com/2019/05/low-tech-laptop-disk-cloning/</link>
+      <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
+      
+      <guid>https://clayto.com/2019/05/low-tech-laptop-disk-cloning/</guid>
+      <description>It&amp;rsquo;s a tale as old as time. A nice laptop. A nearby cold beverage. A sickening splash. Thanks to the solid seals on the Carbon, there was no permanent damage, just a very sticky, nearly unusable keyboard. Rather than clean or replace the keyboard, our support desk opted to issue a new laptop.
+That&amp;rsquo;s how I found myself with two identical laptops, one whose SSD had a fully configured OS, and the other with an empty SSD in need of such an OS.</description>
+    </item>
     
     <item>
       <title>Noise/Echo Cancellation in Fedora</title>

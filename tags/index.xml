@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>fedora</title>
+      <link>https://clayto.com/tags/fedora/</link>
+      <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>https://clayto.com/tags/linux/</link>
       <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
@@ -98,15 +107,6 @@
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/audio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fedora</title>
-      <link>https://clayto.com/tags/fedora/</link>
-      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/fedora/</guid>
       <description></description>
     </item>
     

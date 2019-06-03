@@ -17,7 +17,7 @@
    inkscape:export-filename="/home/mclayton/projects/clayto-hugo/themes/palebluepixel/static/images/hr.png"
    inkscape:export-xdpi="25.4"
    inkscape:export-ydpi="25.4"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (unknown)"
    sodipodi:docname="hr.svg">
   <defs
      id="defs2" />
@@ -28,16 +28,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="749.86376"
-     inkscape:cy="31.106214"
+     inkscape:zoom="0.7"
+     inkscape:cx="786.7149"
+     inkscape:cy="56.280873"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-page="true"
      inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1080"
+     inkscape:window-height="1043"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,32 +58,10 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-282)">
-    <rect
-       style="opacity:1;fill:#9c9c9c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect815"
-       width="215.6488"
-       height="1.3999988"
-       x="101.6756"
-       y="288.54828"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4" />
-    <rect
-       y="284.12421"
-       x="3.4594319e-08"
-       height="1.3999988"
-       width="215.6488"
-       id="rect817"
-       style="opacity:1;fill:#9c9c9c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4" />
-    <rect
-       style="opacity:1;fill:#9c9c9c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect819"
-       width="215.6488"
-       height="1.3999988"
-       x="203.3512"
-       y="292.92731"
-       inkscape:export-xdpi="25.4"
-       inkscape:export-ydpi="25.4" />
+    <path
+       style="opacity:1;fill:#646464;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0 24.664062 L 0 29.955078 L 768.57227 29.955078 L 815.05078 29.955078 L 1583.6211 29.955078 L 1583.6211 24.664062 L 815.05078 24.664062 L 768.57227 24.664062 L 0 24.664062 z "
+       transform="matrix(0.26458333,0,0,0.26458333,0,282)"
+       id="rect817" />
   </g>
 </svg>
