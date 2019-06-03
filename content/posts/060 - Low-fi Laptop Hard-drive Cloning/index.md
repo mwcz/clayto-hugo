@@ -1,9 +1,12 @@
 ---
-title: "Low-fi Laptop Disk Cloning"
+title: "Low-tech Laptop Disk Cloning"
 date: 2019-05-31T14:17:57-04:00
 Tags:
- -  linux
+ - linux
+ - fedora
 description: "Using dd and netcat to clone a laptop disk over your local network."
+aliases:
+ - /2019/05/low-fi-laptop-disk-cloning/
 thumbnail: thumb.jpg
 mwc: 60
 ---
@@ -12,7 +15,11 @@ It's a tale as old as time.  A nice laptop.  A nearby cold beverage.  A sickenin
 
 That's how I found myself with two identical laptops, one whose SSD had a fully configured OS, and the other with an empty SSD in need of such an OS.
 
+![image of two X1 Carbon laptops]( ./we-lenovo-thinkpad-x1-carbon-2017-feature1.webp )
+
 To get the old laptop's data onto the new laptop as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two [Fedora](https://getfedora.org/) live USB drives, `dd` and `netcat`.
+
+---
 
 ## Step 0. Preliminary notes
 
@@ -20,11 +27,15 @@ The first thing to note is that this method is not secure (it's unencrypted) and
 
 These steps are unlikely to work if the hardware is not identical.  If the destination disk is even a little bit smaller, things are likely to fail catastrophically.  And if it's larger, you won't have access to that extra space unless you resize your partitions after the image is transferred.
 
-I take no responsibility for the outcome of these instructions.
+I bear no responsibility for the outcome of these instructions.
 
 I make mistakes.  Please read and understand the steps before running any of them.
 
+I wrote this mostly as a note-to-self, but if it helps someone out, great!
+
 One other thing before moving on. A wired network is *far superior* to wireless for what's coming next.
+
+---
 
 ## Step 1. Live OS on both laptops
 
@@ -40,13 +51,15 @@ We'll use these rooted terminals for all following steps.
 
 Now that Fedora live is running on both laptops, we'll set up the destination laptop first.
 
+---
+
 ## Step 2. Prepare the destination laptop to receive the image
 
 On the destination laptop, you'll need two pieces of information to proceed.
 
 ### The destination laptop's *wired* IP address
 
-To find *wired* IP address, use either use `ip addr` or Settings / Network.  Once you find it, go to the *old laptop* and run `export NEW_LAPTOP_IP="1.2.3.4"` where 1.2.3.4 is the IP you found.  Then go back to the destination laptop.
+To find *wired* IP address, use either use `ip addr` or Settings / Network.  Once you find it, go to the *old laptop* and run `export NEW_LAPTOP_IP="1.2.3.4"` but replace `1.2.3.4` with the IP you found.  Then go back to the destination laptop.
 
 ### The path to the disk we're going to write the image onto
 
@@ -81,23 +94,39 @@ export DESTINATION_DISK="/dev/nvme0n1"
 The last step for the destination laptop is to open the door and wait for the image to be sent.
 
 ```
-nc -l 1234 | dd bs=16M of=$DESTINATION_DISK
+nc -l 1234 | dd bs=16M of=$DESTINATION_DISK status=progress
 ```
 
 This starts a netcat server listening on port 1234.  It then pipes any data sent to the netcat server directly onto the disk.  Now we just need to send the data.
 
+---
+
 ## Step 3. Send the image from the old laptop
 
-On the old laptop, we only need one piece of information: the path to the disk.  Use the same `parted -l` command from above to find it.  On my system, it was `/dev/nvme0n1`.
-
-Put the
+On the old laptop, we only need one piece of information: the path to the disk.  Use the same `parted -l` command from above to find it.  On my system, it was `/dev/nvme0n1`.  As before, save this in a variable.
 
 ```
-dd bs=16M if=/dev/nvme0n1 | nc $NEW_LAPTOP_IP 1234
+export SOURCE_DISK=/dev/nvme0n1
 ```
+
+The final step.  This command will send every bit from the old laptop's disk across the network to the new laptop, where the waiting netcat server will write it to the new laptop's disk.
+
+This would be a good point to stop and make sure you understand every step thus far and (above all) make sure you're writing this data to the correct disk.  When you're ready:
+
+```
+dd bs=16M if=$SOURCE_DISK | nc $NEW_LAPTOP_IP 1234
+```
+
+The destination laptop will begin displaying statistics about the data as it streams in.
+
+---
 
 ## Step 4. Rejoice
 
-On my 256 gig disk, this ran at about 110 MiB/s and took only 48 minutes to complete.  This should be a big speed savings over _some_ other methods which compress or encrypt the data.  Since I was operating on a safe network the encryption was unnecessary, and since it was a local network, compression was (probably?) unhelpful.
+On my 256 gig disk, this ran at about 88 MiB/s, roughly 75% of the theoretical max for a 1 Gbps network.  It took took only 48 minutes to complete.
 
-I wrote this mostly as a note-to-self, but if it helps someone out, great!
+![image of the console after transfer completes]( ./complete.jpg )
+
+Having nearly saturated the network, I'm quite sure this was the fastest way I could have cloned the disk using generalized tools.  I'm sure there are faster ways with specialized hardware or software, but who has time for that?
+
+Happy cloning.
