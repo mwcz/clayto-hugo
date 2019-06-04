@@ -193,14 +193,14 @@
 
 <h2 id="step-1-live-os-on-both-laptops">Step 1. Live OS on both laptops</h2>
 
-<p>First, I grabbed two USB thumb drives, <a href="https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media">put a Fedora live system</a> on them, and booted up both laptops from the thumb drives.</p>
+<p>First, grab two USB thumb drives, <a href="https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media">put a Fedora live system</a> on them, and boot up both laptops from the thumb drives.</p>
 
 <p>Once Fedora live is booted up, open a terminal on each laptop and run:</p>
 
 <pre><code>sudo -i
 </code></pre>
 
-<p>We&rsquo;ll use these rooted terminals for all following steps.</p>
+<p>Use these rooted terminals for all following steps.</p>
 
 <p>Now that Fedora live is running on both laptops, we&rsquo;ll set up the destination laptop first.</p>
 
@@ -208,7 +208,7 @@
 
 <h2 id="step-2-prepare-the-destination-laptop-to-receive-the-image">Step 2. Prepare the destination laptop to receive the image</h2>
 
-<p>On the destination laptop, you&rsquo;ll need two pieces of information to proceed.</p>
+<p>On the destination laptop, gather two pieces of information, the destination laptop&rsquo;s IP and the path to the disk.</p>
 
 <h3 id="the-destination-laptop-s-wired-ip-address">The destination laptop&rsquo;s <em>wired</em> IP address</h3>
 
@@ -274,7 +274,7 @@ Number  Start   End     Size    Type     File system  Flags
 
 <p><img src="./complete.jpg" alt="image of the console after transfer completes" /></p>
 
-<p>Having nearly saturated the network, I&rsquo;m quite sure this was the fastest way I could have cloned the disk using generalized tools.  I&rsquo;m sure there are faster ways with specialized hardware or software, but who has time for that?</p>
+<p>Having nearly saturated the network, I&rsquo;m quite sure this was the fastest way I could have cloned the disk using generalized tools.  I&rsquo;m sure there are faster ways with specialized hardware or software, but who has time for that?  I do wonder whether using compression would have increased the overall speed, or instead created a new CPU/RAM bottleneck.</p>
 
 <p>Happy cloning.</p>
 
