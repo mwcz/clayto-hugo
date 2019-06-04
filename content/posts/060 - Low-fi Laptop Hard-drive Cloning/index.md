@@ -39,7 +39,7 @@ One other thing before moving on. A wired network is *far superior* to wireless 
 
 ## Step 1. Live OS on both laptops
 
-First, I grabbed two USB thumb drives, [put a Fedora live system](https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media) on them, and booted up both laptops from the thumb drives.
+First, grab two USB thumb drives, [put a Fedora live system](https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media) on them, and boot up both laptops from the thumb drives.
 
 Once Fedora live is booted up, open a terminal on each laptop and run:
 
@@ -47,7 +47,7 @@ Once Fedora live is booted up, open a terminal on each laptop and run:
 sudo -i
 ```
 
-We'll use these rooted terminals for all following steps.
+Use these rooted terminals for all following steps.
 
 Now that Fedora live is running on both laptops, we'll set up the destination laptop first.
 
@@ -55,7 +55,7 @@ Now that Fedora live is running on both laptops, we'll set up the destination la
 
 ## Step 2. Prepare the destination laptop to receive the image
 
-On the destination laptop, you'll need two pieces of information to proceed.
+On the destination laptop, gather two pieces of information, the destination laptop's IP and the path to the disk.
 
 ### The destination laptop's *wired* IP address
 
@@ -127,6 +127,6 @@ On my 256 gig disk, this ran at about 88 MiB/s, roughly 75% of the theoretical m
 
 ![image of the console after transfer completes]( ./complete.jpg )
 
-Having nearly saturated the network, I'm quite sure this was the fastest way I could have cloned the disk using generalized tools.  I'm sure there are faster ways with specialized hardware or software, but who has time for that?
+Having nearly saturated the network, I'm quite sure this was the fastest way I could have cloned the disk using generalized tools.  I'm sure there are faster ways with specialized hardware or software, but who has time for that?  I do wonder whether using compression would have increased the overall speed, or instead created a new CPU/RAM bottleneck.
 
 Happy cloning.
