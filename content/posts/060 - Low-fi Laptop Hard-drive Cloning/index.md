@@ -123,7 +123,7 @@ The destination laptop will begin displaying statistics about the data as it str
 
 ## Step 4. Rejoice
 
-On my 256 gig disk, this ran at about 88 MiB/s, roughly 75% of the theoretical max for a 1 Gbps network.  It took took only 48 minutes to complete.
+On my 256 gig disk, this ran at about 88 MiB/s, roughly 75% of the theoretical max for a 1 Gbps network.  It took only 48 minutes to complete.
 
 ![image of the console after transfer completes]( ./complete.jpg )
 
