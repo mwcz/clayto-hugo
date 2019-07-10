@@ -238,12 +238,12 @@ Number  Start   End     Size    Type     File system  Flags
 
 <p>Put it into an environment variable.</p>
 
-<pre><code>export DESTINATION_DISK=&quot;/dev/nvme0n1&quot;
+<pre><code>export DEST_DISK=&quot;/dev/nvme0n1&quot;
 </code></pre>
 
 <p>The last step for the destination laptop is to open the door and wait for the image to be sent.</p>
 
-<pre><code>nc -l 1234 | dd bs=16M of=$DESTINATION_DISK status=progress
+<pre><code>nc -l 1234 | dd bs=16M of=$DEST_DISK status=progress
 </code></pre>
 
 <p>This starts a netcat server listening on port 1234.  It then pipes any data sent to the netcat server directly onto the disk.  Now we just need to send the data.</p>
