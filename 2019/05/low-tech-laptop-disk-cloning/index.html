@@ -171,7 +171,7 @@
 
 <p><img src="./we-lenovo-thinkpad-x1-carbon-2017-feature1.webp" alt="image of two X1 Carbon laptops" /></p>
 
-<p>To get the old laptop&rsquo;s data onto the new laptop as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two <a href="https://getfedora.org/">Fedora</a> live USB drives, <code>dd</code> and <code>netcat</code>.</p>
+<p>To get the source laptop&rsquo;s data onto the destination laptop as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two <a href="https://getfedora.org/">Fedora</a> live USB drives, <code>dd</code> and <code>netcat</code>.</p>
 
 <hr />
 
@@ -212,7 +212,7 @@
 
 <h3 id="the-destination-laptop-s-wired-ip-address">The destination laptop&rsquo;s <em>wired</em> IP address</h3>
 
-<p>To find <em>wired</em> IP address, use either use <code>ip addr</code> or Settings / Network.  Once you find it, go to the <em>old laptop</em> and run <code>export NEW_LAPTOP_IP=&quot;1.2.3.4&quot;</code> but replace <code>1.2.3.4</code> with the IP you found.  Then go back to the destination laptop.</p>
+<p>To find <em>wired</em> IP address, use either use <code>ip addr</code> or Settings / Network.  Once you find it, go to the <em>source laptop</em> and run <code>export DEST_LAPTOP_IP=&quot;1.2.3.4&quot;</code> but replace <code>1.2.3.4</code> with the IP you found.  Then go back to the destination laptop.</p>
 
 <h3 id="the-path-to-the-disk-we-re-going-to-write-the-image-onto">The path to the disk we&rsquo;re going to write the image onto</h3>
 
@@ -250,18 +250,18 @@ Number  Start   End     Size    Type     File system  Flags
 
 <hr />
 
-<h2 id="step-3-send-the-image-from-the-old-laptop">Step 3. Send the image from the old laptop</h2>
+<h2 id="step-3-send-the-image-from-the-source-laptop">Step 3. Send the image from the source laptop</h2>
 
-<p>On the old laptop, we only need one piece of information: the path to the disk.  Use the same <code>parted -l</code> command from above to find it.  On my system, it was <code>/dev/nvme0n1</code>.  As before, save this in a variable.</p>
+<p>On the source laptop, we only need one piece of information: the path to the disk.  Use the same <code>parted -l</code> command from above to find it.  On my system, it was <code>/dev/nvme0n1</code>.  As before, save this in a variable.</p>
 
 <pre><code>export SOURCE_DISK=/dev/nvme0n1
 </code></pre>
 
-<p>The final step.  This command will send every bit from the old laptop&rsquo;s disk across the network to the new laptop, where the waiting netcat server will write it to the new laptop&rsquo;s disk.</p>
+<p>The final step.  This command will send every bit from the source laptop&rsquo;s disk across the network to the destination laptop, where the waiting netcat server will write it to the destination laptop&rsquo;s disk.</p>
 
 <p>This would be a good point to stop and make sure you understand every step thus far and (above all) make sure you&rsquo;re writing this data to the correct disk.  When you&rsquo;re ready:</p>
 
-<pre><code>dd bs=16M if=$SOURCE_DISK | nc $NEW_LAPTOP_IP 1234
+<pre><code>dd bs=16M if=$SOURCE_DISK | nc $DEST_LAPTOP_IP 1234
 </code></pre>
 
 <p>The destination laptop will begin displaying statistics about the data as it streams in.</p>
