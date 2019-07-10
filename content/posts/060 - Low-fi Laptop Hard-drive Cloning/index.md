@@ -17,7 +17,7 @@ That's how I found myself with two identical laptops, one whose SSD had a fully 
 
 ![image of two X1 Carbon laptops]( ./we-lenovo-thinkpad-x1-carbon-2017-feature1.webp )
 
-To get the old laptop's data onto the new laptop as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two [Fedora](https://getfedora.org/) live USB drives, `dd` and `netcat`.
+To get the source laptop's data onto the destination laptop as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two [Fedora](https://getfedora.org/) live USB drives, `dd` and `netcat`.
 
 ---
 
@@ -59,7 +59,7 @@ On the destination laptop, gather two pieces of information, the destination lap
 
 ### The destination laptop's *wired* IP address
 
-To find *wired* IP address, use either use `ip addr` or Settings / Network.  Once you find it, go to the *old laptop* and run `export NEW_LAPTOP_IP="1.2.3.4"` but replace `1.2.3.4` with the IP you found.  Then go back to the destination laptop.
+To find *wired* IP address, use either use `ip addr` or Settings / Network.  Once you find it, go to the *source laptop* and run `export DEST_LAPTOP_IP="1.2.3.4"` but replace `1.2.3.4` with the IP you found.  Then go back to the destination laptop.
 
 ### The path to the disk we're going to write the image onto
 
@@ -101,20 +101,20 @@ This starts a netcat server listening on port 1234.  It then pipes any data sent
 
 ---
 
-## Step 3. Send the image from the old laptop
+## Step 3. Send the image from the source laptop
 
-On the old laptop, we only need one piece of information: the path to the disk.  Use the same `parted -l` command from above to find it.  On my system, it was `/dev/nvme0n1`.  As before, save this in a variable.
+On the source laptop, we only need one piece of information: the path to the disk.  Use the same `parted -l` command from above to find it.  On my system, it was `/dev/nvme0n1`.  As before, save this in a variable.
 
 ```
 export SOURCE_DISK=/dev/nvme0n1
 ```
 
-The final step.  This command will send every bit from the old laptop's disk across the network to the new laptop, where the waiting netcat server will write it to the new laptop's disk.
+The final step.  This command will send every bit from the source laptop's disk across the network to the destination laptop, where the waiting netcat server will write it to the destination laptop's disk.
 
 This would be a good point to stop and make sure you understand every step thus far and (above all) make sure you're writing this data to the correct disk.  When you're ready:
 
 ```
-dd bs=16M if=$SOURCE_DISK | nc $NEW_LAPTOP_IP 1234
+dd bs=16M if=$SOURCE_DISK | nc $DEST_LAPTOP_IP 1234
 ```
 
 The destination laptop will begin displaying statistics about the data as it streams in.
