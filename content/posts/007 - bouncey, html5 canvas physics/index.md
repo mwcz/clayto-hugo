@@ -101,4 +101,5 @@ window.onload = function() {
 <button onclick="paused++;paused%=2;this.textContent=paused?'Play':'Pause'">Pause</button>
 
 An updated (but less colorful) version of bouncey is available
-[here]({filename}/posts/008 - bouncey returns/008 - bouncey returns.md).
+[here]({{< ref "008 - bouncey returns/index.md" >}}).
+

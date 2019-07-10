@@ -13,7 +13,7 @@ aliases: /2011/11/17/bouncey-returns-more-canvas-physics/
 Mwc: 8
 ---
 
-This is a slightly upgraded version of the physics demo I showed in my [last post](/2011/11/17/bouncey---canvas-physics/).
+This is a slightly upgraded version of the physics demo I showed in my [last post]({{< ref "007 - bouncey, html5 canvas physics/index.md" >}}).
 
 It is still...
 

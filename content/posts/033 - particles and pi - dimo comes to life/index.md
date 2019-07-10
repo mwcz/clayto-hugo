@@ -78,7 +78,7 @@ Enjoy these photos from Digital Motion at SPARKcon 2014.
 
 I'm working on a follow-up post, with technical information about the
 implementation. _Update_ it's
-[here]({filename}../034 - the deconstruction of falling particles/034 - the deconstruction of falling particles.md)!
+[here]({{< ref "034 - the deconstruction of falling particles/index.md" >}})!
 
 This (2014) was my first year as a volunteer, but it was a tremendously
 educational and _fun_ experience, so I'll definitely be back next year.
