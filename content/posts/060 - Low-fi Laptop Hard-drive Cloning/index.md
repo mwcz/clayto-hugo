@@ -88,13 +88,13 @@ The bit we're looking for is on the second line, `/dev/nvme0n1`.  If multiple di
 Put it into an environment variable.
 
 ```
-export DESTINATION_DISK="/dev/nvme0n1"
+export DEST_DISK="/dev/nvme0n1"
 ```
 
 The last step for the destination laptop is to open the door and wait for the image to be sent.
 
 ```
-nc -l 1234 | dd bs=16M of=$DESTINATION_DISK status=progress
+nc -l 1234 | dd bs=16M of=$DEST_DISK status=progress
 ```
 
 This starts a netcat server listening on port 1234.  It then pipes any data sent to the netcat server directly onto the disk.  Now we just need to send the data.
