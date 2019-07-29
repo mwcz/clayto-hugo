@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+  
+  <meta property="og:title" content="Web Component Icons" />
+  <meta name="twitter:title" content="Web Component Icons" />
+  
+  <title>Web Component Icons - clayto</title>
+
+  
+  <meta name="description" content="Creating an icon system for PatternFly Elements, using Web Components and SVGs." />
+  <meta property="og:description" content="Creating an icon system for PatternFly Elements, using Web Components and SVGs." />
+  <meta name="twitter:description" content="Creating an icon system for PatternFly Elements, using Web Components and SVGs." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2019/07/web-component-icons/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/2019/07/web-component-icons/thumb.jpg" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2019/07/web-component-icons/thumb.jpg"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.56.1" /><link media="screen"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link media="screen" rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-description">
+    WEB, DEMOS, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+
+  <header>
+    <h1>Web Component Icons</h1>
+  </header>
+
+  
+
+  <div class="pbp-article-meta">
+    <time datetime="2019-07-25T15:11:23-04:00">
+      Jul 25, 2019
+    </time>
+    
+    <span class="pbp-blue">&middot;</span>
+    9 minute read
+    <br>
+    <span class="pbp-article-tags">
+      
+      <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+      
+      <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+      
+      <a href="https://clayto.com/tags/web-components" class="c-tag">#web-components</a>
+      
+      <a href="https://clayto.com/tags/patternfly" class="c-tag">#patternfly</a>
+      
+    </span>
+  </div>
+
+  
+  
+  <section>
+    
+
+<script async type="module" src="./elements/pfe-icon/pfe-icon.min.js"></script>
+
+<p>This is the story of <code>&lt;pfe-icon&gt;</code>, an SVG-based icon <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Component</a> I&rsquo;ve been working on for the <a href="http://patternfly.org/patternfly-elements">PatternFly Elements</a> project.</p>
+
+<p>Before the rambling begins, let&rsquo;s have a <strong>demo</strong>!</p>
+
+<style>
+.icon-panel {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+}
+</style>
+
+<div class="icon-panel">
+<pfe-icon style="--pfe-broadcasted--color--text: #CE393C" size="xl" pfe-icon="rh-aed"></pfe-icon>
+<pfe-icon style="--pfe-broadcasted--color--text: #F39A42" size="xl" pfe-icon="rh-sun"></pfe-icon>
+<pfe-icon style="--pfe-broadcasted--color--text: #56BD58" size="xl" pfe-icon="rh-leaf"></pfe-icon>
+<pfe-icon style="--pfe-broadcasted--color--text: #8E59CB" size="xl" pfe-icon="rh-puzzle-piece"></pfe-icon>
+<pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue)" size="xl" pfe-icon="rh-space-rocket"></pfe-icon>
+</div>
+
+<hr />
+
+
+  <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#implementation-summary">Implementation summary</a>
+<ul>
+<li><a href="#the-tag">The tag</a></li>
+<li><a href="#icon-sets">Icon sets</a></li>
+<li><a href="#svg-injection-method">SVG injection method</a></li>
+<li><a href="#icon-coloring">Icon coloring</a></li>
+</ul></li>
+<li><a href="#all-about-icon-sets">All about icon sets</a>
+<ul>
+<li><a href="#parseiconname">parseIconName</a></li>
+<li><a href="#organizing-icon-sets">Organizing icon sets</a></li>
+</ul></li>
+<li><a href="#discarded-methods-for-including-svgs">Discarded methods for including SVGs</a>
+<ul>
+<li><a href="#lt-use-gt">&lt;use&gt;</a></li>
+<li><a href="#fetch-and-make-copies">fetch and make copies</a></li>
+<li><a href="#css-background-image">CSS background-image</a></li>
+</ul></li>
+<li><a href="#svg-lt-image-gt-saves-the-day">SVG &lt;image&gt; saves the day</a></li>
+<li><a href="#performance">Performance</a>
+<ul>
+<li><a href="#icon-size">Icon size</a></li>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#lighthouse">Lighthouse</a></li>
+</ul></li>
+<li><a href="#browser-support">Browser support</a>
+<ul>
+<li><a href="#puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</a></li>
+</ul></li>
+<li><a href="#recap">Recap</a></li>
+</ul></li>
+</ul>
+</nav>
+
+
+
+<hr />
+
+<h2 id="features">Features</h2>
+
+<ol>
+<li><strong>On-demand icon loading</strong></li>
+<li><strong>No CORS restrictions</strong></li>
+<li><strong>Icon coloring</strong></li>
+<li><strong>Minimal syntax</strong></li>
+<li><strong>Icon sets</strong></li>
+</ol>
+
+<hr />
+
+<h2 id="implementation-summary">Implementation summary</h2>
+
+<h3 id="the-tag">The tag</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">pfe-icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-server&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
+<p>It&rsquo;s not as concise as I would have liked, but still, not <em>too</em> bad.</p>
+
+<p>Pretty concise.  I would have preferred the attribute be simply <code>icon</code>, but our project, PatternFly Elements, has a convention of prefixing all custom attributes with <code>pfe-</code> so that it&rsquo;s clear which attributes belong to our components, versus standard HTML attributes.  Still, it&rsquo;s not <em>too</em> long or confusion, so goal 4 achieved.</p>
+
+<p>Goal 4 semi-achieved!</p>
+
+<h3 id="icon-sets">Icon sets</h3>
+
+<p>pfe-icon looks at the icon name, <code>rh-server</code>.  The <code>rh</code> represents the name of an icon set.  The first <code>-</code> in an icon name separates the namespace from the rest of the icon name.  For example, the name <code>rh-construction-hard-hat</code> represents icon <code>construction-hard-hat</code> inside an icon set named <code>rh</code>.  Namespaces (goal 5) achieved.</p>
+
+<p>At this point, pfe-icon knows the names of the icon set and the icon, but doesn&rsquo;t know yet where to get the SVG.  That&rsquo;s where icon sets come in.  When defining an icon set, you provide three bits of information, the set name, a base path to the SVG library, and a parseIconName function which transforms icon names into an SVG&rsquo;s URL.  <a href="#all-about-icon-sets">More about icon sets</a>.</p>
+
+<h3 id="svg-injection-method">SVG injection method</h3>
+
+<p>To actually get the icon onto the page, the SVG URL is placed into a SVG <code>&lt;image&gt;</code> element&rsquo;s <code>xlink:href</code> attribute.  There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  More about <a href="#discarded-methods-for-including-svgs">other SVG injection methods</a>.</p>
+
+<h3 id="icon-coloring">Icon coloring</h3>
+
+<p>The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like <code>svg { fill: blue }</code>.  However, since we&rsquo;re including the SVGs remotely (via <code>&lt;image xlink:href=&quot;URL&quot;&gt;</code>), they can&rsquo;t be affected by the <code>fill</code> property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for <a href="#svg-filters-for-coloring">coloring</a>.</p>
+
+<p>That&rsquo;s it for the summary!  Below are more thorough explanations of each part of the implementation.</p>
+
+<hr />
+
+<h2 id="all-about-icon-sets">All about icon sets</h2>
+
+<p>Icon sets are designed so that <code>&lt;pfe-icon&gt;</code> can be used with any set of SVGs, no matter what directory structure or naming conventions are used.</p>
+
+<p>Here&rsquo;s an example of defining an icon set.  Let&rsquo;s say we have a bunch of SVG files hosted at <code>https://mycdn.com/svgs</code>. Listing the <code>svgs</code> directory would look like this:</p>
+
+<pre><code>https://mycdn.com/svgs/
+├── horse.svg
+├── battery.svg
+├── staple.svg
+└── coconut.svg
+</code></pre>
+
+<p>Just for fun, let&rsquo;s give this icon set the name &ldquo;ico&rdquo;.  With all that established, here&rsquo;s how the icon set can be defined for use with pfe-icon.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">PfeIcon</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@patternfly/pfe-icon&#34;</span>;
+
+<span style="color:#a6e22e">PfeIcon</span>.<span style="color:#a6e22e">addIconSet</span>(
+    <span style="color:#e6db74">&#34;ico&#34;</span>,
+    <span style="color:#e6db74">&#34;https://mycdn.com/svgs&#34;</span>,
+    (<span style="color:#a6e22e">icon</span>, <span style="color:#a6e22e">set</span>, <span style="color:#a6e22e">path</span>) =&gt; <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">icon</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
+);
+</code></pre></div>
+<p>Here are the arguments for the <code>addIconSet</code> function.</p>
+
+<table>
+<thead>
+<tr>
+<th>arg name</th>
+<th>arg type</th>
+<th>arg description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>set name</td>
+<td>String</td>
+<td>the name of your icon set (cannot contain hyphens)</td>
+</tr>
+
+<tr>
+<td>set path</td>
+<td>String (a URL)</td>
+<td>a fully qualified URL to the base directory of an SVG library</td>
+</tr>
+
+<tr>
+<td>parseIconName</td>
+<td>Function</td>
+<td>a function that accepts (iconName, setName, setPath) and returns a URL to an SVG</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="parseiconname">parseIconName</h3>
+
+<p>In the example above, the parseIconName function is fairly simple, just stitching together <code>path</code>, <code>icon</code> and <code>.svg</code>.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the parseIconName function, with the aim of retaining goal 4 (minimal syntax).  Goal 5 achieved.</p>
+
+<h3 id="organizing-icon-sets">Organizing icon sets</h3>
+
+<p>Many icon libraries sort icons into logical sets.  Sets like &ldquo;social network logos&rdquo; or &ldquo;road signs&rdquo; are useful when searching for a specific icon.  However, when a logical set is bundled together, you wind up including a font on your page which includes <em>every</em> social network logo.</p>
+
+<p>To avoid that, pfe-icon decouples <strong>logical sets</strong> from <strong>delivery bundles</strong>.  That&rsquo;s the main idea behind goal 1, and many of the implementation decisions (like not using a font to deliver icons).  Also, new icons should be put into the most logical set, without having to weigh how large the set is.  You should never be tempted to create a new, <em>illogical</em> set, just to keep bundle size down.</p>
+
+<hr />
+
+<h2 id="discarded-methods-for-including-svgs">Discarded methods for including SVGs</h2>
+
+<p>There are a plethora of ways to put SVGs onto a page.  Here are all the alternatives I considered when implementing pfe-icon, and the reasoning why I moved on from each.</p>
+
+<h3 id="lt-use-gt">&lt;use&gt;</h3>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use">&lt;use&gt;</a> is an SVG element which clones an existing SVG.  Simply specify the <code>id</code> of the SVG you want to clone, and the <em>use</em> element will become a copy of it.</p>
+
+<p><em>use</em> comes in two flavors, local and remotes.</p>
+
+<p><strong>local</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
+    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
+<p><strong>remote</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
+    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://mycdn.com/icons/icon.svg#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
+<p>Predictably, the local version finds an SVG with <code>id=&quot;id-to-copy&quot;</code> that already exists on the page, while the remote version fetches an SVG, finds <code>id=&quot;id-to-copy&quot;</code> within it, and clones that.</p>
+
+<p>While <em>use</em> could be a good fit for some icon libraries, I gave up on it after finding that it has the most extreme flavor of the same-origin policy I&rsquo;ve ever seen.  Don&rsquo;t reach for that <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a> cheat-sheet.  There is no <code>Access-Control</code> header that will allow a cross-origin SVG to be loaded with <em>use</em>.  Any SVG hosted on a different origin will fail, period, and there is no workaround.</p>
+
+<p>That restriction was too limiting.  We want anyone to be able to drop <code>&lt;pfe-icon&gt;</code> onto a page and use our built-in icons immediately, without having to go to great lengths to get the SVGs available on their origin.</p>
+
+<p>Additionally, the same-origin restriction makes it impossible to serve SVGs from a CDN, which is a deal-breaker.</p>
+
+<h3 id="fetch-and-make-copies">fetch and make copies</h3>
+
+<p>This approach involves making a request for the SVG with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a>, then injecting the SVG&rsquo;s text into the page with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a> (or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML">insertAdjacentHTML</a>).</p>
+
+<p>This method functions, but wasn&rsquo;t very promising. One reason is that fetching text requires <code>Access-Control</code> headers for cross-origin requests.  While that&rsquo;s easier to digest than <em>use</em>&rsquo;s outright ban on cross-origin requests, it&rsquo;s still too much to ask of pfe-icon&rsquo;s users.</p>
+
+<p>Another reason this method wasn&rsquo;t promising is that it seemed very inefficient to inject the same SVG text over and over.  Instead, injecting the SVG once and then using <a href="#lt-use-gt"><em>use</em></a> to clone it should be quite efficient, but the CORS requirements alone made it easy to move on.</p>
+
+<h3 id="css-background-image">CSS background-image</h3>
+
+<p>This is the approach I spent the most time on, since it seemed by far the most promising.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://mycdn.com/svgs/rh-server.svg&#34;</span><span style="color:#f92672">);</span></code></pre></div>
+<p>This approach has all the same pros and cons as using a an <code>&lt;img&gt;</code> tag.  We can consider them equivalent methods.</p>
+
+<p>With this method, SVGs can be pulled from any origin.</p>
+
+<p>One minor drawback is that SVG spritesheets aren&rsquo;t supported.  In other words, each SVG file must contain only a single icon.  That fits perfectly with our goal 1, but some icon libraries may wish to deliver icons in bulk sets (though I personally don&rsquo;t recommend it).</p>
+
+<p>A more major drawback is that applying color to the icons is not as straightforward.  With a plain old SVG you can set a color with CSS: <code>fill: red</code>.That only works when the SVG element is in the DOM, but not when it&rsquo;s relegated to a background image.  I was stumped until I came across SVG filters (specifically <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood">feFlood</a>), which can also be applied with CSS and had astonishingly good browser support.</p>
+
+<p>To my consternation, while SVG filters worked perfectly for coloring background-image SVGs in all the browsers we care about, they did <em>not</em> work when used inside a Web Component.  The shadow DOM boundary breaks SVG filters in Edge, IE11, and all versions of Safari.</p>
+
+<hr />
+
+<h2 id="svg-lt-image-gt-saves-the-day">SVG &lt;image&gt; saves the day</h2>
+
+<p>After Safari&rsquo;s incompatibility forced me to move on from the most promising method (<a href="#css-background-image">CSS background image</a>), I was stumped.  If SVG filters couldn&rsquo;t work inside Safari&rsquo;s Web Component implementation, would I have to give up and start from scratch?</p>
+
+<p>I had some hunches about why SVG filters don&rsquo;t work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its <code>id</code>.  Perhaps it was doing a naive <code>document.body.getElementById</code> rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.</p>
+
+<p>Anyway, I figured that if those hunches were true, the problem would disappear if the <code>&lt;filter&gt;</code> and the icon existed inside the same SVG element.  That led me to <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image"><code>&lt;image&gt;</code></a>, and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.</p>
+
+<hr />
+
+<h2 id="performance">Performance</h2>
+
+<p>Theoretically, performance should be very good due to fetching only the icons in use.  Theory doesn&rsquo;t always pan out though, so here are some reasons to feel optimistic about pfe-icon performance.</p>
+
+<h3 id="icon-size">Icon size</h3>
+
+<p>The built-in icons are in the 0.5-1.5 kB range (gzipped). Pretty <small>small</small>.</p>
+
+<h3 id="http">HTTP</h3>
+
+<p>In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been a firm <strong>No</strong>, but HTTP/2 has changed that rule of thumb.</p>
+
+<p>I ran a test on a sample page with 291 icons.  These HTTP request visualizations tell the story pretty well.</p>
+
+<figure>
+<img alt="Noisy visualization of HTTP/1.1 requests for 291 icons." src="./http1.png">
+<figcaption>HTTP/1.1</figcaption>
+</figure>
+
+<figure>
+<img alt="Quiet visualization of HTTP/2 requests for 291 icons." src="./http2.png">
+<figcaption>HTTP/2</figcaption>
+</figure>
+
+<p>Apps that import and bundle icons during a build will probably still beat out pfe-icon, but I&rsquo;m okay with that.  As a Web Component, pfe-icon can work anywhere, whereas build-time icons are less portable.</p>
+
+<h3 id="lighthouse">Lighthouse</h3>
+
+<p>As for hard numbers, I ran a few quick <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> tests on the sample page with 291 icons.  The results are very promising: <sup>98</sup>&frasl;<sub>100</sub>.</p>
+
+<p>These don&rsquo;t capture every performance metric, so more testing would be good to have.</p>
+
+<hr />
+
+<h2 id="browser-support">Browser support</h2>
+
+<p>Browser support is very good.  However, icon coloring doesn&rsquo;t work in Microsoft browsers (IE11 and Edge), so those browsers get monochrome icons.</p>
+
+<p><img src="https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png" alt="browser support thumbnails" /></p>
+
+<p>You can scan the full <a href="https://imgur.com/a/waA2ssx">gallery of screenshots</a>.</p>
+
+<h3 id="puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</h3>
+
+<p>Something puzzling to note&hellip; while icon coloring doesn&rsquo;t work in Edge, it <em>did</em>.  I have a screenshot of colored icons in Edge on day I discovered the <code>&lt;image&gt;</code> method, but the next day it no longer worked.  I spent an entire day <a href="https://git-scm.com/docs/git-bisect">bisecting</a> my commits, trying to figure out what changed, with no luck.  My best guess is that a different version of ShadyCSS made the difference.</p>
+
+<hr />
+
+<h2 id="recap">Recap</h2>
+
+<p>Icon sets are namespaced and can support any collection of SVGs by providing a custom <a href="#parseiconname">parseIconName</a> function, which maps concise icon names to URLs where each SVG can be found.</p>
+
+<p>CORS issues are avoided by including SVGs as images, via the SVG <code>&lt;image&gt;</code> element.</p>
+
+<p>Icons are colored with an SVG <code>&lt;filter&gt;</code> element, and colors can be passed in with a CSS variable.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/05/cee-tribe-display/">CEE Tribe Display</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A game for Red Hat Summit.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2018-05-18T00:00:00Z">
+      May 18, 2018
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/05/cee-tribe-display/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2018/05/cee-tribe-display/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/05/engage/">Engage</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A game for Red Hat Summit.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2018-05-04T00:00:00Z">
+      May 4, 2018
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/05/engage/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2018/05/engage/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/04/open-jam-workshop/">Open Jam Workshop</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A hands-on workshop about open-source game development we gave at the East Coast Game Conference.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2018-04-17T00:00:00Z">
+      Apr 17, 2018
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/04/open-jam-workshop/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2018/04/open-jam-workshop/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/">Visualizing Machine Learning with WebGL</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Building a WebGL particle system to visualize machine learning.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2018-03-14T00:00:00Z">
+      Mar 14, 2018
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/10/popup-showdown/">Popup Showdown</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The least fun game you&rsquo;ll ever play.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-10-07T00:00:00Z">
+      Oct 7, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/10/popup-showdown/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2017/10/popup-showdown/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/10/open-jam/">Open Jam</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A game jam with heart.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-10-06T00:00:00Z">
+      Oct 6, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/10/open-jam/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2017/10/open-jam/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+
