@@ -1,12 +1,13 @@
 ---
-title: "Low-tech Laptop Disk Cloning"
+title: "Low-tech Disk Cloning"
 date: 2019-05-31T14:17:57-04:00
 Tags:
  - linux
  - fedora
-description: "Using dd and netcat to clone a laptop disk over your local network."
+description: "Using dd and netcat to clone a disk over your local network."
 aliases:
  - /2019/05/low-fi-laptop-disk-cloning/
+ - /2019/05/low-tech-laptop-disk-cloning/
 thumbnail: thumb.jpg
 mwc: 60
 ---
@@ -17,7 +18,7 @@ That's how I found myself with two identical laptops, one whose SSD had a fully 
 
 ![image of two X1 Carbon laptops]( ./we-lenovo-thinkpad-x1-carbon-2017-feature1.webp )
 
-To get the source laptop's data onto the destination laptop as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two [Fedora](https://getfedora.org/) live USB drives, `dd` and `netcat`.
+To get the source disk's data onto the destination disk as quickly as possible, I wanted to do a quick and dirty clone without having to learn how to use a new tool, without having to find a large disk to store an intermediary copy of the disk image, and without taking hours and hours to transfer.  With the help of a few StackOverflow posts, I settled on the following solution which makes use of two [Fedora](https://getfedora.org/) live USB drives, `dd` and `netcat`.
 
 ---
 
@@ -37,11 +38,11 @@ One other thing before moving on. A wired network is *far superior* to wireless 
 
 ---
 
-## Step 1. Live OS on both laptops
+## Step 1. Live OS on both machines
 
-First, grab two USB thumb drives, [put a Fedora live system](https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media) on them, and boot up both laptops from the thumb drives.
+First, grab two USB thumb drives, [put a Fedora live system](https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media) on them, and boot up both machines from the thumb drives.
 
-Once Fedora live is booted up, open a terminal on each laptop and run:
+Once Fedora live is booted up, open a terminal on each machine and run:
 
 ```
 sudo -i
@@ -49,17 +50,17 @@ sudo -i
 
 Use these rooted terminals for all following steps.
 
-Now that Fedora live is running on both laptops, we'll set up the destination laptop first.
+Now that Fedora live is running on both machines, we'll set up the destination machine first.
 
 ---
 
-## Step 2. Prepare the destination laptop to receive the image
+## Step 2. Prepare the destination machine to receive the image
 
-On the destination laptop, gather two pieces of information, the destination laptop's IP and the path to the disk.
+On the destination machine, gather two pieces of information, the destination machine's IP and the path to the disk.
 
-### The destination laptop's *wired* IP address
+### The destination machine's *wired* IP address
 
-To find *wired* IP address, use either use `ip addr` or Settings / Network.  Once you find it, go to the *source laptop* and run `export DEST_LAPTOP_IP="1.2.3.4"` but replace `1.2.3.4` with the IP you found.  Then go back to the destination laptop.
+To find *wired* IP address, use either use `ip addr` or Settings / Network.  Once you find it, go to the *source machine* and run `export DEST_IP="1.2.3.4"` but replace `1.2.3.4` with the IP you found.  Then go back to the destination machine.
 
 ### The path to the disk we're going to write the image onto
 
@@ -91,7 +92,7 @@ Put it into an environment variable.
 export DEST_DISK="/dev/nvme0n1"
 ```
 
-The last step for the destination laptop is to open the door and wait for the image to be sent.
+The last step for the destination machine is to open the door and wait for the image to be sent.
 
 ```
 nc -l 1234 | dd bs=16M of=$DEST_DISK status=progress
@@ -101,23 +102,23 @@ This starts a netcat server listening on port 1234.  It then pipes any data sent
 
 ---
 
-## Step 3. Send the image from the source laptop
+## Step 3. Send the image from the source machine
 
-On the source laptop, we only need one piece of information: the path to the disk.  Use the same `parted -l` command from above to find it.  On my system, it was `/dev/nvme0n1`.  As before, save this in a variable.
+On the source machine, we only need one piece of information: the path to the disk.  Use the same `parted -l` command from above to find it.  On my system, it was `/dev/nvme0n1`.  As before, save this in a variable.
 
 ```
 export SOURCE_DISK=/dev/nvme0n1
 ```
 
-The final step.  This command will send every bit from the source laptop's disk across the network to the destination laptop, where the waiting netcat server will write it to the destination laptop's disk.
+The final step.  This command will send every bit from the source machine's disk across the network to the destination machine, where the waiting netcat server will write it to the destination machine's disk.
 
 This would be a good point to stop and make sure you understand every step thus far and (above all) make sure you're writing this data to the correct disk.  When you're ready:
 
 ```
-dd bs=16M if=$SOURCE_DISK | nc $DEST_LAPTOP_IP 1234
+dd bs=16M if=$SOURCE_DISK | nc $DEST_IP 1234
 ```
 
-The destination laptop will begin displaying statistics about the data as it streams in.
+The destination machine will begin displaying statistics about the data as it streams in.
 
 ---
 
