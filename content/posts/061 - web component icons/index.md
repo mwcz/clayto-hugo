@@ -113,7 +113,7 @@ PfeIcon.addIconSet(
 ```
 Here are the arguments for the `addIconSet` function.
 
-| arg name | arg type | arg description |
+| arg | type | description |
 | --- | --- | --- |
 | set name | String | the name of your icon set (cannot contain hyphens) |
 | set path | String (a URL) | a fully qualified URL to the base directory of an SVG library |
@@ -239,7 +239,7 @@ These don't capture every performance metric, so more testing would be good to h
 
 ## Browser support
 
-Browser support is very good.  However, icon coloring doesn't work in Microsoft browsers (IE11 and Edge), so those browsers get monochrome icons.
+Browser support is very good.  However, icon coloring doesn't work in Microsoft browsers (IE11 and Edge), so pfe-icon falls back to monochrome icons in those browsers.
 
 ![browser support thumbnails][browsers]
 
