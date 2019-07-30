@@ -40,7 +40,7 @@ The atmosphere and storytelling from that game have been rolling around in my mi
 
 ---
 
-# Ludum Dare 39
+## Ludum Dare 39
 
 Jared and I have participated in the Ludum Dare _Jam_ [three][ld35] [whole][ld37] [times][ld38], and we've been growing curious about the _Compo_ (aka, Hard Mode). Jared decided to sit this one out, so I took the opportunity to enter my first Compo, which is an exclusively solo endeavor. The theme was "Running out of power". Without any further ado, here is my game, [In Orange Light][iol].
 
@@ -50,7 +50,7 @@ Jared and I have participated in the Ludum Dare _Jam_ [three][ld35] [whole][ld37
 
 ---
 
-# Day 1, the foundation
+## Day 1, the foundation
 
 With Kentucky Route Zero fresh in my mind, I wanted to branch out from my usual arcade-style game and try to make something a little more moody and atmospheric. Based on the "running out of power" theme, my idea was a survival game where you try to balance scant resources to survive winter in a frigid mountain cabin.
 
@@ -60,22 +60,22 @@ To get the math out of the way, I spent the first day implementing a basic simul
 
 ---
 
-# Day 2, some polish
+## Day 2, some polish
 
 I spent about half of Sunday improving the visuals, and the other half fixing bugs in the simulation I'd created on Saturday.
 
-## Making it mountainous
+### Making it mountainous
 
 Starting with a set of rectangles, and using a photo of the Blue Ridge Mountains as a reference, I tweaked vector paths into something resembling mountains.
 
 <img src="making-mountains.gif">
 
-## Sunrise, day, sunset, night, repeat
+### Sunrise, day, sunset, night, repeat
 
 The plain blue mountains lacked luster, and a day/night cycle seemed like a fitting way to bring them some life.
 
 <style type="text/css" rel="stylesheet">
-#iol-sky-demo > canvas {
+##iol-sky-demo > canvas {
     margin: 0 auto;
 }
 </style>
@@ -86,7 +86,7 @@ I made the mountain sprites greyscale and multiplied them against two very tall,
 
 To see the full sky sunrise and sunset, give [In Orange Light][iol] a play, but don't dismiss the text. That way, time will be paused and you won't starve or freeze.
 
-## Sound effects
+### Sound effects
 
 The game has a few sound effects. The heater's electric hum, the generator's rumble, and the growing, clawing sound of hunger. To create these, I used [BeepBox][bbox], a chiptune music sequencer. It's meant for music, but I was able to coax some sound effects out of it. Here are two of the sound effects, hit `Play` to hear them through the BeepBox synthesizer live on this page.
 
@@ -147,7 +147,7 @@ BeepBox is a very approachable sequencer. Here's what the "generator ran out of 
 
 ---
 
-# Lessons learned
+## Lessons learned
 
 First, working solo is much harder than working on a team, and not only because a team can get more work done. Maintaining the sense of urgency, productivity, and focus was nearly impossible without a co-conspirator.
 

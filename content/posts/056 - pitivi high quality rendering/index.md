@@ -20,9 +20,9 @@ Here are a few steps to dramatically improve the video quality. I'm no expert on
 
 ---
 
-# Steps
+## Steps
 
-## 1. Install x264
+### 1. Install x264
 
 <div class="beside">
 <div>
@@ -37,7 +37,7 @@ Here are a few steps to dramatically improve the video quality. I'm no expert on
 
 ---
 
-## 2. Choose codec: x264enc
+### 2. Choose codec: x264enc
 
 Presuming you have a project ready to render, click _Render_ and select **x264enc** under the _Codec_ dropdown. x264enc is only available if your container format is set to _MP4_.
 
@@ -45,7 +45,7 @@ Presuming you have a project ready to render, click _Render_ and select **x264en
 
 ---
 
-## 3. Select Constant Quantizer encoding
+### 3. Select Constant Quantizer encoding
 
 Just underneath the _Codec_ dropdown is an _Advanced_ button. Click it, and pick the following settings.
 
@@ -56,7 +56,7 @@ Just underneath the _Codec_ dropdown is an _Advanced_ button. Click it, and pick
 
 For more information on what this means, check out this [CRF/CQP][crf] explainer. In the explainer, the term CQP equates to "Constant Quantizer" in PiTiVi, and CRF equates to "Constant Quality". For some reason, I've been unable to get "Constant Quality" to produce good results, even though in theory it should be just as good, with smaller filesize.
 
-## 4. Before & After
+### 4. Before & After
 
 Here's a before & after video showing the quality difference after making these changes.
 

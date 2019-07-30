@@ -38,7 +38,7 @@ though, few would get involved. There would need to be a shared foundation.
 
 {{< toc >}}
 
-# Enter Kimotion
+## Enter Kimotion
 
 [Kimotion][kimotion-web] is a new framework for building interactive art
 exhibits. It will appeal mostly to the Programmer Artist types. Think
@@ -64,14 +64,14 @@ into words how rewarding it is to see so many children and adults enjoy the sum
 of our planning, hard work, and creativity.
 
 <!-- Commented out until a good gallery solution is in place.
-# Gallery
+## Gallery
 
 Here are some photos from SPARKcon X (2015), and setup the night before.
 
 $GALLERY
 -->
 
-# The future
+## The future
 
 What's next for Kimotion? Several SPARKcon attendees had excellent ideas.
 From installing Kimotion in schools to putting a permanent installation in
@@ -91,7 +91,7 @@ I started Kimotion with the hope that it would encourage programmers to use
 their skills to create elegance that everyone can appreciate. If children are
 also encouraged to exercise, I won't complain!
 
-# E Pluribus Unum
+## E Pluribus Unum
 
 I can't express how grateful I am to everyone who contributed to Kimotion
 itself, created mods, and made the Digital Motion exhibit at SPARKcon a huge
@@ -111,7 +111,7 @@ success this year.
 - **Dave Yarwood** : for contribution to docs, great questions, and allllllmost-finished music mod
 - **Rowen Sprague** : for being the official tester
 
-# More information
+## More information
 
 - The News & Observer wrote a [nice article][nando] about SPARKcon including lots of geekSPARK coverage and footage
 - [Kimotion main project page][kimotion-web]
