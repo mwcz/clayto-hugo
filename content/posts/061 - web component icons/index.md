@@ -12,7 +12,10 @@ mwc: 61
 draft: true
 ---
 
-<script defer type="module" src="./elements/pfe-icon/pfe-icon.min.js"></script>
+<script defer src="./custom-elements-es5-adapter.js"></script>
+<script defer src="./webcomponents-loader.js"></script>
+<script defer src="./elements/pfelement/pfelement.umd.min.js"></script>
+<script defer src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
 
 This is the story of `<pfe-icon>`, an SVG-based icon [Web Component][web-components] I've been working on for the [PatternFly Elements][pfe] project.
 
@@ -46,48 +49,47 @@ Before the rambling begins, let's have a **demo**!
  1. **On-demand icon loading**
  2. **No CORS restrictions**
  3. **Icon coloring**
- 4. **Minimal syntax**
+ 4. **Concise syntax**
  5. **Icon sets**
 
 ---
 
-## Implementation summary
+Here's how pfe-icon works, starting with the custom HTML tag, and walking through
 
-### The tag
 
-Here's a typical pfe-tag.
+## The tag
+
+Here's a typical pfe-icon tag.
 
 ```html
 <pfe-icon pfe-icon="rh-server"></pfe-icon>
 ```
 
-It's not as concise as I would have liked, but still, not _too_ bad.
+While this syntax isn't the tersest possible, it's also not needlessly verbose.  I would have preferred the attribute be simply `icon`, but our project, PatternFly Elements, has a convention of prefixing all custom attributes with `pfe-` to indicate  which attributes belong to our components, versus standard HTML attributes.
 
-Pretty concise.  I would have preferred the attribute be simply `icon`, but our project, PatternFly Elements, has a convention of prefixing all custom attributes with `pfe-` so that it's clear which attributes belong to our components, versus standard HTML attributes.  Still, it's not _too_ long or confusion, so goal 4 achieved.
+The icon name, `rh-server`, belongs to an icon set named `rh` and pfe-icon will map the icon name to a URL where an SVG lives.  This mapping allows the icon name to stay nice and terse (much terser than a full URL).
 
-Goal 4 semi-achieved!
+I also would have preferred a self-closing tag, but Custom Elements can't be self-closing (only a small set of [void elements][void] can).
 
+So, while not the pithiest possible syntax, this is the pithiest practical syntax.  Goal 4 semi-achieved.
 
-### Icon sets
+Next let's look more at the icon name, and how it leads to an SVG being displayed.
 
-pfe-icon looks at the icon name, `rh-server`.  The `rh` represents the name of an icon set.  The first `-` in an icon name separates the namespace from the rest of the icon name.  For example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.  Namespaces (goal 5) achieved.
+## Icon sets
 
-At this point, pfe-icon knows the names of the icon set and the icon, but doesn't know yet where to get the SVG.  That's where icon sets come in.  When defining an icon set, you provide three bits of information, the set name, a base path to the SVG library, and a parseIconName function which transforms icon names into an SVG's URL.  [More about icon sets][icon-sets].
+Let's look again at the typical pfe-icon tag from above.
 
-### SVG injection method
+```html
+<pfe-icon pfe-icon="rh-server"></pfe-icon>
+```
 
-To actually get the icon onto the page, the SVG URL is placed into a SVG `<image>` element's `xlink:href` attribute.  There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  More about [other SVG injection methods][discarded].
+pfe-icon looks at the icon name, `rh-server`.  The `rh` represents the name of an icon set.  The first `-` in an icon name separates the *icon set's* name from the *icon's* name.  For example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.  Icon set namespacing (part of goal 5) achieved.
 
-### Icon coloring
-
-The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like `svg { fill: blue }`.  However, since we're including the SVGs remotely (via `<image xlink:href="URL">`), they can't be affected by the `fill` property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for [coloring][coloring].
-
-
-That's it for the summary!  Below are more thorough explanations of each part of the implementation.
+At this point, pfe-icon knows the names of the icon set and the icon, but doesn't know yet where to get the SVG.  That's where icon sets come in.  When defining an icon set, you provide three bits of information, the set name, a base path to the SVG library, and a resolveIconName function which transforms icon names into an SVG's URL.  [More about icon sets][icon-sets].
 
 ---
 
-## All about icon sets
+### Defining a custom icon set
 
 Icon sets are designed so that `<pfe-icon>` can be used with any set of SVGs, no matter what directory structure or naming conventions are used.
 
@@ -109,7 +111,7 @@ import PfeIcon from "@patternfly/pfe-icon";
 PfeIcon.addIconSet(
     "ico",
     "https://mycdn.com/svgs",
-    (icon, set, path) => `${path}/${icon}.svg`
+    (iconName, setName, path) => `${path}/${iconName}.svg`
 );
 ```
 Here are the arguments for the `addIconSet` function.
@@ -118,11 +120,21 @@ Here are the arguments for the `addIconSet` function.
 | --- | --- | --- |
 | set name | String | the name of your icon set (cannot contain hyphens) |
 | set path | String (a URL) | a fully qualified URL to the base directory of an SVG library |
-| parseIconName | Function | a function that accepts (iconName, setName, setPath) and returns a URL to an SVG |
+| resolveIconName | Function | a function that accepts (iconName, setName, setPath) and returns a URL to an SVG |
 
-### parseIconName
+#### resolveIconName
 
-In the example above, the parseIconName function is fairly simple, just stitching together `path`, `icon` and `.svg`.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the parseIconName function, with the aim of retaining goal 4 (minimal syntax).  Goal 5 achieved.
+The heart of pfe-icon's flexibilty is `resolveIconName`.  It is a custom function that you can provide which turns a lucid, human-friendly name like `"rh-puzzle-piece"` into a URL where pfe-icon can fetch an SVG.
+
+```html
+<pfe-icon pfe-icon="rh-puzzle-piece"></pfe-icon>
+```
+
+```js
+(iconName, setName, path) => `${path}/${iconName}.svg`
+```
+
+stitching together `path`, `icon` and `.svg`.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, with the aim of retaining goal 4 (minimal syntax).
 
 ### Organizing icon sets
 
@@ -132,75 +144,35 @@ To avoid that, pfe-icon decouples **logical sets** from **delivery bundles**.  T
 
 ---
 
-## Discarded methods for including SVGs
+## SVG injection method
 
-There are a plethora of ways to put SVGs onto a page.  Here are all the alternatives I considered when implementing pfe-icon, and the reasoning why I moved on from each.
-
-### &lt;use&gt;
-
-[&lt;use&gt;][use] is an SVG element which clones an existing SVG.  Simply specify the `id` of the SVG you want to clone, and the *use* element will become a copy of it.
-
-*use* comes in two flavors, local and remotes.
-
-**local**
+To actually get the icon onto the page, the SVG URL is placed into a SVG `<image>` element's `xlink:href` attribute.  The SVG exists inside pfe-icon's shadow root and looks something like this:
 
 ```svg
-<svg>
-    <use href="#id-to-copy">
-</svg>
-```
-**remote**
-
-```svg
-<svg>
-    <use href="https://mycdn.com/icons/icon.svg#id-to-copy">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <filter id="color-filter" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+    <feFlood result="COLOR" />
+    <feComposite operator="in" in="COLOR" in2="SourceAlpha" />
+  </filter>
+  <image xlink:href="" width="100%" height="100%" filter="url(#color-filter)"></image>
 </svg>
 ```
 
-Predictably, the local version finds an SVG with `id="id-to-copy"` that already exists on the page, while the remote version fetches an SVG, finds `id="id-to-copy"` within it, and clones that.
 
-While *use* could be a good fit for some icon libraries, I gave up on it after finding that it has the most extreme flavor of the same-origin policy I've ever seen.  Don't reach for that [CORS][cors] cheat-sheet.  There is no `Access-Control` header that will allow a cross-origin SVG to be loaded with *use*.  Any SVG hosted on a different origin will fail, period, and there is no workaround.
-
-That restriction was too limiting.  We want anyone to be able to drop `<pfe-icon>` onto a page and use our built-in icons immediately, without having to go to great lengths to get the SVGs available on their origin.
-
-Additionally, the same-origin restriction makes it impossible to serve SVGs from a CDN, which is a deal-breaker.
-
-### fetch and make copies
-
-This approach involves making a request for the SVG with [fetch][fetch], then injecting the SVG's text into the page with [innerHTML][innerhtml] (or [insertAdjacentHTML][insert-adjacent]).
-
-This method functions, but wasn't very promising. One reason is that fetching text requires `Access-Control` headers for cross-origin requests.  While that's easier to digest than *use*'s outright ban on cross-origin requests, it's still too much to ask of pfe-icon's users.
-
-Another reason this method wasn't promising is that it seemed very inefficient to inject the same SVG text over and over.  Instead, injecting the SVG once and then using [_use_][use-method] to clone it should be quite efficient, but the CORS requirements alone made it easy to move on.
-
-### CSS background-image
-
-This is the approach I spent the most time on, since it seemed by far the most promising.
-
-```css
-background-image: url("https://mycdn.com/svgs/rh-server.svg");
-```
-
-This approach has all the same pros and cons as using a an `<img>` tag.  We can consider them equivalent methods.
-
-With this method, SVGs can be pulled from any origin.
-
-One minor drawback is that SVG spritesheets aren't supported.  In other words, each SVG file must contain only a single icon.  That fits perfectly with our goal 1, but some icon libraries may wish to deliver icons in bulk sets (though I personally don't recommend it).
-
-A more major drawback is that applying color to the icons is not as straightforward.  With a plain old SVG you can set a color with CSS: `fill: red`.That only works when the SVG element is in the DOM, but not when it's relegated to a background image.  I was stumped until I came across SVG filters (specifically [feFlood][feflood]), which can also be applied with CSS and had astonishingly good browser support.
-
-To my consternation, while SVG filters worked perfectly for coloring background-image SVGs in all the browsers we care about, they did *not* work when used inside a Web Component.  The shadow DOM boundary breaks SVG filters in Edge, IE11, and all versions of Safari.
-
-
----
-
-## SVG &lt;image&gt; saves the day
+There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  More about [other SVG injection methods][discarded].
 
 After Safari's incompatibility forced me to move on from the most promising method ([CSS background image][css-bg]), I was stumped.  If SVG filters couldn't work inside Safari's Web Component implementation, would I have to give up and start from scratch?
 
 I had some hunches about why SVG filters don't work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its `id`.  Perhaps it was doing a naive `document.body.getElementById` rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.
 
 Anyway, I figured that if those hunches were true, the problem would disappear if the `<filter>` and the icon existed inside the same SVG element.  That led me to [`<image>`][svg-image], and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.
+
+## Icon coloring
+
+The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like `svg { fill: blue }`.  However, since we're including the SVGs remotely (via `<image xlink:href="URL">`), they can't be affected by the `fill` property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for [coloring][coloring].
+
+
+That's it for the summary!  Below are more thorough explanations of each part of the implementation.
 
 ---
 
@@ -254,7 +226,7 @@ Something puzzling to note... while icon coloring doesn't work in Edge, it _did_
 
 ## Recap
 
-Icon sets are namespaced and can support any collection of SVGs by providing a custom [parseIconName][parseiconname] function, which maps concise icon names to URLs where each SVG can be found.
+Icon sets are namespaced and can support any collection of SVGs by providing a custom [resolveIconName][resolveiconname] function, which maps concise icon names to URLs where each SVG can be found.
 
 CORS issues are avoided by including SVGs as images, via the SVG `<image>` element.
 
@@ -276,9 +248,10 @@ Icons are colored with an SVG `<filter>` element, and colors can be passed in wi
 [svg-image]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
 [browsers]: https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png
 [browser-gallery]: https://imgur.com/a/waA2ssx
-[parseiconname]: #parseiconname
+[resolveiconname]: #resolveiconname
 [web-components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [font-awesome]: https://fontawesome.com/
 [css-bg]: #css-background-image
 [lighthouse]: https://developers.google.com/web/tools/lighthouse/
 [bisect]: https://git-scm.com/docs/git-bisect
+[void]: https://html.spec.whatwg.org/multipage/syntax.html#void-elements
