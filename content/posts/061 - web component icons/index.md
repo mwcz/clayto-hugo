@@ -1,7 +1,6 @@
 ---
 title: "Web Component Icons"
 date: 2019-07-25T15:11:23-04:00
-categories: Games
 Tags:
  -  web
  -  javascript
@@ -33,7 +32,7 @@ Before the rambling begins, let's have a **demo**!
 <pfe-icon style="--pfe-broadcasted--color--text: #F39A42" size="xl" pfe-icon="rh-sun"></pfe-icon>
 <pfe-icon style="--pfe-broadcasted--color--text: #56BD58" size="xl" pfe-icon="rh-leaf"></pfe-icon>
 <pfe-icon style="--pfe-broadcasted--color--text: #8E59CB" size="xl" pfe-icon="rh-puzzle-piece"></pfe-icon>
-<pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue)" size="xl" pfe-icon="rh-space-rocket"></pfe-icon>
+<pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="xl" pfe-icon="rh-space-rocket"></pfe-icon>
 </div>
 
 ---
@@ -55,6 +54,8 @@ Before the rambling begins, let's have a **demo**!
 ## Implementation summary
 
 ### The tag
+
+Here's a typical pfe-tag.
 
 ```html
 <pfe-icon pfe-icon="rh-server"></pfe-icon>
