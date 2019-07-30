@@ -13,7 +13,7 @@ mwc: 61
 draft: true
 ---
 
-<script async type="module" src="./elements/pfe-icon/pfe-icon.min.js"></script>
+<script defer type="module" src="./elements/pfe-icon/pfe-icon.min.js"></script>
 
 This is the story of `<pfe-icon>`, an SVG-based icon [Web Component][web-components] I've been working on for the [PatternFly Elements][pfe] project.
 
