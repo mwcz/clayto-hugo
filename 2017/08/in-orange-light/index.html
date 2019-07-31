@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.56.1" /><link media="screen"
+  <meta name="generator" content="Hugo 0.56.3" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -197,6 +197,8 @@
 
   <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#ludum-dare-39">Ludum Dare 39</a></li>
 <li><a href="#day-1-the-foundation">Day 1, the foundation</a></li>
 <li><a href="#day-2-some-polish">Day 2, some polish</a>
@@ -206,6 +208,7 @@
 <li><a href="#sound-effects">Sound effects</a></li>
 </ul></li>
 <li><a href="#lessons-learned">Lessons learned</a></li>
+</ul></li>
 </ul>
 </nav>
 
@@ -213,7 +216,7 @@
 
 <hr />
 
-<h1 id="ludum-dare-39">Ludum Dare 39</h1>
+<h2 id="ludum-dare-39">Ludum Dare 39</h2>
 
 <p>Jared and I have participated in the Ludum Dare <em>Jam</em> <a href="http://ludumdare.com/compo/ludum-dare-35/?action=preview&amp;uid=91554">three</a> <a href="http://ludumdare.com/compo/ludum-dare-37/?action=preview&amp;uid=91554">whole</a> <a href="https://ldjam.com/events/ludum-dare/38/pity-about-earth">times</a>, and we&rsquo;ve been growing curious about the <em>Compo</em> (aka, Hard Mode). Jared decided to sit this one out, so I took the opportunity to enter my first Compo, which is an exclusively solo endeavor. The theme was &ldquo;Running out of power&rdquo;. Without any further ado, here is my game, <a href="http://scripta.co/in-orange-light/">In Orange Light</a>.</p>
 
@@ -223,7 +226,7 @@
 
 <hr />
 
-<h1 id="day-1-the-foundation">Day 1, the foundation</h1>
+<h2 id="day-1-the-foundation">Day 1, the foundation</h2>
 
 <p>With Kentucky Route Zero fresh in my mind, I wanted to branch out from my usual arcade-style game and try to make something a little more moody and atmospheric. Based on the &ldquo;running out of power&rdquo; theme, my idea was a survival game where you try to balance scant resources to survive winter in a frigid mountain cabin.</p>
 
@@ -233,22 +236,22 @@
 
 <hr />
 
-<h1 id="day-2-some-polish">Day 2, some polish</h1>
+<h2 id="day-2-some-polish">Day 2, some polish</h2>
 
 <p>I spent about half of Sunday improving the visuals, and the other half fixing bugs in the simulation I&rsquo;d created on Saturday.</p>
 
-<h2 id="making-it-mountainous">Making it mountainous</h2>
+<h3 id="making-it-mountainous">Making it mountainous</h3>
 
 <p>Starting with a set of rectangles, and using a photo of the Blue Ridge Mountains as a reference, I tweaked vector paths into something resembling mountains.</p>
 
 <p><img src="making-mountains.gif"></p>
 
-<h2 id="sunrise-day-sunset-night-repeat">Sunrise, day, sunset, night, repeat</h2>
+<h3 id="sunrise-day-sunset-night-repeat">Sunrise, day, sunset, night, repeat</h3>
 
 <p>The plain blue mountains lacked luster, and a day/night cycle seemed like a fitting way to bring them some life.</p>
 
 <style type="text/css" rel="stylesheet">
-#iol-sky-demo > canvas {
+##iol-sky-demo > canvas {
     margin: 0 auto;
 }
 </style>
@@ -259,7 +262,7 @@
 
 <p>To see the full sky sunrise and sunset, give <a href="http://scripta.co/in-orange-light/">In Orange Light</a> a play, but don&rsquo;t dismiss the text. That way, time will be paused and you won&rsquo;t starve or freeze.</p>
 
-<h2 id="sound-effects">Sound effects</h2>
+<h3 id="sound-effects">Sound effects</h3>
 
 <p>The game has a few sound effects. The heater&rsquo;s electric hum, the generator&rsquo;s rumble, and the growing, clawing sound of hunger. To create these, I used <a href="http://beepbox.co">BeepBox</a>, a chiptune music sequencer. It&rsquo;s meant for music, but I was able to coax some sound effects out of it. Here are two of the sound effects, hit <code>Play</code> to hear them through the BeepBox synthesizer live on this page.</p>
 
@@ -321,7 +324,7 @@
 
 <hr />
 
-<h1 id="lessons-learned">Lessons learned</h1>
+<h2 id="lessons-learned">Lessons learned</h2>
 
 <p>First, working solo is much harder than working on a team, and not only because a team can get more work done. Maintaining the sense of urgency, productivity, and focus was nearly impossible without a co-conspirator.</p>
 

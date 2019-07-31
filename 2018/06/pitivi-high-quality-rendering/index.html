@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.56.1" /><link media="screen"
+  <meta name="generator" content="Hugo 0.56.3" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -176,12 +176,15 @@
 
   <nav id="TableOfContents">
 <ul>
+<li>
+<ul>
 <li><a href="#steps">Steps</a>
 <ul>
 <li><a href="#1-install-x264">1. Install x264</a></li>
 <li><a href="#2-choose-codec-x264enc">2. Choose codec: x264enc</a></li>
 <li><a href="#3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</a></li>
 <li><a href="#4-before-after">4. Before &amp; After</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -190,9 +193,9 @@
 
 <hr />
 
-<h1 id="steps">Steps</h1>
+<h2 id="steps">Steps</h2>
 
-<h2 id="1-install-x264">1. Install x264</h2>
+<h3 id="1-install-x264">1. Install x264</h3>
 
 <div class="beside">
 <div>
@@ -209,7 +212,7 @@
 
 <hr />
 
-<h2 id="2-choose-codec-x264enc">2. Choose codec: x264enc</h2>
+<h3 id="2-choose-codec-x264enc">2. Choose codec: x264enc</h3>
 
 <p>Presuming you have a project ready to render, click <em>Render</em> and select <strong>x264enc</strong> under the <em>Codec</em> dropdown. x264enc is only available if your container format is set to <em>MP4</em>.</p>
 
@@ -217,7 +220,7 @@
 
 <hr />
 
-<h2 id="3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</h2>
+<h3 id="3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</h3>
 
 <p>Just underneath the <em>Codec</em> dropdown is an <em>Advanced</em> button. Click it, and pick the following settings.</p>
 
@@ -230,7 +233,7 @@
 
 <p>For more information on what this means, check out this <a href="https://slhck.info/video/2017/02/24/crf-guide.html">CRF/CQP</a> explainer. In the explainer, the term CQP equates to &ldquo;Constant Quantizer&rdquo; in PiTiVi, and CRF equates to &ldquo;Constant Quality&rdquo;. For some reason, I&rsquo;ve been unable to get &ldquo;Constant Quality&rdquo; to produce good results, even though in theory it should be just as good, with smaller filesize.</p>
 
-<h2 id="4-before-after">4. Before &amp; After</h2>
+<h3 id="4-before-after">4. Before &amp; After</h3>
 
 <p>Here&rsquo;s a before &amp; after video showing the quality difference after making these changes.</p>
 

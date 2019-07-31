@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.56.1" /><link media="screen"
+  <meta name="generator" content="Hugo 0.56.3" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    9 minute read
+    7 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -169,7 +169,13 @@
   <section>
     
 
-<script async type="module" src="./elements/pfe-icon/pfe-icon.min.js"></script>
+<script defer src="./custom-elements-es5-adapter.js"></script>
+
+<script defer src="./webcomponents-loader.js"></script>
+
+<script defer src="./elements/pfelement/pfelement.umd.min.js"></script>
+
+<script defer src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
 
 <p>This is the story of <code>&lt;pfe-icon&gt;</code>, an SVG-based icon <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Component</a> I&rsquo;ve been working on for the <a href="http://patternfly.org/patternfly-elements">PatternFly Elements</a> project.</p>
 
@@ -189,7 +195,7 @@
 <pfe-icon style="--pfe-broadcasted--color--text: #F39A42" size="xl" pfe-icon="rh-sun"></pfe-icon>
 <pfe-icon style="--pfe-broadcasted--color--text: #56BD58" size="xl" pfe-icon="rh-leaf"></pfe-icon>
 <pfe-icon style="--pfe-broadcasted--color--text: #8E59CB" size="xl" pfe-icon="rh-puzzle-piece"></pfe-icon>
-<pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue)" size="xl" pfe-icon="rh-space-rocket"></pfe-icon>
+<pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="xl" pfe-icon="rh-space-rocket"></pfe-icon>
 </div>
 
 <hr />
@@ -200,25 +206,17 @@
 <li>
 <ul>
 <li><a href="#features">Features</a></li>
-<li><a href="#implementation-summary">Implementation summary</a>
-<ul>
 <li><a href="#the-tag">The tag</a></li>
-<li><a href="#icon-sets">Icon sets</a></li>
-<li><a href="#svg-injection-method">SVG injection method</a></li>
-<li><a href="#icon-coloring">Icon coloring</a></li>
-</ul></li>
-<li><a href="#all-about-icon-sets">All about icon sets</a>
+<li><a href="#icon-sets">Icon sets</a>
 <ul>
-<li><a href="#parseiconname">parseIconName</a></li>
+<li><a href="#defining-a-custom-icon-set">Defining a custom icon set</a>
+<ul>
+<li><a href="#resolveiconname">resolveIconName</a></li>
+</ul></li>
 <li><a href="#organizing-icon-sets">Organizing icon sets</a></li>
 </ul></li>
-<li><a href="#discarded-methods-for-including-svgs">Discarded methods for including SVGs</a>
-<ul>
-<li><a href="#lt-use-gt">&lt;use&gt;</a></li>
-<li><a href="#fetch-and-make-copies">fetch and make copies</a></li>
-<li><a href="#css-background-image">CSS background-image</a></li>
-</ul></li>
-<li><a href="#svg-lt-image-gt-saves-the-day">SVG &lt;image&gt; saves the day</a></li>
+<li><a href="#svg-injection-method">SVG injection method</a></li>
+<li><a href="#icon-coloring">Icon coloring</a></li>
 <li><a href="#performance">Performance</a>
 <ul>
 <li><a href="#icon-size">Icon size</a></li>
@@ -244,41 +242,39 @@
 <li><strong>On-demand icon loading</strong></li>
 <li><strong>No CORS restrictions</strong></li>
 <li><strong>Icon coloring</strong></li>
-<li><strong>Minimal syntax</strong></li>
+<li><strong>Concise syntax</strong></li>
 <li><strong>Icon sets</strong></li>
 </ol>
 
 <hr />
 
-<h2 id="implementation-summary">Implementation summary</h2>
+<p>Here&rsquo;s how pfe-icon works, starting with the custom HTML tag, and walking through</p>
 
-<h3 id="the-tag">The tag</h3>
+<h2 id="the-tag">The tag</h2>
+
+<p>Here&rsquo;s a typical pfe-icon tag.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">pfe-icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-server&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
-<p>It&rsquo;s not as concise as I would have liked, but still, not <em>too</em> bad.</p>
+<p>While this syntax isn&rsquo;t the tersest possible, it&rsquo;s also not needlessly verbose.  I would have preferred the attribute be simply <code>icon</code>, but our project, PatternFly Elements, has a convention of prefixing all custom attributes with <code>pfe-</code> to indicate  which attributes belong to our components, versus standard HTML attributes.</p>
 
-<p>Pretty concise.  I would have preferred the attribute be simply <code>icon</code>, but our project, PatternFly Elements, has a convention of prefixing all custom attributes with <code>pfe-</code> so that it&rsquo;s clear which attributes belong to our components, versus standard HTML attributes.  Still, it&rsquo;s not <em>too</em> long or confusion, so goal 4 achieved.</p>
+<p>The icon name, <code>rh-server</code>, belongs to an icon set named <code>rh</code> and pfe-icon will map the icon name to a URL where an SVG lives.  This mapping allows the icon name to stay nice and terse (much terser than a full URL).</p>
 
-<p>Goal 4 semi-achieved!</p>
+<p>I also would have preferred a self-closing tag, but Custom Elements can&rsquo;t be self-closing (only a small set of <a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">void elements</a> can).</p>
 
-<h3 id="icon-sets">Icon sets</h3>
+<p>So, while not the pithiest possible syntax, this is the pithiest practical syntax.  Goal 4 semi-achieved.</p>
 
-<p>pfe-icon looks at the icon name, <code>rh-server</code>.  The <code>rh</code> represents the name of an icon set.  The first <code>-</code> in an icon name separates the namespace from the rest of the icon name.  For example, the name <code>rh-construction-hard-hat</code> represents icon <code>construction-hard-hat</code> inside an icon set named <code>rh</code>.  Namespaces (goal 5) achieved.</p>
+<p>Next let&rsquo;s look more at the icon name, and how it leads to an SVG being displayed.</p>
 
-<p>At this point, pfe-icon knows the names of the icon set and the icon, but doesn&rsquo;t know yet where to get the SVG.  That&rsquo;s where icon sets come in.  When defining an icon set, you provide three bits of information, the set name, a base path to the SVG library, and a parseIconName function which transforms icon names into an SVG&rsquo;s URL.  <a href="#all-about-icon-sets">More about icon sets</a>.</p>
+<h2 id="icon-sets">Icon sets</h2>
 
-<h3 id="svg-injection-method">SVG injection method</h3>
+<p>Let&rsquo;s look again at the typical pfe-icon tag from above.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">pfe-icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-server&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
+<p>pfe-icon looks at the icon name, <code>rh-server</code>.  The <code>rh</code> represents the name of an icon set.  The first <code>-</code> in an icon name separates the <em>icon set&rsquo;s</em> name from the <em>icon&rsquo;s</em> name.  For example, the name <code>rh-construction-hard-hat</code> represents icon <code>construction-hard-hat</code> inside an icon set named <code>rh</code>.  Icon set namespacing (part of goal 5) achieved.</p>
 
-<p>To actually get the icon onto the page, the SVG URL is placed into a SVG <code>&lt;image&gt;</code> element&rsquo;s <code>xlink:href</code> attribute.  There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  More about <a href="#discarded-methods-for-including-svgs">other SVG injection methods</a>.</p>
-
-<h3 id="icon-coloring">Icon coloring</h3>
-
-<p>The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like <code>svg { fill: blue }</code>.  However, since we&rsquo;re including the SVGs remotely (via <code>&lt;image xlink:href=&quot;URL&quot;&gt;</code>), they can&rsquo;t be affected by the <code>fill</code> property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for <a href="#svg-filters-for-coloring">coloring</a>.</p>
-
-<p>That&rsquo;s it for the summary!  Below are more thorough explanations of each part of the implementation.</p>
+<p>At this point, pfe-icon knows the names of the icon set and the icon, but doesn&rsquo;t know yet where to get the SVG.  That&rsquo;s where icon sets come in.  When defining an icon set, you provide three bits of information, the set name, a base path to the SVG library, and a resolveIconName function which transforms icon names into an SVG&rsquo;s URL.  <a href="#all-about-icon-sets">More about icon sets</a>.</p>
 
 <hr />
 
-<h2 id="all-about-icon-sets">All about icon sets</h2>
+<h3 id="defining-a-custom-icon-set">Defining a custom icon set</h3>
 
 <p>Icon sets are designed so that <code>&lt;pfe-icon&gt;</code> can be used with any set of SVGs, no matter what directory structure or naming conventions are used.</p>
 
@@ -297,7 +293,7 @@
 <span style="color:#a6e22e">PfeIcon</span>.<span style="color:#a6e22e">addIconSet</span>(
     <span style="color:#e6db74">&#34;ico&#34;</span>,
     <span style="color:#e6db74">&#34;https://mycdn.com/svgs&#34;</span>,
-    (<span style="color:#a6e22e">icon</span>, <span style="color:#a6e22e">set</span>, <span style="color:#a6e22e">path</span>) =&gt; <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">icon</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
+    (<span style="color:#a6e22e">iconName</span>, <span style="color:#a6e22e">setName</span>, <span style="color:#a6e22e">path</span>) =&gt; <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
 );
 </code></pre></div>
 <p>Here are the arguments for the <code>addIconSet</code> function.</p>
@@ -305,9 +301,9 @@
 <table>
 <thead>
 <tr>
-<th>arg name</th>
-<th>arg type</th>
-<th>arg description</th>
+<th>arg</th>
+<th>type</th>
+<th>description</th>
 </tr>
 </thead>
 
@@ -325,16 +321,19 @@
 </tr>
 
 <tr>
-<td>parseIconName</td>
+<td>resolveIconName</td>
 <td>Function</td>
 <td>a function that accepts (iconName, setName, setPath) and returns a URL to an SVG</td>
 </tr>
 </tbody>
 </table>
 
-<h3 id="parseiconname">parseIconName</h3>
+<h4 id="resolveiconname">resolveIconName</h4>
 
-<p>In the example above, the parseIconName function is fairly simple, just stitching together <code>path</code>, <code>icon</code> and <code>.svg</code>.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the parseIconName function, with the aim of retaining goal 4 (minimal syntax).  Goal 5 achieved.</p>
+<p>The heart of pfe-icon&rsquo;s flexibilty is <code>resolveIconName</code>.  It is a custom function that you can provide which turns a lucid, human-friendly name like <code>&quot;rh-puzzle-piece&quot;</code> into a URL where pfe-icon can fetch an SVG.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">pfe-icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-puzzle-piece&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#a6e22e">iconName</span>, <span style="color:#a6e22e">setName</span>, <span style="color:#a6e22e">path</span>) =&gt; <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
+</code></pre></div>
+<p>stitching together <code>path</code>, <code>icon</code> and <code>.svg</code>.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, with the aim of retaining goal 4 (minimal syntax).</p>
 
 <h3 id="organizing-icon-sets">Organizing icon sets</h3>
 
@@ -344,63 +343,29 @@
 
 <hr />
 
-<h2 id="discarded-methods-for-including-svgs">Discarded methods for including SVGs</h2>
+<h2 id="svg-injection-method">SVG injection method</h2>
 
-<p>There are a plethora of ways to put SVGs onto a page.  Here are all the alternatives I considered when implementing pfe-icon, and the reasoning why I moved on from each.</p>
-
-<h3 id="lt-use-gt">&lt;use&gt;</h3>
-
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use">&lt;use&gt;</a> is an SVG element which clones an existing SVG.  Simply specify the <code>id</code> of the SVG you want to clone, and the <em>use</em> element will become a copy of it.</p>
-
-<p><em>use</em> comes in two flavors, local and remotes.</p>
-
-<p><strong>local</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
-    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+<p>To actually get the icon onto the page, the SVG URL is placed into a SVG <code>&lt;image&gt;</code> element&rsquo;s <code>xlink:href</code> attribute.  The SVG exists inside pfe-icon&rsquo;s shadow root and looks something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;color-filter&#34;</span> <span style="color:#a6e22e">color-interpolation-filters=</span><span style="color:#e6db74">&#34;sRGB&#34;</span> <span style="color:#a6e22e">x=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">y=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">height=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">width=</span><span style="color:#e6db74">&#34;100%&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;feFlood</span> <span style="color:#a6e22e">result=</span><span style="color:#e6db74">&#34;COLOR&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;feComposite</span> <span style="color:#a6e22e">operator=</span><span style="color:#e6db74">&#34;in&#34;</span> <span style="color:#a6e22e">in=</span><span style="color:#e6db74">&#34;COLOR&#34;</span> <span style="color:#a6e22e">in2=</span><span style="color:#e6db74">&#34;SourceAlpha&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/filter&gt;</span>
+  <span style="color:#f92672">&lt;image</span> <span style="color:#a6e22e">xlink:href=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">width=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">height=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">filter=</span><span style="color:#e6db74">&#34;url(#color-filter)&#34;</span><span style="color:#f92672">&gt;&lt;/image&gt;</span>
 <span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
-<p><strong>remote</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
-    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://mycdn.com/icons/icon.svg#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
-<p>Predictably, the local version finds an SVG with <code>id=&quot;id-to-copy&quot;</code> that already exists on the page, while the remote version fetches an SVG, finds <code>id=&quot;id-to-copy&quot;</code> within it, and clones that.</p>
-
-<p>While <em>use</em> could be a good fit for some icon libraries, I gave up on it after finding that it has the most extreme flavor of the same-origin policy I&rsquo;ve ever seen.  Don&rsquo;t reach for that <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a> cheat-sheet.  There is no <code>Access-Control</code> header that will allow a cross-origin SVG to be loaded with <em>use</em>.  Any SVG hosted on a different origin will fail, period, and there is no workaround.</p>
-
-<p>That restriction was too limiting.  We want anyone to be able to drop <code>&lt;pfe-icon&gt;</code> onto a page and use our built-in icons immediately, without having to go to great lengths to get the SVGs available on their origin.</p>
-
-<p>Additionally, the same-origin restriction makes it impossible to serve SVGs from a CDN, which is a deal-breaker.</p>
-
-<h3 id="fetch-and-make-copies">fetch and make copies</h3>
-
-<p>This approach involves making a request for the SVG with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a>, then injecting the SVG&rsquo;s text into the page with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a> (or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML">insertAdjacentHTML</a>).</p>
-
-<p>This method functions, but wasn&rsquo;t very promising. One reason is that fetching text requires <code>Access-Control</code> headers for cross-origin requests.  While that&rsquo;s easier to digest than <em>use</em>&rsquo;s outright ban on cross-origin requests, it&rsquo;s still too much to ask of pfe-icon&rsquo;s users.</p>
-
-<p>Another reason this method wasn&rsquo;t promising is that it seemed very inefficient to inject the same SVG text over and over.  Instead, injecting the SVG once and then using <a href="#lt-use-gt"><em>use</em></a> to clone it should be quite efficient, but the CORS requirements alone made it easy to move on.</p>
-
-<h3 id="css-background-image">CSS background-image</h3>
-
-<p>This is the approach I spent the most time on, since it seemed by far the most promising.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://mycdn.com/svgs/rh-server.svg&#34;</span><span style="color:#f92672">);</span></code></pre></div>
-<p>This approach has all the same pros and cons as using a an <code>&lt;img&gt;</code> tag.  We can consider them equivalent methods.</p>
-
-<p>With this method, SVGs can be pulled from any origin.</p>
-
-<p>One minor drawback is that SVG spritesheets aren&rsquo;t supported.  In other words, each SVG file must contain only a single icon.  That fits perfectly with our goal 1, but some icon libraries may wish to deliver icons in bulk sets (though I personally don&rsquo;t recommend it).</p>
-
-<p>A more major drawback is that applying color to the icons is not as straightforward.  With a plain old SVG you can set a color with CSS: <code>fill: red</code>.That only works when the SVG element is in the DOM, but not when it&rsquo;s relegated to a background image.  I was stumped until I came across SVG filters (specifically <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood">feFlood</a>), which can also be applied with CSS and had astonishingly good browser support.</p>
-
-<p>To my consternation, while SVG filters worked perfectly for coloring background-image SVGs in all the browsers we care about, they did <em>not</em> work when used inside a Web Component.  The shadow DOM boundary breaks SVG filters in Edge, IE11, and all versions of Safari.</p>
-
-<hr />
-
-<h2 id="svg-lt-image-gt-saves-the-day">SVG &lt;image&gt; saves the day</h2>
+<p>There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  More about <a href="#discarded-methods-for-including-svgs">other SVG injection methods</a>.</p>
 
 <p>After Safari&rsquo;s incompatibility forced me to move on from the most promising method (<a href="#css-background-image">CSS background image</a>), I was stumped.  If SVG filters couldn&rsquo;t work inside Safari&rsquo;s Web Component implementation, would I have to give up and start from scratch?</p>
 
 <p>I had some hunches about why SVG filters don&rsquo;t work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its <code>id</code>.  Perhaps it was doing a naive <code>document.body.getElementById</code> rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.</p>
 
 <p>Anyway, I figured that if those hunches were true, the problem would disappear if the <code>&lt;filter&gt;</code> and the icon existed inside the same SVG element.  That led me to <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image"><code>&lt;image&gt;</code></a>, and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.</p>
+
+<h2 id="icon-coloring">Icon coloring</h2>
+
+<p>The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like <code>svg { fill: blue }</code>.  However, since we&rsquo;re including the SVGs remotely (via <code>&lt;image xlink:href=&quot;URL&quot;&gt;</code>), they can&rsquo;t be affected by the <code>fill</code> property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for <a href="#svg-filters-for-coloring">coloring</a>.</p>
+
+<p>That&rsquo;s it for the summary!  Below are more thorough explanations of each part of the implementation.</p>
 
 <hr />
 
@@ -440,7 +405,7 @@
 
 <h2 id="browser-support">Browser support</h2>
 
-<p>Browser support is very good.  However, icon coloring doesn&rsquo;t work in Microsoft browsers (IE11 and Edge), so those browsers get monochrome icons.</p>
+<p>Browser support is very good.  However, icon coloring doesn&rsquo;t work in Microsoft browsers (IE11 and Edge), so pfe-icon falls back to monochrome icons in those browsers.</p>
 
 <p><img src="https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png" alt="browser support thumbnails" /></p>
 
@@ -454,7 +419,7 @@
 
 <h2 id="recap">Recap</h2>
 
-<p>Icon sets are namespaced and can support any collection of SVGs by providing a custom <a href="#parseiconname">parseIconName</a> function, which maps concise icon names to URLs where each SVG can be found.</p>
+<p>Icon sets are namespaced and can support any collection of SVGs by providing a custom <a href="#resolveiconname">resolveIconName</a> function, which maps concise icon names to URLs where each SVG can be found.</p>
 
 <p>CORS issues are avoided by including SVGs as images, via the SVG <code>&lt;image&gt;</code> element.</p>
 

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  />
+  
+  <meta property="og:title" content="062   How Not to Make Svg Icons" />
+  <meta name="twitter:title" content="062   How Not to Make Svg Icons" />
+  
+  <title>062   How Not to Make Svg Icons - clayto</title>
+
+  
+  <meta name="description" content="A whatsit." />
+  <meta property="og:description" content="A whatsit." />
+  <meta name="twitter:description" content="A whatsit." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2019/07/062-how-not-to-make-svg-icons/" />
+
+  
+  <meta property="og:image" content="https://clayto.com/2019/07/062-how-not-to-make-svg-icons/thumb.jpg" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2019/07/062-how-not-to-make-svg-icons/thumb.jpg"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.56.3" /><link media="screen"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link media="screen" rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-description">
+    WEB, DEMOS, GAMEDEV.&nbsp;&nbsp;
+  </div>
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="https://clayto.com/ homepage" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+<article class="pbp-article">
+
+  <header>
+    <h1>062   How Not to Make Svg Icons</h1>
+  </header>
+
+  
+
+  <div class="pbp-article-meta">
+    <time datetime="2019-07-30T15:54:57-04:00">
+      Jul 30, 2019
+    </time>
+    
+    <span class="pbp-blue">&middot;</span>
+    3 minute read
+    <br>
+    <span class="pbp-article-tags">
+      
+      <a href="https://clayto.com/tags/linux" class="c-tag">#linux</a>
+      
+    </span>
+  </div>
+
+  
+  
+  <section>
+    
+
+<h2 id="discarded-methods-for-including-svgs">Discarded methods for including SVGs</h2>
+
+<p>There are a plethora of ways to put SVGs onto a page.  Here are all the alternatives I considered when implementing pfe-icon, and the reasoning why I moved on from each.</p>
+
+<h3 id="lt-use-gt">&lt;use&gt;</h3>
+
+<p>[&lt;use&gt;][use] is an SVG element which clones an existing SVG.  Simply specify the <code>id</code> of the SVG you want to clone, and the <em>use</em> element will become a copy of it.</p>
+
+<p><em>use</em> comes in two flavors, local and remotes.</p>
+
+<p><strong>local</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
+    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
+<p><strong>remote</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
+    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://mycdn.com/icons/icon.svg#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
+<p>Predictably, the local version finds an SVG with <code>id=&quot;id-to-copy&quot;</code> that already exists on the page, while the remote version fetches an SVG, finds <code>id=&quot;id-to-copy&quot;</code> within it, and clones that.</p>
+
+<p>While <em>use</em> could be a good fit for some icon libraries, I gave up on it after finding that it has the most extreme flavor of the same-origin policy I&rsquo;ve ever seen.  Don&rsquo;t reach for that [CORS][cors] cheat-sheet.  There is no <code>Access-Control</code> header that will allow a cross-origin SVG to be loaded with <em>use</em>.  Any SVG hosted on a different origin will fail, period, and there is no workaround.</p>
+
+<p>That restriction was too limiting.  We want anyone to be able to drop <code>&lt;pfe-icon&gt;</code> onto a page and use our built-in icons immediately, without having to go to great lengths to get the SVGs available on their origin.</p>
+
+<p>Additionally, the same-origin restriction makes it impossible to serve SVGs from a CDN, which is a deal-breaker.</p>
+
+<h3 id="fetch-and-make-copies">fetch and make copies</h3>
+
+<p>This approach involves making a request for the SVG with [fetch][fetch], then injecting the SVG&rsquo;s text into the page with [innerHTML]<a href="or [insertAdjacentHTML][insert-adjacent]">innerhtml</a>.</p>
+
+<p>This method functions, but wasn&rsquo;t very promising. One reason is that fetching text requires <code>Access-Control</code> headers for cross-origin requests.  While that&rsquo;s easier to digest than <em>use</em>&rsquo;s outright ban on cross-origin requests, it&rsquo;s still too much to ask of pfe-icon&rsquo;s users.</p>
+
+<p>Another reason this method wasn&rsquo;t promising is that it seemed very inefficient to inject the same SVG text over and over.  Instead, injecting the SVG once and then using [<em>use</em>][use-method] to clone it should be quite efficient, but the CORS requirements alone made it easy to move on.</p>
+
+<h3 id="css-background-image">CSS background-image</h3>
+
+<p>This is the approach I spent the most time on, since it seemed by far the most promising.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://mycdn.com/svgs/rh-server.svg&#34;</span><span style="color:#f92672">);</span></code></pre></div>
+<p>This approach has all the same pros and cons as using a an <code>&lt;img&gt;</code> tag.  We can consider them equivalent methods.</p>
+
+<p>With this method, SVGs can be pulled from any origin.</p>
+
+<p>One minor drawback is that SVG spritesheets aren&rsquo;t supported.  In other words, each SVG file must contain only a single icon.  That fits perfectly with our goal 1, but some icon libraries may wish to deliver icons in bulk sets (though I personally don&rsquo;t recommend it).</p>
+
+<p>A more major drawback is that applying color to the icons is not as straightforward.  With a plain old SVG you can set a color with CSS: <code>fill: red</code>.That only works when the SVG element is in the DOM, but not when it&rsquo;s relegated to a background image.  I was stumped until I came across SVG filters (specifically [feFlood][feflood]), which can also be applied with CSS and had astonishingly good browser support.</p>
+
+<p>To my consternation, while SVG filters worked perfectly for coloring background-image SVGs in all the browsers we care about, they did <em>not</em> work when used inside a Web Component.  The shadow DOM boundary breaks SVG filters in Edge, IE11, and all versions of Safari.</p>
+
+<hr />
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+
+
+
+  </footer>
+</article>
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+
