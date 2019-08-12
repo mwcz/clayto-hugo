@@ -12,14 +12,14 @@
     
     
     <item>
-      <title>Web Component Icons</title>
-      <link>https://clayto.com/2019/07/web-component-icons/</link>
+      <title>Icons &amp; Web Component</title>
+      <link>https://clayto.com/2019/07/icons-web-component/</link>
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
-      <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>This is the story of &amp;lt;pfe-icon&amp;gt;, an SVG-based icon Web Component I&amp;rsquo;ve been working on for the PatternFly Elements project.
+      <guid>https://clayto.com/2019/07/icons-web-component/</guid>
+      <description>This is the story of pfe-icon, an icon component I&amp;rsquo;ve been working on for the PatternFly Elements project. It&amp;rsquo;s a Web Component for displaying icons, and is compatible with any set of SVG icons.
 Before the rambling begins, let&amp;rsquo;s have a demo!
- .icon-panel { width: 100%; display: grid; grid-template-columns: repeat(5, 1fr); justify-items: center; }        Features  On-demand icon loading No CORS restrictions Icon coloring Concise syntax Icon sets  Here&amp;rsquo;s how pfe-icon works, starting with the custom HTML tag, and walking through</description>
+ .icon-panel { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); justify-items: center; } body { --pfe-broadcasted--color--text: var(--pbp-fg-color, white); }  Red Hat icons:</description>
     </item>
     
   </channel>
