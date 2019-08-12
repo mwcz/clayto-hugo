@@ -1,5 +1,5 @@
 ---
-title: "Web Component Icons"
+title: "Icons & Web Component"
 date: 2019-07-25T15:11:23-04:00
 Tags:
  -  web
@@ -7,17 +7,19 @@ Tags:
  -  web-components
  -  patternfly
 description: "Creating an icon system for PatternFly Elements, using Web Components and SVGs."
-thumbnail: thumb.jpg
+thumbnail: thumb.png
 mwc: 61
 draft: true
 ---
 
-<script defer src="./custom-elements-es5-adapter.js"></script>
-<script defer src="./webcomponents-loader.js"></script>
-<script defer src="./elements/pfelement/pfelement.umd.min.js"></script>
-<script defer src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
+<!-- use polyfills and ES5 build of PFE for maximum browser compatibility -->
+<script src="./custom-elements-es5-adapter.js"></script>
+<script src="./webcomponents-loader.js"></script>
+<script src="./elements/pfelement/pfelement.umd.min.js"></script>
+<script src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
+<script src="./pfe-icon-fa.js"></script>
 
-This is the story of `<pfe-icon>`, an SVG-based icon [Web Component][web-components] I've been working on for the [PatternFly Elements][pfe] project.
+This is the story of `pfe-icon`, an icon component I've been working on for the [PatternFly Elements][pfe] project.  It's a [Web Component][web-components] for displaying icons, and is compatible with any set of SVG icons.
 
 Before the rambling begins, let's have a **demo**!
 
@@ -25,17 +27,32 @@ Before the rambling begins, let's have a **demo**!
 .icon-panel {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-items: center;
+}
+body {
+  --pfe-broadcasted--color--text: var(--pbp-fg-color, white);
 }
 </style>
 
+Red Hat icons:
+
 <div class="icon-panel">
-<pfe-icon style="--pfe-broadcasted--color--text: #CE393C" size="xl" pfe-icon="rh-aed"></pfe-icon>
-<pfe-icon style="--pfe-broadcasted--color--text: #F39A42" size="xl" pfe-icon="rh-sun"></pfe-icon>
-<pfe-icon style="--pfe-broadcasted--color--text: #56BD58" size="xl" pfe-icon="rh-leaf"></pfe-icon>
-<pfe-icon style="--pfe-broadcasted--color--text: #8E59CB" size="xl" pfe-icon="rh-puzzle-piece"></pfe-icon>
-<pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="xl" pfe-icon="rh-space-rocket"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #CE393C" size="xl" icon="rh-aed"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #F39A42" size="xl" icon="rh-sun"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #56BD58" size="xl" icon="rh-leaf"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #8E59CB" size="xl" icon="rh-puzzle-piece"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="xl" icon="rh-space-rocket"></pfe-icon>
+</div>
+
+Font Awesome icons:
+
+<div class="icon-panel">
+  <pfe-icon style="--pfe-broadcasted--color--text: #CE393C"  size="lg" icon="fa-brands-redhat"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #F39A42"  size="lg" icon="fa-brands-accessible-icon"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #56BD58"  size="lg" icon="fa-regular-eye"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: #8E59CB"  size="lg" icon="fa-regular-grin-hearts"></pfe-icon>
+  <pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="lg" icon="fa-regular-envelope"></pfe-icon>
 </div>
 
 ---
@@ -52,40 +69,38 @@ Before the rambling begins, let's have a **demo**!
  4. **Concise syntax**
  5. **Icon sets**
 
+This post walks through how the features above were implemented.
+
 ---
 
-Here's how pfe-icon works, starting with the custom HTML tag, and walking through
-
-
-## The tag
+## The pfe-icon tag
 
 Here's a typical pfe-icon tag.
 
 ```html
-<pfe-icon pfe-icon="rh-server"></pfe-icon>
+<pfe-icon icon="rh-server"></pfe-icon>
 ```
+Result:
 
-While this syntax isn't the tersest possible, it's also not needlessly verbose.  I would have preferred the attribute be simply `icon`, but our project, PatternFly Elements, has a convention of prefixing all custom attributes with `pfe-` to indicate  which attributes belong to our components, versus standard HTML attributes.
+<center>
+<pfe-icon size=xl icon="rh-server"></pfe-icon>
+</center>
+
+While this syntax isn't the tersest possible, it's also not needlessly verbose.
 
 The icon name, `rh-server`, belongs to an icon set named `rh` and pfe-icon will map the icon name to a URL where an SVG lives.  This mapping allows the icon name to stay nice and terse (much terser than a full URL).
 
-I also would have preferred a self-closing tag, but Custom Elements can't be self-closing (only a small set of [void elements][void] can).
+I also would have preferred a self-closing tag, but Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
 
-So, while not the pithiest possible syntax, this is the pithiest practical syntax.  Goal 4 semi-achieved.
+So, while not the pithiest possible syntax, this is the pithiest practical syntax.  "Concise syntax" <pfe-icon style="--pfe-broadcasted--color--text: green" icon="rh-check-yes"></pfe-icon> check.
 
 Next let's look more at the icon name, and how it leads to an SVG being displayed.
 
 ## Icon sets
 
-Let's look again at the typical pfe-icon tag from above.
+When pfe-icon sees `icon="rh-server"` the first thing it does is figure out what icon set it belongs to.  The first `-` in an icon name separates the *icon set's* name from the *icon's* name.  Following that rule, we find the icon set is `rh`.  For example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.  Icon set namespacing (part of goal 5) achieved.
 
-```html
-<pfe-icon pfe-icon="rh-server"></pfe-icon>
-```
-
-pfe-icon looks at the icon name, `rh-server`.  The `rh` represents the name of an icon set.  The first `-` in an icon name separates the *icon set's* name from the *icon's* name.  For example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.  Icon set namespacing (part of goal 5) achieved.
-
-At this point, pfe-icon knows the names of the icon set and the icon, but doesn't know yet where to get the SVG.  That's where icon sets come in.  When defining an icon set, you provide three bits of information, the set name, a base path to the SVG library, and a resolveIconName function which transforms icon names into an SVG's URL.  [More about icon sets][icon-sets].
+At this point, pfe-icon knows the names of the icon itself and the set it belongs to, but doesn't know yet where to get the SVG.  That's where icon set definitions come in.  When defining an icon set, you provide three bits of information, the set name, a base URL to the SVG library, and a function, `resolveIconName`,  which transforms icon names into an SVG's URL.  [More about icon sets][icon-sets].
 
 ---
 
@@ -124,17 +139,18 @@ Here are the arguments for the `addIconSet` function.
 
 #### resolveIconName
 
-The heart of pfe-icon's flexibilty is `resolveIconName`.  It is a custom function that you can provide which turns a lucid, human-friendly name like `"rh-puzzle-piece"` into a URL where pfe-icon can fetch an SVG.
+The heart of pfe-icon's flexibilty is `resolveIconName`.  It's a custom function which turns a lucid, human-friendly name like `"rh-puzzle-piece"` into a URL where pfe-icon can fetch an SVG.
 
 ```html
-<pfe-icon pfe-icon="rh-puzzle-piece"></pfe-icon>
+<pfe-icon icon="rh-puzzle-piece"></pfe-icon>
 ```
-
 ```js
 (iconName, setName, path) => `${path}/${iconName}.svg`
 ```
 
 stitching together `path`, `icon` and `.svg`.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, with the aim of retaining goal 4 (minimal syntax).
+
+Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.
 
 ### Organizing icon sets
 
@@ -182,21 +198,21 @@ Theoretically, performance should be very good due to fetching only the icons in
 
 ### Icon size
 
-The built-in icons are in the 0.5-1.5 kB range (gzipped). Pretty <small>small</small>.
+The built-in icons are in the 0.5-1.5 kB range (gzipped). Pretty small.
 
 ### HTTP
 
 In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been a firm **No**, but HTTP/2 has changed that rule of thumb.
 
-I ran a test on a sample page with 291 icons.  These HTTP request visualizations tell the story pretty well.
+I ran a test on a sample page with 291 icons.  These HTTP request visualizations tell the story.
 
 <figure>
-<img alt="Noisy visualization of HTTP/1.1 requests for 291 icons." src="./http1.png">
+<img alt="Very cluttered visualization of HTTP/1.1 requests for 291 icons." src="./http1.png">
 <figcaption>HTTP/1.1</figcaption>
 </figure>
 
 <figure>
-<img alt="Quiet visualization of HTTP/2 requests for 291 icons." src="./http2.png">
+<img alt="Clean, streamlined visualization of HTTP/2 requests for 291 icons." src="./http2.png">
 <figcaption>HTTP/2</figcaption>
 </figure>
 
@@ -206,7 +222,7 @@ Apps that import and bundle icons during a build will probably still beat out pf
 
 As for hard numbers, I ran a few quick [Lighthouse][lighthouse] tests on the sample page with 291 icons.  The results are very promising: 98/100.
 
-These don't capture every performance metric, so more testing would be good to have.
+There are always more performance axes to measure.  The initial results are very promising, but more testing would be good to have.
 
 ---
 
@@ -220,7 +236,7 @@ You can scan the full [gallery of screenshots][browser-gallery].
 
 ### Puzzler: MS Edge icon coloring
 
-Something puzzling to note... while icon coloring doesn't work in Edge, it _did_.  I have a screenshot of colored icons in Edge on day I discovered the `<image>` method, but the next day it no longer worked.  I spent an entire day [bisecting][bisect] my commits, trying to figure out what changed, with no luck.  My best guess is that a different version of ShadyCSS made the difference.
+Something puzzling to note... at one point icon coloring *did* work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the `<image>` element, but the next day it no longer worked.  I spent an entire day [bisecting][bisect] my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.
 
 ---
 
