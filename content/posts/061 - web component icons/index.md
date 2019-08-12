@@ -1,5 +1,5 @@
 ---
-title: "Icons & Web Component"
+title: "Web Component Icons"
 date: 2019-07-25T15:11:23-04:00
 Tags:
  -  web
