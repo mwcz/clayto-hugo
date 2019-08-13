@@ -50,6 +50,13 @@ class PfeIcon extends PFElement {
     if (set) {
       const { iconPath } = set.resolveIconName(iconName);
       this.image.setAttribute("xlink:href", iconPath);
+      const randomId =
+        "filter-" +
+        Math.random()
+          .toString()
+          .slice(2, 10);
+
+      this.setFilterId(randomId);
     } else {
       // the icon set we want doesn't exist (yet?) so start listening for new icon sets
       this._handleAddIconSet = this._createIconSetHandler(setName);
@@ -59,6 +66,17 @@ class PfeIcon extends PFElement {
         this._handleAddIconSet
       );
     }
+  }
+
+  /**
+   * Sets the id attribute on the <filter> element and points the CSS `filter` at that id.
+   */
+  setFilterId(id) {
+    // set the CSS filter property to point at the given id
+    this.shadowRoot.querySelector("svg image").style.filter = `url(#${id})`;
+
+    // set the id attribute on the SVG filter element to match
+    this.shadowRoot.querySelector("svg filter").setAttribute("id", id);
   }
 
   _createIconSetHandler(setName) {
