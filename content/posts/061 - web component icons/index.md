@@ -21,7 +21,11 @@ draft: true
 
 This is the story of `pfe-icon`, an icon component I've been working on for the [PatternFly Elements][pfe] project.  It's a [Web Component][web-components] for displaying icons, and is compatible with any set of SVG icons.
 
-Before the rambling begins, let's have a **demo**!
+---
+
+{{< toc >}}
+
+---
 
 <style>
 .icon-panel {
@@ -31,37 +35,38 @@ Before the rambling begins, let's have a **demo**!
   justify-items: center;
 }
 body {
-  --pfe-broadcasted--color--text: var(--pbp-fg-color, white);
+  --pfe-icon--Color: var(--pbp-fg-color, white);
 }
 </style>
 
-Red Hat icons:
+## Demo
 
-<div class="icon-panel">
-  <pfe-icon style="--pfe-broadcasted--color--text: #CE393C" size="xl" icon="rh-aed"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: #F39A42" size="xl" icon="rh-sun"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: #56BD58" size="xl" icon="rh-leaf"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: #8E59CB" size="xl" icon="rh-puzzle-piece"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="xl" icon="rh-space-rocket"></pfe-icon>
-</div>
+**Red Hat icons:**
 
-Font Awesome icons:
+| Icon | Markup |
+| --- | --- |
+| <pfe-icon style="--pfe-icon--Color: #CE393C" size="xl" icon="rh-aed"></pfe-icon> | `<pfe-icon icon="rh-aed"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #F39A42" size="xl" icon="rh-sun"></pfe-icon> | `<pfe-icon icon="rh-sun"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #56BD58" size="xl" icon="rh-leaf"></pfe-icon> | `<pfe-icon icon="rh-leaf"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #8E59CB" size="xl" icon="rh-puzzle-piece"></pfe-icon> | `<pfe-icon icon="rh-puzzle-piece"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="rh-space-rocket"></pfe-icon> | `<pfe-icon icon="rh-space-rocket"></pfe-icon>` |
 
-<div class="icon-panel">
-  <pfe-icon style="--pfe-broadcasted--color--text: #CE393C"  size="lg" icon="fa-brands-redhat"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: #F39A42"  size="lg" icon="fa-brands-accessible-icon"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: #56BD58"  size="lg" icon="fa-regular-eye"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: #8E59CB"  size="lg" icon="fa-regular-grin-hearts"></pfe-icon>
-  <pfe-icon style="--pfe-broadcasted--color--text: var(--pbp-blue, #6FA5F2)" size="lg" icon="fa-regular-envelope"></pfe-icon>
-</div>
+**Font Awesome icons:**
 
----
+| Icon | Markup |
+| --- | --- |
+| <pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>                    | `<pfe-icon icon="fa-brands-redhat"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #F39A42"  size="xl" icon="fab-accessible-icon"></pfe-icon>           | `<pfe-icon icon="fa-brands-accessible-icon"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #56BD58"  size="xl" icon="far-eye"></pfe-icon>                      | `<pfe-icon icon="fa-regular-eye"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon>              | `<pfe-icon icon="fa-regular-grin-hearts"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon> | `<pfe-icon icon="fa-regular-envelope"></pfe-icon>` |
 
-{{< toc >}}
 
 ---
 
 ## Features
+
+<pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fa-solid-palette"></pfe-icon>
 
  1. **On-demand icon loading**
  2. **No CORS restrictions**
@@ -92,9 +97,19 @@ The icon name, `rh-server`, belongs to an icon set named `rh` and pfe-icon will 
 
 I also would have preferred a self-closing tag, but Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
 
-So, while not the pithiest possible syntax, this is the pithiest practical syntax.  "Concise syntax" <pfe-icon style="--pfe-broadcasted--color--text: green" icon="rh-check-yes"></pfe-icon> check.
+So, while not the pithiest possible syntax, this is the pithiest practical syntax.  "Concise syntax" <pfe-icon style="--pfe-icon--Color: green" icon="rh-check-yes"></pfe-icon> check.
 
 Next let's look more at the icon name, and how it leads to an SVG being displayed.
+
+## Customization
+
+This section covers customizing an icon's appearance.
+
+### Coloring
+
+The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like `svg { fill: blue }`.  However, since we're including the SVGs remotely (via `<image xlink:href="URL">`), they can't be affected by the `fill` property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for [coloring][coloring].
+
+### Size
 
 ## Icon sets
 
@@ -150,19 +165,47 @@ The heart of pfe-icon's flexibilty is `resolveIconName`.  It's a custom function
 
 stitching together `path`, `icon` and `.svg`.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, with the aim of retaining goal 4 (minimal syntax).
 
-Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.
+Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.  Let's try integrating it with a third-party icon library.
+
+### Integrating with Font Awesome
+
+For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  When using Font Awesome's own CSS/JS, they provide a CSS class-based approach to adding icons.  For example, to add the Red Hat logo to your page, you would write `<i class="fab fa-redhat"></i>`.  I wanted to stay pretty close to that naming convention, but I did shorten the identifier to `fab-redhat`.
+
+| Category | FA syntax | pfe-icon syntax | icon |
+| --- | --- | --- | --- |
+| brands | `class="fab fa-d-and-d"` | `icon="fab-d-and-d"` | <pfe-icon size=lg icon="fab-d-and-d"></pfe-icon> |
+| regular | `class="far fa-eye"` | `icon="far-eye"` | <pfe-icon size=lg icon="far-eye"></pfe-icon> |
+| solid | `class="fas fa-carrot"` | `icon="fas-carrot"` | <pfe-icon size=lg icon="fas-carrot"></pfe-icon> |
+
+Here's the icon set definition for the _solid_ category.  It creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid`.
+
+```js
+PfeIcon.addIconSet(
+  "fas",
+  "/icons/font-awesome/solid",
+  (iconName, setName, path) => {
+    const name = iconName.replace("fas-", "");
+    return `${path}/${name}.svg`;
+  }
+);
+```
+
+The resolveIconName function (third argument) is fairly simple; it removes the `fas-` prefix from the icon name, prepends the base path, and appends `.svg`.  For example, it maps `fas-carrot` to [`/icons/font-awesome/solid/carrot.svg`](/icons/font-awesome/solid/carrot.svg).
 
 ### Organizing icon sets
 
-Many icon libraries sort icons into logical sets.  Sets like "social network logos" or "road signs" are useful when searching for a specific icon.  However, when a logical set is bundled together, you wind up including a font on your page which includes *every* social network logo.
+Many icon libraries sort icons into logical sets.  Sets like "social network logos" or "road signs" are useful when you're trying to find a specific icon.  However, when a logical set is bundled together, you wind up including a font on your page which includes *every* social network logo.
 
-To avoid that, pfe-icon decouples **logical sets** from **delivery bundles**.  That's the main idea behind goal 1, and many of the implementation decisions (like not using a font to deliver icons).  Also, new icons should be put into the most logical set, without having to weigh how large the set is.  You should never be tempted to create a new, _illogical_ set, just to keep bundle size down.
+To avoid downloading icons that aren't needed, pfe-icon's philosophy is to decouple **logical sets** from **delivery bundles**.  If you are organizing an icon set, and know it will be delivered with pfe-icon, you'll never have to weigh how large the set is when choosing where to put a new icon.  You should never be tempted to create a new, _illogical_ set, just to keep bundle size down.
 
 ---
 
 ## SVG injection method
 
-To actually get the icon onto the page, the SVG URL is placed into a SVG `<image>` element's `xlink:href` attribute.  The SVG exists inside pfe-icon's shadow root and looks something like this:
+There are innumerable ways to get an SVG onto a webpage and each comes with its own quirks.  After exploring most of them, here is the method that best fits pfe-icon's requirements.
+
+
+Inside pfe-icon's shadow root is a single SVG.  The SVG has an `<image>` and a `<filter>`.  The URL emitted from resolveIconName is given to the `<image>`, which fetches and displays the SVG without CORS requirements.  The `<filter>` handles coloring.  Here's what the SVG looks like.
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg">
@@ -170,25 +213,18 @@ To actually get the icon onto the page, the SVG URL is placed into a SVG `<image
     <feFlood result="COLOR" />
     <feComposite operator="in" in="COLOR" in2="SourceAlpha" />
   </filter>
-  <image xlink:href="" width="100%" height="100%" filter="url(#color-filter)"></image>
+  <image xlink:href="{{ SVG URL HERE }}" filter="url(#color-filter)" width="100%" height="100%"></image>
 </svg>
 ```
 
 
-There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  More about [other SVG injection methods][discarded].
+There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  A follow-up post has more about [other SVG injection methods][discarded].
 
 After Safari's incompatibility forced me to move on from the most promising method ([CSS background image][css-bg]), I was stumped.  If SVG filters couldn't work inside Safari's Web Component implementation, would I have to give up and start from scratch?
 
 I had some hunches about why SVG filters don't work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its `id`.  Perhaps it was doing a naive `document.body.getElementById` rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.
 
 Anyway, I figured that if those hunches were true, the problem would disappear if the `<filter>` and the icon existed inside the same SVG element.  That led me to [`<image>`][svg-image], and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.
-
-## Icon coloring
-
-The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like `svg { fill: blue }`.  However, since we're including the SVGs remotely (via `<image xlink:href="URL">`), they can't be affected by the `fill` property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for [coloring][coloring].
-
-
-That's it for the summary!  Below are more thorough explanations of each part of the implementation.
 
 ---
 
@@ -251,7 +287,7 @@ Icons are colored with an SVG `<filter>` element, and colors can be passed in wi
 
 [pfe]: http://patternfly.org/patternfly-elements
 [icon-sets]: #all-about-icon-sets
-[discarded]: #discarded-methods-for-including-svgs
+[discarded]: {{< ref "062 - how not to make svg icons/index.md" >}}
 [coloring]: #svg-filters-for-coloring
 [use]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
