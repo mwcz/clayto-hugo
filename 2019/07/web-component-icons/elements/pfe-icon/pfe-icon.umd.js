@@ -166,12 +166,7 @@
     var iconId = iconSetName + "-icon-" + iconName;
     var iconPath = iconSetPath + "/" + iconId + ".svg";
 
-    return {
-      iconSetName: iconSetName,
-      iconName: iconName,
-      iconId: iconId,
-      iconPath: iconPath
-    };
+    return iconPath;
   }
 
   /**
@@ -214,12 +209,43 @@
    * 
   */
 
+  /**
+   * Sets the id attribute on the <filter> element and points the CSS `filter` at that id.
+   */
+  function _setRandomFilterId(el) {
+    var randomId = "filter-" + Math.random().toString().slice(2, 10);
+
+    // set the CSS filter property to point at the given id
+    el.shadowRoot.querySelector("svg image").style.filter = "url(#" + randomId + ")";
+
+    // set the id attribute on the SVG filter element to match
+    el.shadowRoot.querySelector("svg filter").setAttribute("id", randomId);
+  }
+
+  function _createIconSetHandler(el, setName) {
+    return function (ev) {
+      // if the set we're waiting for was added, run updateIcon again
+      if (setName === ev.detail.set.name) {
+        document.body.removeEventListener(PfeIcon.EVENTS.ADD_ICON_SET, el._handleAddIconSet);
+        el.updateIcon();
+      }
+    };
+  }
+
+  function _iconLoad(el) {
+    el.image.classList.remove("load-failed");
+  }
+
+  function _iconLoadError(el) {
+    el.image.classList.add("load-failed");
+  }
+
   var PfeIcon = function (_PFElement) {
     inherits(PfeIcon, _PFElement);
     createClass(PfeIcon, [{
       key: "html",
       get: function get$$1() {
-        return "<style>:host{--pfe-icon--spacing:var(--pfe-theme--container-spacer, 1rem);--pfe-icon--size:var(--pfe-theme--icon-size, 1em);--pfe-icon--color--bg:transparent;--pfe-icon--color--border:transparent;display:inline-block;vertical-align:middle;border-radius:50%;background-color:var(--pfe-icon--color--bg);border:var(--pfe-icon--color--border);position:relative}:host,:host svg{width:1em;height:1em}@media screen and (-ms-high-contrast:active),screen and (-ms-high-contrast:none){:host{background-color:#fff!important}:host svg filter feFlood{flood-color:#000!important}}@supports (-ms-accelerator:true){:host{background-color:#fff!important}:host svg filter feFlood{flood-color:#000!important}}@supports (-ms-ime-align:auto){:host{background-color:#fff!important}:host svg filter feFlood{flood-color:#000!important}}:host([data-block]){display:block;margin-bottom:var(--pfe-icon--spacing);margin-top:var(--pfe-icon--spacing)}:host([data-block]):first-child{margin-top:0}@media screen and (-ms-high-contrast:active),screen and (-ms-high-contrast:none){:host svg image{-webkit-filter:none;filter:none}}:host svg image.load-failed{display:none}:host svg filter feFlood{flood-color:var(--pfe-broadcasted--color--text)}:host([size=\"2x\"]),:host([size=\"2x\"]) svg{width:2em;height:2em}:host([size=\"3x\"]),:host([size=\"3x\"]) svg{width:3em;height:3em}:host([size=\"4x\"]),:host([size=\"4x\"]) svg{width:4em;height:4em}:host([size=xl]),:host([size=xl]) svg{width:100px;height:100px}:host([size=lg]),:host([size=lg]) svg{width:64px;height:64px}:host([size=md]),:host([size=md]) svg{width:32px;height:32px}:host([size=sm]),:host([size=sm]) svg{width:14px;height:14px}:host([color=base]){--pfe-broadcasted--color--text:var(--pfe-theme--color--ui-base, #0477a4)}:host([color=complement]){--pfe-broadcasted--color--text:var(--pfe-theme--color--ui-complement, #464646)}:host([color=accent]){--pfe-broadcasted--color--text:var(--pfe-theme--color--ui-accent, #fe460d)}:host([color=critical]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--critical, #bb0000)}:host([color=important]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--important, #d73401)}:host([color=moderate]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--moderate, #ffc024)}:host([color=success]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--success, #2e7d32)}:host([color=info]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--info, #0277bd)}:host([color=default]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--default, #606060)}:host([circled]){--pfe-icon--color--bg:transparent;--pfe-icon--color--border:var(--pfe-theme--color--surface--border, #dfdfdf);padding:.05em}:host([circled=base]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--base, #dfdfdf);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--base--text, #333)}:host([circled=lightest]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--lightest, #fff);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--lightest--text, #333)}:host([circled=light]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--lighter, #ececec);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--lighter--text, #333)}:host([circled=dark]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--darker, #464646);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--darker--text, #fff)}:host([circled=darkest]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--darkest, #131313);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--darkest--text, #fff)}:host([circled=complement]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--complement, #0477a4);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--complement--text, #fff)}:host([circled=accent]){--pfe-icon--color--bg:var(--pfe-theme--color--surface--accent, #fe460d);--pfe-icon--color--border:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--accent--text, #fff)}</style><svg xmlns=\"http://www.w3.org/2000/svg\">\n  <filter color-interpolation-filters=\"sRGB\" x=\"0\" y=\"0\" height=\"100%\" width=\"100%\">\n    <feFlood result=\"COLOR\" />\n    <feComposite operator=\"in\" in=\"COLOR\" in2=\"SourceAlpha\" />\n  </filter>\n  <image xlink:href=\"\" width=\"100%\" height=\"100%\"></image>\n</svg>";
+        return "<style>:host{--pfe-icon--Spacing:var(--pfe-theme--container-spacer, 1rem);--pfe-icon--Size:var(--pfe-theme--icon-size, 1em);--pfe-icon--Color:var(--pfe-broadcasted--color--text, var(--pfe-theme--color--text, #333));--pfe-icon--BackgroundColor:transparent;--pfe-icon--BorderColor:transparent;display:inline-block;vertical-align:middle;border-radius:50%;background-color:var(--pfe-icon--BackgroundColor);border:var(--pfe-icon--BorderColor);position:relative}:host,:host svg{width:1em;height:1em}@media screen and (-ms-high-contrast:active),screen and (-ms-high-contrast:none){:host{background-color:#fff!important}:host svg filter feFlood{flood-color:#000!important}}@supports (-ms-accelerator:true){:host{background-color:#fff!important}:host svg filter feFlood{flood-color:#000!important}}@supports (-ms-ime-align:auto){:host{background-color:#fff!important}:host svg filter feFlood{flood-color:#000!important}}:host([data-block]){display:block;margin-bottom:var(--pfe-icon--Spacing);margin-top:var(--pfe-icon--Spacing)}:host([data-block]):first-child{margin-top:0}@media screen and (-ms-high-contrast:active),screen and (-ms-high-contrast:none){:host svg image{-webkit-filter:none;filter:none}}:host svg image.load-failed{display:none}:host svg filter feFlood{flood-color:var(--pfe-icon--Color)}:host([size=\"2x\"]),:host([size=\"2x\"]) svg{width:2em;height:2em}:host([size=\"3x\"]),:host([size=\"3x\"]) svg{width:3em;height:3em}:host([size=\"4x\"]),:host([size=\"4x\"]) svg{width:4em;height:4em}:host([size=xl]),:host([size=xl]) svg{width:100px;height:100px}:host([size=lg]),:host([size=lg]) svg{width:64px;height:64px}:host([size=md]),:host([size=md]) svg{width:32px;height:32px}:host([size=sm]),:host([size=sm]) svg{width:14px;height:14px}:host([color=base]){--pfe-broadcasted--color--text:var(--pfe-theme--color--ui-base, #0477a4)}:host([color=complement]){--pfe-broadcasted--color--text:var(--pfe-theme--color--ui-complement, #464646)}:host([color=accent]){--pfe-broadcasted--color--text:var(--pfe-theme--color--ui-accent, #fe460d)}:host([color=critical]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--critical, #bb0000)}:host([color=important]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--important, #d73401)}:host([color=moderate]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--moderate, #ffc024)}:host([color=success]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--success, #2e7d32)}:host([color=info]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--info, #0277bd)}:host([color=default]){--pfe-broadcasted--color--text:var(--pfe-theme--color--feedback--default, #606060)}:host([circled]){--pfe-icon--BackgroundColor:transparent;--pfe-icon--BorderColor:var(--pfe-theme--color--surface--border, #dfdfdf);padding:.05em}:host([circled=base]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--base, #dfdfdf);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--base--text, #333)}:host([circled=lightest]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--lightest, #fff);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--lightest--text, #333)}:host([circled=light]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--lighter, #ececec);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--lighter--text, #333)}:host([circled=dark]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--darker, #464646);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--darker--text, #fff)}:host([circled=darkest]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--darkest, #131313);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--darkest--text, #fff)}:host([circled=complement]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--complement, #0477a4);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--complement--text, #fff)}:host([circled=accent]){--pfe-icon--BackgroundColor:var(--pfe-theme--color--surface--accent, #fe460d);--pfe-icon--BorderColor:transparent;--pfe-broadcasted--color--text:var(--pfe-theme--color--surface--accent--text, #fff)}</style><svg xmlns=\"http://www.w3.org/2000/svg\">\n  <filter color-interpolation-filters=\"sRGB\" x=\"0\" y=\"0\" height=\"100%\" width=\"100%\">\n    <feFlood result=\"COLOR\" />\n    <feComposite operator=\"in\" in=\"COLOR\" in2=\"SourceAlpha\" />\n  </filter>\n  <image xlink:href=\"\" width=\"100%\" height=\"100%\"></image>\n</svg>";
       }
     }, {
       key: "templateUrl",
@@ -270,25 +296,15 @@
 
       _this.image = _this.shadowRoot.querySelector("svg image");
       _this.image.addEventListener("load", function () {
-        return _this.iconLoad();
+        return _iconLoad(_this);
       });
       _this.image.addEventListener("error", function () {
-        return _this.iconLoadError();
+        return _iconLoadError(_this);
       });
       return _this;
     }
 
     createClass(PfeIcon, [{
-      key: "iconLoad",
-      value: function iconLoad() {
-        this.image.classList.remove("load-failed");
-      }
-    }, {
-      key: "iconLoadError",
-      value: function iconLoadError() {
-        this.image.classList.add("load-failed");
-      }
-    }, {
       key: "attributeChangedCallback",
       value: function attributeChangedCallback(attr, oldValue, newValue) {
         get(PfeIcon.prototype.__proto__ || Object.getPrototypeOf(PfeIcon.prototype), "attributeChangedCallback", this).apply(this, arguments);
@@ -304,46 +320,15 @@
             set$$1 = _PfeIcon$getIconSet.set;
 
         if (set$$1) {
-          var _set$resolveIconName = set$$1.resolveIconName(iconName),
-              iconPath = _set$resolveIconName.iconPath;
-
+          var iconPath = set$$1.resolveIconName(iconName);
           this.image.setAttribute("xlink:href", iconPath);
-          var randomId = "filter-" + Math.random().toString().slice(2, 10);
-
-          this.setFilterId(randomId);
+          _setRandomFilterId(this);
         } else {
           // the icon set we want doesn't exist (yet?) so start listening for new icon sets
-          this._handleAddIconSet = this._createIconSetHandler(setName);
+          this._handleAddIconSet = _createIconSetHandler(this, setName);
 
           document.body.addEventListener(PfeIcon.EVENTS.ADD_ICON_SET, this._handleAddIconSet);
         }
-      }
-
-      /**
-       * Sets the id attribute on the <filter> element and points the CSS `filter` at that id.
-       */
-
-    }, {
-      key: "setFilterId",
-      value: function setFilterId(id) {
-        // set the CSS filter property to point at the given id
-        this.shadowRoot.querySelector("svg image").style.filter = "url(#" + id + ")";
-
-        // set the id attribute on the SVG filter element to match
-        this.shadowRoot.querySelector("svg filter").setAttribute("id", id);
-      }
-    }, {
-      key: "_createIconSetHandler",
-      value: function _createIconSetHandler(setName) {
-        var _this2 = this;
-
-        return function (ev) {
-          // if the set we're waiting for was added, run updateIcon again
-          if (setName === ev.detail.set.name) {
-            document.body.removeEventListener(PfeIcon.EVENTS.ADD_ICON_SET, _this2._handleAddIconSet);
-            _this2.updateIcon();
-          }
-        };
       }
 
       /**

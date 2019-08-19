@@ -17,9 +17,9 @@
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>This is the story of pfe-icon, an icon component I&amp;rsquo;ve been working on for the PatternFly Elements project. It&amp;rsquo;s a Web Component for displaying icons, and is compatible with any set of SVG icons.
-Before the rambling begins, let&amp;rsquo;s have a demo!
- .icon-panel { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); justify-items: center; } body { --pfe-broadcasted--color--text: var(--pbp-fg-color, white); }  Red Hat icons:</description>
+      <description>This is the story of pfe-icon, a web component for displaying icons which loads icons on demand and is compatible with any existing set of SVGs. It is part of the PatternFly Elements project.
+ .icon-panel { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); justify-items: center; } body { --pfe-icon--Color: var(--pbp-fg-color, white); }  Demo Red Hat icons:
+   Icon Markup      &amp;lt;pfe-icon icon=&amp;quot;rh-aed&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-sun&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-leaf&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-puzzle-piece&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-space-rocket&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    Font Awesome icons:</description>
     </item>
     
   </channel>
