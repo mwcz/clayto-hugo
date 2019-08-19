@@ -19,7 +19,7 @@ draft: true
 <script src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
 <script src="./pfe-icon-fa.js"></script>
 
-This is the story of `pfe-icon`, an icon component I've been working on for the [PatternFly Elements][pfe] project.  It's a [Web Component][web-components] for displaying icons, and is compatible with any set of SVG icons.
+This is the story of `pfe-icon`, a web component for displaying icons which loads icons on demand and is compatible with any existing set of SVGs.  It is part of the [PatternFly Elements][pfe] project.
 
 ---
 
@@ -55,24 +55,24 @@ body {
 
 | Icon | Markup |
 | --- | --- |
-| <pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>                    | `<pfe-icon icon="fa-brands-redhat"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #F39A42"  size="xl" icon="fab-accessible-icon"></pfe-icon>           | `<pfe-icon icon="fa-brands-accessible-icon"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #56BD58"  size="xl" icon="far-eye"></pfe-icon>                      | `<pfe-icon icon="fa-regular-eye"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon>              | `<pfe-icon icon="fa-regular-grin-hearts"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon> | `<pfe-icon icon="fa-regular-envelope"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>                    | `<pfe-icon icon="fab-redhat"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #F39A42"  size="xl" icon="fab-accessible-icon"></pfe-icon>           | `<pfe-icon icon="fab-accessible-icon"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #56BD58"  size="xl" icon="far-eye"></pfe-icon>                      | `<pfe-icon icon="far-eye"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon>              | `<pfe-icon icon="far-grin-hearts"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon> | `<pfe-icon icon="far-envelope"></pfe-icon>` |
 
 
 ---
 
 ## Features
 
-<pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fa-solid-palette"></pfe-icon>
 
- 1. **On-demand icon loading**
- 2. **No CORS restrictions**
- 3. **Icon coloring**
- 4. **Concise syntax**
- 5. **Icon sets**
+
+ - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon>
+ - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon>
+ - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon>
+ - **Concise syntax** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon>
+ - **Icon sets** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon>
 
 This post walks through how the features above were implemented.
 
@@ -85,91 +85,92 @@ Here's a typical pfe-icon tag.
 ```html
 <pfe-icon icon="rh-server"></pfe-icon>
 ```
-Result:
+Result: <pfe-icon size=xl icon="rh-server"></pfe-icon>
 
-<center>
-<pfe-icon size=xl icon="rh-server"></pfe-icon>
-</center>
+While it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).  Other than that, the syntax above is nice and minimal.
 
-While this syntax isn't the tersest possible, it's also not needlessly verbose.
+**Concise syntax**: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon>
 
-The icon name, `rh-server`, belongs to an icon set named `rh` and pfe-icon will map the icon name to a URL where an SVG lives.  This mapping allows the icon name to stay nice and terse (much terser than a full URL).
-
-I also would have preferred a self-closing tag, but Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
-
-So, while not the pithiest possible syntax, this is the pithiest practical syntax.  "Concise syntax" <pfe-icon style="--pfe-icon--Color: green" icon="rh-check-yes"></pfe-icon> check.
-
-Next let's look more at the icon name, and how it leads to an SVG being displayed.
-
-## Customization
-
-This section covers customizing an icon's appearance.
-
-### Coloring
-
-The last point to cover in the summary is how icons get colored.  If the SVGs were directly embedded on the page, they could be colored with a simple CSS rule like `svg { fill: blue }`.  However, since we're including the SVGs remotely (via `<image xlink:href="URL">`), they can't be affected by the `fill` property.  There is another approach, which might sound a bit hacky, but it works well: SVG filters.  More about SVG filters for [coloring][coloring].
-
-### Size
+Next, let's see how a simple icon name like `rh-server` is handled by pfe-icon.
 
 ## Icon sets
 
-When pfe-icon sees `icon="rh-server"` the first thing it does is figure out what icon set it belongs to.  The first `-` in an icon name separates the *icon set's* name from the *icon's* name.  Following that rule, we find the icon set is `rh`.  For example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.  Icon set namespacing (part of goal 5) achieved.
+When pfe-icon sees `icon="rh-server"` the first thing it does is figure out what icon set it belongs to.  Whatever comes before the first `-` is the name of the icon set.  Following that rule, we find the icon set is `rh`.  Only the first `-` is significant; for example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.
 
-At this point, pfe-icon knows the names of the icon itself and the set it belongs to, but doesn't know yet where to get the SVG.  That's where icon set definitions come in.  When defining an icon set, you provide three bits of information, the set name, a base URL to the SVG library, and a function, `resolveIconName`,  which transforms icon names into an SVG's URL.  [More about icon sets][icon-sets].
+Icon set namespacing (part of goal 5) achieved.
 
----
+At this point, pfe-icon knows the icon name and the set it belongs to, but doesn't know yet where to get the SVG.  That brings us to icon set definitions.
 
-### Defining a custom icon set
 
-Icon sets are designed so that `<pfe-icon>` can be used with any set of SVGs, no matter what directory structure or naming conventions are used.
+### Icon set definitions
 
-Here's an example of defining an icon set.  Let's say we have a bunch of SVG files hosted at `https://mycdn.com/svgs`. Listing the `svgs` directory would look like this:
+pfe-icon can be used with any set of SVGs, no matter what directory structure or naming conventions are used.  Icon sets provide the mechanism for this broad reach.
+
+When defining an icon set, you provide three bits of information, the set's name, a base URL to the SVGs, and a `resolveIconName` function  which maps icon names to the SVG's URL.
+
+Here's an example.  Let's say we have some SVGs hosted at `https://foo.com/svgs`. Listing the `svgs` directory would look like this:
 
 ```
-https://mycdn.com/svgs/
+https://foo.com/svgs/
 ├── horse.svg
 ├── battery.svg
 ├── staple.svg
 └── coconut.svg
 ```
 
-Just for fun, let's give this icon set the name "ico".  With all that established, here's how the icon set can be defined for use with pfe-icon.
+Here's how to define an icon set to make pfe-icon compatible with our SVGs.
+
+Oh yeah, let's call the icon set "foo".
 
 ```js
 import PfeIcon from "@patternfly/pfe-icon";
 
 PfeIcon.addIconSet(
-    "ico",
-    "https://mycdn.com/svgs",
-    (iconName, setName, path) => `${path}/${iconName}.svg`
+    "foo",
+    "https://foo.com/svgs",
+    (iconName, setName, path) => `${path}/${iconName.replace("foo-", "")}.svg`
 );
 ```
-Here are the arguments for the `addIconSet` function.
+Here are the arguments for the `addIconSet` function, in order.
 
 | arg | type | description |
 | --- | --- | --- |
 | set name | String | the name of your icon set (cannot contain hyphens) |
-| set path | String (a URL) | a fully qualified URL to the base directory of an SVG library |
+| set path | String (a URL) | a URL to the base directory[^1] of an SVG library |
 | resolveIconName | Function | a function that accepts (iconName, setName, setPath) and returns a URL to an SVG |
 
 #### resolveIconName
 
-The heart of pfe-icon's flexibilty is `resolveIconName`.  It's a custom function which turns a lucid, human-friendly name like `"rh-puzzle-piece"` into a URL where pfe-icon can fetch an SVG.
+The heart of pfe-icon's extensibility is `resolveIconName`.  It's a custom function which turns a lucid, human-friendly name like "foo-horse" into a URL where pfe-icon can fetch the corresponding SVG.
+
+After creating our "foo" icon set, we can display a horse icon.
 
 ```html
-<pfe-icon icon="rh-puzzle-piece"></pfe-icon>
+<pfe-icon icon="foo-horse"></pfe-icon>
 ```
+
+Let's look again at the return value of our set's resolveIconName function.
+
 ```js
-(iconName, setName, path) => `${path}/${iconName}.svg`
+`${path}/${iconName.replace("foo-", "")}.svg`
+// For reference, here are the values of the variables
+// path = "https://foo.com/svgs"
+// iconName = "foo-horse"
 ```
 
-stitching together `path`, `icon` and `.svg`.  This is possible because the directory structure of the imaginary SVG library is very simple.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, with the aim of retaining goal 4 (minimal syntax).
+The result, `https://foo.com/svgs/horse.svg`, is the correct URL to the horse icon.
 
-Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.  Let's try integrating it with a third-party icon library.
+The simplicity of this function reflects the simplicity of the directory structure in the example.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, allowing icon names to stay relatively concise.
+
+For example, if your SVGs have names like "foo-icon-horse.svg", it's still possible to have icon names like "foo-horse" by teaching your resolveIconName function to inject the `-icon` when generating URLs.  Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.
+
+Enough imaginary examples.  Let's integrate pfe-icon with a third-party icon library!
 
 ### Integrating with Font Awesome
 
-For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  When using Font Awesome's own CSS/JS, they provide a CSS class-based approach to adding icons.  For example, to add the Red Hat logo to your page, you would write `<i class="fab fa-redhat"></i>`.  I wanted to stay pretty close to that naming convention, but I did shorten the identifier to `fab-redhat`.
+For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  Font Awesome's CSS/JS provides a CSS class-based approach to adding icons.  For example, to add a carrot to your page, you would write `<i class="fas fa-carrot"></i>`.  I wanted to stay pretty close to that naming convention, but the two class names didn't fit well with pfe-icon's single `icon` attribute, so I shortened the identifier to `fas-carrot`.
+
+The "s" in "fas" stands for "solid", one of Font Awesome's icon categories.  Here are all three.
 
 | Category | FA syntax | pfe-icon syntax | icon |
 | --- | --- | --- | --- |
@@ -177,7 +178,7 @@ For this blog post, I wanted to demonstate using pfe-icon with a third-party ico
 | regular | `class="far fa-eye"` | `icon="far-eye"` | <pfe-icon size=lg icon="far-eye"></pfe-icon> |
 | solid | `class="fas fa-carrot"` | `icon="fas-carrot"` | <pfe-icon size=lg icon="fas-carrot"></pfe-icon> |
 
-Here's the icon set definition for the _solid_ category.  It creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid`.
+Here's the icon set definition I created for the _solid_ category.  It creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid`.
 
 ```js
 PfeIcon.addIconSet(
@@ -200,7 +201,7 @@ To avoid downloading icons that aren't needed, pfe-icon's philosophy is to decou
 
 ---
 
-## SVG injection method
+## SVG injection and coloring
 
 There are innumerable ways to get an SVG onto a webpage and each comes with its own quirks.  After exploring most of them, here is the method that best fits pfe-icon's requirements.
 
@@ -284,11 +285,12 @@ CORS issues are avoided by including SVGs as images, via the SVG `<image>` eleme
 
 Icons are colored with an SVG `<filter>` element, and colors can be passed in with a CSS variable.
 
+[^1]: icon set URLs must have absolute paths, ie `/foo` or `http://foo.com/foo` but not `../foo` or `foo`
 
 [pfe]: http://patternfly.org/patternfly-elements
 [icon-sets]: #all-about-icon-sets
 [discarded]: {{< ref "062 - how not to make svg icons/index.md" >}}
-[coloring]: #svg-filters-for-coloring
+[coloring]: #svg-injection-and-coloring
 [use]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 [cookieless]: http://www.ravelrumba.com/blog/static-cookieless-domain/
