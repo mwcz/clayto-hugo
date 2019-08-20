@@ -19,25 +19,30 @@ draft: true
 <script src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
 <script src="./pfe-icon-fa.js"></script>
 
-This is the story of `pfe-icon`, a web component for displaying icons which loads icons on demand and is compatible with any existing set of SVGs.  It is part of the [PatternFly Elements][pfe] project.
-
----
-
-{{< toc >}}
-
----
-
 <style>
-.icon-panel {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  justify-items: center;
-}
 body {
   --pfe-icon--Color: var(--pbp-fg-color, white);
 }
+@media (min-width: 750px) {
+  #TableOfContents {
+    float: right;
+    padding: 10px;
+    /* margin: 10px; */
+    margin: 0 0 20px 20px;
+    background-color: #242424;
+  }
+}
 </style>
+
+{{< toc >}}
+
+This is the story of `<pfe-icon>`.  I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.  pfe-icon is part of the [PatternFly Elements][pfe] project.
+
+<center>
+<pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>
+</center>
+
+---
 
 ## Demo
 
