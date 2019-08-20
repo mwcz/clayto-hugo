@@ -20,7 +20,7 @@ draft: true
 <script src="./pfe-icon-fa.js"></script>
 
 <style>
-body {
+pfe-icon {
   --pfe-icon--Color: var(--pbp-fg-color, white);
 }
 @media (min-width: 750px) {
