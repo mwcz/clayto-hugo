@@ -72,3 +72,11 @@ To my consternation, while SVG filters worked perfectly for coloring background-
 
 ---
 
+
+### The method that works
+
+After Safari's incompatibility forced me to move on from the most promising method ([CSS background image][css-bg]), I was stumped.  If SVG filters couldn't work inside Safari's Web Component implementation, would I have to give up and start from scratch?
+
+I had some hunches about why SVG filters don't work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its `id`.  Perhaps it was doing a naive `document.body.getElementById` rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.
+
+Anyway, I figured that if those hunches were true, the problem would disappear if the `<filter>` and the icon existed inside the same SVG element.  That led me to `<image>`, and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.

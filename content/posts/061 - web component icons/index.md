@@ -66,8 +66,6 @@ body {
 
 ## Features
 
-
-
  - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon>
  - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon>
  - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon>
@@ -168,17 +166,23 @@ Enough imaginary examples.  Let's integrate pfe-icon with a third-party icon lib
 
 ### Integrating with Font Awesome
 
-For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  Font Awesome's CSS/JS provides a CSS class-based approach to adding icons.  For example, to add a carrot to your page, you would write `<i class="fas fa-carrot"></i>`.  I wanted to stay pretty close to that naming convention, but the two class names didn't fit well with pfe-icon's single `icon` attribute, so I shortened the identifier to `fas-carrot`.
+For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  Font Awesome's CSS/JS provides a CSS class-based approach to adding icons.  For example, to add a carrot to your page, you would write `<i class="fas fa-carrot"></i>`. The "s" in "fas" stands for "solid", one of Font Awesome's icon categories.  The categories are: brands, regular, and solid.
 
-The "s" in "fas" stands for "solid", one of Font Awesome's icon categories.  Here are all three.
+
+I wanted to stay pretty close to Font Awesom'es naming convention, but having two class names didn't mesh well with pfe-icon's single `icon` attribute, so I shortened "fas fa-carrot" to "fas-carrot".  Here are a few more examples.
+
+
+<center>
 
 | Category | FA syntax | pfe-icon syntax | icon |
 | --- | --- | --- | --- |
-| brands | `class="fab fa-d-and-d"` | `icon="fab-d-and-d"` | <pfe-icon size=lg icon="fab-d-and-d"></pfe-icon> |
-| regular | `class="far fa-eye"` | `icon="far-eye"` | <pfe-icon size=lg icon="far-eye"></pfe-icon> |
-| solid | `class="fas fa-carrot"` | `icon="fas-carrot"` | <pfe-icon size=lg icon="fas-carrot"></pfe-icon> |
+| brands | `fab fa-d-and-d` | `fab-d-and-d` | <pfe-icon size=lg icon="fab-d-and-d"></pfe-icon> |
+| regular | `far fa-eye` | `far-eye` | <pfe-icon size=lg icon="far-eye"></pfe-icon> |
+| solid | `fas fa-carrot` | `fas-carrot` | <pfe-icon size=lg icon="fas-carrot"></pfe-icon> |
 
-Here's the icon set definition I created for the _solid_ category.  It creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid`.
+</center>
+
+To make it real, I created icon sets for each category, "fab", "far", and "fas".  They're almost identical to each other, so here's just one example.  This code creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid`.
 
 ```js
 PfeIcon.addIconSet(
@@ -193,11 +197,17 @@ PfeIcon.addIconSet(
 
 The resolveIconName function (third argument) is fairly simple; it removes the `fas-` prefix from the icon name, prepends the base path, and appends `.svg`.  For example, it maps `fas-carrot` to [`/icons/font-awesome/solid/carrot.svg`](/icons/font-awesome/solid/carrot.svg).
 
+If you'd like to see the icon set definitions for all three Font Awesome categories, see [pfe-icon-fa.js](./pfe-icon-fa.js).
+
 ### Organizing icon sets
 
-Many icon libraries sort icons into logical sets.  Sets like "social network logos" or "road signs" are useful when you're trying to find a specific icon.  However, when a logical set is bundled together, you wind up including a font on your page which includes *every* social network logo.
+When there isn't a third-party icon set that meets your needs, you may need to build your own set of icons.  When doing so, it can be helpful to categorize your icons.
 
-To avoid downloading icons that aren't needed, pfe-icon's philosophy is to decouple **logical sets** from **delivery bundles**.  If you are organizing an icon set, and know it will be delivered with pfe-icon, you'll never have to weigh how large the set is when choosing where to put a new icon.  You should never be tempted to create a new, _illogical_ set, just to keep bundle size down.
+Most icon libraries sort icons into logical sets.  Sets like "social network logos" or "road signs" are useful when you're trying to find a specific icon.  However, when a logical set is bundled, you wind up including a font on your page which includes *every* social network logo.
+
+To avoid downloading icons that aren't needed, pfe-icon's philosophy is to decouple **logical sets** from **delivery bundles**.  If you are adding a new icon to your library, and know it will be delivered with pfe-icon, you'll never have to think "Wow, this set has gotten really big, maybe I'll find a different home for this new icon..."
+
+You should never be tempted to create a new, _illogical_ set, just to keep bundle size down.
 
 ---
 
@@ -205,8 +215,7 @@ To avoid downloading icons that aren't needed, pfe-icon's philosophy is to decou
 
 There are innumerable ways to get an SVG onto a webpage and each comes with its own quirks.  After exploring most of them, here is the method that best fits pfe-icon's requirements.
 
-
-Inside pfe-icon's shadow root is a single SVG.  The SVG has an `<image>` and a `<filter>`.  The URL emitted from resolveIconName is given to the `<image>`, which fetches and displays the SVG without CORS requirements.  The `<filter>` handles coloring.  Here's what the SVG looks like.
+Inside pfe-icon's shadow root is a single SVG.  The SVG has an [`<image>`][svg-image] and a [`<filter>`][svg-filter].  The URL emitted from resolveIconName is given to the `<image>`, which fetches and displays the SVG without requiring CORS (no CORS: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon>).  The `<filter>` handles coloring.  Here's what the SVG looks like.
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg">
@@ -219,13 +228,14 @@ Inside pfe-icon's shadow root is a single SVG.  The SVG has an `<image>` and a `
 ```
 
 
-There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  A follow-up post has more about [other SVG injection methods][discarded].
+There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  I'm working on a follow-up post about why other SVG injection methods didn't work out. <!-- [other SVG injection methods][discarded].-->
 
-After Safari's incompatibility forced me to move on from the most promising method ([CSS background image][css-bg]), I was stumped.  If SVG filters couldn't work inside Safari's Web Component implementation, would I have to give up and start from scratch?
+The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With `fill` unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the `<filter>` and the `<img>` were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML's `<img>` for SVG's `<image>`), and it worked.
 
-I had some hunches about why SVG filters don't work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its `id`.  Perhaps it was doing a naive `document.body.getElementById` rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.
+### Puzzler: MS Edge icon coloring
 
-Anyway, I figured that if those hunches were true, the problem would disappear if the `<filter>` and the icon existed inside the same SVG element.  That led me to [`<image>`][svg-image], and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.
+In the [browser support][browser-support] section, you'll see that icons are rendered as black and white in IE11 and Edge.  The odd thing is, at one point icon coloring *did* work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the `<image>` element, but the next day it no longer worked.  I spent an entire day [bisecting][bisect] my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.  Edge's days are numbered.
+
 
 ---
 
@@ -235,11 +245,11 @@ Theoretically, performance should be very good due to fetching only the icons in
 
 ### Icon size
 
-The built-in icons are in the 0.5-1.5 kB range (gzipped). Pretty small.
+Icon SVGs tend to be less than 1 kB when gzipped.  Pretty small.  Meanwhile, including Font Awesome's three categories (let's say you needed one icon from each category) would cost 372.1 kB (gzipped).
 
 ### HTTP
 
-In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been a firm **No**, but HTTP/2 has changed that rule of thumb.
+pfe-icon fetches SVGs on-demand.  In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been an unequivocal dealbreaker, but HTTP/2 has changed that rule of thumb.
 
 I ran a test on a sample page with 291 icons.  These HTTP request visualizations tell the story.
 
@@ -257,7 +267,7 @@ Apps that import and bundle icons during a build will probably still beat out pf
 
 ### Lighthouse
 
-As for hard numbers, I ran a few quick [Lighthouse][lighthouse] tests on the sample page with 291 icons.  The results are very promising: 98/100.
+As for hard numbers, I ran a few quick [Lighthouse][lighthouse] tests on the sample page with 291 icons.  The results are very promising, with pfe-icon scoring 98/100 in the performance category.
 
 There are always more performance axes to measure.  The initial results are very promising, but more testing would be good to have.
 
@@ -265,25 +275,26 @@ There are always more performance axes to measure.  The initial results are very
 
 ## Browser support
 
-Browser support is very good.  However, icon coloring doesn't work in Microsoft browsers (IE11 and Edge), so pfe-icon falls back to monochrome icons in those browsers.
+Browser support is very good.  The last several years of desktop and mobile browsers are supported.  However, icon coloring doesn't work in Microsoft browsers (IE11 and Edge), so pfe-icon falls back to monochrome icons in those browsers.
 
-![browser support thumbnails][browsers]
 
-You can scan the full [gallery of screenshots][browser-gallery].
-
-### Puzzler: MS Edge icon coloring
-
-Something puzzling to note... at one point icon coloring *did* work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the `<image>` element, but the next day it no longer worked.  I spent an entire day [bisecting][bisect] my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.
+<figure>
+<img src="https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png" alt="browser support thumbnails">
+<figcaption>
+<a href="https://imgur.com/a/waA2ssx">Gallery of browser support screenshots</a>
+</figcaption>
+</figure>
 
 ---
 
 ## Recap
 
-Icon sets are namespaced and can support any collection of SVGs by providing a custom [resolveIconName][resolveiconname] function, which maps concise icon names to URLs where each SVG can be found.
+pfe-icon is a Web Component for displaying icons.  It's compatible with all existing SVG icon libraries, has no CORS restrictions, and supports coloring icons.
 
-CORS issues are avoided by including SVGs as images, via the SVG `<image>` element.
+You can find pfe-icon on [<pfe-icon size=md style="--pfe-icon--Color: #FD3B45"  icon="fab-npm">npm</pfe-icon>][npm] and on [<pfe-icon style="--pfe-icon--Color: #f1f1f1" icon="fab-github-alt">github</pfe-icon>][repo].
 
-Icons are colored with an SVG `<filter>` element, and colors can be passed in with a CSS variable.
+[Give it a try][getting-started] and let us know what you think of pfe-icon and the rest of the PatternFly Elements project!
+
 
 [^1]: icon set URLs must have absolute paths, ie `/foo` or `http://foo.com/foo` but not `../foo` or `foo`
 
@@ -300,8 +311,7 @@ Icons are colored with an SVG `<filter>` element, and colors can be passed in wi
 [use-method]: #lt-use-gt
 [feflood]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood
 [svg-image]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image
-[browsers]: https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png
-[browser-gallery]: https://imgur.com/a/waA2ssx
+[svg-filter]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter
 [resolveiconname]: #resolveiconname
 [web-components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
 [font-awesome]: https://fontawesome.com/
@@ -309,3 +319,7 @@ Icons are colored with an SVG `<filter>` element, and colors can be passed in wi
 [lighthouse]: https://developers.google.com/web/tools/lighthouse/
 [bisect]: https://git-scm.com/docs/git-bisect
 [void]: https://html.spec.whatwg.org/multipage/syntax.html#void-elements
+[browser-support]: #browser-support
+[repo]: https://github.com/patternfly/patternfly-elements/tree/master/elements/pfe-icon
+[npm]: https://www.npmjs.com/package/@patternfly/pfe-icon
+[getting-started]: https://patternfly.github.io/patternfly-elements/getting-started/
