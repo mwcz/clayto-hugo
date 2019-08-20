@@ -157,7 +157,7 @@ Click and drag to set the image border to the average of the selected pixels.</d
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/jsimage/</guid>
-      <description>JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008&amp;frasl;2009 when I first started seriously studying JavaScript.
+      <description>JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008/2009 when I first started seriously studying JavaScript.
 A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
 I&amp;rsquo;ve made several posts about JSImage which contain live demos.
 I think I put more work into code formatting than correct output. ;)</description>
