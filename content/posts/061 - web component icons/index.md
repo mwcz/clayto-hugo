@@ -44,6 +44,18 @@ This is the story of `<pfe-icon>`.  I set out to build a web component which loa
 
 ---
 
+## Features
+
+ - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon>
+ - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon>
+ - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon>
+ - **Concise syntax** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon>
+ - **Icon sets** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon>
+
+But first, a demo!
+
+---
+
 ## Demo
 
 **Red Hat icons:**
@@ -66,31 +78,17 @@ This is the story of `<pfe-icon>`.  I set out to build a web component which loa
 | <pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon>              | `<pfe-icon icon="far-grin-hearts"></pfe-icon>` |
 | <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon> | `<pfe-icon icon="far-envelope"></pfe-icon>` |
 
-
----
-
-## Features
-
- - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon>
- - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon>
- - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon>
- - **Concise syntax** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon>
- - **Icon sets** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon>
-
-This post walks through how the features above were implemented.
-
 ---
 
 ## The pfe-icon tag
 
-Here's a typical pfe-icon tag.
+One aim of pfe-icon is to have a tag that's fairly easy to type.  Here's a typical pfe-icon tag.
 
 ```html
 <pfe-icon icon="rh-server"></pfe-icon>
 ```
-Result: <pfe-icon size=xl icon="rh-server"></pfe-icon>
 
-While it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).  Other than that, the syntax above is nice and minimal.
+Not bad.  It's short enough to type from memory.  Also while it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
 
 **Concise syntax**: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon>
 
@@ -99,8 +97,6 @@ Next, let's see how a simple icon name like `rh-server` is handled by pfe-icon.
 ## Icon sets
 
 When pfe-icon sees `icon="rh-server"` the first thing it does is figure out what icon set it belongs to.  Whatever comes before the first `-` is the name of the icon set.  Following that rule, we find the icon set is `rh`.  Only the first `-` is significant; for example, the name `rh-construction-hard-hat` represents icon `construction-hard-hat` inside an icon set named `rh`.
-
-Icon set namespacing (part of goal 5) achieved.
 
 At this point, pfe-icon knows the icon name and the set it belongs to, but doesn't know yet where to get the SVG.  That brings us to icon set definitions.
 
@@ -152,13 +148,10 @@ After creating our "foo" icon set, we can display a horse icon.
 <pfe-icon icon="foo-horse"></pfe-icon>
 ```
 
-Let's look again at the return value of our set's resolveIconName function.
+Let's look again at the return value of our set's resolveIconName function. For reference, the variables in the function have the following values: `path = "https://foo.com/svgs"` and `iconName = "foo-horse"`
 
 ```js
 `${path}/${iconName.replace("foo-", "")}.svg`
-// For reference, here are the values of the variables
-// path = "https://foo.com/svgs"
-// iconName = "foo-horse"
 ```
 
 The result, `https://foo.com/svgs/horse.svg`, is the correct URL to the horse icon.
@@ -237,10 +230,15 @@ There were many considerations that went into picking this approach for injectin
 
 The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With `fill` unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the `<filter>` and the `<img>` were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML's `<img>` for SVG's `<image>`), and it worked.
 
+### Defining the color
+
+Defining the color to apply to a pfe-icon is as easy as setting a CSS variable.  The name of the variable is `--pfe-icon--Color`.
+
+
+
 ### Puzzler: MS Edge icon coloring
 
 In the [browser support][browser-support] section, you'll see that icons are rendered as black and white in IE11 and Edge.  The odd thing is, at one point icon coloring *did* work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the `<image>` element, but the next day it no longer worked.  I spent an entire day [bisecting][bisect] my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.  Edge's days are numbered.
-
 
 ---
 
