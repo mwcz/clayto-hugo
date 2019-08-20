@@ -202,17 +202,17 @@
 <li><a href="#integrating-with-font-awesome">Integrating with Font Awesome</a></li>
 <li><a href="#organizing-icon-sets">Organizing icon sets</a></li>
 </ul></li>
-<li><a href="#svg-injection-and-coloring">SVG injection and coloring</a></li>
+<li><a href="#svg-injection-and-coloring">SVG injection and coloring</a>
+<ul>
+<li><a href="#puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</a></li>
+</ul></li>
 <li><a href="#performance">Performance</a>
 <ul>
 <li><a href="#icon-size">Icon size</a></li>
 <li><a href="#http">HTTP</a></li>
 <li><a href="#lighthouse">Lighthouse</a></li>
 </ul></li>
-<li><a href="#browser-support">Browser support</a>
-<ul>
-<li><a href="#puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</a></li>
-</ul></li>
+<li><a href="#browser-support">Browser support</a></li>
 <li><a href="#recap">Recap</a></li>
 </ul></li>
 </ul>
@@ -428,9 +428,11 @@ body {
 
 <h3 id="integrating-with-font-awesome">Integrating with Font Awesome</h3>
 
-<p>For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  Font Awesome&rsquo;s CSS/JS provides a CSS class-based approach to adding icons.  For example, to add a carrot to your page, you would write <code>&lt;i class=&quot;fas fa-carrot&quot;&gt;&lt;/i&gt;</code>.  I wanted to stay pretty close to that naming convention, but the two class names didn&rsquo;t fit well with pfe-icon&rsquo;s single <code>icon</code> attribute, so I shortened the identifier to <code>fas-carrot</code>.</p>
+<p>For this blog post, I wanted to demonstate using pfe-icon with a third-party icon library.  Font Awesome is a popular choice, and offers icons in SVG format (among others).  Font Awesome icons are separated into three categories: regular, solid, and brands.  Font Awesome&rsquo;s CSS/JS provides a CSS class-based approach to adding icons.  For example, to add a carrot to your page, you would write <code>&lt;i class=&quot;fas fa-carrot&quot;&gt;&lt;/i&gt;</code>. The &ldquo;s&rdquo; in &ldquo;fas&rdquo; stands for &ldquo;solid&rdquo;, one of Font Awesome&rsquo;s icon categories.  The categories are: brands, regular, and solid.</p>
 
-<p>The &ldquo;s&rdquo; in &ldquo;fas&rdquo; stands for &ldquo;solid&rdquo;, one of Font Awesome&rsquo;s icon categories.  Here are all three.</p>
+<p>I wanted to stay pretty close to Font Awesom&rsquo;es naming convention, but having two class names didn&rsquo;t mesh well with pfe-icon&rsquo;s single <code>icon</code> attribute, so I shortened &ldquo;fas fa-carrot&rdquo; to &ldquo;fas-carrot&rdquo;.  Here are a few more examples.</p>
+
+<p><center></p>
 
 <table>
 <thead>
@@ -445,28 +447,30 @@ body {
 <tbody>
 <tr>
 <td>brands</td>
-<td><code>class=&quot;fab fa-d-and-d&quot;</code></td>
-<td><code>icon=&quot;fab-d-and-d&quot;</code></td>
+<td><code>fab fa-d-and-d</code></td>
+<td><code>fab-d-and-d</code></td>
 <td><pfe-icon size=lg icon="fab-d-and-d"></pfe-icon></td>
 </tr>
 
 <tr>
 <td>regular</td>
-<td><code>class=&quot;far fa-eye&quot;</code></td>
-<td><code>icon=&quot;far-eye&quot;</code></td>
+<td><code>far fa-eye</code></td>
+<td><code>far-eye</code></td>
 <td><pfe-icon size=lg icon="far-eye"></pfe-icon></td>
 </tr>
 
 <tr>
 <td>solid</td>
-<td><code>class=&quot;fas fa-carrot&quot;</code></td>
-<td><code>icon=&quot;fas-carrot&quot;</code></td>
+<td><code>fas fa-carrot</code></td>
+<td><code>fas-carrot</code></td>
 <td><pfe-icon size=lg icon="fas-carrot"></pfe-icon></td>
 </tr>
 </tbody>
 </table>
 
-<p>Here&rsquo;s the icon set definition I created for the <em>solid</em> category.  It creates an icon set named <code>fas</code> and sets a base path of <code>/icons/font-awesome/solid</code>.</p>
+<p></center></p>
+
+<p>To make it real, I created icon sets for each category, &ldquo;fab&rdquo;, &ldquo;far&rdquo;, and &ldquo;fas&rdquo;.  They&rsquo;re almost identical to each other, so here&rsquo;s just one example.  This code creates an icon set named <code>fas</code> and sets a base path of <code>/icons/font-awesome/solid</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">PfeIcon</span>.<span style="color:#a6e22e">addIconSet</span>(
   <span style="color:#e6db74">&#34;fas&#34;</span>,
   <span style="color:#e6db74">&#34;/icons/font-awesome/solid&#34;</span>,
@@ -478,11 +482,17 @@ body {
 </code></pre></div>
 <p>The resolveIconName function (third argument) is fairly simple; it removes the <code>fas-</code> prefix from the icon name, prepends the base path, and appends <code>.svg</code>.  For example, it maps <code>fas-carrot</code> to <a href="https://clayto.com/icons/font-awesome/solid/carrot.svg"><code>/icons/font-awesome/solid/carrot.svg</code></a>.</p>
 
+<p>If you&rsquo;d like to see the icon set definitions for all three Font Awesome categories, see <a href="./pfe-icon-fa.js">pfe-icon-fa.js</a>.</p>
+
 <h3 id="organizing-icon-sets">Organizing icon sets</h3>
 
-<p>Many icon libraries sort icons into logical sets.  Sets like &ldquo;social network logos&rdquo; or &ldquo;road signs&rdquo; are useful when you&rsquo;re trying to find a specific icon.  However, when a logical set is bundled together, you wind up including a font on your page which includes <em>every</em> social network logo.</p>
+<p>When there isn&rsquo;t a third-party icon set that meets your needs, you may need to build your own set of icons.  When doing so, it can be helpful to categorize your icons.</p>
 
-<p>To avoid downloading icons that aren&rsquo;t needed, pfe-icon&rsquo;s philosophy is to decouple <strong>logical sets</strong> from <strong>delivery bundles</strong>.  If you are organizing an icon set, and know it will be delivered with pfe-icon, you&rsquo;ll never have to weigh how large the set is when choosing where to put a new icon.  You should never be tempted to create a new, <em>illogical</em> set, just to keep bundle size down.</p>
+<p>Most icon libraries sort icons into logical sets.  Sets like &ldquo;social network logos&rdquo; or &ldquo;road signs&rdquo; are useful when you&rsquo;re trying to find a specific icon.  However, when a logical set is bundled, you wind up including a font on your page which includes <em>every</em> social network logo.</p>
+
+<p>To avoid downloading icons that aren&rsquo;t needed, pfe-icon&rsquo;s philosophy is to decouple <strong>logical sets</strong> from <strong>delivery bundles</strong>.  If you are adding a new icon to your library, and know it will be delivered with pfe-icon, you&rsquo;ll never have to think &ldquo;Wow, this set has gotten really big, maybe I&rsquo;ll find a different home for this new icon&hellip;&rdquo;</p>
+
+<p>You should never be tempted to create a new, <em>illogical</em> set, just to keep bundle size down.</p>
 
 <hr />
 
@@ -490,7 +500,7 @@ body {
 
 <p>There are innumerable ways to get an SVG onto a webpage and each comes with its own quirks.  After exploring most of them, here is the method that best fits pfe-icon&rsquo;s requirements.</p>
 
-<p>Inside pfe-icon&rsquo;s shadow root is a single SVG.  The SVG has an <code>&lt;image&gt;</code> and a <code>&lt;filter&gt;</code>.  The URL emitted from resolveIconName is given to the <code>&lt;image&gt;</code>, which fetches and displays the SVG without CORS requirements.  The <code>&lt;filter&gt;</code> handles coloring.  Here&rsquo;s what the SVG looks like.</p>
+<p>Inside pfe-icon&rsquo;s shadow root is a single SVG.  The SVG has an <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image"><code>&lt;image&gt;</code></a> and a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter"><code>&lt;filter&gt;</code></a>.  The URL emitted from resolveIconName is given to the <code>&lt;image&gt;</code>, which fetches and displays the SVG without requiring CORS (no CORS: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon>).  The <code>&lt;filter&gt;</code> handles coloring.  Here&rsquo;s what the SVG looks like.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span><span style="color:#f92672">&gt;</span>
   <span style="color:#f92672">&lt;filter</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;color-filter&#34;</span> <span style="color:#a6e22e">color-interpolation-filters=</span><span style="color:#e6db74">&#34;sRGB&#34;</span> <span style="color:#a6e22e">x=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">y=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">height=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">width=</span><span style="color:#e6db74">&#34;100%&#34;</span><span style="color:#f92672">&gt;</span>
     <span style="color:#f92672">&lt;feFlood</span> <span style="color:#a6e22e">result=</span><span style="color:#e6db74">&#34;COLOR&#34;</span> <span style="color:#f92672">/&gt;</span>
@@ -498,13 +508,13 @@ body {
   <span style="color:#f92672">&lt;/filter&gt;</span>
   <span style="color:#f92672">&lt;image</span> <span style="color:#a6e22e">xlink:href=</span><span style="color:#e6db74">&#34;{{ SVG URL HERE }}&#34;</span> <span style="color:#a6e22e">filter=</span><span style="color:#e6db74">&#34;url(#color-filter)&#34;</span> <span style="color:#a6e22e">width=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">height=</span><span style="color:#e6db74">&#34;100%&#34;</span><span style="color:#f92672">&gt;&lt;/image&gt;</span>
 <span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
-<p>There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  A follow-up post has more about <a href="https://clayto.com/2019/07/062-how-not-to-make-svg-icons/">other SVG injection methods</a>.</p>
+<p>There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  I&rsquo;m working on a follow-up post about why other SVG injection methods didn&rsquo;t work out. <!-- [other SVG injection methods][discarded].--></p>
 
-<p>After Safari&rsquo;s incompatibility forced me to move on from the most promising method (<a href="#css-background-image">CSS background image</a>), I was stumped.  If SVG filters couldn&rsquo;t work inside Safari&rsquo;s Web Component implementation, would I have to give up and start from scratch?</p>
+<p>The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With <code>fill</code> unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the <code>&lt;filter&gt;</code> and the <code>&lt;img&gt;</code> were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML&rsquo;s <code>&lt;img&gt;</code> for SVG&rsquo;s <code>&lt;image&gt;</code>), and it worked.</p>
 
-<p>I had some hunches about why SVG filters don&rsquo;t work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its <code>id</code>.  Perhaps it was doing a naive <code>document.body.getElementById</code> rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.</p>
+<h3 id="puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</h3>
 
-<p>Anyway, I figured that if those hunches were true, the problem would disappear if the <code>&lt;filter&gt;</code> and the icon existed inside the same SVG element.  That led me to <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image"><code>&lt;image&gt;</code></a>, and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.</p>
+<p>In the <a href="#browser-support">browser support</a> section, you&rsquo;ll see that icons are rendered as black and white in IE11 and Edge.  The odd thing is, at one point icon coloring <em>did</em> work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the <code>&lt;image&gt;</code> element, but the next day it no longer worked.  I spent an entire day <a href="https://git-scm.com/docs/git-bisect">bisecting</a> my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.  Edge&rsquo;s days are numbered.</p>
 
 <hr />
 
@@ -514,11 +524,11 @@ body {
 
 <h3 id="icon-size">Icon size</h3>
 
-<p>The built-in icons are in the 0.5-1.5 kB range (gzipped). Pretty small.</p>
+<p>Icon SVGs tend to be less than 1 kB when gzipped.  Pretty small.  Meanwhile, including Font Awesome&rsquo;s three categories (let&rsquo;s say you needed one icon from each category) would cost 372.1 kB (gzipped).</p>
 
 <h3 id="http">HTTP</h3>
 
-<p>In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been a firm <strong>No</strong>, but HTTP/2 has changed that rule of thumb.</p>
+<p>pfe-icon fetches SVGs on-demand.  In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been an unequivocal dealbreaker, but HTTP/2 has changed that rule of thumb.</p>
 
 <p>I ran a test on a sample page with 291 icons.  These HTTP request visualizations tell the story.</p>
 
@@ -536,7 +546,7 @@ body {
 
 <h3 id="lighthouse">Lighthouse</h3>
 
-<p>As for hard numbers, I ran a few quick <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> tests on the sample page with 291 icons.  The results are very promising: <sup>98</sup>&frasl;<sub>100</sub>.</p>
+<p>As for hard numbers, I ran a few quick <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> tests on the sample page with 291 icons.  The results are very promising, with pfe-icon scoring <sup>98</sup>&frasl;<sub>100</sub> in the performance category.</p>
 
 <p>There are always more performance axes to measure.  The initial results are very promising, but more testing would be good to have.</p>
 
@@ -544,25 +554,24 @@ body {
 
 <h2 id="browser-support">Browser support</h2>
 
-<p>Browser support is very good.  However, icon coloring doesn&rsquo;t work in Microsoft browsers (IE11 and Edge), so pfe-icon falls back to monochrome icons in those browsers.</p>
+<p>Browser support is very good.  The last several years of desktop and mobile browsers are supported.  However, icon coloring doesn&rsquo;t work in Microsoft browsers (IE11 and Edge), so pfe-icon falls back to monochrome icons in those browsers.</p>
 
-<p><img src="https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png" alt="browser support thumbnails" /></p>
-
-<p>You can scan the full <a href="https://imgur.com/a/waA2ssx">gallery of screenshots</a>.</p>
-
-<h3 id="puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</h3>
-
-<p>Something puzzling to note&hellip; at one point icon coloring <em>did</em> work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the <code>&lt;image&gt;</code> element, but the next day it no longer worked.  I spent an entire day <a href="https://git-scm.com/docs/git-bisect">bisecting</a> my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.</p>
+<figure>
+<img src="https://user-images.githubusercontent.com/364615/61894462-7f1b9e80-aede-11e9-8c8a-cb403927fb09.png" alt="browser support thumbnails">
+<figcaption>
+<a href="https://imgur.com/a/waA2ssx">Gallery of browser support screenshots</a>
+</figcaption>
+</figure>
 
 <hr />
 
 <h2 id="recap">Recap</h2>
 
-<p>Icon sets are namespaced and can support any collection of SVGs by providing a custom <a href="#resolveiconname">resolveIconName</a> function, which maps concise icon names to URLs where each SVG can be found.</p>
+<p>pfe-icon is a Web Component for displaying icons.  It&rsquo;s compatible with all existing SVG icon libraries, has no CORS restrictions, and supports coloring icons.</p>
 
-<p>CORS issues are avoided by including SVGs as images, via the SVG <code>&lt;image&gt;</code> element.</p>
+<p>You can find pfe-icon on <a href="https://www.npmjs.com/package/@patternfly/pfe-icon"><pfe-icon size=md style="--pfe-icon--Color: #FD3B45"  icon="fab-npm">npm</pfe-icon></a> and on <a href="https://github.com/patternfly/patternfly-elements/tree/master/elements/pfe-icon"><pfe-icon style="--pfe-icon--Color: #f1f1f1" icon="fab-github-alt">github</pfe-icon></a>.</p>
 
-<p>Icons are colored with an SVG <code>&lt;filter&gt;</code> element, and colors can be passed in with a CSS variable.</p>
+<p><a href="https://patternfly.github.io/patternfly-elements/getting-started/">Give it a try</a> and let us know what you think of pfe-icon and the rest of the PatternFly Elements project!</p>
 <div class="footnotes">
 
 <hr />

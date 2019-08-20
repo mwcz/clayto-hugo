@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    3 minute read
+    4 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -212,6 +212,14 @@
 <p>To my consternation, while SVG filters worked perfectly for coloring background-image SVGs in all the browsers we care about, they did <em>not</em> work when used inside a Web Component.  The shadow DOM boundary breaks SVG filters in Edge, IE11, and all versions of Safari.</p>
 
 <hr />
+
+<h3 id="the-method-that-works">The method that works</h3>
+
+<p>After Safari&rsquo;s incompatibility forced me to move on from the most promising method ([CSS background image][css-bg]), I was stumped.  If SVG filters couldn&rsquo;t work inside Safari&rsquo;s Web Component implementation, would I have to give up and start from scratch?</p>
+
+<p>I had some hunches about why SVG filters don&rsquo;t work in Safari shadow DOMs.  One hunch was something to do with the fact that each SVG has its own shadow DOM.  Another was that Safari was having trouble looking up the SVG by its <code>id</code>.  Perhaps it was doing a naive <code>document.body.getElementById</code> rather than looking inside the nearest shadow root, for example.  Perhaps both hunches are true and related somehow.</p>
+
+<p>Anyway, I figured that if those hunches were true, the problem would disappear if the <code>&lt;filter&gt;</code> and the icon existed inside the same SVG element.  That led me to <code>&lt;image&gt;</code>, and when I tried it out, it worked perfectly.  Well, not in IE11, but everywhere else.</p>
 
   </section>
   <footer>
