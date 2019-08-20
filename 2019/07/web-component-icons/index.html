@@ -201,8 +201,8 @@ body {
 <ul>
 <li>
 <ul>
-<li><a href="#demo">Demo</a></li>
 <li><a href="#features">Features</a></li>
+<li><a href="#demo">Demo</a></li>
 <li><a href="#the-pfe-icon-tag">The pfe-icon tag</a></li>
 <li><a href="#icon-sets">Icon sets</a>
 <ul>
@@ -215,6 +215,7 @@ body {
 </ul></li>
 <li><a href="#svg-injection-and-coloring">SVG injection and coloring</a>
 <ul>
+<li><a href="#defining-the-color">Defining the color</a></li>
 <li><a href="#puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</a></li>
 </ul></li>
 <li><a href="#performance">Performance</a>
@@ -236,6 +237,20 @@ body {
 <p><center>
 <pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>
 </center></p>
+
+<hr />
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li><strong>On-demand icon loading</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon></li>
+<li><strong>No CORS restrictions</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon></li>
+<li><strong>Icon coloring</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon></li>
+<li><strong>Concise syntax</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon></li>
+<li><strong>Icon sets</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon></li>
+</ul>
+
+<p>But first, a demo!</p>
 
 <hr />
 
@@ -319,27 +334,11 @@ body {
 
 <hr />
 
-<h2 id="features">Features</h2>
-
-<ul>
-<li><strong>On-demand icon loading</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon></li>
-<li><strong>No CORS restrictions</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon></li>
-<li><strong>Icon coloring</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon></li>
-<li><strong>Concise syntax</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon></li>
-<li><strong>Icon sets</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon></li>
-</ul>
-
-<p>This post walks through how the features above were implemented.</p>
-
-<hr />
-
 <h2 id="the-pfe-icon-tag">The pfe-icon tag</h2>
 
-<p>Here&rsquo;s a typical pfe-icon tag.</p>
+<p>One aim of pfe-icon is to have a tag that&rsquo;s fairly easy to type.  Here&rsquo;s a typical pfe-icon tag.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-server&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
-<p>Result: <pfe-icon size=xl icon="rh-server"></pfe-icon></p>
-
-<p>While it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can&rsquo;t be self-closing (only a small set of &ldquo;<a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">void elements</a>&rdquo; can).  Other than that, the syntax above is nice and minimal.</p>
+<p>Not bad.  It&rsquo;s short enough to type from memory.  Also while it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can&rsquo;t be self-closing (only a small set of &ldquo;<a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">void elements</a>&rdquo; can).</p>
 
 <p><strong>Concise syntax</strong>: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon></p>
 
@@ -348,8 +347,6 @@ body {
 <h2 id="icon-sets">Icon sets</h2>
 
 <p>When pfe-icon sees <code>icon=&quot;rh-server&quot;</code> the first thing it does is figure out what icon set it belongs to.  Whatever comes before the first <code>-</code> is the name of the icon set.  Following that rule, we find the icon set is <code>rh</code>.  Only the first <code>-</code> is significant; for example, the name <code>rh-construction-hard-hat</code> represents icon <code>construction-hard-hat</code> inside an icon set named <code>rh</code>.</p>
-
-<p>Icon set namespacing (part of goal 5) achieved.</p>
 
 <p>At this point, pfe-icon knows the icon name and the set it belongs to, but doesn&rsquo;t know yet where to get the SVG.  That brings us to icon set definitions.</p>
 
@@ -417,12 +414,9 @@ body {
 
 <p>After creating our &ldquo;foo&rdquo; icon set, we can display a horse icon.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo-horse&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
-<p>Let&rsquo;s look again at the return value of our set&rsquo;s resolveIconName function.</p>
+<p>Let&rsquo;s look again at the return value of our set&rsquo;s resolveIconName function. For reference, the variables in the function have the following values: <code>path = &quot;https://foo.com/svgs&quot;</code> and <code>iconName = &quot;foo-horse&quot;</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;foo-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
-<span style="color:#75715e">// For reference, here are the values of the variables
-</span><span style="color:#75715e">// path = &#34;https://foo.com/svgs&#34;
-</span><span style="color:#75715e">// iconName = &#34;foo-horse&#34;
-</span></code></pre></div>
+</code></pre></div>
 <p>The result, <code>https://foo.com/svgs/horse.svg</code>, is the correct URL to the horse icon.</p>
 
 <p>The simplicity of this function reflects the simplicity of the directory structure in the example.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, allowing icon names to stay relatively concise.</p>
@@ -516,6 +510,10 @@ body {
 <p>There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  I&rsquo;m working on a follow-up post about why other SVG injection methods didn&rsquo;t work out. <!-- [other SVG injection methods][discarded].--></p>
 
 <p>The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With <code>fill</code> unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the <code>&lt;filter&gt;</code> and the <code>&lt;img&gt;</code> were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML&rsquo;s <code>&lt;img&gt;</code> for SVG&rsquo;s <code>&lt;image&gt;</code>), and it worked.</p>
+
+<h3 id="defining-the-color">Defining the color</h3>
+
+<p>Defining the color to apply to a pfe-icon is as easy as setting a CSS variable.  The name of the variable is <code>--pfe-icon--Color</code>.</p>
 
 <h3 id="puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</h3>
 
