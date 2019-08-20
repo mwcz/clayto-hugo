@@ -24,7 +24,7 @@
 :host {
   --pfe-icon--Spacing:                 var(--pfe-theme--container-spacer, 1rem);
   --pfe-icon--Size:                    var(--pfe-theme--icon-size, 1em);
-  --pfe-icon--InternalColor:           var(--pfe-icon--Color, var(--pfe-broadcasted--color--text, var(--pfe-theme--color--text, #333)));
+  --pfe-icon--Color:                   var(--pfe-broadcasted--color--text, var(--pfe-theme--color--text, #333));
   --pfe-icon--BackgroundColor:         transparent;
   --pfe-icon--BorderColor:             transparent;
   display: inline-block;
@@ -92,7 +92,7 @@
 }
 
 :host svg filter feFlood {
-  flood-color: var(--pfe-icon--InternalColor);
+  flood-color: var(--pfe-icon--Color);
 }
 
 :host([size="2x"]),
