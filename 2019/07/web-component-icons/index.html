@@ -181,9 +181,20 @@
 
 <script src="./pfe-icon-fa.js"></script>
 
-<p>This is the story of <code>pfe-icon</code>, a web component for displaying icons which loads icons on demand and is compatible with any existing set of SVGs.  It is part of the <a href="http://patternfly.org/patternfly-elements">PatternFly Elements</a> project.</p>
-
-<hr />
+<style>
+body {
+  --pfe-icon--Color: var(--pbp-fg-color, white);
+}
+@media (min-width: 750px) {
+  #TableOfContents {
+    float: right;
+    padding: 10px;
+    /* margin: 10px; */
+    margin: 0 0 20px 20px;
+    background-color: #242424;
+  }
+}
+</style>
 
 
   <nav id="TableOfContents">
@@ -220,19 +231,13 @@
 
 
 
-<hr />
+<p>This is the story of <code>&lt;pfe-icon&gt;</code>.  I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.  pfe-icon is part of the <a href="http://patternfly.org/patternfly-elements">PatternFly Elements</a> project.</p>
 
-<style>
-.icon-panel {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  justify-items: center;
-}
-body {
-  --pfe-icon--Color: var(--pbp-fg-color, white);
-}
-</style>
+<p><center>
+<pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>
+</center></p>
+
+<hr />
 
 <h2 id="demo">Demo</h2>
 

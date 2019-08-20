@@ -17,9 +17,7 @@
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>This is the story of pfe-icon, a web component for displaying icons which loads icons on demand and is compatible with any existing set of SVGs. It is part of the PatternFly Elements project.
- .icon-panel { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); justify-items: center; } body { --pfe-icon--Color: var(--pbp-fg-color, white); }  Demo Red Hat icons:
-   Icon Markup      &amp;lt;pfe-icon icon=&amp;quot;rh-aed&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-sun&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-leaf&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-puzzle-piece&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    &amp;lt;pfe-icon icon=&amp;quot;rh-space-rocket&amp;quot;&amp;gt;&amp;lt;/pfe-icon&amp;gt;    Font Awesome icons:</description>
+      <description>body { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }  This is the story of &amp;lt;pfe-icon&amp;gt;. I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.</description>
     </item>
     
   </channel>
