@@ -316,7 +316,7 @@ Theoretically, performance should be very good due to fetching only the icons in
 
 Icon SVGs tend to be less than 1 kB when gzipped.  Pretty small.  Meanwhile, including Font Awesome's three categories (let's say you needed one icon from each category) would cost 372.1 kB (gzipped).
 
-### HTTP
+### HTTP/1.1 vs HTTP/2
 
 pfe-icon fetches SVGs on-demand.  In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been an unequivocal dealbreaker, but HTTP/2 has changed that rule of thumb.
 
