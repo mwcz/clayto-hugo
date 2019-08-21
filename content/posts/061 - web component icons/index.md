@@ -300,6 +300,8 @@ On to the examples!
 
 PatternFly Elements also has a theming layer which can influence icon colors.  Documentation for the theming layer is in progress.
 
+**Icon coloring**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+
 ### Puzzler: MS Edge icon coloring
 
 In the [browser support][browser-support] section, you'll see that icons are rendered as black and white in IE11 and Edge.  The odd thing is, at one point icon coloring *did* work in Edge.  I swear.  I have a screenshot of colored icons in Edge on day I discovered the `<image>` element, but the next day it no longer worked.  I spent an entire day [bisecting][bisect] my commits, trying to figure out what changed, with no luck.  My only guess is that a minor version change in ShadyCSS is to blame.  In the end, icon coloring in Edge was not important enough to spend more time on it.  Edge's days are numbered.
