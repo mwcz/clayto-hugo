@@ -46,13 +46,13 @@ This is the story of `<pfe-icon>`.  I set out to build a web component which loa
 
 ## Features
 
- - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon>
- - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon>
- - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon>
- - **Concise syntax** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon>
- - **Icon sets** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon>
+ - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="concierge bell" icon="fas-concierge-bell"></pfe-icon>
+ - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="share icon" icon="fas-share"></pfe-icon>
+ - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="palette" icon="fas-palette"></pfe-icon>
+ - **Concise syntax** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="ruler" icon="fas-ruler-horizontal"></pfe-icon>
+ - **Compatible with all icon libraries** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)" title="category icon" icon="fas-object-group"></pfe-icon>
 
-But first, a demo!
+This post describes how to use pfe-icon and how its features are implemented.  But first, a demo!
 
 ---
 
@@ -85,12 +85,12 @@ But first, a demo!
 One aim of pfe-icon is to have a tag that's fairly easy to type.  Here's a typical pfe-icon tag.
 
 ```html
-<pfe-icon icon="rh-server"></pfe-icon>
+<pfe-icon icon="rh-leaf"></pfe-icon>
 ```
 
 Not bad.  It's short enough to type from memory.  Also while it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
 
-**Concise syntax**: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon>
+**Concise syntax**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
 
 Next, let's see how a simple icon name like `rh-server` is handled by pfe-icon.
 
@@ -160,7 +160,16 @@ The simplicity of this function reflects the simplicity of the directory structu
 
 For example, if your SVGs have names like "foo-icon-horse.svg", it's still possible to have icon names like "foo-horse" by teaching your resolveIconName function to inject the `-icon` when generating URLs.  Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.
 
-Enough imaginary examples.  Let's integrate pfe-icon with a third-party icon library!
+
+resolveIconName is the key to many of pfe-icon's features.  Let's check them off the list.
+
+**Compatible with all icon libraries**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+<br>
+**On-demand icon loading**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+<br>
+**Concise syntax**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+
+Enough imaginary examples.  Let's integrate pfe-icon with a real third-party icon library!
 
 ### Integrating with Font Awesome
 
@@ -207,6 +216,12 @@ To avoid downloading icons that aren't needed, pfe-icon's philosophy is to decou
 
 You should never be tempted to create a new, _illogical_ set, just to keep bundle size down.
 
+Whew, that was a long description.  Icon sets are the core of pfe-icon's extensibility.
+
+**Icon sets**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+
+Next, let's look at SVG injection and colorization.
+
 ---
 
 ## SVG injection and coloring
@@ -230,11 +245,60 @@ There were many considerations that went into picking this approach for injectin
 
 The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With `fill` unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the `<filter>` and the `<img>` were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML's `<img>` for SVG's `<image>`), and it worked.
 
-### Defining the color
+### Setting icon colors
 
-Defining the color to apply to a pfe-icon is as easy as setting a CSS variable.  The name of the variable is `--pfe-icon--Color`.
+Defining the color to apply to a pfe-icon is as easy as setting a CSS variable.  The name of the variable is `--pfe-icon--Color`.  PatternFly Elements also has a theming layer,
 
+You can set the color of individual icons, all icons, or discrete groups of icons.  The only limitation is that overriding `--pfe-icon--Color` must be applied directly to the pfe-icon elements, not to a container.  For instance, overriding it on `body` will not work.
 
+On to the examples!
+
+#### Coloring individual icons
+
+```html
+<style>
+.green-icon {
+  --pfe-icon--Color: green;
+}
+</style>
+
+<pfe-icon class="green-icon" icon="rh-leaf"></pfe-icon>
+```
+
+`style` attributes work as well.
+
+```html
+<pfe-icon style="--pfe-icon--Color: green" icon="rh-leaf"></pfe-icon>
+```
+
+#### Coloring all icons
+
+```html
+<style>
+  pfe-icon {
+    --pfe-icon--Color: green;
+  }
+</style>
+```
+
+#### Coloring groups of icons
+
+```html
+<style>
+.green-icons pfe-icon {
+  --pfe-icon--Color: green;
+}
+</style>
+
+<div class="green-icons">
+  <pfe-icon icon="rh-leaf"></pfe-icon>
+  <pfe-icon icon="rh-leaf"></pfe-icon>
+  <pfe-icon icon="rh-leaf"></pfe-icon>
+  <pfe-icon icon="rh-leaf"></pfe-icon>
+</div>
+```
+
+PatternFly Elements also has a theming layer which can influence icon colors.  Documentation for the theming layer is in progress.
 
 ### Puzzler: MS Edge icon coloring
 
