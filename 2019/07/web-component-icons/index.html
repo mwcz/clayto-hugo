@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    9 minute read
+    10 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -215,7 +215,12 @@ pfe-icon {
 </ul></li>
 <li><a href="#svg-injection-and-coloring">SVG injection and coloring</a>
 <ul>
-<li><a href="#defining-the-color">Defining the color</a></li>
+<li><a href="#setting-icon-colors">Setting icon colors</a>
+<ul>
+<li><a href="#coloring-individual-icons">Coloring individual icons</a></li>
+<li><a href="#coloring-all-icons">Coloring all icons</a></li>
+<li><a href="#coloring-groups-of-icons">Coloring groups of icons</a></li>
+</ul></li>
 <li><a href="#puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</a></li>
 </ul></li>
 <li><a href="#performance">Performance</a>
@@ -243,14 +248,14 @@ pfe-icon {
 <h2 id="features">Features</h2>
 
 <ul>
-<li><strong>On-demand icon loading</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-concierge-bell"></pfe-icon></li>
-<li><strong>No CORS restrictions</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-share"></pfe-icon></li>
-<li><strong>Icon coloring</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-palette"></pfe-icon></li>
-<li><strong>Concise syntax</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-ruler-horizontal"></pfe-icon></li>
-<li><strong>Icon sets</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  icon="fas-object-group"></pfe-icon></li>
+<li><strong>On-demand icon loading</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="concierge bell" icon="fas-concierge-bell"></pfe-icon></li>
+<li><strong>No CORS restrictions</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="share icon" icon="fas-share"></pfe-icon></li>
+<li><strong>Icon coloring</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="palette" icon="fas-palette"></pfe-icon></li>
+<li><strong>Concise syntax</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="ruler" icon="fas-ruler-horizontal"></pfe-icon></li>
+<li><strong>Compatible with all icon libraries</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)" title="category icon" icon="fas-object-group"></pfe-icon></li>
 </ul>
 
-<p>But first, a demo!</p>
+<p>This post describes how to use pfe-icon and how its features are implemented.  But first, a demo!</p>
 
 <hr />
 
@@ -337,10 +342,10 @@ pfe-icon {
 <h2 id="the-pfe-icon-tag">The pfe-icon tag</h2>
 
 <p>One aim of pfe-icon is to have a tag that&rsquo;s fairly easy to type.  Here&rsquo;s a typical pfe-icon tag.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-server&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
 <p>Not bad.  It&rsquo;s short enough to type from memory.  Also while it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can&rsquo;t be self-closing (only a small set of &ldquo;<a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">void elements</a>&rdquo; can).</p>
 
-<p><strong>Concise syntax</strong>: <pfe-icon style="--pfe-icon--Color: green" icon="fas-check">check</pfe-icon></p>
+<p><strong>Concise syntax</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon></p>
 
 <p>Next, let&rsquo;s see how a simple icon name like <code>rh-server</code> is handled by pfe-icon.</p>
 
@@ -423,7 +428,15 @@ pfe-icon {
 
 <p>For example, if your SVGs have names like &ldquo;foo-icon-horse.svg&rdquo;, it&rsquo;s still possible to have icon names like &ldquo;foo-horse&rdquo; by teaching your resolveIconName function to inject the <code>-icon</code> when generating URLs.  Whatever set of SVG icons you have, you can write a <code>resolveIconName</code> function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.</p>
 
-<p>Enough imaginary examples.  Let&rsquo;s integrate pfe-icon with a third-party icon library!</p>
+<p>resolveIconName is the key to many of pfe-icon&rsquo;s features.  Let&rsquo;s check them off the list.</p>
+
+<p><strong>Compatible with all icon libraries</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+<br>
+<strong>On-demand icon loading</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+<br>
+<strong>Concise syntax</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon></p>
+
+<p>Enough imaginary examples.  Let&rsquo;s integrate pfe-icon with a real third-party icon library!</p>
 
 <h3 id="integrating-with-font-awesome">Integrating with Font Awesome</h3>
 
@@ -493,6 +506,12 @@ pfe-icon {
 
 <p>You should never be tempted to create a new, <em>illogical</em> set, just to keep bundle size down.</p>
 
+<p>Whew, that was a long description.  Icon sets are the core of pfe-icon&rsquo;s extensibility.</p>
+
+<p><strong>Icon sets</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon></p>
+
+<p>Next, let&rsquo;s look at SVG injection and colorization.</p>
+
 <hr />
 
 <h2 id="svg-injection-and-coloring">SVG injection and coloring</h2>
@@ -511,9 +530,44 @@ pfe-icon {
 
 <p>The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With <code>fill</code> unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the <code>&lt;filter&gt;</code> and the <code>&lt;img&gt;</code> were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML&rsquo;s <code>&lt;img&gt;</code> for SVG&rsquo;s <code>&lt;image&gt;</code>), and it worked.</p>
 
-<h3 id="defining-the-color">Defining the color</h3>
+<h3 id="setting-icon-colors">Setting icon colors</h3>
 
-<p>Defining the color to apply to a pfe-icon is as easy as setting a CSS variable.  The name of the variable is <code>--pfe-icon--Color</code>.</p>
+<p>Defining the color to apply to a pfe-icon is as easy as setting a CSS variable.  The name of the variable is <code>--pfe-icon--Color</code>.  PatternFly Elements also has a theming layer,</p>
+
+<p>You can set the color of individual icons, all icons, or discrete groups of icons.  The only limitation is that overriding <code>--pfe-icon--Color</code> must be applied directly to the pfe-icon elements, not to a container.  For instance, overriding it on <code>body</code> will not work.</p>
+
+<p>On to the examples!</p>
+
+<h4 id="coloring-individual-icons">Coloring individual icons</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+.<span style="color:#a6e22e">green-icon</span> {
+  --pfe-icon--Color: <span style="color:#66d9ef">green</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;green-icon&#34;</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
+<p><code>style</code> attributes work as well.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;--pfe-icon--Color: green&#34;</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
+<h4 id="coloring-all-icons">Coloring all icons</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+  <span style="color:#f92672">pfe-icon</span> {
+    --pfe-icon--Color: <span style="color:#66d9ef">green</span>;
+  }
+&lt;/<span style="color:#f92672">style</span>&gt;</code></pre></div>
+<h4 id="coloring-groups-of-icons">Coloring groups of icons</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+.<span style="color:#a6e22e">green-icons</span> <span style="color:#f92672">pfe-icon</span> {
+  --pfe-icon--Color: <span style="color:#66d9ef">green</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;green-icons&#34;</span>&gt;
+  &lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;
+  &lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;
+  &lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;
+  &lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div>
+<p>PatternFly Elements also has a theming layer which can influence icon colors.  Documentation for the theming layer is in progress.</p>
 
 <h3 id="puzzler-ms-edge-icon-coloring">Puzzler: MS Edge icon coloring</h3>
 
