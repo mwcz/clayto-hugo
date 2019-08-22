@@ -16,6 +16,7 @@ pygmentsCodeFences = true
 [blackfriday]
 # laxHtmlBlocks allows empty lines inside HTML tags, such as an embedded script or style tag.
 extensions = ["laxHtmlBlocks"]
+fractions = false
 
 # Copyright notice. This is displayed in the footer.
 copyright = "&copy; Copyright 2013-2018 Michael Clayton"
