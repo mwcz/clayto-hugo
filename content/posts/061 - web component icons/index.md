@@ -243,7 +243,7 @@ Inside pfe-icon's shadow root is a single SVG.  The SVG has an [`<image>`][svg-i
 
 There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  I'm working on a follow-up post about why other SVG injection methods didn't work out. <!-- [other SVG injection methods][discarded].-->
 
-The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With `fill` unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the `<filter>` and the `<img>` were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML's `<img>` for SVG's `<image>`), and it worked.
+The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With `fill` unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the `<filter>` and the `<img>` were in the same shadow root.  After trying several more obvious options, I tried moving them both inside the same SVG (and swapping HTML's `<img>` for SVG's `<image>`), and it worked.
 
 ### Setting icon colors
 
