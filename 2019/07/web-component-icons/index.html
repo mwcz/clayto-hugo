@@ -364,10 +364,10 @@ pfe-icon {
 <p>Here&rsquo;s an example.  Let&rsquo;s say we have some SVGs hosted at <code>https://foo.com/svgs</code>. Listing the <code>svgs</code> directory would look like this:</p>
 
 <pre><code>https://foo.com/svgs/
-├── horse.svg
-├── battery.svg
-├── staple.svg
-└── coconut.svg
+├── foo-horse.svg
+├── foo-battery.svg
+├── foo-staple.svg
+└── foo-coconut.svg
 </code></pre>
 
 <p>Here&rsquo;s how to define an icon set to make pfe-icon compatible with our SVGs.</p>
@@ -378,7 +378,7 @@ pfe-icon {
 <span style="color:#a6e22e">PfeIcon</span>.<span style="color:#a6e22e">addIconSet</span>(
     <span style="color:#e6db74">&#34;foo&#34;</span>,
     <span style="color:#e6db74">&#34;https://foo.com/svgs&#34;</span>,
-    (<span style="color:#a6e22e">iconName</span>, <span style="color:#a6e22e">setName</span>, <span style="color:#a6e22e">path</span>) =&gt; <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;foo-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
+    (<span style="color:#a6e22e">iconName</span>, <span style="color:#a6e22e">setName</span>, <span style="color:#a6e22e">path</span>) =&gt; <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
 );
 </code></pre></div>
 <p>Here are the arguments for the <code>addIconSet</code> function, in order.</p>
@@ -420,13 +420,13 @@ pfe-icon {
 <p>After creating our &ldquo;foo&rdquo; icon set, we can display a horse icon.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo-horse&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
 <p>Let&rsquo;s look again at the return value of our set&rsquo;s resolveIconName function. For reference, the variables in the function have the following values: <code>path = &quot;https://foo.com/svgs&quot;</code> and <code>iconName = &quot;foo-horse&quot;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#34;foo-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">path</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">iconName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.svg`</span>
 </code></pre></div>
-<p>The result, <code>https://foo.com/svgs/horse.svg</code>, is the correct URL to the horse icon.</p>
+<p>The result, <code>https://foo.com/svgs/foo-horse.svg</code>, is the correct URL to the horse icon.</p>
 
 <p>The simplicity of this function reflects the simplicity of the directory structure in the example.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, allowing icon names to stay relatively concise.</p>
 
-<p>For example, if your SVGs have names like &ldquo;foo-icon-horse.svg&rdquo;, it&rsquo;s still possible to have icon names like &ldquo;foo-horse&rdquo; by teaching your resolveIconName function to inject the <code>-icon</code> when generating URLs.  Whatever set of SVG icons you have, you can write a <code>resolveIconName</code> function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.</p>
+<p>For example, if your SVGs have names like &ldquo;foo-vector-icon-horse.svg&rdquo;, it&rsquo;s still possible to have nice icon names like &ldquo;foo-horse&rdquo; by teaching your resolveIconName function to inject <code>-vector-icon</code> when generating URLs.  Whatever set of SVG icons you have, you can write a <code>resolveIconName</code> function that translates friendly icon names into full URLs.</p>
 
 <p>resolveIconName is the key to many of pfe-icon&rsquo;s features.  Let&rsquo;s check them off the list.</p>
 
