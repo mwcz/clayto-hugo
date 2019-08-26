@@ -368,7 +368,6 @@ You can find pfe-icon on [<pfe-icon size=md style="--pfe-icon--Color: #FD3B45"  
 
 [pfe]: http://patternfly.org/patternfly-elements
 [icon-sets]: #all-about-icon-sets
-[discarded]: {{< ref "062 - how not to make svg icons/index.md" >}}
 [coloring]: #svg-injection-and-coloring
 [use]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
