@@ -110,10 +110,10 @@ Here's an example.  Let's say we have some SVGs hosted at `https://foo.com/svgs`
 
 ```
 https://foo.com/svgs/
-├── horse.svg
-├── battery.svg
-├── staple.svg
-└── coconut.svg
+├── foo-horse.svg
+├── foo-battery.svg
+├── foo-staple.svg
+└── foo-coconut.svg
 ```
 
 Here's how to define an icon set to make pfe-icon compatible with our SVGs.
@@ -126,7 +126,7 @@ import PfeIcon from "@patternfly/pfe-icon";
 PfeIcon.addIconSet(
     "foo",
     "https://foo.com/svgs",
-    (iconName, setName, path) => `${path}/${iconName.replace("foo-", "")}.svg`
+    (iconName, setName, path) => `${path}/${iconName}.svg`
 );
 ```
 Here are the arguments for the `addIconSet` function, in order.
@@ -150,14 +150,14 @@ After creating our "foo" icon set, we can display a horse icon.
 Let's look again at the return value of our set's resolveIconName function. For reference, the variables in the function have the following values: `path = "https://foo.com/svgs"` and `iconName = "foo-horse"`
 
 ```js
-`${path}/${iconName.replace("foo-", "")}.svg`
+`${path}/${iconName}.svg`
 ```
 
-The result, `https://foo.com/svgs/horse.svg`, is the correct URL to the horse icon.
+The result, `https://foo.com/svgs/foo-horse.svg`, is the correct URL to the horse icon.
 
 The simplicity of this function reflects the simplicity of the directory structure in the example.  For icon libraries where the directory structure or filename conventions are more complex, those complexities can be smoothed over with special logic in the resolveIconName function, allowing icon names to stay relatively concise.
 
-For example, if your SVGs have names like "foo-icon-horse.svg", it's still possible to have icon names like "foo-horse" by teaching your resolveIconName function to inject the `-icon` when generating URLs.  Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs, no matter what naming conventions the icon library has.
+For example, if your SVGs have names like "foo-vector-icon-horse.svg", it's still possible to have nice icon names like "foo-horse" by teaching your resolveIconName function to inject `-vector-icon` when generating URLs.  Whatever set of SVG icons you have, you can write a `resolveIconName` function that translates friendly icon names into full URLs.
 
 
 resolveIconName is the key to many of pfe-icon's features.  Let's check them off the list.
