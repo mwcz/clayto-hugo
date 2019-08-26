@@ -69,7 +69,7 @@
   };
 
   /*!
-   * PatternFly Elements: PFElement 1.0.0-prerelease.19
+   * PatternFly Elements: PFElement 1.0.0-prerelease.20
    * @license
    * Copyright 2019 Red Hat, Inc.
    * 
@@ -125,7 +125,7 @@
   }
 
   /*!
-   * PatternFly Elements: PFElement 1.0.0-prerelease.19
+   * PatternFly Elements: PFElement 1.0.0-prerelease.20
    * @license
    * Copyright 2019 Red Hat, Inc.
    * 
@@ -217,7 +217,12 @@
     }, {
       key: "version",
       get: function get$$1() {
-        return "1.0.0-prerelease.19";
+        return "1.0.0-prerelease.20";
+      }
+    }, {
+      key: "randomId",
+      get: function get$$1() {
+        return Math.random().toString(36).substr(2, 9);
       }
     }]);
 

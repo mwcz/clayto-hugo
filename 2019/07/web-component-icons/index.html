@@ -226,7 +226,7 @@ pfe-icon {
 <li><a href="#performance">Performance</a>
 <ul>
 <li><a href="#icon-size">Icon size</a></li>
-<li><a href="#http">HTTP</a></li>
+<li><a href="#http-1-1-vs-http-2">HTTP/1.1 vs HTTP/2</a></li>
 <li><a href="#lighthouse">Lighthouse</a></li>
 </ul></li>
 <li><a href="#browser-support">Browser support</a></li>
@@ -528,7 +528,7 @@ pfe-icon {
 <span style="color:#f92672">&lt;/svg&gt;</span></code></pre></div>
 <p>There were many considerations that went into picking this approach for injecting SVGs, but the biggest one is that this approach allows SVGs to be loaded from any origin.  I&rsquo;m working on a follow-up post about why other SVG injection methods didn&rsquo;t work out. <!-- [other SVG injection methods][discarded].--></p>
 
-<p>The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With <code>fill</code> unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the <code>&lt;filter&gt;</code> and the <code>&lt;img&gt;</code> were in the same shadow root.  On a hunch, I tried moving them both inside the same SVG (and swapping HTML&rsquo;s <code>&lt;img&gt;</code> for SVG&rsquo;s <code>&lt;image&gt;</code>), and it worked.</p>
+<p>The summary for why I went with this approach for SVG injection and coloring all comes down to Safari support.  With <code>fill</code> unavailable, the only way to color icons is a CSS+SVG filter.  However, Safari was unable to apply the filter even when the <code>&lt;filter&gt;</code> and the <code>&lt;img&gt;</code> were in the same shadow root.  After trying several more obvious options, I tried moving them both inside the same SVG (and swapping HTML&rsquo;s <code>&lt;img&gt;</code> for SVG&rsquo;s <code>&lt;image&gt;</code>), and it worked.</p>
 
 <h3 id="setting-icon-colors">Setting icon colors</h3>
 
@@ -585,7 +585,7 @@ pfe-icon {
 
 <p>Icon SVGs tend to be less than 1 kB when gzipped.  Pretty small.  Meanwhile, including Font Awesome&rsquo;s three categories (let&rsquo;s say you needed one icon from each category) would cost 372.1 kB (gzipped).</p>
 
-<h3 id="http">HTTP</h3>
+<h3 id="http-1-1-vs-http-2">HTTP/1.1 vs HTTP/2</h3>
 
 <p>pfe-icon fetches SVGs on-demand.  In the HTTP/1.1 days, making a separate HTTP request for each each SVG would have been an unequivocal dealbreaker, but HTTP/2 has changed that rule of thumb.</p>
 
@@ -655,96 +655,6 @@ pfe-icon {
   <div class="pbp-related">
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/05/cee-tribe-display/">CEE Tribe Display</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A game for Red Hat Summit.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2018-05-18T00:00:00Z">
-      May 18, 2018
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/05/cee-tribe-display/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2018/05/cee-tribe-display/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/05/engage/">Engage</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A game for Red Hat Summit.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2018-05-04T00:00:00Z">
-      May 4, 2018
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/05/engage/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2018/05/engage/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2018/04/open-jam-workshop/">Open Jam Workshop</a></h2>
   <div class="pbp-article-summary">
     <section>
@@ -772,51 +682,6 @@ pfe-icon {
             <img
               class="glass-card-bg glass-card-bg-default"
               src="https://clayto.com/2018/04/open-jam-workshop/thumb.png">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/">Visualizing Machine Learning with WebGL</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        Building a WebGL particle system to visualize machine learning.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2018-03-14T00:00:00Z">
-      Mar 14, 2018
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -907,6 +772,141 @@ pfe-icon {
             <img
               class="glass-card-bg glass-card-bg-default"
               src="https://clayto.com/2017/10/open-jam/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/08/in-orange-light/">In Orange Light</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        An atmospheric mountain survival game I built in 48 hours for Ludum Dare 39.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-08-04T00:00:00Z">
+      Aug 4, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/08/in-orange-light/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-tl"
+              src="https://clayto.com/2017/08/in-orange-light/./iol-square-logo.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/games/pity-about-earth/">Pity About Earth...</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-05-07T00:00:00Z">
+      May 7, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/games/pity-about-earth/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/games/pity-about-earth/./logo-notitle.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A WebGL-based visualizer for LED displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-03-10T00:00:00Z">
+      Mar 10, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/03/meet-simpixel/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2017/03/meet-simpixel/./thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>

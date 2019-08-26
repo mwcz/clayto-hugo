@@ -6,10 +6,46 @@
     <description>Recent content in Tags on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 May 2019 14:17:57 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>javascript</title>
+      <link>https://clayto.com/tags/javascript/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>patternfly</title>
+      <link>https://clayto.com/tags/patternfly/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/patternfly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://clayto.com/tags/web/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-components</title>
+      <link>https://clayto.com/tags/web-components/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/web-components/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>fedora</title>
@@ -57,15 +93,6 @@
     </item>
     
     <item>
-      <title>javascript</title>
-      <link>https://clayto.com/tags/javascript/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>open-jam</title>
       <link>https://clayto.com/tags/open-jam/</link>
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
@@ -89,15 +116,6 @@
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://clayto.com/tags/web/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/web/</guid>
       <description></description>
     </item>
     
@@ -341,15 +359,6 @@
       <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/polymer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web-components</title>
-      <link>https://clayto.com/tags/web-components/</link>
-      <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/web-components/</guid>
       <description></description>
     </item>
     

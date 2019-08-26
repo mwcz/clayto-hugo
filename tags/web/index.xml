@@ -6,10 +6,19 @@
     <description>Recent content in web on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Web Component Icons</title>
+      <link>https://clayto.com/2019/07/web-component-icons/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/2019/07/web-component-icons/</guid>
+      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }  This is the story of &amp;lt;pfe-icon&amp;gt;. I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.</description>
+    </item>
     
     <item>
       <title>Open Jam Workshop</title>

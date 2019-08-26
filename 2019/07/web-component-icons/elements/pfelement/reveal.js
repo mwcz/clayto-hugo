@@ -1,5 +1,5 @@
 /*!
- * PatternFly Elements: PFElement 1.0.0-prerelease.19
+ * PatternFly Elements: PFElement 1.0.0-prerelease.20
  * @license
  * Copyright 2019 Red Hat, Inc.
  * 
