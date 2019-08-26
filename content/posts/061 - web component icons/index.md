@@ -9,7 +9,6 @@ Tags:
 description: "Creating an icon system for PatternFly Elements, using Web Components and SVGs."
 thumbnail: thumb.png
 mwc: 61
-draft: true
 ---
 
 <!-- use polyfills and ES5 build of PFE for maximum browser compatibility -->
