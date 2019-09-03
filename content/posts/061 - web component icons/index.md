@@ -38,18 +38,18 @@ pfe-icon {
 This is the story of `<pfe-icon>`.  I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.  pfe-icon is part of the [PatternFly Elements][pfe] project.
 
 <center>
-<pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>
+<pfe-icon style="--pfe-icon--Color: #F39A42"  size="lg" icon="far-grin-stars"></pfe-icon>
+<pfe-icon style="--pfe-icon--Color: #56BD58"  size="lg" icon="far-hand-peace"></pfe-icon>
+<pfe-icon style="--pfe-icon--Color: #CE393C" size="lg" icon="fab-redhat"></pfe-icon>
 </center>
-
----
 
 ## Features
 
  - **On-demand icon loading** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="concierge bell" icon="fas-concierge-bell"></pfe-icon>
- - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="share icon" icon="fas-share"></pfe-icon>
+ - **No CORS restrictions** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="share icon" icon="fas-lock-open"></pfe-icon>
  - **Icon coloring** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="palette" icon="fas-palette"></pfe-icon>
  - **Concise syntax** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="ruler" icon="fas-ruler-horizontal"></pfe-icon>
- - **Compatible with all icon libraries** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)" title="category icon" icon="fas-object-group"></pfe-icon>
+ - **Compatible with all SVG icon libraries** <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)" title="category icon" icon="fas-icons"></pfe-icon>
 
 This post describes how to use pfe-icon and how its features are implemented.  But first, a demo!
 
@@ -57,37 +57,39 @@ This post describes how to use pfe-icon and how its features are implemented.  B
 
 ## Demo
 
+Here's a demo of using pfe-icon to display icons from Red Hat's icon library and from [Font Awesome][font-awesome].
+
 **Red Hat icons:**
 
 | Icon | Markup |
 | --- | --- |
-| <pfe-icon style="--pfe-icon--Color: #CE393C" size="xl" icon="rh-aed"></pfe-icon> | `<pfe-icon icon="rh-aed"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #F39A42" size="xl" icon="rh-sun"></pfe-icon> | `<pfe-icon icon="rh-sun"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #56BD58" size="xl" icon="rh-leaf"></pfe-icon> | `<pfe-icon icon="rh-leaf"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #8E59CB" size="xl" icon="rh-puzzle-piece"></pfe-icon> | `<pfe-icon icon="rh-puzzle-piece"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="rh-space-rocket"></pfe-icon> | `<pfe-icon icon="rh-space-rocket"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #CE393C" size="xl" icon="rh-aed"></pfe-icon> | {{< highlight html >}}<pfe-icon icon="rh-aed"></pfe-icon>{{< / highlight >}} |
+| <pfe-icon style="--pfe-icon--Color: #F39A42" size="xl" icon="rh-sun"></pfe-icon> | {{< highlight html >}}<pfe-icon icon="rh-sun"></pfe-icon>{{< / highlight >}}|
+| <pfe-icon style="--pfe-icon--Color: #56BD58" size="xl" icon="rh-leaf"></pfe-icon> | {{< highlight html >}}<pfe-icon icon="rh-leaf"></pfe-icon>{{< / highlight >}}|
+| <pfe-icon style="--pfe-icon--Color: #8E59CB" size="xl" icon="rh-puzzle-piece"></pfe-icon> | {{< highlight html >}}<pfe-icon icon="rh-puzzle-piece"></pfe-icon>{{< / highlight >}} |
+| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="rh-space-rocket"></pfe-icon> | {{< highlight html >}}<pfe-icon icon="rh-space-rocket"></pfe-icon>{{< / highlight >}} |
 
 **Font Awesome icons:**
 
 | Icon | Markup |
 | --- | --- |
-| <pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>                    | `<pfe-icon icon="fab-redhat"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #F39A42"  size="xl" icon="fab-accessible-icon"></pfe-icon>           | `<pfe-icon icon="fab-accessible-icon"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #56BD58"  size="xl" icon="far-eye"></pfe-icon>                      | `<pfe-icon icon="far-eye"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon>              | `<pfe-icon icon="far-grin-hearts"></pfe-icon>` |
-| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon> | `<pfe-icon icon="far-envelope"></pfe-icon>` |
+| <pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>                    | {{< highlight html >}}<pfe-icon icon="fab-redhat"></pfe-icon>{{< / highlight >}} |
+| <pfe-icon style="--pfe-icon--Color: #F39A42"  size="xl" icon="fab-accessible-icon"></pfe-icon>           | {{< highlight html >}}<pfe-icon icon="fab-accessible-icon"></pfe-icon>{{< / highlight >}} |
+| <pfe-icon style="--pfe-icon--Color: #56BD58"  size="xl" icon="far-eye"></pfe-icon>                      | {{< highlight html >}}<pfe-icon icon="far-eye"></pfe-icon>{{< / highlight >}} |
+| <pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon>              | {{< highlight html >}}<pfe-icon icon="far-grin-hearts"></pfe-icon>{{< / highlight >}} |
+| <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon> | {{< highlight html >}}<pfe-icon icon="far-envelope"></pfe-icon>{{< / highlight >}} |
 
 ---
 
 ## The pfe-icon tag
 
-One aim of pfe-icon is to have a tag that's fairly easy to type.  Here's a typical pfe-icon tag.
+One aim of pfe-icon is to have a tag that's easy to type from memory.  Here's a typical pfe-icon tag.
 
 ```html
 <pfe-icon icon="rh-leaf"></pfe-icon>
 ```
 
-Not bad.  It's short enough to type from memory.  Also while it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
+Also, though it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can't be self-closing (only a small set of "[void elements][void]" can).
 
 **Concise syntax**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
 
@@ -162,7 +164,7 @@ For example, if your SVGs have names like "foo-vector-icon-horse.svg", it's stil
 
 resolveIconName is the key to many of pfe-icon's features.  Let's check them off the list.
 
-**Compatible with all icon libraries**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+**Compatible with all (SVG) icon libraries**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
 <br>
 **On-demand icon loading**: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
 <br>
@@ -188,7 +190,7 @@ I wanted to stay pretty close to Font Awesom'es naming convention, but having tw
 
 </center>
 
-To make it real, I created icon sets for each category, "fab", "far", and "fas".  They're almost identical to each other, so here's just one example.  This code creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid`.
+To make it real, I created icon sets for each category, "fab", "far", and "fas".  They're almost identical to each other, so here's just one example.  This code creates an icon set named `fas` and sets a base path of `/icons/font-awesome/solid` (which is where I saved the Font Awesome 'solid' SVGs).
 
 ```js
 PfeIcon.addIconSet(
@@ -357,7 +359,7 @@ Browser support is very good.  The last several years of desktop and mobile brow
 
 ## Recap
 
-pfe-icon is a Web Component for displaying icons.  It's compatible with all existing SVG icon libraries, has no CORS restrictions, and supports coloring icons.
+pfe-icon is a Web Component for displaying icons.  It's compatible with any SVG icon library, has no CORS restrictions, and supports coloring icons.
 
 You can find pfe-icon on [<pfe-icon size=md style="--pfe-icon--Color: #FD3B45"  icon="fab-npm">npm</pfe-icon>][npm] and on [<pfe-icon style="--pfe-icon--Color: #f1f1f1" icon="fab-github-alt">github</pfe-icon>][repo].
 
