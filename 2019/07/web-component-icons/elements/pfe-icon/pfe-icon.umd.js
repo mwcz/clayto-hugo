@@ -185,7 +185,7 @@
   }
 
   /*!
-   * PatternFly Elements: PfeIcon 1.0.0-prerelease.20
+   * PatternFly Elements: PfeIcon 1.0.0-prerelease.23
    * @license
    * Copyright 2019 Red Hat, Inc.
    * 
@@ -265,7 +265,7 @@
     }], [{
       key: "version",
       get: function get$$1() {
-        return "1.0.0-prerelease.20";
+        return "1.0.0-prerelease.23";
       }
     }, {
       key: "properties",

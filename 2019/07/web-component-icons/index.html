@@ -240,19 +240,19 @@ pfe-icon {
 <p>This is the story of <code>&lt;pfe-icon&gt;</code>.  I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.  pfe-icon is part of the <a href="http://patternfly.org/patternfly-elements">PatternFly Elements</a> project.</p>
 
 <p><center>
-<pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon>
+<pfe-icon style="--pfe-icon--Color: #F39A42"  size="lg" icon="far-grin-stars"></pfe-icon>
+<pfe-icon style="--pfe-icon--Color: #56BD58"  size="lg" icon="far-hand-peace"></pfe-icon>
+<pfe-icon style="--pfe-icon--Color: #CE393C" size="lg" icon="fab-redhat"></pfe-icon>
 </center></p>
-
-<hr />
 
 <h2 id="features">Features</h2>
 
 <ul>
 <li><strong>On-demand icon loading</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="concierge bell" icon="fas-concierge-bell"></pfe-icon></li>
-<li><strong>No CORS restrictions</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="share icon" icon="fas-share"></pfe-icon></li>
+<li><strong>No CORS restrictions</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="share icon" icon="fas-lock-open"></pfe-icon></li>
 <li><strong>Icon coloring</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="palette" icon="fas-palette"></pfe-icon></li>
 <li><strong>Concise syntax</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)"  title="ruler" icon="fas-ruler-horizontal"></pfe-icon></li>
-<li><strong>Compatible with all icon libraries</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)" title="category icon" icon="fas-object-group"></pfe-icon></li>
+<li><strong>Compatible with all SVG icon libraries</strong> <pfe-icon style="--pfe-icon--Color: var(--pbp-blue, white)" title="category icon" icon="fas-icons"></pfe-icon></li>
 </ul>
 
 <p>This post describes how to use pfe-icon and how its features are implemented.  But first, a demo!</p>
@@ -260,6 +260,8 @@ pfe-icon {
 <hr />
 
 <h2 id="demo">Demo</h2>
+
+<p>Here&rsquo;s a demo of using pfe-icon to display icons from Red Hat&rsquo;s icon library and from <a href="https://fontawesome.com/">Font Awesome</a>.</p>
 
 <p><strong>Red Hat icons:</strong></p>
 
@@ -274,27 +276,27 @@ pfe-icon {
 <tbody>
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #CE393C" size="xl" icon="rh-aed"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;rh-aed&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-aed&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #F39A42" size="xl" icon="rh-sun"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;rh-sun&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-sun&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #56BD58" size="xl" icon="rh-leaf"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;rh-leaf&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #8E59CB" size="xl" icon="rh-puzzle-piece"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;rh-puzzle-piece&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-puzzle-piece&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="rh-space-rocket"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;rh-space-rocket&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-space-rocket&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 </tbody>
 </table>
@@ -312,27 +314,27 @@ pfe-icon {
 <tbody>
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #CE393C"  size="xl" icon="fab-redhat"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;fab-redhat&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fab-redhat&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #F39A42"  size="xl" icon="fab-accessible-icon"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;fab-accessible-icon&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fab-accessible-icon&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #56BD58"  size="xl" icon="far-eye"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;far-eye&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;far-eye&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: #8E59CB"  size="xl" icon="far-grin-hearts"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;far-grin-hearts&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;far-grin-hearts&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 
 <tr>
 <td><pfe-icon style="--pfe-icon--Color: var(--pbp-blue, #6FA5F2)" size="xl" icon="far-envelope"></pfe-icon></td>
-<td><code>&lt;pfe-icon icon=&quot;far-envelope&quot;&gt;&lt;/pfe-icon&gt;</code></td>
+<td><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;far-envelope&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div></td>
 </tr>
 </tbody>
 </table>
@@ -341,9 +343,9 @@ pfe-icon {
 
 <h2 id="the-pfe-icon-tag">The pfe-icon tag</h2>
 
-<p>One aim of pfe-icon is to have a tag that&rsquo;s fairly easy to type.  Here&rsquo;s a typical pfe-icon tag.</p>
+<p>One aim of pfe-icon is to have a tag that&rsquo;s easy to type from memory.  Here&rsquo;s a typical pfe-icon tag.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pfe-icon</span> <span style="color:#a6e22e">icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rh-leaf&#34;</span>&gt;&lt;/<span style="color:#f92672">pfe-icon</span>&gt;</code></pre></div>
-<p>Not bad.  It&rsquo;s short enough to type from memory.  Also while it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can&rsquo;t be self-closing (only a small set of &ldquo;<a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">void elements</a>&rdquo; can).</p>
+<p>Also, though it would have been nice if pfe-icon could have a self-closing tag, Custom Elements can&rsquo;t be self-closing (only a small set of &ldquo;<a href="https://html.spec.whatwg.org/multipage/syntax.html#void-elements">void elements</a>&rdquo; can).</p>
 
 <p><strong>Concise syntax</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon></p>
 
@@ -430,7 +432,7 @@ pfe-icon {
 
 <p>resolveIconName is the key to many of pfe-icon&rsquo;s features.  Let&rsquo;s check them off the list.</p>
 
-<p><strong>Compatible with all icon libraries</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
+<p><strong>Compatible with all (SVG) icon libraries</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
 <br>
 <strong>On-demand icon loading</strong>: <pfe-icon style="--pfe-icon--Color: green" aria-label="check" icon="fas-check">check</pfe-icon>
 <br>
@@ -482,7 +484,7 @@ pfe-icon {
 
 <p></center></p>
 
-<p>To make it real, I created icon sets for each category, &ldquo;fab&rdquo;, &ldquo;far&rdquo;, and &ldquo;fas&rdquo;.  They&rsquo;re almost identical to each other, so here&rsquo;s just one example.  This code creates an icon set named <code>fas</code> and sets a base path of <code>/icons/font-awesome/solid</code>.</p>
+<p>To make it real, I created icon sets for each category, &ldquo;fab&rdquo;, &ldquo;far&rdquo;, and &ldquo;fas&rdquo;.  They&rsquo;re almost identical to each other, so here&rsquo;s just one example.  This code creates an icon set named <code>fas</code> and sets a base path of <code>/icons/font-awesome/solid</code> (which is where I saved the Font Awesome &lsquo;solid&rsquo; SVGs).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">PfeIcon</span>.<span style="color:#a6e22e">addIconSet</span>(
   <span style="color:#e6db74">&#34;fas&#34;</span>,
   <span style="color:#e6db74">&#34;/icons/font-awesome/solid&#34;</span>,
@@ -626,7 +628,7 @@ pfe-icon {
 
 <h2 id="recap">Recap</h2>
 
-<p>pfe-icon is a Web Component for displaying icons.  It&rsquo;s compatible with all existing SVG icon libraries, has no CORS restrictions, and supports coloring icons.</p>
+<p>pfe-icon is a Web Component for displaying icons.  It&rsquo;s compatible with any SVG icon library, has no CORS restrictions, and supports coloring icons.</p>
 
 <p>You can find pfe-icon on <a href="https://www.npmjs.com/package/@patternfly/pfe-icon"><pfe-icon size=md style="--pfe-icon--Color: #FD3B45"  icon="fab-npm">npm</pfe-icon></a> and on <a href="https://github.com/patternfly/patternfly-elements/tree/master/elements/pfe-icon"><pfe-icon style="--pfe-icon--Color: #f1f1f1" icon="fab-github-alt">github</pfe-icon></a>.</p>
 

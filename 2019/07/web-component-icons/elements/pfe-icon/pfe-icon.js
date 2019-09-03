@@ -55,7 +55,7 @@ function addBuiltIns(PfeIcon) {
 }
 
 /*!
- * PatternFly Elements: PfeIcon 1.0.0-prerelease.20
+ * PatternFly Elements: PfeIcon 1.0.0-prerelease.23
  * @license
  * Copyright 2019 Red Hat, Inc.
  * 
@@ -119,7 +119,7 @@ function _iconLoadError(el) {
 
 class PfeIcon extends PFElement {
   static get version() {
-    return "1.0.0-prerelease.20";
+    return "1.0.0-prerelease.23";
   }
 
   get html() {

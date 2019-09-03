@@ -1,5 +1,5 @@
 /*!
- * PatternFly Elements: PFElement 1.0.0-prerelease.20
+ * PatternFly Elements: PFElement 1.0.0-prerelease.23
  * @license
  * Copyright 2019 Red Hat, Inc.
  * 
@@ -53,7 +53,7 @@ function handleWebComponentsReady() {
 }
 
 /*!
- * PatternFly Elements: PFElement 1.0.0-prerelease.20
+ * PatternFly Elements: PFElement 1.0.0-prerelease.23
  * @license
  * Copyright 2019 Red Hat, Inc.
  * 
@@ -105,7 +105,7 @@ class PFElement extends HTMLElement {
   }
 
   static get version() {
-    return "1.0.0-prerelease.20";
+    return "1.0.0-prerelease.23";
   }
   
   static get randomId() {
