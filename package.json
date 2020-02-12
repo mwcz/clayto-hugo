@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/mwcz/clayto-hugo#readme",
   "devDependencies": {
-    "husky": "4.2.2",
+    "husky": "4.2.3",
     "less": "3.11.1",
     "prettier": "1.19.1",
     "pretty-quick": "2.0.1"
