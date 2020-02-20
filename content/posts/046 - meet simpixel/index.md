@@ -72,17 +72,12 @@ The configuration message conveys the spatial layout of the LEDs.
 For example, a configuration message of `0x0000009A02FE000C` is interpreted as
 follows.
 
-```text
-+--------+------+------+------+
-| opcode |    X |    Y |    Z |
-+--------+------+------+------+
-| 0x0000 | 009A | 02FE | 000C |
-+--------+------+------+------+
-| config |  154 |  766 |   12 |
-+--------+------+------+------+
-```
+| opcode |    X |    Y |    Z
+|--------|------|------|------
+| 0x0000 | 009A | 02FE | 000C
+| config |  154 |  766 |   12
 
-The leading `0x0000` opcode identifies this as a configuration message,
+The leading `0x0000` opcode identifies this as a configuration (ie, setup) message,
 followed by a series of 16-bit signed integers which indicate the 3D
 coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,Z<sub>2</sub>,
 ..., X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code>
@@ -96,15 +91,10 @@ moment in time.
 
 An example color message, `0x0001 40 D6 7F`, breaks down to:
 
-```text
-+--------+-----+-----+-----+
 | opcode |   R |   G |   B |
-+--------+-----+-----+-----+
+|--------|-----|-----|-----|
 | 0x0001 |  40 |  D6 |  7F |
-+--------+-----+-----+-----+
 | color  |  64 | 214 | 127 |
-+--------+-----+-----+-----+
-```
 
 The leading `0x0001` opcode identifies this as a color message, followed by a
 series of 8-bit unsigned integers which indicate the RGB colors of each LED,

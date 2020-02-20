@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "make",
+    "dev": "make dev",
     "new": "bash scripts/new.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd themes/palebluepixel && npm install"
