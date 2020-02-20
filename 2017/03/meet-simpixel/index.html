@@ -233,14 +233,35 @@ configuration message followed by a series of color messages.</p>
 
 <p>For example, a configuration message of <code>0x0000009A02FE000C</code> is interpreted as
 follows.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">+--------+------+------+------+
-| opcode |    X |    Y |    Z |
-+--------+------+------+------+
-| 0x0000 | 009A | 02FE | 000C |
-+--------+------+------+------+
-| config |  154 |  766 |   12 |
-+--------+------+------+------+</code></pre></div>
-<p>The leading <code>0x0000</code> opcode identifies this as a configuration message,
+
+<table>
+<thead>
+<tr>
+<th>opcode</th>
+<th>X</th>
+<th>Y</th>
+<th>Z</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0x0000</td>
+<td>009A</td>
+<td>02FE</td>
+<td>000C</td>
+</tr>
+
+<tr>
+<td>config</td>
+<td>154</td>
+<td>766</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+
+<p>The leading <code>0x0000</code> opcode identifies this as a configuration (ie, setup) message,
 followed by a series of 16-bit signed integers which indicate the 3D
 coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,Z<sub>2</sub>,
 &hellip;, X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code></p>
@@ -253,13 +274,34 @@ coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1<
 moment in time.</p>
 
 <p>An example color message, <code>0x0001 40 D6 7F</code>, breaks down to:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">+--------+-----+-----+-----+
-| opcode |   R |   G |   B |
-+--------+-----+-----+-----+
-| 0x0001 |  40 |  D6 |  7F |
-+--------+-----+-----+-----+
-| color  |  64 | 214 | 127 |
-+--------+-----+-----+-----+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>opcode</th>
+<th>R</th>
+<th>G</th>
+<th>B</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0x0001</td>
+<td>40</td>
+<td>D6</td>
+<td>7F</td>
+</tr>
+
+<tr>
+<td>color</td>
+<td>64</td>
+<td>214</td>
+<td>127</td>
+</tr>
+</tbody>
+</table>
+
 <p>The leading <code>0x0001</code> opcode identifies this as a color message, followed by a
 series of 8-bit unsigned integers which indicate the RGB colors of each LED,
 of the form:
