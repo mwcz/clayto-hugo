@@ -39,12 +39,14 @@ It covers [Newton's laws of motion](http://en.wikipedia.org/wiki/Newton's_laws_o
 }
 </style>
 
+
+
+<canvas id="cnvs" width="500" height="375">
+    Sorry, your browser does not support HTML5 canvas.  Lame.
+</canvas>
+
 <script type="text/javascript" src="bouncey.js"></script>
-
 <script type="text/javascript">
-
-window.onload = function() {
-
     canvas_element        = document.getElementById('cnvs');
     canvas_element.width  = W;
     canvas_element.height = H;
@@ -87,14 +89,7 @@ window.onload = function() {
     }
 
     make_frame();
-
-}
-
 </script>
-
-<canvas id="cnvs" width="500" height="375">
-    Sorry, your browser does not support HTML5 canvas.  Lame.
-</canvas>
 
 <br>
 

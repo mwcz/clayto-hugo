@@ -14,8 +14,8 @@ mwc: 61
 <!-- use polyfills and ES5 build of PFE for maximum browser compatibility -->
 <script src="./custom-elements-es5-adapter.js"></script>
 <script src="./webcomponents-loader.js"></script>
-<script src="./elements/pfelement/pfelement.umd.min.js"></script>
-<script src="./elements/pfe-icon/pfe-icon.umd.min.js"></script>
+<script src="https://unpkg.com/@patternfly/pfelement/dist/pfelement.umd.min.js"></script>
+<script src="https://unpkg.com/@patternfly/pfe-icon/dist/pfe-icon.umd.min.js"></script>
 <script src="./pfe-icon-fa.js"></script>
 
 <style>

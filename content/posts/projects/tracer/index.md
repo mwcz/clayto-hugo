@@ -19,7 +19,7 @@ Tags:
 ---
 
 <center>
-<a class="pbp-btn pbp-play" href="http://pae.fun/">Play now!</a>
+<a class="pbp-btn pbp-play" href="http://scripta.co/tracer">Play now!</a>
 </center>
 
 Tracer is a 3D connect-the-dots game that [Jared][jared] and I created for
