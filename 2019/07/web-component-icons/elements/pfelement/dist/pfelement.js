@@ -28,20 +28,20 @@ function handleWebComponentsReady() {
 }
 
 /*!
- * PatternFly Elements: PFElement 1.0.0-prerelease.36
+ * PatternFly Elements: PFElement 1.0.0-prerelease.39
  * @license
  * Copyright 2020 Red Hat, Inc.
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -49,8 +49,8 @@ function handleWebComponentsReady() {
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
-*/
+ *
+ */
 const prefix = "pfe-";
 
 class PFElement extends HTMLElement {
@@ -75,7 +75,7 @@ class PFElement extends HTMLElement {
     return {
       Container: "container",
       Content: "content",
-      Combo: "combo"
+      Combo: "combo",
     };
   }
 
@@ -86,7 +86,7 @@ class PFElement extends HTMLElement {
   static get observedAttributes() {
     return ["pfe-theme"];
   }
-  
+
   get randomId() {
     return Math.random().toString(36).substr(2, 9);
   }
@@ -103,8 +103,8 @@ class PFElement extends HTMLElement {
     this.setAttribute(`${prefix}type`, value);
   }
 
-  cssVariable( name, value, element = this ) {
-    name = (name.substr(0, 2) !== "--") ? "--" + name : name;
+  cssVariable(name, value, element = this) {
+    name = name.substr(0, 2) !== "--" ? "--" + name : name;
     if (value) {
       element.style.setProperty(name, value);
     }
@@ -125,14 +125,14 @@ class PFElement extends HTMLElement {
   context_update() {
     const children = this.querySelectorAll("[pfelement]");
     let theme = this.cssVariable("theme");
-    
+
     // Manually adding `pfe-theme` overrides the css variable
     if (this.hasAttribute("pfe-theme")) {
       theme = this.getAttribute("pfe-theme");
       // Update the css variable to match the data attribute
       this.cssVariable("theme", theme);
     }
-    
+
     // Update theme for self
     this.context_set(theme);
 
@@ -140,7 +140,7 @@ class PFElement extends HTMLElement {
     // set the context based on the child's value of --theme
     // Note: this prevents contexts from parents overriding
     // the child's context should it exist
-    [...children].map(child => {
+    [...children].map((child) => {
       if (child.connected) {
         child.context_set(theme);
       }
@@ -171,7 +171,7 @@ class PFElement extends HTMLElement {
     this.slots = pfeClass.slots;
     this._queue = [];
     this.template = document.createElement("template");
-    
+
     this.log(`Constructing...`);
 
     this.attachShadow({ mode: "open" });
@@ -181,8 +181,8 @@ class PFElement extends HTMLElement {
         type: "setProperty",
         data: {
           name: "pfeType",
-          value: type
-        }
+          value: type,
+        },
       });
     }
 
@@ -191,7 +191,7 @@ class PFElement extends HTMLElement {
       this.render();
       this.log(`Rendered.`);
     }
-    
+
     this.log(`Constructed.`);
   }
 
@@ -236,7 +236,7 @@ class PFElement extends HTMLElement {
     this.log(`Disconnecting...`);
 
     this.connected = false;
-    
+
     this.log(`Disconnected.`);
   }
 
@@ -258,7 +258,7 @@ class PFElement extends HTMLElement {
   _copyAttribute(name, to) {
     const recipients = [
       ...this.querySelectorAll(to),
-      ...this.shadowRoot.querySelectorAll(to)
+      ...this.shadowRoot.querySelectorAll(to),
     ];
     const value = this.getAttribute(name);
     const fname = value == null ? "removeAttribute" : "setAttribute";
@@ -273,7 +273,7 @@ class PFElement extends HTMLElement {
   _mapSchemaToProperties(tag, properties) {
     this.log("Mapping properties...");
     // Loop over the properties provided by the schema
-    Object.keys(properties).forEach(attr => {
+    Object.keys(properties).forEach((attr) => {
       let data = properties[attr];
 
       // Only attach the information if the data provided is a schema object
@@ -303,7 +303,8 @@ class PFElement extends HTMLElement {
         else if (data.default) {
           const dependency_exists = this._hasDependency(tag, data.options);
           const no_dependencies =
-            !data.options || (data.options && !data.options.dependencies.length);
+            !data.options ||
+            (data.options && !data.options.dependencies.length);
           // If the dependency exists or there are no dependencies, set the default
           if (dependency_exists || no_dependencies) {
             this.setAttribute(attrName, data.default);
@@ -350,7 +351,7 @@ class PFElement extends HTMLElement {
   _mapSchemaToSlots(tag, slots) {
     this.log("Validate slots...");
     // Loop over the properties provided by the schema
-    Object.keys(slots).forEach(slot => {
+    Object.keys(slots).forEach((slot) => {
       let slotObj = slots[slot];
 
       // Only attach the information if the data provided is a schema object
@@ -374,8 +375,10 @@ class PFElement extends HTMLElement {
           }
           // If it's the default slot, look for direct children not assigned to a slot
         } else {
-          result = [...this.children].filter(child => !child.hasAttribute("slot"));
-          
+          result = [...this.children].filter(
+            (child) => !child.hasAttribute("slot")
+          );
+
           if (result.length > 0) {
             slotObj.nodes = result;
             slotExists = true;
@@ -398,7 +401,7 @@ class PFElement extends HTMLElement {
   }
 
   _processQueue() {
-    this._queue.forEach(action => {
+    this._queue.forEach((action) => {
       this[`_${action.type}`](action.data);
     });
 
@@ -411,10 +414,7 @@ class PFElement extends HTMLElement {
 
   // @TODO This is a duplicate function to cssVariable above, combine them
   static var(name, element = document.body) {
-    return window
-      .getComputedStyle(element)
-      .getPropertyValue(name)
-      .trim();
+    return window.getComputedStyle(element).getPropertyValue(name).trim();
   }
 
   var(name) {
@@ -445,7 +445,7 @@ class PFElement extends HTMLElement {
         bubbles,
         cancelable,
         composed,
-        detail
+        detail,
       })
     );
   }

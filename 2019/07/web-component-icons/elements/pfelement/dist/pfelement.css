@@ -7,7 +7,10 @@ body {
   --pfe-broadcasted--link: var(--pfe-theme--color--link, #06c);
   --pfe-broadcasted--link--hover: var(--pfe-theme--color--link--hover, #003366);
   --pfe-broadcasted--link--focus: var(--pfe-theme--color--link--focus, #003366);
-  --pfe-broadcasted--link--visited: var(--pfe-theme--color--link--visited, rebeccapurple);
+  --pfe-broadcasted--link--visited: var(
+    --pfe-theme--color--link--visited,
+    rebeccapurple
+  );
   --pfe-broadcasted--link-decoration: none;
   --pfe-broadcasted--link-decoration--hover: underline;
   --pfe-broadcasted--link-decoration--focus: underline;
@@ -16,8 +19,10 @@ body {
 
 body[unresolved] {
   opacity: 0;
-  -webkit-animation: reveal var(--pfe-reveal-duration) var(--pfe-reveal-delay) 1 forwards;
-          animation: reveal var(--pfe-reveal-duration) var(--pfe-reveal-delay) 1 forwards;
+  -webkit-animation: reveal var(--pfe-reveal-duration) var(--pfe-reveal-delay) 1
+    forwards;
+  animation: reveal var(--pfe-reveal-duration) var(--pfe-reveal-delay) 1
+    forwards;
 }
 
 @-webkit-keyframes reveal {

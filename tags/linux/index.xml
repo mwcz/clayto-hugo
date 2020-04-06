@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on clayto</title>
+    <title>Linux on clayto</title>
     <link>https://clayto.com/tags/linux/</link>
-    <description>Recent content in linux on clayto</description>
+    <description>Recent content in Linux on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 May 2019 14:17:57 -0400</lastBuildDate>
@@ -33,10 +33,10 @@ One of the few remaining rough edges is low-quality defaults when it comes to re
     
     <item>
       <title>Noise/Echo Cancellation in Fedora</title>
-      <link>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora/</link>
+      <link>https://clayto.com/2017/10/noise-echo-cancellation-in-fedora/</link>
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora/</guid>
+      <guid>https://clayto.com/2017/10/noise-echo-cancellation-in-fedora/</guid>
       <description>The Minimic is great. I just received mine last week, and I&amp;rsquo;m loving the ability to join video calls with nice, comfy headphones. It&amp;rsquo;s much better than switching back and forth between headphones and a headset.
 The only problem is that, since the minimic is just a wire, it doesn&amp;rsquo;t have any noise or echo cancellation. And since Fedora doesn&amp;rsquo;t come with that feature enabled by default, the mic was picking up a lot of ambient noise.</description>
     </item>

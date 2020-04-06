@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ludum-dare on clayto</title>
+    <title>Ludum Dare on clayto</title>
     <link>https://clayto.com/tags/ludum-dare/</link>
-    <description>Recent content in ludum-dare on clayto</description>
+    <description>Recent content in Ludum Dare on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Aug 2017 00:00:00 +0000</lastBuildDate>

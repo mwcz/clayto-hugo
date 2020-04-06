@@ -1,38 +1,32 @@
 {
-  "name": "@patternfly/pfelement",
-  "pfelement": {
-    "className": "PFElement",
-    "elementName": "pfelement",
-    "assets": [
-      "pfelement.*css",
-      "pfelement.*css.map"
-    ]
+  "_from": "@patternfly/pfelement@^1.0.0-prerelease.39",
+  "_id": "@patternfly/pfelement@1.0.0-prerelease.39",
+  "_inBundle": false,
+  "_integrity": "sha512-bsgp9eyTrd4oZFuAuwdy2fZS9nPhiuXUkqbh9u9yFAMKaKoGeKCCYRoitMm0lEOH9/FF1BiNsHNN6qUrNJs8eQ==",
+  "_location": "/@patternfly/pfelement",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@patternfly/pfelement@^1.0.0-prerelease.39",
+    "name": "@patternfly/pfelement",
+    "escapedName": "@patternfly%2fpfelement",
+    "scope": "@patternfly",
+    "rawSpec": "^1.0.0-prerelease.39",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0-prerelease.39"
   },
-  "version": "1.0.0-prerelease.36",
-  "publishConfig": {
-    "access": "public"
-  },
-  "description": "Base class for PatternFly Elements",
-  "keywords": [
-    "web-components",
-    "html"
+  "_requiredBy": [
+    "/@patternfly/pfe-icon"
   ],
-  "repository": {
-    "type": "git",
-    "url": "github:patternfly/patternfly-elements",
-    "directory": "elements/pfelement"
+  "_resolved": "https://registry.npmjs.org/@patternfly/pfelement/-/pfelement-1.0.0-prerelease.39.tgz",
+  "_shasum": "74f664eaa3d31ef0be3e9899f3c7ba3690610e82",
+  "_spec": "@patternfly/pfelement@^1.0.0-prerelease.39",
+  "_where": "/home/mwc/projects/clayto-hugo/content/posts/061 - web component icons/elements/node_modules/@patternfly/pfe-icon",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-elements/issues"
   },
-  "main": "./dist/pfelement.umd.js",
-  "module": "./dist/pfelement.js",
-  "unpkg": "./dist/pfelement.umd.min.js",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "../../node_modules/.bin/gulp && ../../node_modules/.bin/prettier --ignore-path ../../.prettierignore --write '**/*.{js,json}'",
-    "dev": "../../node_modules/.bin/gulp dev",
-    "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfelement/test/"
-  },
+  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Kyle Buchanan",
@@ -47,9 +41,43 @@
       "url": "https://github.com/castastrophe"
     }
   ],
-  "license": "MIT",
+  "deprecated": false,
+  "description": "Base class for PatternFly Elements",
+  "files": [
+    "dist"
+  ],
   "generator-pfelement-version": "0.3.4",
-  "bugs": {
-    "url": "https://github.com/patternfly/patternfly-elements/issues"
-  }
+  "gitHead": "1b6d7c929db9b9583022b3536dddcdfa0c37d36a",
+  "homepage": "https://github.com/patternfly/patternfly-elements#readme",
+  "keywords": [
+    "web-components",
+    "html"
+  ],
+  "license": "MIT",
+  "main": "./dist/pfelement.umd.js",
+  "module": "./dist/pfelement.js",
+  "name": "@patternfly/pfelement",
+  "pfelement": {
+    "className": "PFElement",
+    "elementName": "pfelement",
+    "assets": [
+      "pfelement.*css",
+      "pfelement.*css.map"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patternfly/patternfly-elements.git",
+    "directory": "elements/pfelement"
+  },
+  "scripts": {
+    "build": "../../node_modules/.bin/gulp && ../../node_modules/.bin/prettier --ignore-path ../../.prettierignore --write '**/*.{js,json}'",
+    "dev": "../../node_modules/.bin/gulp dev",
+    "test": "../../node_modules/.bin/wct --configFile ../../wct.conf.json elements/pfelement/test/"
+  },
+  "unpkg": "./dist/pfelement.umd.min.js",
+  "version": "1.0.0-prerelease.39"
 }

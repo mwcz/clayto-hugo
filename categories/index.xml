@@ -6,19 +6,9 @@
     <description>Recent content in Categories on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://clayto.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Games</title>
-      <link>https://clayto.com/games/</link>
-      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/games/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Demos</title>
@@ -26,6 +16,15 @@
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/demos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Games</title>
+      <link>https://clayto.com/games/</link>
+      <pubDate>Sat, 07 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/games/</guid>
       <description></description>
     </item>
     

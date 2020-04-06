@@ -1,4 +1,4 @@
-import PFElement from '../../pfelement/dist/pfelement.js';
+import PFElement from "../../pfelement/dist/pfelement.js";
 
 class PfeIconSet {
   /**
@@ -45,30 +45,30 @@ function addBuiltIns(PfeIcon) {
   [
     {
       name: "web",
-      path: "https://access.redhat.com/webassets/avalon/j/lib/rh-iconfont-svgs"
+      path: "https://access.redhat.com/webassets/avalon/j/lib/rh-iconfont-svgs",
     },
     {
       name: "rh",
-      path: "https://access.redhat.com/webassets/avalon/j/lib/rh-iconfont-svgs"
-    }
-  ].forEach(set => PfeIcon.addIconSet(set.name, set.path, resolveIconName));
+      path: "https://access.redhat.com/webassets/avalon/j/lib/rh-iconfont-svgs",
+    },
+  ].forEach((set) => PfeIcon.addIconSet(set.name, set.path, resolveIconName));
 }
 
 /*!
- * PatternFly Elements: PfeIcon 1.0.0-prerelease.38
+ * PatternFly Elements: PfeIcon 1.0.0-prerelease.40
  * @license
  * Copyright 2020 Red Hat, Inc.
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -76,18 +76,14 @@ function addBuiltIns(PfeIcon) {
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
-*/
+ *
+ */
 
 /**
  * Sets the id attribute on the <filter> element and points the CSS `filter` at that id.
  */
 function _setRandomFilterId(el) {
-  const randomId =
-    "filter-" +
-    Math.random()
-      .toString()
-      .slice(2, 10);
+  const randomId = "filter-" + Math.random().toString().slice(2, 10);
 
   // set the CSS filter property to point at the given id
   el.shadowRoot.querySelector("svg image").style.filter = `url(#${randomId})`;
@@ -97,7 +93,7 @@ function _setRandomFilterId(el) {
 }
 
 function _createIconSetHandler(el, setName) {
-  return ev => {
+  return (ev) => {
     // if the set we're waiting for was added, run updateIcon again
     if (setName === ev.detail.set.name) {
       document.body.removeEventListener(
@@ -115,14 +111,14 @@ function _iconLoad(el) {
 
 function _iconLoadError(el) {
   el.classList.add("load-failed");
-  if(el.has_fallback) {
+  if (el.has_fallback) {
     el.classList.add("has-fallback");
   }
 }
 
 class PfeIcon extends PFElement {
   static get version() {
-    return "1.0.0-prerelease.38";
+    return "1.0.0-prerelease.40";
   }
 
   get html() {
@@ -141,7 +137,34 @@ class PfeIcon extends PFElement {
   }
 
   static get properties() {
-    return {"icon":{"title":"Icon","type":"string","prefixed":false},"size":{"title":"Size","type":"string","enum":["default","xl","lg","md","sm","2x","3x","4x"],"default":"default","prefixed":false},"color":{"title":"Color","type":"string","enum":["default","base","compliment","accent","critical","important","moderate","success","info"],"default":"default","prefixed":false},"circled":{"title":"Circled","type":"boolean","prefixed":false}};
+    return {
+      icon: { title: "Icon", type: "string", prefixed: false },
+      size: {
+        title: "Size",
+        type: "string",
+        enum: ["default", "xl", "lg", "md", "sm", "2x", "3x", "4x"],
+        default: "default",
+        prefixed: false,
+      },
+      color: {
+        title: "Color",
+        type: "string",
+        enum: [
+          "default",
+          "base",
+          "compliment",
+          "accent",
+          "critical",
+          "important",
+          "moderate",
+          "success",
+          "info",
+        ],
+        default: "default",
+        prefixed: false,
+      },
+      circled: { title: "Circled", type: "boolean", prefixed: false },
+    };
   }
 
   static get slots() {
@@ -227,15 +250,15 @@ class PfeIcon extends PFElement {
       new CustomEvent(this.EVENTS.ADD_ICON_SET, {
         bubbles: false,
         detail: {
-          set: this._iconSets[name]
-        }
+          set: this._iconSets[name],
+        },
       })
     );
   }
 
   static get EVENTS() {
     return {
-      ADD_ICON_SET: `${this.tag}:add-icon-set`
+      ADD_ICON_SET: `${this.tag}:add-icon-set`,
     };
   }
 }

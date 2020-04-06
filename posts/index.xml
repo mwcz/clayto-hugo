@@ -17,7 +17,7 @@
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }  This is the story of &amp;lt;pfe-icon&amp;gt;. I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.</description>
+      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }     Features Demo The pfe-icon tag Icon sets  Icon set definitions  resolveIconName  Integrating with Font Awesome Organizing icon sets  SVG injection and coloring  Setting icon colors  Coloring individual icons Coloring all icons Coloring groups of icons  Puzzler: MS Edge icon coloring  Performance  Icon size HTTP/1.</description>
     </item>
     
     <item>
@@ -53,10 +53,10 @@ Open-source tools have been lovingly crafted that cover every medium of game dev
     
     <item>
       <title>Noise/Echo Cancellation in Fedora</title>
-      <link>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora/</link>
+      <link>https://clayto.com/2017/10/noise-echo-cancellation-in-fedora/</link>
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora/</guid>
+      <guid>https://clayto.com/2017/10/noise-echo-cancellation-in-fedora/</guid>
       <description>The Minimic is great. I just received mine last week, and I&amp;rsquo;m loving the ability to join video calls with nice, comfy headphones. It&amp;rsquo;s much better than switching back and forth between headphones and a headset.
 The only problem is that, since the minimic is just a wire, it doesn&amp;rsquo;t have any noise or echo cancellation. And since Fedora doesn&amp;rsquo;t come with that feature enabled by default, the mic was picking up a lot of ambient noise.</description>
     </item>
@@ -91,7 +91,7 @@ CLOSED: 0 / 45 TIME: s  PLAY! MAKE IT STOP! You closed N/45 popups!
       
       <guid>https://clayto.com/2017/09/geekspark-2017/</guid>
       <description>geekSPARK is a showcase of creative use of technology, taking place each year during the SPARKcon art festival. What lies below is a summary of the festivities at geekSPARK 2017.
-RC Speedway The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from SplatSpace. Bill mounted cameras on the RC cars which fed wirelessly into first-person displays. The cars were fast, and the sensation of speed from the first-person view was exhilirating.</description>
+   RC Speedway Virtual Reality All Things LED Fire Tubes Mushroom Hunters Digital Motion 3D Printing What&amp;rsquo;s next? Special thanks    RC Speedway The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from SplatSpace.</description>
     </item>
     
     <item>
