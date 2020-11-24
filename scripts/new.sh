@@ -5,6 +5,8 @@ let "n = ${m#0} + 1"
 
 POST_PATH="posts/$(printf %03d $n) - $1/index.md"
 
+echo creating post $POST_PATH
+
 hugo new "$POST_PATH"
 
 vim "content/$POST_PATH"
