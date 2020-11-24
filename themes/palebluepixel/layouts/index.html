@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <section class="pbp-article-list">
-{{ range $index, $page := (.Paginate (where (where .Data.Pages "Type" "posts") ".Params.hidden" "!=" "true" ) .Site.Params.paginate).Pages }}
+{{ range $index, $page := (.Paginate (where (where .Site.RegularPages "Type" "posts") ".Params.hidden" "!=" "true" ) .Site.Params.paginate).Pages }}
 {{ if ne $index 0 }}
 {{ end }}
 {{ .Render "li" }}

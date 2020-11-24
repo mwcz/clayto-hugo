@@ -40,7 +40,7 @@
   <meta property="og:type" content="website" />
   {{ end }}
   <!-- Hugo Version number -->
-  {{ .Hugo.Generator -}}
+  {{ hugo.Generator -}}
   <link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
@@ -78,9 +78,9 @@
     content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
   />
   <meta name="theme-color" content="#121212" />
-  {{/* end favicon stuff */}} {{ if eq .URL "/" }}
+  {{/* end favicon stuff */}} {{ if eq .Params.url "/" }}
   <link
-    href="{{ .RSSLink }}"
+    href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}"
     rel="alternate"
     type="application/rss+xml"
     title="{{ .Site.Title }}"

@@ -29,6 +29,7 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
     categories = "/:slug/"
     post = "/:year/:month/:title/"
     posts = "/:year/:month/:title/"
+    "/" = "/:year/:month/:filename/"
 
 [params]
   paginate = 12
