@@ -115,3 +115,10 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
   name  = "date"
   weight = 10
   pattern = "2017"
+
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
