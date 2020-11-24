@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on clayto</title>
@@ -6,10 +6,199 @@
     <description>Recent content in Tags on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate>
     
 	<atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>javascript</title>
+      <link>https://clayto.com/tags/javascript/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>patternfly</title>
+      <link>https://clayto.com/tags/patternfly/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/patternfly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://clayto.com/tags/web/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web-components</title>
+      <link>https://clayto.com/tags/web-components/</link>
+      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/web-components/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>https://clayto.com/tags/fedora/</link>
+      <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://clayto.com/tags/linux/</link>
+      <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pitivi</title>
+      <link>https://clayto.com/tags/pitivi/</link>
+      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/pitivi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video</title>
+      <link>https://clayto.com/tags/video/</link>
+      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gamedev</title>
+      <link>https://clayto.com/tags/gamedev/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/gamedev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-jam</title>
+      <link>https://clayto.com/tags/open-jam/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/open-jam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>https://clayto.com/tags/open-source/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://clayto.com/tags/programming/</link>
+      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>audio</title>
+      <link>https://clayto.com/tags/audio/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/audio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>art</title>
+      <link>https://clayto.com/tags/art/</link>
+      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dimo</title>
+      <link>https://clayto.com/tags/dimo/</link>
+      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/dimo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geekspark</title>
+      <link>https://clayto.com/tags/geekspark/</link>
+      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/geekspark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kimotion</title>
+      <link>https://clayto.com/tags/kimotion/</link>
+      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/kimotion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sparkcon</title>
+      <link>https://clayto.com/tags/sparkcon/</link>
+      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/sparkcon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>in-orange-light</title>
+      <link>https://clayto.com/tags/in-orange-light/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/in-orange-light/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ld39</title>
+      <link>https://clayto.com/tags/ld39/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/ld39/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ludum-dare</title>
+      <link>https://clayto.com/tags/ludum-dare/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/ludum-dare/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>2d</title>
@@ -17,6 +206,51 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/2d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>games</title>
+      <link>https://clayto.com/tags/games/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/games/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ld38</title>
+      <link>https://clayto.com/tags/ld38/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/ld38/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phaser</title>
+      <link>https://clayto.com/tags/phaser/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/phaser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pity-about-earth</title>
+      <link>https://clayto.com/tags/pity-about-earth/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/pity-about-earth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webgl</title>
+      <link>https://clayto.com/tags/webgl/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/webgl/</guid>
       <description></description>
     </item>
     
@@ -30,124 +264,7 @@
     </item>
     
     <item>
-      <title>Aejs</title>
-      <link>https://clayto.com/tags/aejs/</link>
-      <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/aejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Amiga</title>
-      <link>https://clayto.com/tags/amiga/</link>
-      <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/amiga/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Art</title>
-      <link>https://clayto.com/tags/art/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/art/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Audio</title>
-      <link>https://clayto.com/tags/audio/</link>
-      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/audio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bouncey</title>
-      <link>https://clayto.com/tags/bouncey/</link>
-      <pubDate>Fri, 18 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/bouncey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Canvas</title>
-      <link>https://clayto.com/tags/canvas/</link>
-      <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/canvas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Canvas_indexed_color</title>
-      <link>https://clayto.com/tags/canvas_indexed_color/</link>
-      <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/canvas_indexed_color/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Color</title>
-      <link>https://clayto.com/tags/color/</link>
-      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/color/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Colorpal</title>
-      <link>https://clayto.com/tags/colorpal/</link>
-      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/colorpal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cool Retro Term</title>
-      <link>https://clayto.com/tags/cool-retro-term/</link>
-      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/cool-retro-term/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Css3</title>
-      <link>https://clayto.com/tags/css3/</link>
-      <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/css3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Uri</title>
-      <link>https://clayto.com/tags/data-uri/</link>
-      <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/data-uri/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Url</title>
-      <link>https://clayto.com/tags/data-url/</link>
-      <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/data-url/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demos</title>
+      <title>demos</title>
       <link>https://clayto.com/tags/demos/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -156,178 +273,7 @@
     </item>
     
     <item>
-      <title>Dimo</title>
-      <link>https://clayto.com/tags/dimo/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/dimo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fedora</title>
-      <link>https://clayto.com/tags/fedora/</link>
-      <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/fedora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gamedev</title>
-      <link>https://clayto.com/tags/gamedev/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/gamedev/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Games</title>
-      <link>https://clayto.com/tags/games/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/games/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gaming</title>
-      <link>https://clayto.com/tags/gaming/</link>
-      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/gaming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Geekspark</title>
-      <link>https://clayto.com/tags/geekspark/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/geekspark/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>https://clayto.com/tags/general/</link>
-      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gimp</title>
-      <link>https://clayto.com/tags/gimp/</link>
-      <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/gimp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Html</title>
-      <link>https://clayto.com/tags/html/</link>
-      <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Html5</title>
-      <link>https://clayto.com/tags/html5/</link>
-      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/html5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Image Processing</title>
-      <link>https://clayto.com/tags/image-processing/</link>
-      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/image-processing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>In Orange Light</title>
-      <link>https://clayto.com/tags/in-orange-light/</link>
-      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/in-orange-light/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://clayto.com/tags/javascript/</link>
-      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jsimage</title>
-      <link>https://clayto.com/tags/jsimage/</link>
-      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/jsimage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Keepass</title>
-      <link>https://clayto.com/tags/keepass/</link>
-      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/keepass/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kimotion</title>
-      <link>https://clayto.com/tags/kimotion/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/kimotion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ld35</title>
-      <link>https://clayto.com/tags/ld35/</link>
-      <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/ld35/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ld38</title>
-      <link>https://clayto.com/tags/ld38/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/ld38/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ld39</title>
-      <link>https://clayto.com/tags/ld39/</link>
-      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/ld39/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Led</title>
+      <title>led</title>
       <link>https://clayto.com/tags/led/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -336,25 +282,7 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://clayto.com/tags/linux/</link>
-      <pubDate>Fri, 31 May 2019 14:17:57 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ludum Dare</title>
-      <link>https://clayto.com/tags/ludum-dare/</link>
-      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/ludum-dare/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maniacal Labs</title>
+      <title>maniacal-labs</title>
       <link>https://clayto.com/tags/maniacal-labs/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -363,205 +291,7 @@
     </item>
     
     <item>
-      <title>Mediancut</title>
-      <link>https://clayto.com/tags/mediancut/</link>
-      <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/mediancut/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>N9</title>
-      <link>https://clayto.com/tags/n9/</link>
-      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/n9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nostalgia</title>
-      <link>https://clayto.com/tags/nostalgia/</link>
-      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/nostalgia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Jam</title>
-      <link>https://clayto.com/tags/open-jam/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/open-jam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://clayto.com/tags/open-source/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Particles</title>
-      <link>https://clayto.com/tags/particles/</link>
-      <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/particles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Patternfly</title>
-      <link>https://clayto.com/tags/patternfly/</link>
-      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/patternfly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Phaser</title>
-      <link>https://clayto.com/tags/phaser/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/phaser/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Phaserjs</title>
-      <link>https://clayto.com/tags/phaserjs/</link>
-      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/phaserjs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Physics</title>
-      <link>https://clayto.com/tags/physics/</link>
-      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/physics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ping</title>
-      <link>https://clayto.com/tags/ping/</link>
-      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/ping/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pitivi</title>
-      <link>https://clayto.com/tags/pitivi/</link>
-      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/pitivi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pity About Earth</title>
-      <link>https://clayto.com/tags/pity-about-earth/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/pity-about-earth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Polymer</title>
-      <link>https://clayto.com/tags/polymer/</link>
-      <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/polymer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://clayto.com/tags/programming/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redhat</title>
-      <link>https://clayto.com/tags/redhat/</link>
-      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/redhat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Requirejs</title>
-      <link>https://clayto.com/tags/requirejs/</link>
-      <pubDate>Thu, 30 Oct 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/requirejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scripta</title>
-      <link>https://clayto.com/tags/scripta/</link>
-      <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/scripta/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sparkcon</title>
-      <link>https://clayto.com/tags/sparkcon/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/sparkcon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Squareoff</title>
-      <link>https://clayto.com/tags/squareoff/</link>
-      <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/squareoff/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Terminal</title>
-      <link>https://clayto.com/tags/terminal/</link>
-      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/terminal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Text Adventure</title>
-      <link>https://clayto.com/tags/text-adventure/</link>
-      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/text-adventure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Threejs</title>
+      <title>threejs</title>
       <link>https://clayto.com/tags/threejs/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -570,7 +300,25 @@
     </item>
     
     <item>
-      <title>Tracer</title>
+      <title>particles</title>
+      <link>https://clayto.com/tags/particles/</link>
+      <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/particles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripta</title>
+      <link>https://clayto.com/tags/scripta/</link>
+      <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/scripta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tracer</title>
       <link>https://clayto.com/tags/tracer/</link>
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
@@ -579,25 +327,133 @@
     </item>
     
     <item>
-      <title>Typography</title>
-      <link>https://clayto.com/tags/typography/</link>
-      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      <title>physics</title>
+      <link>https://clayto.com/tags/physics/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/tags/typography/</guid>
+      <guid>https://clayto.com/tags/physics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Video</title>
-      <link>https://clayto.com/tags/video/</link>
-      <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
+      <title>zorbio</title>
+      <link>https://clayto.com/tags/zorbio/</link>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/tags/video/</guid>
+      <guid>https://clayto.com/tags/zorbio/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Wasm</title>
+      <title>html</title>
+      <link>https://clayto.com/tags/html/</link>
+      <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>polymer</title>
+      <link>https://clayto.com/tags/polymer/</link>
+      <pubDate>Tue, 06 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/polymer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redhat</title>
+      <link>https://clayto.com/tags/redhat/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/redhat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ld35</title>
+      <link>https://clayto.com/tags/ld35/</link>
+      <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/ld35/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>squareoff</title>
+      <link>https://clayto.com/tags/squareoff/</link>
+      <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/squareoff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phaserjs</title>
+      <link>https://clayto.com/tags/phaserjs/</link>
+      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/phaserjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ping</title>
+      <link>https://clayto.com/tags/ping/</link>
+      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/ping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cool-retro-term</title>
+      <link>https://clayto.com/tags/cool-retro-term/</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/cool-retro-term/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gaming</title>
+      <link>https://clayto.com/tags/gaming/</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/gaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nostalgia</title>
+      <link>https://clayto.com/tags/nostalgia/</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/nostalgia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terminal</title>
+      <link>https://clayto.com/tags/terminal/</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>text adventure</title>
+      <link>https://clayto.com/tags/text-adventure/</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/text-adventure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wasm</title>
       <link>https://clayto.com/tags/wasm/</link>
       <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
       
@@ -606,38 +462,182 @@
     </item>
     
     <item>
-      <title>Web</title>
-      <link>https://clayto.com/tags/web/</link>
-      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      <title>requirejs</title>
+      <link>https://clayto.com/tags/requirejs/</link>
+      <pubDate>Thu, 30 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/tags/web/</guid>
+      <guid>https://clayto.com/tags/requirejs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web Components</title>
-      <link>https://clayto.com/tags/web-components/</link>
-      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
+      <title>color</title>
+      <link>https://clayto.com/tags/color/</link>
+      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/tags/web-components/</guid>
+      <guid>https://clayto.com/tags/color/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Webgl</title>
-      <link>https://clayto.com/tags/webgl/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      <title>colorpal</title>
+      <link>https://clayto.com/tags/colorpal/</link>
+      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/tags/webgl/</guid>
+      <guid>https://clayto.com/tags/colorpal/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Zorbio</title>
-      <link>https://clayto.com/tags/zorbio/</link>
-      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      <title>html5</title>
+      <link>https://clayto.com/tags/html5/</link>
+      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://clayto.com/tags/zorbio/</guid>
+      <guid>https://clayto.com/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data uri</title>
+      <link>https://clayto.com/tags/data-uri/</link>
+      <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/data-uri/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css3</title>
+      <link>https://clayto.com/tags/css3/</link>
+      <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/css3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data url</title>
+      <link>https://clayto.com/tags/data-url/</link>
+      <pubDate>Wed, 05 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/data-url/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gimp</title>
+      <link>https://clayto.com/tags/gimp/</link>
+      <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/gimp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mediancut</title>
+      <link>https://clayto.com/tags/mediancut/</link>
+      <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/mediancut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>canvas</title>
+      <link>https://clayto.com/tags/canvas/</link>
+      <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/canvas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>canvas_indexed_color</title>
+      <link>https://clayto.com/tags/canvas_indexed_color/</link>
+      <pubDate>Tue, 03 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/canvas_indexed_color/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://clayto.com/tags/general/</link>
+      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keepass</title>
+      <link>https://clayto.com/tags/keepass/</link>
+      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/keepass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>n9</title>
+      <link>https://clayto.com/tags/n9/</link>
+      <pubDate>Sun, 08 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/n9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bouncey</title>
+      <link>https://clayto.com/tags/bouncey/</link>
+      <pubDate>Fri, 18 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/bouncey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image processing</title>
+      <link>https://clayto.com/tags/image-processing/</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/image-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jsimage</title>
+      <link>https://clayto.com/tags/jsimage/</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/jsimage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typography</title>
+      <link>https://clayto.com/tags/typography/</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/typography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aejs</title>
+      <link>https://clayto.com/tags/aejs/</link>
+      <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/aejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amiga</title>
+      <link>https://clayto.com/tags/amiga/</link>
+      <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/tags/amiga/</guid>
       <description></description>
     </item>
     

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Canvas on clayto</title>
+    <title>canvas on clayto</title>
     <link>https://clayto.com/tags/canvas/</link>
-    <description>Recent content in Canvas on clayto</description>
+    <description>Recent content in canvas on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Jul 2012 00:00:00 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
       
       <guid>https://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
-First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
+ First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
     </item>
     
     <item>
@@ -29,8 +29,7 @@ First, I converted the classic SVG tiger into a set of canvas drawing instructio
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
-This version has:
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
     </item>
@@ -43,9 +42,8 @@ The code is well commented, so feel free to hack on it.</description>
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
-It covers Newton&amp;rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.</description>
     </item>
     
     <item>
@@ -65,17 +63,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
       
       <guid>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
       <description>For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&amp;rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>HTML5 Canvas eyedropper</title>
-      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
-      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
-      <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
+  In retrospect, it really could have used some narration&amp;hellip;</description>
     </item>
     
     <item>
@@ -88,16 +76,6 @@ In retrospect, it really could have used some narration&amp;hellip;</description
     </item>
     
     <item>
-      <title>HTML5 canvas RGB histogram</title>
-      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
-      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
-      <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
-It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct.</description>
-    </item>
-    
-    <item>
       <title>HTML5 canvas area selection averaging</title>
       <link>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
@@ -106,6 +84,26 @@ It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called J
       <description>This is a demo from late 2009. It&amp;rsquo;s an extension of the single-pixel eyedropper I wrote previously.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)
 Click and drag to set the image border to the average of the selected pixels.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Canvas eyedropper</title>
+      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
+      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
+      <description>This is an old demo I made of an HTML5 canvas eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.
+Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.It&amp;rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&amp;rsquo;s 2D rendering context object.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 canvas RGB histogram</title>
+      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
+      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
+      <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)</description>
     </item>
     
   </channel>

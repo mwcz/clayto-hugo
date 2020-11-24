@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -171,24 +171,17 @@
   <section>
     <p>Drop64 is an easy drag-and-drop tool for generating <a href="http://css-tricks.com/data-uris/">Data URIs</a> from any
 file.</p>
-
 <p>Check it out at <a href="http://drop64.com/">drop64.com</a>.</p>
-
 <p>Here&rsquo;s a demo recording of how easy it is.</p>
-
-<p><img src="recording.gif" alt="Drop64 recording" /></p>
-
+<p><img src="recording.gif" alt="Drop64 recording"></p>
 <p>Some benefits of Data URIs are:</p>
-
 <ul>
 <li>Fewer HTTP requests means faster page loads</li>
 <li>avoid cross-origin resource loading issues (fonts in Firefox, for example)</li>
 <li>you can paste the Data URI directly into your web browser URL bar to view the file (occasionally convenient)</li>
 </ul>
-
 <p>If you noticed the similarity to <a href="http://colorpal.org/">ColorPal</a>, well done! I reused a lot of
 ColorPal&rsquo;s code in Drop64. Almost all of it, in fact.</p>
-
 <p>For more information on Data URIs, check out <a href="https://developer.mozilla.org/en-US/docs/data_URIs">MDN</a> or the original <a href="http://tools.ietf.org/html/rfc2397">RFC</a>.</p>
 
   </section>
@@ -303,7 +296,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
     <section>
       
         In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.
       
@@ -354,7 +347,6 @@ You can see that with the old method, the black pixels definitely took over the 
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
 I&rsquo;ve written some posts about ColorPal.
- 
       
     </section>
   </div>
@@ -446,8 +438,7 @@ I&rsquo;ve written some posts about ColorPal.
       
         This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&hellip;
-&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
-This version has:
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;This version has:
  pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.
       
@@ -579,7 +570,7 @@ The code is well commented, so feel free to hack on it.
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

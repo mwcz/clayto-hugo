@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -171,68 +171,47 @@
   
   
   <section>
-    
-
-<p>I spent a bit of time this weekend building an RGB color cube for
+    <p>I spent a bit of time this weekend building an RGB color cube for
 <a href="http://colorpal.org">ColorPal</a>, using <a href="http://threejs.org">Three.js</a>. Drag and drop any image, and you&rsquo;ll see a
 cube with all the pixels of your image mapped into 3D space.</p>
-
-<p><img style="display: none !important;" src="colorcube.jpg"></p>
-
-<p><a class="btn btn-default btn-lg"
-href="/static/projects/colorpal_colorcube">Launch live demo!</a> and <a href="https://github.com/mwcz/mwcz/blob/master/content/static/projects/colorpal_colorcube/js/cp-colorcube.js">view the
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->Launch live demo!<!-- raw HTML omitted --> and <a href="https://github.com/mwcz/mwcz/blob/master/content/static/projects/colorpal_colorcube/js/cp-colorcube.js">view the
 code</a>.</p>
-
 <p>Your web browser must support WebGL, which at this point in history means a
 fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support
 WebGL, here&rsquo;s a video to enjoy while you download <a href="https://nightly.mozilla.org/">Firefox Nightly</a>. ;)</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//player.vimeo.com/video/108080970" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/108080970" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
  </div>
-
 
 <p><a href="http://threejs.org">Three.js</a> has proven to be pretty fun. The documentation is decent, but
 not comprehensive. Some parts of the API are filled with &ldquo;todo&rdquo; notes instead
 of actual documentation.</p>
-
 <p>Luckily, the omissions in the documentation are made up for by the extensive
 <a href="http://threejs.org/examples/">set of code examples</a>. Any time I couldn&rsquo;t get what I needed from the API
 docs, I skimmed the examples until I found an existing scene that had the
 effect I needed.</p>
-
 <p>For this demo, drawing a cube was easy, and even populating it with dots was easy, but</p>
-
 <h2 id="colored-particles">Colored particles</h2>
-
 <p>The color cube uses a particle system to render 2D color points inside a 3D
 cube.</p>
-
 <p>Eventually I found a <a href="http://threejs.org/examples/#webgl_particles_billboards_colors">particle system demo with colors</a>, which held the key.</p>
-
 <p>By setting <code>vertexColors: true</code> on the <code>ParticleSystemMaterial</code>, Three.js will
 match each vertex in the <code>vertices</code> array with a color in the <code>colors</code> array.
 <code>vertices[1726]</code> will use <code>colors[1726]</code>, for example.</p>
-
-<p><img src="screenshot.png" alt="Screenshot of ColorCube" title="Screenshot of ColorCube" /></p>
-
+<p><img src="screenshot.png" alt="Screenshot of ColorCube" title="Screenshot of ColorCube"></p>
 <p>A vertex and a color are created for each pixel in the source image. For the
-vertex, <span style="color: red;">red</span> values are mapped to the <code>X</code> axis,
-and similarly <span style="color: green">green</span> to <code>Y</code> and <span
-style="color: blue">blue</span> to <code>Z</code>.</p>
-
+vertex, <!-- raw HTML omitted -->red<!-- raw HTML omitted --> values are mapped to the <code>X</code> axis,
+and similarly <!-- raw HTML omitted -->green<!-- raw HTML omitted --> to <code>Y</code> and <!-- raw HTML omitted -->blue<!-- raw HTML omitted --> to <code>Z</code>.</p>
 <h2 id="optimization">Optimization</h2>
-
 <p>Rendering a point for each pixel in a huge image image would be overkill, so
 I used the pixel culling already present in ColorPal to scale the number of
-points down to a more reasonable 128<sup>2</sup>. Increasing that number also
+points down to a more reasonable 128<!-- raw HTML omitted -->2<!-- raw HTML omitted -->. Increasing that number also
 increases the quality of the cube. If you look closely in the video above, the
 ColorPal logo cube has gaps in it. The better the quality, the longer the
 startup time, though.</p>
-
 <p>Now I&rsquo;m racking my brain for an excuse to use WebGL at Red Hat&hellip;</p>
-
 <p>Any ideas?</p>
 
   </section>
@@ -302,7 +281,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
     <section>
       
         In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.
       
@@ -490,7 +469,6 @@ Click and drag to set the image border to the average of the selected pixels.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
 I&rsquo;ve written some posts about ColorPal.
- 
       
     </section>
   </div>
@@ -620,7 +598,7 @@ I&rsquo;ve written some posts about ColorPal.
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

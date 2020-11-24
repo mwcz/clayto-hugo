@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    3 minute read
+    2 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -179,61 +179,33 @@
   
   
   <section>
-    
-
-<p>I have someone I&rsquo;d like you to meet. SimPixel, meet everyone. Everyone,
+    <p>I have someone I&rsquo;d like you to meet. SimPixel, meet everyone. Everyone,
 SimPixel.</p>
-
-<div id="simpixel-container"></div>
-
+<!-- raw HTML omitted -->
 <h1 id="simpixel-introduce-yourself">SimPixel, introduce yourself</h1>
-
 <p>SimPixel is a WebGL visualizer for LED displays, <em>very</em> much like the ones Adam
 and Dan build over at <a href="http://maniacallabs.com/">Maniacal Labs</a>.</p>
-
-<style type="text/css">
-#mlabs {
-    height: 50vh !important;
-}
-@media screen and (min-width: 660px) {
-    #mlabs {
-        float: right;
-        margin-left: 20px;
-    }
-}
-</style>
-
-<figure>
-<img src="maniacal.jpg" alt="some Maniacal Labs LED projects" />
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Very much alike.  In fact, it&rsquo;s probably <em>so</em> much like their displays because I built
 most of SimPixel while sitting at Adam&rsquo;s workbench. I don&rsquo;t know, there could
 be a connection. If you too would like to take a seat at Adam&rsquo;s illustrious
 workbench someday, <a href="https://github.com/ManiacalLabs/SimPixel">hack away</a>. You can also try the <a href="https://clayto.com/static/projects/simpixel">fullscreen
 demo</a>.</p>
-
-<p><a href="https://github.com/ManiacalLabs/BiblioPixel/wiki">BiblioPixel</a>, <abbr title="Maniacal Labs">ML&rsquo;s</abbr> light animation
+<p><a href="https://github.com/ManiacalLabs/BiblioPixel/wiki">BiblioPixel</a>, <!-- raw HTML omitted -->ML&rsquo;s<!-- raw HTML omitted --> light animation
 library, sends layouts and colors to SimPixel using a simple <a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket</a>
 protocol.</p>
-
-<hr />
-
+<hr>
 <h1 id="the-protocol">The Protocol</h1>
-
 <p>By itself, SimPixel is useless. To turn on the lights, it connects to a
 WebSocket service. That service is expected to send certain messages, namely a
 configuration message followed by a series of color messages.</p>
-
-<hr />
-
+<hr>
 <h2 id="configuration-message">Configuration message</h2>
-
 <p>The configuration message conveys the spatial layout of the LEDs.</p>
-
 <p>For example, a configuration message of <code>0x0000009A02FE000C</code> is interpreted as
 follows.</p>
-
 <table>
 <thead>
 <tr>
@@ -243,7 +215,6 @@ follows.</p>
 <th>Z</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0x0000</td>
@@ -251,7 +222,6 @@ follows.</p>
 <td>02FE</td>
 <td>000C</td>
 </tr>
-
 <tr>
 <td>config</td>
 <td>154</td>
@@ -260,21 +230,15 @@ follows.</p>
 </tr>
 </tbody>
 </table>
-
 <p>The leading <code>0x0000</code> opcode identifies this as a configuration (ie, setup) message,
 followed by a series of 16-bit signed integers which indicate the 3D
-coordinates of each LED, of the form: <code>X<sub>1</sub>,Y<sub>1</sub>,Z<sub>1</sub>,X<sub>2</sub>,Y<sub>2</sub>,Z<sub>2</sub>,
-&hellip;, X<sub>n</sub>,Y<sub>n</sub>,Z<sub>n</sub></code></p>
-
-<hr />
-
+coordinates of each LED, of the form: <!-- raw HTML omitted -->X<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,Y<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,Z<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,X<!-- raw HTML omitted -->2<!-- raw HTML omitted -->,Y<!-- raw HTML omitted -->2<!-- raw HTML omitted -->,Z<!-- raw HTML omitted -->2<!-- raw HTML omitted -->,
+&hellip;, X<!-- raw HTML omitted -->n<!-- raw HTML omitted -->,Y<!-- raw HTML omitted -->n<!-- raw HTML omitted -->,Z<!-- raw HTML omitted -->n<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<hr>
 <h2 id="color-message">Color message</h2>
-
 <p>The color message(s) specify what color each LED should be at the current
 moment in time.</p>
-
 <p>An example color message, <code>0x0001 40 D6 7F</code>, breaks down to:</p>
-
 <table>
 <thead>
 <tr>
@@ -284,7 +248,6 @@ moment in time.</p>
 <th>B</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>0x0001</td>
@@ -292,7 +255,6 @@ moment in time.</p>
 <td>D6</td>
 <td>7F</td>
 </tr>
-
 <tr>
 <td>color</td>
 <td>64</td>
@@ -301,110 +263,49 @@ moment in time.</p>
 </tr>
 </tbody>
 </table>
-
 <p>The leading <code>0x0001</code> opcode identifies this as a color message, followed by a
 series of 8-bit unsigned integers which indicate the RGB colors of each LED,
 of the form:
-<code>R<sub>1</sub>,G<sub>1</sub>,B<sub>1</sub>,R<sub>2</sub>,G<sub>2</sub>,B<sub>2</sub>,
-&hellip;, R<sub>n</sub>,G<sub>n</sub>,B<sub>n</sub></code></p>
-
+<!-- raw HTML omitted -->R<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,G<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,B<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,R<!-- raw HTML omitted -->2<!-- raw HTML omitted -->,G<!-- raw HTML omitted -->2<!-- raw HTML omitted -->,B<!-- raw HTML omitted -->2<!-- raw HTML omitted -->,
+&hellip;, R<!-- raw HTML omitted -->n<!-- raw HTML omitted -->,G<!-- raw HTML omitted -->n<!-- raw HTML omitted -->,B<!-- raw HTML omitted -->n<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>For a concise reference, see <a href="https://github.com/ManiacalLabs/SimPixel/blob/master/PROTOCOL.md">PROTOCOL.md</a>.</p>
-
-<hr />
-
+<hr>
 <h1 id="the-ghost-in-the-recording">The Ghost in the Recording</h1>
-
 <p>The live demo at the top of this post isn&rsquo;t connected to any WebSocket service.
 Instead, it&rsquo;s using a recording apparatus that I cobbled together. I pushed
 a configuration frame and a bunch of color frames into an array, converted
 their ArrayBuffers into base64 strings, and saved those into <a href="https://github.com/ManiacalLabs/SimPixel/blob/recording-draft/src/recordings/vis.json">a quite large
 JSON recording file</a>.</p>
-
 <p>I only mention it to lead up to the following. While editing the recording
 JSON file, I zoomed out a little and something caught my eye. I zoomed out
 more and a pattern took shape.</p>
-
 <p>Here&rsquo;s a screenshot of the JSON file in my terminal, zoomed out as far as it&rsquo;ll
 go.</p>
-
-<p><img src="recording-base64.png" alt="image of base64-encoded recording" /></p>
-
+<p><img src="recording-base64.png" alt="image of base64-encoded recording"></p>
 <p>The waves of red, green, and blue is evident even in this doubly-encoded
 format. Pretty cool.</p>
-
-<!-- SimPixel embedded -->
-
-<div id="connection"></div>
-
-<style type="text/css">
-    #simpixel-container {
-        width: 100%;
-        height: 80vh;
-        cursor: move;
-    }
-    #connection { display: none; }
-</style>
-
-<script type="x-shader/x-vertex" id="vertexshader">
-    uniform float size;
-    attribute vec3 customColor;
-    varying vec3 vColor;
-    void main() {
-        vColor = customColor;
-        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-        gl_PointSize = size * ( 300.0 / -mvPosition.z );
-        gl_Position = projectionMatrix * mvPosition;
-    }
-</script>
-
-<script type="x-shader/x-fragment" id="fragmentshader">
-    uniform vec3 color;
-    uniform sampler2D textureOn;
-    uniform sampler2D textureOff;
-    varying vec3 vColor;
-    void main() {
-        /* if color attribute is not black, use 'on' texture with color*/
-        if (length(vColor) > 0.0) {
-            gl_FragColor = vec4( (color/255.0) * vColor, 1.0 );
-            gl_FragColor = gl_FragColor * texture2D( textureOn, gl_PointCoord );
-        }
-        /* if color attribute is black, use 'off' texture and dark grey */
-        else {
-            gl_FragColor = vec4(0.4);
-            gl_FragColor = gl_FragColor * texture2D( textureOff, gl_PointCoord );
-        }
-    }
-</script>
-
-<!-- third party -->
-
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
-
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.min.js"></script>
-
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
-
-<script defer src="js/Detector.js"></script>
-
-<script defer src="js/OrbitControls.js"></script>
-
-<script defer src="js/reconnecting-websocket.js"></script>
-
-<!-- first party -->
-
-<script defer src="js/bp_host.js"></script>
-
-<script defer src="js/conf.js"></script>
-
-<script defer src="js/recording.js"></script>
-
-<script defer src="js/view.js"></script>
-
-<script defer src="js/main.js"></script>
-
-<div hidden>
-    <img src="thumb.jpg">
-</div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
   </section>
   <footer>
@@ -555,51 +456,6 @@ format. Pretty cool.</p>
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">Visualizing Network Traffic with WebGL</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        Creating a WebGL particle system to convey network traffic patterns to a live audience at <a href="https://www.redhat.com/summit">Red Hat Summit</a>.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2016-07-13T00:00:00Z">
-      Jul 13, 2016
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/./post-thumbnail.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/glow-rope/">Glow Rope</a></h2>
   <div class="pbp-article-summary">
     <section>
@@ -645,21 +501,21 @@ format. Pretty cool.</p>
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/09/make-a-kimotion/">Make a Kimotion!</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">Visualizing Network Traffic with WebGL</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &ldquo;Warrior Poet&rdquo;, but with keyboards.
+        Creating a WebGL particle system to convey network traffic patterns to a live audience at <a href="https://www.redhat.com/summit">Red Hat Summit</a>.
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2015-09-26T00:00:00Z">
-      Sep 26, 2015
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/09/make-a-kimotion/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">
     <div class="pbp-article-thumbnail">
       <div class="glass-card">
         <div class="glass-card-ratio">
@@ -671,7 +527,52 @@ format. Pretty cool.</p>
             
             <img
               class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2015/09/make-a-kimotion/thumb.jpg">
+              src="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/./post-thumbnail.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/kimotion/">Kimotion</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion is a framework for building reactive digital art displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-09-26T00:00:00Z">
+      Sep 26, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/kimotion/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/projects/kimotion/./thumb.png">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -779,7 +680,7 @@ format. Pretty cool.</p>
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

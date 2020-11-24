@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mediancut on clayto</title>
+    <title>mediancut on clayto</title>
     <link>https://clayto.com/tags/mediancut/</link>
-    <description>Recent content in Mediancut on clayto</description>
+    <description>Recent content in mediancut on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Nov 2013 00:00:00 +0000</lastBuildDate>
@@ -19,7 +19,7 @@
       <guid>https://clayto.com/2013/11/colorpal-cli/</guid>
       <description>ColorPal CLI is a command-line version of ColorPal, my HTML5 color palette generator.
 Demo! $ node cpal.js -f hex -s 8 MyImage.png #07070b #bac0c4 #d1bd66 #7e8899 #696964 #c4b441 #65683e #394434  Get it! npm install -g canvas requirejs # install dependencies git clone git@github.com:mwcz/colorpal-cli.git cd colorpal-cli  Use it! To display the help text, simply run the command without any arguments.
-node cpal.js Generate a color palette from an image!</description>
+node cpal.js Generate a color palette from an image! :) USAGE: node cpal.</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
       
       <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.</description>
     </item>
@@ -54,7 +54,7 @@ You can see that with the old method, the black pixels definitely took over the 
       <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
- I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
+I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
   </channel>

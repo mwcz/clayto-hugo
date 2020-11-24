@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -170,43 +170,31 @@
     <p>A few weeks ago, a <a href="http://www.heyokadesign.com/">coworker</a> of mine ran into some font issues. Firefox
 doesn&rsquo;t allow cross-origin requests for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">web fonts</a>, and he was using a tool
 called <a href="http://www.fontsquirrel.com/">Font Squirrel</a> to generate fonts, including <a href="https://developer.mozilla.org/en-US/docs/data_URIs">data URIs</a>.</p>
-
 <p>Embedding a data URI for a font (or image) inside a CSS file is a common
 technique for reducing the number of HTTP requests. In this case, it also
 negates the need for a cross-domain request to fetch the font file, because the
 file&rsquo;s contents are already embedded.</p>
-
 <p>There was something screwy about Font Squirrel&rsquo;s data URIs, though. A change
 must have been made to their tool, because all of our icons were suddenly
 shifted up.</p>
-
 <p>Once we narrowed it down to a misbehaving tool, the solution was clearly to
 create a new, better behaved tool.</p>
-
 <p>I pretty quickly realized that ColorPal is basically a drag-and-drop data URI
 generator.</p>
-
 <p>By dropping a file into ColorPal&rsquo;s dropzone, the user is implicitly giving the
 browser access to that file through the HTML5 File API. That file&rsquo;s contents
 are conveniently (for our purposes, anyway) exposed as a data URI.</p>
-
 <p>ColorPal takes the extra steps of injecting the URI into a canvas element, then
 performing a color quantization algorithm on the resulting pixels.</p>
-
 <p>Drop64 is ColorPal with a bunch of features ripped out.</p>
-
 <p>So, in the span of about 20 minutes I forked ColorPal, changed the name and
 logo, ripped out the quantization algorithm, displayed the data URI into an
 output box, created a github page for it, and registered <a href="http://drop64.com/">drop64.com</a>.</p>
-
 <p>Voila:</p>
-
-<p><img src="recording.gif" alt="Drop64 recording" title="Drop64 recording" /></p>
-
+<p><img src="recording.gif" alt="Drop64 recording" title="Drop64 recording"></p>
 <p>It&rsquo;s not exactly a technical marvel, and the code is still rife with ColorPal
 stuff. I only ripped out what was absolutely necessary to get the tool working
 as fast as possible.</p>
-
 <p><a href="http://drop64.com/">Try it out</a> or <a href="https://github.com/mwcz/Drop64">check out the code</a>. Happy hacking.</p>
 
   </section>
@@ -325,7 +313,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
     <section>
       
         In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.
       
@@ -419,8 +407,7 @@ You can see that with the old method, the black pixels definitely took over the 
       
         This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&hellip;
-&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
-This version has:
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;This version has:
  pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.
       
@@ -469,9 +456,8 @@ The code is well commented, so feel free to hack on it.
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
-It covers Newton&rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.
       
     </section>
   </div>
@@ -601,7 +587,7 @@ It covers Newton&rsquo;s laws of motion.
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

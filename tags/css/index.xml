@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css on clayto</title>
+    <link>https://clayto.com/tags/css/</link>
+    <description>Recent content in css on clayto</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Feb 2020 14:14:52 -0500</lastBuildDate>
+    
+	<atom:link href="https://clayto.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS Only Alternating Letter Colors</title>
+      <link>https://clayto.com/2020/02/css-only-alternating-letter-colors/</link>
+      <pubDate>Fri, 28 Feb 2020 14:14:52 -0500</pubDate>
+      
+      <guid>https://clayto.com/2020/02/css-only-alternating-letter-colors/</guid>
+      <description>This morning, my manager presented me with a challenge: write some code to alternate letter colors. I offered to implement it using only CSS.
+We agreed on the terms:
+ No JavaScript The text could be wrapped in a div or span, but no other markup could be used  I started by finding out if there is an nth-letter() selector yet. Nope. That&amp;rsquo;s okay, my backup plan was to use mix-blend-mode to apply an image&amp;rsquo;s colors to the text below.</description>
+    </item>
+    
+  </channel>
+</rss>

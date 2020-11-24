@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -165,16 +165,9 @@
   <section>
     <p>AEJS was an experimental Amiga 500 emulator written in JavaScript. The name
 stands for Amiga Emulator JavaScript and is pronounced &ldquo;aegis&rdquo;.</p>
-
-<div class="beside">
-<img style="height: 168px" src="icon_aejs.jpg" title="AEJS logo" alt="AEJS logo" />
-<img style="height: 150px" src="log.png" title="AEJS log" alt="AEJS log" />
-</div>
-
-<p><img src="splash.png" alt="aejs splash screen" /></p>
-
+<!-- raw HTML omitted -->
+<p><img src="splash.png" alt="aejs splash screen"></p>
 <p>My motivation to build AEJS came from these sources:</p>
-
 <ul>
 <li>The HTML5 era introduced new APIs which finally made it possible:
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays" title="JavaScript typed arrays">Typed arrays</a>, <a href="http://www.w3.org/TR/webaudio/" title="Web Audio API">Web Audio</a>, <a href="http://www.w3.org/TR/FileAPI/" title="File API">File</a>, <a href="http://www.w3.org/TR/2dcontext/" title="Canvas 2D context">Canvas</a>, <a href="http://www.w3.org/TR/fullscreen/" title="Fullscreen API">Fullscreen</a>,
@@ -186,9 +179,7 @@ which are super awesome</li>
 <li>I still have the Amiga 500 I played with obsessively since 3 years-old</li>
 <li>The <a href="https://en.wikipedia.org/wiki/Motorola_68000" title="Motorola 68000">68000</a> is legendary and I wanted to find out why</li>
 </ul>
-
 <p>I stopped development for these reasons:</p>
-
 <ul>
 <li>This was my first emulator, and the Amiga 500 is a fairly complex set of
 chips, and I quickly realized it would take a very long time to complete. I
@@ -199,18 +190,15 @@ definitely up to the task, there was pretty much no reason to write it
 entirely in JavaScript when it could be written in C and compiled to JS with
 <a href="http://emscripten.org" title="emscripten">emscripten</a>. The result would be faster, more robust, and type-safe.</li>
 </ul>
-
 <p><a href="https://github.com/naTmeg/ScriptedAmigaEmulator" title="ScriptedAmigaEmulator">Scripted Amiga Emulator</a> came out at around the same time I stopped contributing to AEJS. It&rsquo;s based on
 <a href="https://github.com/tonioni/WinUAE" title="WinUAE">WinUAE</a> and was ported (by hand, I believe) from C++ to JavaScript. A very
 impressive project, but not at all what I was going for with AEJS. AEJS was
 about fueling my curiosity and exploration and was unlikely to ever be a usable emulator.
 works very well, but it didn&rsquo;t demotivate me in any way.</p>
-
 <p>I may come up with the motivation to resume development at some point
 in the future. I still love my old Amiga 500 and want to see it live on in
 some fashion. I don&rsquo;t like having pet projects nipping at my heels that never
 go anywhere, though, so I&rsquo;m calling this one dead (<a href="https://github.com/mwcz/AEJS/" title="AEJS on GitHub">for now</a>).</p>
-
 <p><em>Addendum</em>: I just learned today (2013-12-16) that Christian Stefansen ported
 PUAE (Portable Universal Amiga Emulator) to PNaCl. This allows UAE to run
 inside any Chrome browser. <a href="http://pnacl-amiga-emulator.appspot.com/" title="PNaCl port of PUAE">Check it out</a> or <a href="https://github.com/cstefansen/PUAE" title="PNaCl PUAE port's source code">fork it</a>.</p>
@@ -369,6 +357,54 @@ Why the Amiga? Given that this is my first emulator, it would have been much eas
     
     
     <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/jsimage/">JSImage</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008/2009 when I first started seriously studying JavaScript.
+A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
+I&rsquo;ve made several posts about JSImage which contain live demos.
+I think I put more work into code formatting than correct output. ;)
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2009-01-01T00:00:00Z">
+      Jan 1, 2009
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/jsimage/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/projects/jsimage/./icon_jsimage.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/projects/mediancut/">median-cut.js</a></h2>
   <div class="pbp-article-summary">
     <section>
@@ -400,54 +436,6 @@ The code is available on GitHub.
             <img
               class="glass-card-bg glass-card-bg-default"
               src="https://clayto.com/projects/mediancut/./median-mean-comparison.png">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/jsimage/">JSImage</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008/2009 when I first started seriously studying JavaScript.
-A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
-I&rsquo;ve made several posts about JSImage which contain live demos.
-I think I put more work into code formatting than correct output. ;)
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2009-01-01T00:00:00Z">
-      Jan 1, 2009
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/jsimage/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/projects/jsimage/./icon_jsimage.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -555,7 +543,7 @@ I think I put more work into code formatting than correct output. ;)
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

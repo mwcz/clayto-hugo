@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Typography on clayto</title>
+    <title>typography on clayto</title>
     <link>https://clayto.com/tags/typography/</link>
-    <description>Recent content in Typography on clayto</description>
+    <description>Recent content in typography on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Nov 2011 00:00:00 +0000</lastBuildDate>
@@ -18,8 +18,7 @@
       
       <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
       <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
- CSS3!
-The code:
+CSS3!The code:
 // Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
     </item>
     

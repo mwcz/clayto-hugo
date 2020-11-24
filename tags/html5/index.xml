@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Html5 on clayto</title>
+    <title>html5 on clayto</title>
     <link>https://clayto.com/tags/html5/</link>
-    <description>Recent content in Html5 on clayto</description>
+    <description>Recent content in html5 on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Mar 2014 00:00:00 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
       
       <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo! and view the code.
+Launch live demo!and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
     </item>
     
@@ -53,7 +53,7 @@ Some benefits of Data URIs are:
       <guid>https://clayto.com/2013/11/colorpal-cli/</guid>
       <description>ColorPal CLI is a command-line version of ColorPal, my HTML5 color palette generator.
 Demo! $ node cpal.js -f hex -s 8 MyImage.png #07070b #bac0c4 #d1bd66 #7e8899 #696964 #c4b441 #65683e #394434  Get it! npm install -g canvas requirejs # install dependencies git clone git@github.com:mwcz/colorpal-cli.git cd colorpal-cli  Use it! To display the help text, simply run the command without any arguments.
-node cpal.js Generate a color palette from an image!</description>
+node cpal.js Generate a color palette from an image! :) USAGE: node cpal.</description>
     </item>
     
     <item>
@@ -75,7 +75,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
       
       <guid>https://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
-First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
+ First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@ First, I converted the classic SVG tiger into a set of canvas drawing instructio
       
       <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.</description>
     </item>
@@ -99,8 +99,7 @@ You can see that with the old method, the black pixels definitely took over the 
       <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
-I&amp;rsquo;ve written some posts about ColorPal.
- </description>
+I&amp;rsquo;ve written some posts about ColorPal.</description>
     </item>
     
     <item>
@@ -111,7 +110,7 @@ I&amp;rsquo;ve written some posts about ColorPal.
       <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
- I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
+I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
     <item>
@@ -122,8 +121,7 @@ I&amp;rsquo;ve been toying with color palette generation for years. My photograp
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
-This version has:
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
     </item>
@@ -136,7 +134,8 @@ The code is well commented, so feel free to hack on it.</description>
       <guid>https://clayto.com/projects/bouncey/</guid>
       <description>Bouncey is a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 Fun, simple, and oddly relaxing.
-#cnvs { background-color: #1f1f1f; margin: 0 auto; -webkit-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -o-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.</description>
+  Posts about Bouncey
+Bouncey&amp;rsquo;s code on GitHub</description>
     </item>
     
     <item>
@@ -147,9 +146,19 @@ Fun, simple, and oddly relaxing.
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
-It covers Newton&amp;rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.</description>
+    </item>
+    
+    <item>
+      <title>How not to use CSS3</title>
+      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
+      <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
+CSS3!The code:
+// Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
     </item>
     
     <item>
@@ -169,29 +178,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
       
       <guid>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
       <description>For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&amp;rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>How not to use CSS3</title>
-      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
-      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
-      <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
- CSS3!
-The code:
-// Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
-    </item>
-    
-    <item>
-      <title>HTML5 Canvas eyedropper</title>
-      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
-      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
-      <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
+  In retrospect, it really could have used some narration&amp;hellip;</description>
     </item>
     
     <item>
@@ -201,16 +188,6 @@ The code:
       
       <guid>https://clayto.com/2011/11/html5-canvas-3d-pixel-array/</guid>
       <description>This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &amp;ldquo;more logical&amp;rdquo;, I mean &amp;ldquo;more logical, to me, at the time). 1D is fine, and I can&amp;rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.</description>
-    </item>
-    
-    <item>
-      <title>HTML5 canvas RGB histogram</title>
-      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
-      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
-      <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
-It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct.</description>
     </item>
     
     <item>
@@ -225,13 +202,33 @@ Click and drag to set the image border to the average of the selected pixels.</d
     </item>
     
     <item>
+      <title>HTML5 Canvas eyedropper</title>
+      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
+      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
+      <description>This is an old demo I made of an HTML5 canvas eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.
+Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.It&amp;rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&amp;rsquo;s 2D rendering context object.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 canvas RGB histogram</title>
+      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
+      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
+      <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)</description>
+    </item>
+    
+    <item>
       <title>AEJS</title>
       <link>https://clayto.com/projects/aejs/</link>
       <pubDate>Thu, 13 Oct 2011 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/aejs/</guid>
       <description>AEJS was an experimental Amiga 500 emulator written in JavaScript. The name stands for Amiga Emulator JavaScript and is pronounced &amp;ldquo;aegis&amp;rdquo;.
- My motivation to build AEJS came from these sources:
+My motivation to build AEJS came from these sources:
  The HTML5 era introduced new APIs which finally made it possible: Typed arrays, Web Audio, File, Canvas, Fullscreen, Gamepad Fabrice Bellard&amp;rsquo;s JavaScript PC emulator JavaScript performance was finally good enough to make it feasible It bridged front-end web development with low-level machine code, both of which are super awesome I still have the Amiga 500 I played with obsessively since 3 years-old The 68000 is legendary and I wanted to find out why  I stopped development for these reasons:</description>
     </item>
     

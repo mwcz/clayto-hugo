@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gamedev on clayto</title>
+    <title>gamedev on clayto</title>
     <link>https://clayto.com/tags/gamedev/</link>
-    <description>Recent content in Gamedev on clayto</description>
+    <description>Recent content in gamedev on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>
@@ -38,7 +38,7 @@ Open-source tools have been lovingly crafted that cover every medium of game dev
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/08/in-orange-light/</guid>
-      <description>Play now!  Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
+      <description>Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
 We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what we found on that screen was Scene I, Act I of Kentucky Route Zero. It took me three years, but I finally rediscovered KR0 a few weeks ago.</description>
     </item>
     
@@ -48,8 +48,8 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/games/pity-about-earth/</guid>
-      <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
-– The Universe
+      <description>Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
+  – The Universe
   The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
     </item>
     
@@ -59,9 +59,7 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/tracer/</guid>
-      <description>Play now! 
-Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
-Play now!
+      <description>Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
 We were very happy with the ratings Tracer received. In the Innovation category, we placed 5th out of 1,489 games.
 A more detailed blog post is available at the Scripta Games blog.
 View source</description>
@@ -74,8 +72,7 @@ View source</description>
       
       <guid>https://clayto.com/projects/zorbio/</guid>
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
-Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
-Play now!</description>
+Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.</description>
     </item>
     
     <item>
@@ -85,8 +82,7 @@ Play now!</description>
       
       <guid>https://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
-Play now! 
- .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
+We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too. Square Off placed 199th overall out of 2,712 games.</description>
     </item>
     
     <item>
@@ -97,7 +93,7 @@ Play now!
       <guid>https://clayto.com/projects/ping/</guid>
       <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
 It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
-Play now!</description>
+Even as a lifelong gamer and programmer, this is the first videogame I&amp;rsquo;ve made.</description>
     </item>
     
   </channel>

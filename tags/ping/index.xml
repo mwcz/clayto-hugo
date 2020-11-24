@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ping on clayto</title>
+    <title>ping on clayto</title>
     <link>https://clayto.com/tags/ping/</link>
-    <description>Recent content in Ping on clayto</description>
+    <description>Recent content in ping on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Jun 2015 00:00:00 +0000</lastBuildDate>
@@ -19,7 +19,7 @@
       <guid>https://clayto.com/projects/ping/</guid>
       <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
 It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
-Play now!</description>
+Even as a lifelong gamer and programmer, this is the first videogame I&amp;rsquo;ve made.</description>
     </item>
     
   </channel>

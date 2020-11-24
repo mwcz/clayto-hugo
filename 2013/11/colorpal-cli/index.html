@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -169,13 +169,9 @@
   
   
   <section>
-    
-
-<p>ColorPal CLI is a command-line version of <a href="https://clayto.com/projects/colorpal" title="ColorPal project page">ColorPal</a>, my HTML5 color palette
+    <p>ColorPal CLI is a command-line version of <a href="https://clayto.com/projects/colorpal" title="ColorPal project page">ColorPal</a>, my HTML5 color palette
 generator.</p>
-
 <h2 id="demo">Demo!</h2>
-
 <pre><code>$ node cpal.js -f hex -s 8 MyImage.png
 
 #07070b
@@ -187,18 +183,13 @@ generator.</p>
 #65683e
 #394434
 </code></pre>
-
 <h2 id="get-it">Get it!</h2>
-
 <pre><code>npm install -g canvas requirejs # install dependencies
 git clone git@github.com:mwcz/colorpal-cli.git
 cd colorpal-cli
 </code></pre>
-
 <h2 id="use-it">Use it!</h2>
-
 <p>To display the help text, simply run the command without any arguments.</p>
-
 <pre><code>node cpal.js
 
 Generate a color palette from an image! :)
@@ -211,10 +202,8 @@ Options:
 
   -f, --format   Specify the output format.  Available formats are: scss, sass, json, less, rgb, hex
 </code></pre>
-
 <p>Let&rsquo;s dive right in by generating palettes from the sample images included with the
 project.</p>
-
 <pre><code>node cpal.js images/hugepic.png
 
 [ [ 144, 43, 178 ],
@@ -224,64 +213,45 @@ project.</p>
   [ 238, 72, 120 ],
   [ 219, 66, 32 ] ]
 </code></pre>
-
 <p>To visualize what just happened, ColorPal turned this:</p>
-
-<p><img src="hugepic_small.png" alt="hugepic.png" title="hugepic.png" /></p>
-
+<p><img src="hugepic_small.png" alt="hugepic.png" title="hugepic.png"></p>
 <p>Into this:</p>
-
-<p><img src="hugepic_colors.png" alt="hugepic.png colors" title="hugepic.png colors" /></p>
-
+<p><img src="hugepic_colors.png" alt="hugepic.png colors" title="hugepic.png colors"></p>
 <p>Let&rsquo;s try again with a different image.</p>
-
 <pre><code>node cpal.js images/issue3.png
 
 [ [ 165, 219, 144 ], [ 58, 181, 75 ], [ 254, 250, 203 ] ]
 </code></pre>
-
 <p>Only three colors this time? This image has very few colors, so ColorPal
 decided to create a smaller palette.</p>
-
-<p><img src="issue3_small.png" alt="issue3.png" title="issue3.png" />
-<img src="issue3_colors.png" alt="issue3.png colors" title="issue3.png colors" /></p>
-
+<p><img src="issue3_small.png" alt="issue3.png" title="issue3.png">
+<img src="issue3_colors.png" alt="issue3.png colors" title="issue3.png colors"></p>
 <p>To generate a specific number of colors, use the <code>-s</code> option.</p>
-
 <pre><code># generate 8 colors from the same image
 node cpal.js -s 8 images/issue3.png
 </code></pre>
-
 <p>You can also specify the output format. <code>json</code> is the default, but several others are available.</p>
-
 <h4 id="hex-output">Hex output:</h4>
-
 <pre><code>node cpal.js images/issue3.png -f hex
 #a5db90
 #3ab54b
 #fefacb
 </code></pre>
-
 <h4 id="less-output">LESS output:</h4>
-
 <pre><code>node cpal.js images/issue3.png -f less
 @color0: rgb(165,219,144);
 @color1: rgb(58,181,75);
 @color2: rgb(254,250,203);
 </code></pre>
-
-<h4 id="scss-sass-output">SCSS/SASS output:</h4>
-
+<h4 id="scsssass-output">SCSS/SASS output:</h4>
 <pre><code>node cpal.js images/issue3.png -f scss
 $color0: rgb(165,219,144);
 $color1: rgb(58,181,75);
 $color2: rgb(254,250,203);
 </code></pre>
-
 <p>ColorPal also has a <a href="http://colorpal.org/" title="colorpal.org">web interface</a> which you might find more convenient,
 depending on your needs. The command-line utility is very convenient if you
 need to automate palette generation for a large number of images.</p>
-
 <p>All the code is available <a href="https://github.com/mwcz/colorpal-cli" title="GitHub page for ColorPal CLI">on GitHub</a>. Bug reports and pull requests are
 much appreciated. :)</p>
 
@@ -352,7 +322,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
     <section>
       
         In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.
       
@@ -448,7 +418,6 @@ You can see that with the old method, the black pixels definitely took over the 
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
 I&rsquo;ve written some posts about ColorPal.
- 
       
     </section>
   </div>
@@ -671,7 +640,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Web on clayto</title>
+    <title>web on clayto</title>
     <link>https://clayto.com/tags/web/</link>
-    <description>Recent content in Web on clayto</description>
+    <description>Recent content in web on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }     Features Demo The pfe-icon tag Icon sets  Icon set definitions  resolveIconName  Integrating with Font Awesome Organizing icon sets  SVG injection and coloring  Setting icon colors  Coloring individual icons Coloring all icons Coloring groups of icons  Puzzler: MS Edge icon coloring  Performance  Icon size HTTP/1.</description>
+      <description>Features Demo The pfe-icon tag Icon sets  Icon set definitions Integrating with Font Awesome Organizing icon sets   SVG injection and coloring  Setting icon colors Puzzler: MS Edge icon coloring   Performance  Icon size HTTP/1.1 vs HTTP/2 Lighthouse   Browser support Recap   This is the story of &amp;lt;pfe-icon&amp;gt;. I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ CLOSED: 0 / 45 TIME: s  PLAY! MAKE IT STOP! You closed N/45 popups!
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/08/in-orange-light/</guid>
-      <description>Play now!  Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
+      <description>Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
 We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what we found on that screen was Scene I, Act I of Kentucky Route Zero. It took me three years, but I finally rediscovered KR0 a few weeks ago.</description>
     </item>
     
@@ -70,8 +70,8 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/games/pity-about-earth/</guid>
-      <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
-– The Universe
+      <description>Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
+  – The Universe
   The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
     </item>
     
@@ -82,8 +82,8 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       
       <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
- SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
-#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
+SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench. I don&amp;rsquo;t know, there could be a connection. If you too would like to take a seat at Adam&amp;rsquo;s illustrious workbench someday, hack away.</description>
     </item>
     
     <item>
@@ -92,9 +92,7 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/tracer/</guid>
-      <description>Play now! 
-Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
-Play now!
+      <description>Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
 We were very happy with the ratings Tracer received. In the Innovation category, we placed 5th out of 1,489 games.
 A more detailed blog post is available at the Scripta Games blog.
 View source</description>
@@ -106,7 +104,7 @@ View source</description>
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
-      <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
+      <description>Just a few short daysmonths ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
@@ -117,8 +115,7 @@ Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand
       
       <guid>https://clayto.com/projects/zorbio/</guid>
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
-Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
-Play now!</description>
+Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.</description>
     </item>
     
     <item>
@@ -138,7 +135,7 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/glow-rope/</guid>
-      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
+      <description></description>
     </item>
     
     <item>
@@ -147,7 +144,7 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</guid>
-      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;ldquo;
+      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;rdquo;
 This year, I had the good fortune of contributing to a keynote presentation at Red Hat Summit. During the keynote, an audience of 5,000 played a mobile web game created by our team. The game was backed by several microservices which we modified on stage while the audience played.
 My contribution was to display, in a visual and engaging way, the live network traffic flowing through our system.</description>
     </item>
@@ -159,8 +156,7 @@ My contribution was to display, in a visual and engaging way, the live network t
       
       <guid>https://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
-Play now! 
- .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
+We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too. Square Off placed 199th overall out of 2,712 games.</description>
     </item>
     
     <item>
@@ -172,8 +168,8 @@ Play now!
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
-Launch live demo!
-Video clips These images, when played in rapid succession, create the illusion of motion!</description>
+Video clips These images, when played in rapid succession, create the illusion of motion!
+             View source, if you like code.</description>
     </item>
     
     <item>
@@ -194,7 +190,7 @@ Creating interactive art exhibits from scratch is really hard.</description>
       <guid>https://clayto.com/2015/06/webassembly-is-the-keystone/</guid>
       <description>Within the last two days, WebAssembly (wasm) has graced the eyeballs of every JavaScript developer. If wasm is new to you, the articles linked at the end of this post fully describe what wasm is.
 Since that&amp;rsquo;s been covered, I&amp;rsquo;d like to talk about one impact wasm will hopefully have on future of computing. To set the scene, a quote from the man himself:
- Meanwhile, I took one quick step that would demonstrate the concept of the Web as a universal, all-encompassing space.</description>
+Back then, Tim enabled the first Web browser to follow links to newsgroups and FTP servers.</description>
     </item>
     
     <item>
@@ -203,7 +199,8 @@ Since that&amp;rsquo;s been covered, I&amp;rsquo;d like to talk about one impact
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2015/01/naming-names-anonymity-is-dead/</guid>
-      <description>There are only two hard problems in computer science: cache invalidation, naming things, and off-by-one errors.   Phil Karlton, but I can&#39;t find a name for the original source...    Contriving names for things is so commonplace for computer programmers that we may be thinking up names more often than any other profession. Every day, usually dozens of times, I find myself trying to imagine the perfect name for a function or variable or module.</description>
+      <description>Contriving names for things is so commonplace for computer programmers that we may be thinking up names more often than any other profession. Every day, usually dozens of times, I find myself trying to imagine the perfect name for a function or variable or module. Then I remember that there&amp;rsquo;s a term for the process of formulating the perfect name for a thing.
+I just can&amp;rsquo;t remember what it&amp;rsquo;s called&amp;hellip;</description>
     </item>
     
     <item>
@@ -234,7 +231,7 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
       
       <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo! and view the code.
+Launch live demo!and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
     </item>
     
@@ -267,7 +264,7 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
       
       <guid>https://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
-First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
+ First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
     </item>
     
     <item>
@@ -277,7 +274,7 @@ First, I converted the classic SVG tiger into a set of canvas drawing instructio
       
       <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.</description>
     </item>
@@ -290,7 +287,7 @@ You can see that with the old method, the black pixels definitely took over the 
       <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
- I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
+I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
     <item>
@@ -301,8 +298,7 @@ I&amp;rsquo;ve been toying with color palette generation for years. My photograp
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
-This version has:
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
     </item>
@@ -315,9 +311,19 @@ The code is well commented, so feel free to hack on it.</description>
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;rdquo;
-It covers Newton&amp;rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.</description>
+    </item>
+    
+    <item>
+      <title>How not to use CSS3</title>
+      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
+      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
+      <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
+CSS3!The code:
+// Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
     </item>
     
     <item>
@@ -337,29 +343,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
       
       <guid>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</guid>
       <description>For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&amp;rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>How not to use CSS3</title>
-      <link>https://clayto.com/2011/11/how-not-to-use-css3/</link>
-      <pubDate>Thu, 17 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
-      <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
- CSS3!
-The code:
-// Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
-    </item>
-    
-    <item>
-      <title>HTML5 Canvas eyedropper</title>
-      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
-      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
-      <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
+  In retrospect, it really could have used some narration&amp;hellip;</description>
     </item>
     
     <item>
@@ -372,16 +356,6 @@ The code:
     </item>
     
     <item>
-      <title>HTML5 canvas RGB histogram</title>
-      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
-      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
-      <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
-It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct.</description>
-    </item>
-    
-    <item>
       <title>HTML5 canvas area selection averaging</title>
       <link>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</link>
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
@@ -390,6 +364,26 @@ It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called J
       <description>This is a demo from late 2009. It&amp;rsquo;s an extension of the single-pixel eyedropper I wrote previously.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)
 Click and drag to set the image border to the average of the selected pixels.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Canvas eyedropper</title>
+      <link>https://clayto.com/2011/11/html5-canvas-eyedropper/</link>
+      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
+      <description>This is an old demo I made of an HTML5 canvas eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.
+Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.It&amp;rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&amp;rsquo;s 2D rendering context object.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 canvas RGB histogram</title>
+      <link>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</link>
+      <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
+      <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)</description>
     </item>
     
     <item>

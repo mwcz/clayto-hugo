@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Redhat on clayto</title>
+    <title>redhat on clayto</title>
     <link>https://clayto.com/tags/redhat/</link>
-    <description>Recent content in Redhat on clayto</description>
+    <description>Recent content in redhat on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Jul 2016 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</guid>
-      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;ldquo;
+      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;rdquo;
 This year, I had the good fortune of contributing to a keynote presentation at Red Hat Summit. During the keynote, an audience of 5,000 played a mobile web game created by our team. The game was backed by several microservices which we modified on stage while the audience played.
 My contribution was to display, in a visual and engaging way, the live network traffic flowing through our system.</description>
     </item>
@@ -30,7 +30,7 @@ My contribution was to display, in a visual and engaging way, the live network t
       <guid>https://clayto.com/projects/ping/</guid>
       <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
 It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
-Play now!</description>
+Even as a lifelong gamer and programmer, this is the first videogame I&amp;rsquo;ve made.</description>
     </item>
     
   </channel>

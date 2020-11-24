@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Led on clayto</title>
+    <title>led on clayto</title>
     <link>https://clayto.com/tags/led/</link>
-    <description>Recent content in Led on clayto</description>
+    <description>Recent content in led on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
@@ -18,8 +18,8 @@
       
       <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
- SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
-#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
+SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench. I don&amp;rsquo;t know, there could be a connection. If you too would like to take a seat at Adam&amp;rsquo;s illustrious workbench someday, hack away.</description>
     </item>
     
   </channel>

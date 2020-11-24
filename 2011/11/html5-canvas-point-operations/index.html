@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -173,41 +173,20 @@
   
   
   <section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <!-- raw HTML omitted -->
 <p>This is the last demo I made using <a href="https://github.com/mwcz/jsimage">JSImage</a>. I created it some time around 2009-2010. At the time, I had checked out an <a href="http://www.amazon.com/Digital-Image-Processing-Algorithmic-Introduction/dp/1846283795">imaging book</a> from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using <a href="http://www.pythonware.com/products/pil/">PIL</a>, but point operations were simple enough to port to JavaScript quickly.</p>
-
 <p>Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.</p>
-
 <p>This demonstrates changing contrast, value, saturation, hue, color inversion, and threshold point operations. Note that there is a bug with increasing value and increasing saturation which I never got around to fixing.</p>
-
-<script type="text/javascript" src="jsimage.js"></script>
-
-<script type="text/javascript" src="colorspace.js"></script>
-
-<p><img style="display: none !important;" src="bee.jpg"></p>
-
-<script type="text/javascript">
-
-    var IJS_PointOps;
-    $(document).ready( function() {
-        IJS_PointOps = new JSImage( "IJS_PointOps", "bee.jpg" );
-    });
-
-</script>
-
-<style type="text/css" media="screen">
-    .btn-group .glyphicon { margin-right: 0 }
-    .point-ops-demo { font-size: 0.9em }
-    .form-control.threshold { width: 4em }
-</style>
-
-<canvas class="img-responsive" id="IJS_PointOps">your browser does not support canvas</canvas>
-
-<style>
-table td { padding: 11px; font-weight: bold }
-</style>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->your browser does not support canvas<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <table>
 <thead>
 <tr>
@@ -215,21 +194,18 @@ table td { padding: 11px; font-weight: bold }
 <th></th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>Value (Brightness) <br><button class="btn btn-default" onmousedown="IJS_PointOps.value( IJS_PointOps.canvas, 10 )">+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.value( IJS_PointOps.canvas, -10 )">-</button></td>
-<td>Contrast <br> <button class="btn btn-default" onmousedown="IJS_PointOps.contrast( IJS_PointOps.canvas, 1.1)" >+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.contrast( IJS_PointOps.canvas, 0.9)" >-</button></td>
+<td>Value (Brightness) <!-- raw HTML omitted --><!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
+<td>Contrast <!-- raw HTML omitted --> <!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td>Saturation <br> <button class="btn btn-default" onmousedown="IJS_PointOps.saturation( IJS_PointOps.canvas, 25 )" >+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.saturation( IJS_PointOps.canvas, -25 )" >-</button></td>
-<td>Hue <br> <button class="btn btn-default" onmousedown="IJS_PointOps.hue( IJS_PointOps.canvas, 20)" >+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.hue( IJS_PointOps.canvas, -20)" >-</button></td>
+<td>Saturation <!-- raw HTML omitted --> <!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
+<td>Hue <!-- raw HTML omitted --> <!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
-<td><button class="btn btn-default" onmousedown="IJS_PointOps.invert()">Invert</button> <button class="btn btn-default" onmousedown="IJS_PointOps.threshold( IJS_PointOps.canvas, document.getElementById('t').value )">Threshold</button></td>
-<td><input type="text" value="127" class="form-control threshold" maxlength="3" size="3" id="t" /> <button class="btn btn-default" onclick="IJS_PointOps = new JSImage( 'IJS_PointOps', 'bee.jpg' );">Reset</button></td>
+<td><!-- raw HTML omitted -->Invert<!-- raw HTML omitted --> <!-- raw HTML omitted -->Threshold<!-- raw HTML omitted --></td>
+<td><!-- raw HTML omitted --> <!-- raw HTML omitted -->Reset<!-- raw HTML omitted --></td>
 </tr>
 </tbody>
 </table>
@@ -253,7 +229,7 @@ table td { padding: 11px; font-weight: bold }
     <section>
       
         This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
-It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
       
     </section>
   </div>
@@ -341,62 +317,14 @@ Click and drag to set the image border to the average of the selected pixels.
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&hellip;
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2011-11-17T00:00:00Z">
-      Nov 17, 2011
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-canvas-physics/">Bouncey - canvas physics</a></h2>
   <div class="pbp-article-summary">
     <section>
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
-It covers Newton&rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.
       
     </section>
   </div>
@@ -419,6 +347,52 @@ It covers Newton&rsquo;s laws of motion.
             <img
               class="glass-card-bg glass-card-bg-default"
               src="https://clayto.com/2011/11/bouncey-canvas-physics/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
+  In retrospect, it really could have used some narration&hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -616,7 +590,7 @@ It covers Newton&rsquo;s laws of motion.
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

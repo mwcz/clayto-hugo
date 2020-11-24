@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -169,61 +169,36 @@
   
   
   <section>
-    
-
-<p>They say <a href="http://threevirtues.com/">good developers are lazy</a>. A tedious process is no match for a
+    <p>They say <a href="http://threevirtues.com/">good developers are lazy</a>. A tedious process is no match for a
 lazy developer. Below is an experiment in laziness. It&rsquo;s a proof of concept
 for using Web Components without having to manually import each one.</p>
-
 <p>I&rsquo;m not sure exactly what to call it. It grazes the definitions of
 lazyloading, autoloading, and dependency injection, so I went with the laziest
 term.</p>
-
 <p>Let&rsquo;s set the scene, and find out if it&rsquo;s a worthwhile developer convenience,
 or ease-of-use gone mad&hellip;</p>
-
 <h2 id="scene-1-maximize-simplicity">Scene 1: Maximize Simplicity</h2>
-
 <p>You are the author of &ldquo;Wootstrap&rdquo;, a Bootstrap-like library of useful
 components like navigation, buttons, and alerts. Also like Bootstrap, your
 components are distributed as HTML snippets for users to copy, paste, and
 customize.</p>
-
-<figure>
-    <video style="margin: 0 auto" poster="thumb.png" autoplay controls loop>
-        <source src="bootstrap-paste.webm" />
-        <source src="bootstrap-paste.mp4" />
-    </video>
-</figure>
-
+<!-- raw HTML omitted -->
 <p>To improve ease of use, you encapsulate all that HTML into a custom element:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ws-panel</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I am a ws-panel&#34;</span>&gt;Some words.&lt;/<span style="color:#f92672">ws-panel</span>&gt;</code></pre></div>
-<p>The essence of simplicity! One more thing, browsers don&rsquo;t know what
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ws-panel</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I am a ws-panel&#34;</span>&gt;Some words.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
+</code></pre></div><p>The essence of simplicity! One more thing, browsers don&rsquo;t know what
 <code>&lt;ws-panel&gt;</code> is, so your users must import it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/wootstrap/components/ws-panel.html&#34;</span>&gt;</code></pre></div>
-<p>One line, no big deal. But as your users add and remove components from their
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/wootstrap/components/ws-panel.html&#34;</span>&gt;
+</code></pre></div><p>One line, no big deal. But as your users add and remove components from their
 pages, managing imports becomes a finger-aching chore.</p>
-
 <h2 id="scene-2-minimize-finger-ache">Scene 2: Minimize Finger-Ache</h2>
-
 <p>Wouldn&rsquo;t it be cushy if the components were imported when you use them,
 automatically?</p>
-
 <h3 id="live-demo">Live demo</h3>
-
-<style type="text/css">
-.demo-iframe {
-  border: 1px solid #f1f1f1;
-  padding: 20px;
-}
-</style>
-
-<iframe class="demo-iframe" frameborder=0 height="240" width="100%" src="https://clayto.com/demos/043/index.html"></iframe>
-
-<!-- https://gohugo.io/content-management/syntax-highlighting/ -->
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h3 id="demo-code">Demo code</h3>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
     &lt;<span style="color:#f92672">head</span>&gt;
 <span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/webcomponents.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
@@ -237,11 +212,8 @@ automatically?</p>
 </span><span style="display:block;width:100%;background-color:#3c3d38">        &lt;/<span style="color:#f92672">lazy-load</span>&gt;
 </span>    &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
-
 <p>The demo only imports <code>lazy-load</code>, which encapsulates the importing of the rest of the elements so you don&rsquo;t have to specify them by hand. Let&rsquo;s look at how it works.</p>
-
 <h2 id="scene-3-behind-the-scenes">Scene 3: Behind the Scenes</h2>
-
 <p>To lazyload, we need a list of all our component names and where to find them.
 I created a small &ldquo;registry&rdquo; object for the demo. In the real-world, this
 object could be auto-generated by the component library&rsquo;s build system, or by
@@ -254,14 +226,11 @@ the build system of the user&rsquo;s app, including all available components.</p
     <span style="color:#e6db74">&#34;ws-alert&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-alert/ws-alert.html&#34;</span>
   }
 };
-</code></pre></div>
-<p>First we have <code>names</code>, a comma-separated list of component names which doubles
+</code></pre></div><p>First we have <code>names</code>, a comma-separated list of component names which doubles
 as a selector. It is passed into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll()</a> to find any
 occurrences of our elements on the page. Second is <code>paths</code>, a mapping from
 each component&rsquo;s name to its HTML template file.</p>
-
 <h3 id="the-lazy-load-element">The lazy-load element</h3>
-
 <p>Here&rsquo;s the Polymer definition for the <code>lazy-load</code> element:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Polymer</span>({
 
@@ -280,17 +249,12 @@ each component&rsquo;s name to its HTML template file.</p>
     },
 
 });
-</code></pre></div>
-<p>When <code>lazy-load</code> is <a href="https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks">attached to the DOM</a>, it finds any children in
+</code></pre></div><p>When <code>lazy-load</code> is <a href="https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks">attached to the DOM</a>, it finds any children in
 the <code>names</code> list and imports their HTML templates (using Polymer&rsquo;s handy
 <a href="https://www.polymer-project.org/1.0/docs/devguide/instance-methods#imports-and-urls">importHref()</a> function).</p>
-
 <p>Now any element in the registry object can be used without an explicit import.</p>
-
 <h2 id="tradeoffs">Tradeoffs</h2>
-
 <p>There are some things that may outweigh the convenience.</p>
-
 <ul>
 <li><strong>Unvulcanized</strong> - Lazy loading is the opposite of <a href="https://www.polymer-project.org/1.0/docs/tools/optimize-for-production">Vulcanize</a>. Vulcanize can still be used, but lazyloaded components won&rsquo;t be inlined.</li>
 <li><strong>Delayed loading</strong> - Explicit imports begin downloading before lazyloaded imports, since they don&rsquo;t have to wait for <code>lazy-load</code> to be attached to the DOM.</li>
@@ -298,11 +262,9 @@ the <code>names</code> list and imports their HTML templates (using Polymer&rsqu
 <li><strong>Late to the party?</strong> - Any custom elements added to the page after <code>lazyLoad()</code> has run won&rsquo;t be imported. That didn&rsquo;t seem necessary for a proof of concept, but running <code>lazyLoad()</code> on each state change would be an easy solution.</li>
 <li><strong>HTTP/2 Server Push?</strong> - I haven&rsquo;t tested this, but I suspect lazyloaded components won&rsquo;t benefit from HTTP/2 Server Push.</li>
 </ul>
-
 <p>I&rsquo;m not sure yet which camp lazyloading will fall into: best practice, or
 antipattern. My hope is that developer tooling will be written that injects
 imports as you code, rather than at runtime.</p>
-
 <p>Thanks to Kyle Buchanan for pointers and corrections!</p>
 
   </section>
@@ -364,51 +326,6 @@ imports as you code, rather than at runtime.</p>
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">Visualizing Network Traffic with WebGL</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        Creating a WebGL particle system to convey network traffic patterns to a live audience at <a href="https://www.redhat.com/summit">Red Hat Summit</a>.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2016-07-13T00:00:00Z">
-      Jul 13, 2016
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/./post-thumbnail.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/glow-rope/">Glow Rope</a></h2>
   <div class="pbp-article-summary">
     <section>
@@ -436,6 +353,51 @@ imports as you code, rather than at runtime.</p>
             <img
               class="glass-card-bg glass-card-bg-default"
               src="https://clayto.com/2016/07/glow-rope/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">Visualizing Network Traffic with WebGL</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Creating a WebGL particle system to convey network traffic patterns to a live audience at <a href="https://www.redhat.com/summit">Red Hat Summit</a>.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/./post-thumbnail.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -678,7 +640,7 @@ imports as you code, rather than at runtime.</p>
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

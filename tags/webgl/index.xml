@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webgl on clayto</title>
+    <title>webgl on clayto</title>
     <link>https://clayto.com/tags/webgl/</link>
-    <description>Recent content in Webgl on clayto</description>
+    <description>Recent content in webgl on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 May 2017 00:00:00 +0000</lastBuildDate>
@@ -17,8 +17,8 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/games/pity-about-earth/</guid>
-      <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
-– The Universe
+      <description>Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
+  – The Universe
   The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
     </item>
     
@@ -29,8 +29,8 @@
       
       <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
- SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
-#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
+SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench. I don&amp;rsquo;t know, there could be a connection. If you too would like to take a seat at Adam&amp;rsquo;s illustrious workbench someday, hack away.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       
       <guid>https://clayto.com/projects/fireflies/</guid>
       <description>Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes for your entertainment. Here are some live demo links, and a video.
-Watch the original Watch the geekSPARK edition    Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.
+  Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.
 View source, if you&amp;rsquo;re into that kind of thing.</description>
     </item>
     
@@ -50,9 +50,7 @@ View source, if you&amp;rsquo;re into that kind of thing.</description>
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/tracer/</guid>
-      <description>Play now! 
-Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
-Play now!
+      <description>Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
 We were very happy with the ratings Tracer received. In the Innovation category, we placed 5th out of 1,489 games.
 A more detailed blog post is available at the Scripta Games blog.
 View source</description>
@@ -64,7 +62,7 @@ View source</description>
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
-      <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
+      <description>Just a few short daysmonths ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
@@ -75,8 +73,7 @@ Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand
       
       <guid>https://clayto.com/projects/zorbio/</guid>
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
-Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
-Play now!</description>
+Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.</description>
     </item>
     
     <item>
@@ -85,7 +82,7 @@ Play now!</description>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/glow-rope/</guid>
-      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
+      <description></description>
     </item>
     
     <item>
@@ -94,7 +91,7 @@ Play now!</description>
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</guid>
-      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;ldquo;
+      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;rdquo;
 This year, I had the good fortune of contributing to a keynote presentation at Red Hat Summit. During the keynote, an audience of 5,000 played a mobile web game created by our team. The game was backed by several microservices which we modified on stage while the audience played.
 My contribution was to display, in a visual and engaging way, the live network traffic flowing through our system.</description>
     </item>
@@ -106,8 +103,7 @@ My contribution was to display, in a visual and engaging way, the live network t
       
       <guid>https://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
-Play now! 
- .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
+We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too. Square Off placed 199th overall out of 2,712 games.</description>
     </item>
     
     <item>
@@ -119,8 +115,8 @@ Play now!
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
-Launch live demo!
-Video clips These images, when played in rapid succession, create the illusion of motion!</description>
+Video clips These images, when played in rapid succession, create the illusion of motion!
+             View source, if you like code.</description>
     </item>
     
     <item>
@@ -152,8 +148,7 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
       
       <guid>https://clayto.com/projects/dimo/</guid>
       <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Launch live demo!
-  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.</description>
@@ -175,7 +170,7 @@ The source code is, of course, open.</description>
       
       <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo! and view the code.
+Launch live demo!and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
     </item>
     

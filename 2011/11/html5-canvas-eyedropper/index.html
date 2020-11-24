@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    2 minute read
+    1 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -169,85 +169,16 @@
   
   
   <section>
-    <style type="text/css">
-    canvas {
-        margin        : 0 auto;
-        border-width  : 36px;
-        border-style  : solid;
-        border-radius : 16px;
-        transition    : 0.1168s all ease;
-        margin        : 0 auto;
-        display       : block;
-        cursor        : crosshair;
-    }
-</style>
-
-<p><img style="display: none !important;" src="kazoo.png"></p>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-
-$(function() {
-var c;
-var cnvs = document.getElementById("c");
-
-if( cnvs.getContext) { // Check for canvas support
-// DRAW FUN STUFF!
-
-    c = cnvs.getContext('2d');
-    var color = document.getElementById("color");
-    var colorcode = document.getElementById("colorcode");
-
-    var images = new Image();
-
-    images.onload = function() {
-        cnvs.width = images.width;cnvs.height = images.height; // resize to fit image
-        c.drawImage( images, 0, 0 );
-    }
-    images.src = "kazoo.png";
-
-    pixel = function(e) {
-
-        // find the element's position
-        var x = 0;
-        var y = 0;
-        var o = cnvs;
-        do {
-            x += o.offsetLeft;
-            y += o.offsetTop;
-        } while (o = o.offsetParent);
-
-        x = e.pageX - x - 36; // 36 = border width
-        y = e.pageY - y - 36; // 36 = border width
-        var imagesdata = c.getImageData( x, y, 1, 1 );
-        var new_color = [ imagesdata.data[0], imagesdata.data[1], imagesdata.data[2] ];
-        cnvs.style.borderColor = "rgb("+new_color+")";
-        colorcode.textContent = "Pixel color: rgb("+new_color+")";
-    }
-
-    cnvs.onmousedown = function(e) {
-        cnvs.onmousemove = pixel; // fire pixel() while user is dragging
-        cnvs.onclick = pixel; // only so it will still fire if user doesn't drag at all
-    }
-
-    cnvs.onmouseup = function() {
-        cnvs.onmousemove = null;
-    }
-
-}
-});
-
-</script>
-
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>This is an old demo I made of an <a href="http://en.wikipedia.org/wiki/Canvas_element">HTML5 canvas</a> eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.</p>
-
-<p><code id="colorcode"></code></p>
-
-<canvas id="c">Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.</canvas>
-
-<p><br></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
 <p>It&rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&rsquo;s 2D rendering context object.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">pixel</span>(<span style="color:#a6e22e">e</span>) {
   <span style="color:#75715e">// calculate the x and y coordinates of the cursor
@@ -255,8 +186,7 @@ if( cnvs.getContext) { // Check for canvas support
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">new_color</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">imagesdata</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">imagesdata</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">imagesdata</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">2</span>]];
   <span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">background</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;rgb(&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">new_color</span>.<span style="color:#a6e22e">join</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>;
 }
-</code></pre></div>
-<p>That&rsquo;s just a summary; the function actually does a little more than that. Take a look at the source for this page if you&rsquo;re interested.</p>
+</code></pre></div><p>That&rsquo;s just a summary; the function actually does a little more than that. Take a look at the source for this page if you&rsquo;re interested.</p>
 
   </section>
   <footer>
@@ -369,7 +299,7 @@ Click and drag to set the image border to the average of the selected pixels.
     <section>
       
         This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
-It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
       
     </section>
   </div>
@@ -639,7 +569,7 @@ Why the Amiga? Given that this is my first emulator, it would have been much eas
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

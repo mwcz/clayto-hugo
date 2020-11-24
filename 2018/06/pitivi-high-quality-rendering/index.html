@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -165,83 +165,47 @@
   
   
   <section>
-    
-
-<p>My first experience with <a href="http://www.pitivi.org/">PiTiVi</a>, eight years ago, was discouraging. Until my dad rediscovered it a few days ago, I hadn&rsquo;t thought of giving it a second chance. I&rsquo;m glad I did. I&rsquo;ve been extremely impressed with the improvements. PiTiVi&rsquo;s formerly rough edges have been sanded down, and what remains is an approachable, capable video editor perfectly suited to hobbyist uses.</p>
-
+    <p>My first experience with <a href="http://www.pitivi.org/">PiTiVi</a>, eight years ago, was discouraging. Until my dad rediscovered it a few days ago, I hadn&rsquo;t thought of giving it a second chance. I&rsquo;m glad I did. I&rsquo;ve been extremely impressed with the improvements. PiTiVi&rsquo;s formerly rough edges have been sanded down, and what remains is an approachable, capable video editor perfectly suited to hobbyist uses.</p>
 <p>One of the few remaining rough edges is low-quality defaults when it comes to rendering quality. Without tweaking settings, you&rsquo;ll have artifacts the size of your fist.</p>
-
 <p>Here are a few steps to dramatically improve the video quality. I&rsquo;m no expert on codecs or compression or <a href="https://slhck.info/video/2017/02/24/crf-guide.html">constant quantization</a>, but this should be a good embarkation point on the quest for perfect video.</p>
 
-
   <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#steps">Steps</a>
-<ul>
-<li><a href="#1-install-x264">1. Install x264</a></li>
-<li><a href="#2-choose-codec-x264enc">2. Choose codec: x264enc</a></li>
-<li><a href="#3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</a></li>
-<li><a href="#4-before-after">4. Before &amp; After</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#steps">Steps</a>
+      <ul>
+        <li><a href="#1-install-x264">1. Install x264</a></li>
+        <li><a href="#2-choose-codec-x264enc">2. Choose codec: x264enc</a></li>
+        <li><a href="#3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</a></li>
+        <li><a href="#4-before--after">4. Before &amp; After</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
 
-
-<hr />
-
+<hr>
 <h2 id="steps">Steps</h2>
-
 <h3 id="1-install-x264">1. Install x264</h3>
-
-<div class="beside">
-<div>
-    <p>Fedora/RHEL/CentOS:</p>
-    <pre><code>sudo dnf install x264</code></pre>
-</div>
-
-<div>
-    <p>Debian/Ubuntu:</p>
-    <pre><code>sudo apt-get install x264</code></pre>
-</div>
-
-<p></div></p>
-
-<hr />
-
+<!-- raw HTML omitted -->
+<hr>
 <h3 id="2-choose-codec-x264enc">2. Choose codec: x264enc</h3>
-
 <p>Presuming you have a project ready to render, click <em>Render</em> and select <strong>x264enc</strong> under the <em>Codec</em> dropdown. x264enc is only available if your container format is set to <em>MP4</em>.</p>
-
-<p><img src="ss-codec.png" alt="codec dropdown" /></p>
-
-<hr />
-
+<p><img src="ss-codec.png" alt="codec dropdown"></p>
+<hr>
 <h3 id="3-select-constant-quantizer-encoding">3. Select Constant Quantizer encoding</h3>
-
 <p>Just underneath the <em>Codec</em> dropdown is an <em>Advanced</em> button. Click it, and pick the following settings.</p>
-
 <ul>
 <li>Set <strong>Encoding pass/type</strong> to &ldquo;Constant Quantizer&rdquo;</li>
 <li>Set <strong>Constant Quantizer</strong> to 18</li>
 </ul>
-
-<p><img src="ss-encoding.png" alt="encoding dropdown" /></p>
-
+<p><img src="ss-encoding.png" alt="encoding dropdown"></p>
 <p>For more information on what this means, check out this <a href="https://slhck.info/video/2017/02/24/crf-guide.html">CRF/CQP</a> explainer. In the explainer, the term CQP equates to &ldquo;Constant Quantizer&rdquo; in PiTiVi, and CRF equates to &ldquo;Constant Quality&rdquo;. For some reason, I&rsquo;ve been unable to get &ldquo;Constant Quality&rdquo; to produce good results, even though in theory it should be just as good, with smaller filesize.</p>
-
-<h3 id="4-before-after">4. Before &amp; After</h3>
-
+<h3 id="4-before--after">4. Before &amp; After</h3>
 <p>Here&rsquo;s a before &amp; after video showing the quality difference after making these changes.</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//player.vimeo.com/video/276256445" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/276256445" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
  </div>
-
 
 <p>The difference in the smoothness of the gradients is pretty dramatic.</p>
 
@@ -341,7 +305,7 @@
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

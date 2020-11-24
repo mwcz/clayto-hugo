@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -169,92 +169,60 @@
   
   
   <section>
-    
-
-<p>I built a timelapse camera with a raspberry pi.</p>
-
+    <p>I built a timelapse camera with a raspberry pi.</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//player.vimeo.com/video/185804638" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe src="https://player.vimeo.com/video/185804638" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
  </div>
 
-
 <p>Hardware:</p>
-
 <ul>
 <li><a href="http://amzn.com/B008YE0HAW">A small gorillapod</a></li>
 <li><a href="http://www.raspberrypi.org/products/camera-module/">Raspbery Pi camera</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi Model B</a></li>
 </ul>
-
 <p>Software:</p>
-
 <p>The scripts I wrote are pretty hasty.  I should tidy them up before publishing
 this post.</p>
-
-<p><img src="scene_morning_light.jpg" alt="Timelapse scene" title="Timelapse scene" /></p>
-
+<p><img src="scene_morning_light.jpg" alt="Timelapse scene" title="Timelapse scene"></p>
 <p>I didn&rsquo;t secure the pi very well when I first framed the shot, and it wound up
 getting bumped several times.  Lesson learned: make sure</p>
-
 <h2 id="file-naming">File naming</h2>
-
 <p>I used Epoch time for the filenames.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1396020890.jpg
 1396021196.jpg
 1396021502.jpg
-1396021808.jpg</code></pre></div>
-<p>This was a spontaneous decision but it turned out to have some unexpected benefits.</p>
-
+1396021808.jpg
+</code></pre></div><p>This was a spontaneous decision but it turned out to have some unexpected benefits.</p>
 <p>Eliminating night-time shots was as simple as doing some modulo math on the time.</p>
-
 <p>Doing some modulo math on the epoch times made isolating the dark hours easy.
 Since Epoch time is measured in seconds, all we need to know is the number of
 seconds in a minute, hour, and day.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># number of seconds in a minute/hour/day</span>
 minute <span style="color:#f92672">=</span> <span style="color:#ae81ff">60</span>
 hour   <span style="color:#f92672">=</span> <span style="color:#ae81ff">3600</span>
-day    <span style="color:#f92672">=</span> <span style="color:#ae81ff">86400</span></code></pre></div>
-<p>Now that we have those values, we can play around with <a href="https://en.wikipedia.org/wiki/Modulo_operation">modulo</a> math to find some cool stuff.</p>
-
+day    <span style="color:#f92672">=</span> <span style="color:#ae81ff">86400</span>
+</code></pre></div><p>Now that we have those values, we can play around with <a href="https://en.wikipedia.org/wiki/Modulo_operation">modulo</a> math to find some cool stuff.</p>
 <p>The first order of business is to eliminate any photos taken at nighttime,
 because they&rsquo;re all too dark to be useful.  Using <code>1396020890</code> as an example&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ae81ff">1396020890</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">86400</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">56090</span>
-</code></pre></div>
-<p><code>86400</code> is the number of seconds in a day, and what this operation does is
+</code></pre></div><p><code>86400</code> is the number of seconds in a day, and what this operation does is
 essentially remove the day/month/year components.  What&rsquo;s left is the time
 since the stroke of midnight (still in seconds).</p>
-
-<figure>
-    <div role="math">
-        \dfrac{56090 seconds since midnight}{3600 seconds/hour}
-    </div>
-</figure>
-
+<!-- raw HTML omitted -->
 <p>Dividing</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">time <span style="color:#f92672">=</span> <span style="color:#ae81ff">1396020890</span>
 seconds_after_midnight <span style="color:#f92672">=</span> time <span style="color:#f92672">%</span> day <span style="color:#75715e"># gives us the number of seconds after midnight</span>
 hours_after_midnight <span style="color:#f92672">=</span> (seconds_after_midnight) <span style="color:#f92672">/</span> hour <span style="color:#75715e"># gives us the number of hours after midnight</span>
 local_hour <span style="color:#f92672">=</span> hours_after_midnight <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span> <span style="color:#75715e"># I&#39;m in EST, so -4 GMT</span>
-<span style="color:#66d9ef">if</span> local_hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">7</span>  <span style="color:#f92672">or</span> local_hour <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>: skip</code></pre></div>
-<h2 id="loops-vs-cron">Loops vs cron</h2>
-
+<span style="color:#66d9ef">if</span> local_hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">7</span>  <span style="color:#f92672">or</span> local_hour <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>: skip
+</code></pre></div><h2 id="loops-vs-cron">Loops vs cron</h2>
 <p>The script contains an infinite loop with a 5m <code>sleep</code> command.  Thus the
 pictures weren&rsquo;t taken every 5 minutes, but rather every 5-and-some-change
 minutes.  This drift doesn&rsquo;t matter for intervals several minutes long, or
 longer, but if the interval were much shorter, it could be a big problem.  An
 interval of 5m + 5s drift isn&rsquo;t a big deal.</p>
-
-<p><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"></p>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
-
-<script>
-    function render_math(el) {
-        katex.render(el.textContent, el);
-    }
-    document.querySelectorAll('[role=math]').forEach(render_math);
-</script>
+<!-- raw HTML omitted -->
 
   </section>
   <footer>
@@ -352,7 +320,7 @@ interval of 5m + 5s drift isn&rsquo;t a big deal.</p>
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

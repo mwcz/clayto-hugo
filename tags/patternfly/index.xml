@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Patternfly on clayto</title>
+    <title>patternfly on clayto</title>
     <link>https://clayto.com/tags/patternfly/</link>
-    <description>Recent content in Patternfly on clayto</description>
+    <description>Recent content in patternfly on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }     Features Demo The pfe-icon tag Icon sets  Icon set definitions  resolveIconName  Integrating with Font Awesome Organizing icon sets  SVG injection and coloring  Setting icon colors  Coloring individual icons Coloring all icons Coloring groups of icons  Puzzler: MS Edge icon coloring  Performance  Icon size HTTP/1.</description>
+      <description>Features Demo The pfe-icon tag Icon sets  Icon set definitions Integrating with Font Awesome Organizing icon sets   SVG injection and coloring  Setting icon colors Puzzler: MS Edge icon coloring   Performance  Icon size HTTP/1.1 vs HTTP/2 Lighthouse   Browser support Recap   This is the story of &amp;lt;pfe-icon&amp;gt;. I set out to build a web component which loads icons on demand, displays them with customizable colors, avoids CORS issues, and is compatible with any existing SVG icon library.</description>
     </item>
     
   </channel>

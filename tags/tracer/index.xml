@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tracer on clayto</title>
+    <title>tracer on clayto</title>
     <link>https://clayto.com/tags/tracer/</link>
-    <description>Recent content in Tracer on clayto</description>
+    <description>Recent content in tracer on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate>
@@ -17,9 +17,7 @@
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/tracer/</guid>
-      <description>Play now! 
-Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
-Play now!
+      <description>Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
 We were very happy with the ratings Tracer received. In the Innovation category, we placed 5th out of 1,489 games.
 A more detailed blog post is available at the Scripta Games blog.
 View source</description>

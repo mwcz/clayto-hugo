@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Open Jam on clayto</title>
+    <title>open-jam on clayto</title>
     <link>https://clayto.com/tags/open-jam/</link>
-    <description>Recent content in Open Jam on clayto</description>
+    <description>Recent content in open-jam on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Apr 2018 00:00:00 +0000</lastBuildDate>

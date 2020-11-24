@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -172,59 +172,30 @@
   
   <section>
     <p>This is a slightly upgraded version of the physics demo I showed in my <a href="https://clayto.com/2011/11/bouncey-canvas-physics/">last post</a>.</p>
-
 <p>It is still&hellip;</p>
-
-<p><quote>&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;</quote></p>
-
+<p><!-- raw HTML omitted -->&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;<!-- raw HTML omitted --></p>
 <p>This version has:</p>
-
 <ul>
 <li>pre-defined initial states</li>
 <li>gravity</li>
 <li>friction</li>
 </ul>
-
 <p>It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)</p>
-
 <p>The <a href="https://github.com/mwcz/bouncey/blob/master/bounce.html">code</a> is well commented, so feel free to hack on it.</p>
-
 <p>Click on one of the initial states to begin the simulation.</p>
-
-<style type="text/css">
-#cnvs {
-    margin: 0 auto;
-    border: 1px solid black;
-    -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
-       -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
-         -o-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
-            box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 );
-}
-</style>
-
-<script type="text/javascript" src="bouncey.js"></script>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Choose an initial state:
-<button onclick="RANDOM();">Random</button>
-<button onclick="POOL();">POOL</button>
-<button onclick="HEAD_ON_COLLISION();">HEAD_ON_COLLISION</button></p>
-
-<canvas id="cnvs" width="500" height="375">
-    Sorry, your browser does not support HTML5 canvas.  Lame.
-</canvas>
-
-<p><button onclick="paused++;paused%=2;this.textContent=paused?'Play':'Pause'">Pause</button></p>
-
-<pre>
-  velocity sum: <span id="txt_velocity_sum">NONE</span>
-x velocity sum: <span id="txt_velocity_sum_x">NONE</span>
-y velocity sum: <span id="txt_velocity_sum_y">NONE</span>
-</pre>
-
-<script>
-HEAD_ON_COLLISION();
-</script>
-
+<!-- raw HTML omitted -->Random<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->POOL<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->HEAD_ON_COLLISION<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->Pause<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>(The POOL initial state reproduces the clinging bug.)</p>
 
   </section>
@@ -247,9 +218,8 @@ HEAD_ON_COLLISION();
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
-It covers Newton&rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.
       
     </section>
   </div>
@@ -341,7 +311,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
     <section>
       
         This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
-It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
       
     </section>
   </div>
@@ -434,8 +404,7 @@ Click and drag to set the image border to the average of the selected pixels.
     <section>
       
         For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&hellip;
+  In retrospect, it really could have used some narration&hellip;
       
     </section>
   </div>
@@ -476,11 +445,11 @@ In retrospect, it really could have used some narration&hellip;
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">HTML5 canvas 3D pixel array</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-eyedropper/">HTML5 Canvas eyedropper</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &ldquo;more logical&rdquo;, I mean &ldquo;more logical, to me, at the time). 1D is fine, and I can&rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.
+        An HTML5 Canvas eyedropper.
       
     </section>
   </div>
@@ -490,7 +459,7 @@ In retrospect, it really could have used some narration&hellip;
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-eyedropper/">
     <div class="pbp-article-thumbnail">
       <div class="glass-card">
         <div class="glass-card-ratio">
@@ -502,7 +471,7 @@ In retrospect, it really could have used some narration&hellip;
             
             <img
               class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/kazoo.png">
+              src="https://clayto.com/2011/11/html5-canvas-eyedropper/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -610,7 +579,7 @@ In retrospect, it really could have used some narration&hellip;
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

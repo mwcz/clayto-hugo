@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -172,54 +172,37 @@
   
   <section>
     <p>Hi pals.</p>
-
 <p>This is a speedy post about a speedy update I made today to
 <a href="https://clayto.com/projects/colorpal/">ColorPal</a>, an HTML5 tool I wrote that automatically
 generates color palettes from a photograph.</p>
-
 <p>Previously, ColorPal provided hex codes for each color extracted from the
 image. Eight individual &lt;input&gt;s at the bottom of the page displayed the
 colors.</p>
-
 <p>I use ColorPal a lot (my own dogfood and all that) when designing websites, and
 it wasn&rsquo;t long before I got fed up (hah!) with copying values from eight
 freaking inputs.</p>
-
 <p>Blah:</p>
-
-<p><img src="before.png" alt="Before" /></p>
-
+<p><img src="before.png" alt="Before"></p>
 <p>Huzzah:</p>
-
-<p><img src="after.png" alt="After" /></p>
-
+<p><img src="after.png" alt="After"></p>
 <p>All eight colors can be pasted out in one fell swoop of the mouse.</p>
-
 <p><a href="https://clayto.com/projects/colorpal/">ColorPal Demo</a></p>
-
 <p>Works in Chrome and Firefox.</p>
-
 <p><strong>Pro tip</strong>: you can edit the values in the textarea and the palette will be
 instantly updated to reflect your edits. This means you can also paste in
 a list of colors (hex format only for the time being).</p>
-
 <p>If you try out ColorPal, let me know your thoughts on
 <a href="https://twitter.com/mwcz">Twitter</a>.</p>
-
 <p>Here are github repos for <a href="https://github.com/mwcz/ColorPal">ColorPal</a> and
 <a href="https://github.com/mwcz/median-cut-js">median-cut.js</a>.</p>
-
 <p>This minor update is part of the groundwork for some exciting changes to my
 sorely neglected <a href="http://clayto.com/">photography site</a>. I still post photos
 regularly, but haven&rsquo;t given it any fresh coding love for about two years. See
 how the colorscheme of each page matches the photograph? That&rsquo;s done with an
 older palette generation implementation (which I should write about someday),
 but pretty soon it&rsquo;ll be ColorPal pumping out those swatches.</p>
-
 <p>That&rsquo;s not the only change. If you&rsquo;re not excited, don&rsquo;t worry. I am!</p>
-
-<p><a href="https://clayto.com/projects/colorpal"><img src="colorpal_logo.png" alt="ColorPal logo" title="" /></a></p>
-
+<p><a href="https://clayto.com/projects/colorpal"><!-- raw HTML omitted --></a></p>
 <p>Happy coloring!</p>
 
   </section>
@@ -241,7 +224,7 @@ but pretty soon it&rsquo;ll be ColorPal pumping out those swatches.</p>
     <section>
       
         In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
-
+ 
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
 You can see that with the old method, the black pixels definitely took over the palette.
       
@@ -384,7 +367,6 @@ Click and drag to set the image border to the average of the selected pixels.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
 I&rsquo;ve written some posts about ColorPal.
- 
       
     </section>
   </div>
@@ -476,8 +458,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
     <section>
       
         For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&hellip;
+  In retrospect, it really could have used some narration&hellip;
       
     </section>
   </div>
@@ -607,7 +588,7 @@ In retrospect, it really could have used some narration&hellip;
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';

@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.51" /><link media="screen"
+  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -174,27 +174,15 @@
   
   <section>
     <p>Introducing ColorPal!</p>
-
-<p><img src="ss.png" alt="ColorPal screenshot" /></p>
-
+<p><img src="ss.png" alt="ColorPal screenshot"></p>
 <p>I&rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration <a href="http://clayto.com/">here</a>:</p>
-
-<figure><img src="tarsi.png" alt="clayto.com" title="My photo, 'Tarsi', at clayto.com" /></figure>
-
+<!-- raw HTML omitted -->
 <p>I owe the idea of photo-matching website palettes to <a href="http://noahgrey.com">Noah Grey</a>. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the <a href="https://clayto.com/2011/11/16/html5-canvas-eyedropper/">old</a> <a href="https://clayto.com/2011/11/16/html5-canvas-area-selection-averaging/">canvas</a> <a href="https://clayto.com/2011/11/17/html5-tool-for-creating-color-palettes-from-an-image/">demos</a> I&rsquo;ve posted. Sooner or later I&rsquo;ll make a more thorough post about the tools I&rsquo;ve created for each iteration of the site. Anyway, back to ColorPal.</p>
-
 <p>ColorPal is an HTML5 palette generation tool. Currently it&rsquo;s in a very early stage, and I&rsquo;ve only tested it in Chrome. I have many ideas for improvements, and I&rsquo;d love to hear anyone&rsquo;s ideas as well.</p>
-
-<figure>
-    <img src="colorpal_logo.png" alt="ColorPal logo"/>
-</figure>
-
+<!-- raw HTML omitted -->
 <p>It&rsquo;s powered by <a href="http://en.wikipedia.org/wiki/Canvas_element">canvas</a>, <a href="https://developer.mozilla.org/en/data_URIs">data URIs</a>, <a href="http://dev.w3.org/2006/webapi/FileAPI/">File API</a>, and my homespun <a href="http://en.wikipedia.org/wiki/Median_cut">median-cut</a> implementation, which I&rsquo;m calling <em>median-cut.js</em>.</p>
-
 <p>Bear in mind that while I&rsquo;ve kept median-cut.js nice and clean, I did hammer out ColorPal as quickly as possible, so it&rsquo;s a mess. Why? I expect median-cut.js to be useful to other programmers, but ColorPal is just a tool for designers. Or it will be, anyway. :)</p>
-
 <p>Here are github repos for <a href="https://github.com/mwcz/ColorPal">ColorPal</a> and <a href="https://github.com/mwcz/median-cut-js">median-cut.js</a>.</p>
-
 <p>And, as a reward for reading to the end, a <a href="https://clayto.com/projects/colorpal/">live demo</a>!</p>
 
   </section>
@@ -266,7 +254,6 @@ Click and drag to set the image border to the average of the selected pixels.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
 I&rsquo;ve written some posts about ColorPal.
- 
       
     </section>
   </div>
@@ -307,62 +294,14 @@ I&rsquo;ve written some posts about ColorPal.
     
     
     <article class="pbp-article-li vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
-  
-In retrospect, it really could have used some narration&hellip;
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2011-11-17T00:00:00Z">
-      Nov 17, 2011
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
-    <div class="pbp-article-thumbnail">
-      <div class="glass-card">
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-canvas-physics/">Bouncey - canvas physics</a></h2>
   <div class="pbp-article-summary">
     <section>
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&rdquo;
-It covers Newton&rsquo;s laws of motion.
-#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
+PauseAn updated (but less colorful) version of bouncey is available here.
       
     </section>
   </div>
@@ -431,6 +370,52 @@ Point operations are image alterations that affect all pixels equally. Other ope
             <img
               class="glass-card-bg glass-card-bg-default"
               src="https://clayto.com/2011/11/html5-canvas-point-operations/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
+  In retrospect, it really could have used some narration&hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
+    <div class="pbp-article-thumbnail">
+      <div class="glass-card">
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -583,7 +568,7 @@ Point operations are image alterations that affect all pixels equally. Other ope
     
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.0/anchor.min.js"></script>
   <script>
     anchors.options.visible = 'touch';
     anchors.options.placement = 'right';
