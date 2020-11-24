@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    6 minute read
+    7 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -212,7 +212,7 @@ sloshing around in a container. Or a cloud of gas forming a star. Weird, huh?
 Maybe they&rsquo;re the same thing!</p>
 <p>Now, before I ramble on any further, let your imagination take a rest while you
 try out the simulation!</p>
-<!-- raw HTML omitted -->
+<p><a class="btn btn-default btn-lg" href="https://clayto.com/static/projects/dimo/">Launch live demo!</a></p>
 <p>A reasonably recent web browser required. WebGL is required, which means
 Firefox 4+ or Chrome 9+.</p>
 <h2 id="the-premise">The Premise</h2>
@@ -268,8 +268,23 @@ receive?</p>
 from the players, and that&rsquo;s essentially what I did. The equations below use
 each particle&rsquo;s speed <em>and</em> acceleration to determine what color they should be
 assigned each frame.</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->\vec{a}<!-- raw HTML omitted --> is the acceleration vector, and <!-- raw HTML omitted -->\vec{v}<!-- raw HTML omitted --> is the velocity vector. <!-- raw HTML omitted -->a_{max}<!-- raw HTML omitted --> is the maximum magnitude an acceleration vector is
+<figure>
+    <div role="math">
+        n = \dfrac{2\pi \cdot \lvert\vec{v}\rvert \cdot \lvert\vec{a}\rvert}{a_{max}}
+    </div>
+    <div role="math">
+        \red{R(n)}   = \dfrac{\cos(n + 1.76714) + 1}{2}
+    </div>
+    <div role="math">
+        \green{G(n)} = \dfrac{\cos(n + 3.92699) + 1}{2}
+    </div>
+    <div role="math">
+        \blue{B(n)} = \dfrac{\cos(n + 5.89048) + 1}{2}
+    </div>
+</figure>
+<p><span role="math">\vec{a}</span> is the acceleration vector, and <span
+role="math">\vec{v}</span> is the velocity vector. <span
+role="math">a_{max}</span> is the maximum magnitude an acceleration vector is
 allowed to have (configurable via the &ldquo;max accel&rdquo; parameter in the UI config
 panel). The decimal constants are there to evenly distribute the waves, and
 because I was too lazy to figure out the correct fraction to use.</p>
@@ -279,7 +294,7 @@ scales it down to <code>0..1</code>.</p>
 <p>When graphed, they look like this.</p>
 <p><img src="sine_waves.png" alt="Roughly evenly-spaced sine waves"></p>
 <p>The cosine allows the colors to cycle repeatedly (R,G,B,R,G,B,&hellip;) as the
-input, <!-- raw HTML omitted -->n<!-- raw HTML omitted -->, increases. Here&rsquo;s the result.</p>
+input, <span role="math">n</span>, increases. Here&rsquo;s the result.</p>
 <p><img src="swath-colors.png" alt="image of the swaths of color"></p>
 <p><em>Yes!</em> Swaths of color, cycling through the spectrum like a rainbow.</p>
 <h4 id="the-grand-programmers-utopia-gpu">The Grand Programmers&rsquo; Utopia (GPU)</h4>
@@ -334,7 +349,20 @@ tweaking of sliders</li>
 </ul>
 <p>More likely, I&rsquo;ll use what I learned from DiMo on a super-secret future
 project.</p>
-<!-- raw HTML omitted -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+<script>
+    function set_vimeo_iframe_height() {
+        var ifr = document.getElementById('dimo-demo');
+        ifr.height = ifr.offsetWidth / (1280/720);
+    }
+    document.addEventListener('DOMContentLoaded', set_vimeo_iframe_height);
+    window.addEventListener('resize', set_vimeo_iframe_height);
+    function render_math(el) {
+        katex.render(el.textContent, el);
+    }
+    document.querySelectorAll('[role=math]').forEach(render_math);
+</script>
 
   </section>
   <footer>
@@ -400,7 +428,8 @@ project.</p>
     <section>
       
         Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.
@@ -450,8 +479,9 @@ The source code is, of course, open.
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
       
     </section>
   </div>
@@ -497,7 +527,7 @@ PauseAn updated (but less colorful) version of bouncey is available here.
     <section>
       
         I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo!and view the code.
+Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support WebGL, here&rsquo;s a video to enjoy while you download Firefox Nightly.
       
     </section>
@@ -590,7 +620,8 @@ Your web browser must support WebGL, which at this point in history means a fair
       
         This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&hellip;
-&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;This version has:
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;
+This version has:
  pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.
       

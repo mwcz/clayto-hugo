@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    1 minute read
+    2 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -169,16 +169,77 @@
   
   
   <section>
-    <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+    <style type="text/css">
+    canvas {
+        margin        : 0 auto;
+        border-width  : 36px;
+        border-style  : solid;
+        border-radius : 16px;
+        transition    : 0.1168s all ease;
+        margin        : 0 auto;
+        display       : block;
+        cursor        : crosshair;
+    }
+</style>
+<img style="display: none !important;" src="kazoo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+var c;
+var cnvs = document.getElementById("c");
+
+if( cnvs.getContext) { // Check for canvas support
+// DRAW FUN STUFF!
+
+    c = cnvs.getContext('2d');
+    var color = document.getElementById("color");
+    var colorcode = document.getElementById("colorcode");
+
+    var images = new Image();
+
+    images.onload = function() {
+        cnvs.width = images.width;cnvs.height = images.height; // resize to fit image
+        c.drawImage( images, 0, 0 );
+    }
+    images.src = "kazoo.png";
+
+    pixel = function(e) {
+
+        // find the element's position
+        var x = 0;
+        var y = 0;
+        var o = cnvs;
+        do {
+            x += o.offsetLeft;
+            y += o.offsetTop;
+        } while (o = o.offsetParent);
+
+        x = e.pageX - x - 36; // 36 = border width
+        y = e.pageY - y - 36; // 36 = border width
+        var imagesdata = c.getImageData( x, y, 1, 1 );
+        var new_color = [ imagesdata.data[0], imagesdata.data[1], imagesdata.data[2] ];
+        cnvs.style.borderColor = "rgb("+new_color+")";
+        colorcode.textContent = "Pixel color: rgb("+new_color+")";
+    }
+
+    cnvs.onmousedown = function(e) {
+        cnvs.onmousemove = pixel; // fire pixel() while user is dragging
+        cnvs.onclick = pixel; // only so it will still fire if user doesn't drag at all
+    }
+
+    cnvs.onmouseup = function() {
+        cnvs.onmousemove = null;
+    }
+
+}
+});
+
+</script>
 <p>This is an old demo I made of an <a href="http://en.wikipedia.org/wiki/Canvas_element">HTML5 canvas</a> eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p><!-- raw HTML omitted -->Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+<p><code id="colorcode"></code></p>
+<p><canvas id="c">Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.</canvas></p>
+<br>
 <p>It&rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&rsquo;s 2D rendering context object.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">pixel</span>(<span style="color:#a6e22e">e</span>) {
   <span style="color:#75715e">// calculate the x and y coordinates of the cursor

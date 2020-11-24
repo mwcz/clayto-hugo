@@ -17,7 +17,7 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/games/pity-about-earth/</guid>
-      <description>Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
+      <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
   – The Universe
   The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
     </item>
@@ -29,7 +29,7 @@
       
       <guid>https://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
-We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too. Square Off placed 199th overall out of 2,712 games.</description>
+Play now!   .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
     </item>
     
     <item>
@@ -41,8 +41,8 @@ We were both very happy with how the game turned out, especially since this was 
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
-Video clips These images, when played in rapid succession, create the illusion of motion!
-             View source, if you like code.</description>
+Launch live demo!
+Video clips These images, when played in rapid succession, create the illusion of motion!</description>
     </item>
     
     <item>

@@ -209,7 +209,11 @@ because they&rsquo;re all too dark to be useful.  Using <code>1396020890</code> 
 </code></pre></div><p><code>86400</code> is the number of seconds in a day, and what this operation does is
 essentially remove the day/month/year components.  What&rsquo;s left is the time
 since the stroke of midnight (still in seconds).</p>
-<!-- raw HTML omitted -->
+<figure>
+    <div role="math">
+        \dfrac{56090 seconds since midnight}{3600 seconds/hour}
+    </div>
+</figure>
 <p>Dividing</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">time <span style="color:#f92672">=</span> <span style="color:#ae81ff">1396020890</span>
 seconds_after_midnight <span style="color:#f92672">=</span> time <span style="color:#f92672">%</span> day <span style="color:#75715e"># gives us the number of seconds after midnight</span>
@@ -222,7 +226,14 @@ pictures weren&rsquo;t taken every 5 minutes, but rather every 5-and-some-change
 minutes.  This drift doesn&rsquo;t matter for intervals several minutes long, or
 longer, but if the interval were much shorter, it could be a big problem.  An
 interval of 5m + 5s drift isn&rsquo;t a big deal.</p>
-<!-- raw HTML omitted -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+<script>
+    function render_math(el) {
+        katex.render(el.textContent, el);
+    }
+    document.querySelectorAll('[role=math]').forEach(render_math);
+</script>
 
   </section>
   <footer>

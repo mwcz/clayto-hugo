@@ -171,7 +171,18 @@ end of this post fully describe what wasm <em>is</em>.</p>
 <p>Since that&rsquo;s been covered, I&rsquo;d like to talk about one impact wasm will
 hopefully have on future of computing. To set the scene, a quote from the man
 himself:</p>
-<!-- raw HTML omitted -->
+<blockquote>
+    <p>Meanwhile, I took one quick step that would demonstrate the concept of the
+        Web as a universal, all-encompassing space.  I programmed the browser so it
+        could follow links not only to files on HTTP servers, &hellip;</p>
+    <p>In one fell swoop, a huge amount of the information that was already on the
+        Internet was available on the Web.</p>
+    <footer>
+        <cite>
+            Tim Berners-Lee, Weaving the Web, 1999
+        </cite>
+    </footer>
+</blockquote>
 <p>Back then, Tim enabled the first Web browser to follow links to newsgroups and
 FTP servers. By linking up a slew of existing content, the Web became much
 more useful.</p>
@@ -198,8 +209,20 @@ available, about a dozen articles, joined the <a href="https://www.w3.org/commun
 and have been hanging out in the IRC channel
 (<code>irc://irc.w3.org:6667/#webassembly</code>). I don&rsquo;t want to speak too soon, but
 I&rsquo;m pretty well convinced that wasm is the next revolution.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- I'm imagining a future where this is a desktop shortcut:
+
+    wasm://adobe.com/photoshop
+
+A few thoughts about the future of wasm:
+
+### Live installs
+
+wasm has the potential to be the LiveCD of applications.  Imagine visiting a
+wasm application in your browser.  If it's great, you might want to install it
+locally.
+
+
+-->
 <p>For further reading, here are some of the best articles I&rsquo;ve found:</p>
 <ul>
 <li><a href="https://github.com/WebAssembly/design/blob/master/FAQ.md">The wasm FAQ covers nearly everything</a></li>
@@ -208,7 +231,9 @@ I&rsquo;m pretty well convinced that wasm is the next revolution.</p>
 <li><a href="https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6">Eric Elliot makes a strong and diverse case</a></li>
 <li><a href="http://arstechnica.com/information-technology/2015/06/the-web-is-getting-its-bytecode-webassembly/">ArsTechnica brings wasm to a wider audience</a></li>
 </ul>
-<!-- raw HTML omitted -->
+<div hidden>
+<img src="asm.png">
+</div>
 
   </section>
   <footer>
@@ -364,7 +389,7 @@ I&rsquo;m pretty well convinced that wasm is the next revolution.</p>
     <section>
       
         I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo!and view the code.
+Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support WebGL, here&rsquo;s a video to enjoy while you download Firefox Nightly.
       
     </section>

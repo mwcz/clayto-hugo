@@ -182,7 +182,12 @@ or ease-of-use gone mad&hellip;</p>
 components like navigation, buttons, and alerts. Also like Bootstrap, your
 components are distributed as HTML snippets for users to copy, paste, and
 customize.</p>
-<!-- raw HTML omitted -->
+<figure>
+    <video style="margin: 0 auto" poster="thumb.png" autoplay controls loop>
+        <source src="bootstrap-paste.webm" />
+        <source src="bootstrap-paste.mp4" />
+    </video>
+</figure>
 <p>To improve ease of use, you encapsulate all that HTML into a custom element:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ws-panel</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I am a ws-panel&#34;</span>&gt;Some words.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
 </code></pre></div><p>The essence of simplicity! One more thing, browsers don&rsquo;t know what
@@ -194,10 +199,14 @@ pages, managing imports becomes a finger-aching chore.</p>
 <p>Wouldn&rsquo;t it be cushy if the components were imported when you use them,
 automatically?</p>
 <h3 id="live-demo">Live demo</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<style type="text/css">
+.demo-iframe {
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+</style>
+<iframe class="demo-iframe" frameborder=0 height="240" width="100%" src="https://clayto.com/demos/043/index.html"></iframe>
+<!-- https://gohugo.io/content-management/syntax-highlighting/ -->
 <h3 id="demo-code">Demo code</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
     &lt;<span style="color:#f92672">head</span>&gt;

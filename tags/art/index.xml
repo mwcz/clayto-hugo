@@ -28,8 +28,8 @@
       
       <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
-SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
-Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench. I don&amp;rsquo;t know, there could be a connection. If you too would like to take a seat at Adam&amp;rsquo;s illustrious workbench someday, hack away.</description>
+ SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ Very much alike. In fact, it&amp;rsquo;s probably so much like their displays be
       
       <guid>https://clayto.com/projects/fireflies/</guid>
       <description>Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes for your entertainment. Here are some live demo links, and a video.
-  Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.
+Watch the original Watch the geekSPARK edition    Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.
 View source, if you&amp;rsquo;re into that kind of thing.</description>
     </item>
     
@@ -49,7 +49,7 @@ View source, if you&amp;rsquo;re into that kind of thing.</description>
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
-      <description>Just a few short daysmonths ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
+      <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
@@ -73,8 +73,8 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
-Video clips These images, when played in rapid succession, create the illusion of motion!
-             View source, if you like code.</description>
+Launch live demo!
+Video clips These images, when played in rapid succession, create the illusion of motion!</description>
     </item>
     
     <item>
@@ -106,7 +106,8 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
       
       <guid>https://clayto.com/projects/dimo/</guid>
       <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.</description>

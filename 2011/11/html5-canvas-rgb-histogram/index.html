@@ -178,16 +178,77 @@ The latest version is available at my <a href="https://github.com/mwcz/jsimage">
 repo</a>. Don&rsquo;t be fooled by the 2011 commits,
 those are just artifacts from svn-&gt;git migration. No guarantees that the
 histo&rsquo;s are actually correct. :)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<img style="display: none !important;" src="kazoo.png">
 <h2 id="original-image">Original image</h2>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+<canvas id="c0">
+    Your browser does not support the &lt;canvas&gt; element. Lame.
+</canvas>
+<p><input type="button" onclick="draw_histo()" value="Draw histograms" /></p>
+<div class="row">
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>Red</b>
+</div>
+<div class="panel-body">
+<canvas class="img-responsive" id="cr">
+Your browser does not support the &lt;canvas&gt; element. Lame.
+</canvas>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>Green</b>
+</div>
+<div class="panel-body">
+<canvas class="img-responsive" id="cg">
+Your browser does not support the &lt;canvas&gt; element. Lame.
+</canvas>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>Blue</b>
+</div>
+<div class="panel-body">
+<canvas class="img-responsive" id="cb">
+Your browser does not support the &lt;canvas&gt; element. Lame.
+</canvas>
+</div>
+</div>
+</div>
+</div>
 <p>I&rsquo;m pretty sure the results are wrong, but here, years later, I can&rsquo;t be bothered to fix it. ;)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<script type="text/javascript" src="JSImage.js"></script>
+<script type="text/javascript">
+
+var draw_histo;
+$(function () {
+
+    var images0 = new JSImage( "c0", "kazoo.png" );
+    var imagesr = new JSImage( "cr", "kazoo.png" );
+    var imagesg = new JSImage( "cg", "kazoo.png" );
+    var imagesb = new JSImage( "cb", "kazoo.png" );
+
+    draw_histo = function () {
+
+        /**
+         * Color histo canvases the color of their histo
+         */
+        images0.histo( imagesr.canvas, 'r', 'rgba(255,0,0,0.9)', 'rgba(0,0,0,0.8)' );
+        images0.histo( imagesg.canvas, 'g', 'rgba(0,200,0,0.9)', 'rgba(0,0,0,0.8)' );
+        images0.histo( imagesb.canvas, 'b', 'rgba(0,0,200,0.9)', 'rgba(0,0,0,0.8)' );
+
+    };
+
+
+});
+</script>
 
   </section>
   <footer>

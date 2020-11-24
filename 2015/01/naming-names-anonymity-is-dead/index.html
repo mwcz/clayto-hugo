@@ -165,7 +165,17 @@
   
   
   <section>
-    <!-- raw HTML omitted -->
+    <blockquote>
+    <p>
+    There are only two hard problems in computer science: cache invalidation,
+    naming things, and off-by-one errors.
+    </p>
+    <footer>
+        <cite>
+            Phil Karlton, but I can't find a name for the original source...
+        </cite>
+    </footer>
+</blockquote>
 <p>Contriving names for things is so commonplace for computer programmers that we
 may be thinking up names more often than any other profession. Every day,
 usually dozens of times, I find myself trying to imagine the perfect name for a
@@ -175,9 +185,17 @@ function or variable or module. Then I remember that there&rsquo;s a term for th
 <p>Then I find myself sitting there, trying to think of the perfect name for the
 process of creating the perfect name for a thing when I should be <em>actually</em>
 dreaming up the perfect name for that thing.</p>
-<!-- raw HTML omitted -->
+<figure>
+    <img src="naming.gif" alt="naming is hard" />
+    <figcaption>Naming is hard.</figcaption>
+</figure>
 <p>Can you relate? The word, by the way, is&hellip;</p>
-<!-- raw HTML omitted -->
+<dl>
+    <dt>onomastics - n.</dt>
+    <dd>1. The study of the origins and forms of proper names.</dd>
+    <dd>2. The study of the origins and forms of terms used in specialized fields.</dd>
+    <dd>3. The system that underlies the formation and use of proper names or terms used in specialized fields.</dd>
+</dl>
 <p>Short, but informative names are important in all programming languages, though
 JavaScript&rsquo;s anonymous functions do pose a unique temptation.</p>
 <p>For those unfamiliar, an anonymous function is, unsurprisingly, a function
@@ -236,8 +254,12 @@ until I read <a href="http://amzn.com/1449360726">Functional JavaScript</a> (and
 <a href="http://www.reddit.com/r/programming">r/programming</a>) that my eyes opened.</p>
 <p>Very, very small, reusable functions are a joy to work with. Give it a try, if
 you haven&rsquo;t yet!</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<script>
+$('pre code').each(add_prism_js);
+function add_prism_js(i, el) {
+    $(el).addClass('language-javascript');
+}
+</script>
 
   </section>
   <footer>
@@ -348,7 +370,8 @@ you haven&rsquo;t yet!</p>
     <section>
       
         Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.
@@ -397,7 +420,7 @@ The source code is, of course, open.
     <section>
       
         I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo!and view the code.
+Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support WebGL, here&rsquo;s a video to enjoy while you download Firefox Nightly.
       
     </section>

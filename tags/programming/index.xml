@@ -51,7 +51,7 @@ CLOSED: 0 / 45 TIME: s  PLAY! MAKE IT STOP! You closed N/45 popups!
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/08/in-orange-light/</guid>
-      <description>Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
+      <description>Play now!  Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
 We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what we found on that screen was Scene I, Act I of Kentucky Route Zero. It took me three years, but I finally rediscovered KR0 a few weeks ago.</description>
     </item>
     
@@ -61,7 +61,7 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/games/pity-about-earth/</guid>
-      <description>Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
+      <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
   – The Universe
   The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
     </item>
@@ -73,8 +73,8 @@ We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what w
       
       <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
-SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
-Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench. I don&amp;rsquo;t know, there could be a connection. If you too would like to take a seat at Adam&amp;rsquo;s illustrious workbench someday, hack away.</description>
+ SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
     </item>
     
     <item>
@@ -84,7 +84,7 @@ Very much alike. In fact, it&amp;rsquo;s probably so much like their displays be
       
       <guid>https://clayto.com/projects/fireflies/</guid>
       <description>Fireflies is a WebGL demo in which a friendly flock of fireflies forms shapes for your entertainment. Here are some live demo links, and a video.
-  Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.
+Watch the original Watch the geekSPARK edition    Thanks to Loren Schmidt for agreeing to let me use the awesome pixel-person avatar.
 View source, if you&amp;rsquo;re into that kind of thing.</description>
     </item>
     
@@ -94,7 +94,8 @@ View source, if you&amp;rsquo;re into that kind of thing.</description>
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/projects/tracer/</guid>
-      <description>Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
+      <description>Play now!  Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
+Play now!
 We were very happy with the ratings Tracer received. In the Innovation category, we placed 5th out of 1,489 games.
 A more detailed blog post is available at the Scripta Games blog.
 View source</description>
@@ -106,7 +107,7 @@ View source</description>
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
-      <description>Just a few short daysmonths ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
+      <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
@@ -117,7 +118,8 @@ Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand
       
       <guid>https://clayto.com/projects/zorbio/</guid>
       <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
-Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.</description>
+Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
+Play now!</description>
     </item>
     
     <item>
@@ -148,7 +150,7 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/glow-rope/</guid>
-      <description></description>
+      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
     </item>
     
     <item>
@@ -169,7 +171,7 @@ My contribution was to display, in a visual and engaging way, the live network t
       
       <guid>https://clayto.com/projects/squareoff/</guid>
       <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
-We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too. Square Off placed 199th overall out of 2,712 games.</description>
+Play now!   .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
     </item>
     
     <item>
@@ -181,8 +183,8 @@ We were both very happy with how the game turned out, especially since this was 
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
-Video clips These images, when played in rapid succession, create the illusion of motion!
-             View source, if you like code.</description>
+Launch live demo!
+Video clips These images, when played in rapid succession, create the illusion of motion!</description>
     </item>
     
     <item>
@@ -203,7 +205,7 @@ Creating interactive art exhibits from scratch is really hard.</description>
       <guid>https://clayto.com/projects/ping/</guid>
       <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
 It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
-Even as a lifelong gamer and programmer, this is the first videogame I&amp;rsquo;ve made.</description>
+Play now!</description>
     </item>
     
     <item>
@@ -212,8 +214,7 @@ Even as a lifelong gamer and programmer, this is the first videogame I&amp;rsquo
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2015/01/naming-names-anonymity-is-dead/</guid>
-      <description>Contriving names for things is so commonplace for computer programmers that we may be thinking up names more often than any other profession. Every day, usually dozens of times, I find myself trying to imagine the perfect name for a function or variable or module. Then I remember that there&amp;rsquo;s a term for the process of formulating the perfect name for a thing.
-I just can&amp;rsquo;t remember what it&amp;rsquo;s called&amp;hellip;</description>
+      <description>There are only two hard problems in computer science: cache invalidation, naming things, and off-by-one errors.   Phil Karlton, but I can&#39;t find a name for the original source...    Contriving names for things is so commonplace for computer programmers that we may be thinking up names more often than any other profession. Every day, usually dozens of times, I find myself trying to imagine the perfect name for a function or variable or module.</description>
     </item>
     
     <item>
@@ -235,7 +236,8 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
       
       <guid>https://clayto.com/projects/dimo/</guid>
       <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.</description>

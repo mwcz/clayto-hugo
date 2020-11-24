@@ -18,8 +18,7 @@
       
       <guid>https://clayto.com/2020/02/css-only-alternating-letter-colors/</guid>
       <description>This morning, my manager presented me with a challenge: write some code to alternate letter colors. I offered to implement it using only CSS.
-We agreed on the terms:
- No JavaScript The text could be wrapped in a div or span, but no other markup could be used  I started by finding out if there is an nth-letter() selector yet. Nope. That&amp;rsquo;s okay, my backup plan was to use mix-blend-mode to apply an image&amp;rsquo;s colors to the text below.</description>
+@font-face { font-family: &#39;Source Code Pro&#39;; font-style: normal; font-weight: 700; font-display: swap; src: local(&#39;Source Code Pro Bold&#39;), local(&#39;SourceCodePro-Bold&#39;), url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7Pqths7Ds-cv.ttf) format(&#39;truetype&#39;); } .alternate { --character-width: 0.602em; --color-1: #8727A6; --color-2: #D34CF9; font-size: 50px; font-family: &#34;Source Code Pro&#34;; text-shadow: 1px 1px 3px; background: black; color: white; filter: invert(); } .</description>
     </item>
     
   </channel>

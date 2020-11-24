@@ -17,7 +17,7 @@
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
-      <description>Just a few short daysmonths ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
+      <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
@@ -30,8 +30,8 @@ Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand
       <description>Kimotion is a framework for building reactive art displays.
 Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
 Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
-Video clips These images, when played in rapid succession, create the illusion of motion!
-             View source, if you like code.</description>
+Launch live demo!
+Video clips These images, when played in rapid succession, create the illusion of motion!</description>
     </item>
     
     <item>
@@ -63,7 +63,8 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
       
       <guid>https://clayto.com/projects/dimo/</guid>
       <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.</description>
@@ -86,7 +87,8 @@ The source code is, of course, open.</description>
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;This version has:
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
     </item>
@@ -99,8 +101,9 @@ The code is well commented, so feel free to hack on it.</description>
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+It covers Newton&amp;rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
     </item>
     
   </channel>

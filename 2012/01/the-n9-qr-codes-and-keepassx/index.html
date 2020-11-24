@@ -190,7 +190,7 @@ Unfortunately&hellip;</p>
 there were, I&rsquo;m skeptical that it&rsquo;s a good idea at all to be carrying around a
 database of personal passwords on a smartphone. It&rsquo;s encrypted, sure, but
 touchscreen keyboards encourage weak passphrases. Who wants to enter a 64+
-character passphrase on a <!-- raw HTML omitted -->vkbd<!-- raw HTML omitted -->?</p>
+character passphrase on a <abbr title="Virtual keyboard">vkbd</abbr>?</p>
 <p>This evening, I spent about an hour hacking QR-code support into KeePassX.
 It&rsquo;s a seriously messy hack, using
 <a href="http://en.cppreference.com/w/cpp/utility/program/system">system()</a> to call
@@ -200,8 +200,11 @@ just tacked it onto the &ldquo;Copy Password&rdquo; function, instead of figurin
 to create a new menu item. It doesn&rsquo;t even delete the generated image after
 viewing. Definitely nothing more than a proof of concept.</p>
 <p>Here it is in action.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>
+<a href="keepassx_demo.png">
+<img class="grid_7" src="keepassx_demo.png" alt="KeePassX generating a QR code" title="" />
+</a></p>
+<div class="clear"></div>
 <p>I won&rsquo;t be distributing my mod unless someone <em>really</em> wants it, but it would
 be cool to see this available as plugin to any password managers that support
 plugins. It could be handy to have clipboard managers generate QR codes too.</p>

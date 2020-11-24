@@ -173,20 +173,30 @@
   
   
   <section>
-    <!-- raw HTML omitted -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <p>This is the last demo I made using <a href="https://github.com/mwcz/jsimage">JSImage</a>. I created it some time around 2009-2010. At the time, I had checked out an <a href="http://www.amazon.com/Digital-Image-Processing-Algorithmic-Introduction/dp/1846283795">imaging book</a> from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using <a href="http://www.pythonware.com/products/pil/">PIL</a>, but point operations were simple enough to port to JavaScript quickly.</p>
 <p>Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.</p>
 <p>This demonstrates changing contrast, value, saturation, hue, color inversion, and threshold point operations. Note that there is a bug with increasing value and increasing saturation which I never got around to fixing.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->your browser does not support canvas<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<script type="text/javascript" src="jsimage.js"></script>
+<script type="text/javascript" src="colorspace.js"></script>
+<img style="display: none !important;" src="bee.jpg">
+<script type="text/javascript">
+
+    var IJS_PointOps;
+    $(document).ready( function() {
+        IJS_PointOps = new JSImage( "IJS_PointOps", "bee.jpg" );
+    });
+
+</script>
+<style type="text/css" media="screen">
+    .btn-group .glyphicon { margin-right: 0 }
+    .point-ops-demo { font-size: 0.9em }
+    .form-control.threshold { width: 4em }
+</style>
+<p><canvas class="img-responsive" id="IJS_PointOps">your browser does not support canvas</canvas></p>
+<style>
+table td { padding: 11px; font-weight: bold }
+</style>
 <table>
 <thead>
 <tr>
@@ -196,16 +206,16 @@
 </thead>
 <tbody>
 <tr>
-<td>Value (Brightness) <!-- raw HTML omitted --><!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
-<td>Contrast <!-- raw HTML omitted --> <!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
+<td>Value (Brightness) <br><button class="btn btn-default" onmousedown="IJS_PointOps.value( IJS_PointOps.canvas, 10 )">+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.value( IJS_PointOps.canvas, -10 )">-</button></td>
+<td>Contrast <br> <button class="btn btn-default" onmousedown="IJS_PointOps.contrast( IJS_PointOps.canvas, 1.1)" >+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.contrast( IJS_PointOps.canvas, 0.9)" >-</button></td>
 </tr>
 <tr>
-<td>Saturation <!-- raw HTML omitted --> <!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
-<td>Hue <!-- raw HTML omitted --> <!-- raw HTML omitted -->+<!-- raw HTML omitted --> <!-- raw HTML omitted -->-<!-- raw HTML omitted --></td>
+<td>Saturation <br> <button class="btn btn-default" onmousedown="IJS_PointOps.saturation( IJS_PointOps.canvas, 25 )" >+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.saturation( IJS_PointOps.canvas, -25 )" >-</button></td>
+<td>Hue <br> <button class="btn btn-default" onmousedown="IJS_PointOps.hue( IJS_PointOps.canvas, 20)" >+</button> <button class="btn btn-default" onmousedown="IJS_PointOps.hue( IJS_PointOps.canvas, -20)" >-</button></td>
 </tr>
 <tr>
-<td><!-- raw HTML omitted -->Invert<!-- raw HTML omitted --> <!-- raw HTML omitted -->Threshold<!-- raw HTML omitted --></td>
-<td><!-- raw HTML omitted --> <!-- raw HTML omitted -->Reset<!-- raw HTML omitted --></td>
+<td><button class="btn btn-default" onmousedown="IJS_PointOps.invert()">Invert</button> <button class="btn btn-default" onmousedown="IJS_PointOps.threshold( IJS_PointOps.canvas, document.getElementById('t').value )">Threshold</button></td>
+<td><input type="text" value="127" class="form-control threshold" maxlength="3" size="3" id="t" /> <button class="btn btn-default" onclick="IJS_PointOps = new JSImage( 'IJS_PointOps', 'bee.jpg' );">Reset</button></td>
 </tr>
 </tbody>
 </table>
@@ -323,8 +333,9 @@ Click and drag to set the image border to the average of the selected pixels.
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
       
     </section>
   </div>

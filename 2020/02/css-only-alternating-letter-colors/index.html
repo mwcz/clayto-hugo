@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    1 minute read
+    2 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -162,9 +162,48 @@
   
   <section>
     <p>This morning, my manager presented me with a challenge: write some code to alternate letter colors.  I offered to implement it using only CSS.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<style type=text/css>
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Source Code Pro Bold'), local('SourceCodePro-Bold'), url(https://fonts.gstatic.com/s/sourcecodepro/v11/HI_XiYsKILxRpg3hIP6sJ7fM7Pqths7Ds-cv.ttf) format('truetype');
+}
+.alternate {
+  --character-width: 0.602em;
+  --color-1: #8727A6;
+  --color-2: #D34CF9;
+  font-size: 50px;
+  font-family: "Source Code Pro";
+  text-shadow: 1px 1px 3px;
+  background: black;
+  color: white;
+  filter: invert();
+}
+.alternate:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(90deg, var(--color-1) var(--character-width), var(--color-2) var(--character-width));
+  background-size: calc(2 * var(--character-width));
+  filter: invert();
+  mix-blend-mode: multiply;
+}
+
+
+.challenge-accepted {
+  display: inline-block;
+}
+</style>
+<center>
+<div class="challenge-accepted alternate">
+CHALLENGE ACCEPTED!
+</div>
+</center>
 <p>We agreed on the terms:</p>
 <ul>
 <li>No JavaScript</li>
@@ -192,7 +231,7 @@
     src="//codepen.io/assets/embed/ei.js"
 ></script>
 <p>Originally, I was using a 2x1 SVG like this one, with both colors.</p>
-<!-- raw HTML omitted -->
+<img src="./two-colors.svg">
 <p>CSS with alternating letter colors.</p>
 <h2 id="pros-and-cons">Pros and Cons</h2>
 <h3 id="cons">Cons</h3>

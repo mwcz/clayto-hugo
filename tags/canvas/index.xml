@@ -29,7 +29,8 @@
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;This version has:
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
     </item>
@@ -42,8 +43,9 @@ The code is well commented, so feel free to hack on it.</description>
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+It covers Newton&amp;rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
     </item>
     
     <item>
@@ -92,8 +94,7 @@ Click and drag to set the image border to the average of the selected pixels.</d
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
-      <description>This is an old demo I made of an HTML5 canvas eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.
-Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.It&amp;rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&amp;rsquo;s 2D rendering context object.</description>
+      <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
     </item>
     
     <item>

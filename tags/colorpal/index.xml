@@ -18,7 +18,7 @@
       
       <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo!and view the code.
+Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
     </item>
     
@@ -66,7 +66,8 @@ You can see that with the old method, the black pixels definitely took over the 
       <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
-I&amp;rsquo;ve written some posts about ColorPal.</description>
+I&amp;rsquo;ve written some posts about ColorPal.
+ </description>
     </item>
     
     <item>
@@ -77,7 +78,7 @@ I&amp;rsquo;ve written some posts about ColorPal.</description>
       <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
-I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
+ I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
     <item>
@@ -116,8 +117,7 @@ Click and drag to set the image border to the average of the selected pixels.</d
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
-      <description>This is an old demo I made of an HTML5 canvas eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.
-Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.It&amp;rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&amp;rsquo;s 2D rendering context object.</description>
+      <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
     </item>
     
   </channel>

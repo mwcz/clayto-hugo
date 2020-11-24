@@ -18,8 +18,8 @@
       
       <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
       <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
-SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
-Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench. I don&amp;rsquo;t know, there could be a connection. If you too would like to take a seat at Adam&amp;rsquo;s illustrious workbench someday, hack away.</description>
+ SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ Very much alike. In fact, it&amp;rsquo;s probably so much like their displays be
       <pubDate>Thu, 12 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</guid>
-      <description>Just a few short daysmonths ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
+      <description>Just a few short days months ago, Kimotion was on display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we occupy a small slice of it called geekSPARK.
 Kimotion Levels Up Last year&amp;rsquo;s tech had a rudimentary and finicky hand tracking system. It was workable, but a lot of visitors had trouble using it, especially kids. This year, I added Leap Motion support, which was a huge&amp;hellip; jump forward for hand tracking.</description>
     </item>
     
@@ -49,7 +49,7 @@ Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&
       <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2016/07/glow-rope/</guid>
-      <description></description>
+      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
     </item>
     
     <item>
@@ -92,7 +92,7 @@ Pretty soon, your keen and restless mind will imagine that the larger dot exerts
       <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
-I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
+ I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
     <item>
@@ -103,8 +103,9 @@ I owe the idea of photo-matching website palettes to Noah Grey. Each iteration o
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+It covers Newton&amp;rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
     </item>
     
   </channel>

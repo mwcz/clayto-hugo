@@ -185,7 +185,7 @@
   
   
   <section>
-    <p>Just a few short <!-- raw HTML omitted -->days<!-- raw HTML omitted --> months ago, <a href="http://kimotion.xyz">Kimotion</a> was on
+    <p>Just a few short <del>days</del> months ago, <a href="http://kimotion.xyz">Kimotion</a> was on
 display at SPARKcon. SPARKcon is a large art festival in Raleigh, and we
 occupy a small slice of it called geekSPARK.</p>
 <h2 id="kimotion-levels-up">Kimotion Levels Up</h2>
@@ -193,7 +193,12 @@ occupy a small slice of it called geekSPARK.</p>
 was workable, but a lot of visitors had trouble using it, especially kids.
 This year, I added Leap Motion support, which was a huge&hellip; <em>jump</em> forward for
 hand tracking.</p>
-<!-- raw HTML omitted -->
+<figure>
+<video style="margin: 0 auto" controls autoplay loop>
+<source src="arm.mp4" />
+<source src="arm.webm" />
+</video>
+</figure>
 <p>Adam, of <a href="http://maniacallabs.com/">Maniacal Labs</a>, built the fantastic adjustable Leap Motion mounting arm
 shown above. It allowed visitors of any height to participate comfortably and
 worked like a dream.</p>
@@ -213,16 +218,23 @@ the video at the top of this post.</p>
 <p><img src="maniacal.jpg" alt="Maniacal Labs @ geekSPARK 2016"></p>
 <p>Our two exhibits fit so well together that we&rsquo;re considering uniting even
 further next year.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- Commenting this out until I find a hugo gallery solution that supports thumbnails.
+## Pictures!
+
+$GALLERY
+-->
 <h2 id="viva-la-geekspark">Viva la geekSPARK!</h2>
-<!-- raw HTML omitted -->
+<figure>
+    <img src="geekspark.png" alt="geekSPARK logo" />
+</figure>
 <p>Thanks to Truett and Noel for all their organization and support. Thanks to
 Ian for pulling me into this project two years ago and for climbing into the
 ceiling to shut off the lights. And thanks to all the <a href="http://kimotion.xyz/#contributors">Kimotion
 contributors</a> for building mods and adding color and fun to everyone&rsquo;s
 weekend.</p>
-<!-- raw HTML omitted -->
+<div hidden>
+    <img src="thumb.jpg">
+</div>
 
   </section>
   <footer>
@@ -423,7 +435,8 @@ weekend.</p>
     <section>
       
         Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.

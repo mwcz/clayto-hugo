@@ -191,7 +191,20 @@ efficiently rendered with HTML and CSS.</p>
 <p>While developing <a href="https://clayto.com/projects/dimo">DiMo</a> and <a href="http://kimotion.xyz">Kimotion</a>, I became
 fond of <a href="http://threejs.org">three.js</a> particle systems for their performance and visual
 charm.</p>
-<!-- raw HTML omitted -->
+<div class="beside">
+    <figure>
+        <a href="https://clayto.com/projects/dimo">
+            <img src="swath-colors.jpg" alt="DiMo picture" />
+        </a>
+        <figcaption>Particle gravity simulation in <a href="https://clayto.com/projects/dimo">DiMo: Particles</a> (50,000 particles)</figcaption>
+    </figure>
+    <figure>
+        <a href="https://clayto.com/projects/kimotion">
+            <img src="kimotion-pic.jpg" alt="Kimotion picture" />
+        </a>
+        <figcaption>Rendering a Kinect depth field with 480,000 particles in <a href="https://clayto.com/projects/kimotion">Kimotion</a></figcaption>
+    </figure>
+</div>
 <p>WebGL particle systems can handle many thousands of particles without breaking
 a sweat. It can even handle <em>drawing</em> millions of particles, although <em>moving</em>
 that many particles is often CPU-bottlenecked. Fancy <a href="https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units">tricks</a> can beat
@@ -201,10 +214,34 @@ that limitation, although such tricks are still tedious in WebGL.</p>
 <h3 id="its-pixel-time">It&rsquo;s Pixel Time</h3>
 <p>When a network request is detected, the particle system moves a tiny dot in an
 arc to its destination.</p>
-<!-- raw HTML omitted -->
+<div class="beside">
+    <figure>
+        <video style="margin: 0 auto" poster="traffic-viz-basic-thumb.jpg" autoplay controls loop>
+            <source src="traffic-viz-basic.mp4" />
+            <source src="traffic-viz-basic.webm" />
+        </video>
+        <figcaption>Particles arc from purple to blue</figcaption>
+    </figure>
+    <figure>
+        <video style="margin: 0 auto" poster="traffic-viz-bluegreen-thumb.jpg" autoplay controls loop>
+            <source src="traffic-viz-bluegreen.mp4" />
+            <source src="traffic-viz-bluegreen.webm" />
+        </video>
+        <figcaption>Particles alternate between blue and green</figcaption>
+    </figure>
+</div>
 <p>The arcs are defined by sine waves. Here are the particle arcs as they appear
 on-screen, and another shot with sine wave guides showing.</p>
-<!-- raw HTML omitted -->
+<div class="beside">
+    <figure>
+        <img src="pipeline-nosines.jpg" alt="pipeline with particles arcing" />
+        <figcaption>Particle arcs</figcaption>
+    </figure>
+    <figure>
+        <img src="pipeline-sines.jpg" alt="pipeline with sine wave guides for the particle arcs" />
+        <figcaption>Sine wave guides</figcaption>
+    </figure>
+</div>
 <p>To prevent the arcs from overlapping with each other too much, I increased each
 wave&rsquo;s amplitude based on vertical distance to be traveled. In essence,
 amplitude increases linearly with wavelength. That&rsquo;s why the green arc is
@@ -222,7 +259,12 @@ of those particles moves randomly up and down to add more visual interest.</p>
 the whole team in person. A few days later, all our hard work came together as
 well. All the preparation paid off and the demo worked perfectly. Here&rsquo;s a
 shot of my particle visualization from the official recording.</p>
-<!-- raw HTML omitted -->
+<figure>
+    <video style="margin: 0 auto" poster="traffic-thumb.jpg" autoplay controls loop>
+        <source src="traffic.webm" />
+        <source src="traffic.mp4" />
+    </video>
+</figure>
 <p>Watch the full keynote here:</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -234,7 +276,10 @@ shot of my particle visualization from the official recording.</p>
 <p>Early on, before traffic data was available, I had the particles follow the
 mouse instead. It was pretty fun, so I spun it off into a simple demo called
 <a href="https://clayto.com/demos/glow-rope">Glow Rope</a>. Give it a try (mouse required)!</p>
-<!-- raw HTML omitted -->
+<figure>
+    <a href="https://clayto.com/demos/glow-rope"><img src="glow-rope.jpg" alt="glow rope screenshot" /></a>
+    <figcaption><p><a class="btn btn-default btn-lg" href="https://clayto.com/demos/glow-rope">Play Glow Rope</a></p></figcaption>
+</figure>
 <hr>
 <h3 id="leaderboard">Leaderboard</h3>
 <p>In addition to the network traffic visualization, I helped build a leaderboard
@@ -251,7 +296,7 @@ eye-opening for me. A week out and tired to the bone, I was thinking &ldquo;No w
 am I doing this next year!&rdquo; But the thrill of everyone&rsquo;s hard work coming
 together drove away the exhaustion. I can&rsquo;t wait to see what we can cook up
 next year.</p>
-<!-- raw HTML omitted -->
+<img style="display: none !important;" src="post-thumbnail.jpg">
 
   </section>
   <footer>
@@ -497,7 +542,8 @@ next year.</p>
     <section>
       
         Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
 $GALLERY
 After the event, I wrote this opensource.com article about the experience.
 The source code is, of course, open.

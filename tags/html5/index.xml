@@ -18,7 +18,7 @@
       
       <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
       <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
-Launch live demo!and view the code.
+Launch live demo! and view the code.
 Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
     </item>
     
@@ -99,7 +99,8 @@ You can see that with the old method, the black pixels definitely took over the 
       <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
 Try it out at colorpal.org.
 ColorPal also has a command-line interface, powered by Node.js.
-I&amp;rsquo;ve written some posts about ColorPal.</description>
+I&amp;rsquo;ve written some posts about ColorPal.
+ </description>
     </item>
     
     <item>
@@ -110,7 +111,7 @@ I&amp;rsquo;ve written some posts about ColorPal.</description>
       <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
       <description>Introducing ColorPal!
 I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
-I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
+ I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
     <item>
@@ -121,7 +122,8 @@ I owe the idea of photo-matching website palettes to Noah Grey. Each iteration o
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;This version has:
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
     </item>
@@ -134,8 +136,7 @@ The code is well commented, so feel free to hack on it.</description>
       <guid>https://clayto.com/projects/bouncey/</guid>
       <description>Bouncey is a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 Fun, simple, and oddly relaxing.
-  Posts about Bouncey
-Bouncey&amp;rsquo;s code on GitHub</description>
+ #cnvs { background-color: #1f1f1f; margin: 0 auto; -webkit-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); -o-box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.7 ); box-shadow: 0px 2px 18px rgba( 0, 0, 0, 0.</description>
     </item>
     
     <item>
@@ -146,8 +147,9 @@ Bouncey&amp;rsquo;s code on GitHub</description>
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;It covers Newton&amp;rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.</description>
+&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+It covers Newton&amp;rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
     </item>
     
     <item>
@@ -157,7 +159,8 @@ PauseAn updated (but less colorful) version of bouncey is available here.</descr
       
       <guid>https://clayto.com/2011/11/how-not-to-use-css3/</guid>
       <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
-CSS3!The code:
+ CSS3!
+The code:
 // Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
     </item>
     
@@ -207,8 +210,7 @@ Click and drag to set the image border to the average of the selected pixels.</d
       <pubDate>Wed, 16 Nov 2011 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/2011/11/html5-canvas-eyedropper/</guid>
-      <description>This is an old demo I made of an HTML5 canvas eyedropper. Circa 2009, I believe. Just click and drag on the image to see it in action.
-Sorry, in order to view this demo you need a Web browser that supports HTML5 canvas.It&amp;rsquo;s a pretty simple script, and works by declaring this function which handles onclick and ondrag events from the canvas. cnvs is the canvas element, and c is the canvas&amp;rsquo;s 2D rendering context object.</description>
+      <description>canvas { margin : 0 auto; border-width : 36px; border-style : solid; border-radius : 16px; transition : 0.1168s all ease; margin : 0 auto; display : block; cursor : crosshair; }   $(function() { var c; var cnvs = document.getElementById(&#34;c&#34;); if( cnvs.getContext) { // Check for canvas support // DRAW FUN STUFF! c = cnvs.getContext(&#39;2d&#39;); var color = document.getElementById(&#34;color&#34;); var colorcode = document.getElementById(&#34;colorcode&#34;); var images = new Image(); images.onload = function() { cnvs.</description>
     </item>
     
     <item>
@@ -228,7 +230,7 @@ It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called J
       
       <guid>https://clayto.com/projects/aejs/</guid>
       <description>AEJS was an experimental Amiga 500 emulator written in JavaScript. The name stands for Amiga Emulator JavaScript and is pronounced &amp;ldquo;aegis&amp;rdquo;.
-My motivation to build AEJS came from these sources:
+ My motivation to build AEJS came from these sources:
  The HTML5 era introduced new APIs which finally made it possible: Typed arrays, Web Audio, File, Canvas, Fullscreen, Gamepad Fabrice Bellard&amp;rsquo;s JavaScript PC emulator JavaScript performance was finally good enough to make it feasible It bridged front-end web development with low-level machine code, both of which are super awesome I still have the Amiga 500 I played with obsessively since 3 years-old The 68000 is legendary and I wanted to find out why  I stopped development for these reasons:</description>
     </item>
     

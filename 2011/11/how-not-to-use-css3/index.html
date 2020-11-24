@@ -149,7 +149,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    2 minute read
+    3 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -168,8 +168,8 @@
   
   <section>
     <p>How to ruin a good thing by abusing CSS3 text shadows&hellip;</p>
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->CSS3!<!-- raw HTML omitted --></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<p><span class="css3_demo">CSS3!</span></p>
 <p>The code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Random factors to determine x/y offsets for text shadows and amount of blur
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
@@ -228,10 +228,77 @@
   <span style="color:#a6e22e">make_it</span>();
   <span style="color:#a6e22e">move_it</span>();
 });
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</code></pre></div><script type="text/javascript">
+
+// Random factors to determine x/y offsets for text shadows and amount of blur
+var x_factor    = Math.floor( 0.6 * 20 ) - 10;
+var y_factor    = Math.floor( 0.6 * 20 ) - 10;
+var blur_factor = Math.floor( 0.2 * 10 ) + 1;
+
+// Pretty colors
+var the_colors =
+                [
+                '#7f9f7f',
+                '#dca3a3',
+                '#80d4aa',
+                '#f8f893',
+                '#ffcfaf',
+                '#e89393',
+                '#9ece9e',
+                '#c0bed1',
+                '#6c6c9c',
+                '#71d3b4',
+                '#a0afa0',
+                '#efefef'
+                ];
+
+function make_it() { // MAKE IT SHINE
+    // Build a string containing a comma-delimited list of the each shadow we want to apply
+    // sprintf would be nice here.
+    var shadows = "";
+    for( var color_index in the_colors ) {
+        shadows +=
+            color_index * x_factor + "px " +
+            color_index * y_factor + "px " +
+            color_index * blur_factor + "px " +
+            the_colors[ color_index ];
+
+        // Add a comma unless we're at the end of the color set
+        if( color_index != the_colors.length - 1 )
+            shadows += ',';
+    }
+    $('.css3_demo').css( 'textShadow', shadows ); // apply the new style
+    the_colors.push( the_colors.shift() ); // move first color to the end of the list
+    //console.log( shadows );
+    setTimeout( 'make_it()', 50 ); // make the function async (kinda... effectively...) with setTimeout()
+}
+
+function move_it() { // MAKE IT MOVE
+    /* uncomment this to make it move up and down...
+    $('.css3_demo').animate( {top:'+=200'},2000, "linear" )
+           .animate( {top:'-=200'},2000, "linear", move_it );
+    */
+}
+
+$(document).ready( function() {
+    make_it();
+    move_it();
+});
+</script>
+<style type="text/css">
+
+.css3_demo {
+    font-family: FreeSansBold;
+    text-align: center;
+    color: #efefef;
+    position: relative;
+    top: 0;
+    left: 50px;
+    font-size: 9em;
+    padding: 0;
+}
+
+</style>
 
   </section>
   <footer>
@@ -253,8 +320,9 @@
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;It covers Newton&rsquo;s laws of motion.
-PauseAn updated (but less colorful) version of bouncey is available here.
+&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
       
     </section>
   </div>

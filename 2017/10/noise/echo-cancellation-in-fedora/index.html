@@ -198,9 +198,20 @@ load-module module-echo-cancel aec_method<span style="color:#f92672">=</span>web
 </code></pre></div><p>Then restart PulseAudio.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pulseaudio -k
 </code></pre></div><p>Now, if you open Sound settings, you should see a new entry under the <em>Input</em> tab. Mine is called &ldquo;<strong>Built-in Audio Analog Stereo (echo cancelled with SA9027 USB Audio Analog Stereo)</strong>&quot;. Not sure what&rsquo;s up with that name; my mic is connected with a 3.5mm audio jack. Whatever, it works!</p>
-<!-- raw HTML omitted -->
+<figure>
+    <img src="devices.png">
+</figure>
 <p>Select the device that says &ldquo;echo cancelled&rdquo; and your audio background hiss should drop to almost nothing. Here&rsquo;s a before and after spectrum analysis.</p>
-<!-- raw HTML omitted -->
+<div class="beside">
+    <figure>
+        <img src="before.jpg" alt="Audio spectrum analysis of microphone input without noise cancellation." />
+        <figcaption>Spectrum analysis without noise cancellation.</figcaption>
+    </figure>
+    <figure>
+        <img src="after.jpg" alt="Audio spectrum analysis of microphone input with noise cancellation." />
+        <figcaption>Spectrum analysis <b>with</b> noise cancellation.</figcaption>
+    </figure>
+</div>
 <h1 id="missing-input-device-addendum">Missing input device addendum</h1>
 <p>After using this trick for the past few Fedora releases, I&rsquo;ve been stumped by why the noise-cancelled input device doesn&rsquo;t automatically show up after a fresh boot.  I always have to run <code>pulseaudio -k</code> manually after rebooting to get the device to appear.</p>
 <p>I haven&rsquo;t found a solution for the core problem yet, but a workaround is to automatically restart PulseAudio upon loggin in.  Here&rsquo;s a script which sets that up.</p>
