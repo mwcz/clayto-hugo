@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.81.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -180,7 +180,7 @@
 <p>Additionally, the same-origin restriction makes it impossible to serve SVGs from a CDN, which is a deal-breaker.</p>
 <h3 id="fetch-and-make-copies">fetch and make copies</h3>
 <p>This approach involves making a request for the SVG with [fetch][fetch], then injecting the SVG&rsquo;s text into the page with [innerHTML][innerhtml] (or [insertAdjacentHTML][insert-adjacent]).</p>
-<p>This method functions, but wasn&rsquo;t very promising. One reason is that fetching text requires <code>Access-Control</code> headers for cross-origin requests.  While that&rsquo;s easier to digest than <em>use</em>&lsquo;s outright ban on cross-origin requests, it&rsquo;s still too much to ask of pfe-icon&rsquo;s users.</p>
+<p>This method functions, but wasn&rsquo;t very promising. One reason is that fetching text requires <code>Access-Control</code> headers for cross-origin requests.  While that&rsquo;s easier to digest than <em>use</em>&rsquo;s outright ban on cross-origin requests, it&rsquo;s still too much to ask of pfe-icon&rsquo;s users.</p>
 <p>Another reason this method wasn&rsquo;t promising is that it seemed very inefficient to inject the same SVG text over and over.  Instead, injecting the SVG once and then using [<em>use</em>][use-method] to clone it should be quite efficient, but the CORS requirements alone made it easy to move on.</p>
 <h3 id="css-background-image">CSS background-image</h3>
 <p>This is the approach I spent the most time on, since it seemed by far the most promising.</p>

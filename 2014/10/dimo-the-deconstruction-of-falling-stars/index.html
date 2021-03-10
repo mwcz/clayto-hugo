@@ -38,7 +38,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.69.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.81.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -205,7 +205,7 @@ dot!</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://player.vimeo.com/video/108714486" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
- </div>
+</div>
 
 <p>Peculiar. The multitude of dots starts to look <em>oddly</em> reminiscent of fluid
 sloshing around in a container. Or a cloud of gas forming a star. Weird, huh?
@@ -225,7 +225,7 @@ gravity simulation visualization for DiMo. There was also a visualization of
 Conway&rsquo;s Game of Life, and an original game where players eat doritos and spray
 soda at people who eat doritos.</p>
 <h2 id="particles">Particles</h2>
-<p>The particles&rsquo; main job is to swirl around and look cool. They are pulled
+<p>The particles' main job is to swirl around and look cool. They are pulled
 gravitationally toward the player pieces, but the particles themselves don&rsquo;t
 exert gravity on each other.</p>
 <h3 id="gravity">Gravity</h3>
@@ -247,7 +247,7 @@ creation of 12 vector objects.</p>
 <p>Needless to say, the performance was <em>terrible</em>. I then implemented the gravity
 equation using glmatrix&rsquo;s in-place vector operations. glmatrix&rsquo;s vector
 functions insert their output into an existing vector instead of creating a new
-vector for each function call, like ThreeJS&rsquo; API does. The number of new
+vector for each function call, like ThreeJS' API does. The number of new
 objects created per second by the gravity equation dropped from <code>21,600,000</code>
 down to zero.</p>
 <p>glmatrix served quite well for a while, but in the end I improved performance
@@ -297,7 +297,7 @@ scales it down to <code>0..1</code>.</p>
 input, <span role="math">n</span>, increases. Here&rsquo;s the result.</p>
 <p><img src="swath-colors.png" alt="image of the swaths of color"></p>
 <p><em>Yes!</em> Swaths of color, cycling through the spectrum like a rainbow.</p>
-<h4 id="the-grand-programmers-utopia-gpu">The Grand Programmers&rsquo; Utopia (GPU)</h4>
+<h4 id="the-grand-programmers-utopia-gpu">The Grand Programmers' Utopia (GPU)</h4>
 <p>After bumping up against my CPU&rsquo;s limits while implementing gravity, I was
 certain of one thing: I wanted to rely on the CPU as little as possible.</p>
 <p>I had a vague intuition that pixel shaders were the answer, since, hey, pixel
@@ -479,7 +479,7 @@ The source code is, of course, open.
       
         This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&rsquo;s github repo is:
-&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&quot;
 It covers Newton&rsquo;s laws of motion.
 #cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
       
@@ -620,7 +620,7 @@ Your web browser must support WebGL, which at this point in history means a fair
       
         This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&hellip;
-&quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&ldquo;
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&quot;
 This version has:
  pre-defined initial states gravity friction  It still has the &ldquo;clinging&rdquo; bug. I know how to fix it, but didn&rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.

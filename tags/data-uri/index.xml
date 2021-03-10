@@ -6,11 +6,7 @@
     <description>Recent content in data uri on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://clayto.com/tags/data-uri/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 25 Feb 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://clayto.com/tags/data-uri/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing Drop64, ezpz data URI generator</title>
       <link>https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/</link>

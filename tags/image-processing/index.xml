@@ -6,11 +6,7 @@
     <description>Recent content in image processing on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Nov 2011 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://clayto.com/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 17 Nov 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://clayto.com/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML5 canvas point operations</title>
       <link>https://clayto.com/2011/11/html5-canvas-point-operations/</link>

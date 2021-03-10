@@ -6,11 +6,7 @@
     <description>Recent content in demos on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://clayto.com/tags/demos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://clayto.com/tags/demos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Meet SimPixel</title>
       <link>https://clayto.com/2017/03/meet-simpixel/</link>
@@ -103,7 +99,7 @@ I&amp;rsquo;ve been toying with color palette generation for years. My photograp
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;quot;
 It covers Newton&amp;rsquo;s laws of motion.
 #cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
     </item>

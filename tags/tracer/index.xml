@@ -6,11 +6,7 @@
     <description>Recent content in tracer on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://clayto.com/tags/tracer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://clayto.com/tags/tracer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tracer</title>
       <link>https://clayto.com/projects/tracer/</link>

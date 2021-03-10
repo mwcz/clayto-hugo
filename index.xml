@@ -6,11 +6,7 @@
     <description>Recent content on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate>
-    
-	<atom:link href="https://clayto.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate><atom:link href="https://clayto.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Web Component Icons</title>
       <link>https://clayto.com/2019/07/web-component-icons/</link>
@@ -471,7 +467,7 @@ This post is about how difficult it can be to get text (especially passwords) on
       <guid>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</guid>
       <description>This is a slightly upgraded version of the physics demo I showed in my last post.
 It is still&amp;hellip;
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;quot;
 This version has:
  pre-defined initial states gravity friction  It still has the &amp;ldquo;clinging&amp;rdquo; bug. I know how to fix it, but didn&amp;rsquo;t deem it important enough to spend time on it. :)
 The code is well commented, so feel free to hack on it.</description>
@@ -496,7 +492,7 @@ Fun, simple, and oddly relaxing.
       <guid>https://clayto.com/2011/11/bouncey-canvas-physics/</guid>
       <description>This is Bouncey. It&amp;rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
 The description for bouncey&amp;rsquo;s github repo is:
-&amp;quot;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;ldquo;
+&amp;ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&amp;quot;
 It covers Newton&amp;rsquo;s laws of motion.
 #cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.</description>
     </item>
