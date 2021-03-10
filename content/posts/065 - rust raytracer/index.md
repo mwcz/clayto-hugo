@@ -1,6 +1,6 @@
 ---
 title: "Shaking Off the Rust 1: Ray Tracing in One Weekend"
-date: 2021-02-08T15:38:50-05:00
+date: 2021-02-08T22:38:50-05:00
 categories: Rust
 Tags:
  -  rust
