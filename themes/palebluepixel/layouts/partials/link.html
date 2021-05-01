@@ -9,28 +9,28 @@
   {{ end }}
   {{ with .Site.Params.github }}
   <li>
-    <a title="my GitHub activity" href="https://github.com/{{ . }}" target="_blank">
+    <a title="my GitHub activity" href="https://github.com/{{ . }}" target="_blank" rel="noopener">
       <span class="icon-github-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.codepen }}
   <li>
-    <a title="my CodePens" href="https://codepen.io/{{ . }}" target="_blank">
+    <a title="my CodePens" href="https://codepen.io/{{ . }}" target="_blank" rel="noopener">
       <span class="icon-codepen"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.twitter }}
   <li>
-    <a title="my Twitter" href="https://twitter.com/{{ . }}" target="_blank">
+    <a title="my Twitter" href="https://twitter.com/{{ . }}" target="_blank" rel="noopener">
       <span class="icon-twitter-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.facebook }}
   <li>
-    <a href="https://facebook.com/{{ . }}" target="_blank">
+    <a href="https://facebook.com/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>facebook</title>
         <use xlink:href="#icon-facebook"></use>
@@ -40,7 +40,7 @@
   {{ end }}
   {{ with .Site.Params.instagram }}
   <li>
-    <a href="https://instagram.com/{{ . }}" target="_blank">
+    <a href="https://instagram.com/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>instagram</title>
         <use xlink:href="#icon-instagram"></use>
@@ -50,7 +50,7 @@
   {{ end }}
   {{ with .Site.Params.googleplus }}
   <li>
-    <a href="{{ . }}" target="_blank">
+    <a href="{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>googleplus</title>
         <use xlink:href="#icon-google-plus"></use>
@@ -60,7 +60,7 @@
   {{ end }}
   {{ with .Site.Params.gitlab }}
   <li>
-    <a href="https://gitlab.com/{{ . }}" target="_blank">
+    <a href="https://gitlab.com/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>gitlab</title>
         <use xlink:href="#icon-gitlab"></use>
@@ -70,7 +70,7 @@
   {{ end }}
   {{ with .Site.Params.npm }}
   <li>
-    <a href="https://www.npmjs.com/{{ . }}" target="_blank">
+    <a href="https://www.npmjs.com/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>npm</title>
         <use xlink:href="#icon-npm"></use>
@@ -80,7 +80,7 @@
   {{ end }}
   {{ with .Site.Params.dribbble }}
   <li>
-    <a href="https://dribbble.com/{{ . }}" target="_blank">
+    <a href="https://dribbble.com/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>dribbble</title>
         <use xlink:href="#icon-dribbble"></use>
@@ -90,7 +90,7 @@
   {{ end }}
   {{ with .Site.Params.fivehundredpx }}
   <li>
-    <a href="https://500px.com/{{ . }}" target="_blank">
+    <a href="https://500px.com/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>500px</title>
         <use xlink:href="#icon-500px"></use>
@@ -100,7 +100,7 @@
   {{ end }}
   {{ with .Site.Params.flickr }}
   <li>
-    <a href="https://www.flickr.com/photos/{{ . }}" target="_blank">
+    <a href="https://www.flickr.com/photos/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>flickr</title>
         <use xlink:href="#icon-flickr"></use>
@@ -110,7 +110,7 @@
   {{ end }}
   {{ with .Site.Params.pinterest }}
   <li>
-    <a href="https://www.pinterest.jp/{{ . }}" target="_blank">
+    <a href="https://www.pinterest.jp/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>pinterest</title>
         <use xlink:href="#icon-pinterest"></use>
@@ -120,7 +120,7 @@
   {{ end }}
   {{ with .Site.Params.tumblr }}
   <li>
-    <a href="https://www.tumblr.com/blog/{{ . }}" target="_blank">
+    <a href="https://www.tumblr.com/blog/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>tumblr</title>
         <use xlink:href="#icon-tumblr"></use>
@@ -130,14 +130,14 @@
   {{ end }}
   {{ with .Site.Params.vimeo }}
   <li>
-    <a title="my Vimeo videos" href="https://vimeo.com/{{ . }}" target="_blank">
+    <a title="my Vimeo videos" href="https://vimeo.com/{{ . }}" target="_blank" rel="noopener">
       <span class="icon-vimeo-squared"></span>
     </a>
   </li>
   {{ end }}
   {{ with .Site.Params.youtube }}
   <li>
-    <a href="https://www.youtube.com/user/{{ . }}" target="_blank">
+    <a href="https://www.youtube.com/user/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>youtube</title>
         <use xlink:href="#icon-youtube"></use>
@@ -147,7 +147,7 @@
   {{ end }}
   {{ with .Site.Params.linkedin }}
   <li>
-    <a href="https://linkedin.com/in/{{ . }}" target="_blank">
+    <a href="https://linkedin.com/in/{{ . }}" target="_blank" rel="noopener">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>linkedin</title>
         <use xlink:href="#icon-linkedin"></use>
