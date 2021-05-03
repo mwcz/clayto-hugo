@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Gel Light</title>
+    <style type="text/css" media="screen">
+      html, body { height: 100%; }
+      body {
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: background-color 0.1s linear;
+
+        background-color: black;
+
+          overflow: hidden;
+      }
+      #gelcolor {
+        visibility: hidden;
+        /* transform: translate(-50%, -80%); */
+
+        /* position: absolute; */
+
+      }
+    </style>
+  </head>
+  <body>
+
+    <input type="color" id="gelcolor"  value="#000000">
+
+    <script type="module">
+      const gelinput = document.querySelector("#gelcolor");
+      document.body.addEventListener("click", () => {
+        gelinput.click();
+      });
+      gelinput.addEventListener("input", ev => {
+        document.body.style.backgroundColor = ev.target.value;
+      });
+    </script>
+
+  </body>
+</html>
