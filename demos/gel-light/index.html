@@ -3,43 +3,150 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Gel Light</title>
+    <title>Gel Light - clayto.com</title>
+
     <style type="text/css" media="screen">
-      html, body { height: 100%; }
+      html, body { height: 100%; margin: 0; padding: 0 }
       body {
         height: 100%;
-
+        overflow: hidden;
+        background-color: black;
+      }
+      main {
+        position: absolute;
+        top: calc( calc( 2vw + 2vh ) / 2.0 );
+        right: calc( calc( 2vw + 2vh ) / 2.0 );
+        bottom: calc( calc( 2vw + 2vh ) / 2.0 );
+        left: calc( calc( 2vw + 2vh ) / 2.0 );
+        background-color: #1f1f1f;
         display: flex;
         align-items: center;
         justify-content: center;
-
         transition: background-color 0.1s linear;
-
-        background-color: black;
-
-          overflow: hidden;
+        border-radius: calc( calc( 3vw + 3vh ) / 2.0 );
+        padding: calc( calc( 3vw + 3vh ) / 2.0 );
       }
       #gelcolor {
         visibility: hidden;
-        /* transform: translate(-50%, -80%); */
-
-        /* position: absolute; */
-
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #guide {
+        opacity: 0;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: calc( calc( 6vw + 6vh ) / 2.0 );
+        transition: opacity 0.3s ease;
+        color: #f1f1f1;
+        width: 100%;
+      }
+      #guide h1 {
+        margin: 0;
+        padding: 0;
+      }
+      #guide > p {
+        margin: 10px 0 10px;
+        padding: 0;
+        font-size: calc( calc( 2.6vw + 2.6vh ) / 2.0 );
+        max-width: 80%;
+        color: #c0c0c0;
+      }
+      #guide small {
+        margin: 0;
+        padding: 0;
+        font-size: calc( calc( 3vw + 3vh ) / 2.0 );
+      }
+      a {
+        color: #2B8AE1;
+      }
+      a:visited {
+        color: #8A4AD8;
       }
     </style>
+
+  <meta property="og:title" content="Gel Light" />
+  <meta name="twitter:title" content="Gel Light" />
+
+  <meta name="description" content="A simple tool to illuminate yourself for video calls." />
+  <meta property="og:description" content="A simple tool to illuminate yourself for video calls." />
+  <meta name="twitter:description" content="A simple tool to illuminate yourself for video calls." />
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/demos/gel-light/" />
+
+  <meta property="og:image" content="https://clayto.com/demos/gel-light/thumb.png" />
+  <meta name="twitter:image" content="https://clayto.com/demos/gel-light/thumb.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+
+  <meta property="og:type" content="article" />
+
   </head>
   <body>
+    <main>
+      <article id="guide">
+        <h1>Gel Light <small>🟥🟩🟦</small></h1>
+        <p></p>
+        <p>🖱️ Click anywhere to choose a color. </p>
+        <p>🔖 Selected colors can be bookmarked.</p>
+        <p>Created by <a href=https://clayto.com>clayto.com</a>.</p>
+      </article>
 
-    <input type="color" id="gelcolor"  value="#000000">
+      <input type="color" id="gelcolor" value="#000000">
+    </main>
 
     <script type="module">
       const gelinput = document.querySelector("#gelcolor");
-      document.body.addEventListener("click", () => {
-        gelinput.click();
+      const guide = document.querySelector("#guide");
+      const main = document.querySelector("main");
+
+      function hideGuide() {
+        guide.style.opacity = 0;
+      }
+
+      function showGuide() {
+        guide.style.opacity = 1;
+      }
+
+      function applyColor(color) {
+        main.style.backgroundColor = color;
+      }
+
+      document.body.addEventListener("click", ev => {
+
+        hideGuide();
+
+        // move the color picker to the click/tap position for convenience
+        if (ev.isTrusted) {
+          gelinput.style.left = `${ev.clientX}px`;
+          gelinput.style.top = `${ev.clientY}px`;
+          setTimeout(()  => gelinput.click(), 10);
+        }
+
+        // click the type=color input to display the color picker
+
       });
       gelinput.addEventListener("input", ev => {
-        document.body.style.backgroundColor = ev.target.value;
+        ev.stopImmediatePropagation();
+        applyColor(ev.target.value);
       });
+      gelinput.addEventListener("change", ev => {
+        window.location.hash = ev.target.value;
+        applyColor(ev.target.value);
+      });
+
+      // if a color is stored in the hash, use it
+      if (/^#[A-Fa-f0-9]{6}$/.test(location.hash)) {
+        gelinput.setAttribute("value", location.hash);
+        applyColor(location.hash);
+      } else {
+        showGuide();
+      }
+
     </script>
 
   </body>
