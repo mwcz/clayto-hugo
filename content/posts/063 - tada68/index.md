@@ -10,6 +10,8 @@ mwc: 63
 draft: true
 ---
 
+TODO add pictures from https://www.dropbox.com/home/pictures-sync/keyboard
+
 It's been more than ten years since I first caught the mechanical keyboard bug.  Having been immersed in stories from computing's early days, such as [Hackers][hackers] and [Snow Crash][snowcrash], I became intrigued by the idea of bringing that old-school clack into my life.  Fast foward ten years, I've owned and enjoyed several boards, including Model M's (Unicomp era), Leopold, iKBC.
 
 As with most hobbies, stick with them long enough and ones tastes will refine to an absurd degree.  Over time, I simply got tired of the keyboards I had.  Buckling spring switches made my fingers tired, Cherry browns' tactile bump was hardly there, and each board's stabilizers were a bit too rattly.  Even high-end prebuilt keyboards didn't excite me anymore.
