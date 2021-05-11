@@ -22,7 +22,7 @@
   "homepage": "https://github.com/mwcz/clayto-hugo#readme",
   "devDependencies": {
     "husky": "6.0.0",
-    "less": "3.13.1",
+    "less": "4.1.1",
     "prettier": "2.3.0",
     "pretty-quick": "3.1.0"
   },
