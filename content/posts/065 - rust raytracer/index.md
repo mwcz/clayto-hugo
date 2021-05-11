@@ -144,6 +144,8 @@ Since there is no `impl` for the fuzziness function, the rust compiler will emit
 
 And that's why numeric traits don't exist in the Rust standard library.
 
+During this discussion it occurred to me that there could potentially be a name conflict between a function in a struct's impl, and a trait function implemented for that struct.  I asked Josh about this as well, and the discusison led to some [docs on disambiguating function calls](https://doc.rust-lang.org/reference/expressions/call-expr.html#disambiguating-function-calls).
+
 ### overriding arithmetic operators for vec3
 
 got stuck on trying to add borrowed values.  it seemed to only work with owned values, which was very hard to work with.  problem unresolved.  went with function-based linear algebra.
