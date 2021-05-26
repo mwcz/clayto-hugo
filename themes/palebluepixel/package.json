@@ -11,7 +11,7 @@
   "author": "mismith0227",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "10.2.5",
+    "autoprefixer": "10.2.6",
     "less": "4.1.1",
     "less-plugin-clean-css": "1.5.1",
     "minify": "7.0.2",
