@@ -186,7 +186,7 @@ The next step for the ray tracer is to compile it to WebAssembly so it can be de
   <img width="600" height="378" src="./wasm-ferris.png" alt="wasm-pack logo" />
 </picture>
 
-After WebAssembly, I'd like to add parallelism.  Surely it will be as simple as changing every `Rc` to `Arc`.
+After WebAssembly, I'd like to add parallelism.  Surely it will be as simple as changing every `Rc` to `Arc`. 🌝
 
 The next step for me on my Rust journey is to come to understand [lifetime annotations](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-annotation-syntax).  They came up several times during this project.  The compiler helped me to a solution, but I didn't reach a deep understanding.
 
