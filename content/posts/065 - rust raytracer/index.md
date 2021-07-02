@@ -83,9 +83,12 @@ Long story short, I completed a Rust implementation of the first book of Peter S
 I learned a lot and had a blast, and it took way longer than one weekend.  I call it: **Ray Tracing in Eleven Weekends**
 
 <figure>
-  <img loading="lazy" src="raytrace-summary-1616044535.567072104s.final-book-image-render-15hours.jpg" alt="a ray tracer render demonstrating sphere intersection, three materials (diffuse, reflective, and glass), antialiasing, and bokeh" />
+  <picture>
+    <source srcset="raytrace-summary-1616044535.567072104s.final-book-image-render-15hours.jxl" type="image/jxl">
+    <img loading="lazy" src="raytrace-summary-1616044535.567072104s.final-book-image-render-15hours.jpg" alt="a ray tracer render demonstrating sphere intersection, three materials (diffuse, reflective, and glass), antialiasing, and bokeh" />
+  </picture>
   <figcaption>
-    The "cover photo", demonstrating all the features of the ray tracer.
+    The "cover photo", demonstrating all the features of the ray tracer.  View a <a target=_blank href="./raytrace-summary-1616044535.567072104s.final-book-image-render-15hours-hires.jpg">hi-res original</a>.
   </figcaption>
 </figure>
 
