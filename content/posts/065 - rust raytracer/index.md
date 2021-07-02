@@ -3,10 +3,10 @@ title: "Shaking Off the Rust 1: Ray Tracing in One Weekend"
 date: 2021-02-08T22:38:50-05:00
 categories: Rust
 Tags:
- -  rust
- -  ray-tracing
- -  programming
  -  3d
+ -  programming
+ -  ray-tracing
+ -  rust
 description: "Learning Rust, one tetanus shot at a time.  In this post, I work on building a Ray Tracer in Many Weekends."
 thumbnail: thumb.jpg
 mwc: 65
@@ -28,11 +28,11 @@ I dusted off my graphics projects from the class.  To my surprise, despite being
 
 <div class="beside">
     <figure>
-        <img src="./csc461/csc461_tor_sidebyside.png" alt="rasterizer running in 2009 on Linux Mint" loading="lazy" />
+        <img src="./csc461/csc461_tor_sidebyside.png" alt="rasterizer running in 2009 on Linux Mint" loading="lazy" width=640 height=400>
         <figcaption>rasterizer on Linut Mint, 2009</figcaption>
     </figure>
     <figure>
-        <img src="./csc461/csc461-fedora34.png" alt="rasterizer running in 2021 on Fedora 34" loading="lazy" />
+        <img src="./csc461/csc461-fedora34.png" alt="rasterizer running in 2021 on Fedora 34" loading="lazy" width=503 height=377>
         <figcaption>rasterizer on Fedora 34, 2021</figcaption>
     </figure>
 </div>
@@ -46,20 +46,20 @@ The ray tracer is another story.  I didn't even try running it again because wha
         <picture>
           <source srcset="./csc461/test_view.avif" type="image/avif">
           <source srcset="./csc461/test_view.webp" type="image/webp">
-          <img loading="lazy" src="./csc461/test_view.jpg" alt="Expected result">
+          <img loading="lazy" src="./csc461/test_view.jpg" alt="Expected result" width=640 height=480>
         </picture>
         <figcaption>The reference image.  Yes, this is rasterized, not ray traced.  I don't know why.</figcaption>
     </figure>
     <figure>
-        <img src="./csc461/not_right_totally_wrong.png" alt='Imagine with a single pixel rendered, named "not right totally wrong dot png"' loading="lazy" />
+        <img src="./csc461/not_right_totally_wrong.png" alt='Imagine with a single pixel rendered, named "not right totally wrong dot png"' loading="lazy" width=800 height=563 />
         <figcaption>One dot.</figcaption>
     </figure>
     <figure>
-        <img src="./csc461/pass4.png" alt='a few more pixels'  loading="lazy"/>
+        <img src="./csc461/pass4.png" alt='a few more pixels'  loading="lazy" width=800 height=533 />
         <figcaption>A few dots.</figcaption>
     </figure>
     <figure>
-        <img src="./csc461/overnight.png" alt='a speckled approximation of the expected result, named "overnight.png" because it took a ridiculous number of hours to complete' loading="lazy" />
+        <img src="./csc461/overnight.png" alt='a speckled approximation of the expected result, named "overnight.png" because it took a ridiculous number of hours to complete' loading="lazy" width=357 height=262  />
         <figcaption>Closer, but the filename "overnight.png" says it all.</figcaption>
     </figure>
 </div>
@@ -96,7 +96,7 @@ Here are some renders during development, showing the progress.  These renders d
     <picture>
       <source srcset="./raytrace-summary-1613153282.619191059s.ahh-a-nice-sunny-day.jxl" type="image/jxl">
       <source srcset="./raytrace-summary-1613153282.619191059s.ahh-a-nice-sunny-day.webp" type="image/webp">
-      <img loading="lazy" src="raytrace-summary-1613153282.619191059s.ahh-a-nice-sunny-day.jpg" width=400 height=250 alt="" />
+      <img loading="lazy" src="raytrace-summary-1613153282.619191059s.ahh-a-nice-sunny-day.jpg" width=400 height=250 alt="A sky-colored gradient that serves as a background, and a light source." />
     </picture>
     <figcaption>A sky-colored gradient that serves as a background, and a light source.</figcaption>
   </figure>
@@ -104,42 +104,42 @@ Here are some renders during development, showing the progress.  These renders d
     <picture>
       <source srcset="./raytrace-summary-1613154936.045811774s.ahhhh-the-blood-sun.jxl" type="image/jxl">
       <source srcset="./raytrace-summary-1613154936.045811774s.ahhhh-the-blood-sun.webp" type="image/webp">
-      <img loading="lazy" src="raytrace-summary-1613154936.045811774s.ahhhh-the-blood-sun.png" alt="" width=400 height=250/>
+      <img loading="lazy" src="raytrace-summary-1613154936.045811774s.ahhhh-the-blood-sun.png" alt="Sphere intersection, with a solid color." width=400 height=250/>
     </picture>
     <figcaption>Sphere intersection, with a solid color.</figcaption>
   </figure>
   <figure>
     <picture>
       <source srcset="raytrace-summary-1613156168.617724519s.oh-just-noramsl.jxl" type="image/jxl">
-      <img loading="lazy" src="raytrace-summary-1613156168.617724519s.oh-just-noramsl.jpg" alt="" width=400 height=250 />
+      <img loading="lazy" src="raytrace-summary-1613156168.617724519s.oh-just-noramsl.jpg" alt="Sphere intersection, normal vector's XYZ coords used as color." width=400 height=250 />
     </picture>
     <figcaption>Sphere intersection, normal vector's XYZ coords used as color.</figcaption>
   </figure>
   <figure>
     <picture>
       <source srcset="./raytrace-summary-1613660537.637976283s.first-with-bounces-yaaaaaay.jxl" type="image/jxl">
-      <img loading="lazy" src="raytrace-summary-1613660537.637976283s.first-with-bounces-yaaaaaay.jpg" alt="" width=400 height=250  />
+      <img loading="lazy" src="raytrace-summary-1613660537.637976283s.first-with-bounces-yaaaaaay.jpg" alt="Ray bouncing works, very exciting!" width=400 height=250  />
     </picture>
     <figcaption>Ray bouncing works, very exciting!</figcaption>
   </figure>
   <figure>
     <picture>
       <source srcset="./raytrace-summary-1614011092.297087907s.first-hires-render-with-clean-shadows.jxl" type="image/jxl">
-      <img loading="lazy" src="raytrace-summary-1614011092.297087907s.first-hires-render-with-clean-shadows.jpg" alt="" width=630 height=394 />
+      <img loading="lazy" src="raytrace-summary-1614011092.297087907s.first-hires-render-with-clean-shadows.jpg" alt="Gamma corrected and "shadow acne" cleaned up." width=630 height=394 />
     </picture>
     <figcaption>Gamma corrected and "shadow acne" cleaned up.</figcaption>
   </figure>
   <figure>
     <picture>
       <source srcset="./raytrace-summary-1615001082.58049436s.first-hires-reflective.jxl" type="image/jxl">
-      <img loading="lazy" src="raytrace-summary-1615001082.58049436s.first-hires-reflective.jpg" alt="" width=630 height=394  />
+      <img loading="lazy" src="raytrace-summary-1615001082.58049436s.first-hires-reflective.jpg" alt="Mirror reflection." width=630 height=394  />
     </picture>
     <figcaption>Mirror reflection.</figcaption>
   </figure>
   <figure>
     <picture>
       <source srcset="raytrace-summary-1615265789.504205997s.hires-glass-and-fuzz.jxl" type="image/jxl">
-      <img loading="lazy" src="raytrace-summary-1615265789.504205997s.hires-glass-and-fuzz.jpg" width=640 height=400 alt="" />
+      <img loading="lazy" src="raytrace-summary-1615265789.504205997s.hires-glass-and-fuzz.jpg" width=640 height=400 alt="Fuzzy reflective material and dielectric (glass)." />
     </picture>
     <figcaption>Fuzzy reflective material and dielectric (glass).</figcaption>
   </figure>
@@ -147,7 +147,7 @@ Here are some renders during development, showing the progress.  These renders d
   <picture>
     <source srcset="./overnight-equivalent.avif" type="image/avif">
     <source srcset="./overnight-equivalent.webp" type="image/webp">
-    <img src="./overnight-equivalent.jpg" alt='' loading="lazy" width=1200 height=800 />
+    <img src="./overnight-equivalent.jpg" alt='Perspective correction and examples of a variety of materials.' loading="lazy" width=1200 height=800 />
   </picture>
   <figcaption>Perspective correction and examples of a variety of materials.  View a <a target=_blank href="./raytrace-1616443426.236519189s-hires.jpg">hi-res original</a>.</figcaption>
   </figure>
@@ -236,10 +236,10 @@ And a special shout out to the Rust community at Red Hat for patiently fielding 
 The next step for the ray tracer is to compile it to WebAssembly so it can be demoed here on this very blog. [wasm-pack](https://rustwasm.github.io/wasm-pack/book/introduction.html) makes this easy, but I will have to do some refactoring.  For example generic types aren't supported by [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/), so I'll have to remove all the generics I so painstakingly included.  It's no big loss; my hobby ray tracer doesn't _need_ generic numbers.  The value is in the learning, not in the having.
 
 <figure>
-<picture>
-  <source srcset="./wasm-ferris.avif" type="image/avif">
-  <img style="max-width: 400px" width="600" loading="lazy" height="378" src="./wasm-ferris.png" alt="wasm-pack logo" />
-</picture>
+  <picture>
+    <source srcset="./wasm-ferris.avif" type="image/avif">
+    <img style="max-width: 400px" width="600" loading="lazy" height="378" src="./wasm-ferris.png" alt="wasm-pack logo" />
+  </picture>
 </figure>
 
 The next thing I'd like to add parallelism, either with threads, SIMD, or both.  Rust promises "fearless concurrency", but I'm _still afraid_.  Or maybe it will be as simple as changing every `Rc` to `Arc`. 🌝
