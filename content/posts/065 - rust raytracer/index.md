@@ -39,7 +39,7 @@ I dusted off my graphics projects from the class.  To my surprise, despite being
 
 It looks like the program grew a few artifacts in the intervening 12 years.  Bit rot, I guess. I'm just impressed that it ran at all, having been written on another distro, 12 years prior, by a complete novice at C++.
 
-The ray tracer is another story.  I didn't even try running it again because what I _did_ write was horribly inefficient.  Here are some screenshots for evidence.
+The ray tracer is another story.  I didn't even try running it again because what I _did_ write was horribly inefficient.  Here are some screenshots for evidence of my flailing on that project.
 
 <div class="beside">
     <figure>
