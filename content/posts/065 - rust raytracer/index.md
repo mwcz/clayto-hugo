@@ -78,7 +78,7 @@ Next, I dug through my bookmarks for [Ray Tracing in One Weekend](https://raytra
 
 ## The Colorful Parts
 
-Long story short, I completed a Rust implementation of the first book of Peter Shirley's series.  The result is a ray tracer with a movable camera, sphere intersection, three materials (diffuse, reflective, and glass), antialiasing, and bokeh.
+Long story short, I completed a Rust implementation of the first book of Peter Shirley's series.  The code is at [rust-raytracer-weekend](https://github.com/mwcz/rust-raytracer-weekend).  The result is a ray tracer with a movable camera, sphere intersection, three materials (diffuse, reflective, and glass), antialiasing, and bokeh.
 
 I learned a lot and had a blast, and it took way longer than one weekend.  I call it: **Ray Tracing in Eleven Weekends**
 
