@@ -44,6 +44,7 @@
             {{ end }}
             <img
               class="glass-card-bg glass-card-bg-{{ index $.Params "thumbpos" | default "default" }}"
+              loading="lazy"
               alt="thumbnail for '{{ .Title }}'"
               src="{{ $.RelPermalink }}{{ $.Scratch.Get "fallbackThumb" }}">
           </picture>

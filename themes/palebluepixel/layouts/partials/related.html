@@ -9,7 +9,7 @@
     <li>
       {{ if .Params.thumbnail }}
       <a href="{{ .Permalink }}">
-        <img src="{{ .Permalink }}{{ .Params.thumbnail }}" alt="thumbnail for blog post '{{ .Title }}'">
+        <img loading="lazy" src="{{ .Permalink }}{{ .Params.thumbnail }}" alt="thumbnail for blog post '{{ .Title }}'">
         <span>{{ .Title }}</span>
       </a>
       {{ end }}
