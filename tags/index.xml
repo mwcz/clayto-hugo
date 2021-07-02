@@ -6,7 +6,43 @@
     <description>Recent content in Tags on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jul 2019 15:11:23 -0400</lastBuildDate><atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Feb 2021 22:38:50 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3d</title>
+      <link>https://clayto.com/tags/3d/</link>
+      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/3d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://clayto.com/tags/programming/</link>
+      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ray-tracing</title>
+      <link>https://clayto.com/tags/ray-tracing/</link>
+      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/ray-tracing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://clayto.com/tags/rust/</link>
+      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/rust/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>javascript</title>
       <link>https://clayto.com/tags/javascript/</link>
@@ -103,15 +139,6 @@
       <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://clayto.com/tags/programming/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/programming/</guid>
       <description></description>
     </item>
     
@@ -247,15 +274,6 @@
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/webgl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>3d</title>
-      <link>https://clayto.com/tags/3d/</link>
-      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/3d/</guid>
       <description></description>
     </item>
     

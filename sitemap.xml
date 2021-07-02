@@ -2,19 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://clayto.com/tags/3d/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/categories/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/</loc>
-    <lastmod>2019-07-25T15:11:23-04:00</lastmod>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/posts/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/tags/programming/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/tags/ray-tracing/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/rust/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/tags/rust/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/tags/</loc>
+    <lastmod>2021-02-08T22:38:50-05:00</lastmod>
   </url><url>
     <loc>https://clayto.com/tags/javascript/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
   </url><url>
     <loc>https://clayto.com/tags/patternfly/</loc>
-    <lastmod>2019-07-25T15:11:23-04:00</lastmod>
-  </url><url>
-    <loc>https://clayto.com/posts/</loc>
-    <lastmod>2019-07-25T15:11:23-04:00</lastmod>
-  </url><url>
-    <loc>https://clayto.com/tags/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
   </url><url>
     <loc>https://clayto.com/tags/web/</loc>
@@ -56,17 +77,11 @@
     <loc>https://clayto.com/tags/open-source/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clayto.com/tags/programming/</loc>
-    <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://clayto.com/tags/audio/</loc>
     <lastmod>2019-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora/</loc>
     <lastmod>2019-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clayto.com/categories/</loc>
-    <lastmod>2017-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clayto.com/games/</loc>
     <lastmod>2017-10-07T00:00:00+00:00</lastmod>
@@ -127,9 +142,6 @@
   </url><url>
     <loc>https://clayto.com/tags/webgl/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clayto.com/tags/3d/</loc>
-    <lastmod>2017-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clayto.com/demos/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
