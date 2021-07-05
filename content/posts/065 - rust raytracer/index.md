@@ -236,7 +236,7 @@ And a special shout out to the Rust community at Red Hat for patiently fielding 
 
 ## The Next Parts
 
-The next step for the ray tracer is to compile it to WebAssembly so it can be demoed here on this very blog. [wasm-pack](https://rustwasm.github.io/wasm-pack/book/introduction.html) makes this easy, but I will have to do some refactoring.  For example generic types aren't supported by [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/), so I'll have to remove all the generics I so painstakingly included.  It's no big loss; my hobby ray tracer doesn't _need_ generic numbers.  The value is in the learning, not in the having.
+The next step for the ray tracer is to compile it to WebAssembly so it can be demoed here on this very blog. [wasm-pack](https://rustwasm.github.io/wasm-pack/book/introduction.html) makes this easy, but I will have to do some light refactoring.  _Correction_: previously this paragraph stated that wasm-bindgen did not support generic types, but that's misleading.  [u/FruitieX](https://www.reddit.com/user/FruitieX/) shared [a correction][generic-correction]: generics are only unsupported in the things sit on the wasm/JS boundary.  For example, if a struct or a function are internal to the program and don't need to be called from JS, they can make full use of generics.  Just don't `#[wasm_bindgen]` them.  Thanks for the correction!
 
 <figure>
   <picture>
@@ -250,3 +250,5 @@ The next thing I'd like to add parallelism, either with threads, SIMD, or both. 
 Beyond the ray tracer, the next step for me on my Rust journey is to understand [lifetime annotations](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-annotation-syntax) which came up several times during this project.  The compiler led me to a solution each time, but I didn't really understand the meaning of the syntax.
 
 Until next time!
+
+[generic-correction]: https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&utm_medium=web2x&context=3
