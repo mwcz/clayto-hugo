@@ -6,7 +6,16 @@
     <description>Recent content on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Feb 2021 22:38:50 -0500</lastBuildDate><atom:link href="https://clayto.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jul 2021 23:57:49 -0400</lastBuildDate><atom:link href="https://clayto.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Raytracer to WebAssembly</title>
+      <link>https://clayto.com/2021/07/rust-raytracer-to-webassembly/</link>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      
+      <guid>https://clayto.com/2021/07/rust-raytracer-to-webassembly/</guid>
+      <description>took a cruise through prng packages. from rand, to wyhash+rand_core, to pure getrandom, and back to rand. might revisit wyhash later for performance, or pregenerate a list of random numbers (if it doesn&amp;rsquo;t bulk up .wasm filesize too much). returning Vec&amp;lt;Vec3&amp;gt; didn&amp;rsquo;t work, flattened to Vec, it was easier than  could have read more about js-sys to figure out how to return a uin8clampedarray, but just wanted to get it working.</description>
+    </item>
+    
     <item>
       <title>Shaking Off the Rust 1: Ray Tracing in One Weekend</title>
       <link>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</link>
