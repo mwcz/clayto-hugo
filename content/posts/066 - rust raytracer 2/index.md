@@ -12,6 +12,7 @@ Tags:
 description: "The work of preparing my Rust ray tracer for WebAssembly."
 thumbnail: thumb.jpg
 mwc: 65
+draft: true
 ---
 
  - took a cruise through prng packages.  from rand, to wyhash+rand_core, to pure getrandom, and back to rand. might revisit wyhash later for performance, or pregenerate a list of random numbers (if it doesn't bulk up .wasm filesize too much).
