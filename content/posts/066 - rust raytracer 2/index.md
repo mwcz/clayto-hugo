@@ -55,10 +55,13 @@ draft: true
    - after lazy_static and lehmer prng optimization, the time budget is dominated by the Sphere::hit detection, at 45% of runing time.  Ray::color is second at 19%, and lehmer prng is third at 18% (which is almost entirely mutex lock/unlock).  I'm curious to see how this compares to the native performance profile. (from ./profile-showing-mutex-cost we can see it's very similar).
  - for this post I tried something new which should have been obvious: keeping the notes open while working on the project and jotting.  typically I have two tmux panes open, one for nvim and one for running the program.  bumped it up to three.
  - I wanted to preload the resources, but when using modulepreload, the browser didn't like that some of the modules weren't used in the first few seconds.  additionally, wasm files can't be preloaded with link rel=preload.  my workaround to flatten the waterfall was simply to import() the modules and fetch() the wasm immediately.   importing didn't work well because it would execute the modules too, leading to double execution.  so I wound up fetching everything I needed to preload.
+ - have a problem with my numbers here.  my earlier numbers, while evaluating 12-60s wasm slowdown due to rand, were run with quality at 100/66, 4 samples, depth 2, and my later numbers (benchmarks mostly, but also the flamegraphs) were at 300/200, 10 samples, depth 3.  I'll have to re-do something to make the numbers track throughout the blog post.  I think the best I can do is re-do the latest benchmarks at the lower quality.  the flamegraphs don't contain aboslute numbers, and all the measurements in question scale linearly with each other, so they should still be very accurate.
 
 ## Native performance on long-running box
 
  - 399.2 ms ±   4.3 ms
+
+captured over 30 runs with hyperfine.
 
 ```sh
 $ hyperfine --warmup 3 './cli' -m 30
@@ -71,4 +74,6 @@ Benchmark #1: ./cli
 
  - 452.05 ± 10.85
 
-captured with devtools profiling, which seemed to be far more accurate than console.time and much more accurate than performance.now() subtraction.
+captured over 30 runs with devtools profiling, which seemed to be far more accurate than console.time and much more accurate than performance.now() subtraction.
+
+13% slower than native.  not too shabby!
