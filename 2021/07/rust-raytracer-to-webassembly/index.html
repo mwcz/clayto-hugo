@@ -146,7 +146,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    2 minute read
+    6 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -196,12 +196,51 @@ demangle-name-section = true
 <li>both are crazy fast but lehmer seems faster.</li>
 <li>idea: try the above with u64 instead.  security is not needed here, speed is priority.</li>
 <li>idea: try to parallelize the rng.  both lehmer and wyhash update the seed in one step, which must be synchronized, but after the seed update, the rest of the algorithm can be par.</li>
+<li>idea: try wyhash crate again instead of reimplementing it.</li>
+<li>whether I impl wyhash or use the crate, I&rsquo;ll need to convert uint to float in [0..1).
+<ul>
+<li>n = wyhash(starting_seed)</li>
+<li>f(n) =&gt; n / mag( n )</li>
+<li>mag(n) =&gt; int( log10( n )+1 )</li>
 </ul>
 </li>
-<li></li>
+<li>implementing lehmer.  needed to allow integer overflow for u128.  discovered <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a>.</li>
+<li>lazy_static worked for shared mut u128.  lehmer worked for prng.  Wrapping with &raquo; worked for bit shift.  dividing by 2^64 worked for converting to float.  result: ~325ms, or 2.5x faster.  I expected 160ms, 5x faster.</li>
+<li>floatuntidf (128-bit int support) is taking 18.5% of the time.  according to <a href="https://github.com/rust-lang/compiler-builtins">compiler-buildins</a> it&rsquo;s a c library in the process of being ported to rust.  try using u64 instead of u128. result: runs in 180ms, really close to the 5x improvement that I expected after removing <code>rand</code>!</li>
+<li>I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  very bad image quality.  going back to lehmer.</li>
+<li>now native is only marginally faster than wasm&hellip;</li>
+<li>WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost</li>
+<li>
+<h2 id="www-web-workers-work--trying-to-make-an-accurate-spinner-but-the-wasm-locks-up-the-main-thread-so-im-going-to-try-putting-it-in-a-web-worker--module-worker-specifically--module-worker-worked">WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I&rsquo;m going to try putting it in a web worker.  module worker, specifically.  module worker worked.</h2>
+<ul>
+<li>except in Firefox, which doesn&rsquo;t support module workers.  the worker runs, but can&rsquo;t import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can&rsquo;t tick up anymore because the  main thread is blocked, so I add a message to indicate what&rsquo;s happening.</li>
 </ul>
 </li>
+<li>thank goodnessImageData is a supported type to pass to/from Web Workers: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm</a></li>
 </ul>
+</li>
+<li>after lazy_static and lehmer prng optimization, the time budget is dominated by the Sphere::hit detection, at 45% of runing time.  Ray::color is second at 19%, and lehmer prng is third at 18% (which is almost entirely mutex lock/unlock).  I&rsquo;m curious to see how this compares to the native performance profile. (from ./profile-showing-mutex-cost we can see it&rsquo;s very similar).</li>
+</ul>
+</li>
+<li>for this post I tried something new which should have been obvious: keeping the notes open while working on the project and jotting.  typically I have two tmux panes open, one for nvim and one for running the program.  bumped it up to three.</li>
+<li>I wanted to preload the resources, but when using modulepreload, the browser didn&rsquo;t like that some of the modules weren&rsquo;t used in the first few seconds.  additionally, wasm files can&rsquo;t be preloaded with link rel=preload.  my workaround to flatten the waterfall was simply to import() the modules and fetch() the wasm immediately.   importing didn&rsquo;t work well because it would execute the modules too, leading to double execution.  so I wound up fetching everything I needed to preload.</li>
+<li>have a problem with my measurements here.  my earlier numbers, while evaluating 12-60s wasm slowdown due to rand, were run with quality at 100/66, 4 samples, depth 2, and my later numbers (benchmarks mostly, but also the flamegraphs) were at 300/200, 10 samples, depth 3.  I&rsquo;ll have to re-do something to make the numbers track throughout the blog post.  I think the best I can do is re-do the latest benchmarks at the lower quality.  the flamegraphs don&rsquo;t contain aboslute numbers, and all the measurements in question scale linearly with each other, so they should still be very accurate.</li>
+</ul>
+<h2 id="native-performance-on-long-running-box">Native performance on long-running box</h2>
+<ul>
+<li>399.2 ms ±   4.3 ms</li>
+</ul>
+<p>captured over 30 runs with hyperfine.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ hyperfine --warmup <span style="color:#ae81ff">3</span> <span style="color:#e6db74">&#39;./cli&#39;</span> -m <span style="color:#ae81ff">30</span>
+Benchmark <span style="color:#75715e">#1: ./cli</span>
+  Time <span style="color:#f92672">(</span>mean ± σ<span style="color:#f92672">)</span>:     399.2 ms ±   4.3 ms    <span style="color:#f92672">[</span>User: 397.0 ms, System: 1.3 ms<span style="color:#f92672">]</span>
+  Range <span style="color:#f92672">(</span>min … max<span style="color:#f92672">)</span>:   395.2 ms … 413.0 ms    <span style="color:#ae81ff">30</span> runs
+</code></pre></div><h2 id="wasm-performance-on-long-running-box">WASM performance on long-running box</h2>
+<ul>
+<li>452.05 ± 10.85</li>
+</ul>
+<p>captured over 30 runs with devtools profiling, which seemed to be far more accurate than console.time and much more accurate than performance.now() subtraction.</p>
+<p>13% slower than native.  not too shabby!</p>
 
   </section>
   <footer>

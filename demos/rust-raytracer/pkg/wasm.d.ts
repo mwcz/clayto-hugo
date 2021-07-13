@@ -1,6 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+* Example render.
 * @returns {Uint8Array}
 */
 export function render(): Uint8Array;
@@ -12,7 +13,6 @@ export interface InitOutput {
   readonly render: (a: number) => void;
   readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_free: (a: number, b: number) => void;
-  readonly __wbindgen_exn_store: (a: number) => void;
 }
 
 /**
