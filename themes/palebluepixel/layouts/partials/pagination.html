@@ -1,13 +1,6 @@
 <nav
   class="pbp-pagination"
   aria-label="Pagination Navigation"
-  style="
-  {{ if eq 1 (div (float .PageNumber) .TotalPages) }}
-  --pagination-percentage-border-color: #f1f1f1;
-  {{ end }}
-  --pagination-progress: {{ div (float .PageNumber) .TotalPages }}fr;
-  --pagination-remaining: {{ sub 1 (div (float .PageNumber) .TotalPages) }}fr;
-  "
 >
   <div class="pbp-pagination-layout">
     <div>
@@ -27,7 +20,7 @@
 
 {{ if .HasNext }}
 <section class="pbp-infscr">
-  <button class="pbp-infscr-more">LOAD MORE POSTS</button>
+  <button class="pbp-infscr-more">LOAD MORE...</button>
   <div class="pbp-infscr-load-status" style="display: none">
     <p class="infinite-scroll-request">Loading...</p>
     <p class="infinite-scroll-last">End of content</p>
@@ -39,14 +32,14 @@
       const infScroll = new InfiniteScroll(".pbp-article-list", {
         // options
         path: ".pbp-pagination [rel=prev]",
-        append: ".pbp-article-li",
+        append: ".pbp-article-loadmore",
         history: "replace",
         hideNav: ".pbp-pagination",
         scrollThreshold: false,
         button: ".pbp-infscr-more",
         status: ".pbp-infscr-load-status",
         checkLastPage: true,
-        debug: false
+        debug: true
       });
     </script>
     {{ end }}

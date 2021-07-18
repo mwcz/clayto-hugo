@@ -1,4 +1,4 @@
-<article class="pbp-article-li vertical">
+<article class="pbp-article-li pbp-article-loadmore vertical">
   <h2 class="pbp-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
   <div class="pbp-article-summary">
     <section>
@@ -17,7 +17,11 @@
   {{ if .Params.thumbnail }}
   <a tabindex="-1" class="pbp-article-thumbnail" href="{{ .Permalink }}">
     <div class="pbp-article-thumbnail">
+      {{ if $.Param "palette1" }}
+      <div class="glass-card" style="--glass-color: {{ $.Param "palette1" }}">
+      {{ else }}
       <div class="glass-card">
+      {{ end }}
         <div class="glass-card-ratio">
           <picture>
             {{ $.Scratch.Set "thumbs" (split .Params.thumbnail " ") }}

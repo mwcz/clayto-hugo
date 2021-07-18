@@ -1,6 +1,8 @@
 {{ partial "header.html" . }}
 <section>
+{{ if not (eq .Page.Type "photos") }}
 <h2>{{ .Title }}</h2>
+{{ end }}
 
 <p class="pbp-category-desc">
 
@@ -16,12 +18,23 @@ I don't think these qualify for the illustrious <a href="http://curio.scene.org/
 
 </section>
 
+
 <section class="pbp-article-list">
-{{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts") .Site.Params.paginate).Pages }}
-{{ if ne $index 0 }}
+
+{{ if eq .Page.Type "photos" }}
+  {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "photos") .Site.Params.paginate).Pages }}
+    {{ if ne $index 0 }}
+    {{ end }}
+    {{ .Render "li-photo" }}
+  {{ end }}
+{{ else }}
+  {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "photos") .Site.Params.paginate).Pages }}
+    {{ if ne $index 0 }}
+    {{ end }}
+    {{ .Render "li" }}
+  {{ end }}
 {{ end }}
-{{ .Render "li" }}
-{{ end }}
+
 </section>
 {{ partial "pagination.html" .Paginator }}
 {{ partial "footer.html" . }}
