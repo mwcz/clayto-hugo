@@ -168,7 +168,7 @@
 <p>In the 16 years since, I&rsquo;ve been working happily in web development, but I&rsquo;ve started to lament losing touch with lower-level, nearer-metal (🤘) programming which captured my interest so much in college.</p>
 <p>When I learned that my favorite CS lecturer, Dana Lasher, retired recently, I decided to start a fun side project in honor of him and the inspiration he gave me.</p>
 <hr>
-<h2 id="choosing-a-project">Choosing a project</h2>
+<h2 id="redemption">Redemption?</h2>
 <p>But what to do?  After some thought, there was only one choice: finish the ray tracer.</p>
 <p>I dusted off my graphics projects from the class.  To my surprise, despite being compiled on Linux Mint in 2009, the rasterizer binary still ran on Fedora 34 in 2021!</p>
 <div class="beside">
@@ -328,7 +328,7 @@
 <p>And that&rsquo;s why numeric traits don&rsquo;t exist in the Rust standard library.</p>
 <p>During this discussion it occurred to me that there could potentially be a name conflict between a function in a struct&rsquo;s impl, and a trait function implemented for that struct.  I asked Josh about this as well, and the discusison led to some <a href="https://doc.rust-lang.org/reference/expressions/call-expr.html#disambiguating-function-calls">docs on disambiguating function calls</a>.  He said that while there is some chance for name conflicts, it&rsquo;s generally not considered a breaking change because of the low liklihood, whereas adding a trait function without a default impl is guaranteed to break the builds of your users.</p>
 <hr>
-<h2 id="the-wordy-parts">The Wordy Parts</h2>
+<h2 id="the-helpful-parts">The Helpful Parts</h2>
 <p>This was a really fun project, and I could go on about what I learned for another hundred pages.  I learned a lot, got stuck a lot, got familiar with the outstanding Rust resources on offer (especially <a href="https://doc.rust-lang.org/book/">The Book</a> and <a href="https://github.com/rust-lang/rustlings">Rustlings</a>). I discovered <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">Jon Gjengset&rsquo;s truly excellent videos</a> too late for this project, but I&rsquo;m happily consuming them now.  He&rsquo;s a great educator.</p>
 <p>This post was mostly about Rust, but the ray tracing side of the project was equally fun.  I can&rsquo;t recommend <a href="https://raytracing.github.io/">Ray Tracing in One Weekend</a> highly enough, it&rsquo;s a really accessible step-by-step guide through the principles of ray tracing.  It is <em>so exciting</em> seeing something render for the first time.</p>
 <p>And a special shout out to the Rust community at Red Hat for patiently fielding my questions even though I&rsquo;m quite sure they had better things to do!</p>
@@ -338,7 +338,7 @@
 <figure>
   <picture>
     <source srcset="./wasm-ferris.avif" type="image/avif">
-    <img style="max-width: 400px" width="600" loading="lazy" height="378" src="./wasm-ferris.png" alt="wasm-pack logo" />
+    <img width="400" loading="lazy" height="252" src="./wasm-ferris.png" alt="wasm-pack logo" />
   </picture>
 </figure>
 <p>The next thing I&rsquo;d like to add parallelism, either with threads, SIMD, or both.  Rust promises &ldquo;fearless concurrency&rdquo;, but I&rsquo;m <em>still afraid</em>.  Or maybe it will be as simple as changing every <code>Rc</code> to <code>Arc</code>. 🌝</p>

@@ -225,6 +225,17 @@ demangle-name-section = true
 <li>for this post I tried something new which should have been obvious: keeping the notes open while working on the project and jotting.  typically I have two tmux panes open, one for nvim and one for running the program.  bumped it up to three.</li>
 <li>I wanted to preload the resources, but when using modulepreload, the browser didn&rsquo;t like that some of the modules weren&rsquo;t used in the first few seconds.  additionally, wasm files can&rsquo;t be preloaded with link rel=preload.  my workaround to flatten the waterfall was simply to import() the modules and fetch() the wasm immediately.   importing didn&rsquo;t work well because it would execute the modules too, leading to double execution.  so I wound up fetching everything I needed to preload.</li>
 <li>have a problem with my measurements here.  my earlier numbers, while evaluating 12-60s wasm slowdown due to rand, were run with quality at 100/66, 4 samples, depth 2, and my later numbers (benchmarks mostly, but also the flamegraphs) were at 300/200, 10 samples, depth 3.  I&rsquo;ll have to re-do something to make the numbers track throughout the blog post.  I think the best I can do is re-do the latest benchmarks at the lower quality.  the flamegraphs don&rsquo;t contain aboslute numbers, and all the measurements in question scale linearly with each other, so they should still be very accurate.</li>
+<li>just noticed that I&rsquo;m using Rc which is from <code>std</code>.  try to find an alternative that isn&rsquo;t from <code>std</code>, and see what size implications are.
+<ul>
+<li>trying to remove everything from std, there&rsquo;s more than I thought</li>
+<li>trying out <a href="https://crates.io/crates/simple-mutex">https://crates.io/crates/simple-mutex</a> and <a href="https://crates.io/crates/spin-sync">https://crates.io/crates/spin-sync</a>
+<ul>
+<li>sold on spin-sync.  it&rsquo;s 2kB smaller than std sync, and makes the whole program 22% faster!</li>
+</ul>
+</li>
+<li>trying to replace Rc with wrc.  didn&rsquo;t have the time, really.  Rc is everywhere.</li>
+</ul>
+</li>
 </ul>
 <h2 id="native-performance-on-long-running-box">Native performance on long-running box</h2>
 <ul>
