@@ -20,7 +20,7 @@ When I learned that my favorite CS lecturer, Dana Lasher, retired recently, I de
 
 ---
 
-## Choosing a project
+## Redemption?
 
 But what to do?  After some thought, there was only one choice: finish the ray tracer.
 
@@ -224,7 +224,7 @@ During this discussion it occurred to me that there could potentially be a name 
 
 ---
 
-## The Wordy Parts
+## The Helpful Parts
 
 This was a really fun project, and I could go on about what I learned for another hundred pages.  I learned a lot, got stuck a lot, got familiar with the outstanding Rust resources on offer (especially [The Book](https://doc.rust-lang.org/book/) and [Rustlings](https://github.com/rust-lang/rustlings)). I discovered [Jon Gjengset's truly excellent videos](https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ) too late for this project, but I'm happily consuming them now.  He's a great educator.
 
@@ -241,7 +241,7 @@ The next step for the ray tracer is to compile it to WebAssembly so it can be de
 <figure>
   <picture>
     <source srcset="./wasm-ferris.avif" type="image/avif">
-    <img style="max-width: 400px" width="600" loading="lazy" height="378" src="./wasm-ferris.png" alt="wasm-pack logo" />
+    <img width="400" loading="lazy" height="252" src="./wasm-ferris.png" alt="wasm-pack logo" />
   </picture>
 </figure>
 
