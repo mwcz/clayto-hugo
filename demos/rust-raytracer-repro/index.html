@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rust/wasm raytracer devtools slowdown repro</title>
+
+    <style type="text/css" media="screen">
+      body {
+        background-color: #1f1f1f;
+        color: #f1f1f1;
+      }
+      canvas { display: none; }
+      img {
+        width: 500px;
+        max-width: 100%;
+          height: auto;
+        aspect-ratio: 3/2;
+        /* height:  calc(66px * 3); */
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-crisp-edges;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      p { max-width: 500px }
+    </style>
+  </head>
+  <body>
+    <p>This demo reproduces some strange WebAssembly performance behavior in Chrome.  When Render is clicked, the wasm module runs at a certain speed, let's call it 1x.  But if you open devtools (just the console, for example), and click Render again, it will run at ~2x speed.  It's unclear why.  Perhaps the strangest thing is that if you start the devtools profiler, then click Render, it runs at 1x speed!</p>
+    <canvas width=500 height=333></canvas>
+    <img width=500 height=333 class="zoomable">
+    <br>
+    <button disabled>Render</button>
+    <br>
+    <ol reversed id="timers"></ol>
+    <script type=module>
+      import("./out/wasm-app.js");
+    </script>
+  </body>
+</html>
