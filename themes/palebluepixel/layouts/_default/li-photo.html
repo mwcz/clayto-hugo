@@ -1,0 +1,67 @@
+<article class="pbp-article-loadmore vertical">
+  <!-- <h2 class="pbp-article-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2> -->
+  <!-- <div class="pbp-article-summary"> -->
+  <!--   <section> -->
+  <!--     {{ if .Description }} -->
+  <!--       {{ .Description | markdownify }} -->
+  <!--     {{ else }} -->
+  <!--       {{ .Summary | plainify | safeHTML }} -->
+  <!--     {{ end }} -->
+  <!--   </section> -->
+  <!-- </div> -->
+  <!-- <div class="pbp-article-meta"> -->
+  <!--   <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}"> -->
+  <!--     {{ .Date.Format "Jan 2, 2006" }} -->
+  <!--   </time> -->
+  <!-- </div> -->
+  {{ if .Params.thumbnail }}
+  <a tabindex="-1" class="pbp-article-thumbnail" href="{{ .Permalink }}">
+    <div class="pbp-article-thumbnail">
+      {{ if $.Param "palette1" }}
+      <div class="glass-card" style="--glass-color: {{ $.Param "palette1" }}">
+      {{ else }}
+      <div class="glass-card">
+      {{ end }}
+        <div class="glass-card-ratio">
+          <picture>
+            {{ $.Scratch.Set "thumbs" (split .Params.thumbnail " ") }}
+            {{ $.Scratch.Set "fallbackThumb" ( index (last 1 ($.Scratch.Get "thumbs")) 0 ) }}
+            {{ range $index, $thumb := ($.Scratch.Get "thumbs") }}
+               {{ if not (eq $thumb ($.Scratch.Get "fallbackThumb")) }}
+            <source
+              class="glass-card-bg glass-card-bg-{{ index $.Params "thumbpos" | default "default" }}"
+              {{ if eq (last 5 $thumb) ".webp" }}
+              type="image/webp"
+              {{ else if eq (last 5 $thumb) ".apng" }}
+              type="image/apng"
+              {{ else if eq (last 4 $thumb) ".png" }}
+              type="image/png"
+              {{ else if eq (last 4 $thumb) ".gif" }}
+              type="image/gif"
+              {{ else if eq (last 4 $thumb) ".jpg" }}
+              type="image/jpeg"
+              {{ else if eq (last 5 $thumb) ".jpeg" }}
+              type="image/jpeg"
+              {{ end }}
+              srcset="{{ $.RelPermalink }}{{ $thumb }}">
+              {{ end }}
+            {{ end }}
+            <img
+              class="glass-card-bg glass-card-bg-{{ index $.Params "thumbpos" | default "default" }}"
+              loading="lazy"
+              alt="thumbnail for '{{ .Title }}'"
+              src="{{ $.RelPermalink }}{{ $.Scratch.Get "fallbackThumb" }}">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          <!-- <div class="glass-card-cite"> -->
+          <!--     <img class="glass-card-author-img" src="https://pbs.twimg.com/profile_images/504363485363318785/it9hd5ae_400x400.jpeg"> -->
+          <!--     <p class="glass-card-author">Michael Clayton</p> -->
+          <!--     <p class="glass-card-date">Dec 14</p> -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </a>
+  {{ end }}
+</article>

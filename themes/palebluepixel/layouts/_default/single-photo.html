@@ -1,0 +1,64 @@
+{{ if ($.Param "palette0") }}
+<style type="text/css" media="screen">
+body {
+  --pbp-bg-color: {{ $.Param "palette0" }};
+}
+</style>
+{{ end }}
+
+<article class="pbp-article pbp-article-photo">
+
+  <section>
+    <div class="glass-card" style="--glass-color: {{ $.Param "palette1" }}">
+      <div class="glass-card-ratio">
+            <img
+              class="glass-card-bg glass-card-bg-{{ index $.Params "thumbpos" | default "default" }}"
+              alt="thumbnail for '{{ .Title }}'"
+              src="{{ $.Param "image" }}">
+        <div class="glass-card-border-outer"></div>
+        <div class="glass-card-border-inner"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="pbp-fullwidth">
+  <div class="pbp-article-meta">
+    {{ if ($.Param "snapdate") }}
+    <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      Snapped {{ dateFormat "Jan 2, 2006" ($.Param "snapdate") }}
+    </time>
+    <span class="pbp-blue">&middot;</span>
+    {{ end }}
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+      Published {{ .Date.Format "Jan 2, 2006" }}
+    </time>
+
+    <br>
+    <br>
+
+    <a href="{{ .Site.BaseURL }}/photos">&larr; more photos</a>
+  </div>
+  </footer>
+
+  {{/* footer disabled for now, I have no styling for it nor any real need for it.
+  <footer>
+    <nav>
+      <div>
+        <div>
+          {{ if .PrevInSection }}
+          <a href="{{ .PrevInSection.Permalink }}">Newer</a>
+          {{ else }}
+          {{ end }}
+        </div>
+        <div>
+          {{ if .NextInSection }}
+          <a href="{{ .NextInSection.Permalink }}">Older</a>
+          {{ else }}
+          {{ end }}
+        </div>
+      </div>
+    </nav>
+  </footer>
+  */}}
+</article>

@@ -1,82 +1,10 @@
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL | sanitizeurl }}
-<article class="pbp-article">
 
-  <header>
-    <h1>{{ .Title }}</h1>
-  </header>
+{{ if eq .Page.Type "posts" }}
+  {{ .Render "single-post" }}
+{{ else if eq .Page.Type "photos" }}
+  {{ .Render "single-photo" }}
+{{ end }}
 
-  {{ with .Params.hero }}
-  <figure class="pbp-post-hero">
-    <img src="{{ . }}">
-  </figure>
-  {{ end }}
-
-  <div class="pbp-article-meta">
-    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-      {{ .Date.Format "Jan 2, 2006" }}
-    </time>
-    {{ if not (eq .Lastmod .Date) }}
-    <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-      (updated {{ .Lastmod.Format "Jan 2, 2006" }})
-    </time>
-    {{ end }}
-    <span class="pbp-blue">&middot;</span>
-    {{ .Page.ReadingTime }} minute read
-    <br>
-    <span class="pbp-article-tags">
-      {{ range .Params.tags }}
-      <a href="/tags/{{ . | urlize }}" class="c-tag">#{{ . }}</a>
-      {{ end }}
-    </span>
-  </div>
-
-  {{/*
-  {{ with .Params.thumbnail }}
-    <img src="{{ . }}" alt="thumbnail">
-  {{ end }}
-  */}}
-  <!--
-  -->
-  <section>
-    {{ .Content }}
-  </section>
-  <footer>
-
-    {{ with .Site.Params.disqus }}
-    <div id="disqus_thread"></div>
-    <script>
-    var disqus_shortname = '{{ . }}';
-    (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    {{ end }}
-
-    {{/*
-    <nav>
-      <div>
-        <div>
-          {{ if .Prev }}
-          <a href="{{ .Prev.Permalink }}">Newer</a>
-          {{ else }}
-          {{ end }}
-        </div>
-        <div>
-          {{ if .Next }}
-          <a href="{{ .Next.Permalink }}">Older</a>
-          {{ else }}
-          {{ end }}
-        </div>
-      </div>
-    </nav>
-    */}}
-
-    {{ partial "related.html" . }}
-  </footer>
-</article>
 {{ partial "footer.html" . }}
