@@ -9,4 +9,4 @@ echo creating post $POST_PATH
 
 hugo new "$POST_PATH"
 
-vim "content/$POST_PATH"
+nvim "content/$POST_PATH"
