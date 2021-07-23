@@ -170,8 +170,19 @@
   
   
   <section>
-    <h2 id="what-and-why">What and why</h2>
+    <script async type="module" src="./rtw-render/dist/rtw-render.js"></script>
+<h2 id="what-and-why">What and why</h2>
+<p>My <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a> covered writing a ray-tracer in Rust.  This post covers getting that ray-tracer running in WebAssembly.</p>
 <h2 id="how-it-went">How it went</h2>
+<style>
+rtw-render {
+  --rtw-background-color: var(--pbp-bg-color);
+
+  border: 1px solid var(--pbp-fg-color);
+  width: 100%;
+}
+</style>
+<p><rtw-render></rtw-render></p>
 <h3 id="performance">Performance</h3>
 <h2 id="whats-next">What&rsquo;s next</h2>
 <ul>

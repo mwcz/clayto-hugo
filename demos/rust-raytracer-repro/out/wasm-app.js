@@ -1,6 +1,6 @@
 var __defProp = Object.defineProperty;
 var __markAsModule = (target2) =>
-  __defProp(target2, "__esModule", { value: true });
+  __defProp(target2, "__esModule", {value: true});
 var __esm = (fn, res) =>
   function __init() {
     return fn && (res = (0, fn[Object.keys(fn)[0]])((fn = 0))), res;
@@ -8,7 +8,7 @@ var __esm = (fn, res) =>
 var __export = (target2, all) => {
   __markAsModule(target2);
   for (var name in all)
-    __defProp(target2, name, { get: all[name], enumerable: true });
+    __defProp(target2, name, {get: all[name], enumerable: true});
 };
 
 // pkg/wasm.js
@@ -67,7 +67,7 @@ async function load(module, imports) {
   } else {
     const instance = await WebAssembly.instantiate(module, imports);
     if (instance instanceof WebAssembly.Instance) {
-      return { instance, module };
+      return {instance, module};
     } else {
       return instance;
     }
@@ -85,7 +85,7 @@ async function init4(input) {
   ) {
     input = fetch(input);
   }
-  const { instance, module } = await load(await input, imports);
+  const {instance, module} = await load(await input, imports);
   wasm = instance.exports;
   init4.__wbindgen_wasm_module = module;
   return wasm;
@@ -127,7 +127,7 @@ var init_wasm_render = __esm({
 var Timer = class extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.active = false;
     this.paused = false;
     this.shadowRoot.innerHTML = `
@@ -147,7 +147,7 @@ var Timer = class extends HTMLElement {
       this.paused = false;
     }
     this.active = true;
-    requestAnimationFrame(this.step);
+    // requestAnimationFrame(this.step);
   }
   pause() {
     this.paused = true;
@@ -157,7 +157,7 @@ var Timer = class extends HTMLElement {
       const diff = performance.now() - this.startTime;
       this.setLabel(`${diff.toFixed(2)}ms`);
       this.meter.value = diff;
-      requestAnimationFrame(this.step);
+      // requestAnimationFrame(this.step);
     }
   }
   stop() {
@@ -180,7 +180,7 @@ var cursor = {
 function listen(el, event, handler2) {
   var add =
     arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : true;
-  var options = { passive: false };
+  var options = {passive: false};
   if (add) {
     el.addEventListener(event, handler2, options);
   } else {
@@ -440,16 +440,16 @@ var overlay = {
 var _typeof =
   typeof Symbol === "function" && typeof Symbol.iterator === "symbol"
     ? function (obj) {
-        return typeof obj;
-      }
+      return typeof obj;
+    }
     : function (obj) {
-        return obj &&
-          typeof Symbol === "function" &&
-          obj.constructor === Symbol &&
-          obj !== Symbol.prototype
-          ? "symbol"
-          : typeof obj;
-      };
+      return obj &&
+        typeof Symbol === "function" &&
+        obj.constructor === Symbol &&
+        obj !== Symbol.prototype
+        ? "symbol"
+        : typeof obj;
+    };
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -536,7 +536,7 @@ var target = {
   },
   zoomOut: function zoomOut() {
     this.el.offsetWidth;
-    setStyle(this.el, { transform: "none" });
+    setStyle(this.el, {transform: "none"});
   },
   grab: function grab(x, y, scaleExtra) {
     var windowCenter = getWindowCenter();
@@ -914,7 +914,7 @@ canvas.width = 5 * 100;
 canvas.height = (canvas.width * 2) / 3;
 var ctx = canvas.getContext("2d");
 var workerUrl = new URL(`${import.meta.url}/../wasm-worker.js`);
-var worker = new Worker(workerUrl.href, { type: "module" });
+var worker = new Worker(workerUrl.href, {type: "module"});
 worker.postMessage("init");
 worker.addEventListener("message", async (e) => {
   if (e.data.status === "success") {
@@ -926,7 +926,7 @@ worker.addEventListener("message", async (e) => {
   } else if (e.data.status === "error") {
     timer.pause();
     timer.setLabel("Web Worker failed, running on the main thread...");
-    const { wasmRender: wasmRender2 } = await Promise.resolve().then(
+    const {wasmRender: wasmRender2} = await Promise.resolve().then(
       () => (init_wasm_render(), wasm_render_exports)
     );
     drawImage(await wasmRender2());

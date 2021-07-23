@@ -1,0 +1,9 @@
+{
+  "name": "clayto-66",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@mwcz/rtw-render": "^1.0.0"
+  }
+}

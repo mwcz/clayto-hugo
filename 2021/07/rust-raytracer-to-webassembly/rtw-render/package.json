@@ -1,0 +1,13 @@
+{
+  "name": "@mwcz/rtw-render",
+  "version": "1.0.4",
+  "main": "dist/rtw-render.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
+}
