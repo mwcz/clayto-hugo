@@ -148,7 +148,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    6 minute read
+    7 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -179,7 +179,6 @@ rtw-render {
   --rtw-background-color: var(--pbp-bg-color);
 
   border: 1px solid var(--pbp-fg-color);
-  width: 100%;
 }
 </style>
 <p><rtw-render></rtw-render></p>
@@ -197,7 +196,11 @@ rtw-render {
 <ul>
 <li>tried every optimization level, s, z, 0-3</li>
 <li>is it caused by copying Vec&lt;Vec3<f64>&gt; data into a flat Vec<f64>?</li>
-<li>WTF: rendering <em>while profiling</em> with chrome devtools, it runs in ~840ms.  rendering without profiling, it runs at about 2250ms. still have no idea why.</li>
+<li>WTF: rendering <em>while profiling</em> with chrome devtools, it runs in ~840ms.  rendering without profiling, it runs at about 2250ms. still have no idea why.
+<ul>
+<li><a href="https://twitter.com/rictic/">@rictic</a> suggested opening a chromium bug.  The response was that this is expected behavior, because when devtools is open, webassembly runs in the <a href="https://v8.dev/blog/liftoff">Liftoff tier</a>, which enables better inspection of the wasm engine, for debugging and so on.  The big surprise for me was that when the profiler is running, the speed returns to normal.  The answer surprised me because the profiler surely needs to inspect the wasm engine to get timings, stacks and symbol names, etc.  But one thing that the profiler does <em>not</em> do is process breakpoints.  The debugger is disabled while profiling, which probably accounts for the speed difference.  While profiling, webassembly is elevated to the faster TurboFan tier.  The more you know.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>took a cruise through prng packages.  from rand, to wyhash+rand_core, to pure getrandom, and back to rand. might revisit wyhash later for performance, or pregenerate a list of random numbers (if it doesn&rsquo;t bulk up .wasm filesize too much).
@@ -206,7 +209,7 @@ rtw-render {
 <pre><code>[package.metadata.wasm-pack.profile.release.wasm-bindgen]
 demangle-name-section = true
 </code></pre></li>
-<li>the terrible performance seems to stem from random number generation.  when <code>rand</code> is used with wasm-bindgen, it calls into JS land <code>crypto.getRandomValues</code> to generate random numbers.  this accounted for 80% of the .</li>
+<li>the terrible performance seems to stem from random number generation.  when <code>rand</code> is used with wasm-bindgen, it calls into JS land <code>crypto.getRandomValues</code> to generate random numbers.  this accounted for 80% of the program&rsquo;s work was generating random numbers.</li>
 <li>still have no idea why it ran so much faster <em>while profiling</em>.</li>
 <li>looking for a fast rust-only prng.  does not need to be secure.<a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer</a> looks good.  but to implement that we need a way to have a mutable variable at the top level of a rust module.  generators would be a fun way to go, but I don&rsquo;t see a way of making a pub generator.</li>
 <li>even for rand, I was looking for a way to avoid creating a new rng every time random_float is called.  I want to try using the <code>cached</code> crate on a <code>get_rng</code> function to see if it properly memoizes it.  should speed things up nicely. can&rsquo;t get it to work with mut, and rngs must be mut.  rand wants to be unsafe.</li>
