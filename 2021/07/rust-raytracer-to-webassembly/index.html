@@ -148,7 +148,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    7 minute read
+    8 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -172,8 +172,8 @@
   <section>
     <script async type="module" src="./rtw-render/dist/rtw-render.js"></script>
 <h2 id="what-and-why">What and why</h2>
+<p>This post is brought to you by the letter W.</p>
 <p>My <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a> covered writing a ray-tracer in Rust.  This post covers getting that ray-tracer running in WebAssembly.</p>
-<h2 id="how-it-went">How it went</h2>
 <style>
 rtw-render {
   --rtw-background-color: var(--pbp-bg-color);
@@ -182,8 +182,31 @@ rtw-render {
 }
 </style>
 <p><rtw-render></rtw-render></p>
-<h3 id="performance">Performance</h3>
+<h2 id="the-wwwwww-pattern">The WWWWWW Pattern</h2>
+<p>The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component&hellip; on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn&rsquo;t yet have a silly name.  So, I&rsquo;m dubbing it the <strong>WWWWWW</strong> pattern.  Following in the footsteps of the man himself.</p>
+<figure>
+<img src="./wtw-excerpt.jpg" alt="excerpt from Weaving the Web, by Tim Berners-Lee, about how he received early criticism for his &quot;WWW&quot; acronym containing nine syllables" />
+<figcaption>Tim Berners-Lee, Weaving the Web</figcaption>
+</figure>
+<p>If the World Wide Web only had a few more W&rsquo;s, maybe it would have been successful!</p>
+<p>Silly names aside, Web Components and Web Workers do complement WebAssemebly beautifully.  I&rsquo;d like to write more about WWWWWW, but that&rsquo;ll be a topic for another post.  Back to the ray tracer.</p>
+<p>In the beginning, the scene was:</p>
+<ul>
+<li>one Rust ray tracer, as a single binary crate</li>
+<li>one bookmark to <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a></li>
+<li>one mistaken assumption that could ruin me</li>
+</ul>
+<p>First, the bad assumption.  The ray tracer makes <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/#programming-with-generic-numbers">heavy use of generic numbers</a>, which posed a problem, since I&rsquo;d read that wasm-bindgen does not support generics.  I was afraid that having to pull <em>out</em> all the generics in the program would make this wasmification into too much work for a late-night side project.</p>
+<p>Fortunately, I&rsquo;d only de-generic&rsquo;d a single file before folk hero <a href="https://www.reddit.com/user/FruitieX/">u/FruitieX</a> shared <a href="https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">a correction</a>: generics are only unsupported in things that sit on the wasm/JS boundary.  In this case, only a single <code>render</code> function would need to be available to JS, and that function hadn&rsquo;t been written yet, so my concern about generics evaporated immediately.  Ruin averted.</p>
+<h2 id="single-crate-into-three-crates">single crate into three crates</h2>
+<h2 id="performance">Performance</h2>
+<p>most of the raw notes are about perf.  the big stories are:</p>
+<ul>
+<li>rand RNG perf cost and my attempts to solve it</li>
+<li>page perf while rendering, ie WWWWWW</li>
+</ul>
 <h2 id="whats-next">What&rsquo;s next</h2>
+<h2 id="raw-notes">Raw notes</h2>
 <ul>
 <li>wasm-pack, wasm-bindgen, wasm-opt are awesome.</li>
 <li>refactored the single crate into three crates, <code>lib</code>, <code>cli</code>, and <code>wasm</code>.</li>
@@ -231,10 +254,10 @@ demangle-name-section = true
 </li>
 <li>implementing lehmer.  needed to allow integer overflow for u128.  discovered <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a>.</li>
 <li>lazy_static worked for shared mut u128.  lehmer worked for prng.  Wrapping with &raquo; worked for bit shift.  dividing by 2^64 worked for converting to float.  result: ~325ms, or 2.5x faster.  I expected 160ms, 5x faster.</li>
-<li>floatuntidf (128-bit int support) is taking 18.5% of the time.  according to <a href="https://github.com/rust-lang/compiler-builtins">compiler-buildins</a> it&rsquo;s a c library in the process of being ported to rust.  try using u64 instead of u128. result: runs in 180ms, really close to the 5x improvement that I expected after removing <code>rand</code>!</li>
-<li>I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  very bad image quality.  going back to lehmer.</li>
+<li>floatuntidf (128-bit int support) is taking 18.5% of the time.  according to <a href="https://github.com/rust-lang/compiler-builtins">compiler-builtins</a> it&rsquo;s a c library in the process of being ported to rust.  try using u64 instead of u128. result: runs in 180ms, really close to the 5x improvement that I expected after removing <code>rand</code>!</li>
+<li>I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  VERY bad image quality.  going back to lehmer.</li>
 <li>now native is only marginally faster than wasm&hellip;</li>
-<li>WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost</li>
+<li>WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost  JON HOO WAS RIGHT (link to his csail presentation where he talks about mutex perf costs)</li>
 <li>
 <h2 id="www-web-workers-work--trying-to-make-an-accurate-spinner-but-the-wasm-locks-up-the-main-thread-so-im-going-to-try-putting-it-in-a-web-worker--module-worker-specifically--module-worker-worked">WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I&rsquo;m going to try putting it in a web worker.  module worker, specifically.  module worker worked.</h2>
 <ul>
