@@ -19,9 +19,9 @@ draft: true
 
 ## What and why
 
-My [last post]({{< relref "../065 - rust raytracer/index.md" >}}) covered writing a ray-tracer in Rust.  This post covers getting that ray-tracer running in WebAssembly.
+This post is brought to you by the letter W.
 
-## How it went
+My [last post]({{< relref "../065 - rust raytracer/index.md" >}}) covered writing a ray-tracer in Rust.  This post covers getting that ray-tracer running in WebAssembly.
 
 <style>
 rtw-render {
@@ -32,9 +32,41 @@ rtw-render {
 </style>
 <rtw-render></rtw-render>
 
-### Performance
+## The WWWWWW Pattern
+
+The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component... on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn't yet have a silly name.  So, I'm dubbing it the **WWWWWW** pattern.  Following in the footsteps of the man himself.
+
+<figure>
+<img src="./wtw-excerpt.jpg" alt="excerpt from Weaving the Web, by Tim Berners-Lee, about how he received early criticism for his &quot;WWW&quot; acronym containing nine syllables" />
+<figcaption>Tim Berners-Lee, Weaving the Web</figcaption>
+</figure>
+
+If the World Wide Web only had a few more W's, maybe it would have been successful!
+
+Silly names aside, Web Components and Web Workers do complement WebAssemebly beautifully.  I'd like to write more about WWWWWW, but that'll be a topic for another post.  Back to the ray tracer.
+
+In the beginning, the scene was:
+
+ - one Rust ray tracer, as a single binary crate
+ - one bookmark to [wasm-pack][wasm-pack]
+ - one mistaken assumption that could ruin me
+
+First, the bad assumption.  The ray tracer makes [heavy use of generic numbers]({{< relref "../065 - rust raytracer/index.md#programming-with-generic-numbers" >}}), which posed a problem, since I'd read that wasm-bindgen does not support generics.  I was afraid that having to pull _out_ all the generics in the program would make this wasmification into too much work for a late-night side project.
+
+Fortunately, I'd only de-generic'd a single file before folk hero [u/FruitieX][fruitiex] shared [a correction][generic-correction]: generics are only unsupported in things that sit on the wasm/JS boundary.  In this case, only a single `render` function would need to be available to JS, and that function hadn't been written yet, so my concern about generics evaporated immediately.  Ruin averted.
+
+## single crate into three crates
+
+## Performance
+
+most of the raw notes are about perf.  the big stories are:
+
+ - rand RNG perf cost and my attempts to solve it
+ - page perf while rendering, ie WWWWWW
 
 ## What's next
+
+## Raw notes
 
  - wasm-pack, wasm-bindgen, wasm-opt are awesome.
  - refactored the single crate into three crates, `lib`, `cli`, and `wasm`.
@@ -69,10 +101,10 @@ rtw-render {
        - mag(n) => int( log10( n )+1 )
      - implementing lehmer.  needed to allow integer overflow for u128.  discovered [Wrapping](https://doc.rust-lang.org/std/num/struct.Wrapping.html).
      - lazy_static worked for shared mut u128.  lehmer worked for prng.  Wrapping with >> worked for bit shift.  dividing by 2^64 worked for converting to float.  result: ~325ms, or 2.5x faster.  I expected 160ms, 5x faster.
-     - floatuntidf (128-bit int support) is taking 18.5% of the time.  according to [compiler-buildins](https://github.com/rust-lang/compiler-builtins) it's a c library in the process of being ported to rust.  try using u64 instead of u128. result: runs in 180ms, really close to the 5x improvement that I expected after removing `rand`!
-     - I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  very bad image quality.  going back to lehmer.
+     - floatuntidf (128-bit int support) is taking 18.5% of the time.  according to [compiler-builtins](https://github.com/rust-lang/compiler-builtins) it's a c library in the process of being ported to rust.  try using u64 instead of u128. result: runs in 180ms, really close to the 5x improvement that I expected after removing `rand`!
+     - I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  VERY bad image quality.  going back to lehmer.
      - now native is only marginally faster than wasm...
-     - WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost
+     - WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost  JON HOO WAS RIGHT (link to his csail presentation where he talks about mutex perf costs)
      - ## WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I'm going to try putting it in a web worker.  module worker, specifically.  module worker worked.
        - except in Firefox, which doesn't support module workers.  the worker runs, but can't import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can't tick up anymore because the  main thread is blocked, so I add a message to indicate what's happening.
      - thank goodnessImageData is a supported type to pass to/from Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
@@ -106,3 +138,7 @@ Benchmark #1: ./cli
 captured over 30 runs with devtools profiling, which seemed to be far more accurate than console.time and much more accurate than performance.now() subtraction.
 
 13% slower than native.  not too shabby!
+
+[wasm-pack]: https://rustwasm.github.io/wasm-pack/book/introduction.html
+[generic-correction]: https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&utm_medium=web2x&context=3
+[fruitiex]: https://www.reddit.com/user/FruitieX/
