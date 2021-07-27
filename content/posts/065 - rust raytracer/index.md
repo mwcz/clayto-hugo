@@ -1,6 +1,7 @@
 ---
 title: "Shaking Off the Rust 1: Ray Tracing in One Weekend"
 date: 2021-02-08T22:38:50-05:00
+lastmod: 2021-07-26
 categories: Rust
 Tags:
  -  3d
@@ -12,9 +13,9 @@ thumbnail: thumb.jpg
 mwc: 65
 ---
 
-Two classes stand out as my favorites from computer science at NCSU:  x86 assembly and computer graphics.  In the graphics course, we wrote a [rasterizer](https://en.wikipedia.org/wiki/Rasterisation) and a [ray tracer](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) (which I never finished 😅).
+Two classes stand out as my favorites from computer science at NCSU:  x86 assembly, taught by Dana Lasher, and computer graphics, taught by Stuart Heinrich.  In the graphics course, we wrote a [rasterizer](https://en.wikipedia.org/wiki/Rasterisation) and a [ray tracer](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) (which I never finished 😅).
 
-In the 16 years since, I've been working happily in web development, but I've started to lament losing touch with lower-level, nearer-metal (🤘) programming which captured my interest so much in college.
+In the 16 years since, I've been working happily in web development, but I've started to lament losing touch with lower-level, near-metal (🤘) programming which captured my interest so much in college.
 
 When I learned that my favorite CS lecturer, Dana Lasher, retired recently, I decided to start a fun side project in honor of him and the inspiration he gave me.
 
@@ -29,7 +30,7 @@ I dusted off my graphics projects from the class.  To my surprise, despite being
 <div class="beside">
     <figure>
         <img src="./csc461/csc461_tor_sidebyside.png" alt="rasterizer running in 2009 on Linux Mint" loading="lazy" width=640 height=400>
-        <figcaption>rasterizer on Linut Mint, 2009</figcaption>
+        <figcaption>rasterizer on Linux Mint, 2009</figcaption>
     </figure>
     <figure>
         <img src="./csc461/csc461-fedora34.png" alt="rasterizer running in 2021 on Fedora 34" loading="lazy" width=503 height=377>
@@ -48,7 +49,7 @@ The ray tracer is another story.  I didn't even try running it again because wha
           <source srcset="./csc461/test_view.webp" type="image/webp">
           <img loading="lazy" src="./csc461/test_view.jpg" alt="Expected result" width=640 height=480>
         </picture>
-        <figcaption>The reference image.  Yes, this is rasterized, not ray traced.  I don't know why.</figcaption>
+        <figcaption>A rasterized reference image of the scene.</figcaption>
     </figure>
     <figure>
         <img src="./csc461/not_right_totally_wrong.png" alt='Imagine with a single pixel rendered, named "not right totally wrong dot png"' loading="lazy" width=800 height=563 />
@@ -64,9 +65,20 @@ The ray tracer is another story.  I didn't even try running it again because wha
     </figure>
 </div>
 
-The final image above is a tiny `200x130` pixels, with spotty ray coverage, and took over 8 hours to render.  That's _including_ required optimizations like a [kd-tree](https://en.wikipedia.org/wiki/K-d_tree) for spatial filtering. Charitably, you could call the performance _suboptimal_.
+The final image above is a tiny `200x130` pixels, with spotty ray coverage, and took over 8 hours to render.  That's _including_ required optimizations like a [kd-tree](https://en.wikipedia.org/wiki/K-d_tree) for spatial filtering. Charitably, you could call the performance _sub-optimal_.
 
-
+<details>
+  <summary>A Mysterious Update...</summary>
+<p>After publishing this post, I took a quick dig through some old emails and turned up something interesting.  Evidently, after submitting the incomplete ray tracer shown above, I kept working on it, and to my surprise I actually, mostly finished it!  In the end-of-semester chaos I must have forgotten to save any images, but here's a render I sent to the instructor.</p>
+<figure>
+  <picture>
+    <source srcset="./raytrace-1300-10.jxl" type="image/jxl">
+    <source srcset="./raytrace-1300-10.webp" type="image/webp">
+    <img width=639 height=480 loading="lazy" src="./raytrace-1300-10.jpg" alt="a ray tracer render demonstrating sphere intersection, three materials (diffuse, reflective, and glass), antialiasing, and bokeh"></img>
+  </picture>
+</figure>
+<p>I have no memory of it!  And while it does have a few artifacts, it looks pretty good.  This revelation does blow up the premise of this post; the project was already finished and there's nothing interesting about re-finishing it.  Let's continue, undaunted.</p>
+</details>
 
 <svg class="float-comp" height="144" width="144" xmlns="http://www.w3.org/2000/svg"><path d="m71.05 23.68c-26.06 0-47.27 21.22-47.27 47.27s21.22 47.27 47.27 47.27 47.27-21.22 47.27-47.27-21.22-47.27-47.27-47.27zm-.07 4.2a3.1 3.11 0 0 1 3.02 3.11 3.11 3.11 0 0 1 -6.22 0 3.11 3.11 0 0 1 3.2-3.11zm7.12 5.12a38.27 38.27 0 0 1 26.2 18.66l-3.67 8.28c-.63 1.43.02 3.11 1.44 3.75l7.06 3.13a38.27 38.27 0 0 1 .08 6.64h-3.93c-.39 0-.55.26-.55.64v1.8c0 4.24-2.39 5.17-4.49 5.4-2 .23-4.21-.84-4.49-2.06-1.18-6.63-3.14-8.04-6.24-10.49 3.85-2.44 7.85-6.05 7.85-10.87 0-5.21-3.57-8.49-6-10.1-3.42-2.25-7.2-2.7-8.22-2.7h-40.6a38.27 38.27 0 0 1 21.41-12.08l4.79 5.02c1.08 1.13 2.87 1.18 4 .09zm-44.2 23.02a3.11 3.11 0 0 1 3.02 3.11 3.11 3.11 0 0 1 -6.22 0 3.11 3.11 0 0 1 3.2-3.11zm74.15.14a3.11 3.11 0 0 1 3.02 3.11 3.11 3.11 0 0 1 -6.22 0 3.11 3.11 0 0 1 3.2-3.11zm-68.29.5h5.42v24.44h-10.94a38.27 38.27 0 0 1 -1.24-14.61l6.7-2.98c1.43-.64 2.08-2.31 1.44-3.74zm22.62.26h12.91c.67 0 4.71.77 4.71 3.8 0 2.51-3.1 3.41-5.65 3.41h-11.98zm0 17.56h9.89c.9 0 4.83.26 6.08 5.28.39 1.54 1.26 6.56 1.85 8.17.59 1.8 2.98 5.4 5.53 5.4h16.14a38.27 38.27 0 0 1 -3.54 4.1l-6.57-1.41c-1.53-.33-3.04.65-3.37 2.18l-1.56 7.28a38.27 38.27 0 0 1 -31.91-.15l-1.56-7.28c-.33-1.53-1.83-2.51-3.36-2.18l-6.43 1.38a38.27 38.27 0 0 1 -3.32-3.92h31.27c.35 0 .59-.06.59-.39v-11.06c0-.32-.24-.39-.59-.39h-9.15zm-14.43 25.33a3.11 3.11 0 0 1 3.02 3.11 3.11 3.11 0 0 1 -6.22 0 3.11 3.11 0 0 1 3.2-3.11zm46.05.14a3.11 3.11 0 0 1 3.02 3.11 3.11 3.11 0 0 1 -6.22 0 3.11 3.11 0 0 1 3.2-3.11z"/><path d="m115.68 70.95a44.63 44.63 0 0 1 -44.63 44.63 44.63 44.63 0 0 1 -44.63-44.63 44.63 44.63 0 0 1 44.63-44.63 44.63 44.63 0 0 1 44.63 44.63zm-.84-4.31 6.96 4.31-6.96 4.31 5.98 5.59-7.66 2.87 4.78 6.65-8.09 1.32 3.4 7.46-8.19-.29 1.88 7.98-7.98-1.88.29 8.19-7.46-3.4-1.32 8.09-6.65-4.78-2.87 7.66-5.59-5.98-4.31 6.96-4.31-6.96-5.59 5.98-2.87-7.66-6.65 4.78-1.32-8.09-7.46 3.4.29-8.19-7.98 1.88 1.88-7.98-8.19.29 3.4-7.46-8.09-1.32 4.78-6.65-7.66-2.87 5.98-5.59-6.96-4.31 6.96-4.31-5.98-5.59 7.66-2.87-4.78-6.65 8.09-1.32-3.4-7.46 8.19.29-1.88-7.98 7.98 1.88-.29-8.19 7.46 3.4 1.32-8.09 6.65 4.78 2.87-7.66 5.59 5.98 4.31-6.96 4.31 6.96 5.59-5.98 2.87 7.66 6.65-4.78 1.32 8.09 7.46-3.4-.29 8.19 7.98-1.88-1.88 7.98 8.19-.29-3.4 7.46 8.09 1.32-4.78 6.65 7.66 2.87z" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg>
 
@@ -78,7 +90,7 @@ Next, I dug through my bookmarks for [Ray Tracing in One Weekend](https://raytra
 
 ## The Colorful Parts
 
-Long story short, I completed a Rust implementation of the first book of Peter Shirley's series.  The code is at [rust-raytracer-weekend](https://github.com/mwcz/rust-raytracer-weekend).  The result is a ray tracer with a movable camera, sphere intersection, three materials (diffuse, reflective, and glass), antialiasing, and bokeh.
+Long story short, I completed a Rust implementation of the first book of Peter Shirley's series.  The code is at [rust-raytracer-weekend](https://github.com/mwcz/rust-raytracer-weekend).  The result is a ray tracer with a movable camera, sphere intersection, three materials (diffuse, reflective, and glass), anti-aliasing, and bokeh.
 
 I learned a lot and had a blast, and it took way longer than one weekend.  I call it: **Ray Tracing in Eleven Weekends**
 
@@ -220,7 +232,7 @@ Since there is no `impl` for the fuzziness function, the rust compiler emits the
 
 And that's why numeric traits don't exist in the Rust standard library.
 
-During this discussion it occurred to me that there could potentially be a name conflict between a function in a struct's impl, and a trait function implemented for that struct.  I asked Josh about this as well, and the discusison led to some [docs on disambiguating function calls](https://doc.rust-lang.org/reference/expressions/call-expr.html#disambiguating-function-calls).  He said that while there is some chance for name conflicts, it's generally not considered a breaking change because of the low liklihood, whereas adding a trait function without a default impl is guaranteed to break the builds of your users.
+During this discussion it occurred to me that there could potentially be a name conflict between a function in a struct's impl, and a trait function implemented for that struct.  I asked Josh about this as well, and the discussion led to some [docs on disambiguating function calls](https://doc.rust-lang.org/reference/expressions/call-expr.html#disambiguating-function-calls).  He said that while there is some chance for name conflicts, it's generally not considered a breaking change because of the low likelihood, whereas adding a trait function without a default impl is guaranteed to break the builds of your users.
 
 ---
 
