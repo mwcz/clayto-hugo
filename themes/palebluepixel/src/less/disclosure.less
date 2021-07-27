@@ -1,0 +1,51 @@
+details {
+
+  border: 1px solid var(--pbp-fg-color, @pbp-fg-color);
+  padding: 1em;
+
+  summary {
+
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 1em 1em 1em 2em;
+    margin: -1em;
+
+    &:before {
+      content: '';
+      border-width: .5rem;
+      border-style: solid;
+      border-color: transparent transparent transparent var(--pbp-blue, @pbp-blue);
+      position: absolute;
+      top: 1.065em;
+      left: 1em;
+      transform: rotate(0);
+      transform-origin: .2rem 50%;
+      transition: .25s transform ease;
+    }
+    &::marker,
+    &::-webkit-details-marker {
+      display:none;
+    }
+  }
+  &[open] > summary {
+    margin-bottom: 1em;
+  }
+  &[open] > summary ~ * {
+    animation: animateDown 0.2s linear forwards;
+  }
+  &[open] > summary:before {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes animateDown {
+  0% {
+    opacity: 0;
+    transform: translatey(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}

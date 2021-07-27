@@ -34,22 +34,22 @@ rtw-render {
 
 ## The WWWWWW Pattern
 
-The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component... on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn't yet have a silly name.  So, I'm dubbing it the **WWWWWW** pattern.  Following in the footsteps of the man himself.
+The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component... on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn't yet have a silly name.  So, I'm dubbing it the **WWWWWW** pattern.  Too many syllables, you say?  I'm just following in the footsteps of the man himself.
 
 <figure>
 <img src="./wtw-excerpt.jpg" alt="excerpt from Weaving the Web, by Tim Berners-Lee, about how he received early criticism for his &quot;WWW&quot; acronym containing nine syllables" />
 <figcaption>Tim Berners-Lee, Weaving the Web</figcaption>
 </figure>
 
-If the World Wide Web only had a few more W's, maybe it would have been successful!
+If the World Wide Web only had a few more W's, maybe it would have caught on!
 
 Silly names aside, Web Components and Web Workers do complement WebAssemebly beautifully.  I'd like to write more about WWWWWW, but that'll be a topic for another post.  Back to the ray tracer.
 
-In the beginning, the scene was:
+To set the scene, here's what was in place
 
  - one Rust ray tracer, as a single binary crate
  - one bookmark to [wasm-pack][wasm-pack]
- - one mistaken assumption that could ruin me
+ - one mistaken assumption that could ruin everything
 
 First, the bad assumption.  The ray tracer makes [heavy use of generic numbers]({{< relref "../065 - rust raytracer/index.md#programming-with-generic-numbers" >}}), which posed a problem, since I'd read that wasm-bindgen does not support generics.  I was afraid that having to pull _out_ all the generics in the program would make this wasmification into too much work for a late-night side project.
 
