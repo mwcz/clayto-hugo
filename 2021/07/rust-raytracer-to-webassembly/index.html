@@ -183,18 +183,18 @@ rtw-render {
 </style>
 <p><rtw-render></rtw-render></p>
 <h2 id="the-wwwwww-pattern">The WWWWWW Pattern</h2>
-<p>The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component&hellip; on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn&rsquo;t yet have a silly name.  So, I&rsquo;m dubbing it the <strong>WWWWWW</strong> pattern.  Following in the footsteps of the man himself.</p>
+<p>The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component&hellip; on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn&rsquo;t yet have a silly name.  So, I&rsquo;m dubbing it the <strong>WWWWWW</strong> pattern.  Too many syllables, you say?  I&rsquo;m just following in the footsteps of the man himself.</p>
 <figure>
 <img src="./wtw-excerpt.jpg" alt="excerpt from Weaving the Web, by Tim Berners-Lee, about how he received early criticism for his &quot;WWW&quot; acronym containing nine syllables" />
 <figcaption>Tim Berners-Lee, Weaving the Web</figcaption>
 </figure>
-<p>If the World Wide Web only had a few more W&rsquo;s, maybe it would have been successful!</p>
+<p>If the World Wide Web only had a few more W&rsquo;s, maybe it would have caught on!</p>
 <p>Silly names aside, Web Components and Web Workers do complement WebAssemebly beautifully.  I&rsquo;d like to write more about WWWWWW, but that&rsquo;ll be a topic for another post.  Back to the ray tracer.</p>
-<p>In the beginning, the scene was:</p>
+<p>To set the scene, here&rsquo;s what was in place</p>
 <ul>
 <li>one Rust ray tracer, as a single binary crate</li>
 <li>one bookmark to <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a></li>
-<li>one mistaken assumption that could ruin me</li>
+<li>one mistaken assumption that could ruin everything</li>
 </ul>
 <p>First, the bad assumption.  The ray tracer makes <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/#programming-with-generic-numbers">heavy use of generic numbers</a>, which posed a problem, since I&rsquo;d read that wasm-bindgen does not support generics.  I was afraid that having to pull <em>out</em> all the generics in the program would make this wasmification into too much work for a late-night side project.</p>
 <p>Fortunately, I&rsquo;d only de-generic&rsquo;d a single file before folk hero <a href="https://www.reddit.com/user/FruitieX/">u/FruitieX</a> shared <a href="https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">a correction</a>: generics are only unsupported in things that sit on the wasm/JS boundary.  In this case, only a single <code>render</code> function would need to be available to JS, and that function hadn&rsquo;t been written yet, so my concern about generics evaporated immediately.  Ruin averted.</p>

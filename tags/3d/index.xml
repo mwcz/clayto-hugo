@@ -13,9 +13,8 @@
       <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
       
       <guid>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</guid>
-      <description>Two classes stand out as my favorites from computer science at NCSU: x86 assembly and computer graphics. In the graphics course, we wrote a rasterizer and a ray tracer (which I never finished 😅).
-In the 16 years since, I&amp;rsquo;ve been working happily in web development, but I&amp;rsquo;ve started to lament losing touch with lower-level, nearer-metal (🤘) programming which captured my interest so much in college.
-When I learned that my favorite CS lecturer, Dana Lasher, retired recently, I decided to start a fun side project in honor of him and the inspiration he gave me.</description>
+      <description>Two classes stand out as my favorites from computer science at NCSU: x86 assembly, taught by Dana Lasher, and computer graphics, taught by Stuart Heinrich. In the graphics course, we wrote a rasterizer and a ray tracer (which I never finished 😅).
+In the 16 years since, I&amp;rsquo;ve been working happily in web development, but I&amp;rsquo;ve started to lament losing touch with lower-level, near-metal (🤘) programming which captured my interest so much in college.</description>
     </item>
     
     <item>
