@@ -28,7 +28,7 @@ I don't think these qualify for the illustrious <a href="http://curio.scene.org/
     {{ .Render "li-photo" }}
   {{ end }}
 {{ else }}
-  {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "photos") .Site.Params.paginate).Pages }}
+  {{ range $index, $page := (.Paginate (where .Data.Pages "Type" "posts") .Site.Params.paginate).Pages }}
     {{ if ne $index 0 }}
     {{ end }}
     {{ .Render "li" }}
