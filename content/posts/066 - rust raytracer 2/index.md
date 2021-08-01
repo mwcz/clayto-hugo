@@ -57,12 +57,37 @@ Fortunately, I'd only de-generic'd a single file before folk hero [u/FruitieX][f
 
 ## single crate into three crates
 
+At the end of the previous post, the ray tracer was implemented in a single binary crate.  To re-use that code for a WebAssemebly target as well, the first thing I did was move the ray tracing code into a library crate.
+
+The original binary crate then imported the library crate, so the ray tracer can still be run on the command line.  I created a third crate, `wasm`, with wasm-pack.  This one also imports the library crate, does some small amount of extra work to make the ray tracing output consumable by WebAssemebly, and exports that function to wasm with `#[wasm_bindgen]`.
+
+The extra work in question was a simple change in output format.  The result of the ray tracing is a `Vec<Vec3<f64>>`, or in plain English, an array of (R,G,B) colors with 64-bit precision.  Two of the types, `Vec` and `f64`, are core Rust types, which wasm-bindgen knows how to bind to JavaScript types.  `Vec3` is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting `Vec3` as an unkonwn type, since it had no idea how to convert it into JS.  Makes sense!  Now, it's absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply flattened the `Vec<Vec3<f64>>` into a `Vec<f64>`, taking my custom type out of the equation.  This involved copying data, which I was concerned would impact performance, and for sure it's an inefficient step, but it was so utterly eclipsed by other performance bottlenecks that I'm glad I didn't spend type pre-optimizing it.
+
+
+
 ## Performance
 
-most of the raw notes are about perf.  the big stories are:
+Performance was the thing I was most interested in observing, and my expectations were that the ray tracer would run at nearly-but-not-quite bare metal speeds.  After the previous steps, the ray tracer was
 
- - rand RNG perf cost and my attempts to solve it
- - page perf while rendering, ie WWWWWW
+### rand RNG perf cost and my attempts to solve it
+### page perf while rendering, ie WWWWWW
+
+Getting the WebAssemebly module running quickly was a brand new experience for me, but doing a bunch of front-end webby stuff to get the wasm module loaded quickly, that's familiar stuff!
+
+For visual reference, here's the waterfall at 3G speeds, from the point in time when I first got the wasm module into a good, fast state.  In the waterafll, you'll see as perfect a staircase (not a good thing) as I've ever seen.
+
+**Before**
+![](screenshots/Screenshot_from_2021-07-10_23-23-07.png)
+
+ 1. `index.html` loads `wasm-app.js`, the main entrypoint
+ 2. `wasm-app.js` loads `rtw-timer.js`, the component that displays running time
+ 3. `wasm-app.js` imports the Web Worker, `wasm-worker.js`
+ 4. `wasm-worker.js` imports `wasm-render.js`, the module responsible for running wasm-pack's output.  `wasm-render.js` can be run either within a Web Worker or without, enabling the ray tracer to run in browsers that don't support module workers, like Firefox.
+ 5. TODO wasm.js
+ 6. TODO wasm_bg.wasm
+
+**After**
+![](screenshots/Screenshot_from_2021-07-10_23-29-58.png )
 
 ## What's next
 
