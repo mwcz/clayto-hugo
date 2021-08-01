@@ -148,7 +148,7 @@
     </time>
     
     <span class="pbp-blue">&middot;</span>
-    8 minute read
+    10 minute read
     <br>
     <span class="pbp-article-tags">
       
@@ -199,12 +199,27 @@ rtw-render {
 <p>First, the bad assumption.  The ray tracer makes <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/#programming-with-generic-numbers">heavy use of generic numbers</a>, which posed a problem, since I&rsquo;d read that wasm-bindgen does not support generics.  I was afraid that having to pull <em>out</em> all the generics in the program would make this wasmification into too much work for a late-night side project.</p>
 <p>Fortunately, I&rsquo;d only de-generic&rsquo;d a single file before folk hero <a href="https://www.reddit.com/user/FruitieX/">u/FruitieX</a> shared <a href="https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">a correction</a>: generics are only unsupported in things that sit on the wasm/JS boundary.  In this case, only a single <code>render</code> function would need to be available to JS, and that function hadn&rsquo;t been written yet, so my concern about generics evaporated immediately.  Ruin averted.</p>
 <h2 id="single-crate-into-three-crates">single crate into three crates</h2>
+<p>At the end of the previous post, the ray tracer was implemented in a single binary crate.  To re-use that code for a WebAssemebly target as well, the first thing I did was move the ray tracing code into a library crate.</p>
+<p>The original binary crate then imported the library crate, so the ray tracer can still be run on the command line.  I created a third crate, <code>wasm</code>, with wasm-pack.  This one also imports the library crate, does some small amount of extra work to make the ray tracing output consumable by WebAssemebly, and exports that function to wasm with <code>#[wasm_bindgen]</code>.</p>
+<p>The extra work in question was a simple change in output format.  The result of the ray tracing is a <code>Vec&lt;Vec3&lt;f64&gt;&gt;</code>, or in plain English, an array of (R,G,B) colors with 64-bit precision.  Two of the types, <code>Vec</code> and <code>f64</code>, are core Rust types, which wasm-bindgen knows how to bind to JavaScript types.  <code>Vec3</code> is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting <code>Vec3</code> as an unkonwn type, since it had no idea how to convert it into JS.  Makes sense!  Now, it&rsquo;s absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply flattened the <code>Vec&lt;Vec3&lt;f64&gt;&gt;</code> into a <code>Vec&lt;f64&gt;</code>, taking my custom type out of the equation.  This involved copying data, which I was concerned would impact performance, and for sure it&rsquo;s an inefficient step, but it was so utterly eclipsed by other performance bottlenecks that I&rsquo;m glad I didn&rsquo;t spend type pre-optimizing it.</p>
 <h2 id="performance">Performance</h2>
-<p>most of the raw notes are about perf.  the big stories are:</p>
-<ul>
-<li>rand RNG perf cost and my attempts to solve it</li>
-<li>page perf while rendering, ie WWWWWW</li>
-</ul>
+<p>Performance was the thing I was most interested in observing, and my expectations were that the ray tracer would run at nearly-but-not-quite bare metal speeds.  After the previous steps, the ray tracer was</p>
+<h3 id="rand-rng-perf-cost-and-my-attempts-to-solve-it">rand RNG perf cost and my attempts to solve it</h3>
+<h3 id="page-perf-while-rendering-ie-wwwwww">page perf while rendering, ie WWWWWW</h3>
+<p>Getting the WebAssemebly module running quickly was a brand new experience for me, but doing a bunch of front-end webby stuff to get the wasm module loaded quickly, that&rsquo;s familiar stuff!</p>
+<p>For visual reference, here&rsquo;s the waterfall at 3G speeds, from the point in time when I first got the wasm module into a good, fast state.  In the waterafll, you&rsquo;ll see as perfect a staircase (not a good thing) as I&rsquo;ve ever seen.</p>
+<p><strong>Before</strong>
+<img src="screenshots/Screenshot_from_2021-07-10_23-23-07.png" alt=""></p>
+<ol>
+<li><code>index.html</code> loads <code>wasm-app.js</code>, the main entrypoint</li>
+<li><code>wasm-app.js</code> loads <code>rtw-timer.js</code>, the component that displays running time</li>
+<li><code>wasm-app.js</code> imports the Web Worker, <code>wasm-worker.js</code></li>
+<li><code>wasm-worker.js</code> imports <code>wasm-render.js</code>, the module responsible for running wasm-pack&rsquo;s output.  <code>wasm-render.js</code> can be run either within a Web Worker or without, enabling the ray tracer to run in browsers that don&rsquo;t support module workers, like Firefox.</li>
+<li>TODO wasm.js</li>
+<li>TODO wasm_bg.wasm</li>
+</ol>
+<p><strong>After</strong>
+<img src="screenshots/Screenshot_from_2021-07-10_23-29-58.png" alt=""></p>
 <h2 id="whats-next">What&rsquo;s next</h2>
 <h2 id="raw-notes">Raw notes</h2>
 <ul>
