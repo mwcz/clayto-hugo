@@ -95,7 +95,7 @@ With the flame chart now usable, the bottleneck jumped off the screen, and I wou
 
 The flame chart revealed that 80% of the ray tracer's duration consisted of calls to [rand][rand], an RNG crate.  I'd chosen rand because it had WebAssemebly support, and includes no calls to the standard library, which tends to cut down on `.wasm` file size.  What I hadn't noticed until digging into the flame chart, is that when rand is in the WebAssemebly context, it makes calls out to JS (`crypto.getRandomValues()`).  And the way I was misusing rand, it was making _a lot_ of those calls.
 
-You see, RNG is needed throughout the ray tracer, and I didn't know of any way in Rust to create a single, global RNG that every corner of the program could make calls to.  Instead, I inefficiently initialized a new RNG every time a random number was needed.
+RNG is needed throughout the ray tracer, and I didn't know of any way in Rust to create a single, global RNG that every corner of the program could make calls to.  Instead, I inefficiently initialized a new RNG every time a random number was needed.
 
 This left me with two problems to solve.
 
@@ -142,17 +142,29 @@ The Mutex from the snippet above is used to share mutable access to the RNG seed
 
 </small>
 
-This is a pretty accurate profile as of today.  There's still some low-hanging fruit, like removing the lazy_static & Mutex in favor of simply passing a mutable refernce to the seed down into every corner of the program.
+This is a pretty accurate profile as of today.  There's still some low-hanging fruit, like removing the lazy_static & Mutex in favor of a faster approach.  I may take the time to simply pass a mutable refernce to the seed down into every corner of the program.  It would be extremely tedious, but it would obviate the need for the Mutex.
 
+The Sphere hit function (ray/sphere intersection equtaion) sits conspicuously at the top of the list at 38.6% of duration.  That could use some optimization too.
 
-   - trying a real bummer of an approach: initializing an rng in main() and passing it down the long waterfall of functions.  too awkward, giving up.
-     - I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  VERY bad image quality.  going back to lehmer.
-     - now native is only marginally faster than wasm...
-     - WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost  JON HOO WAS RIGHT (link to his csail presentation where he talks about mutex perf costs)
+This post is all about WebAssemebly though, so my goal was getting the WebAssemebly module on par with native.
+
+#### Deja vu 🎲
+
+One misguided idea I tried was hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured if the set was big enough, it would be good enough for bouncing rays around.
+
+I first tried a set of 100 "random" numbers, expecting it to fail, and fail it did.
+
+![ray tracing seeded by 100 recycled "random" numbers](screenshots/raytrace-0.31-fake-rng.png)
+
+I bumped it up to 10,000.
+
+![ray tracing seeded by 10,000 recycled "random" numbers](screenshots/raytrace-0.7381-fake-rng.png)
+
+It does look a little better, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the `.wasm` file, so I shamefacedly pressed _undo_ a bunch of times and vowed never to speak of it again.
+
      - ## WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I'm going to try putting it in a web worker.  module worker, specifically.  module worker worked.
        - except in Firefox, which doesn't support module workers.  the worker runs, but can't import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can't tick up anymore because the  main thread is blocked, so I add a message to indicate what's happening.
      - thank goodnessImageData is a supported type to pass to/from Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
-   - after lazy_static and lehmer prng optimization, the time budget is dominated by the Sphere::hit detection, at 45% of runing time.  Ray::color is second at 19%, and lehmer prng is third at 18% (which is almost entirely mutex lock/unlock).  I'm curious to see how this compares to the native performance profile. (from ./profile-showing-mutex-cost we can see it's very similar).
  - just noticed that I'm using Rc which is from `std`.  try to find an alternative that isn't from `std`, and see what size implications are.
    - trying to remove everything from std, there's more than I thought
    - trying out https://crates.io/crates/simple-mutex and https://crates.io/crates/spin-sync
