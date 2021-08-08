@@ -61,14 +61,103 @@ The original binary crate then imported the library crate, so the ray tracer can
 
 The extra work in question was a simple change in output format.  The ray tracer's `render` function returns a `Vec<Vec3<f64>>`, or in plain English, an array of RGB color objects with 64-bit precision.  Two of the types, `Vec` and `f64`, are core Rust types, which wasm-bindgen knows how to pass to JS.  `Vec3` is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting `Vec3` as an unkonwn type, since it had no idea how to convert it into JS.  Makes sense!  Now, it's absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply flattened the `Vec<Vec3<f64>>` into a `Vec<f64>`, taking my custom type out of the equation.  This involved copying data, which I was concerned would impact performance, and while it's certainly inefficient, it was fully eclipsed by other performance bottlenecks, so I'm glad I didn't spend type pre-optimizing it.
 
+With those changes, I had a working WebAssemebly module!
+
+![](screenshots/first-wasm-render.png)
+
 ## Performance
 
-Performance was the thing I was most interested in observing, and my expectations were that the ray tracer would run at nearly-but-not-quite bare metal speeds.  After the previous steps resulting in a working wasm module, the performance was stunningly bad.
+Initially, the performance of the WebAssemebly module seemed pretty good.  The quality settings were at rock bottom to make the edit/save/refresh/observe loop tighter.  Once I turned the quality settings back up to their defaults, I was stunned.  The performance was awful.  The WebAssemebly module ran **12x** slower than the native binary.  Under some conditions, I even saw it degrade to **60x** native speed.  I won't leave anyone in suspense though, the WebAssemebly execution speed was not the cause of the slowdown.  WebAssemebly is very fast.
 
-At various levels of ray tracing quality, the ray tracer ran at anywhere from **12x** to **60x** native speed.  After
+Below I'll go into why the performance was so poor initially, where the bottlenecks were, and how I corrected them.
+
+### Mangle shmangle
+
+The first test I ran was a performance profile in Chrome devtools, which generates an interactive flame chart for JS and WebAssemebly.  The initial results were... unhelpful.
+
+![screenshot of the mangled names](screenshots/profile-mangled-names.png)
+
+Adding the two following settings to the Cargo.toml resulted in more useful names.
+
+```toml
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[package.metadata.wasm-pack.profile.release.wasm-bindgen]
+demangle-name-section = true
+```
+
+![screenshot of demangled names](screenshots/profile-demangled-names.png)
+
+With the flame chart now usable, the bottleneck jumped off the screen, and I wouldn't have guessed what it was.
 
 ### RNGesus Giveth and Taketh Away
 
+The flame chart revealed that 80% of the ray tracer's duration consisted of calls to [rand][rand], an RNG crate.  I'd chosen rand because it had WebAssemebly support, and includes no calls to the standard library, which tends to cut down on `.wasm` file size.  What I hadn't noticed until digging into the flame chart, is that when rand is in the WebAssemebly context, it makes calls out to JS (`crypto.getRandomValues()`).  And the way I was misusing rand, it was making _a lot_ of those calls.
+
+You see, RNG is needed throughout the ray tracer, and I didn't know of any way in Rust to create a single, global RNG that every corner of the program could make calls to.  Instead, I inefficiently initialized a new RNG every time a random number was needed.
+
+This left me with two problems to solve.
+
+ 1. find a way to share a single RNG
+ 2. avoid JS calls
+
+I thrashed for a while, trying various solutions, but eventually settled on porting [lehmer64][lehmer64] to Rust, and sharing it with [lazy_static][lazy_static].
+
+**lib.rs**
+```rust
+use lazy_static::lazy_static;
+use std:sync:Mutex;
+
+lazy_static! {
+    static ref RNG: Mutex<u64> = Mutex::new(0xda942042e4dd58b5);
+}
+```
+Here's the [Rust implementation of lehmer64][rust-lehmer].  Here, the initial seed is all that's shared, and it gets rewritten by each call to `random_float`.  After the compiler asked me (politely) to add [Wrapping][wrapping] to indicate that yes, I want integer overflow, it worked.  It was faster too, but not that much faster.  RNG was still sucking up most of the oxygen in the room.
+
+The culprit, taking up 18.5% of duration, was [floatuntidf][floatuntidf].   It's a floating point library for C.  According to [compiler-builtins](https://github.com/rust-lang/compiler-builtins), it's in the process of being ported to Rust.  My guess is that my conversion of a `u128` to `f64` activated floatuntidf.  Luckily, ray tracers don't need cryptographic security in their RNG, so I reduced the precision to `u64`/`f32` and got a free 18.5% performance boost with no change in image quality.
+
+When this fell into place, the WebAssemebly module's speed is breathing down the neck of native!  If native is 1x, WebAssemebly runs at 1.13x.
+
+#### Overheated Mutex
+
+The Mutex from the snippet above is used to share mutable access to the RNG seed.  Random numbers are needed throughout the ray tracer, and several are generated per ray.  The quantity of random numbers generated can easily reach into the millions or billions.  The frantic locking and unlocking of the Mutex turns it into yet another bottleneck, accounting for 20% of duration.
+
+<small>
+
+<!-- https://gohugo.io/content-management/syntax-highlighting/ -->
+{{< highlight text "hl_lines=3-4" >}}
+1,323,563,733 (38.60%)  ???:<rtw::objects::sphere::Sphere<T> as rtw::hit::Hittable<T>>::hit
+  537,820,968 (15.68%)  ???:rtw::random::random_float
+  370,075,224 (10.79%)  ???:pthread_mutex_lock [/usr/lib64/libpthread-2.33.so]
+  319,030,423 ( 9.30%)  ???:pthread_mutex_unlock [/usr/lib64/libpthread-2.33.so]
+  274,479,530 ( 8.00%)  ???:rtw::ray::Ray<T>::color'2
+  213,215,525 ( 6.22%)  ???:rtw::ray::Ray<T>::color
+  129,769,989 ( 3.78%)  ???:cli::main
+  104,789,656 ( 3.06%)  ???:<rtw::material::lambertian::Lambertian<T> as rtw::material::Material<T>>::scatter
+   49,099,401 ( 1.43%)  ???:<rtw::RNG as core::ops::deref::Deref>::deref
+   45,736,164 ( 1.33%)  ???:<rtw::material::dielectric::Dielectric<T> as rtw::material::Material<T>>::scatter
+   31,644,376 ( 0.92%)  ???:<rtw::material::metal::Metal<T> as rtw::material::Material<T>>::scatter
+{{< / highlight >}}
+
+</small>
+
+This is a pretty accurate profile as of today.  There's still some low-hanging fruit, like removing the lazy_static & Mutex in favor of simply passing a mutable refernce to the seed down into every corner of the program.
+
+
+   - trying a real bummer of an approach: initializing an rng in main() and passing it down the long waterfall of functions.  too awkward, giving up.
+     - I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  VERY bad image quality.  going back to lehmer.
+     - now native is only marginally faster than wasm...
+     - WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost  JON HOO WAS RIGHT (link to his csail presentation where he talks about mutex perf costs)
+     - ## WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I'm going to try putting it in a web worker.  module worker, specifically.  module worker worked.
+       - except in Firefox, which doesn't support module workers.  the worker runs, but can't import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can't tick up anymore because the  main thread is blocked, so I add a message to indicate what's happening.
+     - thank goodnessImageData is a supported type to pass to/from Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
+   - after lazy_static and lehmer prng optimization, the time budget is dominated by the Sphere::hit detection, at 45% of runing time.  Ray::color is second at 19%, and lehmer prng is third at 18% (which is almost entirely mutex lock/unlock).  I'm curious to see how this compares to the native performance profile. (from ./profile-showing-mutex-cost we can see it's very similar).
+ - just noticed that I'm using Rc which is from `std`.  try to find an alternative that isn't from `std`, and see what size implications are.
+   - trying to remove everything from std, there's more than I thought
+   - trying out https://crates.io/crates/simple-mutex and https://crates.io/crates/spin-sync
+     - sold on spin-sync.  it's 2kB smaller than std sync, and makes the whole program 22% faster!
+   - trying to replace Rc with wrc.  didn't have the time, really.  Rc is everywhere.
 
 
 ### page perf while rendering, ie WWWWWW
@@ -82,6 +171,12 @@ The flow I aimed to optimize here is this.
  5. Display result
 
 Each step must happen ASAP, and there should be no delays between steps.
+
+#### Web Worker
+
+Prevent lockups
+
+Module workers capabilities & browser support.
 
 #### Staircase liquification
 
@@ -140,44 +235,6 @@ The more you know.
 ## Raw notes
 
  - wasm-pack, wasm-bindgen, wasm-opt are awesome.
- - refactored the single crate into three crates, `lib`, `cli`, and `wasm`.
- - took a cruise through prng packages.  from rand, to wyhash+rand_core, to pure getrandom, and back to rand. might revisit wyhash later for performance, or pregenerate a list of random numbers (if it doesn't bulk up .wasm filesize too much).
-   - thanks to demangled names, devtools flame chart is extraordinarily helpful in debugging wasm performance issues.
-        ```
-        [package.metadata.wasm-pack.profile.release.wasm-bindgen]
-        demangle-name-section = true
-        ```
-   - the terrible performance seems to stem from random number generation.  when `rand` is used with wasm-bindgen, it calls into JS land `crypto.getRandomValues` to generate random numbers.  this accounted for 80% of the program's work was generating random numbers.
-   - still have no idea why it ran so much faster _while profiling_.
-   - looking for a fast rust-only prng.  does not need to be secure.[lehmer](https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/) looks good.  but to implement that we need a way to have a mutable variable at the top level of a rust module.  generators would be a fun way to go, but I don't see a way of making a pub generator.
-   - even for rand, I was looking for a way to avoid creating a new rng every time random_float is called.  I want to try using the `cached` crate on a `get_rng` function to see if it properly memoizes it.  should speed things up nicely. can't get it to work with mut, and rngs must be mut.  rand wants to be unsafe.
-   - trying a real bummer of an approach: initializing an rng in main() and passing it down the long waterfall of functions.  too awkward, giving up.
-   - trying to improve performance by using lazy_static to create a mutex-protected global mut rng.
-     - first try: lazy_static on a mut u128 and use ultra-fast [lehmer64](https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/)
-     - second try: lazy_static on a mut u128 and use ultra-fast [wyhash64](https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/)
-     - both are crazy fast but lehmer seems faster.
-     - idea: try the above with u64 instead.  security is not needed here, speed is priority.
-     - idea: try to parallelize the rng.  both lehmer and wyhash update the seed in one step, which must be synchronized, but after the seed update, the rest of the algorithm can be par.
-     - idea: try wyhash crate again instead of reimplementing it.
-     - whether I impl wyhash or use the crate, I'll need to convert uint to float in [0..1).
-       - n = wyhash(starting_seed)
-       - f(n) => n / mag( n )
-       - mag(n) => int( log10( n )+1 )
-     - implementing lehmer.  needed to allow integer overflow for u128.  discovered [Wrapping](https://doc.rust-lang.org/std/num/struct.Wrapping.html).
-     - lazy_static worked for shared mut u128.  lehmer worked for prng.  Wrapping with >> worked for bit shift.  dividing by 2^64 worked for converting to float.  result: ~325ms, or 2.5x faster.  I expected 160ms, 5x faster.
-     - floatuntidf (128-bit int support) is taking 18.5% of the time.  according to [compiler-builtins](https://github.com/rust-lang/compiler-builtins) it's a c library in the process of being ported to rust.  try using u64 instead of u128. result: runs in 180ms, really close to the 5x improvement that I expected after removing `rand`!
-     - I tried adding a precomputed prng with 100 random values, bombed.  tried 10,000 random values.  also bombed.  VERY bad image quality.  going back to lehmer.
-     - now native is only marginally faster than wasm...
-     - WAIT, almost the entire performance cost of random_float is  in locking and unlocking the mutex.  almost 20% of the running time is spent on mutex locks and unlocks.  see ./profile-showing-mutex-cost  JON HOO WAS RIGHT (link to his csail presentation where he talks about mutex perf costs)
-     - ## WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I'm going to try putting it in a web worker.  module worker, specifically.  module worker worked.
-       - except in Firefox, which doesn't support module workers.  the worker runs, but can't import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can't tick up anymore because the  main thread is blocked, so I add a message to indicate what's happening.
-     - thank goodnessImageData is a supported type to pass to/from Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
-   - after lazy_static and lehmer prng optimization, the time budget is dominated by the Sphere::hit detection, at 45% of runing time.  Ray::color is second at 19%, and lehmer prng is third at 18% (which is almost entirely mutex lock/unlock).  I'm curious to see how this compares to the native performance profile. (from ./profile-showing-mutex-cost we can see it's very similar).
- - just noticed that I'm using Rc which is from `std`.  try to find an alternative that isn't from `std`, and see what size implications are.
-   - trying to remove everything from std, there's more than I thought
-   - trying out https://crates.io/crates/simple-mutex and https://crates.io/crates/spin-sync
-     - sold on spin-sync.  it's 2kB smaller than std sync, and makes the whole program 22% faster!
-   - trying to replace Rc with wrc.  didn't have the time, really.  Rc is everywhere.
  - for this post I tried something new which should have been obvious: keeping the notes open while working on the project and jotting.  typically I have two tmux panes open, one for nvim and one for running the program.  bumped it up to three.  it was incredible how much this helped when sitting down to write this post.  just from the note-taking, I already had almost 1200 words written.
 
 ## Native performance on long-running box
@@ -202,3 +259,9 @@ Captured over 30 runs with the devtools profiler.  Only 1.13x slower than native
 [wasm-pack]: https://rustwasm.github.io/wasm-pack/book/introduction.html
 [generic-correction]: https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&utm_medium=web2x&context=3
 [fruitiex]: https://www.reddit.com/user/FruitieX/
+[lehmer64]: https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/
+[lazy_static]: https://crates.io/crates/lazy_static
+[rand]: https://crates.io/crates/rand
+[rust-lehmer]: https://github.com/mwcz/rust-raytracer-weekend/blob/wasm/lib/src/random.rs
+[floatuntidf]: https://github.com/libdfp/libdfp
+[wrapping]: https://doc.rust-lang.org/std/num/struct.Wrapping.html
