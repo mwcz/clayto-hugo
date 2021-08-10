@@ -170,44 +170,73 @@
   
   
   <section>
-    <script async type="module" src="./rtw-render/dist/rtw-render.js"></script>
-<h2 id="what-and-why">What and why</h2>
-<p>This post is brought to you by the letter W.</p>
-<p>My <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a> covered writing a ray-tracer in Rust.  This post covers getting that ray-tracer running in WebAssembly.</p>
+    <h2 id="recap">RECAP</h2>
+<p>To set the scene, here&rsquo;s what was in place at the end of the <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a>.</p>
+<ul>
+<li>one Rust ray tracer, runnable from the command-line only</li>
+<li>an interest in WebAssembly</li>
+<li>one mistaken assumption that could ruin everything</li>
+</ul>
+<h2 id="i-set-out-to">I SET OUT TO&hellip;</h2>
+<p>This post covers getting that ray-tracer running in <a href="https://webassembly.org/">WebAssembly</a>.</p>
+<h2 id="it-went">IT WENT&hellip;</h2>
+<p>The process of targeting WebAssembly went well, overall.  These were the highlights of the journey.</p>
+<ul>
+<li>
+<p>Crate refactoring to support a CLI and WebAssembly module.</p>
+</li>
+<li>
+<p>Distributing highly-visual WebAssembly modules using Web Workers and Web Components.</p>
+</li>
+<li>
+<p>A staggering performance degradation caused by millions of excessive wasm-to-js calls.</p>
+</li>
+<li>
+<p>A Rust implementation of a blazing-fast random number generator.</p>
+</li>
+<li>
+<p>Comparing native performance measurements with WebAssembly.</p>
+</li>
+<li>
+<p>Performance tanking whenever devtools was open.</p>
+</li>
+<li>
+<p>Some conventional front-end performance optimizations.</p>
+</li>
+</ul>
+<p>Before diving in too deep, here&rsquo;s the result, the ray tracer from my previous post, running right here in this blog post, at speeds pretty close to native.</p>
+<script async type="module" src="./rtw-render/dist/rtw-render.js"></script>
 <style>
 rtw-render {
   --rtw-background-color: var(--pbp-bg-color);
 
   border: 1px solid var(--pbp-fg-color);
+
 }
 </style>
-<p><rtw-render></rtw-render></p>
+<center>
+<rtw-render></rtw-render>
+</center>
+<h2 id="crate-refactoring">Crate refactoring</h2>
+<p>At the end of the previous post, the ray tracer was implemented in a single binary crate.  To re-use that code for a WebAssembly target as well, the first thing I did was move the ray tracing code into a library crate.</p>
+<p>The original binary crate then imported the library crate, so the ray tracer can still be run on the command line.  I created a third crate, <code>wasm</code>, with wasm-pack.  This one also imports the library crate, does some small amount of extra work to make the ray tracing output consumable by WebAssembly, and exports that function to wasm with <code>#[wasm_bindgen]</code>.</p>
+<p>TODO consider removing the stuff about return types, or moving it to the Web Component section</p>
+<p>The extra work in question was a simple change in output format.  The ray tracer&rsquo;s <code>render</code> function returns a <code>Vec&lt;Vec3&lt;f64&gt;&gt;</code>, or in plain English, an array of RGB color objects with 64-bit precision.  Two of the types, <code>Vec</code> and <code>f64</code>, are core Rust types, which wasm-bindgen knows how to pass to JS.  <code>Vec3</code> is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting <code>Vec3</code> as an unknown type, since it had no idea how to convert it into JS.  Makes sense!</p>
+<p>Granted, it&rsquo;s absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply squished the <code>Vec&lt;Vec3&lt;f64&gt;&gt;</code> into a <code>Vec&lt;u8&gt;</code>.  This accomplished two things.  First, it took my custom type out of the equation.  Second, when passed to JS, <code>Vec&lt;u8&gt;</code> is ready to be used as a <code>Uint8ClampedArray</code>, ideal for drawing the image in a canvas.  This involved inefficient copying of data, but it was fully eclipsed by other performance bottlenecks.</p>
+<p>With those changes, I had a working WebAssembly module.  Here&rsquo;s the first rendering, with very low quality settings but still very exciting!</p>
+<p><img src="screenshots/first-wasm-render.png" alt="a screenshot of the very first WebAssembly rendering of my ray tracer"></p>
 <h2 id="the-wwwwww-pattern">The WWWWWW Pattern</h2>
 <p>The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component&hellip; on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn&rsquo;t yet have a silly name.  So, I&rsquo;m dubbing it the <strong>WWWWWW</strong> pattern.  Too many syllables, you say?  I&rsquo;m just following in the footsteps of the man himself.</p>
 <figure>
 <img src="./wtw-excerpt.jpg" alt="excerpt from Weaving the Web, by Tim Berners-Lee, about how he received early criticism for his &quot;WWW&quot; acronym containing nine syllables" />
 <figcaption>Tim Berners-Lee, Weaving the Web</figcaption>
 </figure>
-<p>Silly names aside, Web Components and Web Workers do complement WebAssemebly beautifully.  I&rsquo;d like to write more about WWWWWW, but that&rsquo;ll be a topic for another post.  Back to the ray tracer.</p>
-<p>To set the scene, here&rsquo;s what was in place at the end of the <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a>.</p>
-<ul>
-<li>one command-line Rust ray tracer</li>
-<li>one bookmark to <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a></li>
-<li>one mistaken assumption that could ruin everything</li>
-</ul>
-<p>Let&rsquo;s get the bad assumption out of the way first.  The ray tracer makes <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/#programming-with-generic-numbers">heavy use of generic numbers</a>, which posed a problem, since I&rsquo;d read that wasm-bindgen does not support generics.  I was afraid that having to pull out all the generics in the program would make this wasmification into too much work for a late-night side project.</p>
-<p>Fortunately, I&rsquo;d only de-generic&rsquo;d a single file before folk hero <a href="https://www.reddit.com/user/FruitieX/">u/FruitieX</a> shared <a href="https://www.reddit.com/r/rust/comments/ocaiwb/there_are_many_like_it_but_this_one_is_my_rust/h3wjlf4/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3">a correction</a>: generics are only unsupported in things that sit on the wasm/JS boundary.  In this case, only a single <code>render</code> function would need to be available to JS, and that function hadn&rsquo;t been written yet, so my concern about generics evaporated immediately.  Ruin averted.</p>
-<h2 id="single-crate-into-three-crates">single crate into three crates</h2>
-<p>At the end of the previous post, the ray tracer was implemented in a single binary crate.  To re-use that code for a WebAssemebly target as well, the first thing I did was move the ray tracing code into a library crate.</p>
-<p>The original binary crate then imported the library crate, so the ray tracer can still be run on the command line.  I created a third crate, <code>wasm</code>, with wasm-pack.  This one also imports the library crate, does some small amount of extra work to make the ray tracing output consumable by WebAssemebly, and exports that function to wasm with <code>#[wasm_bindgen]</code>.</p>
-<p>The extra work in question was a simple change in output format.  The ray tracer&rsquo;s <code>render</code> function returns a <code>Vec&lt;Vec3&lt;f64&gt;&gt;</code>, or in plain English, an array of RGB color objects with 64-bit precision.  Two of the types, <code>Vec</code> and <code>f64</code>, are core Rust types, which wasm-bindgen knows how to pass to JS.  <code>Vec3</code> is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting <code>Vec3</code> as an unkonwn type, since it had no idea how to convert it into JS.  Makes sense!  Now, it&rsquo;s absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply flattened the <code>Vec&lt;Vec3&lt;f64&gt;&gt;</code> into a <code>Vec&lt;f64&gt;</code>, taking my custom type out of the equation.  This involved copying data, which I was concerned would impact performance, and while it&rsquo;s certainly inefficient, it was fully eclipsed by other performance bottlenecks, so I&rsquo;m glad I didn&rsquo;t spend type pre-optimizing it.</p>
-<p>With those changes, I had a working WebAssemebly module!</p>
-<p><img src="screenshots/first-wasm-render.png" alt=""></p>
+<p>Silly names aside, Web Components and Web Workers do complement WebAssembly beautifully.  I&rsquo;d like to write more about WWWWWW, but that&rsquo;ll be a topic for another post.  Back to the ray tracer.</p>
 <h2 id="performance">Performance</h2>
-<p>Initially, the performance of the WebAssemebly module seemed pretty good.  The quality settings were at rock bottom to make the edit/save/refresh/observe loop tighter.  Once I turned the quality settings back up to their defaults, I was stunned.  The performance was awful.  The WebAssemebly module ran <strong>12x</strong> slower than the native binary.  Under some conditions, I even saw it degrade to <strong>60x</strong> native speed.  I won&rsquo;t leave anyone in suspense though, the WebAssemebly execution speed was not the cause of the slowdown.  WebAssemebly is very fast.</p>
+<p>Initially, the performance of the WebAssembly module seemed pretty good.  The quality settings were at rock bottom to make the edit/save/refresh/observe loop tighter.  Once I turned the quality settings back up to their defaults, I was stunned.  The performance was awful.  The WebAssembly module ran <strong>12x</strong> slower than the native binary.  Under some conditions, I even saw it degrade to <strong>60x</strong> native speed.  I won&rsquo;t leave anyone in suspense though, the WebAssembly execution speed was not the cause of the slowdown.  WebAssembly is very fast.</p>
 <p>Below I&rsquo;ll go into why the performance was so poor initially, where the bottlenecks were, and how I corrected them.</p>
 <h3 id="mangle-shmangle">Mangle shmangle</h3>
-<p>The first test I ran was a performance profile in Chrome devtools, which generates an interactive flame chart for JS and WebAssemebly.  The initial results were&hellip; unhelpful.</p>
+<p>The first test I ran was a performance profile in Chrome devtools, which generates an interactive flame chart for JS and WebAssembly.  The initial results were&hellip; unhelpful.</p>
 <p><img src="screenshots/profile-mangled-names.png" alt="screenshot of the mangled names"></p>
 <p>Adding the two following settings to the Cargo.toml resulted in more useful names.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">package</span>.<span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">pack</span>.<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">release</span>]
@@ -218,7 +247,7 @@ rtw-render {
 </code></pre></div><p><img src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names"></p>
 <p>With the flame chart now usable, the bottleneck jumped off the screen, and I wouldn&rsquo;t have guessed what it was.</p>
 <h3 id="rngesus-giveth-and-taketh-away">RNGesus Giveth and Taketh Away</h3>
-<p>The flame chart revealed that 80% of the ray tracer&rsquo;s duration consisted of calls to <a href="https://crates.io/crates/rand">rand</a>, an RNG crate.  I&rsquo;d chosen rand because it had WebAssemebly support, and includes no calls to the standard library, which tends to cut down on <code>.wasm</code> file size.  What I hadn&rsquo;t noticed until digging into the flame chart, is that when rand is in the WebAssemebly context, it makes calls out to JS (<code>crypto.getRandomValues()</code>).  And the way I was misusing rand, it was making <em>a lot</em> of those calls.</p>
+<p>The flame chart revealed that 80% of the ray tracer&rsquo;s duration consisted of calls to <a href="https://crates.io/crates/rand">rand</a>, an RNG crate.  I&rsquo;d chosen rand because it had WebAssembly support, and includes no calls to the standard library, which tends to cut down on <code>.wasm</code> file size.  What I hadn&rsquo;t noticed until digging into the flame chart, is that when rand is in the WebAssembly context, it makes calls out to JS (<code>crypto.getRandomValues()</code>).  And the way I was misusing rand, it was making <em>a lot</em> of those calls.</p>
 <p>RNG is needed throughout the ray tracer, and I didn&rsquo;t know of any way in Rust to create a single, global RNG that every corner of the program could make calls to.  Instead, I inefficiently initialized a new RNG every time a random number was needed.</p>
 <p>This left me with two problems to solve.</p>
 <ol>
@@ -235,7 +264,7 @@ lazy_static<span style="color:#f92672">!</span> {
 }
 </code></pre></div><p>Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/wasm/lib/src/random.rs">Rust implementation of lehmer64</a>.  Here, the initial seed is all that&rsquo;s shared, and it gets rewritten by each call to <code>random_float</code>.  After the compiler asked me (politely) to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a> to indicate that yes, I want integer overflow, it worked.  It was faster too, but not that much faster.  RNG was still sucking up most of the oxygen in the room.</p>
 <p>The culprit, taking up 18.5% of duration, was <a href="https://github.com/libdfp/libdfp">floatuntidf</a>.   It&rsquo;s a floating point library for C.  According to <a href="https://github.com/rust-lang/compiler-builtins">compiler-builtins</a>, it&rsquo;s in the process of being ported to Rust.  My guess is that my conversion of a <code>u128</code> to <code>f64</code> activated floatuntidf.  Luckily, ray tracers don&rsquo;t need cryptographic security in their RNG, so I reduced the precision to <code>u64</code>/<code>f32</code> and got a free 18.5% performance boost with no change in image quality.</p>
-<p>When this fell into place, the WebAssemebly module&rsquo;s speed is breathing down the neck of native!  If native is 1x, WebAssemebly runs at 1.13x.</p>
+<p>When this fell into place, the WebAssembly module&rsquo;s speed is breathing down the neck of native!  If native is 1x, WebAssembly runs at 1.13x.</p>
 <h4 id="overheated-mutex">Overheated Mutex</h4>
 <p>The Mutex from the snippet above is used to share mutable access to the RNG seed.  Random numbers are needed throughout the ray tracer, and several are generated per ray.  The quantity of random numbers generated can easily reach into the millions or billions.  The frantic locking and unlocking of the Mutex turns it into yet another bottleneck, accounting for 20% of duration.</p>
 <small>
@@ -252,21 +281,23 @@ lazy_static<span style="color:#f92672">!</span> {
    45,736,164 ( 1.33%)  ???:&lt;rtw::material::dielectric::Dielectric&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter
    31,644,376 ( 0.92%)  ???:&lt;rtw::material::metal::Metal&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter</code></pre></div>
 </small>
-<p>This is a pretty accurate profile as of today.  There&rsquo;s still some low-hanging fruit, like removing the lazy_static &amp; Mutex in favor of a faster approach.  I may take the time to simply pass a mutable refernce to the seed down into every corner of the program.  It would be extremely tedious, but it would obviate the need for the Mutex.</p>
-<p>The Sphere hit function (ray/sphere intersection equtaion) sits conspicuously at the top of the list at 38.6% of duration.  That could use some optimization too.</p>
-<p>This post is all about WebAssemebly though, so my goal was getting the WebAssemebly module on par with native.</p>
-<h4 id="deja-vu-">Deja vu 🎲</h4>
+<p>That&rsquo;s how things are today.  This post is focusing on closing the gap between the WebAssembly module and native, which was successful.</p>
+<p>There&rsquo;s still some low-hanging fruit I&rsquo;d like to optimize later, like removing the lazy_static &amp; Mutex in favor of a faster approach.  I may take the time to simply pass a mutable reference to the seed down into every corner of the program.  It would be extremely tedious, but it would obviate the need for the Mutex.</p>
+<p>Sphere intersection sits conspicuously at the top of the list, taking up 38.6% of duration.</p>
+<h4 id="reduce-reuse-recycle-">Reduce, reuse, recycle ♻</h4>
 <p>One misguided idea I tried was hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured if the set was big enough, it would be good enough for bouncing rays around.</p>
-<p>I first tried a set of 100 &ldquo;random&rdquo; numbers, expecting it to fail, and fail it did.</p>
+<p>I first tried a set of only 100 &ldquo;random&rdquo; numbers, and the results were about as poor as I expected.</p>
 <p><img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &ldquo;random&rdquo; numbers"></p>
-<p>I bumped it up to 10,000.</p>
+<p>Bumped up to 10,000.</p>
 <p><img src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &ldquo;random&rdquo; numbers"></p>
-<p>It does look a little better, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the <code>.wasm</code> file, so I shamefacedly pressed <em>undo</em> a bunch of times and vowed never to speak of it again.</p>
-<pre><code> - ## WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I'm going to try putting it in a web worker.  module worker, specifically.  module worker worked.
-   - except in Firefox, which doesn't support module workers.  the worker runs, but can't import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can't tick up anymore because the  main thread is blocked, so I add a message to indicate what's happening.
- - thank goodnessImageData is a supported type to pass to/from Web Workers: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm
-</code></pre>
+<p>10,000 gave better results than 100, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the <code>.wasm</code> file, so I pressed <em>undo</em> a bunch of times and vowed never to speak of it again.</p>
 <ul>
+<li>WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I&rsquo;m going to try putting it in a web worker.  module worker, specifically.  module worker worked.
+<ul>
+<li>except in Firefox, which doesn&rsquo;t support module workers.  the worker runs, but can&rsquo;t import, so I modified it to catch the error and return an error message to the main thread.  the main thread then responds by running the renderer on the main thread.  the timer can&rsquo;t tick up anymore because the  main thread is blocked, so I add a message to indicate what&rsquo;s happening.</li>
+</ul>
+</li>
+<li>thank goodnessImageData is a supported type to pass to/from Web Workers: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm</a></li>
 <li>just noticed that I&rsquo;m using Rc which is from <code>std</code>.  try to find an alternative that isn&rsquo;t from <code>std</code>, and see what size implications are.
 <ul>
 <li>trying to remove everything from std, there&rsquo;s more than I thought</li>
