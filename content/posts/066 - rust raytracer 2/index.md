@@ -30,13 +30,15 @@ This post covers getting that ray-tracer running in [WebAssembly][wasmorg].
 
 ## IT WENT...
 
-The process of targeting WebAssembly went well, overall.  The most interesting stories from the journey were:
+The process of targeting WebAssembly went well, overall.  These were the highlights of the journey.
+
+ - Crate refactoring to support a CLI and WebAssembly module.
+
+ - Distributing highly-visual WebAssembly modules using Web Workers and Web Components.
 
  - A staggering performance degradation caused by millions of excessive wasm-to-js calls.
 
  - A Rust implementation of a blazing-fast random number generator.
-
- - Distributing highly-visual WebAssembly modules using Web Workers and Web Components.
 
  - Comparing native performance measurements with WebAssembly.
 
@@ -44,7 +46,7 @@ The process of targeting WebAssembly went well, overall.  The most interesting s
 
  - Some conventional front-end performance optimizations.
 
-Before diving in too deep, here's the result, the ray tracer from my previous post, running right here in this blog post, at speeds within 10% of native.
+Before diving in too deep, here's the result, the ray tracer from my previous post, running right here in this blog post, at speeds pretty close to native.
 
 <script async type="module" src="./rtw-render/dist/rtw-render.js"></script>
 
@@ -60,6 +62,22 @@ rtw-render {
 <rtw-render></rtw-render>
 </center>
 
+## Crate refactoring
+
+At the end of the previous post, the ray tracer was implemented in a single binary crate.  To re-use that code for a WebAssembly target as well, the first thing I did was move the ray tracing code into a library crate.
+
+The original binary crate then imported the library crate, so the ray tracer can still be run on the command line.  I created a third crate, `wasm`, with wasm-pack.  This one also imports the library crate, does some small amount of extra work to make the ray tracing output consumable by WebAssembly, and exports that function to wasm with `#[wasm_bindgen]`.
+
+TODO consider removing the stuff about return types, or moving it to the Web Component section
+
+The extra work in question was a simple change in output format.  The ray tracer's `render` function returns a `Vec<Vec3<f64>>`, or in plain English, an array of RGB color objects with 64-bit precision.  Two of the types, `Vec` and `f64`, are core Rust types, which wasm-bindgen knows how to pass to JS.  `Vec3` is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting `Vec3` as an unknown type, since it had no idea how to convert it into JS.  Makes sense!
+
+Granted, it's absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply squished the `Vec<Vec3<f64>>` into a `Vec<u8>`.  This accomplished two things.  First, it took my custom type out of the equation.  Second, when passed to JS, `Vec<u8>` is ready to be used as a `Uint8ClampedArray`, ideal for drawing the image in a canvas.  This involved inefficient copying of data, but it was fully eclipsed by other performance bottlenecks.
+
+With those changes, I had a working WebAssembly module.  Here's the first rendering, with very low quality settings but still very exciting!
+
+![a screenshot of the very first WebAssembly rendering of my ray tracer](screenshots/first-wasm-render.png)
+
 ## The WWWWWW Pattern
 
 The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a Web Component... on a Web Site, in a Web Browser.  Others are using this same pattern, but to my knowledge it doesn't yet have a silly name.  So, I'm dubbing it the **WWWWWW** pattern.  Too many syllables, you say?  I'm just following in the footsteps of the man himself.
@@ -71,22 +89,6 @@ The demo above is a WebAssembly module running inside a Web Worker, Wrapped in a
 
 Silly names aside, Web Components and Web Workers do complement WebAssembly beautifully.  I'd like to write more about WWWWWW, but that'll be a topic for another post.  Back to the ray tracer.
 
-
-Let's get the bad assumption out of the way first.  The ray tracer makes [heavy use of generic numbers]({{< relref "../065 - rust raytracer/index.md#programming-with-generic-numbers" >}}), which posed a problem, since I'd read that wasm-bindgen does not support generics.  I was afraid that having to pull out all the generics in the program would make this wasmification into too much work for a late-night side project.
-
-Fortunately, I'd only de-generic'd a single file before folk hero [u/FruitieX][fruitiex] shared [a correction][generic-correction]: generics are only unsupported in things that sit on the wasm/JS boundary.  In this case, only a single `render` function would need to be available to JS, and that function hadn't been written yet, so my concern about generics evaporated immediately.  Ruin averted.
-
-## single crate into three crates
-
-At the end of the previous post, the ray tracer was implemented in a single binary crate.  To re-use that code for a WebAssembly target as well, the first thing I did was move the ray tracing code into a library crate.
-
-The original binary crate then imported the library crate, so the ray tracer can still be run on the command line.  I created a third crate, `wasm`, with wasm-pack.  This one also imports the library crate, does some small amount of extra work to make the ray tracing output consumable by WebAssembly, and exports that function to wasm with `#[wasm_bindgen]`.
-
-The extra work in question was a simple change in output format.  The ray tracer's `render` function returns a `Vec<Vec3<f64>>`, or in plain English, an array of RGB color objects with 64-bit precision.  Two of the types, `Vec` and `f64`, are core Rust types, which wasm-bindgen knows how to pass to JS.  `Vec3` is a custom type I wrote for the ray tracer.  As a result, the first error I encountered had to do with wasm-bindgen rejecting `Vec3` as an unknown type, since it had no idea how to convert it into JS.  Makes sense!  Now, it's absolutely possible to teach wasm-bindgen how to convert custom types into JS, but I was in a hurry to get things running, so I took the easy way out and simply flattened the `Vec<Vec3<f64>>` into a `Vec<f64>`, taking my custom type out of the equation.  This involved copying data, which I was concerned would impact performance, and while it's certainly inefficient, it was fully eclipsed by other performance bottlenecks, so I'm glad I didn't spend type pre-optimizing it.
-
-With those changes, I had a working WebAssembly module!
-
-![](screenshots/first-wasm-render.png)
 
 ## Performance
 
@@ -304,3 +306,4 @@ Captured over 30 runs with the devtools profiler.  Only 1.13x slower than native
 [flamegraph]: https://github.com/flamegraph-rs/flamegraph
 [hyperfine]: https://github.com/sharkdp/hyperfine
 [prev]: {{< relref "../065 - rust raytracer/index.md" >}}
+[imagedata]: https://developer.mozilla.org/en-US/docs/Web/API/ImageData
