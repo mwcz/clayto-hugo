@@ -245,7 +245,9 @@ rtw-render {
 [<span style="color:#a6e22e">package</span>.<span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">pack</span>.<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">release</span>.<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bindgen</span>]
 <span style="color:#a6e22e">demangle</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">section</span> = <span style="color:#66d9ef">true</span>
 </code></pre></div><p><img src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names"></p>
-<p>With the flame chart now usable, the bottleneck jumped off the screen, and I wouldn&rsquo;t have guessed what it was.</p>
+<p>With the flame chart now usable, the bottleneck jumped off the screen.</p>
+<p><img src="./screenshots/rng-eighty-percent.png" alt="RNG was 80% of the cost"></p>
+<p>80% of the</p>
 <h3 id="rngesus-giveth-and-taketh-away">RNGesus Giveth and Taketh Away</h3>
 <p>The flame chart revealed that 80% of the ray tracer&rsquo;s duration consisted of calls to <a href="https://crates.io/crates/rand">rand</a>, an RNG crate.  I&rsquo;d chosen rand because it had WebAssembly support, and includes no calls to the standard library, which tends to cut down on <code>.wasm</code> file size.  What I hadn&rsquo;t noticed until digging into the flame chart, is that when rand is in the WebAssembly context, it makes calls out to JS (<code>crypto.getRandomValues()</code>).  And the way I was misusing rand, it was making <em>a lot</em> of those calls.</p>
 <p>RNG is needed throughout the ray tracer, and I didn&rsquo;t know of any way in Rust to create a single, global RNG that every corner of the program could make calls to.  Instead, I inefficiently initialized a new RNG every time a random number was needed.</p>
@@ -254,19 +256,40 @@ rtw-render {
 <li>find a way to share a single RNG</li>
 <li>avoid JS calls</li>
 </ol>
-<p>I thrashed for a while, trying various solutions, but eventually settled on porting <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a> to Rust, and sharing it with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.</p>
+<p>After some experimentation, I settled on implementing <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a>, and sharing it with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.</p>
 <p><strong>lib.rs</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> lazy_static::lazy_static;
 <span style="color:#66d9ef">use</span> std:<span style="color:#a6e22e">sync</span>:<span style="color:#a6e22e">Mutex</span>;
 
 lazy_static<span style="color:#f92672">!</span> {
-    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ref</span> RNG: <span style="color:#a6e22e">Mutex</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u64</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> Mutex::new(<span style="color:#ae81ff">0xda942042e4dd58b5</span>);
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ref</span> RNG: <span style="color:#a6e22e">Mutex</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> Mutex::new(<span style="color:#ae81ff">0xda942042e4dd58b5</span>);
 }
-</code></pre></div><p>Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/wasm/lib/src/random.rs">Rust implementation of lehmer64</a>.  Here, the initial seed is all that&rsquo;s shared, and it gets rewritten by each call to <code>random_float</code>.  After the compiler asked me (politely) to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a> to indicate that yes, I want integer overflow, it worked.  It was faster too, but not that much faster.  RNG was still sucking up most of the oxygen in the room.</p>
-<p>The culprit, taking up 18.5% of duration, was <a href="https://github.com/libdfp/libdfp">floatuntidf</a>.   It&rsquo;s a floating point library for C.  According to <a href="https://github.com/rust-lang/compiler-builtins">compiler-builtins</a>, it&rsquo;s in the process of being ported to Rust.  My guess is that my conversion of a <code>u128</code> to <code>f64</code> activated floatuntidf.  Luckily, ray tracers don&rsquo;t need cryptographic security in their RNG, so I reduced the precision to <code>u64</code>/<code>f32</code> and got a free 18.5% performance boost with no change in image quality.</p>
-<p>When this fell into place, the WebAssembly module&rsquo;s speed is breathing down the neck of native!  If native is 1x, WebAssembly runs at 1.13x.</p>
+</code></pre></div><p>Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/wasm/lib/src/random.rs">Rust implementation of lehmer64</a>.  Here, the initial seed is all that&rsquo;s shared, and it gets rewritten by each call to <code>random_float</code>.  After the compiler asked me (politely) to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a> to indicate that yes, I want integer overflow, it worked.  Performance improved a lot, but not as much as I expected.</p>
+<p>The culprit, taking up 18.5% of total time, was <a href="https://github.com/libdfp/libdfp">floatuntidf</a>.   It&rsquo;s a C floating point library.  According to <a href="https://github.com/rust-lang/compiler-builtins">compiler-builtins</a>, it&rsquo;s in the process of being ported to Rust.  My guess is that my conversion of a <code>u128</code> to <code>f64</code> activated floatuntidf.  I lowered the precision to <code>u64/f32</code> for a free 18.% performance boost with no noticable change in image quality.</p>
+<p>When this fell into place, the WebAssembly module&rsquo;s speed is breathing down the neck of native!  In one test, the WebAssembly runs at 1.13x.</p>
+<table>
+<thead>
+<tr>
+<th>Average total time</th>
+<th>Standard deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>399.20 ms</td>
+<td>± 4.30 ms</td>
+</tr>
+<tr>
+<td>452.05 ms</td>
+<td>± 10.85 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Native measurements were captured over 30 runs with <a href="https://github.com/sharkdp/hyperfine">hyperfine</a>.  WebAssembly measurements were captured over 30 runs with the Chrome devtools profiler.</p>
+<p>Only 1.13x native speeds, not bad!  That&rsquo;s within the range I&rsquo;ve heard to expect from WebAssembly.  Under other conditions I&rsquo;ve seen the WebAssembly module perform worse.  1.5x native speed seems like the worst case, and 1.13x is the best case for my particular module.  The comparison still may not be perfectly fair to the WebAssembly module though, because its measurements are taken with profiling active which surely impacts performance somewhat.</p>
 <h4 id="overheated-mutex">Overheated Mutex</h4>
-<p>The Mutex from the snippet above is used to share mutable access to the RNG seed.  Random numbers are needed throughout the ray tracer, and several are generated per ray.  The quantity of random numbers generated can easily reach into the millions or billions.  The frantic locking and unlocking of the Mutex turns it into yet another bottleneck, accounting for 20% of duration.</p>
+<p>One piece of low-hanging fruit that I haven&rsquo;t pruned yet is the Mutex from the code snippet above, which gets extremely overheated. It&rsquo;s used to share mutable access to the RNG seed.  Random numbers are needed throughout the ray tracer, and several are generated per ray.  The quantity of random numbers generated can easily reach into the millions or billions.</p>
+<p>The frantic locking and unlocking of the Mutex turns it into yet another bottleneck, accounting for 20% of total time.</p>
 <small>
 <!-- https://gohugo.io/content-management/syntax-highlighting/ -->
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1,323,563,733 (38.60%)  ???:&lt;rtw::objects::sphere::Sphere&lt;T&gt; as rtw::hit::Hittable&lt;T&gt;&gt;::hit
@@ -281,16 +304,21 @@ lazy_static<span style="color:#f92672">!</span> {
    45,736,164 ( 1.33%)  ???:&lt;rtw::material::dielectric::Dielectric&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter
    31,644,376 ( 0.92%)  ???:&lt;rtw::material::metal::Metal&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter</code></pre></div>
 </small>
-<p>That&rsquo;s how things are today.  This post is focusing on closing the gap between the WebAssembly module and native, which was successful.</p>
-<p>There&rsquo;s still some low-hanging fruit I&rsquo;d like to optimize later, like removing the lazy_static &amp; Mutex in favor of a faster approach.  I may take the time to simply pass a mutable reference to the seed down into every corner of the program.  It would be extremely tedious, but it would obviate the need for the Mutex.</p>
-<p>Sphere intersection sits conspicuously at the top of the list, taking up 38.6% of duration.</p>
+<p>And that&rsquo;s how I left things.  This post is focusing on closing the gap between the WebAssembly module and native, which was pretty successful with only a 13% performance difference.</p>
+<p>There&rsquo;s still some low-hanging fruit I&rsquo;d like to optimize later, like removing the lazy_static &amp; Mutex in favor of a faster approach.  I may take the time to simply pass a mutable seed reference down into every corner of the program.  Argument drilling like that is extremely tedious, but it would obviate the need for the Mutex.  Maybe there&rsquo;s a better way to do that in Rust, but I haven&rsquo;t found one yet.</p>
+<p>Also, Sphere intersection (<code>Hittable&lt;T&gt;::hit</code>) sits conspicuously at the top of the list, taking up 38.6% of total time.  That could possibly be lowered with spatial filtering (my university ray tracer used a kd-tree), or some geometric shortcuts.</p>
 <h4 id="reduce-reuse-recycle-">Reduce, reuse, recycle ♻</h4>
-<p>One misguided idea I tried was hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured if the set was big enough, it would be good enough for bouncing rays around.</p>
-<p>I first tried a set of only 100 &ldquo;random&rdquo; numbers, and the results were about as poor as I expected.</p>
-<p><img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &ldquo;random&rdquo; numbers"></p>
-<p>Bumped up to 10,000.</p>
-<p><img src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &ldquo;random&rdquo; numbers"></p>
-<p>10,000 gave better results than 100, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the <code>.wasm</code> file, so I pressed <em>undo</em> a bunch of times and vowed never to speak of it again.</p>
+<p>Here&rsquo;s a fun misadventure to share.  To solve the RNG performance problem, I experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured —this isn&rsquo;t exactly cryptography— if the set was big it would be good enough for bouncing rays around.</p>
+<figure>
+<img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
+<figcaption>100 precomputed "random" numbers.</figcaption>
+</figure>
+<p>The results with 100 numbers were were about as poor as I expected, so I bumped it up to 10,000.</p>
+<figure>
+<img src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &quot;random&quot; numbers" />
+<figcaption>10,000 precomputed "random" numbers.</figcaption>
+</figure>
+<p>10,000 gave better results than 100, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the <code>.wasm</code> file, so I pressed <em>undo</em> a bunch of times and vowed never to speak of this again.</p>
 <ul>
 <li>WWW: Web Workers Work.  trying to make an accurate spinner, but the wasm locks up the main thread, so I&rsquo;m going to try putting it in a web worker.  module worker, specifically.  module worker worked.
 <ul>
@@ -391,20 +419,6 @@ lazy_static<span style="color:#f92672">!</span> {
 <li>wasm-pack, wasm-bindgen, wasm-opt are awesome.</li>
 <li>for this post I tried something new which should have been obvious: keeping the notes open while working on the project and jotting.  typically I have two tmux panes open, one for nvim and one for running the program.  bumped it up to three.  it was incredible how much this helped when sitting down to write this post.  just from the note-taking, I already had almost 1200 words written.</li>
 </ul>
-<h2 id="native-performance-on-long-running-box">Native performance on long-running box</h2>
-<ul>
-<li>399.2 ms ±   4.3 ms</li>
-</ul>
-<p>captured over 30 runs with hyperfine.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ hyperfine --warmup <span style="color:#ae81ff">3</span> <span style="color:#e6db74">&#39;./cli&#39;</span> -m <span style="color:#ae81ff">30</span>
-Benchmark <span style="color:#75715e">#1: ./cli</span>
-  Time <span style="color:#f92672">(</span>mean ± σ<span style="color:#f92672">)</span>:     399.2 ms ±   4.3 ms    <span style="color:#f92672">[</span>User: 397.0 ms, System: 1.3 ms<span style="color:#f92672">]</span>
-  Range <span style="color:#f92672">(</span>min … max<span style="color:#f92672">)</span>:   395.2 ms … 413.0 ms    <span style="color:#ae81ff">30</span> runs
-</code></pre></div><h2 id="wasm-performance-on-long-running-box">WASM performance on long-running box</h2>
-<ul>
-<li>452.05 ± 10.85</li>
-</ul>
-<p>Captured over 30 runs with the devtools profiler.  Only 1.13x slower than native.  Not bad!  That&rsquo;s within the range I&rsquo;ve heard to expect from WebAssembly.  The comparison still may not be perfectly fair, because the native measurements were taken without a profiler.</p>
 
   </section>
   <footer>
@@ -418,6 +432,55 @@ Benchmark <span style="color:#75715e">#1: ./cli</span>
 <section>
   <h3>RELATED POSTS</h3>
   <div class="pbp-related">
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2021/07/rust-raytracer-to-webassembly/">Rust Raytracer to WebAssembly</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The work of preparing my Rust ray tracer for WebAssembly.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2021-07-05T23:57:49-04:00">
+      Jul 5, 2021
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2021/07/rust-raytracer-to-webassembly/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Rust Raytracer to WebAssembly'"
+              src="https://clayto.com/2021/07/rust-raytracer-to-webassembly/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">Shaking Off the Rust 1: Ray Tracing in One Weekend</a></h2>
@@ -647,55 +710,6 @@ Benchmark <span style="color:#75715e">#1: ./cli</span>
               loading="lazy"
               alt="thumbnail for 'Visualizing Machine Learning with WebGL'"
               src="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A WebGL-based visualizer for LED displays.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2017-03-10T00:00:00Z">
-      Mar 10, 2017
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/03/meet-simpixel/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'Meet SimPixel'"
-              src="https://clayto.com/2017/03/meet-simpixel/./thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
