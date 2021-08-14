@@ -23,7 +23,7 @@ In the 16 years since, I&amp;rsquo;ve been working happily in web development, b
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
-      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }   Features Demo The pfe-icon tag Icon sets  Icon set definitions Integrating with Font Awesome Organizing icon sets   SVG injection and coloring  Setting icon colors Puzzler: MS Edge icon coloring   Performance  Icon size HTTP/1.</description>
+      <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }     Features Demo The pfe-icon tag Icon sets  Icon set definitions  resolveIconName   Integrating with Font Awesome Organizing icon sets   SVG injection and coloring  Setting icon colors  Coloring individual icons Coloring all icons Coloring groups of icons   Puzzler: MS Edge icon coloring   Performance  Icon size HTTP/1.</description>
     </item>
     
     <item>
@@ -97,7 +97,7 @@ CLOSED: 0 / 45 TIME: s  PLAY! MAKE IT STOP! You closed N/45 popups!
       
       <guid>https://clayto.com/2017/09/geekspark-2017/</guid>
       <description>geekSPARK is a showcase of creative use of technology, taking place each year during the SPARKcon art festival. What lies below is a summary of the festivities at geekSPARK 2017.
-  RC Speedway Virtual Reality All Things LED Fire Tubes Mushroom Hunters Digital Motion 3D Printing What&amp;rsquo;s next? Special thanks    RC Speedway The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from SplatSpace.</description>
+    RC Speedway Virtual Reality All Things LED Fire Tubes Mushroom Hunters Digital Motion 3D Printing What&amp;rsquo;s next? Special thanks      RC Speedway The RC Speedway was an incredibly fun creation by maker extraordinaire Bill Culverhouse from SplatSpace.</description>
     </item>
     
     <item>
