@@ -121,6 +121,9 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
 
 [markup]
   defaultMarkdownHandler = "goldmark"
+  [markup.tableOfContents]
+  endLevel = 4
+  startLevel = 1
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
