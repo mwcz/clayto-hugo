@@ -1,17 +1,4 @@
-// node_modules/@mwcz/pbp-loading/dist/pbp-loading.js
-var a = class extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({mode: "open"});
-  }
-  play() {
-    this.style.setProperty("--play-state", "running");
-  }
-  pause() {
-    this.style.setProperty("--play-state", "paused");
-  }
-  connectedCallback() {
-    let n = this.hasAttribute("paused"), t = +this.getAttribute("box-count") || 4, e = +this.getAttribute("duration") || Math.sqrt(t / 4), s = new Array(t).fill(), o = e / (t * 0.7), i = 100 * o, p = `
+var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}play(){this.style.setProperty("--play-state","running")}pause(){this.style.setProperty("--play-state","paused")}connectedCallback(){let s=this.hasAttribute("paused"),e=+this.getAttribute("box-count")||4,a=+this.getAttribute("duration")||Math.sqrt(e/4),t=new Array(e).fill(),n=a/(e*.7),d=100*n,l=`
             content: "";
             position: absolute;
             display: block;
@@ -21,19 +8,18 @@ var a = class extends HTMLElement {
             left: 0;
             border: var(--pbp-loading-border, 1px solid white);
             border-width: $WIDTH;
-            animation: $DIM ${e}s backwards alternate infinite;
+            animation: $DIM ${a}s backwards alternate infinite;
             animation-delay: var(--delay);
             animation-play-state: var(--play-state);
-        `;
-    this.shadowRoot.innerHTML = `
+        `;this.shadowRoot.innerHTML=`
             <style>
                 :host {
                     display: inline-block;
-                    --play-state: ${n ? "paused" : "running"};
+                    --play-state: ${s?"paused":"running"};
                 }
                 div {
                     display: grid;
-                    grid-template-columns: ${s.map(() => "1fr").join(" ")};
+                    grid-template-columns: ${t.map(()=>"1fr").join(" ")};
                     grid-gap: var(--pbp-loading-gap, 8px);
                 }
                 span {
@@ -47,7 +33,7 @@ var a = class extends HTMLElement {
                       transform: scaleX(var(--pbp-loading-grow, 150%));
                       opacity: 0;
                   }
-                  ${i}% {
+                  ${d}% {
                       transform: scaleX(100%);
                       opacity: 1;
                   }
@@ -57,38 +43,23 @@ var a = class extends HTMLElement {
                       transform: scaleY(var(--pbp-loading-grow, 150%));
                       opacity: 0;
                   }
-                  ${i}% {
+                  ${d}% {
                       transform: scaleY(100%);
                       opacity: 1;
                   }
                 }
                 span::before {
-                    ${p.replace("$WIDTH", "1px 0 1px 0").replace("$DIM", "y")}
+                    ${l.replace("$WIDTH","1px 0 1px 0").replace("$DIM","y")}
                 }
                 span::after {
-                    ${p.replace("$WIDTH", "0 1px 0 1px").replace("$DIM", "x")}
+                    ${l.replace("$WIDTH","0 1px 0 1px").replace("$DIM","x")}
                 }
                 */
             </style>
             <div>
-                ${s.map((d, r) => `<span style="--delay:${r * o}s"></span>`).join("")}
+                ${t.map((h,p)=>`<span style="--delay:${p*n}s"></span>`).join("")}
             </div>
-        `;
-  }
-};
-customElements.define("pbp-loading", a);
-
-// rtw-timer.js
-var Timer = class extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({mode: "open"});
-    this.active = false;
-    this.paused = false;
-    this.step = this.step.bind(this);
-  }
-  connectedCallback() {
-    this.shadowRoot.innerHTML = `
+        `}};customElements.define("pbp-loading",c);var r=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),this.active=!1,this.paused=!1,this.step=this.step.bind(this)}connectedCallback(){this.shadowRoot.innerHTML=`
         <style>
             pbp-loading {
                 width: 100%;
@@ -103,84 +74,14 @@ var Timer = class extends HTMLElement {
             <pbp-loading paused duration=0.8 box-count=8></pbp-loading>
             <span id="label-text">&nbsp;</span>
         </label>
-        `;
-    this.labelText = this.shadowRoot.querySelector("#label-text");
-    this.loading = this.shadowRoot.querySelector("pbp-loading");
-  }
-  resetSpinner() {
-    this.loading.style.removeProperty("--play-state");
-    this.labelText.parentNode.removeChild(this.loading);
-    this.labelText.parentNode.insertBefore(this.loading, this.labelText);
-  }
-  start() {
-    console.log("TIMER start");
-    if (!this.paused) {
-      this.startTime = performance.now();
-    } else {
-      this.paused = false;
-    }
-    this.active = true;
-    this.loading.play();
-    requestAnimationFrame(this.step);
-  }
-  pause() {
-    console.log("TIMER pause");
-    this.paused = true;
-    this.loading.pause();
-  }
-  step() {
-    console.log("TIMER step");
-    if (this.active && !this.paused) {
-      this._updateLabel();
-      requestAnimationFrame(this.step);
-    }
-  }
-  _updateLabel() {
-    const diff = performance.now() - this.startTime;
-    this.setLabel(`${diff.toFixed(1)}ms`);
-  }
-  stop() {
-    console.log("TIMER stop");
-    this.resetSpinner();
-    this._updateLabel();
-    this.active = false;
-  }
-  setLabel(msg) {
-    this.labelText.innerText = msg;
-  }
-};
-var rtw_timer_default = Timer;
-customElements.define("rtw-timer", Timer);
-
-// module-worker-test.js
-function supportsModuleWorkers() {
-  let supportsModuleWorker = false;
-  const workerURL = URL.createObjectURL(new Blob([""]));
-  const options = {
-    get type() {
-      supportsModuleWorker = true;
-    }
-  };
-  new Worker(workerURL, options).terminate();
-  URL.revokeObjectURL(workerURL);
-  return supportsModuleWorker;
-}
-
-// rtw-render.js
-var RtwRender = class extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({mode: "open"});
-    this.shadowRoot.innerHTML = `
+        `,this.labelText=this.shadowRoot.querySelector("#label-text"),this.loading=this.shadowRoot.querySelector("pbp-loading")}resetSpinner(){this.loading.style.removeProperty("--play-state"),this.labelText.parentNode.removeChild(this.loading),this.labelText.parentNode.insertBefore(this.loading,this.labelText)}start(){this.paused?this.paused=!1:this.startTime=performance.now(),this.active=!0,this.loading.play(),requestAnimationFrame(this.step)}pause(){this.paused=!0,this.loading.pause()}step(){this.active&&!this.paused&&(this._updateLabel(),requestAnimationFrame(this.step))}_updateLabel(){let e=performance.now()-this.startTime;this.setLabel(`${e.toFixed(1)}ms`)}stop(){this.resetSpinner(),this._updateLabel(),this.active=!1}setLabel(e){this.labelText.innerText=e}};customElements.define("rtw-timer",r);function i(){let s=!1,e=URL.createObjectURL(new Blob([""])),a={get type(){s=!0}};return new Worker(e,a).terminate(),URL.revokeObjectURL(e),s}var o=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),fetch(`${import.meta.url}/../wasm_bg.wasm`),this.shadowRoot.innerHTML=`
             <style>
                 :host {
                     display: inline-block;
                     background-color: var(--rtw-background-color, black);
                     padding: 14px;
-                    width: 528px;
                 }
                 canvas {
-                    width: 100%;
                     image-rendering: -moz-crisp-edges;
                     image-rendering: -webkit-crisp-edges;
                     image-rendering: pixelated;
@@ -204,6 +105,13 @@ var RtwRender = class extends HTMLElement {
                 button:active, button:focus {
                     background: var(--rtw-button-background-active, #3f3f3f);
                 }
+                .log {
+                  display: none;
+                  margin-bottom: 0;
+                }
+                .log.active {
+                  display: block;
+                }
             </style>
 
             <canvas width="500" height="333"></canvas>
@@ -212,87 +120,4 @@ var RtwRender = class extends HTMLElement {
                 <rtw-timer></rtw-timer>
             </div>
             <p class="log"></p>
-        `;
-  }
-  async connectedCallback() {
-    this.btn = this.shadowRoot.querySelector("button");
-    this.canvas = this.shadowRoot.querySelector("canvas");
-    this.timer = this.shadowRoot.querySelector("rtw-timer");
-    this.log = this.shadowRoot.querySelector(".log");
-    this.ctx = this.canvas.getContext("2d");
-    if (supportsModuleWorkers()) {
-      console.log("module workers supported, creating worker");
-      this.worker = this.createWorker();
-    } else {
-      console.log("module workers NOT supported, will render on the main thread");
-      await this.initMainThreadRendering();
-    }
-    this.wasmInit = null;
-    this.wasmRender = null;
-    this.btn.addEventListener("click", async () => {
-      await this.preRender();
-      this.render();
-    });
-  }
-  createWorker() {
-    const workerUrl = new URL(`${import.meta.url}/../wasm-worker.js`);
-    const worker = new Worker(workerUrl.href, {type: "module"});
-    worker.addEventListener("message", async (e) => {
-      if (e.data.status === "success") {
-        if (e.data.data.imageData) {
-          this.postRender(e.data.data.imageData);
-        } else if (e.data.data.initialized) {
-          this.btn.disabled = false;
-        }
-      } else if (e.data.status === "error") {
-        if (e.data.data.type === "render") {
-          this.timer.pause();
-          this.log.textContent = "Error occurred in worker during rendering.";
-        }
-      }
-    });
-    worker.postMessage("init");
-    return worker;
-  }
-  async initMainThreadRendering() {
-    const wasmModule = await import("./wasm-render.js");
-    this.wasmInit = wasmModule.wasmInit;
-    this.wasmRender = wasmModule.wasmRender;
-    await this.wasmInit();
-    this.btn.disabled = false;
-    this.log.textContent = "Rendering will run on the main thread because Module Workers are not supported in this browser.  Expect lock-up during rendering.";
-  }
-  async preRender() {
-    this.timer.start();
-    if (!supportsModuleWorkers()) {
-    }
-    this.btn.disabled = true;
-  }
-  async render() {
-    if (supportsModuleWorkers()) {
-      console.log("starting render in a module worker");
-      this.worker.postMessage("render");
-    } else {
-      console.log("starting render on the main thread");
-      if (!this.wasmInit) {
-        await this.initMainThreadRendering();
-      }
-      const imageData = await this.wasmRender();
-      this.postRender(imageData);
-    }
-  }
-  postRender(imageData) {
-    console.time("drawing canvas");
-    this.ctx.putImageData(imageData, 0, 0);
-    console.timeEnd("drawing canvas");
-    this.timer.step();
-    this.timer.stop();
-    this.btn.innerText = "Re-render";
-    this.btn.disabled = false;
-  }
-};
-var rtw_render_default = RtwRender;
-customElements.define("rtw-render", RtwRender);
-export {
-  rtw_render_default as default
-};
+        `}async connectedCallback(){this.btn=this.shadowRoot.querySelector("button"),this.canvas=this.shadowRoot.querySelector("canvas"),this.timer=this.shadowRoot.querySelector("rtw-timer"),this.log=this.shadowRoot.querySelector(".log"),this.ctx=this.canvas.getContext("2d"),i()?(console.log("module workers supported, creating worker"),this.worker=this.createWorker()):(console.log("module workers NOT supported, will render on the main thread"),await this.initMainThreadRendering()),this.wasmInit=null,this.wasmRender=null,this.btn.addEventListener("click",async()=>{await this.preRender(),this.render()})}createWorker(){let e=new URL(`${import.meta.url}/../wasm-worker.js`),a=new Worker(e.href,{type:"module"});return a.addEventListener("message",async t=>{t.data.status==="success"?t.data.data.imageData?this.postRender(t.data.data.imageData):t.data.data.initialized&&(this.btn.disabled=!1):t.data.status==="error"&&t.data.data.type==="render"&&(this.timer.pause(),this.log.textContent="Error occurred in worker during rendering.",this.log.classList.add("active"))}),a.postMessage("init"),a}async initMainThreadRendering(){let e=await import("./wasm-render-U5CGS4LF.js");this.wasmInit=e.wasmInit,this.wasmRender=e.wasmRender,await this.wasmInit(),this.btn.disabled=!1,this.log.textContent="Rendering will run on the main thread because Module Workers are not supported in this browser.  Expect lock-up during rendering.",this.log.classList.add("active")}async preRender(){this.timer.start(),!i(),this.btn.disabled=!0}async render(){if(i())console.log("starting render in a module worker"),this.worker.postMessage("render");else{console.log("starting render on the main thread"),this.wasmInit||await this.initMainThreadRendering();let e=await this.wasmRender();this.postRender(e)}}postRender(e){console.time("drawing canvas"),this.ctx.putImageData(e,0,0),console.timeEnd("drawing canvas"),this.timer.step(),this.timer.stop(),this.btn.innerText="Re-render",this.btn.disabled=!1}};customElements.define("rtw-render",o);export{o as default};
