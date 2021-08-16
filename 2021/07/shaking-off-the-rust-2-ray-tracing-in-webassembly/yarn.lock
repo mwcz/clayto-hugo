@@ -3,6 +3,6 @@
 
 
 "@mwcz/rtw-render@^1.0.0":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@mwcz/rtw-render/-/rtw-render-1.0.6.tgz#cb36f4e8a39534ba8fa145ca1597e434530aa28e"
-  integrity sha512-O/VmH5EKfFVVs4o6z1SbQGRGY/vZwdQfzPLq119I9bePvkTSWoAlCYVmQYFZosg4BFk3KTAelXpXgRjcJs0HXg==
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@mwcz/rtw-render/-/rtw-render-1.0.8.tgz#75d7829d6d048a5e023a7e6c37c71a7aa905dd48"
+  integrity sha512-vqTxAHNpQCXHMkkN4/Jh5f0BLJL82HSdpgSfx59LGq61vHNKGqGh8oolAPRiqSacGiIJHS4cymyKjq/JBarcTQ==

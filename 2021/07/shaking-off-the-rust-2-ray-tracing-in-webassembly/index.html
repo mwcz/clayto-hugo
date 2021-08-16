@@ -170,21 +170,21 @@
   
   
   <section>
-    <p>Rust.  A ray tracer.  The dream of WebAssembly.  One idea that could ruin everything.</p>
+    <p>Rust.  A ray tracer.  The dream of WebAssembly.  One dangerous idea that could ruin everything.</p>
 <p>This was the scene at the end of my <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a>, which covered creating a ray tracer in Rust using Peter Shirley&rsquo;s outstanding <a href="https://raytracing.github.io/">Ray Tracing in One Weekend</a>.  In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.</p>
 <p>The process of targeting WebAssembly went well, overall.  The highlights of the journey were:</p>
 <ul>
 <li>
-<p>Refactoring crates to support CLI and WebAssembly.</p>
+<p>Refactoring crates to support both CLI and WebAssembly.</p>
 </li>
 <li>
-<p>Staggering performance degradation caused by millions of excessive wasm-to-js calls.</p>
+<p>A staggering performance degradation caused by millions of excessive wasm-to-js calls.</p>
 </li>
 <li>
 <p>A Rust implementation of a rather fast random number generator.</p>
 </li>
 <li>
-<p>Tanking performance whenever devtools was open.</p>
+<p>A staggering performance degradation caused by opening devtools.</p>
 </li>
 </ul>
 <p>Before diving in too deep, here&rsquo;s the end result.  This is my Rust ray tracer running right here in this blog post, at speeds pretty close to native.</p>
@@ -200,7 +200,7 @@ rtw-render {
 }
 </style>
 <div id="rtw-wrapper">
-<rtw-render></rtw-render>
+<rtw-render id="live-demo"></rtw-render>
 </div>
 <p>For fun, try re-rendering a few times to see the &ldquo;noise&rdquo; pattern change.</p>
 <hr>
@@ -246,13 +246,13 @@ pfe-icon {
   }
 }
 </style>
-<p>At the end of the <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">previous post</a>, the ray tracer could be run only on the command line.  In Rust terms, it was a binary crate.  To re-use that code for a WebAssembly target as well, the first thing I did was move the ray tracing code into a library crate, so it could be imported into both a CLI and WebAssembly.</p>
-<p>The original binary crate then imported the library crate, so the CLI could work just as it did before.  I then created another crate using <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a>, a fantastic tool for creating Rust-to-WebAssembly crates.  The wasm crate also imports the library crate and exports a <code>render</code> function to JS with <code>#[wasm_bindgen]</code>.</p>
-<p>In Rust land, the <code>render</code> function returns a <code>Vec&lt;u8&gt;</code>.  When <code>render</code> is called in JS land, the <code>Vec&lt;u8&gt;</code> looks like a <code>Uint8ClampedArray</code>.  That slots perfectly into <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData"><code>ImageData</code></a>, which is then drawn into a <code>&lt;canvas&gt;</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData"><code>putImageData()</code></a>.</p>
-<p>That was all it took to get a working WebAssembly module!  Here&rsquo;s the first rendering.</p>
+<p>At the end of the <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">previous post</a>, the ray tracer could be run only on the command line.  In Rust terms, it was a binary crate.  To re-use that code for a WebAssembly target, the first thing I did was move most of the code into a library crate, so it could be shared.</p>
+<p>The binary crate then imported the library crate, so the CLI could work just as it did before.  I then created another crate using <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a>, a fantastic tool for creating Rust-to-WebAssembly crates.  The wasm crate also imports the library crate and uses <code>#[wasm_bindgen]</code> to to export a <code>render</code> function to JavaScript.</p>
+<p>In Rust land, <code>render()</code> returns a <code>Vec&lt;u8&gt;</code>.  In JS land, the <code>Vec&lt;u8&gt;</code> looks like a <code>Uint8ClampedArray</code>.  That slots perfectly into <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData"><code>ImageData</code></a>, which is then drawn into a <code>&lt;canvas&gt;</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData"><code>putImageData()</code></a>.</p>
+<p>Thanks to <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a> and <a href="https://rustwasm.github.io/docs/wasm-bindgen/">wasm-bindgen</a> doing all the heavy lifting, that was all it took to get a working WebAssembly module!  Here&rsquo;s the first rendering.</p>
 <p><img src="screenshots/first-wasm-render.png" alt="a screenshot of the very first WebAssembly rendering of my ray tracer"></p>
 <p>The quality settings were at rock bottom, but it was still pretty exciting!</p>
-<p>So, end of post, right?  Well, before we wrap up, maaaybe we should see how good the performance is.</p>
+<p>So, end of post, right?  Before saying goodbye, maaaybe we should see how good the performance is.</p>
 <hr>
 <h2 id="performance">Performance</h2>
 <p>Initially, the performance of the WebAssembly module seemed pretty good.  The quality settings were bottomed out to make the save/refresh loop tighter.  Once I turned the quality settings back up to their defaults, I was stunned.  The performance was awful.  The WebAssembly module ran <strong>12x</strong> slower than the native binary.  Under some conditions, I even saw it degrade to <strong>60x</strong> native speed.  I won&rsquo;t leave anyone in suspense though, WebAssembly&rsquo;s innate speed was not the cause.</p>
@@ -262,12 +262,13 @@ pfe-icon {
 <p>The first test I ran was a performance profile in Chrome devtools, which profiles JS and WebAssembly.  The results were&hellip; unhelpful.</p>
 <p><img src="screenshots/profile-mangled-names.png" alt="screenshot of the mangled names"></p>
 <p>wasm-pack docs helped out here.  Adding the two following settings to Cargo.toml resulted in more useful names.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">package</span>.<span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">pack</span>.<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">release</span>]
-<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">opt</span> = <span style="color:#66d9ef">false</span>
+<pre><code>[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
 
-[<span style="color:#a6e22e">package</span>.<span style="color:#a6e22e">metadata</span>.<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">pack</span>.<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">release</span>.<span style="color:#a6e22e">wasm</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">bindgen</span>]
-<span style="color:#a6e22e">demangle</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">name</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">section</span> = <span style="color:#66d9ef">true</span>
-</code></pre></div><figure>
+[package.metadata.wasm-pack.profile.release.wasm-bindgen]
+demangle-name-section = true
+</code></pre><p>Produced:</p>
+<figure>
 <img src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names" />
 <figcaption>
 A more helpful profile with demangled names.
@@ -275,32 +276,30 @@ A more helpful profile with demangled names.
 </figure>
 <p>With the profile now usable, the first big bottleneck jumped off the screen.</p>
 <p><img src="./screenshots/rng-eighty-percent.png" alt="RNG was 80% of the profile"></p>
-<p><code>random_float</code> at 80%?  For some reason, generating random numbers taking up most of the oxygen in the room.</p>
+<p><code>random_float</code>? 80%?  For some reason, generating random numbers taking up most of the oxygen in the room.  This is a ray tracer, not a crypto miner.  What gives?</p>
 <hr>
 <h3 id="rngesus-giveth-and-taketh-away">RNGesus Giveth and Taketh Away</h3>
-<p>The profile revealed that 80% of the ray tracer&rsquo;s activity consisted of calls to <a href="https://crates.io/crates/rand">rand</a>, an RNG crate.  I&rsquo;d chosen rand because it had WebAssembly support, and includes no calls to the standard library, which tends to cut down on <code>.wasm</code> file size.  What I hadn&rsquo;t noticed until digging into the flame chart, is that when rand is in the WebAssembly context, it gets its initial seed with a call to JS <code>crypto.getRandomValues()</code>, for some high-quality entropy.  And the way I was misusing rand, it was making <em>a lot</em> of those calls.</p>
+<p>The profile revealed that 80% of the ray tracer&rsquo;s activity consisted of calls to <a href="https://crates.io/crates/rand">rand</a>, an RNG crate.  I&rsquo;d chosen rand because it had WebAssembly support, and includes no calls to the standard library, which tends to cut down on <code>.wasm</code> file size.  What I hadn&rsquo;t noticed until digging into the flame chart, is that when rand is in the WebAssembly context, it gets its initial seed with a call to JavaScript: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues">crypto.getRandomValues()</a>.  And since I was poorly initializing rand, it was making <em>a lot</em> of those calls.</p>
 <p>Random numbers are needed throughout the ray tracer, and I didn&rsquo;t know of a way in Rust to create a single, global RNG that every corner of the program could make calls to.  Instead, I inefficiently initialized a new RNG every time a random number was needed.</p>
 <p>This left me with two problems to solve.</p>
 <ol>
 <li>find a way to share a single RNG</li>
 <li>avoid excessive wasm-to-js calls</li>
 </ol>
-<p>After a lot of experimentation, I settled on implementing <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a>, and making it &ldquo;global&rdquo; with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.</p>
-<p><strong>lib.rs</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> lazy_static::lazy_static;
-<span style="color:#66d9ef">use</span> std:<span style="color:#a6e22e">sync</span>:<span style="color:#a6e22e">Mutex</span>;
-
-lazy_static<span style="color:#f92672">!</span> {
+<p>After a lot of experimentation, I settled on implementing the very-very fast <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a>, and making it &ldquo;global&rdquo; with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.  I left a lot of other options on the table, such as using lazy_static to share rand.  The reasons were in the vein of simplicity, <code>.wasm</code> file size, and valuing speed over cryptographically-bulletproof random numbers.</p>
+<p>Here&rsquo;s what the lazy_static usage looks like.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">lazy_static<span style="color:#f92672">!</span> {
     <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ref</span> RNG: <span style="color:#a6e22e">Mutex</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> Mutex::new(<span style="color:#ae81ff">0xda942042e4dd58b5</span>);
 }
-</code></pre></div><p>Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/wasm/lib/src/random.rs">Rust implementation of lehmer64</a>.  The only global piece is the starting seed, which gets rewritten by each call to <code>random_float</code>.  The compiler noticed the potential for integer overflow, and politely asked me to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a>.  After addig Wrapping, the code worked.</p>
-<p>Without the excessive wasm-to-js calls, performance improved, but not as much as I expected.</p>
+</code></pre></div><p>The only global piece is the starting seed, which gets rewritten by each call to <code>random_float</code>. Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/master/lib/src/random.rs">implementation of random_float using lehmer64</a>.  The compiler noticed the potential for integer overflow, and politely asked me to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a> to indicate overflow was desired.  After adding Wrapping, the code worked.</p>
+<p>With millions of wasm-to-js calls eliminated, performance improved, but not as much as I expected.</p>
 <hr>
 <h4 id="floatuntidfc">floatuntidf.c</h4>
-<p>The culprit, taking up 19% of total time, was <a href="https://github.com/libdfp/libdfp">floatuntidf.c</a>.   It&rsquo;s a temporary C implemntation of 128-bit integers in <a href="https://github.com/rust-lang/compiler-builtins">compiler-builtins</a>, and is being ported to Rust.  Or maybe it&rsquo;s already been ported, but not released, I couldn&rsquo;t tell.  My guess is that the conversion of <code>u128</code> to <code>f64</code> activated floatuntidf.  I lowered the precision to <code>u64/f32</code>, which made <code>Wrapping</code> and <code>floatuntidf</code> unnecessary.  That&rsquo;s a free 19% performance boost with no noticable change in image quality.</p>
+<p>The culprit, taking up 19% of total time, was <a href="https://github.com/libdfp/libdfp">floatuntidf.c</a>.   It&rsquo;s a temporary C implementation of 128-bit integers in <a href="https://github.com/rust-lang/compiler-builtins">compiler-builtins</a>, and is being ported to Rust.  My guess is that the coercion of <code>u128</code> to <code>f64</code> activated floatuntidf.  Since top-shelf RNG quality isn&rsquo;t needed here, I lowered the precision to <code>u64/f32</code>, which made both <code>Wrapping</code> and <code>floatuntidf</code> unnecessary.  That&rsquo;s a free 19% performance boost with no noticeable change in image quality.</p>
 <hr>
 <h4 id="nearly-native">Nearly native</h4>
-<p>Now, the WebAssembly module&rsquo;s speed was breathing down the neck of native!  In the following benchmark, WebAssembly ran at 1.13x native speed.</p>
+<p>Now, the WebAssembly module&rsquo;s speed was breathing down the neck of native!  In the following benchmark, WebAssembly ran at 1.13x native speed.
+☠</p>
 <table>
 <thead>
 <tr>
@@ -320,12 +319,12 @@ lazy_static<span style="color:#f92672">!</span> {
 </tbody>
 </table>
 <p>Native measurements were captured over 30 runs with <a href="https://github.com/sharkdp/hyperfine">hyperfine</a>.  WebAssembly measurements were captured over 30 runs with the Chrome devtools profiler.</p>
-<p>Only 1.13x native speed, not bad!  That&rsquo;s within the range I&rsquo;ve heard to expect from WebAssembly.  Under other conditions I&rsquo;ve seen the WebAssembly module perform worse than 1.13x.  The worst case, for this particular module, is approximately 1.5x native speed. The best case is about 1.10x.  The comparison still may not be perfectly fair to the WebAssembly module though, because I took WebAssembly measurements with the Chrome devtools profiler, whereas the native measurements didn&rsquo;t have profiling active.</p>
+<p>Only 1.13x native speed, not bad!  That&rsquo;s within the range I&rsquo;ve heard to expect from WebAssembly.  The comparison still may not be perfectly fair to the WebAssembly module though, because I took WebAssembly measurements with the Chrome devtools profiler, whereas the native measurements didn&rsquo;t have profiling active.  I don&rsquo;t currently have a more-fair way to measure the WebAssembly performance than using the profiler, though.  The timing output readout in the <a href="#live-demo">live demo above</a> is available without profiling, but is regularly off by up to 10%.</p>
 <hr>
 <h4 id="overheated-mutex">Overheated Mutex</h4>
-<p>One piece of low-hanging fruit that I haven&rsquo;t pruned yet is the mutex from the code snippet above, which gets extremely overheated. It&rsquo;s used to share mutable access to the RNG seed.  Random numbers are needed throughout the ray tracer, and several are generated per ray.  The quantity of random numbers generated can easily reach into the millions or billions.</p>
+<p>One piece of low-hanging fruit that I haven&rsquo;t pruned yet is the mutex from the code snippet above, which gets extremely overheated. It&rsquo;s used to share mutable access to the RNG seed.  Random numbers are needed throughout the ray tracer, easily reaching into the millions or billions of calls.</p>
 <p>The frantic locking and unlocking of the mutex takes up a lot of time.  There&rsquo;s probably a better synchronization technique for this than a mutex; I have a lot to learn about concurrency.</p>
-<p>I did eke out a 22% performance gain by replacing <code>std</code> Mutex with <a href="https://crates.io/crates/spin-sync">spin-sync</a> Mutex.  It still gets overheated, taking about 20% of total time, but that&rsquo;s still 22% better than <code>std</code> Mutex.  spin-sync&rsquo;s Mutex also reduced the size of the <code>.wasm</code> module by 2kb, so that&rsquo;s a small win too.  The final gzipped size is around 20-30kb, depending on optimization settings.</p>
+<p>I did eke out a performance gain by replacing <code>std</code> Mutex with <a href="https://crates.io/crates/spin-sync">spin-sync</a> Mutex.  It still gets overheated, but the program runs 22% faster than with <code>std</code> Mutex.  spin-sync&rsquo;s Mutex also reduced the size of the <code>.wasm</code> module by 2 kB, so it&rsquo;s a win all-around.  The final gzipped size is around 16 kB.</p>
 <p>Here&rsquo;s the performance profile as it currently stands, with mutex activity highlighted.</p>
 <small>
 <!-- https://gohugo.io/content-management/syntax-highlighting/ -->
@@ -343,32 +342,33 @@ lazy_static<span style="color:#f92672">!</span> {
 </small>
 <hr>
 <h4 id="reduce-reuse-recycle-">Reduce, reuse, recycle ♻</h4>
-<p>Did I mention an idea that could ruin everything?  Don&rsquo;t tell anyone, but&hellip; to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  This isn&rsquo;t exctly cryptography, just bouncing rays around.  I figured if the set was big, it might just be good enough.</p>
-<p>The question was, how big is big enough?  I tried a low-ball of 100 precomputed &ldquo;random&rdquo; numbers.</p>
+<p>In the intro I mentioned an idea that could ruin everything.  Don&rsquo;t tell anyone, but&hellip; to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  This isn&rsquo;t exactly cryptography, just bouncing rays around.  I figured if the set was big, it might just be good enough.</p>
+<p>The question was, how big is big enough?  I tried a low-ball of 100 pre-computed &ldquo;random&rdquo; numbers, and here&rsquo;s the result.</p>
 <figure>
 <img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
-<figcaption>Ray physics governed by 100 precomputed "random" numbers.</figcaption>
+<figcaption>Ray physics governed by 100 pre-computed "random" numbers.</figcaption>
 </figure>
-<p>The results were about as poor as I expected, so I bumped it up to 10,000.</p>
+<p>About as poor as I expected, so I bumped it up to 10,000.</p>
 <figure>
 <img src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &quot;random&quot; numbers" />
-<figcaption>Ray physics governed by 10,000 precomputed "random" numbers.</figcaption>
+<figcaption>Ray physics governed by 10,000 pre-computed "random" numbers.</figcaption>
 </figure>
 <p>10,000 gave better results than 100, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the <code>.wasm</code> file, so I pressed <em>undo</em> a bunch of times and vowed never to speak of this again.</p>
 <hr>
 <h3 id="performance-impact-of-devtools">Performance impact of devtools</h3>
-<p>Here&rsquo;s another performance hit from an unexpected source.  WebAssembly runs 2x-4x slower when the devtools panel is open.  For example, the ray tracer ran in 840ms with devtools closed, and 2250ms with it open, 2.6x slower.</p>
+<p>Here&rsquo;s another performance hit from an unexpected source.  WebAssembly runs 2x-4x slower when the devtools panel is open.</p>
 <p>In all the JS games I&rsquo;ve built, I&rsquo;ve never noticed a performance hit from having from devtools open, so I was surprised to see WebAssembly take such a hit.  I took to Twitter to find out why. At <a href="https://twitter.com/rictic/">@rictic</a>&rsquo;s suggestion, I opened a Chromium <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1230610">ticket</a>.</p>
-<p>The response from the Chromium team was that this is expected behavior because of something called a &ldquo;Liftoff tier&rdquo;.  A what?  The v8 blog has the answer: <a href="https://v8.dev/blog/liftoff">Liftoff</a> is a streaming compiler that can initialize a wasm module very quickly, while TurboFan is an optimizing compiler which initializes more slowly, but produces much faster code.  With devtools open, WebAssembly runs exclusively in the Liftoff tier, accounting for the slowdown.  Without devtools, WebAssembly will be first initialized with Liftoff so it can begin execution quickly, then individual functions will be gradually replaced with TurboFan-optimized ones.</p>
+<p>The response from the Chromium team was that this is expected behavior because of something called a &ldquo;Liftoff tier&rdquo;.  A what?  The v8 blog had the answer:</p>
+<p><a href="https://v8.dev/blog/liftoff">Liftoff</a> is a streaming compiler that can initialize a wasm module very quickly, while TurboFan is an optimizing compiler which initializes more slowly, but produces much faster code.  With devtools open, WebAssembly runs exclusively in the Liftoff tier, accounting for the slowdown.  Without devtools, WebAssembly begins in Liftoff so it can begin execution quickly, then individual functions will be gradually replaced with TurboFan-optimized ones.</p>
 <p>Liftoff allows deeper inspection of the WebAssembly engine, which is why it&rsquo;s activated by devtools.</p>
-<p>The answer surprised me in one area.  Even though I&rsquo;m not accustomed to slowdowns from devtools, I do expect a performance hit from profiling.  But to my astonishment, the slowdown vanishes <em>while the profiler is running</em>.</p>
-<p>It&rsquo;s less strange than I first thought, because one thing the profiler does <em>not</em> do one important thing: process breakpoints.  While profiling, WebAssembly seems to be elevated to the faster TurboFan tier, which must accomodate enough inspection to profile, but not to debug.  That&rsquo;s good, because profiles from TurboFan are probably more valuable to act on.</p>
+<p>The answer surprised me in one area.  Even though I&rsquo;m not accustomed to slowdowns from devtools, I do expect a performance hit from profiling.  To my surprise, the WebAssembly/devtools slowdown vanishes <em>while the profiler is running</em>.</p>
+<p>It&rsquo;s less strange than I first thought, because the debugger is inactive during profiling, so WebAssembly can run in the faster TurboFan tier, providing more real-world, actionable profiling results.</p>
 <p>The more you know. 🌠</p>
 <hr>
 <h2 id="whats-next">What&rsquo;s next</h2>
 <p>There&rsquo;s still low-hanging fruit I&rsquo;d like to practice optimizing later.  This post is focused on closing the gap between WebAssembly and native, which was pretty successful with only a 13% performance difference.</p>
 <p>With more time, I&rsquo;d like to remove the lazy_static/mutex approach in favor of something that doesn&rsquo;t overheat so badly.  I may take the time to simply pass a mutable seed reference down into every corner of the program.  Argument drilling like that is extremely tedious, but it would obviate the need for the mutex.  Maybe someone can show me a better way to do that in Rust.</p>
-<p>Also, Sphere intersection (<code>Hittable&lt;T&gt;::hit</code>) sits conspicuously at the top of the profile, taking up 38.6% of total time.  That could be lowered with spatial filtering (my <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/#redemption">university ray tracer</a> used a kd-tree), or with some magical incantations summoned up by wizened geometers.</p>
+<p>Also, Sphere intersection (<code>Hittable&lt;T&gt;::hit</code>) sits conspicuously at the top of the profile, taking up almost 40% of total time.  That could be lowered with spatial filtering (my <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/#redemption">university ray tracer</a> used a kd-tree), or with some arcane incantations bummed up by wizened compu-geometers.</p>
 <p>Beyond the Rust and WebAssembly optimizations, I have some more conventional &ldquo;hashtag webdev&rdquo; ideas about how best to get WebAssembly on to a page.  I&rsquo;m working on a follow-up post about pairing WebAssembly with Web Workers and Web Components.</p>
 <p>Thanks for reading; until next time.</p>
 
