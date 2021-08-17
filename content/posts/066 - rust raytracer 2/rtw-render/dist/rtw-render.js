@@ -1,4 +1,4 @@
-var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}play(){this.style.setProperty("--play-state","running")}pause(){this.style.setProperty("--play-state","paused")}connectedCallback(){let s=this.hasAttribute("paused"),e=+this.getAttribute("box-count")||4,a=+this.getAttribute("duration")||Math.sqrt(e/4),t=new Array(e).fill(),n=a/(e*.7),d=100*n,l=`
+var h=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}play(){this.style.setProperty("--play-state","running")}pause(){this.style.setProperty("--play-state","paused")}connectedCallback(){let i=this.hasAttribute("paused"),t=+this.getAttribute("box-count")||4,e=+this.getAttribute("duration")||Math.sqrt(t/4),a=new Array(t).fill(),n=e/(t*.7),d=100*n,l=`
             content: "";
             position: absolute;
             display: block;
@@ -8,18 +8,18 @@ var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"o
             left: 0;
             border: var(--pbp-loading-border, 1px solid white);
             border-width: $WIDTH;
-            animation: $DIM ${a}s backwards alternate infinite;
+            animation: $DIM ${e}s backwards alternate infinite;
             animation-delay: var(--delay);
             animation-play-state: var(--play-state);
         `;this.shadowRoot.innerHTML=`
             <style>
                 :host {
                     display: inline-block;
-                    --play-state: ${s?"paused":"running"};
+                    --play-state: ${i?"paused":"running"};
                 }
                 div {
                     display: grid;
-                    grid-template-columns: ${t.map(()=>"1fr").join(" ")};
+                    grid-template-columns: ${a.map(()=>"1fr").join(" ")};
                     grid-gap: var(--pbp-loading-gap, 8px);
                 }
                 span {
@@ -57,9 +57,9 @@ var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"o
                 */
             </style>
             <div>
-                ${t.map((h,p)=>`<span style="--delay:${p*n}s"></span>`).join("")}
+                ${a.map((c,p)=>`<span style="--delay:${p*n}s"></span>`).join("")}
             </div>
-        `}};customElements.define("pbp-loading",c);var r=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),this.active=!1,this.paused=!1,this.step=this.step.bind(this)}connectedCallback(){this.shadowRoot.innerHTML=`
+        `}};customElements.define("pbp-loading",h);var r=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),this.active=!1,this.paused=!1,this.step=this.step.bind(this)}connectedCallback(){this.shadowRoot.innerHTML=`
         <style>
             pbp-loading {
                 width: 100%;
@@ -74,7 +74,7 @@ var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"o
             <pbp-loading paused duration=0.8 box-count=8></pbp-loading>
             <span id="label-text">&nbsp;</span>
         </label>
-        `,this.labelText=this.shadowRoot.querySelector("#label-text"),this.loading=this.shadowRoot.querySelector("pbp-loading")}resetSpinner(){this.loading.style.removeProperty("--play-state"),this.labelText.parentNode.removeChild(this.loading),this.labelText.parentNode.insertBefore(this.loading,this.labelText)}start(){this.paused?this.paused=!1:this.startTime=performance.now(),this.active=!0,this.loading.play(),requestAnimationFrame(this.step)}pause(){this.paused=!0,this.loading.pause()}step(){this.active&&!this.paused&&(this._updateLabel(),requestAnimationFrame(this.step))}_updateLabel(){let e=performance.now()-this.startTime;this.setLabel(`${e.toFixed(1)}ms`)}stop(){this.resetSpinner(),this._updateLabel(),this.active=!1}setLabel(e){this.labelText.innerText=e}};customElements.define("rtw-timer",r);function i(){let s=!1,e=URL.createObjectURL(new Blob([""])),a={get type(){s=!0}};return new Worker(e,a).terminate(),URL.revokeObjectURL(e),s}var o=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),fetch(`${import.meta.url}/../wasm_bg.wasm`),this.shadowRoot.innerHTML=`
+        `,this.labelText=this.shadowRoot.querySelector("#label-text"),this.loading=this.shadowRoot.querySelector("pbp-loading")}resetSpinner(){this.loading.style.removeProperty("--play-state"),this.labelText.parentNode.removeChild(this.loading),this.labelText.parentNode.insertBefore(this.loading,this.labelText)}start(){this.paused?this.paused=!1:this.startTime=performance.now(),this.active=!0,this.loading.play(),requestAnimationFrame(this.step)}pause(){this.paused=!0,this.loading.pause()}step(){this.active&&!this.paused&&(this.duration=performance.now()-this.startTime,this._updateLabel(this.duration),requestAnimationFrame(this.step))}_updateLabel(t){this.setLabel(`${t.toFixed(1)}ms`)}stop(){this.resetSpinner(),this.active=!1}setLabel(t){this.labelText.innerText=t}};customElements.define("rtw-timer",r);function s(){let i=!1,t=URL.createObjectURL(new Blob([""])),e={get type(){i=!0}};return new Worker(t,e).terminate(),URL.revokeObjectURL(t),i}var o=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"}),fetch(`${import.meta.url}/../wasm_bg.wasm`),this.shadowRoot.innerHTML=`
             <style>
                 :host {
                     display: inline-block;
@@ -106,11 +106,10 @@ var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"o
                     background: var(--rtw-button-background-active, #3f3f3f);
                 }
                 .log {
-                  display: none;
                   margin-bottom: 0;
-                }
-                .log.active {
-                  display: block;
+                  font-family: monospace;
+                  white-space: pre;
+                  line-height: 1.4;
                 }
             </style>
 
@@ -119,5 +118,18 @@ var c=class extends HTMLElement{constructor(){super();this.attachShadow({mode:"o
                 <button disabled>Render</button>
                 <rtw-timer></rtw-timer>
             </div>
-            <p class="log"></p>
-        `}async connectedCallback(){this.btn=this.shadowRoot.querySelector("button"),this.canvas=this.shadowRoot.querySelector("canvas"),this.timer=this.shadowRoot.querySelector("rtw-timer"),this.log=this.shadowRoot.querySelector(".log"),this.ctx=this.canvas.getContext("2d"),i()?(console.log("module workers supported, creating worker"),this.worker=this.createWorker()):(console.log("module workers NOT supported, will render on the main thread"),await this.initMainThreadRendering()),this.wasmInit=null,this.wasmRender=null,this.btn.addEventListener("click",async()=>{await this.preRender(),this.render()})}createWorker(){let e=new URL(`${import.meta.url}/../wasm-worker.js`),a=new Worker(e.href,{type:"module"});return a.addEventListener("message",async t=>{t.data.status==="success"?t.data.data.imageData?this.postRender(t.data.data.imageData):t.data.data.initialized&&(this.btn.disabled=!1):t.data.status==="error"&&t.data.data.type==="render"&&(this.timer.pause(),this.log.textContent="Error occurred in worker during rendering.",this.log.classList.add("active"))}),a.postMessage("init"),a}async initMainThreadRendering(){let e=await import("./wasm-render-U5CGS4LF.js");this.wasmInit=e.wasmInit,this.wasmRender=e.wasmRender,await this.wasmInit(),this.btn.disabled=!1,this.log.textContent="Rendering will run on the main thread because Module Workers are not supported in this browser.  Expect lock-up during rendering.",this.log.classList.add("active")}async preRender(){this.timer.start(),!i(),this.btn.disabled=!0}async render(){if(i())console.log("starting render in a module worker"),this.worker.postMessage("render");else{console.log("starting render on the main thread"),this.wasmInit||await this.initMainThreadRendering();let e=await this.wasmRender();this.postRender(e)}}postRender(e){console.time("drawing canvas"),this.ctx.putImageData(e,0,0),console.timeEnd("drawing canvas"),this.timer.step(),this.timer.stop(),this.btn.innerText="Re-render",this.btn.disabled=!1}};customElements.define("rtw-render",o);export{o as default};
+            <p class="log">Total rays        = \u2754
+Total duration    = \u2754
+Time per ray      = \u2754
+Ray rate          = \u2754
+Image width       = \u2754
+Image height      = \u2754
+Samples per pixel = \u2754</p>
+        `}async connectedCallback(){this.btn=this.shadowRoot.querySelector("button"),this.canvas=this.shadowRoot.querySelector("canvas"),this.timer=this.shadowRoot.querySelector("rtw-timer"),this.log=this.shadowRoot.querySelector(".log"),this.ctx=this.canvas.getContext("2d"),s()?(console.log("module workers supported, creating worker"),this.worker=this.createWorker()):(console.log("module workers NOT supported, will render on the main thread"),await this.initMainThreadRendering()),this.wasmInit=null,this.wasmRender=null,this.btn.addEventListener("click",async()=>{await this.preRender(),this.render()})}createWorker(){let t=new URL(`${import.meta.url}/../wasm-worker.js`),e=new Worker(t.href,{type:"module"});return e.addEventListener("message",async a=>{a.data.status==="success"?a.data.data.renderResult?this.postRender(a.data.data.renderResult):a.data.data.initialized&&(this.btn.disabled=!1):a.data.status==="error"&&a.data.data.type==="render"&&(this.timer.pause(),this.log.textContent="Error occurred in worker during rendering.")}),e.postMessage("init"),e}async initMainThreadRendering(){let t=await import("./wasm-render-JSWKSOUQ.js");this.wasmInit=t.wasmInit,this.wasmRender=t.wasmRender,await this.wasmInit(),this.btn.disabled=!1,this.log.textContent="Rendering will run on the main thread because Module Workers are not supported in this browser.  Expect lock-up during rendering."}async preRender(){this.timer.start(),!s(),this.btn.disabled=!0}async render(){if(s())console.log("starting render in a module worker"),this.worker.postMessage("render");else{console.log("starting render on the main thread"),this.wasmInit||await this.initMainThreadRendering();let t=await this.wasmRender();this.postRender(t)}}writeStats(t){let e=Number(t.total_rays);this.log.textContent=`Total rays        = ${e.toLocaleString("en-US")}
+Total duration    = ${this.timer.duration.toFixed(1)} ms
+Time per ray      = ${(this.timer.duration/e*1e3).toFixed(4)} ns/ray
+Ray rate          = ${(e/this.timer.duration/1e3).toFixed(4)} rays/ns
+Image width       = ${t.width}
+Image height      = ${t.height}
+Samples per pixel = ${t.samples_per_pixel}`}postRender(t){console.time("drawing canvas"),this.canvas.width=t.width,this.canvas.height=t.height,this.ctx.putImageData(new ImageData(t.pixels,t.width),0,0),console.timeEnd("drawing canvas"),this.timer.step(),this.timer.stop(),this.writeStats(t),this.btn.innerText="Re-render",this.btn.disabled=!1}};customElements.define("rtw-render",o);export{o as default};
+//# sourceMappingURL=rtw-render.js.map

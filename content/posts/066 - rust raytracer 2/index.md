@@ -10,11 +10,11 @@ Tags:
  - web
  - wasm
 description: "Learning Rust, one tetanus shot at a time.  In this post: the work of bringing a Rust ray tracer to the web.  WebAssembly, WebAssembly, WebAssembly."
-thumbnail: thumb.jpg
+thumbnail: thumb.png
+thumbpos: top
 mwc: 66
 draft: true
 ---
-
 
 Rust.  A ray tracer.  The dream of WebAssembly.  One dangerous idea that could ruin everything.
 
@@ -48,7 +48,7 @@ rtw-render {
 <rtw-render id="live-demo"></rtw-render>
 </div>
 
-For fun, try re-rendering a few times to see the "noise" pattern change.
+For fun, try re-rendering a few times to see the "noise" pattern change.  It's also interesting to watch the stats vary from run to run.  The total ray count changes due to randomness in how rays scatter off of surfaces.  With one random seed, a ray may hit a surface, causing another ray to spawn, while with another random seed, that same ray may miss the object entirely, terminating that ray sequence.  Randomness will come up a lot in this post.
 
 ---
 
@@ -138,7 +138,7 @@ This left me with two problems to solve.
  1. find a way to share a single RNG
  2. avoid excessive wasm-to-js calls
 
-After a lot of experimentation, I settled on implementing the very-very fast [lehmer64][lehmer64], and making it "global" with [lazy_static][lazy_static].  I left a lot of other options on the table, such as using lazy_static to share rand.  The reasons were in the vein of simplicity, `.wasm` file size, and valuing speed over cryptographically-bulletproof random numbers.
+After a lot of experimentation, I settled on implementing the very-very fast [lehmer64][lehmer64], and making it "global" with [lazy_static][lazy_static].  I left a lot of other options on the table, such as using lazy_static to share rand.  The reasons were in the vein of simplicity, `.wasm` file size, and valuing speed over [cryptographically-bulletproof random numbers][csprng].
 
 Here's what the lazy_static usage looks like.
 
@@ -209,7 +209,7 @@ Here's the performance profile as it currently stands, with mutex activity highl
 
 #### Reduce, reuse, recycle ♻
 
-In the intro I mentioned an idea that could ruin everything.  Don't tell anyone, but... to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  This isn't exactly cryptography, just bouncing rays around.  I figured if the set was big, it might just be good enough.
+In the intro I mentioned an idea that could ruin everything.  Don't tell anyone, but... to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured if the set was big, it might just be good enough.
 
 The question was, how big is big enough?  I tried a low-ball of 100 pre-computed "random" numbers, and here's the result.
 
@@ -281,3 +281,4 @@ Thanks for reading; until next time.
 [spin-sync]: https://crates.io/crates/spin-sync
 [putimagedata]: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData
 [crypto-get]: https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
+[csprng]: https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator
