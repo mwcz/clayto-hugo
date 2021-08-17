@@ -23,10 +23,10 @@
   <meta property="og:url" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/" />
 
   
-  <meta property="og:image" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.jpg" />
+  <meta property="og:image" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.png" />
   <meta
     name="twitter:image"
-    content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.jpg"
+    content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.png"
   />
   
   <meta name="twitter:card" content="summary" />
@@ -202,7 +202,7 @@ rtw-render {
 <div id="rtw-wrapper">
 <rtw-render id="live-demo"></rtw-render>
 </div>
-<p>For fun, try re-rendering a few times to see the &ldquo;noise&rdquo; pattern change.</p>
+<p>For fun, try re-rendering a few times to see the &ldquo;noise&rdquo; pattern change.  It&rsquo;s also interesting to watch the stats vary from run to run.  The total ray count changes due to randomness in how rays scatter off of surfaces.  With one random seed, a ray may hit a surface, causing another ray to spawn, while with another random seed, that same ray may miss the object entirely, terminating that ray sequence.  Randomness will come up a lot in this post.</p>
 <hr>
 <h2 id="crate-refactoring">Crate refactoring</h2>
 
@@ -286,7 +286,7 @@ A more helpful profile with demangled names.
 <li>find a way to share a single RNG</li>
 <li>avoid excessive wasm-to-js calls</li>
 </ol>
-<p>After a lot of experimentation, I settled on implementing the very-very fast <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a>, and making it &ldquo;global&rdquo; with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.  I left a lot of other options on the table, such as using lazy_static to share rand.  The reasons were in the vein of simplicity, <code>.wasm</code> file size, and valuing speed over cryptographically-bulletproof random numbers.</p>
+<p>After a lot of experimentation, I settled on implementing the very-very fast <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a>, and making it &ldquo;global&rdquo; with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.  I left a lot of other options on the table, such as using lazy_static to share rand.  The reasons were in the vein of simplicity, <code>.wasm</code> file size, and valuing speed over <a href="https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator">cryptographically-bulletproof random numbers</a>.</p>
 <p>Here&rsquo;s what the lazy_static usage looks like.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">lazy_static<span style="color:#f92672">!</span> {
     <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ref</span> RNG: <span style="color:#a6e22e">Mutex</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> Mutex::new(<span style="color:#ae81ff">0xda942042e4dd58b5</span>);
@@ -342,7 +342,7 @@ A more helpful profile with demangled names.
 </small>
 <hr>
 <h4 id="reduce-reuse-recycle-">Reduce, reuse, recycle ♻</h4>
-<p>In the intro I mentioned an idea that could ruin everything.  Don&rsquo;t tell anyone, but&hellip; to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  This isn&rsquo;t exactly cryptography, just bouncing rays around.  I figured if the set was big, it might just be good enough.</p>
+<p>In the intro I mentioned an idea that could ruin everything.  Don&rsquo;t tell anyone, but&hellip; to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured if the set was big, it might just be good enough.</p>
 <p>The question was, how big is big enough?  I tried a low-ball of 100 pre-computed &ldquo;random&rdquo; numbers, and here&rsquo;s the result.</p>
 <figure>
 <img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
