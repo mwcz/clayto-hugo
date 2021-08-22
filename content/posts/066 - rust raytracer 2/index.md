@@ -13,7 +13,6 @@ description: "Learning Rust, one tetanus shot at a time.  In this post: the work
 thumbnail: thumb.webp ./thumb.jpg ./thumb.png
 thumbpos: top
 mwc: 66
-draft: true
 ---
 
 # thumbnail: thumb.png
