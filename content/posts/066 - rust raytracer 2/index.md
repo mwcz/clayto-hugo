@@ -15,8 +15,6 @@ thumbpos: top
 mwc: 66
 ---
 
-# thumbnail: thumb.png
-
 Rust.  A ray tracer.  The dream of WebAssembly.  One dangerous idea that could ruin everything.
 
 This was the scene at the end of my [last post][prev], which covered creating a ray tracer in Rust using Peter Shirley's outstanding [Ray Tracing in One Weekend](https://raytracing.github.io/).  In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.
