@@ -84,7 +84,7 @@ In Rust land, `render()` returns a `Vec<u8>`.  In JS land, the `Vec<u8>` looks l
 
 Thanks to [wasm-pack][wasm-pack] and [wasm-bindgen][wasm-bindgen] doing all the heavy lifting, that was all it took to get a working WebAssembly module!  Here's the first rendering.
 
-![a screenshot of the very first WebAssembly rendering of my ray tracer](screenshots/first-wasm-render.png)
+<img src="screenshots/first-wasm-render.png" alt="a screenshot of the very first WebAssembly rendering of my ray tracer" loading="lazy" width=304 height=201>
 
 The quality settings were at rock bottom, but it was still pretty exciting!
 
@@ -104,7 +104,7 @@ The rest of the post covers why the performance was so poor, how I found the bot
 
 The first test I ran was a performance profile in Chrome devtools, which profiles JS and WebAssembly.  The results were... unhelpful.
 
-![screenshot of the mangled names](screenshots/profile-mangled-names.png)
+<img src="screenshots/profile-mangled-names.png" alt="screenshot of the mangled names" loading="lazy" width=549 height=167>
 
 wasm-pack docs helped out here.  Adding the two following settings to Cargo.toml resulted in more useful names.
 
@@ -118,7 +118,7 @@ demangle-name-section = true
 Produced:
 
 <figure>
-<img src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names" />
+<img loading=lazy width=449 height=82 src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names" />
 <figcaption>
 A more helpful profile with demangled names.
 </figcaption>
@@ -126,7 +126,7 @@ A more helpful profile with demangled names.
 
 With the profile now usable, the first big bottleneck jumped off the screen.
 
-![RNG was 80% of the profile](./screenshots/rng-eighty-percent.png)
+<img src="./screenshots/rng-eighty-percent.png" alt="RNG was 80% of the profile" loading="lazy" width=416 height=81>
 
 `random_float`? 80%?  For some reason, generating random numbers taking up most of the oxygen in the room.  This is a ray tracer, not a crypto miner.  What gives?
 
@@ -219,14 +219,14 @@ In the intro I mentioned an idea that could ruin everything.  Don't tell anyone,
 The question was, how big is big enough?  I tried a low-ball of 100 pre-computed "random" numbers, and here's the result.
 
 <figure>
-<img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
+<img loading=lazy width=300 height=200 src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
 <figcaption>Ray physics governed by 100 pre-computed "random" numbers.</figcaption>
 </figure>
 
 About as poor as I expected, so I bumped it up to 10,000.
 
 <figure>
-<img src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &quot;random&quot; numbers" />
+<img loading=lazy width=300 height=200 src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &quot;random&quot; numbers" />
 <figcaption>Ray physics governed by 10,000 pre-computed "random" numbers.</figcaption>
 </figure>
 
