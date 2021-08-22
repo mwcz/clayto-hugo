@@ -13,8 +13,9 @@
       <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
       
       <guid>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</guid>
-      <description>thumbnail: thumb.png Rust. A ray tracer. The dream of WebAssembly. One dangerous idea that could ruin everything.
-This was the scene at the end of my last post, which covered creating a ray tracer in Rust using Peter Shirley&amp;rsquo;s outstanding Ray Tracing in One Weekend. In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.</description>
+      <description>Rust. A ray tracer. The dream of WebAssembly. One dangerous idea that could ruin everything.
+This was the scene at the end of my last post, which covered creating a ray tracer in Rust using Peter Shirley&amp;rsquo;s outstanding Ray Tracing in One Weekend. In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.
+The process of targeting WebAssembly went well, overall.</description>
     </item>
     
     <item>
