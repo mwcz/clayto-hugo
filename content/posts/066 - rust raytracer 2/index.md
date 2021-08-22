@@ -48,6 +48,12 @@ rtw-render {
 <rtw-render id="live-demo"></rtw-render>
 </div>
 
+<center>
+
+[View source][viewsource]
+
+</center><br>
+
 For fun, try re-rendering a few times to see the "noise" pattern change.  It's also interesting to watch the stats vary from run to run.  The total ray count changes due to randomness in how rays scatter off of surfaces.  With one random seed, a ray may hit a surface, causing another ray to spawn, while with another random seed, that same ray may miss the object entirely, terminating that ray sequence.  Randomness will come up a lot in this post.
 
 ---
@@ -75,7 +81,7 @@ At the end of the [previous post][prev], the ray tracer could be run only on the
 
 The binary crate then imported the library crate, so the CLI could work just as it did before.  I then created another crate using [wasm-pack][wasm-pack], a fantastic tool for creating Rust-to-WebAssembly crates.  The wasm crate also imports the library crate and uses `#[wasm_bindgen]` to to export a `render` function to JavaScript.
 
-In Rust land, `render()` returns a `Vec<u8>`.  In JS land, the `Vec<u8>` looks like a `Uint8ClampedArray`.  That slots perfectly into [`ImageData`][imagedata], which is then drawn into a `<canvas>` using [`putImageData()`][putimagedata].
+In Rust land, `render()` returns a `Vec<u8>`.  In JS land, the `Vec<u8>` looks like a `Uint8ClampedArray`.  That slots perfectly into [`ImageData`][imagedata], which is then drawn into a `<canvas>` using [`putImageData()`][putimagedata].  You can peruse the code for the three crates at the i[rust-raytracer-weekend repo][viewsource], and if you do, please let me know if you find anything to critique.
 
 Thanks to [wasm-pack][wasm-pack] and [wasm-bindgen][wasm-bindgen] doing all the heavy lifting, that was all it took to get a working WebAssembly module!  Here's the first rendering.
 
@@ -282,3 +288,4 @@ Thanks for reading; until next time.
 [putimagedata]: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData
 [crypto-get]: https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues
 [csprng]: https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator
+[viewsource]: https://github.com/mwcz/rust-raytracer-weekend
