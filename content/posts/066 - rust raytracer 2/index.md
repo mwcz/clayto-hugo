@@ -170,10 +170,10 @@ The culprit, taking up 19% of total time, was [floatuntidf.c][floatuntidf].   It
 Now, the WebAssembly module's speed was breathing down the neck of native!  In the following benchmark, WebAssembly ran at 1.13x native speed.
 ☠
 
-| Average total time | Standard deviation |
-| --- | --- |
-| 399.20 ms | ± 4.30 ms |
-| 452.05 ms | ± 10.85 ms |
+| Target | Average total time | Standard deviation |
+| --- | --- | --- |
+| Native | 399.20 ms | ± 4.30 ms |
+| WebAssembly | 452.05 ms | ± 10.85 ms |
 
 Native measurements were captured over 30 runs with [hyperfine][hyperfine].  WebAssembly measurements were captured over 30 runs with the Chrome devtools profiler.
 
