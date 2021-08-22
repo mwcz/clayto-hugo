@@ -31,7 +31,7 @@ The process of targeting WebAssembly went well, overall.  The highlights of the 
 
  - A staggering performance degradation caused by opening devtools.
 
-Before diving in too deep, here's the end result.  This is my Rust ray tracer running right here in this blog post, at speeds pretty close to native.
+Before diving in too deep, here's the end result.  This is my Rust ray tracer running right here in this blog post, at speeds pretty close to native. Image quality is kept low to keep renders fast (and to avoid burning through phone batteries).
 
 <script async type="module" src="./rtw-render/dist/rtw-render.js"></script>
 
