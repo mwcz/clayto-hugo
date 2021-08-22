@@ -253,7 +253,7 @@ pfe-icon {
 <p>The binary crate then imported the library crate, so the CLI could work just as it did before.  I then created another crate using <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a>, a fantastic tool for creating Rust-to-WebAssembly crates.  The wasm crate also imports the library crate and uses <code>#[wasm_bindgen]</code> to to export a <code>render</code> function to JavaScript.</p>
 <p>In Rust land, <code>render()</code> returns a <code>Vec&lt;u8&gt;</code>.  In JS land, the <code>Vec&lt;u8&gt;</code> looks like a <code>Uint8ClampedArray</code>.  That slots perfectly into <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData"><code>ImageData</code></a>, which is then drawn into a <code>&lt;canvas&gt;</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData"><code>putImageData()</code></a>.  You can peruse the code for the three crates at the i<a href="https://github.com/mwcz/rust-raytracer-weekend">rust-raytracer-weekend repo</a>, and if you do, please let me know if you find anything to critique.</p>
 <p>Thanks to <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a> and <a href="https://rustwasm.github.io/docs/wasm-bindgen/">wasm-bindgen</a> doing all the heavy lifting, that was all it took to get a working WebAssembly module!  Here&rsquo;s the first rendering.</p>
-<p><img src="screenshots/first-wasm-render.png" alt="a screenshot of the very first WebAssembly rendering of my ray tracer"></p>
+<img src="screenshots/first-wasm-render.png" alt="a screenshot of the very first WebAssembly rendering of my ray tracer" loading="lazy" width=304 height=201>
 <p>The quality settings were at rock bottom, but it was still pretty exciting!</p>
 <p>So, end of post, right?  Before saying goodbye, maaaybe we should see how good the performance is.</p>
 <hr>
@@ -263,7 +263,7 @@ pfe-icon {
 <hr>
 <h3 id="mangling-shmangling">Mangling shmangling</h3>
 <p>The first test I ran was a performance profile in Chrome devtools, which profiles JS and WebAssembly.  The results were&hellip; unhelpful.</p>
-<p><img src="screenshots/profile-mangled-names.png" alt="screenshot of the mangled names"></p>
+<img src="screenshots/profile-mangled-names.png" alt="screenshot of the mangled names" loading="lazy" width=549 height=167>
 <p>wasm-pack docs helped out here.  Adding the two following settings to Cargo.toml resulted in more useful names.</p>
 <pre><code>[package.metadata.wasm-pack.profile.release]
 wasm-opt = false
@@ -272,13 +272,13 @@ wasm-opt = false
 demangle-name-section = true
 </code></pre><p>Produced:</p>
 <figure>
-<img src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names" />
+<img loading=lazy width=449 height=82 src="screenshots/profile-demangled-names.png" alt="screenshot of demangled names" />
 <figcaption>
 A more helpful profile with demangled names.
 </figcaption>
 </figure>
 <p>With the profile now usable, the first big bottleneck jumped off the screen.</p>
-<p><img src="./screenshots/rng-eighty-percent.png" alt="RNG was 80% of the profile"></p>
+<img src="./screenshots/rng-eighty-percent.png" alt="RNG was 80% of the profile" loading="lazy" width=416 height=81>
 <p><code>random_float</code>? 80%?  For some reason, generating random numbers taking up most of the oxygen in the room.  This is a ray tracer, not a crypto miner.  What gives?</p>
 <hr>
 <h3 id="rngesus-giveth-and-taketh-away">RNGesus Giveth and Taketh Away</h3>
@@ -351,12 +351,12 @@ A more helpful profile with demangled names.
 <p>In the intro I mentioned an idea that could ruin everything.  Don&rsquo;t tell anyone, but&hellip; to solve the RNG performance problem, I also experimented with hard-coding a set of pre-computed random numbers, and then cycling through them over and over again.  I figured if the set was big, it might just be good enough.</p>
 <p>The question was, how big is big enough?  I tried a low-ball of 100 pre-computed &ldquo;random&rdquo; numbers, and here&rsquo;s the result.</p>
 <figure>
-<img src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
+<img loading=lazy width=300 height=200 src="screenshots/raytrace-0.31-fake-rng.png" alt="ray tracing seeded by 100 recycled &quot;random&quot; numbers" />
 <figcaption>Ray physics governed by 100 pre-computed "random" numbers.</figcaption>
 </figure>
 <p>About as poor as I expected, so I bumped it up to 10,000.</p>
 <figure>
-<img src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &quot;random&quot; numbers" />
+<img loading=lazy width=300 height=200 src="screenshots/raytrace-0.7381-fake-rng.png" alt="ray tracing seeded by 10,000 recycled &quot;random&quot; numbers" />
 <figcaption>Ray physics governed by 10,000 pre-computed "random" numbers.</figcaption>
 </figure>
 <p>10,000 gave better results than 100, suggesting the approach could work with a large enough set, but 10,000 was already causing noticeable bloat in the size of the <code>.wasm</code> file, so I pressed <em>undo</em> a bunch of times and vowed never to speak of this again.</p>
