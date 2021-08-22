@@ -10,11 +10,13 @@ Tags:
  - web
  - wasm
 description: "Learning Rust, one tetanus shot at a time.  In this post: the work of bringing a Rust ray tracer to the web.  WebAssembly, WebAssembly, WebAssembly."
-thumbnail: thumb.png
+thumbnail: thumb.webp ./thumb.jpg ./thumb.png
 thumbpos: top
 mwc: 66
 draft: true
 ---
+
+# thumbnail: thumb.png
 
 Rust.  A ray tracer.  The dream of WebAssembly.  One dangerous idea that could ruin everything.
 
