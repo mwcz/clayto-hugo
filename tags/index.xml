@@ -6,11 +6,11 @@
     <description>Recent content in Tags on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Feb 2021 22:38:50 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jul 2021 23:57:49 -0400</lastBuildDate><atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3d</title>
       <link>https://clayto.com/tags/3d/</link>
-      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
       
       <guid>https://clayto.com/tags/3d/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>programming</title>
       <link>https://clayto.com/tags/programming/</link>
-      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
       
       <guid>https://clayto.com/tags/programming/</guid>
       <description></description>
@@ -28,7 +28,7 @@
     <item>
       <title>ray-tracing</title>
       <link>https://clayto.com/tags/ray-tracing/</link>
-      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
       
       <guid>https://clayto.com/tags/ray-tracing/</guid>
       <description></description>
@@ -37,9 +37,27 @@
     <item>
       <title>rust</title>
       <link>https://clayto.com/tags/rust/</link>
-      <pubDate>Mon, 08 Feb 2021 22:38:50 -0500</pubDate>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
       
       <guid>https://clayto.com/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wasm</title>
+      <link>https://clayto.com/tags/wasm/</link>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/wasm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://clayto.com/tags/web/</link>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/web/</guid>
       <description></description>
     </item>
     
@@ -58,15 +76,6 @@
       <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
       
       <guid>https://clayto.com/tags/patternfly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://clayto.com/tags/web/</link>
-      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/web/</guid>
       <description></description>
     </item>
     
@@ -463,15 +472,6 @@
       <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/text-adventure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wasm</title>
-      <link>https://clayto.com/tags/wasm/</link>
-      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/wasm/</guid>
       <description></description>
     </item>
     

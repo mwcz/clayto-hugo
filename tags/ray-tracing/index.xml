@@ -6,7 +6,17 @@
     <description>Recent content in ray-tracing on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Feb 2021 22:38:50 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/ray-tracing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jul 2021 23:57:49 -0400</lastBuildDate><atom:link href="https://clayto.com/tags/ray-tracing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shaking Off the Rust 2: Ray Tracing in WebAssembly</title>
+      <link>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</link>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      
+      <guid>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</guid>
+      <description>thumbnail: thumb.png Rust. A ray tracer. The dream of WebAssembly. One dangerous idea that could ruin everything.
+This was the scene at the end of my last post, which covered creating a ray tracer in Rust using Peter Shirley&amp;rsquo;s outstanding Ray Tracing in One Weekend. In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.</description>
+    </item>
+    
     <item>
       <title>Shaking Off the Rust 1: Ray Tracing in One Weekend</title>
       <link>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</link>

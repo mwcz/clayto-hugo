@@ -23,10 +23,10 @@
   <meta property="og:url" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/" />
 
   
-  <meta property="og:image" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.png" />
+  <meta property="og:image" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp ./thumb.jpg ./thumb.png" />
   <meta
     name="twitter:image"
-    content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.png"
+    content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp ./thumb.jpg ./thumb.png"
   />
   
   <meta name="twitter:card" content="summary" />
@@ -170,7 +170,8 @@
   
   
   <section>
-    <p>Rust.  A ray tracer.  The dream of WebAssembly.  One dangerous idea that could ruin everything.</p>
+    <h1 id="thumbnail-thumbpng">thumbnail: thumb.png</h1>
+<p>Rust.  A ray tracer.  The dream of WebAssembly.  One dangerous idea that could ruin everything.</p>
 <p>This was the scene at the end of my <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">last post</a>, which covered creating a ray tracer in Rust using Peter Shirley&rsquo;s outstanding <a href="https://raytracing.github.io/">Ray Tracing in One Weekend</a>.  In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.</p>
 <p>The process of targeting WebAssembly went well, overall.  The highlights of the journey were:</p>
 <ul>
@@ -202,13 +203,16 @@ rtw-render {
 <div id="rtw-wrapper">
 <rtw-render id="live-demo"></rtw-render>
 </div>
+<center>
+<p><a href="https://github.com/mwcz/rust-raytracer-weekend">View source</a></p>
+</center><br>
 <p>For fun, try re-rendering a few times to see the &ldquo;noise&rdquo; pattern change.  It&rsquo;s also interesting to watch the stats vary from run to run.  The total ray count changes due to randomness in how rays scatter off of surfaces.  With one random seed, a ray may hit a surface, causing another ray to spawn, while with another random seed, that same ray may miss the object entirely, terminating that ray sequence.  Randomness will come up a lot in this post.</p>
 <hr>
 <h2 id="crate-refactoring">Crate refactoring</h2>
 
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#thumbnail-thumbpng">thumbnail: thumb.png</a>
       <ul>
         <li><a href="#crate-refactoring">Crate refactoring</a></li>
         <li><a href="#performance">Performance</a>
@@ -248,7 +252,7 @@ pfe-icon {
 </style>
 <p>At the end of the <a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">previous post</a>, the ray tracer could be run only on the command line.  In Rust terms, it was a binary crate.  To re-use that code for a WebAssembly target, the first thing I did was move most of the code into a library crate, so it could be shared.</p>
 <p>The binary crate then imported the library crate, so the CLI could work just as it did before.  I then created another crate using <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a>, a fantastic tool for creating Rust-to-WebAssembly crates.  The wasm crate also imports the library crate and uses <code>#[wasm_bindgen]</code> to to export a <code>render</code> function to JavaScript.</p>
-<p>In Rust land, <code>render()</code> returns a <code>Vec&lt;u8&gt;</code>.  In JS land, the <code>Vec&lt;u8&gt;</code> looks like a <code>Uint8ClampedArray</code>.  That slots perfectly into <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData"><code>ImageData</code></a>, which is then drawn into a <code>&lt;canvas&gt;</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData"><code>putImageData()</code></a>.</p>
+<p>In Rust land, <code>render()</code> returns a <code>Vec&lt;u8&gt;</code>.  In JS land, the <code>Vec&lt;u8&gt;</code> looks like a <code>Uint8ClampedArray</code>.  That slots perfectly into <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData"><code>ImageData</code></a>, which is then drawn into a <code>&lt;canvas&gt;</code> using <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData"><code>putImageData()</code></a>.  You can peruse the code for the three crates at the i<a href="https://github.com/mwcz/rust-raytracer-weekend">rust-raytracer-weekend repo</a>, and if you do, please let me know if you find anything to critique.</p>
 <p>Thanks to <a href="https://rustwasm.github.io/wasm-pack/book/introduction.html">wasm-pack</a> and <a href="https://rustwasm.github.io/docs/wasm-bindgen/">wasm-bindgen</a> doing all the heavy lifting, that was all it took to get a working WebAssembly module!  Here&rsquo;s the first rendering.</p>
 <p><img src="screenshots/first-wasm-render.png" alt="a screenshot of the very first WebAssembly rendering of my ray tracer"></p>
 <p>The quality settings were at rock bottom, but it was still pretty exciting!</p>
@@ -435,202 +439,6 @@ A more helpful profile with demangled names.
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2019/02/how-we-made-command-line-bash/">How We Made Command Line Bash</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A whatsit.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2019-02-15T10:21:24-05:00">
-      Feb 15, 2019
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2019/02/how-we-made-command-line-bash/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'How We Made Command Line Bash'"
-              src="https://clayto.com/2019/02/how-we-made-command-line-bash/clh-bash-thumb.png">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/05/cee-tribe-display/">CEE Tribe Display</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A game for Red Hat Summit.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2018-05-18T00:00:00Z">
-      May 18, 2018
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/05/cee-tribe-display/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'CEE Tribe Display'"
-              src="https://clayto.com/2018/05/cee-tribe-display/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/05/engage/">Engage</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A game for Red Hat Summit.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2018-05-04T00:00:00Z">
-      May 4, 2018
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/05/engage/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'Engage'"
-              src="https://clayto.com/2018/05/engage/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/">Visualizing Machine Learning with WebGL</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        Building a WebGL particle system to visualize machine learning.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2018-03-14T00:00:00Z">
-      Mar 14, 2018
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'Visualizing Machine Learning with WebGL'"
-              src="https://clayto.com/2018/03/visualizing-machine-learning-with-webgl/thumb.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
   <div class="pbp-article-summary">
     <section>
@@ -662,6 +470,202 @@ A more helpful profile with demangled names.
               loading="lazy"
               alt="thumbnail for 'Meet SimPixel'"
               src="https://clayto.com/2017/03/meet-simpixel/./thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/tracer/">Tracer</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Tracer is a 3D connect-the-dots game we created for Ludum Dare 37.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-25T00:00:00Z">
+      Jan 25, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/tracer/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Tracer'"
+              src="https://clayto.com/projects/tracer/./head.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">Kimotion at geekSPARK 2016</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion-powered interactive art at SPARKcon 2016.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-12T00:00:00Z">
+      Jan 12, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Kimotion at geekSPARK 2016'"
+              src="https://clayto.com/2017/01/kimotion-at-geekspark-2016/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/zorbio/">Zorbio</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Zorbio is a free 3D eat-em-up game that you can <a href="https://zorb.io">play</a> in your browser!
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-11-03T00:00:00Z">
+      Nov 3, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/zorbio/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-top"
+              loading="lazy"
+              alt="thumbnail for 'Zorbio'"
+              src="https://clayto.com/projects/zorbio/./icon_zorbio.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/glow-rope/">Glow Rope</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A simple WebGL demo of streaming particles.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/glow-rope/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Glow Rope'"
+              src="https://clayto.com/2016/07/glow-rope/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>

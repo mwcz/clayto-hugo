@@ -26,19 +26,25 @@
     <loc>https://clayto.com/tags/rust/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</loc>
-    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
+    <loc>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</loc>
+    <lastmod>2021-07-05T23:57:49-04:00</lastmod>
   </url><url>
     <loc>https://clayto.com/tags/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/tags/wasm/</loc>
+    <lastmod>2021-07-05T23:57:49-04:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/tags/web/</loc>
+    <lastmod>2021-07-05T23:57:49-04:00</lastmod>
+  </url><url>
+    <loc>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clayto.com/tags/javascript/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
   </url><url>
     <loc>https://clayto.com/tags/patternfly/</loc>
-    <lastmod>2019-07-25T15:11:23-04:00</lastmod>
-  </url><url>
-    <loc>https://clayto.com/tags/web/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
   </url><url>
     <loc>https://clayto.com/2019/07/web-component-icons/</loc>
@@ -249,9 +255,6 @@
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clayto.com/2015/06/the-lurking-horror/</loc>
-    <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://clayto.com/tags/wasm/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://clayto.com/2015/06/webassembly-is-the-keystone/</loc>
