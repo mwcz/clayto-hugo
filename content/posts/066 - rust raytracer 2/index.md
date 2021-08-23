@@ -10,7 +10,7 @@ Tags:
  - web
  - wasm
 description: "Learning Rust, one tetanus shot at a time.  In this post: the work of bringing a Rust ray tracer to the web.  WebAssembly, WebAssembly, WebAssembly."
-thumbnail: thumb.webp ./thumb.jpg ./thumb.png
+thumbnail: thumb.webp ./thumb.jpg
 thumbpos: top
 mwc: 66
 ---
@@ -46,6 +46,15 @@ rtw-render {
 <div id="rtw-wrapper">
 <rtw-render id="live-demo"></rtw-render>
 </div>
+
+<noscript>
+<strong style="color: var(--pbp-error-color)">JavaScript appears to be disabled in your browser, so the WebAssembly demo can't initialize.  Here's what it would have looked like:</strong>
+<picture>
+  <source srcset="./thumb.webp" type="image/webp">
+  <img loading="lazy" src="./thumb.jpg" alt="Expected result" width=500 height=373>
+</picture>
+<style>#rtw-wrapper { display: none }</style>
+</noscript>
 
 <center>
 
