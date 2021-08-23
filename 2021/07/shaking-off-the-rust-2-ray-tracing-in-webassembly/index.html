@@ -23,10 +23,10 @@
   <meta property="og:url" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/" />
 
   
-  <meta property="og:image" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp ./thumb.jpg ./thumb.png" />
+  <meta property="og:image" content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp ./thumb.jpg" />
   <meta
     name="twitter:image"
-    content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp ./thumb.jpg ./thumb.png"
+    content="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp ./thumb.jpg"
   />
   
   <meta name="twitter:card" content="summary" />
@@ -202,6 +202,14 @@ rtw-render {
 <div id="rtw-wrapper">
 <rtw-render id="live-demo"></rtw-render>
 </div>
+<noscript>
+<strong style="color: var(--pbp-error-color)">JavaScript appears to be disabled in your browser, so the WebAssembly demo can't initialize.  Here's what it would have looked like:</strong>
+<picture>
+  <source srcset="./thumb.webp" type="image/webp">
+  <img loading="lazy" src="./thumb.jpg" alt="Expected result" width=500 height=373>
+</picture>
+<style>#rtw-wrapper { display: none }</style>
+</noscript>
 <center>
 <p><a href="https://github.com/mwcz/rust-raytracer-weekend">View source</a></p>
 </center><br>
