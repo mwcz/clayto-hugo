@@ -21,10 +21,12 @@
   <meta property="og:url" content="{{ .Permalink }}" />
 
   {{ if .Params.thumbnail }}
-  <meta property="og:image" content="{{ .Permalink }}{{ .Params.thumbnail }}" />
+    {{ $.Scratch.Set "thumbs" (split .Params.thumbnail " ") }}
+    {{ $.Scratch.Set "fallbackThumb" ( index (last 1 ($.Scratch.Get "thumbs")) 0 ) }}
+  <meta property="og:image" content="{{ $.Permalink }}{{ $.Scratch.Get "fallbackThumb" }}" />
   <meta
     name="twitter:image"
-    content="{{ .Permalink }}{{ .Params.thumbnail }}"
+    content="{{ $.Permalink }}{{ $.Scratch.Get "fallbackThumb" }}"
   />
   {{ end }}
   <meta name="twitter:card" content="summary" />

@@ -10,7 +10,7 @@ Tags:
  - web
  - wasm
 description: "Learning Rust, one tetanus shot at a time.  In this post: the work of bringing a Rust ray tracer to the web.  WebAssembly, WebAssembly, WebAssembly."
-thumbnail: thumb.webp ./thumb.jpg
+thumbnail: thumb.webp thumb.jpg
 thumbpos: top
 mwc: 66
 ---
