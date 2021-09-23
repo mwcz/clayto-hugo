@@ -30,7 +30,7 @@ the scene, which you can use to influence your display.
 Learn more at [kimotion.xyz][kimotion-web], or if you want to see it in
 action...
 
-<p class="text-center"><a class="btn btn-default btn-lg" href="http://kimotion.xyz/live">Launch live demo!</a></p>
+<p class="text-center"><a class="btn btn-default btn-lg" href="http://kimotion.xyz/live/#sandstorm">Launch live demo!</a></p>
 
 # Video clips
 
