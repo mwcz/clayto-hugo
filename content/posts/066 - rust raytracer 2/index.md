@@ -66,9 +66,9 @@ For fun, try re-rendering a few times to see the "noise" pattern change.  It's a
 
 ---
 
-## Crate refactoring
-
 {{< toc >}}
+
+## Crate refactoring
 
 <style>
 pfe-icon {
