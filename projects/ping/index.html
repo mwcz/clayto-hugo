@@ -1,532 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  
-  <meta property="og:title" content="Ping" />
-  <meta name="twitter:title" content="Ping" />
-  
-  <title>Ping - clayto</title>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PING ACCESS LABS CHALLENGE</title>
+        <link rel="stylesheet" href="styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://zipt.org/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="https://zipt.org/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+    </head>
+    <body>
 
-  
-  <meta name="description" content="Ping is a 4-player pong-style game with crazy abilities." />
-  <meta property="og:description" content="Ping is a 4-player pong-style game with crazy abilities." />
-  <meta name="twitter:description" content="Ping is a 4-player pong-style game with crazy abilities." />
-  
-
-  <meta name="author" content="" />
-  <meta property="og:site_name" content="clayto" />
-  <meta property="og:url" content="https://clayto.com/projects/ping/" />
-
-  
-    
-    
-  <meta property="og:image" content="https://clayto.com/projects/ping/./icon_ping.jpg" />
-  <meta
-    name="twitter:image"
-    content="https://clayto.com/projects/ping/./icon_ping.jpg"
-  />
-  
-  <meta name="twitter:card" content="summary" />
-
-  
-  <meta name="twitter:site" content="@mwcz" />
-  <meta name="twitter:creator" content="@mwcz" />
-   
-  <meta property="og:type" content="article" />
-   
-  
-  <meta name="generator" content="Hugo 0.81.0" /><link media="screen"
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
-    rel="stylesheet"
-  />
-  <link media="screen" rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
-
-  
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
-  />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
-  />
-  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
-  <link
-    rel="mask-icon"
-    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
-    color="#121212"
-  />
-  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
-  <meta name="msapplication-TileColor" content="#121212" />
-  <meta
-    name="msapplication-config"
-    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
-  />
-  <meta name="theme-color" content="#121212" />
-   
-  
-  
-
-</head>
-
-<body>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-<header class="pbp-navbar-container">
-  
-<nav class="pbp-navbar" role="navigation">
-  <div class="pbp-nav-logo">
-    <a href="https://clayto.com/" title="Home" id="pbp-logo">
-      <img src="https://clayto.com/images/logo.png" height="50.4" width="50.4" alt="smiling clayto.com logo">
-    </a>
-  </div>
-  <div class="pbp-navitems">
-    
-    
-    
-    <a href="https://clayto.com/" class="pbp-navitem">
-      &nbsp;BLOG</a>
-    
-    &nbsp;<span class="pbp-nav-separator">&middot;</span>
-    
-    
-    <a href="https://clayto.com/demos" class="pbp-navitem">
-      &nbsp;DEMOS</a>
-    
-    &nbsp;<span class="pbp-nav-separator">&middot;</span>
-    
-    
-    <a href="https://clayto.com/games" class="pbp-navitem">
-      &nbsp;GAMES</a>
-    
-    
-  </div>
-</nav>
-
-
-
-
-</header>
-  <main id="main" role="main" class="container">
-
-
-
-
-  <article class="pbp-article">
-
-  <header>
-    <h1>Ping</h1>
-  </header>
-
-  
-
-  <div class="pbp-article-meta">
-    <time datetime="2015-06-23T00:00:00Z">
-      Jun 23, 2015
-    </time>
-    
-    <span class="pbp-blue">&middot;</span>
-    2 minute read
-    <br>
-    <span class="pbp-article-tags">
-      
-      <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
-      
-      <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
-      
-      <a href="https://clayto.com/tags/phaserjs" class="c-tag">#phaserjs</a>
-      
-      <a href="https://clayto.com/tags/games" class="c-tag">#games</a>
-      
-      <a href="https://clayto.com/tags/redhat" class="c-tag">#redhat</a>
-      
-      <a href="https://clayto.com/tags/gamedev" class="c-tag">#gamedev</a>
-      
-      <a href="https://clayto.com/tags/ping" class="c-tag">#ping</a>
-      
-    </span>
-  </div>
-
-  
-  
-  <section>
-    <p><a href="https://clayto.com/static/projects/ping"><img src="readme-screenshot.png" alt="screenshot of Ping"></a></p>
-<p>Check out Ping! I created it for my team&rsquo;s booth at <a href="http://www.redhat.com/summit/2015/">Red Hat Summit
-2015</a> (Red Hat&rsquo;s huge annual conference), to promote <a href="https://access.redhat.com/labs/">Access
-Labs</a>. It&rsquo;s a 1-4 player pong clone with special powers.</p>
-<p>It&rsquo;s Web-based, so you can play it <em>right this minute</em>. Our booth had a
-quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping
-the AI (instead of your fellow humans).</p>
-<p><img src="./controllers.jpg" alt="photo of Ping USB controllers"></p>
-<p class="text-center"><a class="btn btn-default btn-lg" href="https://clayto.com/static/projects/ping">Play now!</a></p>
-<p>Even as a lifelong gamer and programmer, this is the first videogame I&rsquo;ve made.
-I built it within the excellent <a href="http://phaser.io/">Phaser</a> framework. Building it was
-incredibly fun and a hurty lesson in the difficulty of game development.
-Complexity can really soar out of control when so many subsystems are woven
-into a single program.</p>
-<p>Fortuitously, I had recently stolen a copy ($35 is a steal!) of what turned out
-to be an excellent book: <a href="http://gameprogrammingpatterns.com/">Game Programming Patterns</a> by <a href="https://twitter.com/munificentbob">Bob
-Nystrom</a>. Several of the patterns described in that book can be found
-inside Ping.</p>
-<p><img src="booth.jpg" alt="photo of game booth at Red Hat Summit"></p>
-<p>Roughly 400 people played the game over the course of the event. The top score
-was 597, which earned one dedicated player a pair of sweet headphones. It was
-enriching to see so many people enjoying the game. Each player experienced the
-game in a unique way, which was both surprising and instructive.</p>
-<p>In short, it&rsquo;s fun to make games. It&rsquo;s even better when other people enjoy
-them. I think this is the beginning of a beautiful friendship.</p>
-<p style="clear:both;height:0">&nbsp;</p>
-<hr>
-<h2 id="more-information">More information</h2>
-<ul>
-<li><a href="https://github.com/redhataccess/pinglabs/">View source</a> - the project&rsquo;s GitHub repo</li>
-<li><a href="https://access.redhat.com/labs/">Red Hat Access Labs</a></li>
-<li><a href="http://phaser.io/">Phaser</a></li>
-</ul>
-
-  </section>
-  <footer>
-
-    
-
-    
-
-    
-
-<section>
-  <h3>RELATED POSTS</h3>
-  <div class="pbp-related">
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/01/naming-names-anonymity-is-dead/">Naming Names - Anonymity is Dead</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        Naming things is hard enough, and JavaScript doesn&rsquo;t make it any easier.  Should anonymous functions be considered harmful?
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2015-01-01T00:00:00Z">
-      Jan 1, 2015
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/01/naming-names-anonymity-is-dead/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'Naming Names - Anonymity is Dead'"
-              src="https://clayto.com/2015/01/naming-names-anonymity-is-dead/./naming.gif">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
+        <div id="description">
+            <div class="progress"></div>
+            <p>
+                <a href="http://palebluepixel.org/projects/ping">View project</a> or <a
+                    href="https://github.com/redhataccess/pinglabs/">View
+                    source</a>
+            </p>
         </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
 
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">DiMo: The Deconstruction of Falling Stars</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        The construction of a WebGL particle physics gravity simulation <em>slash</em> interactive art installation.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2014-10-30T00:00:00Z">
-      Oct 30, 2014
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'DiMo: The Deconstruction of Falling Stars'"
-              src="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/swath-colors.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
+        <div id="game-container">
+            <div id="phaser-canvas-wrapper"></div>
+
+            <div id="help">
+                <ul>
+                    <li>
+                        &nbsp;<span class="gamepad-button">&harr;</span> or <span class="gamepad-button">&varr;</span> Move paddle
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;<span class="gamepad-button">Z</span> Select powerup
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;<span class="gamepad-button">X</span> Use powerup
+                    </li>
+                </ul>
+                <p class="help-desc">
+                    Earn points for scoring goals, plus points points just for staying alive.  When someone scores on you, you lose a life.  Don't let that happen.  Move while hitting the puck to angle your shots.
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
 
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/dimo/">DiMo: Particles</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
-Launch live demo!
-  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
-$GALLERY
-After the event, I wrote this opensource.com article about the experience.
-The source code is, of course, open.
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2014-08-25T00:00:00Z">
-      Aug 25, 2014
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/dimo/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'DiMo: Particles'"
-              src="https://clayto.com/projects/dimo/./icon_dimo.png">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
+        <div id="pause-btn">Puck paused</div>
 
-    
-    
-    <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
-  <div class="pbp-article-summary">
-    <section>
-      
-        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
-      
-    </section>
-  </div>
-  <div class="pbp-article-meta">
-    <time datetime="2014-08-25T00:00:00Z">
-      Aug 25, 2014
-    </time>
-  </div>
-  
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">
-    <div class="pbp-article-thumbnail">
-      
-      <div class="glass-card">
-      
-        <div class="glass-card-ratio">
-          <picture>
-            
-            
-            
-               
-            
-            <img
-              class="glass-card-bg glass-card-bg-default"
-              loading="lazy"
-              alt="thumbnail for 'Particles and π - DiMo Comes to Life'"
-              src="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/./dimo-kids.jpg">
-          </picture>
-          <div class="glass-card-border-outer"></div>
-          <div class="glass-card-border-inner"></div>
-          
-          
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </a>
-  
-</article>
-
-    
-    
-  </div>
-</section>
-
-
-
-
-  </footer>
-</article>
-
-
-
-  </main>
-  <footer class="container">
-    <section class="pbp-footer">
-      
-<aside>
-  
-    <small class="footer-label">CONTACT ME</small>
-    
-    
-    
-    
-<ul class="pbp-social-links">
-  
-  <li>
-    <a title="Email me" href="mailto:mwc@clayto.com">
-      <span class="icon-mail"></span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank" rel="noopener">
-      <span class="icon-github-squared"></span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank" rel="noopener">
-      <span class="icon-codepen"></span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank" rel="noopener">
-      <span class="icon-twitter-squared"></span>
-    </a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li>
-    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank" rel="noopener">
-      <span class="icon-vimeo-squared"></span>
-    </a>
-  </li>
-  
-  
-  
-</ul>
-
-
-  
-</aside>
-
-
-    </section>
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.1/anchor.min.js"></script>
-  <script>
-    anchors.options.visible = 'touch';
-    anchors.options.placement = 'right';
-    anchors.options.class = 'heading-anchor';
-    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
-  </script>
-
-  
-    
-  
-
-</body>
+        <script src="lib/requirejs/require.js" data-main="require.config.js"></script>
+    </body>
 </html>
 
