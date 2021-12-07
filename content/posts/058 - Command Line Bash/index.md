@@ -11,7 +11,6 @@ Tags:
 description: "A whatsit."
 thumbnail: clh-bash.png
 mwc: 58
-draft: true
 ---
 
 ## Summary
@@ -28,13 +27,13 @@ draft: true
 }
 </style>
 
-Command Line Bash is a game that challenges you to type in as many valid commands as you can in 60 seconds.
+Command Line Bash is a game that challenges you to type in as many commands as you can in 60 seconds.
 
 <center style="margin: 60px auto;">
 <a class="pbp-btn" href="https://www.redhat.com/en/command-line-heroes/bash/index.html">Play now!</a>
 </center>
 
-Bash was created with co-conspirator illustrious [Jared Sprague][jsprague], along with tremendous help from the [Command Line Heroes podcast][clh] team, open source contributors, and the [CLH Discord][discord] community.
+My frequent co-conspirator [Jared Sprague][jsprague] and I created Command Line Bash, along with tremendous help from the [Command Line Heroes podcast][clh] team, open source contributors, and the [CLH Discord][discord] community.
 
 If you're into code, you're welcome to [view source][source].  Contributions welcome!
 
@@ -42,14 +41,12 @@ If you're into code, you're welcome to [view source][source].  Contributions wel
 
 ## How to play
 
-The game walks you through the instructions before you play, but here are the basics.  The game challenges you to type in as many commands as you can in 60 seconds.  Commands can be drawn from a variety of languages.
+The game walks you through the instructions before you play, but here are the basics.  You will be challenged to type in as many commands as you can in 60 seconds.  Commands can be drawn from any of the following languages.
 
- - bash shell commands & linux built-ins
+ - bash shell commands & Linux built-ins
  - JavaScript keywords, objects, functions
  - Python keywords, objects, functions
  - HTML5 tags
-
-When play starts, you don't have to choose a language.  Any of the above commands can be typed into the same prompt.
 
 The leaderboard isn't networked, so we can't see your high scores unless you share them with us on Twitter!  Tag [#CommandLinePod][clh-tw].
 
@@ -77,9 +74,9 @@ grid-gap: 10px;
 
 ## Why we made it
 
-About a year ago, Dan contacted Jared and me after seeing some of [our games][scripta].  After chatting for a while, the idea came up of creating a game based on Command Line Heroes (isn't the name just begging to be a game?).
+About a year ago, one of the originators of Command Line Heroes, Dan Courcy, contacted Jared and me after seeing some of [our games][scripta].  After chatting for a while, the idea came up of creating a game based on Command Line Heroes (that name sure sounds like a videogame, doesn't it?).
 
-A few months later, we were neck-deep in code for an adventure game engine called [Hero Engine][hero-eng]. Adventure games, we discovered, are very time-consuming to create, *especially* when you start by building an engine from scratch.  To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for [IBM Think][think], where we would first present the game to the world.
+A few months later, we were neck-deep in code for a new adventure game engine called [Hero Engine][hero-eng]. Sadly, we made the same discovery many gamedevs already knew: adventure games are _very time-consuming_ to create, *especially* when you start by building an engine from scratch.  To scale back, we decided to build a new game in more of a game-jam style, one with a much smaller scope.  Our goal was to complete it in time for [IBM Think][think], where we would first present the game to the world.
 
 The strategy succeeded, and we were able to put the finishing touches on the game just before Think began.  Here's a bit about Bash @ Think.
 
@@ -87,9 +84,9 @@ The strategy succeeded, and we were able to put the finishing touches on the gam
 
 ## Cabs and confs
 
-Not one to settle for the ordinary, Dan went the extra mile and ordered some classic arcade cabinets.  Fortunately, through my geekSPARK work I met Bill Culverhouse.  Bill is a maker extraordinaire, geekSPARK veteran, and happens to run an arcade cabinet construction company, [Triangle Home Gamerooms][trihg].
+Not one to settle for the ordinary, Dan wanted to go the extra mile and present the game in full-sized arcade cabinets.  Fortunately, through participation in [geekSPARK][geekspark], I'd met Bill Culverhouse.  Bill is a maker extraordinaire, geekSPARK veteran, and happens to run an arcade cabinet construction company, [Triangle Home Gamerooms][trihg].
 
-We met with them, toured their impressive facility, determined specs, and placed the order.
+We met with them, toured their impressive factory, determined specs, and placed the order.
 
 Here's what they built for us.
 
@@ -110,13 +107,11 @@ As I'm writing this, Think has just concluded and was a huge success for the Com
 
 ## What's next?
 
-Next up, I'm working on a post about the tech we used to create the game.
+Here are some ways to get involved.
 
-Until then, here are some ways to get involved.
-
-## Join the community
-
-Discord link.
+ - <a href="https://www.redhat.com/en/command-line-heroes/bash/index.html">Play the game!</a>
+ - [Join the Discord server][discord]
+ - [Check out the code][source]
 
 
 [game]: https://www.redhat.com/en/command-line-heroes/bash/index.html
@@ -136,3 +131,4 @@ Discord link.
 [pae]: http://pae.fun
 [zorb]: https://zorb.io
 [clh-tw]: https://twitter.com/hashtag/commandlinepod?src=hash
+[geekspark]: /tags/geekspark/
