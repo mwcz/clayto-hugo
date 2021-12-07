@@ -2,7 +2,7 @@
 
 default:
 	@cd themes/palebluepixel/
-	find src/less -name '*.less' | entr npm run build &
+	find src/less -name '*.less' | entr yarn build &
 	@cd -
 	hugo server
 
@@ -11,13 +11,13 @@ clean:
 
 dev:
 	@cd themes/palebluepixel/ 
-	find src/less -name '*.less' | entr npm run build &
+	find src/less -name '*.less' | entr yarn build &
 	@cd -
 	hugo server -D
 
 build: clean
 	@cd themes/palebluepixel/ 
-	npm run build
+	yarn build
 	@cd -
 	hugo -D # build with drafts, so drafts can be linked to
 	hugo # build without drafts so the drafts are unlisted
