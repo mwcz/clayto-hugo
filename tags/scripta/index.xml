@@ -6,7 +6,17 @@
     <description>Recent content in scripta on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://clayto.com/tags/scripta/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Feb 2019 09:53:53 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/scripta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Command Line Bash</title>
+      <link>https://clayto.com/2019/02/command-line-bash/</link>
+      <pubDate>Fri, 15 Feb 2019 09:53:53 -0500</pubDate>
+      
+      <guid>https://clayto.com/2019/02/command-line-bash/</guid>
+      <description>Summary  .float-comp { shape-outside: url(ibm-5150.png); float: right; shape-margin: 16px; margin-right: -16%; max-width: 60%; }  Command Line Bash is a game that challenges you to type in as many commands as you can in 60 seconds.
+Play now!  My frequent co-conspirator Jared Sprague and I created Command Line Bash, along with tremendous help from the Command Line Heroes podcast team, open source contributors, and the CLH Discord community.</description>
+    </item>
+    
     <item>
       <title>Tracer</title>
       <link>https://clayto.com/projects/tracer/</link>

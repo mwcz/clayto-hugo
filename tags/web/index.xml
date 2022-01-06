@@ -6,7 +6,18 @@
     <description>Recent content in web on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jul 2021 23:57:49 -0400</lastBuildDate><atom:link href="https://clayto.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 10:54:48 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rippulous Pond</title>
+      <link>https://clayto.com/2022/01/rippulous-pond/</link>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
+      
+      <guid>https://clayto.com/2022/01/rippulous-pond/</guid>
+      <description>Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even&amp;hellip;
+
+ canvas { object-fit: contain; width: 100%; position: relative; image-rendering: -moz-crisp-edges; image-rendering: -webkit-crisp-edges; image-rendering: pixelated; image-rendering: crisp-edges; margin-top: 3em; margin-bottom: 3em; }   const canvas=document.querySelector(&#34;canvas#i-want-moire&#34;),ctx=canvas.getContext(&#34;2d&#34;),WIDTH=700,HEIGHT=700,ASPECT=WIDTH/HEIGHT,COUNT_X=80,COUNT_Y=COUNT_X/ASPECT,COUNT=COUNT_X*COUNT_Y,GAP=WIDTH/COUNT_X,SIZE=6,RADIUS=340,DELAY=1e4,FADE=2e3,START_FLIP=200,SPEED=25227;console.table({WIDTH,HEIGHT,ASPECT,COUNT,COUNT_X,COUNT_Y,GAP}),canvas.width=WIDTH,canvas.height=HEIGHT;function easeInOutCubic(t){return Math.max(0,Math.min(1,t I created this as a vanilla canvas exercise. Typically, I&amp;rsquo;d use a three.js particle system for something like this, but when my coworker Daniel selected &amp;ldquo;make something with &amp;lt;canvas&amp;gt;&amp;rdquo; for our weekly coding challenge, it felt more pure to use the raw canvas API.</description>
+    </item>
+    
     <item>
       <title>Shaking Off the Rust 2: Ray Tracing in WebAssembly</title>
       <link>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</link>
@@ -25,6 +36,16 @@ The process of targeting WebAssembly went well, overall.</description>
       
       <guid>https://clayto.com/2019/07/web-component-icons/</guid>
       <description>pfe-icon { --pfe-icon--Color: var(--pbp-fg-color, white); } @media (min-width: 750px) { #TableOfContents { float: right; padding: 10px; /* margin: 10px; */ margin: 0 0 20px 20px; background-color: #242424; } }     Features Demo The pfe-icon tag Icon sets  Icon set definitions  resolveIconName   Integrating with Font Awesome Organizing icon sets   SVG injection and coloring  Setting icon colors  Coloring individual icons Coloring all icons Coloring groups of icons   Puzzler: MS Edge icon coloring   Performance  Icon size HTTP/1.</description>
+    </item>
+    
+    <item>
+      <title>Command Line Bash</title>
+      <link>https://clayto.com/2019/02/command-line-bash/</link>
+      <pubDate>Fri, 15 Feb 2019 09:53:53 -0500</pubDate>
+      
+      <guid>https://clayto.com/2019/02/command-line-bash/</guid>
+      <description>Summary  .float-comp { shape-outside: url(ibm-5150.png); float: right; shape-margin: 16px; margin-right: -16%; max-width: 60%; }  Command Line Bash is a game that challenges you to type in as many commands as you can in 60 seconds.
+Play now!  My frequent co-conspirator Jared Sprague and I created Command Line Bash, along with tremendous help from the Command Line Heroes podcast team, open source contributors, and the CLH Discord community.</description>
     </item>
     
     <item>

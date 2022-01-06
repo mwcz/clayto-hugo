@@ -6,22 +6,58 @@
     <description>Recent content in Tags on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jul 2021 23:57:49 -0400</lastBuildDate><atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 10:54:48 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>3d</title>
-      <link>https://clayto.com/tags/3d/</link>
-      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      <title>art</title>
+      <link>https://clayto.com/tags/art/</link>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
       
-      <guid>https://clayto.com/tags/3d/</guid>
+      <guid>https://clayto.com/tags/art/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>demos</title>
+      <link>https://clayto.com/tags/demos/</link>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/demos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://clayto.com/tags/javascript/</link>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
       <link>https://clayto.com/tags/programming/</link>
-      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
       
       <guid>https://clayto.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://clayto.com/tags/web/</link>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>3d</title>
+      <link>https://clayto.com/tags/3d/</link>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      
+      <guid>https://clayto.com/tags/3d/</guid>
       <description></description>
     </item>
     
@@ -49,24 +85,6 @@
       <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
       
       <guid>https://clayto.com/tags/wasm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://clayto.com/tags/web/</link>
-      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://clayto.com/tags/javascript/</link>
-      <pubDate>Thu, 25 Jul 2019 15:11:23 -0400</pubDate>
-      
-      <guid>https://clayto.com/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -107,6 +125,33 @@
     </item>
     
     <item>
+      <title>gamedev</title>
+      <link>https://clayto.com/tags/gamedev/</link>
+      <pubDate>Fri, 15 Feb 2019 09:53:53 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/gamedev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>games</title>
+      <link>https://clayto.com/tags/games/</link>
+      <pubDate>Fri, 15 Feb 2019 09:53:53 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/games/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripta</title>
+      <link>https://clayto.com/tags/scripta/</link>
+      <pubDate>Fri, 15 Feb 2019 09:53:53 -0500</pubDate>
+      
+      <guid>https://clayto.com/tags/scripta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>pitivi</title>
       <link>https://clayto.com/tags/pitivi/</link>
       <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
@@ -121,15 +166,6 @@
       <pubDate>Thu, 21 Jun 2018 10:10:12 -0400</pubDate>
       
       <guid>https://clayto.com/tags/video/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gamedev</title>
-      <link>https://clayto.com/tags/gamedev/</link>
-      <pubDate>Tue, 17 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/gamedev/</guid>
       <description></description>
     </item>
     
@@ -157,15 +193,6 @@
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/audio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>art</title>
-      <link>https://clayto.com/tags/art/</link>
-      <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/art/</guid>
       <description></description>
     </item>
     
@@ -242,15 +269,6 @@
     </item>
     
     <item>
-      <title>games</title>
-      <link>https://clayto.com/tags/games/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/games/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ld38</title>
       <link>https://clayto.com/tags/ld38/</link>
       <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
@@ -287,15 +305,6 @@
     </item>
     
     <item>
-      <title>demos</title>
-      <link>https://clayto.com/tags/demos/</link>
-      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/demos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>led</title>
       <link>https://clayto.com/tags/led/</link>
       <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
@@ -328,15 +337,6 @@
       <pubDate>Mon, 06 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://clayto.com/tags/particles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>scripta</title>
-      <link>https://clayto.com/tags/scripta/</link>
-      <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://clayto.com/tags/scripta/</guid>
       <description></description>
     </item>
     

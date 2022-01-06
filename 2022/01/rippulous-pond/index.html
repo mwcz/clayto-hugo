@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  
+  <meta property="og:title" content="Rippulous Pond" />
+  <meta name="twitter:title" content="Rippulous Pond" />
+  
+  <title>Rippulous Pond - clayto</title>
+
+  
+  <meta name="description" content="Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even..." />
+  <meta property="og:description" content="Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even..." />
+  <meta name="twitter:description" content="Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even..." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2022/01/rippulous-pond/" />
+
+  
+    
+    
+  <meta property="og:image" content="https://clayto.com/2022/01/rippulous-pond/thumb.png" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2022/01/rippulous-pond/thumb.png"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link media="screen" rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="Home" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png" height="50.4" width="50.4" alt="smiling clayto.com logo">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+
+
+  <article class="pbp-article">
+
+  <header>
+    <h1>Rippulous Pond</h1>
+  </header>
+
+  
+
+  <div class="pbp-article-meta">
+    <time datetime="2022-01-06T10:54:48-05:00">
+      Jan 6, 2022
+    </time>
+    
+    <span class="pbp-blue">&middot;</span>
+    1 minute read
+    <br>
+    <span class="pbp-article-tags">
+      
+      <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+      
+      <a href="https://clayto.com/tags/demos" class="c-tag">#demos</a>
+      
+      <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
+      
+      <a href="https://clayto.com/tags/art" class="c-tag">#art</a>
+      
+      <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
+      
+    </span>
+  </div>
+
+  
+  
+  <section>
+    <p>Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even&hellip;</p>
+<p><canvas id="i-want-moire" width=1920 height=1080></canvas></p>
+<style>
+canvas {
+    object-fit: contain;
+    width: 100%;
+    position: relative;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+</style>
+<script>
+const canvas=document.querySelector("canvas#i-want-moire"),ctx=canvas.getContext("2d"),WIDTH=700,HEIGHT=700,ASPECT=WIDTH/HEIGHT,COUNT_X=80,COUNT_Y=COUNT_X/ASPECT,COUNT=COUNT_X*COUNT_Y,GAP=WIDTH/COUNT_X,SIZE=6,RADIUS=340,DELAY=1e4,FADE=2e3,START_FLIP=200,SPEED=25227;console.table({WIDTH,HEIGHT,ASPECT,COUNT,COUNT_X,COUNT_Y,GAP}),canvas.width=WIDTH,canvas.height=HEIGHT;function easeInOutCubic(t){return Math.max(0,Math.min(1,t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2))}function draw(){requestAnimationFrame(draw);const t=performance.now();ctx.clearRect(0,0,canvas.width,canvas.height);for(var e=0;e<COUNT_X;++e)for(var o=0;o<COUNT_Y;++o){let s=GAP/2+e*GAP,c=GAP/2+o*GAP,n=Math.sqrt((WIDTH/2-s)**2+(HEIGHT/2-c)**2);if(n<RADIUS){let a=(RADIUS-n)*(t*easeInOutCubic(t/DELAY))/SPEED,i=Math.sin(a/4),_=Math.cos(a/4),l=(i+1)/2,r=(_+1)/2,h=s+i*2,f=c+_*2;ctx.fillStyle=`hsla(${r/2+l/2*220+180},100%,${10+(r/2+l/2)*70}%,${easeInOutCubic(t/FADE)})`,ctx.fillRect(h,f,SIZE,SIZE)}}}draw();
+</script>
+<hr>
+<p>I created this as a vanilla canvas exercise.  Typically, I&rsquo;d use a three.js particle system for something like this, but when my coworker Daniel selected &ldquo;make something with <code>&lt;canvas&gt;</code>&rdquo; for our weekly coding challenge, it felt more pure to use the raw canvas API.</p>
+<p>This demo uses <code>fillStyle</code>, <code>fillRect</code>, and <code>clearRect</code> from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Canvas API</a>, plus some math for position and color.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/03/meet-simpixel/">Meet SimPixel</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A WebGL-based visualizer for LED displays.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-03-10T00:00:00Z">
+      Mar 10, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/03/meet-simpixel/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Meet SimPixel'"
+              src="https://clayto.com/2017/03/meet-simpixel/./thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">Kimotion at geekSPARK 2016</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Kimotion-powered interactive art at SPARKcon 2016.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2017-01-12T00:00:00Z">
+      Jan 12, 2017
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2017/01/kimotion-at-geekspark-2016/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Kimotion at geekSPARK 2016'"
+              src="https://clayto.com/2017/01/kimotion-at-geekspark-2016/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/08/kimotion-modding-101/">Kimotion Modding 101</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        How to create an interactive art display with Kimotion.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-08-28T00:00:00Z">
+      Aug 28, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/08/kimotion-modding-101/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Kimotion Modding 101'"
+              src="https://clayto.com/2016/08/kimotion-modding-101/./thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">DiMo: The Deconstruction of Falling Stars</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        The construction of a WebGL particle physics gravity simulation <em>slash</em> interactive art installation.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-10-30T00:00:00Z">
+      Oct 30, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'DiMo: The Deconstruction of Falling Stars'"
+              src="https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/swath-colors.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Particles and π - DiMo Comes to Life'"
+              src="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/./dimo-kids.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2016/07/glow-rope/">Glow Rope</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A simple WebGL demo of streaming particles.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2016-07-13T00:00:00Z">
+      Jul 13, 2016
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2016/07/glow-rope/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Glow Rope'"
+              src="https://clayto.com/2016/07/glow-rope/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+
+
+
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank" rel="noopener">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank" rel="noopener">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank" rel="noopener">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank" rel="noopener">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+
