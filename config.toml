@@ -34,7 +34,7 @@ copyright = "&copy; Copyright 2013-2018 Michael Clayton"
     "/" = "/:year/:month/:filename/"
 
 [params]
-  paginate = 12
+  paginate = 18
   # Social accounts. Link to these accounts are displayed in the header and
   # footer
   twitter = "mwcz"
