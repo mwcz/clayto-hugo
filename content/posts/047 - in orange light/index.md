@@ -11,6 +11,7 @@ Tags:
  -  ludum-dare
  -  ld39
  -  in-orange-light
+ -  canvas
 description: "An atmospheric mountain survival game I built in 48 hours for Ludum Dare 39."
 thumbnail: ./iol-square-logo.jpg
 thumbpos: tl

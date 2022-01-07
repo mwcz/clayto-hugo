@@ -15,6 +15,7 @@ Tags:
  -  physics
  -  web
  -  kimotion
+ -  canvas
 description: 'Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think "Warrior Poet", but with keyboards.'
 thumbnail: thumb.jpg
 aliases: /2015/09/26/make-a-kimotion/

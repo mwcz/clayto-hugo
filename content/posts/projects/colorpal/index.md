@@ -8,6 +8,7 @@ Tags:
  -  javascript
  -  color
  -  colorpal
+ -  canvas
 thumbnail: ./icon_colorpal.png
 ---
 

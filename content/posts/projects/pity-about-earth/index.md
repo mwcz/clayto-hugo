@@ -18,6 +18,7 @@ Tags:
  -  web
  -  pity-about-earth
  -  games
+ -  canvas
 ---
 
 <center>

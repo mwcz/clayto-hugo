@@ -14,6 +14,7 @@ Tags:
  -  web
  -  led
  -  maniacal-labs
+ -  canvas
 description: "A WebGL-based visualizer for LED displays."
 thumbnail: ./thumb.jpg
 Mwc: 46

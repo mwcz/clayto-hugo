@@ -16,6 +16,7 @@ Tags:
  -  games
  -  gamedev
  -  tracer
+ -  canvas
 ---
 
 <center>

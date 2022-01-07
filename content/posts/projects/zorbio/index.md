@@ -17,6 +17,7 @@ Tags:
  -  games
  -  gamedev
  -  zorbio
+ -  canvas
 ---
 
 Zorbio is a free multiplayer eat-em-up game that you can play in your browser!

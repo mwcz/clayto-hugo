@@ -15,6 +15,7 @@ Tags:
  -  sparkcon
  -  geekspark
  -  physics
+ -  canvas
 ---
 
 <img class="col-md-7" src="setup.jpg" alt="night-before setup image" style="padding-left: 0; padding-right: 30px" />

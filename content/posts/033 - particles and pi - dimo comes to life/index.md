@@ -17,6 +17,7 @@ Tags:
  -  physics
  -  web
  -  kimotion
+ -  canvas
 thumbnail: ./dimo-kids.jpg
 description: "A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are ..."
 aliases: /2014/08/25/particles-and-p-dimo-comes-to-life/

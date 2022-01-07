@@ -16,6 +16,7 @@ Tags:
  -  dimo
  -  physics
  -  web
+ -  canvas
 thumbnail: swath-colors.jpg
 description: "The construction of a WebGL particle physics gravity simulation *slash* interactive art installation."
 aliases: /2014/10/30/dimo-the-deconstruction-of-falling-stars/

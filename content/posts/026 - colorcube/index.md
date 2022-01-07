@@ -9,6 +9,7 @@ Tags:
  -  colorpal
  -  webgl
  -  web
+ -  canvas
 thumbnail: ./colorcube.jpg
 aliases: /2014/03/23/rgb-webgl-color-cube/
 Mwc: 26

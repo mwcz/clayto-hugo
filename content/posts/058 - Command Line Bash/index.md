@@ -8,6 +8,7 @@ Tags:
  -  games
  -  gamedev
  -  linux
+ -  canvas
 description: "A whatsit."
 thumbnail: clh-bash.png
 mwc: 58

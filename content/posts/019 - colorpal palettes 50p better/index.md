@@ -8,6 +8,7 @@ Tags:
  -  colorpal
  -  web
  -  mediancut
+ -  canvas
 thumbnail: thumb.png
 aliases: /2012/02/10/colorpal-palettes-improved/
 Mwc: 19

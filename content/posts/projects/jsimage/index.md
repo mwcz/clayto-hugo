@@ -7,6 +7,7 @@ Tags:
  -  html5
  -  javascript
  -  color
+ -  canvas
 ---
 
 JSImage was a basic, buggy, just-for-fun image processing library that I wrote

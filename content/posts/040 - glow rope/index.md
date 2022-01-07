@@ -11,6 +11,7 @@ Tags:
  - webgl
  - 3d
  - web
+ -  canvas
 description: "A simple WebGL demo of streaming particles."
 thumbnail: thumb.jpg
 aliases: /demos/glow-rope

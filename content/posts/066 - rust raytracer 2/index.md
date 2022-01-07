@@ -9,6 +9,7 @@ Tags:
  - rust
  - web
  - wasm
+ - canvas
 description: "Learning Rust, one tetanus shot at a time.  In this post: the work of bringing a Rust ray tracer to the web.  WebAssembly, WebAssembly, WebAssembly."
 thumbnail: thumb.webp thumb.jpg
 thumbpos: top

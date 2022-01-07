@@ -12,6 +12,7 @@ Tags:
  -  redhat
  -  gamedev
  -  ping
+ -  canvas
 ---
 
 [![screenshot of Ping](readme-screenshot.png)](/static/projects/ping)

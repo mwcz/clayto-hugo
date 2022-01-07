@@ -19,6 +19,7 @@ Tags:
  -  physics
  -  web
  -  kimotion
+ -  canvas
 ---
 
 Kimotion is a framework for building reactive art displays.

@@ -9,6 +9,7 @@ Tags:
  -  colorpal
  -  web
  -  mediancut
+ -  canvas
 description: "Introducing ColorPal, a fast color palette creation tool."
 thumbnail: thumb.jpg
 aliases: /2012/01/16/colorpal-alpha/

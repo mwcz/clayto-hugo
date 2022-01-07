@@ -10,6 +10,7 @@ Tags:
  -  3d
  -  web
  -  redhat
+ -  canvas
 description: "Creating a WebGL particle system to convey network traffic patterns to a live audience at [Red Hat Summit](https://www.redhat.com/summit)."
 thumbnail: ./post-thumbnail.jpg
 aliases: /2016/07/13/visualizing-network-traffic-with-webgl/

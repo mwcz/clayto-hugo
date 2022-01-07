@@ -17,6 +17,7 @@ Tags:
  -  web
  -  squareoff
  -  games
+ -  canvas
 ---
 
 Square Off is a 1v1 airhockey-style game that [Jared][jared] and [I][mwcz]

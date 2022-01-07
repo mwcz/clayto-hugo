@@ -8,6 +8,7 @@ Tags:
  -  javascript
  -  art
  -  web
+ -  canvas
 description: "Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even..."
 thumbnail: thumb.png
 mwc: 69

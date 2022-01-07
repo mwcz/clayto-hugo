@@ -11,6 +11,7 @@ Tags:
  -  art
  -  web
  -  fireflies
+ -  canvas
 description: "Drawing shapes with particles."
 thumbnail: ./fireflies-logo.png
 draft: true

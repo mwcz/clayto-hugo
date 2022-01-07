@@ -8,6 +8,7 @@ Tags:
  -  web
  -  kimotion
  -  art
+ -  canvas
 description: "How to create an interactive art display with Kimotion."
 thumbnail: ./thumb.jpg
 aliases: /2016/08/28/kimotion-modding-101/
