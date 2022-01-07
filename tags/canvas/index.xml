@@ -6,7 +6,216 @@
     <description>Recent content in canvas on clayto</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Jul 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://clayto.com/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jan 2022 10:54:48 -0500</lastBuildDate><atom:link href="https://clayto.com/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rippulous Pond</title>
+      <link>https://clayto.com/2022/01/rippulous-pond/</link>
+      <pubDate>Thu, 06 Jan 2022 10:54:48 -0500</pubDate>
+      
+      <guid>https://clayto.com/2022/01/rippulous-pond/</guid>
+      <description>Gaze ye into the rippulous pond unto eternity, witnessing patterns in time, colors in patterns, and even&amp;hellip;
+
+ canvas { object-fit: contain; width: 100%; position: relative; image-rendering: -moz-crisp-edges; image-rendering: -webkit-crisp-edges; image-rendering: pixelated; image-rendering: crisp-edges; margin-top: 3em; margin-bottom: 3em; }   const canvas=document.querySelector(&#34;canvas#i-want-moire&#34;),ctx=canvas.getContext(&#34;2d&#34;),WIDTH=700,HEIGHT=700,ASPECT=WIDTH/HEIGHT,COUNT_X=80,COUNT_Y=COUNT_X/ASPECT,COUNT=COUNT_X*COUNT_Y,GAP=WIDTH/COUNT_X,SIZE=6,RADIUS=340,DELAY=1e4,FADE=2e3,START_FLIP=200,SPEED=25227;console.table({WIDTH,HEIGHT,ASPECT,COUNT,COUNT_X,COUNT_Y,GAP}),canvas.width=WIDTH,canvas.height=HEIGHT;function easeInOutCubic(t){return Math.max(0,Math.min(1,t I created this as a vanilla canvas exercise. Typically, I&amp;rsquo;d use a three.js particle system for something like this, but when my coworker Daniel selected &amp;ldquo;make something with &amp;lt;canvas&amp;gt;&amp;rdquo; for our weekly coding challenge, it felt more pure to use the raw canvas API.</description>
+    </item>
+    
+    <item>
+      <title>Shaking Off the Rust 2: Ray Tracing in WebAssembly</title>
+      <link>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</link>
+      <pubDate>Mon, 05 Jul 2021 23:57:49 -0400</pubDate>
+      
+      <guid>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</guid>
+      <description>Rust. A ray tracer. The dream of WebAssembly. One dangerous idea that could ruin everything.
+This was the scene at the end of my last post, which covered creating a ray tracer in Rust using Peter Shirley&amp;rsquo;s outstanding Ray Tracing in One Weekend. In the wrap-up to that post, I expressed an interest in creating a WebAssembly build of the ray tracer, and that project is what follows.
+The process of targeting WebAssembly went well, overall.</description>
+    </item>
+    
+    <item>
+      <title>Command Line Bash</title>
+      <link>https://clayto.com/2019/02/command-line-bash/</link>
+      <pubDate>Fri, 15 Feb 2019 09:53:53 -0500</pubDate>
+      
+      <guid>https://clayto.com/2019/02/command-line-bash/</guid>
+      <description>Summary  .float-comp { shape-outside: url(ibm-5150.png); float: right; shape-margin: 16px; margin-right: -16%; max-width: 60%; }  Command Line Bash is a game that challenges you to type in as many commands as you can in 60 seconds.
+Play now!  My frequent co-conspirator Jared Sprague and I created Command Line Bash, along with tremendous help from the Command Line Heroes podcast team, open source contributors, and the CLH Discord community.</description>
+    </item>
+    
+    <item>
+      <title>In Orange Light</title>
+      <link>https://clayto.com/2017/08/in-orange-light/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/08/in-orange-light/</guid>
+      <description>Play now!  Three years ago, surrounded by monitors in a dark, blue-hued room, a particular screen caught my eye. My girlfriend&amp;rsquo;s (now wife&amp;rsquo;s) eye was caught by the same screen, and we crossed the room to investigate.
+We were visiting the Indie Game Revolution exhibit at EMP in Seattle, and what we found on that screen was Scene I, Act I of Kentucky Route Zero. It took me three years, but I finally rediscovered KR0 a few weeks ago.</description>
+    </item>
+    
+    <item>
+      <title>Pity About Earth...</title>
+      <link>https://clayto.com/games/pity-about-earth/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/games/pity-about-earth/</guid>
+      <description>Play now!   Humanity, listen up. This is the Universe. I am sick of you sticking your nose where it doesn’t belong. That’s why there’s a huge asteroid heading straight for your pitiful Earth, courtesy of yours truly. I see you’ve built a flimsy Barrier and a stockpile of Missiles, but it won’t help. Enjoy the end times! Bye-bye. Talk soon.
+  – The Universe
+  The weekend before Ludum Dare, I wrote a post about preparing for Ludum Dare 38.</description>
+    </item>
+    
+    <item>
+      <title>Meet SimPixel</title>
+      <link>https://clayto.com/2017/03/meet-simpixel/</link>
+      <pubDate>Fri, 10 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2017/03/meet-simpixel/</guid>
+      <description>I have someone I&amp;rsquo;d like you to meet. SimPixel, meet everyone. Everyone, SimPixel.
+ SimPixel, introduce yourself SimPixel is a WebGL visualizer for LED displays, very much like the ones Adam and Dan build over at Maniacal Labs.
+#mlabs { height: 50vh !important; } @media screen and (min-width: 660px) { #mlabs { float: right; margin-left: 20px; } }    Very much alike. In fact, it&amp;rsquo;s probably so much like their displays because I built most of SimPixel while sitting at Adam&amp;rsquo;s workbench.</description>
+    </item>
+    
+    <item>
+      <title>Tracer</title>
+      <link>https://clayto.com/projects/tracer/</link>
+      <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/tracer/</guid>
+      <description>Play now!  Tracer is a 3D connect-the-dots game that Jared and I created for Ludum Dare 37.
+Play now!
+We were very happy with the ratings Tracer received. In the Innovation category, we placed 5th out of 1,489 games.
+A more detailed blog post is available at the Scripta Games blog.
+View source</description>
+    </item>
+    
+    <item>
+      <title>Zorbio</title>
+      <link>https://clayto.com/projects/zorbio/</link>
+      <pubDate>Thu, 03 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/zorbio/</guid>
+      <description>Zorbio is a free multiplayer eat-em-up game that you can play in your browser!
+Zorbio is brought to you by my good friend Jared Sprague and I, via our small game development company, Scripta, Inc. Follow Zorbio development on the Scripta blog, or on Facebook.
+Play now!</description>
+    </item>
+    
+    <item>
+      <title>Kimotion Modding 101</title>
+      <link>https://clayto.com/2016/08/kimotion-modding-101/</link>
+      <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2016/08/kimotion-modding-101/</guid>
+      <description>Kimotion is a simple framework for creating interactive art exhibits in 2D or 3D and supports both Kinect and Leap Motion for viewer input. This tutorial will focus on the Leap, so to proceed with the tutorial you&amp;rsquo;ll need to set up your Leap.
+Once the leap service is running, you can set up Kimotion!
+Get the code git clone git@github.com:mwcz/Kimotion.git cd Kimotion  If you don&amp;rsquo;t know how to use git, no problem, just download and extract the Kimotion zip file instead.</description>
+    </item>
+    
+    <item>
+      <title>Glow Rope</title>
+      <link>https://clayto.com/2016/07/glow-rope/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2016/07/glow-rope/</guid>
+      <description>uniform float TIMER_MAX; attribute float alive; attribute float size; attribute vec3 endPosition; attribute float timer; varying float vAlive; varying vec3 vEndPosition; varying float vTimer; varying float vProgress; void main() { vAlive = alive; vEndPosition = endPosition; vTimer = timer; vProgress = 1.0 - vTimer / TIMER_MAX; vec3 newPosition = mix( position, endPosition, vProgress ); vec4 mvPosition = modelViewMatrix * vec4( newPosition, 1.0 ); gl_PointSize = size; // * ( 300.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing Network Traffic with WebGL</title>
+      <link>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</link>
+      <pubDate>Wed, 13 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</guid>
+      <description>&amp;ldquo;Finally,&amp;rdquo; I thought, &amp;ldquo;an excuse to play with WebGL at work!&amp;rdquo;
+This year, I had the good fortune of contributing to a keynote presentation at Red Hat Summit. During the keynote, an audience of 5,000 played a mobile web game created by our team. The game was backed by several microservices which we modified on stage while the audience played.
+My contribution was to display, in a visual and engaging way, the live network traffic flowing through our system.</description>
+    </item>
+    
+    <item>
+      <title>Square Off</title>
+      <link>https://clayto.com/projects/squareoff/</link>
+      <pubDate>Tue, 19 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/squareoff/</guid>
+      <description>Square Off is a 1v1 airhockey-style game that Jared and I built in 72 hours for the Ludum Dare 35 game jam. And beacuse it&amp;rsquo;s web-based, you can&amp;hellip;
+Play now!   .sqoff-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 10px; }   We were both very happy with how the game turned out, especially since this was our first game jam. Our fellow game creators were nice enough to give us some pretty good ratings, too.</description>
+    </item>
+    
+    <item>
+      <title>Kimotion</title>
+      <link>https://clayto.com/projects/kimotion/</link>
+      <pubDate>Sat, 26 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/kimotion/</guid>
+      <description>Kimotion is a framework for building reactive art displays.
+Creating an interactive art exhibit with Kimotion is easy. Draw your ideas in either 2D or 3D. Kimotion will provide information about the scene, which you can use to influence your display.
+Learn more at kimotion.xyz, or if you want to see it in action&amp;hellip;
+Launch live demo!
+Video clips These images, when played in rapid succession, create the illusion of motion!</description>
+    </item>
+    
+    <item>
+      <title>Make a Kimotion!</title>
+      <link>https://clayto.com/2015/09/make-a-kimotion/</link>
+      <pubDate>Sat, 26 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2015/09/make-a-kimotion/</guid>
+      <description>A year ago, I had the joy of working on Digital Motion, an interactive art exhibit for Raleigh&amp;rsquo;s annual art festival, SPARKcon. The month leading up to SPARKcon 2014 was a mad dash of perfecting the graphics and physics equations of my DiMo: Particles display. After a wonderful weekend of watching visitors enjoy the weird things we made, a lesson began congealing itself in my mind.
+Creating interactive art exhibits from scratch is really hard.</description>
+    </item>
+    
+    <item>
+      <title>Ping</title>
+      <link>https://clayto.com/projects/ping/</link>
+      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/ping/</guid>
+      <description>Check out Ping! I created it for my team&amp;rsquo;s booth at Red Hat Summit 2015 (Red Hat&amp;rsquo;s huge annual conference), to promote Access Labs. It&amp;rsquo;s a 1-4 player pong clone with special powers.
+It&amp;rsquo;s Web-based, so you can play it right this minute. Our booth had a quintet of USB gamepads, but your keyboard works just as well. Enjoy stomping the AI (instead of your fellow humans).
+Play now!</description>
+    </item>
+    
+    <item>
+      <title>DiMo: The Deconstruction of Falling Stars</title>
+      <link>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</link>
+      <pubDate>Thu, 30 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</guid>
+      <description>Imagine a solitary blue dot.
+Unless you let your imagination run away with itself, this is going to be a pretty boring dot. Now, imagine a second, larger dot (you can pick the color).
+Red, nice choice! The scene is now slightly more interesting, since now you&amp;rsquo;ve got two dots to think about. You can ponder their positions, and relative sizes. No motion though; still pretty boring!
+Pretty soon, your keen and restless mind will imagine that the larger dot exerts a gravitational pull on the smaller one.</description>
+    </item>
+    
+    <item>
+      <title>DiMo: Particles</title>
+      <link>https://clayto.com/projects/dimo/</link>
+      <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/dimo/</guid>
+      <description>Dimo: Particles is an artistic particle physics simulation and interactive art exhibit I created (along with fellow Red Hat engineers Ian Hands and Ben Pritchett) for the SPARKcon festival in 2014.
+Launch live demo!
+  Pictures These pictures are from the art exhibit at geekSPARK in 2014.
+$GALLERY
+After the event, I wrote this opensource.com article about the experience.
+The source code is, of course, open.</description>
+    </item>
+    
+    <item>
+      <title>Particles and π - DiMo Comes to Life</title>
+      <link>https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/</link>
+      <pubDate>Mon, 25 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/</guid>
+      <description>A player walks up Fayetteville St in Raleigh, North Carolina. SPARKcon has begun, and dozens of artists are strewn along the street, hard at work creating elaborate chalk art on the asphalt. A light rain is falling, and some artists are holding umbrellas over their work, some have draped tarps over themselves and their sketches, but most don&amp;rsquo;t seem to care, as if creating their art is more important than how long it lasts.</description>
+    </item>
+    
+    <item>
+      <title>RGB WebGL Color Cube</title>
+      <link>https://clayto.com/2014/03/rgb-webgl-color-cube/</link>
+      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2014/03/rgb-webgl-color-cube/</guid>
+      <description>I spent a bit of time this weekend building an RGB color cube for ColorPal, using Three.js. Drag and drop any image, and you&amp;rsquo;ll see a cube with all the pixels of your image mapped into 3D space.
+Launch live demo! and view the code.
+Your web browser must support WebGL, which at this point in history means a fairly recent Firefox or Chrome. In case your web browser doesn&amp;rsquo;t support WebGL, here&amp;rsquo;s a video to enjoy while you download Firefox Nightly.</description>
+    </item>
+    
     <item>
       <title>Introducing Canvas Indexed Color</title>
       <link>https://clayto.com/2012/07/introducing-canvas-indexed-color/</link>
@@ -15,6 +224,42 @@
       <guid>https://clayto.com/2012/07/introducing-canvas-indexed-color/</guid>
       <description>2018-08-29 update: This is an old post about how I created a thin indexed color API in front of HTML5 canvas. It wasn&amp;rsquo;t very usable or powerful, but it was a fun learning experience. Instead of reading the post, I recommend checking out Mark Ferrari&amp;rsquo;s breathtaking color cycling art. from 90s adventure games.
  First, I converted the classic SVG tiger into a set of canvas drawing instructions using Professor Cloud&amp;rsquo;s conversion tool.</description>
+    </item>
+    
+    <item>
+      <title>ColorPal palettes improved!</title>
+      <link>https://clayto.com/2012/02/colorpal-palettes-improved/</link>
+      <pubDate>Fri, 10 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
+      <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
+ 
+Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
+You can see that with the old method, the black pixels definitely took over the palette.</description>
+    </item>
+    
+    <item>
+      <title>ColorPal</title>
+      <link>https://clayto.com/projects/colorpal/</link>
+      <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/colorpal/</guid>
+      <description>ColorPal is an HTML5 color palette generator. Here&amp;rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
+Try it out at colorpal.org.
+ColorPal also has a command-line interface, powered by Node.js.
+I&amp;rsquo;ve written some posts about ColorPal.
+ </description>
+    </item>
+    
+    <item>
+      <title>ColorPal Alpha</title>
+      <link>https://clayto.com/2012/01/colorpal-alpha/</link>
+      <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/2012/01/colorpal-alpha/</guid>
+      <description>Introducing ColorPal!
+I&amp;rsquo;ve been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration here:
+ I owe the idea of photo-matching website palettes to Noah Grey. Each iteration of my photo site has gotten a slightly more advanced palette generation tool. You can see murmurs of them in the old canvas demos I&amp;rsquo;ve posted.</description>
     </item>
     
     <item>
@@ -101,6 +346,18 @@ Click and drag to set the image border to the average of the selected pixels.</d
       <guid>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</guid>
       <description>This is yet another demo from around 2009. It&amp;rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
 It&amp;rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&amp;rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&amp;gt;git migration. No guarantees that the histo&amp;rsquo;s are actually correct. :)</description>
+    </item>
+    
+    <item>
+      <title>JSImage</title>
+      <link>https://clayto.com/projects/jsimage/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://clayto.com/projects/jsimage/</guid>
+      <description>JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008/2009 when I first started seriously studying JavaScript.
+A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
+I&amp;rsquo;ve made several posts about JSImage which contain live demos.
+I think I put more work into code formatting than correct output. ;)</description>
     </item>
     
   </channel>

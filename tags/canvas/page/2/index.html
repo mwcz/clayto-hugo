@@ -7,29 +7,21 @@
     content="width=device-width, initial-scale=1.0"
   />
   
-  <meta property="og:title" content="Make a Kimotion!" />
-  <meta name="twitter:title" content="Make a Kimotion!" />
+  <meta property="og:title" content="canvas" />
+  <meta name="twitter:title" content="canvas" />
   
-  <title>Make a Kimotion! - clayto</title>
+  <title>canvas - clayto</title>
 
   
-  <meta name="description" content="Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &#34;Warrior Poet&#34;, but with keyboards." />
-  <meta property="og:description" content="Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &#34;Warrior Poet&#34;, but with keyboards." />
-  <meta name="twitter:description" content="Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &#34;Warrior Poet&#34;, but with keyboards." />
+  <meta name="description" content="Creative coding and web stuff." />
+  <meta property="og:description" content="Creative coding and web stuff." />
+  <meta name="twitter:description" content="Creative coding and web stuff." />
   
 
   <meta name="author" content="" />
   <meta property="og:site_name" content="clayto" />
-  <meta property="og:url" content="https://clayto.com/2015/09/make-a-kimotion/" />
+  <meta property="og:url" content="https://clayto.com/tags/canvas/" />
 
-  
-    
-    
-  <meta property="og:image" content="https://clayto.com/2015/09/make-a-kimotion/thumb.jpg" />
-  <meta
-    name="twitter:image"
-    content="https://clayto.com/2015/09/make-a-kimotion/thumb.jpg"
-  />
   
   <meta name="twitter:card" content="summary" />
 
@@ -37,8 +29,8 @@
   <meta name="twitter:site" content="@mwcz" />
   <meta name="twitter:creator" content="@mwcz" />
    
-  <meta property="og:type" content="article" />
-   
+  <meta property="og:type" content="website" />
+  
   
   <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
@@ -133,174 +125,26 @@
 </header>
   <main id="main" role="main" class="container">
 
-
-
-
-  <article class="pbp-article">
-
-  <header>
-    <h1>Make a Kimotion!</h1>
-  </header>
-
-  
-
-  <div class="pbp-article-meta">
-    <time datetime="2015-09-26T00:00:00Z">
-      Sep 26, 2015
-    </time>
-    
-    <span class="pbp-blue">&middot;</span>
-    4 minute read
-    <br>
-    <span class="pbp-article-tags">
-      
-      <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
-      
-      <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
-      
-      <a href="https://clayto.com/tags/threejs" class="c-tag">#threejs</a>
-      
-      <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
-      
-      <a href="https://clayto.com/tags/3d" class="c-tag">#3d</a>
-      
-      <a href="https://clayto.com/tags/2d" class="c-tag">#2d</a>
-      
-      <a href="https://clayto.com/tags/art" class="c-tag">#art</a>
-      
-      <a href="https://clayto.com/tags/sparkcon" class="c-tag">#sparkcon</a>
-      
-      <a href="https://clayto.com/tags/geekspark" class="c-tag">#geekspark</a>
-      
-      <a href="https://clayto.com/tags/dimo" class="c-tag">#dimo</a>
-      
-      <a href="https://clayto.com/tags/physics" class="c-tag">#physics</a>
-      
-      <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
-      
-      <a href="https://clayto.com/tags/kimotion" class="c-tag">#kimotion</a>
-      
-      <a href="https://clayto.com/tags/canvas" class="c-tag">#canvas</a>
-      
-    </span>
-  </div>
-
-  
-  
-  <section>
-    <p>A year ago, I had the joy of working on Digital Motion, an <a href="https://en.wikipedia.org/wiki/Interactive_art">interactive
-art</a> exhibit for Raleigh&rsquo;s annual art festival, <a href="https://en.wikipedia.org/wiki/Sparkcon">SPARKcon</a>.
-The month leading up to SPARKcon 2014 was a mad dash of perfecting the graphics
-and physics equations of my <a href="https://clayto.com/projects/dimo">DiMo: Particles</a> display. After a
-wonderful weekend of watching visitors enjoy the weird things we made, a lesson
-began congealing itself in my mind.</p>
-<p><em>Creating interactive art exhibits from scratch is <strong>really</strong> hard. Maybe I
-can share some of this work, so others can focus on the art&hellip;</em></p>
-<p>Creative coding is <em>so much fun</em> that I can&rsquo;t help but wish more people were
-involved. Nothing cures curmudgeony coders faster than working on a project
-where mistakes often make it <em>better</em>. With such a steep learning curve,
-though, few would get involved. There would need to be a shared foundation.</p>
-
-  <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#enter-kimotion">Enter Kimotion</a></li>
-        <li><a href="#the-future">The future</a></li>
-        <li><a href="#e-pluribus-unum">E Pluribus Unum</a></li>
-        <li><a href="#more-information">More information</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-
-<h2 id="enter-kimotion">Enter Kimotion</h2>
-<p><a href="http://kimotion.xyz">Kimotion</a> is a new framework for building interactive art
-exhibits. It will appeal mostly to the Programmer Artist types. Think
-&ldquo;Warrior Poet&rdquo;, but with keyboards.</p>
-<p>With Kimotion, you can create a &ldquo;mod&rdquo; which is essentially your own blank
-canvas. On the canvas, you can paint pixels, but not boring, everyday pixels.
-What you paint can be animated by the movements of the people in the room.</p>
-<p>Videos speak louder than text, so here are some videos of a variety of mods.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://player.vimeo.com/video/136951447" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
-
-<p>I began building Kimotion in February of 2015, well in advance of SPARKcon X,
-which took place in September. This was a far cry from the single month of
-harebrained scampering of the year before! The extra time, and the existance
-of a true framework, allowed many more people to create visualizations (aka
-&ldquo;mods&rdquo;). In the end, fifteen mods were created in time for the SPARKcon
-exhibit.</p>
-<p><em>Over a thousand</em> people visited our exhibit last weekend. It&rsquo;s hard to put
-into words how rewarding it is to see so many children and adults enjoy the sum
-of our planning, hard work, and creativity.</p>
-<!-- Commented out until a good gallery solution is in place.
-## Gallery
-
-Here are some photos from SPARKcon X (2015), and setup the night before.
-
-$GALLERY
--->
-<h2 id="the-future">The future</h2>
-<p>What&rsquo;s next for Kimotion? Several SPARKcon attendees had excellent ideas.
-From installing Kimotion in schools to putting a permanent installation in
-their own homes.</p>
-<p>I love the school idea in particular because, if last weekend was any
-indication, kids love this thing and it really encouraged them to move (a lot).</p>
-<p>It would cost a school system very little. Schools already have (one would
-hope) computers and projectors or smartboards. Kimotion itself is free and
-open-source. The only cost would be the Kinect. First-edition Kinects often
-sell for less than $30 each. If anyone on a PTA or school board reads this and
-finds it interesting, <a href="mailto:mwc@clayto.com">email</a> or <a
-href="https://twitter.com/mwcz">tweet</a> me.</p>
-<p>I started Kimotion with the hope that it would encourage programmers to use
-their skills to create elegance that everyone can appreciate. If children are
-also encouraged to exercise, I won&rsquo;t complain!</p>
-<h2 id="e-pluribus-unum">E Pluribus Unum</h2>
-<p>I can&rsquo;t express how grateful I am to everyone who contributed to Kimotion
-itself, created mods, and made the Digital Motion exhibit at SPARKcon a huge
-success this year.</p>
-<ul>
-<li><strong>Greg Gardner</strong> : for taking over and perfecting the kimotion server, implementing record/replay for easy development, and helping me debug <em>countless</em> graphical glitches and client issues, and being a software architecture guiding hand</li>
-<li><strong>Jared Sprague</strong> : for creating the immaculate Fish game mod, beloved by all children, building a new computer to run the exhibit, and cohosting the event with me</li>
-<li><strong>Ben Pritchett</strong> : for writing tutorial documentation and the great Snake mod</li>
-<li><strong>Cas Roberts</strong> : for endless encouragement and great ideas, including the very successful recording/replay scheme</li>
-<li><strong>Truett Thompson</strong> : for keeping geekSPARK on track, on schedule, and funded</li>
-<li><strong>Kevin Howell</strong> : for creating the enigmatic, unexplainable, and beautiful Spiral mod</li>
-<li><strong>Ian Hands</strong> : for looping me into the most fun project I&rsquo;ve ever worked on</li>
-<li><strong>Noel White</strong> : for so much organizational geekSPARK work and fundraising</li>
-<li><strong>Mary Hands</strong> : for saving the entire exhibit friday night when we were flummoxed by hardware failure</li>
-<li><strong>Kyle Buchanan</strong> : for great questions and alllllllmost finishing his Starfighter mod</li>
-<li><strong>Justis Peters</strong> : for paving the DiMo trail for the rest of us to follow</li>
-<li><strong>Dave Yarwood</strong> : for contribution to docs, great questions, and allllllmost-finished music mod</li>
-<li><strong>Rowen Sprague</strong> : for being the official tester</li>
-</ul>
-<h2 id="more-information">More information</h2>
-<ul>
-<li>The News &amp; Observer wrote a <a href="http://www.newsobserver.com/news/local/counties/wake-county/article35910324.html">nice article</a> about SPARKcon including lots of geekSPARK coverage and footage</li>
-<li><a href="http://kimotion.xyz">Kimotion main project page</a></li>
-<li><a href="https://github.com/mwcz/Kimotion">Kimotion source code</a></li>
-<li><a href="https://clayto.com/projects/dimo">More about last year&rsquo;s exhibit</a></li>
-<li><a href="http://opensource.com/life/15/2/sparkcon-geekspark-digital-motion-exhibit">Opensource.com article about DiMo 2014</a></li>
-<li>[The Deconstruction of Falling Stars]({filename}/posts/034 - the deconstruction of falling particles/034 - the deconstruction of falling particles.md) - technical info about how it was built</li>
-<li>[Particles and π - DiMo Comes to Life]({filename}/posts/033 - particles and pi - dimo comes to life/033 - particles and pi - dimo comes to life.md) - more about the exhibit at SPARKcon!</li>
-</ul>
-
-  </section>
-  <footer>
-
-    
-
-    
-
-    
-
 <section>
-  <h3>RELATED POSTS</h3>
-  <div class="pbp-related">
+
+<h2>canvas</h2>
+
+
+<p class="pbp-category-desc">
+
+
+
+
+
+</p>
+
+</section>
+
+
+<section class="pbp-article-list">
+
+
+  
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
   <h2 class="pbp-article-title"><a href="https://clayto.com/projects/kimotion/">Kimotion</a></h2>
@@ -349,24 +193,25 @@ success this year.</p>
   
 </article>
 
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2015/09/make-a-kimotion/">Make a Kimotion!</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
+        Kimotion is a new framework for building interactive art exhibits.  It will appeal mostly to the Programmer Artist types.  Think &ldquo;Warrior Poet&rdquo;, but with keyboards.
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2014-08-25T00:00:00Z">
-      Aug 25, 2014
+    <time datetime="2015-09-26T00:00:00Z">
+      Sep 26, 2015
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2015/09/make-a-kimotion/">
     <div class="pbp-article-thumbnail">
       
       <div class="glass-card">
@@ -381,8 +226,8 @@ success this year.</p>
             <img
               class="glass-card-bg glass-card-bg-default"
               loading="lazy"
-              alt="thumbnail for 'Particles and π - DiMo Comes to Life'"
-              src="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/./dimo-kids.jpg">
+              alt="thumbnail for 'Make a Kimotion!'"
+              src="https://clayto.com/2015/09/make-a-kimotion/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -398,6 +243,57 @@ success this year.</p>
   
 </article>
 
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/ping/">Ping</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Ping is a 4-player pong-style game with crazy abilities.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2015-06-23T00:00:00Z">
+      Jun 23, 2015
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/ping/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Ping'"
+              src="https://clayto.com/projects/ping/./icon_ping.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
@@ -447,6 +343,7 @@ success this year.</p>
   
 </article>
 
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
@@ -501,6 +398,57 @@ The source code is, of course, open.
   
 </article>
 
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">Particles and π - DiMo Comes to Life</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A player walks up Fayetteville St in Raleigh, North Carolina.  SPARKcon has begun, and dozens of artists are &hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2014-08-25T00:00:00Z">
+      Aug 25, 2014
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Particles and π - DiMo Comes to Life'"
+              src="https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/./dimo-kids.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
@@ -552,6 +500,214 @@ Your web browser must support WebGL, which at this point in history means a fair
   
 </article>
 
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/07/introducing-canvas-indexed-color/">Introducing Canvas Indexed Color</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        A basic implementation of indexed color palettes for HTML5 canvas.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-07-03T00:00:00Z">
+      Jul 3, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/07/introducing-canvas-indexed-color/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Introducing Canvas Indexed Color'"
+              src="https://clayto.com/2012/07/introducing-canvas-indexed-color/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/02/colorpal-palettes-improved/">ColorPal palettes improved!</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
+ 
+Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
+You can see that with the old method, the black pixels definitely took over the palette.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-02-10T00:00:00Z">
+      Feb 10, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/02/colorpal-palettes-improved/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'ColorPal palettes improved!'"
+              src="https://clayto.com/2012/02/colorpal-palettes-improved/thumb.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/colorpal/">ColorPal</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        ColorPal is an HTML5 color palette generator. Here&rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
+Try it out at colorpal.org.
+ColorPal also has a command-line interface, powered by Node.js.
+I&rsquo;ve written some posts about ColorPal.
+ 
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/colorpal/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'ColorPal'"
+              src="https://clayto.com/projects/colorpal/./icon_colorpal.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Introducing ColorPal, a fast color palette creation tool.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2012-01-16T00:00:00Z">
+      Jan 16, 2012
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'ColorPal Alpha'"
+              src="https://clayto.com/2012/01/colorpal-alpha/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
@@ -606,18 +762,53 @@ The code is well commented, so feel free to hack on it.
   
 </article>
 
-    
-    
-  </div>
+  
+
+
 </section>
+<nav
+  class="pbp-pagination"
+  aria-label="Pagination Navigation"
+>
+  <div class="pbp-pagination-layout">
+    <div>
+       <a rel="next" href="https://clayto.com/tags/canvas/">Prev</a> 
+    </div>
+    <div class="pbp-pagination-bar pbp-pagination-progress"></div>
+    <div class="pbp-pagination-bar pbp-pagination-remaining"></div>
+    <div>
+       <a rel="prev" href="https://clayto.com/tags/canvas/page/3/">Next</a> 
+    </div>
+  </div>
+</nav>
 
 
-
-
-  </footer>
-</article>
-
-
+<section class="pbp-infscr">
+  <button class="pbp-infscr-more">LOAD MORE...</button>
+  <div class="pbp-infscr-load-status" style="display: none">
+    <p class="infinite-scroll-request">Loading...</p>
+    <p class="infinite-scroll-last">End of content</p>
+    <p class="infinite-scroll-error">No more pages to load</p>
+  </div>
+  <section>
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script>
+      const infScroll = new InfiniteScroll(".pbp-article-list", {
+        
+        path: ".pbp-pagination [rel=prev]",
+        append: ".pbp-article-loadmore",
+        history: "replace",
+        hideNav: ".pbp-pagination",
+        scrollThreshold: false,
+        button: ".pbp-infscr-more",
+        status: ".pbp-infscr-load-status",
+        checkLastPage: true,
+        debug: true
+      });
+    </script>
+    
+  </section>
+</section>
 
   </main>
   <footer class="container">

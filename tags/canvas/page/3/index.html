@@ -7,10 +7,10 @@
     content="width=device-width, initial-scale=1.0"
   />
   
-  <meta property="og:title" content="RGB WebGL Color Cube" />
-  <meta name="twitter:title" content="RGB WebGL Color Cube" />
+  <meta property="og:title" content="canvas" />
+  <meta name="twitter:title" content="canvas" />
   
-  <title>RGB WebGL Color Cube - clayto</title>
+  <title>canvas - clayto</title>
 
   
   <meta name="description" content="Creative coding and web stuff." />
@@ -20,16 +20,8 @@
 
   <meta name="author" content="" />
   <meta property="og:site_name" content="clayto" />
-  <meta property="og:url" content="https://clayto.com/2014/03/rgb-webgl-color-cube/" />
+  <meta property="og:url" content="https://clayto.com/tags/canvas/" />
 
-  
-    
-    
-  <meta property="og:image" content="https://clayto.com/2014/03/rgb-webgl-color-cube/./colorcube.jpg" />
-  <meta
-    name="twitter:image"
-    content="https://clayto.com/2014/03/rgb-webgl-color-cube/./colorcube.jpg"
-  />
   
   <meta name="twitter:card" content="summary" />
 
@@ -37,8 +29,8 @@
   <meta name="twitter:site" content="@mwcz" />
   <meta name="twitter:creator" content="@mwcz" />
    
-  <meta property="og:type" content="article" />
-   
+  <meta property="og:type" content="website" />
+  
   
   <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
@@ -133,124 +125,47 @@
 </header>
   <main id="main" role="main" class="container">
 
-
-
-
-  <article class="pbp-article">
-
-  <header>
-    <h1>RGB WebGL Color Cube</h1>
-  </header>
-
-  
-
-  <div class="pbp-article-meta">
-    <time datetime="2014-03-23T00:00:00Z">
-      Mar 23, 2014
-    </time>
-    
-    <span class="pbp-blue">&middot;</span>
-    2 minute read
-    <br>
-    <span class="pbp-article-tags">
-      
-      <a href="https://clayto.com/tags/html5" class="c-tag">#html5</a>
-      
-      <a href="https://clayto.com/tags/javascript" class="c-tag">#javascript</a>
-      
-      <a href="https://clayto.com/tags/color" class="c-tag">#color</a>
-      
-      <a href="https://clayto.com/tags/colorpal" class="c-tag">#colorpal</a>
-      
-      <a href="https://clayto.com/tags/webgl" class="c-tag">#webgl</a>
-      
-      <a href="https://clayto.com/tags/web" class="c-tag">#web</a>
-      
-      <a href="https://clayto.com/tags/canvas" class="c-tag">#canvas</a>
-      
-    </span>
-  </div>
-
-  
-  
-  <section>
-    <p>I spent a bit of time this weekend building an RGB color cube for
-<a href="http://colorpal.org">ColorPal</a>, using <a href="http://threejs.org">Three.js</a>. Drag and drop any image, and you&rsquo;ll see a
-cube with all the pixels of your image mapped into 3D space.</p>
-<img style="display: none !important;" src="colorcube.jpg">
-<p><a class="btn btn-default btn-lg"
-href="https://clayto.com/static/projects/colorpal_colorcube">Launch live demo!</a> and <a href="https://github.com/mwcz/mwcz/blob/master/content/static/projects/colorpal_colorcube/js/cp-colorcube.js">view the
-code</a>.</p>
-<p>Your web browser must support WebGL, which at this point in history means a
-fairly recent Firefox or Chrome. In case your web browser doesn&rsquo;t support
-WebGL, here&rsquo;s a video to enjoy while you download <a href="https://nightly.mozilla.org/">Firefox Nightly</a>. ;)</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://player.vimeo.com/video/108080970" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
-
-<p><a href="http://threejs.org">Three.js</a> has proven to be pretty fun. The documentation is decent, but
-not comprehensive. Some parts of the API are filled with &ldquo;todo&rdquo; notes instead
-of actual documentation.</p>
-<p>Luckily, the omissions in the documentation are made up for by the extensive
-<a href="http://threejs.org/examples/">set of code examples</a>. Any time I couldn&rsquo;t get what I needed from the API
-docs, I skimmed the examples until I found an existing scene that had the
-effect I needed.</p>
-<p>For this demo, drawing a cube was easy, and even populating it with dots was easy, but</p>
-<h2 id="colored-particles">Colored particles</h2>
-<p>The color cube uses a particle system to render 2D color points inside a 3D
-cube.</p>
-<p>Eventually I found a <a href="http://threejs.org/examples/#webgl_particles_billboards_colors">particle system demo with colors</a>, which held the key.</p>
-<p>By setting <code>vertexColors: true</code> on the <code>ParticleSystemMaterial</code>, Three.js will
-match each vertex in the <code>vertices</code> array with a color in the <code>colors</code> array.
-<code>vertices[1726]</code> will use <code>colors[1726]</code>, for example.</p>
-<p><img src="screenshot.png" alt="Screenshot of ColorCube" title="Screenshot of ColorCube"></p>
-<p>A vertex and a color are created for each pixel in the source image. For the
-vertex, <span style="color: red;">red</span> values are mapped to the <code>X</code> axis,
-and similarly <span style="color: green">green</span> to <code>Y</code> and <span
-style="color: blue">blue</span> to <code>Z</code>.</p>
-<h2 id="optimization">Optimization</h2>
-<p>Rendering a point for each pixel in a huge image image would be overkill, so
-I used the pixel culling already present in ColorPal to scale the number of
-points down to a more reasonable 128<sup>2</sup>. Increasing that number also
-increases the quality of the cube. If you look closely in the video above, the
-ColorPal logo cube has gaps in it. The better the quality, the longer the
-startup time, though.</p>
-<p>Now I&rsquo;m racking my brain for an excuse to use WebGL at Red Hat&hellip;</p>
-<p>Any ideas?</p>
-
-  </section>
-  <footer>
-
-    
-
-    
-
-    
-
 <section>
-  <h3>RELATED POSTS</h3>
-  <div class="pbp-related">
+
+<h2>canvas</h2>
+
+
+<p class="pbp-category-desc">
+
+
+
+
+
+</p>
+
+</section>
+
+
+<section class="pbp-article-list">
+
+
+  
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/02/colorpal-palettes-improved/">ColorPal palettes improved!</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/bouncey-canvas-physics/">Bouncey - canvas physics</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
- 
-Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
-You can see that with the old method, the black pixels definitely took over the palette.
+        This is Bouncey. It&rsquo;s a simple physics demo I wrote in early/mid 2011, with some contributions and bugfixes from my good friend Greg Gardner.
+The description for bouncey&rsquo;s github repo is:
+&ldquo;a buggy, rudimentary, just-for-fun javascript physics simulator.&quot;
+It covers Newton&rsquo;s laws of motion.
+#cnvs { margin: 0 auto; display: block; width: 100%; border: 1px solid #464646; -webkit-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.7 ); -moz-box-shadow: 0px 0px 3px rgba( 0, 0, 0, 0.
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2012-02-10T00:00:00Z">
-      Feb 10, 2012
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/02/colorpal-palettes-improved/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/bouncey-canvas-physics/">
     <div class="pbp-article-thumbnail">
       
       <div class="glass-card">
@@ -265,8 +180,8 @@ You can see that with the old method, the black pixels definitely took over the 
             <img
               class="glass-card-bg glass-card-bg-default"
               loading="lazy"
-              alt="thumbnail for 'ColorPal palettes improved!'"
-              src="https://clayto.com/2012/02/colorpal-palettes-improved/thumb.png">
+              alt="thumbnail for 'Bouncey - canvas physics'"
+              src="https://clayto.com/2011/11/bouncey-canvas-physics/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -282,24 +197,26 @@ You can see that with the old method, the black pixels definitely took over the 
   
 </article>
 
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/01/colorpal-alpha/">ColorPal Alpha</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-point-operations/">HTML5 canvas point operations</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        Introducing ColorPal, a fast color palette creation tool.
+        This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
+Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2012-01-16T00:00:00Z">
-      Jan 16, 2012
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/01/colorpal-alpha/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-point-operations/">
     <div class="pbp-article-thumbnail">
       
       <div class="glass-card">
@@ -314,8 +231,8 @@ You can see that with the old method, the black pixels definitely took over the 
             <img
               class="glass-card-bg glass-card-bg-default"
               loading="lazy"
-              alt="thumbnail for 'ColorPal Alpha'"
-              src="https://clayto.com/2012/01/colorpal-alpha/thumb.jpg">
+              alt="thumbnail for 'HTML5 canvas point operations'"
+              src="https://clayto.com/2011/11/html5-canvas-point-operations/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -331,6 +248,108 @@ You can see that with the old method, the black pixels definitely took over the 
   
 </article>
 
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">HTML5 tool for creating color palettes from an image</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        For an HCI class project in Fall 2009, I pulled together some of my previous demos to make this integrated tool. It was just a prototype, and I haven&rsquo;t taken the time to get the code set up and working on this blog. If anyone is interested, I can dig up the code and send it along.
+  In retrospect, it really could have used some narration&hellip;
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-17T00:00:00Z">
+      Nov 17, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'HTML5 tool for creating color palettes from an image'"
+              src="https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">HTML5 canvas 3D pixel array</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        This is another demo from 2009-ish. When I started experimenting with canvas, I felt uncomfortable with the 1-dimensionality of CanvasPixelArray. I wrote this script to convert it into a more logical format: X by Y by RGBA. Let me rephrase that. By &ldquo;more logical&rdquo;, I mean &ldquo;more logical, to me, at the time). 1D is fine, and I can&rsquo;t think of any use for this script. But, nonetheless, here it is, including the original description.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'HTML5 canvas 3D pixel array'"
+              src="https://clayto.com/2011/11/html5-canvas-3d-pixel-array/kazoo.png">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
@@ -382,27 +401,25 @@ Click and drag to set the image border to the average of the selected pixels.
   
 </article>
 
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2012/07/colorpal-output-update/">ColorPal Output Update</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-eyedropper/">HTML5 Canvas eyedropper</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        Hi pals.
-This is a speedy post about a speedy update I made today to ColorPal, an HTML5 tool I wrote that automatically generates color palettes from a photograph.
-Previously, ColorPal provided hex codes for each color extracted from the image. Eight individual &lt;input&gt;s at the bottom of the page displayed the colors.
-I use ColorPal a lot (my own dogfood and all that) when designing websites, and it wasn&rsquo;t long before I got fed up (hah!
+        An HTML5 Canvas eyedropper.
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2012-07-30T00:00:00Z">
-      Jul 30, 2012
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2012/07/colorpal-output-update/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-eyedropper/">
     <div class="pbp-article-thumbnail">
       
       <div class="glass-card">
@@ -417,8 +434,8 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
             <img
               class="glass-card-bg glass-card-bg-default"
               loading="lazy"
-              alt="thumbnail for 'ColorPal Output Update'"
-              src="https://clayto.com/2012/07/colorpal-output-update/after.png">
+              alt="thumbnail for 'HTML5 Canvas eyedropper'"
+              src="https://clayto.com/2011/11/html5-canvas-eyedropper/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -434,28 +451,26 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
   
 </article>
 
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/colorpal/">ColorPal</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">HTML5 canvas RGB histogram</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        ColorPal is an HTML5 color palette generator. Here&rsquo;s a gif demonstrating how to use ColorPal. The color quality in gifs is pretty terrible, but you can still see the basic usage.
-Try it out at colorpal.org.
-ColorPal also has a command-line interface, powered by Node.js.
-I&rsquo;ve written some posts about ColorPal.
- 
+        This is yet another demo from around 2009. It&rsquo;s simple enough. Click a button, draw an unbinned RGB histogram of the source image.
+It&rsquo;s powered by an early version of an old JS toolkit I wrote called JSImage. The latest version is available at my JSImage github repo. Don&rsquo;t be fooled by the 2011 commits, those are just artifacts from svn-&gt;git migration. No guarantees that the histo&rsquo;s are actually correct. :)
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2012-01-16T00:00:00Z">
-      Jan 16, 2012
+    <time datetime="2011-11-16T00:00:00Z">
+      Nov 16, 2011
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/colorpal/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-rgb-histogram/">
     <div class="pbp-article-thumbnail">
       
       <div class="glass-card">
@@ -470,8 +485,8 @@ I&rsquo;ve written some posts about ColorPal.
             <img
               class="glass-card-bg glass-card-bg-default"
               loading="lazy"
-              alt="thumbnail for 'ColorPal'"
-              src="https://clayto.com/projects/colorpal/./icon_colorpal.png">
+              alt="thumbnail for 'HTML5 canvas RGB histogram'"
+              src="https://clayto.com/2011/11/html5-canvas-rgb-histogram/thumb.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -487,25 +502,28 @@ I&rsquo;ve written some posts about ColorPal.
   
 </article>
 
+  
     
     
     <article class="pbp-article-li pbp-article-loadmore vertical">
-  <h2 class="pbp-article-title"><a href="https://clayto.com/2011/11/html5-canvas-point-operations/">HTML5 canvas point operations</a></h2>
+  <h2 class="pbp-article-title"><a href="https://clayto.com/projects/jsimage/">JSImage</a></h2>
   <div class="pbp-article-summary">
     <section>
       
-        This is the last demo I made using JSImage. I created it some time around 2009-2010. At the time, I had checked out an imaging book from my university&rsquo;s library at least ten times. Most of the exercises in that book I implemented in Python using PIL, but point operations were simple enough to port to JavaScript quickly.
-Point operations are image alterations that affect all pixels equally. Other operations, like blurring for example, each result pixel depends on adjacent pixels.
+        JSImage was a basic, buggy, just-for-fun image processing library that I wrote in 2008/2009 when I first started seriously studying JavaScript.
+A stumbled across a book in my university library, and started implementing the algorithms on the newly available HTML5 canvas element.
+I&rsquo;ve made several posts about JSImage which contain live demos.
+I think I put more work into code formatting than correct output. ;)
       
     </section>
   </div>
   <div class="pbp-article-meta">
-    <time datetime="2011-11-17T00:00:00Z">
-      Nov 17, 2011
+    <time datetime="2009-01-01T00:00:00Z">
+      Jan 1, 2009
     </time>
   </div>
   
-  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2011/11/html5-canvas-point-operations/">
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/projects/jsimage/">
     <div class="pbp-article-thumbnail">
       
       <div class="glass-card">
@@ -520,8 +538,8 @@ Point operations are image alterations that affect all pixels equally. Other ope
             <img
               class="glass-card-bg glass-card-bg-default"
               loading="lazy"
-              alt="thumbnail for 'HTML5 canvas point operations'"
-              src="https://clayto.com/2011/11/html5-canvas-point-operations/thumb.jpg">
+              alt="thumbnail for 'JSImage'"
+              src="https://clayto.com/projects/jsimage/./icon_jsimage.jpg">
           </picture>
           <div class="glass-card-border-outer"></div>
           <div class="glass-card-border-inner"></div>
@@ -537,18 +555,31 @@ Point operations are image alterations that affect all pixels equally. Other ope
   
 </article>
 
-    
-    
-  </div>
+  
+
+
 </section>
+<nav
+  class="pbp-pagination"
+  aria-label="Pagination Navigation"
+>
+  <div class="pbp-pagination-layout">
+    <div>
+       <a rel="next" href="https://clayto.com/tags/canvas/page/2/">Prev</a> 
+    </div>
+    <div class="pbp-pagination-bar pbp-pagination-progress"></div>
+    <div class="pbp-pagination-bar pbp-pagination-remaining"></div>
+    <div>
+      
+      
+      
+    </div>
+  </div>
+</nav>
 
 
-
-
-  </footer>
-</article>
-
-
+  </section>
+</section>
 
   </main>
   <footer class="container">
