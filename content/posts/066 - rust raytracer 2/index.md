@@ -90,7 +90,7 @@ At the end of the [previous post][prev], the ray tracer could be run only on the
 
 The binary crate then imported the library crate, so the CLI could work just as it did before.  I then created another crate using [wasm-pack][wasm-pack], a fantastic tool for creating Rust-to-WebAssembly crates.  The wasm crate also imports the library crate and uses `#[wasm_bindgen]` to to export a `render` function to JavaScript.
 
-In Rust land, `render()` returns a `Vec<u8>`.  In JS land, the `Vec<u8>` looks like a `Uint8ClampedArray`.  That slots perfectly into [`ImageData`][imagedata], which is then drawn into a `<canvas>` using [`putImageData()`][putimagedata].  You can peruse the code for the three crates at the i[rust-raytracer-weekend repo][viewsource], and if you do, please let me know if you find anything to critique.
+In Rust land, `render()` returns a `Vec<u8>`.  In JS land, the `Vec<u8>` looks like a `Uint8ClampedArray`.  That slots perfectly into [`ImageData`][imagedata], which is then drawn into a `<canvas>` using [`putImageData()`][putimagedata].  You can peruse the code for the three crates at the [rust-raytracer-weekend repo][viewsource], and if you do, please let me know if you find anything to critique.
 
 Thanks to [wasm-pack][wasm-pack] and [wasm-bindgen][wasm-bindgen] doing all the heavy lifting, that was all it took to get a working WebAssembly module!  Here's the first rendering.
 
