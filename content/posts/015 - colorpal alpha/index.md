@@ -20,7 +20,7 @@ Introducing ColorPal!
 
 ![ColorPal screenshot](ss.png)
 
-I've been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration [here](http://clayto.com/):
+I've been toying with color palette generation for years. My photography website has always had some form of dynamic palette, so the theme of each page matches the photo. You can see the current iteration [here](http://clayto.com/photos):
 
 <figure><img src="tarsi.png" alt="clayto.com" title="My photo, 'Tarsi', at clayto.com" /></figure>
 
