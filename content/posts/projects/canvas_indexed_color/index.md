@@ -61,11 +61,10 @@ input.color {
                 <ol class="color_palette" data-bind="template: { name: 'CIC_ColorPaletteTemplate', foreach: colors }"></ol>
                 <div class="clearfix"></div>
                 <hr />
-                <a class="btn btn-primary" onclick="location.assign('/projects/canvas_indexed_color/#000000,323232,4C4C4C,#659900,#666666,999999,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,CCCCCC,#cccccc,#e5668c,#e59999,#e5e5b2,E8E8E8,EAEAEA,EAEAEA,EBEBEB,ECECEC,EEEEEE,EFEFEF,F1F1F1,F2F2F2,F3F3F3,F4F4F4,F5F5F5,F8F8F8,F8F8F8,F9F9F9,FAFAFA,FCFCFC,#ff727f,#ffffcc,#ffffff'); location.reload(); return false;" href="/projects/canvas_indexed_color/#000000,323232,4C4C4C,#659900,#666666,999999,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,CCCCCC,#cccccc,#e5668c,#e59999,#e5e5b2,E8E8E8,EAEAEA,EAEAEA,EBEBEB,ECECEC,EEEEEE,EFEFEF,F1F1F1,F2F2F2,F3F3F3,F4F4F4,F5F5F5,F8F8F8,F8F8F8,F9F9F9,FAFAFA,FCFCFC,#ff727f,#ffffcc,#ffffff">Create a white tiger</a>
-                <a class="btn btn-primary" id="cic-tiger-scan" onclick="location.assign('/projects/canvas_indexed_color/#ED0202,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#ffffff,FFFFFF,FFFFFF,FFFFFF'); location.reload(); return false;" href="/projects/canvas_indexed_color/#ED0202,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#ffffff,FFFFFF,FFFFFF,FFFFFF">Tiger scan!</a>
-                <a class="btn btn-primary" onclick="cvm.cycleColors(); return false;" href="">Cycle colors</a>
-                <a class="btn btn-primary" href="/projects/canvas_indexed_color">Reset to classic SVG tiger</a>
-                <a class="btn btn-primary" onclick="copyToClipboard(location.href); return false;" href="/projects/canvas_indexed_color">Copy URL to clipboard</a>
+                <button class="btn btn-primary" onclick="location.assign('/projects/canvas_indexed_color/#000000,323232,4C4C4C,#659900,#666666,999999,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,CCCCCC,#cccccc,#e5668c,#e59999,#e5e5b2,E8E8E8,EAEAEA,EAEAEA,EBEBEB,ECECEC,EEEEEE,EFEFEF,F1F1F1,F2F2F2,F3F3F3,F4F4F4,F5F5F5,F8F8F8,F8F8F8,F9F9F9,FAFAFA,FCFCFC,#ff727f,#ffffcc,#ffffff'); location.reload(); return false;" href="/projects/canvas_indexed_color/#000000,323232,4C4C4C,#659900,#666666,999999,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,CCCCCC,#cccccc,#e5668c,#e59999,#e5e5b2,E8E8E8,EAEAEA,EAEAEA,EBEBEB,ECECEC,EEEEEE,EFEFEF,F1F1F1,F2F2F2,F3F3F3,F4F4F4,F5F5F5,F8F8F8,F8F8F8,F9F9F9,FAFAFA,FCFCFC,#ff727f,#ffffcc,#ffffff">Create a white tiger</a>
+                <button class="btn btn-primary" id="cic-tiger-scan" onclick="location.assign('/projects/canvas_indexed_color/#ED0202,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#ffffff,FFFFFF,FFFFFF,FFFFFF'); location.reload(); return false;" href="/projects/canvas_indexed_color/#ED0202,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,FFFFFF,#FFFFFF,FFFFFF,#ffffff,FFFFFF,FFFFFF,FFFFFF">Tiger scan!</a>
+                <button class="btn btn-primary" onclick="cvm.cycleColors(); return false;" href="">Cycle colors</a>
+                <button class="btn btn-primary" onclick="location = '/projects/canvas_indexed_color'">Reset to classic SVG tiger</a>
             </div>
         </div>
     </div>
@@ -83,11 +82,12 @@ function copyToClipboard (text) {
     </li>
 </script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
-<script type="text/javascript" src="/static/projects/canvas_indexed_color/demo/farbtastic/farbtastic.js"></script>
-<script type="text/javascript" src="/static/projects/canvas_indexed_color/demo/vector_images.js"></script>
-<script type="text/javascript" src="/static/projects/canvas_indexed_color/demo/cic.js"></script>
-<script type="text/javascript" src="/static/projects/canvas_indexed_color/demo/jscolor/jscolor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
+<script src="/projects/canvas_indexed_color/demo/farbtastic/farbtastic.js"></script>
+<script src="/projects/canvas_indexed_color/demo/vector_images.js"></script>
+<script src="/projects/canvas_indexed_color/demo/cic.js"></script>
+<script src="/projects/canvas_indexed_color/demo/jscolor/jscolor.js"></script>
 
 This is a pretty limited demo and doesn't *actually* implement an indexed color
 API for the canvas element; it merely simulated indexed color.  To really see
