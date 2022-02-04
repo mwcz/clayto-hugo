@@ -1,6 +1,5 @@
 ---
 Title: "Noise/Echo Cancellation in Fedora"
-thumbnail: thumb.png
 aliases:
  - /2017/10/12/noiseecho-cancellation-in-fedora-26
  - /2017/10/12/noiseecho-cancellation-in-fedora-26-
