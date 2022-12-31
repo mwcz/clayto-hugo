@@ -33,3 +33,6 @@ https://github.com/mwcz/advent-of-code-2022/blob/d57d4569c83974ecd1989e45315396b
 It's much cheaper to forget the human, and forget the elephant.  Find the scores for every possible path (and subpath) that a single "player" can travel in 26 minutes.  For every pair of paths that don't contain any common valves (ie, disjoint sets), add their scores together.  Then find the highest score.  Those two paths are the paths the elephant and human should take.
 
 
+## Day 19
+
+On part 1, I implemented a solution that recursed over each of the 24 minutes, but it was pretty slow.  I went looking for tips and found a crucial one: "iterate over next choice of bot to build".  That made a huge difference.
