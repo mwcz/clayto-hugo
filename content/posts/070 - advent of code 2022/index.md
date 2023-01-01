@@ -36,3 +36,5 @@ It's much cheaper to forget the human, and forget the elephant.  Find the scores
 ## Day 19
 
 On part 1, I implemented a solution that recursed over each of the 24 minutes, but it was pretty slow.  I went looking for tips and found a crucial one: "iterate over next choice of bot to build".  That made a huge difference.
+
+Take-away: if searching through choices made at timesteps, if there is a "do nothing" choice, then instead iterate through the non-null choices and extrapolate the time steps in between.
