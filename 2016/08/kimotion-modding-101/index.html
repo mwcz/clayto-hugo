@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -202,8 +202,8 @@ cp -r mods/example2d mods/mymod
 </code></pre>
 <p>Open <code>index.html</code>, find where it says <code>&lt;!-- Kimotion mods--&gt;</code>, and right after
 it add a script tag to include your mod.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mods/mymod/main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>Open <code>mods/mymod/main.js</code> and on the very first line, change <code>class example2d</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mods/mymod/main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>Open <code>mods/mymod/main.js</code> and on the very first line, change <code>class example2d</code>
 to <code>class mymod</code>.</p>
 <p>Open <code>mods.js</code> and add your mod name (<code>mymod</code>) to the list.</p>
 <p>Whew, that process was pretty tedious, sorry about that.</p>

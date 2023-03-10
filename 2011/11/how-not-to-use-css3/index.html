@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -172,64 +172,64 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <p><span class="css3_demo">CSS3!</span></p>
 <p>The code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Random factors to determine x/y offsets for text shadows and amount of blur
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">blur_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
-
-<span style="color:#75715e">// Pretty colors
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">the_colors</span> <span style="color:#f92672">=</span> [
-  <span style="color:#e6db74">&#34;#7f9f7f&#34;</span>,
-  <span style="color:#e6db74">&#34;#dca3a3&#34;</span>,
-  <span style="color:#e6db74">&#34;#80d4aa&#34;</span>,
-  <span style="color:#e6db74">&#34;#f8f893&#34;</span>,
-  <span style="color:#e6db74">&#34;#ffcfaf&#34;</span>,
-  <span style="color:#e6db74">&#34;#e89393&#34;</span>,
-  <span style="color:#e6db74">&#34;#9ece9e&#34;</span>,
-  <span style="color:#e6db74">&#34;#c0bed1&#34;</span>,
-  <span style="color:#e6db74">&#34;#6c6c9c&#34;</span>,
-  <span style="color:#e6db74">&#34;#71d3b4&#34;</span>,
-  <span style="color:#e6db74">&#34;#a0afa0&#34;</span>,
-  <span style="color:#e6db74">&#34;#efefef&#34;</span>
-];
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">make_it</span>() {
-  <span style="color:#75715e">// MAKE IT SHINE
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Build a string containing a comma-delimited list of the each shadow we want to apply
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// sprintf would be nice here.
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">color_index</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">the_colors</span>) {
-    <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">+=</span>
-      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">+</span>
-      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
-      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y_factor</span> <span style="color:#f92672">+</span>
-      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
-      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">blur_factor</span> <span style="color:#f92672">+</span>
-      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
-      <span style="color:#a6e22e">the_colors</span>[<span style="color:#a6e22e">color_index</span>];
-
-    <span style="color:#75715e">// Add a comma unless we&#39;re at the end of the color set
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">color_index</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;,&#34;</span>;
-  }
-  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.css3_demo&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#34;textShadow&#34;</span>, <span style="color:#a6e22e">shadows</span>); <span style="color:#75715e">// apply the new style
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">shift</span>()); <span style="color:#75715e">// move first color to the end of the list
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//console.log( shadows );
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#e6db74">&#34;make_it()&#34;</span>, <span style="color:#ae81ff">50</span>); <span style="color:#75715e">// make the function async (kinda... effectively...) with setTimeout()
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move_it</span>() {
-  <span style="color:#75715e">// MAKE IT MOVE
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">/* uncomment this to make it move up and down...
-</span><span style="color:#75715e">    $(&#39;.css3_demo&#39;).animate( {top:&#39;+=200&#39;},2000, &#34;linear&#34; )
-</span><span style="color:#75715e">           .animate( {top:&#39;-=200&#39;},2000, &#34;linear&#34;, move_it );
-</span><span style="color:#75715e">    */</span>
-}
-
-<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>() {
-  <span style="color:#a6e22e">make_it</span>();
-  <span style="color:#a6e22e">move_it</span>();
-});
-</code></pre></div><script type="text/javascript">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Random factors to determine x/y offsets for text shadows and amount of blur
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">blur_factor</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>(Math.<span style="color:#a6e22e">random</span>() <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Pretty colors
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">the_colors</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#7f9f7f&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#dca3a3&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#80d4aa&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#f8f893&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#ffcfaf&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#e89393&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#9ece9e&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#c0bed1&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#6c6c9c&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#71d3b4&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#a0afa0&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;#efefef&#34;</span>
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">make_it</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// MAKE IT SHINE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Build a string containing a comma-delimited list of the each shadow we want to apply
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// sprintf would be nice here.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">color_index</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">the_colors</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">+=</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">x_factor</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y_factor</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">color_index</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">blur_factor</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;px &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">the_colors</span>[<span style="color:#a6e22e">color_index</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Add a comma unless we&#39;re at the end of the color set
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">color_index</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#a6e22e">shadows</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;,&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.css3_demo&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#34;textShadow&#34;</span>, <span style="color:#a6e22e">shadows</span>); <span style="color:#75715e">// apply the new style
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">the_colors</span>.<span style="color:#a6e22e">shift</span>()); <span style="color:#75715e">// move first color to the end of the list
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">//console.log( shadows );
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#e6db74">&#34;make_it()&#34;</span>, <span style="color:#ae81ff">50</span>); <span style="color:#75715e">// make the function async (kinda... effectively...) with setTimeout()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">move_it</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// MAKE IT MOVE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">/* uncomment this to make it move up and down...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    $(&#39;.css3_demo&#39;).animate( {top:&#39;+=200&#39;},2000, &#34;linear&#34; )
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">           .animate( {top:&#39;-=200&#39;},2000, &#34;linear&#34;, move_it );
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">make_it</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">move_it</span>();
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><script type="text/javascript">
 
 // Random factors to determine x/y offsets for text shadows and amount of blur
 var x_factor    = Math.floor( 0.6 * 20 ) - 10;

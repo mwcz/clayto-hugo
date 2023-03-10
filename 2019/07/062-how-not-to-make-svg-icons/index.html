@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -168,14 +168,14 @@
 <p>[&lt;use&gt;][use] is an SVG element which clones an existing SVG.  Simply specify the <code>id</code> of the SVG you want to clone, and the <em>use</em> element will become a copy of it.</p>
 <p><em>use</em> comes in two flavors, local and remotes.</p>
 <p><strong>local</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
-    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/svg&gt;</span>
-</code></pre></div><p><strong>remote</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#f92672">&lt;svg&gt;</span>
-    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://mycdn.com/icons/icon.svg#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/svg&gt;</span>
-</code></pre></div><p>Predictably, the local version finds an SVG with <code>id=&quot;id-to-copy&quot;</code> that already exists on the page, while the remote version fetches an SVG, finds <code>id=&quot;id-to-copy&quot;</code> within it, and clones that.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-svg" data-lang="svg"><span style="display:flex;"><span><span style="color:#f92672">&lt;svg&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/svg&gt;</span>
+</span></span></code></pre></div><p><strong>remote</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-svg" data-lang="svg"><span style="display:flex;"><span><span style="color:#f92672">&lt;svg&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;use</span> <span style="color:#a6e22e">href=</span><span style="color:#e6db74">&#34;https://mycdn.com/icons/icon.svg#id-to-copy&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/svg&gt;</span>
+</span></span></code></pre></div><p>Predictably, the local version finds an SVG with <code>id=&quot;id-to-copy&quot;</code> that already exists on the page, while the remote version fetches an SVG, finds <code>id=&quot;id-to-copy&quot;</code> within it, and clones that.</p>
 <p>While <em>use</em> could be a good fit for some icon libraries, I gave up on it after finding that it has the most extreme flavor of the same-origin policy I&rsquo;ve ever seen.  Don&rsquo;t reach for that [CORS][cors] cheat-sheet.  There is no <code>Access-Control</code> header that will allow a cross-origin SVG to be loaded with <em>use</em>.  Any SVG hosted on a different origin will fail, period, and there is no workaround.</p>
 <p>That restriction was too limiting.  We want anyone to be able to drop <code>&lt;pfe-icon&gt;</code> onto a page and use our built-in icons immediately, without having to go to great lengths to get the SVGs available on their origin.</p>
 <p>Additionally, the same-origin restriction makes it impossible to serve SVGs from a CDN, which is a deal-breaker.</p>
@@ -185,8 +185,8 @@
 <p>Another reason this method wasn&rsquo;t promising is that it seemed very inefficient to inject the same SVG text over and over.  Instead, injecting the SVG once and then using [<em>use</em>][use-method] to clone it should be quite efficient, but the CORS requirements alone made it easy to move on.</p>
 <h3 id="css-background-image">CSS background-image</h3>
 <p>This is the approach I spent the most time on, since it seemed by far the most promising.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://mycdn.com/svgs/rh-server.svg&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div><p>This approach has all the same pros and cons as using a an <code>&lt;img&gt;</code> tag.  We can consider them equivalent methods.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">background-image</span><span style="color:#f92672">:</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;https://mycdn.com/svgs/rh-server.svg&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>This approach has all the same pros and cons as using a an <code>&lt;img&gt;</code> tag.  We can consider them equivalent methods.</p>
 <p>With this method, SVGs can be pulled from any origin.</p>
 <p>One minor drawback is that SVG spritesheets aren&rsquo;t supported.  In other words, each SVG file must contain only a single icon.  That fits perfectly with our goal 1, but some icon libraries may wish to deliver icons in bulk sets (though I personally don&rsquo;t recommend it).</p>
 <p>A more major drawback is that applying color to the icons is not as straightforward.  With a plain old SVG you can set a color with CSS: <code>fill: red</code>.That only works when the SVG element is in the DOM, but not when it&rsquo;s relegated to a background image.  I was stumped until I came across SVG filters (specifically [feFlood][feflood]), which can also be applied with CSS and had astonishingly good browser support.</p>

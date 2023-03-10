@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -190,11 +190,11 @@ customize.</p>
     </video>
 </figure>
 <p>To improve ease of use, you encapsulate all that HTML into a custom element:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ws-panel</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I am a ws-panel&#34;</span>&gt;Some words.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
-</code></pre></div><p>The essence of simplicity! One more thing, browsers don&rsquo;t know what
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">ws-panel</span> <span style="color:#a6e22e">heading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;I am a ws-panel&#34;</span>&gt;Some words.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
+</span></span></code></pre></div><p>The essence of simplicity! One more thing, browsers don&rsquo;t know what
 <code>&lt;ws-panel&gt;</code> is, so your users must import it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/wootstrap/components/ws-panel.html&#34;</span>&gt;
-</code></pre></div><p>One line, no big deal. But as your users add and remove components from their
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../bower_components/wootstrap/components/ws-panel.html&#34;</span>&gt;
+</span></span></code></pre></div><p>One line, no big deal. But as your users add and remove components from their
 pages, managing imports becomes a finger-aching chore.</p>
 <h2 id="scene-2-minimize-finger-ache">Scene 2: Minimize Finger-Ache</h2>
 <p>Wouldn&rsquo;t it be cushy if the components were imported when you use them,
@@ -209,57 +209,57 @@ automatically?</p>
 <iframe class="demo-iframe" frameborder=0 height="240" width="100%" src="https://clayto.com/demos/043/index.html"></iframe>
 <!-- https://gohugo.io/content-management/syntax-highlighting/ -->
 <h3 id="demo-code">Demo code</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
-    &lt;<span style="color:#f92672">head</span>&gt;
-<span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/webcomponents.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span><span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/lazy-load/lazy-load.html&#34;</span>&gt;
-</span>    &lt;/<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">body</span>&gt;
-<span style="display:block;width:100%;background-color:#3c3d38">        &lt;<span style="color:#f92672">lazy-load</span>&gt;
-</span><span style="display:block;width:100%;background-color:#3c3d38">            &lt;<span style="color:#f92672">ws-panel</span>&gt;I am a ws-panel.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
-</span><span style="display:block;width:100%;background-color:#3c3d38">            &lt;<span style="color:#f92672">ws-btn</span>&gt;I am ws-button&lt;/<span style="color:#f92672">ws-btn</span>&gt;
-</span><span style="display:block;width:100%;background-color:#3c3d38">            &lt;<span style="color:#f92672">ws-alert</span>&gt;I am a ws-alert&lt;/<span style="color:#f92672">ws-alert</span>&gt;
-</span><span style="display:block;width:100%;background-color:#3c3d38">        &lt;/<span style="color:#f92672">lazy-load</span>&gt;
-</span>    &lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">defer</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/webcomponents.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;import&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;src/lazy-load/lazy-load.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        &lt;<span style="color:#f92672">lazy-load</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            &lt;<span style="color:#f92672">ws-panel</span>&gt;I am a ws-panel.&lt;/<span style="color:#f92672">ws-panel</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            &lt;<span style="color:#f92672">ws-btn</span>&gt;I am ws-button&lt;/<span style="color:#f92672">ws-btn</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            &lt;<span style="color:#f92672">ws-alert</span>&gt;I am a ws-alert&lt;/<span style="color:#f92672">ws-alert</span>&gt;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        &lt;/<span style="color:#f92672">lazy-load</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div>
 <p>The demo only imports <code>lazy-load</code>, which encapsulates the importing of the rest of the elements so you don&rsquo;t have to specify them by hand. Let&rsquo;s look at how it works.</p>
 <h2 id="scene-3-behind-the-scenes">Scene 3: Behind the Scenes</h2>
 <p>To lazyload, we need a list of all our component names and where to find them.
 I created a small &ldquo;registry&rdquo; object for the demo. In the real-world, this
 object could be auto-generated by the component library&rsquo;s build system, or by
 the build system of the user&rsquo;s app, including all available components.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">LazyComponents</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">names</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ws-panel,ws-btn,ws-alert&#34;</span>,
-  <span style="color:#a6e22e">paths</span><span style="color:#f92672">:</span> {
-    <span style="color:#e6db74">&#34;ws-panel&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-panel/ws-panel.html&#34;</span>,
-    <span style="color:#e6db74">&#34;ws-btn&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-btn/ws-btn.html&#34;</span>,
-    <span style="color:#e6db74">&#34;ws-alert&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-alert/ws-alert.html&#34;</span>
-  }
-};
-</code></pre></div><p>First we have <code>names</code>, a comma-separated list of component names which doubles
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">LazyComponents</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">names</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;ws-panel,ws-btn,ws-alert&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">paths</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ws-panel&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-panel/ws-panel.html&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ws-btn&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-btn/ws-btn.html&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ws-alert&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;./src/ws-components/ws-alert/ws-alert.html&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>First we have <code>names</code>, a comma-separated list of component names which doubles
 as a selector. It is passed into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll()</a> to find any
 occurrences of our elements on the page. Second is <code>paths</code>, a mapping from
 each component&rsquo;s name to its HTML template file.</p>
 <h3 id="the-lazy-load-element">The lazy-load element</h3>
 <p>Here&rsquo;s the Polymer definition for the <code>lazy-load</code> element:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Polymer</span>({
-
-    <span style="color:#a6e22e">is</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lazy-load&#39;</span>,
-
-    <span style="color:#a6e22e">attached</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lazyLoadAttached</span>() {
-        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lazyLoad</span>();
-    },
-
-    <span style="color:#a6e22e">lazyLoad</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lazyLoad</span>() {
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">els</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">LazyComponents</span>.<span style="color:#a6e22e">names</span>);
-        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>; <span style="color:#a6e22e">els</span>.<span style="color:#a6e22e">length</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
-            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">els</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">nodeName</span>.<span style="color:#a6e22e">toLowerCase</span>();
-            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">importHref</span>(<span style="color:#a6e22e">LazyComponents</span>.<span style="color:#a6e22e">paths</span>[<span style="color:#a6e22e">name</span>]);
-        }
-    },
-
-});
-</code></pre></div><p>When <code>lazy-load</code> is <a href="https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks">attached to the DOM</a>, it finds any children in
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Polymer</span>({
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">is</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lazy-load&#39;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attached</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lazyLoadAttached</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">lazyLoad</span>();
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lazyLoad</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">lazyLoad</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">els</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#a6e22e">LazyComponents</span>.<span style="color:#a6e22e">names</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">lt</span>; <span style="color:#a6e22e">els</span>.<span style="color:#a6e22e">length</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">els</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">nodeName</span>.<span style="color:#a6e22e">toLowerCase</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">importHref</span>(<span style="color:#a6e22e">LazyComponents</span>.<span style="color:#a6e22e">paths</span>[<span style="color:#a6e22e">name</span>]);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>When <code>lazy-load</code> is <a href="https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks">attached to the DOM</a>, it finds any children in
 the <code>names</code> list and imports their HTML templates (using Polymer&rsquo;s handy
 <a href="https://www.polymer-project.org/1.0/docs/devguide/instance-methods#imports-and-urls">importHref()</a> function).</p>
 <p>Now any element in the registry object can be used without an explicit import.</p>

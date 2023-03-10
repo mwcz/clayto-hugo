@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -277,7 +277,7 @@ pfe-icon {
 <p>The first test I ran was a performance profile in Chrome devtools, which profiles JS and WebAssembly.  The results were&hellip; unhelpful.</p>
 <img src="screenshots/profile-mangled-names.png" alt="screenshot of the mangled names" loading="lazy" width=549 height=167>
 <p>wasm-pack docs helped out here.  Adding the two following settings to Cargo.toml resulted in more useful names.</p>
-<pre><code>[package.metadata.wasm-pack.profile.release]
+<pre tabindex="0"><code>[package.metadata.wasm-pack.profile.release]
 wasm-opt = false
 
 [package.metadata.wasm-pack.profile.release.wasm-bindgen]
@@ -303,10 +303,10 @@ A more helpful profile with demangled names.
 </ol>
 <p>After a lot of experimentation, I settled on implementing the very-very fast <a href="https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/">lehmer64</a>, and making it &ldquo;global&rdquo; with <a href="https://crates.io/crates/lazy_static">lazy_static</a>.  I left a lot of other options on the table, such as using lazy_static to share rand.  The reasons were in the vein of simplicity, <code>.wasm</code> file size, and valuing speed over <a href="https://en.wikipedia.org/wiki/Cryptographically-secure_pseudorandom_number_generator">cryptographically-bulletproof random numbers</a>.</p>
 <p>Here&rsquo;s what the lazy_static usage looks like.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">lazy_static<span style="color:#f92672">!</span> {
-    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ref</span> RNG: <span style="color:#a6e22e">Mutex</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> Mutex::new(<span style="color:#ae81ff">0xda942042e4dd58b5</span>);
-}
-</code></pre></div><p>The only global piece is the starting seed, which gets rewritten by each call to <code>random_float</code>. Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/master/lib/src/random.rs">implementation of random_float using lehmer64</a>.  The compiler noticed the potential for integer overflow, and politely asked me to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a> to indicate overflow was desired.  After adding Wrapping, the code worked.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>lazy_static<span style="color:#f92672">!</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">ref</span> RNG: <span style="color:#a6e22e">Mutex</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u128</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> Mutex::new(<span style="color:#ae81ff">0xda942042e4dd58b5</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The only global piece is the starting seed, which gets rewritten by each call to <code>random_float</code>. Here&rsquo;s the <a href="https://github.com/mwcz/rust-raytracer-weekend/blob/master/lib/src/random.rs">implementation of random_float using lehmer64</a>.  The compiler noticed the potential for integer overflow, and politely asked me to add <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html">Wrapping</a> to indicate overflow was desired.  After adding Wrapping, the code worked.</p>
 <p>With millions of wasm-to-js calls eliminated, performance improved, but not as much as I expected.</p>
 <hr>
 <h4 id="floatuntidfc">floatuntidf.c</h4>
@@ -346,17 +346,17 @@ A more helpful profile with demangled names.
 <p>Here&rsquo;s the performance profile as it currently stands, with mutex activity highlighted.</p>
 <small>
 <!-- https://gohugo.io/content-management/syntax-highlighting/ -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1,323,563,733 (38.60%)  ???:&lt;rtw::objects::sphere::Sphere&lt;T&gt; as rtw::hit::Hittable&lt;T&gt;&gt;::hit
-  537,820,968 (15.68%)  ???:rtw::random::random_float
-<span style="display:block;width:100%;background-color:#3c3d38">  370,075,224 (10.79%)  ???:pthread_mutex_lock [/usr/lib64/libpthread-2.33.so]
-</span><span style="display:block;width:100%;background-color:#3c3d38">  319,030,423 ( 9.30%)  ???:pthread_mutex_unlock [/usr/lib64/libpthread-2.33.so]
-</span>  274,479,530 ( 8.00%)  ???:rtw::ray::Ray&lt;T&gt;::color&#39;2
-  213,215,525 ( 6.22%)  ???:rtw::ray::Ray&lt;T&gt;::color
-  129,769,989 ( 3.78%)  ???:cli::main
-  104,789,656 ( 3.06%)  ???:&lt;rtw::material::lambertian::Lambertian&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter
-   49,099,401 ( 1.43%)  ???:&lt;rtw::RNG as core::ops::deref::Deref&gt;::deref
-   45,736,164 ( 1.33%)  ???:&lt;rtw::material::dielectric::Dielectric&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter
-   31,644,376 ( 0.92%)  ???:&lt;rtw::material::metal::Metal&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1,323,563,733 (38.60%)  ???:&lt;rtw::objects::sphere::Sphere&lt;T&gt; as rtw::hit::Hittable&lt;T&gt;&gt;::hit
+</span></span><span style="display:flex;"><span>  537,820,968 (15.68%)  ???:rtw::random::random_float
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  370,075,224 (10.79%)  ???:pthread_mutex_lock [/usr/lib64/libpthread-2.33.so]
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  319,030,423 ( 9.30%)  ???:pthread_mutex_unlock [/usr/lib64/libpthread-2.33.so]
+</span></span><span style="display:flex;"><span>  274,479,530 ( 8.00%)  ???:rtw::ray::Ray&lt;T&gt;::color&#39;2
+</span></span><span style="display:flex;"><span>  213,215,525 ( 6.22%)  ???:rtw::ray::Ray&lt;T&gt;::color
+</span></span><span style="display:flex;"><span>  129,769,989 ( 3.78%)  ???:cli::main
+</span></span><span style="display:flex;"><span>  104,789,656 ( 3.06%)  ???:&lt;rtw::material::lambertian::Lambertian&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter
+</span></span><span style="display:flex;"><span>   49,099,401 ( 1.43%)  ???:&lt;rtw::RNG as core::ops::deref::Deref&gt;::deref
+</span></span><span style="display:flex;"><span>   45,736,164 ( 1.33%)  ???:&lt;rtw::material::dielectric::Dielectric&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter
+</span></span><span style="display:flex;"><span>   31,644,376 ( 0.92%)  ???:&lt;rtw::material::metal::Metal&lt;T&gt; as rtw::material::Material&lt;T&gt;&gt;::scatter</span></span></code></pre></div>
 </small>
 <hr>
 <h4 id="reduce-reuse-recycle-">Reduce, reuse, recycle ♻</h4>

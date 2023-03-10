@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -170,107 +170,107 @@
 <p>Last week I was sitting in a meeting, thinking about unit testing frameworks (not the subject of the meeting), and had a minor epiphany. In the back of my mind, there has always been a bit of uncertainty as to how unit testing frameworks work. Deep in my brain I knew there was something I didn&rsquo;t understand, but I wasn&rsquo;t quite sure what. I never gave it any conscious thought.</p>
 <p>As a developer, I&rsquo;d use a framework, write a bunch of <code>testBlahFoo</code> functions, and the framework would magically run them.</p>
 <p>Then I realized&hellip; &ldquo;Oh, it&rsquo;s just introspection.&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Create an object with three properties, all functions
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myfuncs</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">func1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;func it up&#34;</span>);
-  },
-  <span style="color:#a6e22e">func2</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;func&#39;s old brother&#34;</span>);
-  },
-  <span style="color:#a6e22e">func3</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;bring back da func&#34;</span>);
-  }
-};
-
-<span style="color:#75715e">// Run all functions attached to myfuncs
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">func</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">myfuncs</span>) {
-  <span style="color:#a6e22e">myfuncs</span>[<span style="color:#a6e22e">func</span>]();
-}
-
-<span style="color:#75715e">// Outputs:
-</span><span style="color:#75715e">//
-</span><span style="color:#75715e">// func it up
-</span><span style="color:#75715e">// func&#39;s old brother
-</span><span style="color:#75715e">// bring back da func
-</span></code></pre></div><p>So simple. Later, I wrote a very basic unit testing framework, purely as an educational excercise.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Create an object with three properties, all functions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myfuncs</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">func1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;func it up&#34;</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">func2</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;func&#39;s old brother&#34;</span>);
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">func3</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;bring back da func&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Run all functions attached to myfuncs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">func</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">myfuncs</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">myfuncs</span>[<span style="color:#a6e22e">func</span>]();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Outputs:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// func it up
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// func&#39;s old brother
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// bring back da func
+</span></span></span></code></pre></div><p>So simple. Later, I wrote a very basic unit testing framework, purely as an educational excercise.</p>
 <p>The guts are almost simple as the example above.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">JTestSuite</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
-    <span style="color:#a6e22e">jt</span>,
-    <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>) {
-      <span style="color:#a6e22e">jt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JTests</span>();
-      <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">callback</span>);
-    },
-    <span style="color:#a6e22e">run</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fn</span>, <span style="color:#a6e22e">prop</span>;
-
-      <span style="color:#75715e">// Run all functions that begin with &#34;test&#34;
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">prop</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>) {
-        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">prop</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
-          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">prop</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;test&#34;</span>) {
-            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">prop</span>](<span style="color:#a6e22e">jt</span>));
-          }
-        }
-      }
-    };
-
-  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#66d9ef">this</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">JTestSuite</span>)) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JTestSuite</span>();
-
-  <span style="color:#66d9ef">return</span> {
-    <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">init</span>,
-    <span style="color:#a6e22e">run</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">run</span>
-  };
-};
-</code></pre></div><p>In the <code>run</code> function&rsquo;s loop, I first check that each property is a function before attemping to run it. This avoids a <code>called_non_callable TypeError</code>. I then check that the name of the property begins with the string &ldquo;test&rdquo;. When dynamically calling functions, it&rsquo;s usually a good idea to call <code>obj.hasOwnProperty(propname)</code> to ensure the property wasn&rsquo;t inherited from some unknown source (especially if the property you wanted to reference may have been <code>delete</code>d, but a property with the same name is now surfacing from a parent object), but in this case I&rsquo;d like to leave open the possibility for inherited Test Suites.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">JTestSuite</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">jt</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">jt</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JTests</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">callback</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">run</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fn</span>, <span style="color:#a6e22e">prop</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Run all functions that begin with &#34;test&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">prop</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">prop</span>] <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">prop</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;test&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">prop</span>](<span style="color:#a6e22e">jt</span>));
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#66d9ef">this</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">JTestSuite</span>)) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JTestSuite</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">init</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">init</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">run</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">run</span>
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>In the <code>run</code> function&rsquo;s loop, I first check that each property is a function before attemping to run it. This avoids a <code>called_non_callable TypeError</code>. I then check that the name of the property begins with the string &ldquo;test&rdquo;. When dynamically calling functions, it&rsquo;s usually a good idea to call <code>obj.hasOwnProperty(propname)</code> to ensure the property wasn&rsquo;t inherited from some unknown source (especially if the property you wanted to reference may have been <code>delete</code>d, but a property with the same name is now surfacing from a parent object), but in this case I&rsquo;d like to leave open the possibility for inherited Test Suites.</p>
 <p>The <code>JTests</code> object created in the <code>init</code> function is a separate object that contains a bunch of assertions. It looks something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">JTests</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
-    <span style="color:#a6e22e">result_callback</span>,
-    <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>) {
-      <span style="color:#a6e22e">result_callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>;
-    };
-
-  <span style="color:#a6e22e">assertTrue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>;
-    <span style="color:#a6e22e">result_callback</span>({
-      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;assertTrue&#34;</span>,
-      <span style="color:#a6e22e">args</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">a</span>],
-      <span style="color:#a6e22e">result</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">result</span>
-    });
-  };
-
-  <span style="color:#66d9ef">return</span> {
-    <span style="color:#a6e22e">assertTrue</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">assertTrue</span>
-  };
-};
-</code></pre></div><p>&hellip;except with many more assertions. :)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">JTests</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">version</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">result_callback</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">callback</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">result_callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">assertTrue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">result_callback</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;assertTrue&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">args</span><span style="color:#f92672">:</span> [<span style="color:#a6e22e">a</span>],
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">result</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">result</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">assertTrue</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">assertTrue</span>
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>&hellip;except with many more assertions. :)</p>
 <p>Both <code>JTestSuite</code> and <code>JTests</code> use the <a href="http://stackoverflow.com/a/5647397/215148">revealing module pattern</a>.</p>
 <p>I have a lot of ideas for improvement, like <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>ing up the assertions, so the <code>{name,args,result}</code> object doesn&rsquo;t have to be defined in each assertion. But <a href="http://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#JavaScript">many others</a> have already done a great job, and I don&rsquo;t want to reinvent too many wheels.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Define a custom handler for the result
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test_callback</span>(<span style="color:#a6e22e">result</span>) {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);
-}
-
-<span style="color:#75715e">// Create a new JTestSuite object and initialize it with the callback
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">TestSuite</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JTestSuite</span>();
-<span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">test_callback</span>);
-
-<span style="color:#75715e">// Create some tests
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">testMath</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">jt</span>) {
-  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertEquals</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>);
-};
-
-<span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">testFalsy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">jt</span>) {
-  <span style="color:#75715e">// [], &#34;&#34;, and &#34;0&#34; all == false in javascript
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>([]);
-  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>(<span style="color:#e6db74">&#34;&#34;</span>);
-  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>(<span style="color:#e6db74">&#34;0&#34;</span>);
-};
-
-<span style="color:#75715e">// Run all the tests
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">run</span>();
-</code></pre></div><p>The callback allows a user to determine how the results from the unit test should be processed or displayed. Results could be printed to console.log, displayed on a page by adding them to the DOM, sent to a Web service with AJAX, or any arbitrary service with Web Sockets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Define a custom handler for the result
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">test_callback</span>(<span style="color:#a6e22e">result</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">result</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create a new JTestSuite object and initialize it with the callback
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">TestSuite</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JTestSuite</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">test_callback</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Create some tests
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">testMath</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">jt</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertEquals</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">testFalsy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">jt</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// [], &#34;&#34;, and &#34;0&#34; all == false in javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>([]);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>(<span style="color:#e6db74">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">jt</span>.<span style="color:#a6e22e">assertFalsy</span>(<span style="color:#e6db74">&#34;0&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Run all the tests
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">TestSuite</span>.<span style="color:#a6e22e">run</span>();
+</span></span></code></pre></div><p>The callback allows a user to determine how the results from the unit test should be processed or displayed. Results could be printed to console.log, displayed on a page by adding them to the DOM, sent to a Web service with AJAX, or any arbitrary service with Web Sockets.</p>
 <p>After writing this toy framework, and explaining it to a colleague, I was told that the Rails unit tester uses almost the exact same approach. I&rsquo;d wager a few bucks that JUnit uses the Reflection API&rsquo;s <code>Class.getMethods()</code> to find and run all the methods added to a TestCase class. Only a few bucks, though.</p>
 
   </section>

@@ -1,1185 +1,713 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://clayto.com/tags/art/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/canvas/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/categories/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/demos/</loc>
-    <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/demos/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/demos/</loc>
+    <lastmod>2022-01-06T10:54:48-05:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/tags/javascript/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/posts/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/programming/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2022/01/rippulous-pond/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/web/</loc>
     <lastmod>2022-01-06T10:54:48-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/3d/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/ray-tracing/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/rust/</loc>
-    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/rust/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/rust/</loc>
+    <lastmod>2021-07-26T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/</loc>
     <lastmod>2021-07-05T23:57:49-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/wasm/</loc>
     <lastmod>2021-07-05T23:57:49-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/</loc>
     <lastmod>2021-07-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/patternfly/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2019/07/web-component-icons/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/web-components/</loc>
     <lastmod>2019-07-25T15:11:23-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/fedora/</loc>
     <lastmod>2019-05-31T14:17:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/linux/</loc>
     <lastmod>2019-05-31T14:17:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2019/05/low-tech-disk-cloning/</loc>
     <lastmod>2019-05-31T14:17:57-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2019/02/command-line-bash/</loc>
     <lastmod>2019-02-15T09:53:53-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/gamedev/</loc>
     <lastmod>2019-02-15T09:53:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/games/</loc>
-    <lastmod>2019-02-15T09:53:53-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/games/</loc>
     <lastmod>2019-02-15T09:53:53-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/games/</loc>
+    <lastmod>2019-02-15T09:53:53-05:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/tags/scripta/</loc>
     <lastmod>2019-02-15T09:53:53-05:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/pitivi/</loc>
     <lastmod>2018-06-21T10:10:12-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2018/06/pitivi-high-quality-rendering/</loc>
     <lastmod>2018-06-21T10:10:12-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/video/</loc>
     <lastmod>2018-06-21T10:10:12-04:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2018/04/open-jam-workshop/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/open-jam/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/open-source/</loc>
     <lastmod>2018-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/audio/</loc>
     <lastmod>2019-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2017/10/noise/echo-cancellation-in-fedora/</loc>
     <lastmod>2019-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2017/10/popup-showdown/</loc>
     <lastmod>2017-10-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2017/10/open-jam/</loc>
     <lastmod>2017-10-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/dimo/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/geekspark/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2017/09/geekspark-2017/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/kimotion/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/sparkcon/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2017/08/in-orange-light/</loc>
     <lastmod>2017-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/in-orange-light/</loc>
     <lastmod>2017-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/ld39/</loc>
     <lastmod>2017-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/ludum-dare/</loc>
     <lastmod>2017-08-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/2d/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/ld38/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/phaser/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/games/pity-about-earth/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/pity-about-earth/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/webgl/</loc>
     <lastmod>2017-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/led/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/maniacal-labs/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2017/03/meet-simpixel/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/threejs/</loc>
     <lastmod>2017-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/fireflies/</loc>
     <lastmod>2017-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/particles/</loc>
     <lastmod>2017-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/projects/tracer/</loc>
-    <lastmod>2017-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/tracer/</loc>
     <lastmod>2017-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/projects/tracer/</loc>
+    <lastmod>2017-01-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/2017/01/kimotion-at-geekspark-2016/</loc>
     <lastmod>2017-01-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/physics/</loc>
     <lastmod>2017-01-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/projects/zorbio/</loc>
-    <lastmod>2016-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/zorbio/</loc>
     <lastmod>2016-11-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/projects/zorbio/</loc>
+    <lastmod>2016-11-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/tags/html/</loc>
     <lastmod>2016-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2016/09/lazyloading-web-components/</loc>
     <lastmod>2016-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/polymer/</loc>
     <lastmod>2016-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2016/08/kimotion-modding-101/</loc>
     <lastmod>2016-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2016/07/glow-rope/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/redhat/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2016/07/visualizing-network-traffic-with-webgl/</loc>
     <lastmod>2016-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/ld35/</loc>
     <lastmod>2016-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/squareoff/</loc>
     <lastmod>2016-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/squareoff/</loc>
     <lastmod>2016-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/kimotion/</loc>
     <lastmod>2015-09-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2015/09/make-a-kimotion/</loc>
     <lastmod>2015-09-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/phaserjs/</loc>
     <lastmod>2015-06-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/projects/ping/</loc>
-    <lastmod>2015-06-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/ping/</loc>
     <lastmod>2015-06-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/projects/ping/</loc>
+    <lastmod>2015-06-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/tags/cool-retro-term/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/gaming/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/nostalgia/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/terminal/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/text-adventure/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2015/06/the-lurking-horror/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2015/06/webassembly-is-the-keystone/</loc>
     <lastmod>2015-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2015/01/naming-names-anonymity-is-dead/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2014/10/dimo-the-deconstruction-of-falling-stars/</loc>
     <lastmod>2014-10-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/requirejs/</loc>
     <lastmod>2014-10-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/dimo/</loc>
     <lastmod>2014-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2014/08/particles-and-%CF%80-dimo-comes-to-life/</loc>
     <lastmod>2014-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/palebluepixel/</loc>
     <lastmod>2014-06-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/color/</loc>
     <lastmod>2014-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/colorpal/</loc>
     <lastmod>2014-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/html5/</loc>
     <lastmod>2014-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2014/03/rgb-webgl-color-cube/</loc>
     <lastmod>2014-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/data-uri/</loc>
     <lastmod>2014-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2014/02/introducing-drop64-ezpz-data-uri-generator/</loc>
     <lastmod>2014-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/css3/</loc>
     <lastmod>2014-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/data-url/</loc>
     <lastmod>2014-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/drop64/</loc>
     <lastmod>2014-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/gimp/</loc>
     <lastmod>2013-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2013/12/super-easy-image-resizing-in-gimp/</loc>
     <lastmod>2013-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2013/11/colorpal-cli/</loc>
     <lastmod>2013-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/mediancut/</loc>
     <lastmod>2013-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2013/05/pathways/</loc>
     <lastmod>2014-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photography/</loc>
     <lastmod>2014-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/</loc>
     <lastmod>2014-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2013/04/new-leaves/</loc>
     <lastmod>2013-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/intorted/</loc>
     <lastmod>2012-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/sememe/</loc>
     <lastmod>2012-08-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/steam4/</loc>
     <lastmod>2012-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/steam3/</loc>
     <lastmod>2012-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/steam2/</loc>
     <lastmod>2012-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/steam1/</loc>
     <lastmod>2012-08-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/steam0/</loc>
     <lastmod>2012-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/08/casper/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2012/07/colorpal-output-update/</loc>
     <lastmod>2012-07-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/07/surprised-ghost/</loc>
     <lastmod>2012-07-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/07/9/</loc>
     <lastmod>2012-07-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/07/stadteiche/</loc>
     <lastmod>2012-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/07/guten-morgahn/</loc>
     <lastmod>2012-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/07/we-auction-off-our-memories-never/</loc>
     <lastmod>2012-07-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/canvas_indexed_color/</loc>
     <lastmod>2012-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2012/07/introducing-canvas-indexed-color/</loc>
     <lastmod>2012-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/06/tesseracts/</loc>
     <lastmod>2012-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/06/space-junk/</loc>
     <lastmod>2012-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/06/something/</loc>
     <lastmod>2012-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/06/general/</loc>
     <lastmod>2012-06-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/06/nose/</loc>
     <lastmod>2012-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/05/whatcha-doin-friday/</loc>
     <lastmod>2012-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/05/friday-night/</loc>
     <lastmod>2012-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/05/i-dont-____-you-anymore/</loc>
     <lastmod>2012-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/05/quickly-sinking/</loc>
     <lastmod>2012-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2012/05/heres-to-the-crazy-ones/</loc>
     <lastmod>2012-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2012/02/colorpal-palettes-improved/</loc>
     <lastmod>2012-02-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/colorpal/</loc>
     <lastmod>2012-01-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2012/01/colorpal-alpha/</loc>
     <lastmod>2012-01-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/general/</loc>
     <lastmod>2012-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/keepass/</loc>
     <lastmod>2012-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/n9/</loc>
     <lastmod>2012-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2012/01/the-n9-qr-codes-and-keepassx/</loc>
     <lastmod>2012-01-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/bouncey/</loc>
     <lastmod>2011-11-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/bouncey-returns-more-canvas-physics/</loc>
     <lastmod>2011-11-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/bouncey/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/bouncey-canvas-physics/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/how-not-to-use-css3/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/html5-canvas-point-operations/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/html5-tool-for-creating-color-palettes-from-an-image/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/image-processing/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/jsimage/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/typography/</loc>
     <lastmod>2011-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/html5-canvas-3d-pixel-array/</loc>
     <lastmod>2011-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/html5-canvas-area-selection-averaging/</loc>
     <lastmod>2011-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/html5-canvas-eyedropper/</loc>
     <lastmod>2011-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/11/html5-canvas-rgb-histogram/</loc>
     <lastmod>2011-11-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/11/bubbles/</loc>
     <lastmod>2011-11-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://clayto.com/projects/aejs/</loc>
-    <lastmod>2011-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/tags/aejs/</loc>
     <lastmod>2011-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://clayto.com/projects/aejs/</loc>
+    <lastmod>2011-10-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://clayto.com/tags/amiga/</loc>
     <lastmod>2011-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/10/opcode-patterns-70-finished/</loc>
     <lastmod>2011-10-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/09/lut/</loc>
     <lastmod>2011-09-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/2011/09/introducing-aejs/</loc>
     <lastmod>2011-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/06/cts/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/06/bacteria/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/06/survivors/</loc>
     <lastmod>2011-06-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/06/the-day-races/</loc>
     <lastmod>2011-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/going-for-a-walk/</loc>
     <lastmod>2011-05-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/one-by-one/</loc>
     <lastmod>2011-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/shadowed-stain/</loc>
     <lastmod>2011-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/the-flow-is-getting-stronger/</loc>
     <lastmod>2011-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/scare-up-some-hope/</loc>
     <lastmod>2011-05-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/near-a-curtain-of-blue/</loc>
     <lastmod>2011-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/this-is-the-way-of-the-modern-world/</loc>
     <lastmod>2011-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/clef/</loc>
     <lastmod>2011-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/boing/</loc>
     <lastmod>2011-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/insanity-2/</loc>
     <lastmod>2011-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/patterns-are-everywhere/</loc>
     <lastmod>2011-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/05/warped/</loc>
     <lastmod>2011-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/enter/</loc>
     <lastmod>2011-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/melody/</loc>
     <lastmod>2011-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/rage/</loc>
     <lastmod>2011-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/tamper/</loc>
     <lastmod>2011-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/project-demo/</loc>
     <lastmod>2011-04-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/set-sail/</loc>
     <lastmod>2011-04-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/or-is-it/</loc>
     <lastmod>2011-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/suspicious-glow/</loc>
     <lastmod>2011-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/how-many-roads/</loc>
     <lastmod>2011-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/enshroud/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/more-spaceships/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/more-water/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/irony/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/04/snakes-shudder/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/last-years-view/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/hidden/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/ant-hive/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/with-our-branches/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/anonymous-blaze/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/gallagher/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/spaceships/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/broken-ladder/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/headquarters/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/punks-not-dead/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/smooth-solid/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/the-source/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/tonights-sound/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/unbelievable-undeniable/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2011/03/unze/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2009/05/world-peace/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/jsimage/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/mediancut/</loc>
     <lastmod>2009-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2008/08/tarsi/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2008/07/fill-in-the-gaps/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2008/06/cables-run-my-life/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2007/12/we-made-it/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2007/11/last-night-they-came-for-me/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2007/03/string-theory/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2007/03/beguile/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2007/02/grizzled/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/12/potatotter/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/11/electrons/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/09/antennae/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/08/made-for-walking/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/08/portal/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/08/beads-of-light-iii/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/08/insanity/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/07/dying-day/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/07/quizzical/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/07/beads-of-light-i/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/07/beads-of-light-ii/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/07/the-human-exhibit/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/photos/2006/07/nebulous/</loc>
     <lastmod>2011-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://clayto.com/projects/clayto/</loc>
     <lastmod>2003-01-01T00:00:00+00:00</lastmod>
   </url>
-  
 </urlset>

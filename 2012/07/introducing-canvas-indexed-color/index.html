@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -191,14 +191,14 @@ with the new value. Knockout calls this a &ldquo;two-way data binding&rdquo;.</p
 <p>I replaced the aforementioned color strings with calls to <code>cvm</code>, which is a
 Knockout ViewModel (in this case, an object that holds all the color data).
 <code>cvm</code> is populated with the SVG tiger&rsquo;s default colors.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observableArray</span>([
-  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#000000&#34;</span>) },
-  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#323232&#34;</span>) },
-  <span style="color:#75715e">// .... many more ....
-</span><span style="color:#75715e"></span>  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#ff727f&#34;</span>) },
-  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#ffffff&#34;</span>) }
-]);
-</code></pre></div><p>Play with the colors, then copy the URL and send your tiger to your friends. :]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observableArray</span>([
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#000000&#34;</span>) },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#323232&#34;</span>) },
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// .... many more ....
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#ff727f&#34;</span>) },
+</span></span><span style="display:flex;"><span>  { <span style="color:#a6e22e">hex</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ko</span>.<span style="color:#a6e22e">observable</span>(<span style="color:#e6db74">&#34;#ffffff&#34;</span>) }
+</span></span><span style="display:flex;"><span>]);
+</span></span></code></pre></div><p>Play with the colors, then copy the URL and send your tiger to your friends. :]</p>
 <p><a href="https://clayto.com/projects/canvas_indexed_color/#4c0000,#659900,#666666,#992600,#999999,#99cc32,#a51926,#a5264c,#b23259,#b26565,#b2b2b2,#cc3f4c,#cc7226,#cccccc,#e5668c,#e59999,#e5e5b2,B5E8E6,#ea8c4d,#ea8e51,#eb955c,#ec9961,#eea575,#efaa7c,#f1b288,#f2b892,#f3bf9c,#f4c6a8,#f5ccb0,#f8d8c4,#f8dcc8,#f9e2d3,#fae5d7,#fcf2eb,#ff727f,#ffffcc,#ffffff,#000000,#323232" title="Crazy tiger">Crazy tiger</a>.</p>
 <p>Please note, this is only a simulation of an indexed color palette. It is not
 a true, usable, indexed-color API for canvas (someday, maybe!).</p>
@@ -225,9 +225,8 @@ indexed color, and a <strong>mind-blowing</strong> canvas demo, go
     <section>
       
         In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&rsquo;t perform well with certain types of images, so I fixed it. :)
- 
+ &lt;img src=&ldquo;colorpal_logo.png&rdquo; alt=&ldquo;ColorPal logo&rdquo; title=&quot;&quot; /&gt;
 Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&rsquo;s a comparison of the old and new methods, on an image that is mostly black:
-You can see that with the old method, the black pixels definitely took over the palette.
       
     </section>
   </div>

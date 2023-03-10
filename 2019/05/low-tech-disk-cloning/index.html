@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -180,7 +180,7 @@
 <h2 id="step-1-live-os-on-both-machines">Step 1. Live OS on both machines</h2>
 <p>First, grab two USB thumb drives, <a href="https://docs.fedoraproject.org/en-US/fedora/f30/install-guide/install/Preparing_for_Installation/#sect-preparing-boot-media">put a Fedora live system</a> on them, and boot up both machines from the thumb drives.</p>
 <p>Once Fedora live is booted up, open a terminal on each machine and run:</p>
-<pre><code>sudo -i
+<pre tabindex="0"><code>sudo -i
 </code></pre><p>Use these rooted terminals for all following steps.</p>
 <p>Now that Fedora live is running on both machines, we&rsquo;ll set up the destination machine first.</p>
 <hr>
@@ -190,9 +190,9 @@
 <p>To find <em>wired</em> IP address, use either use <code>ip addr</code> or Settings / Network.  Once you find it, go to the <em>source machine</em> and run <code>export DEST_IP=&quot;1.2.3.4&quot;</code> but replace <code>1.2.3.4</code> with the IP you found.  Then go back to the destination machine.</p>
 <h3 id="the-path-to-the-disk-were-going-to-write-the-image-onto">The path to the disk we&rsquo;re going to write the image onto</h3>
 <p>To find the path to the disk, run:</p>
-<pre><code>parted -l
+<pre tabindex="0"><code>parted -l
 </code></pre><p>You&rsquo;ll see something like this:</p>
-<pre><code>Model: SAMSUNG MZVLB256HAHQ-000L7 (nvme)
+<pre tabindex="0"><code>Model: SAMSUNG MZVLB256HAHQ-000L7 (nvme)
 Disk /dev/nvme0n1: 256GB
 Sector size (logical/physical): 512B/512B
 Partition Table: msdos
@@ -203,17 +203,17 @@ Number  Start   End     Size    Type     File system  Flags
  2      1075MB  256GB   255GB   primary
 </code></pre><p>The bit we&rsquo;re looking for is on the second line, <code>/dev/nvme0n1</code>.  If multiple disks appear, make sure to choose the right one.</p>
 <p>Put it into an environment variable.</p>
-<pre><code>export DEST_DISK=&quot;/dev/nvme0n1&quot;
+<pre tabindex="0"><code>export DEST_DISK=&#34;/dev/nvme0n1&#34;
 </code></pre><p>The last step for the destination machine is to open the door and wait for the image to be sent.</p>
-<pre><code>nc -l 1234 | dd bs=16M of=$DEST_DISK status=progress
+<pre tabindex="0"><code>nc -l 1234 | dd bs=16M of=$DEST_DISK status=progress
 </code></pre><p>This starts a netcat server listening on port 1234.  It then pipes any data sent to the netcat server directly onto the disk.  Now we just need to send the data.</p>
 <hr>
 <h2 id="step-3-send-the-image-from-the-source-machine">Step 3. Send the image from the source machine</h2>
 <p>On the source machine, we only need one piece of information: the path to the disk.  Use the same <code>parted -l</code> command from above to find it.  On my system, it was <code>/dev/nvme0n1</code>.  As before, save this in a variable.</p>
-<pre><code>export SOURCE_DISK=/dev/nvme0n1
+<pre tabindex="0"><code>export SOURCE_DISK=/dev/nvme0n1
 </code></pre><p>The final step.  This command will send every bit from the source machine&rsquo;s disk across the network to the destination machine, where the waiting netcat server will write it to the destination machine&rsquo;s disk.</p>
 <p>This would be a good point to stop and make sure you understand every step thus far and (above all) make sure you&rsquo;re writing this data to the correct disk.  When you&rsquo;re ready:</p>
-<pre><code>dd bs=16M if=$SOURCE_DISK | nc $DEST_IP 1234
+<pre tabindex="0"><code>dd bs=16M if=$SOURCE_DISK | nc $DEST_IP 1234
 </code></pre><p>The destination machine will begin displaying statistics about the data as it streams in.</p>
 <hr>
 <h2 id="step-4-rejoice">Step 4. Rejoice</h2>

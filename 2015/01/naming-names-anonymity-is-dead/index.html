@@ -40,7 +40,7 @@
   <meta property="og:type" content="article" />
    
   
-  <meta name="generator" content="Hugo 0.80.0" /><link media="screen"
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
     rel="stylesheet"
   />
@@ -79,7 +79,7 @@
   <meta name="theme-color" content="#121212" />
    
   
-  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
 
 </head>
 
@@ -202,12 +202,12 @@ JavaScript&rsquo;s anonymous functions do pose a unique temptation.</p>
 <p>For those unfamiliar, an anonymous function is, unsurprisingly, a function
 declaration without a name.</p>
 <p>A named function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">count_sheep</span>() {
-  <span style="color:#75715e">/* code */</span>
-}
-</code></pre></div><p>An anonymous function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> () { <span style="color:#75715e">/* code */</span> }
-</code></pre></div><p>One has a name, one doesn&rsquo;t. Other than two low-level (and usually
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">count_sheep</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* code */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>An anonymous function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> () { <span style="color:#75715e">/* code */</span> }
+</span></span></code></pre></div><p>One has a name, one doesn&rsquo;t. Other than two low-level (and usually
 inconsequental) behavioral differences, they&rsquo;re drop-in replacements for one
 another. The primary difference is that one has a name, so you can tell what
 it does. So, pick the one that has the name! Easy choice, right?</p>
@@ -218,36 +218,36 @@ functions are used so commonly in JavaScript programs.</p>
 name</strong>.</p>
 <p>As a practical example, here&rsquo;s some code from the <a href="http://datatables.net/examples/api/api_in_init.html">jQuery DataTables example
 page</a>, with three nested anonymous functions.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>() {
-  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#example&#34;</span>).<span style="color:#a6e22e">dataTable</span>({
-    <span style="color:#a6e22e">initComplete</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">api</span>();
-      <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;td&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>() {
-        <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>).<span style="color:#a6e22e">draw</span>();
-      });
-    }
-  });
-});
-</code></pre></div><p>There are much (<strong>much</strong>!) more deeply nested examples of the Pyramid of Doom,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#example&#34;</span>).<span style="color:#a6e22e">dataTable</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">initComplete</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">api</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;td&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>).<span style="color:#a6e22e">draw</span>();
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>There are much (<strong>much</strong>!) more deeply nested examples of the Pyramid of Doom,
 but this one serves well as an example. If it had been implemented with short,
 named functions, it would be something like the following.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#a6e22e">create_datatable</span>);
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">create_datatable</span>() {
-  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#example&#34;</span>).<span style="color:#a6e22e">dataTable</span>({
-    <span style="color:#a6e22e">initComplete</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">init_datatable_api</span>
-  });
-}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init_datatable_api</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">api</span>();
-  <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;td&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#a6e22e">filter_datatable</span>);
-}
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">filter_datatable</span>() {
-  <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>).<span style="color:#a6e22e">draw</span>();
-}
-</code></pre></div><p>This updated code isn&rsquo;t perfect, to be sure, but the first line really
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#a6e22e">create_datatable</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">create_datatable</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#example&#34;</span>).<span style="color:#a6e22e">dataTable</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">initComplete</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">init_datatable_api</span>
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init_datatable_api</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">api</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;td&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#a6e22e">filter_datatable</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">filter_datatable</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">search</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">innerHTML</span>).<span style="color:#a6e22e">draw</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This updated code isn&rsquo;t perfect, to be sure, but the first line really
 exemplifies this benefits of this approach, to me. <code>$(document).ready( create_datatable )</code> reads so clearly.</p>
 <p>The joy of small functions is a discovery I&rsquo;m making and re-making every day.
 I&rsquo;ve been <em>craving</em> a programming style like this for years, but it wasn&rsquo;t

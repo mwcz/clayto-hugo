@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  
+  <meta property="og:title" content="Advent of Code 2022" />
+  <meta name="twitter:title" content="Advent of Code 2022" />
+  
+  <title>Advent of Code 2022 - clayto</title>
+
+  
+  <meta name="description" content="Solving Advent of Code 2022 with Rust." />
+  <meta property="og:description" content="Solving Advent of Code 2022 with Rust." />
+  <meta name="twitter:description" content="Solving Advent of Code 2022 with Rust." />
+  
+
+  <meta name="author" content="" />
+  <meta property="og:site_name" content="clayto" />
+  <meta property="og:url" content="https://clayto.com/2022/12/advent-of-code-2022/" />
+
+  
+    
+    
+  <meta property="og:image" content="https://clayto.com/2022/12/advent-of-code-2022/thumb.png" />
+  <meta
+    name="twitter:image"
+    content="https://clayto.com/2022/12/advent-of-code-2022/thumb.png"
+  />
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+  <meta name="twitter:site" content="@mwcz" />
+  <meta name="twitter:creator" content="@mwcz" />
+   
+  <meta property="og:type" content="article" />
+   
+  
+  <meta name="generator" content="Hugo 0.98.0" /><link media="screen"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+    rel="stylesheet"
+  />
+  <link media="screen" rel="stylesheet" href="https://clayto.com/css/styles.min.css" />
+
+  
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="https://clayto.com/images/favicons/apple-touch-icon.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://clayto.com/images/favicons/favicon-32x32.png?v=alQ2onMqbL"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="https://clayto.com/images/favicons/favicon-16x16.png?v=alQ2onMqbL"
+  />
+  <link rel="manifest" href="https://clayto.com/images/favicons/site.webmanifest?v=alQ2onMqbL" />
+  <link
+    rel="mask-icon"
+    href="https://clayto.com/images/favicons/safari-pinned-tab.svg?v=alQ2onMqbL"
+    color="#121212"
+  />
+  <link rel="shortcut icon" href="https://clayto.com/images/favicons/favicon.ico?v=alQ2onMqbL" />
+  <meta name="msapplication-TileColor" content="#121212" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicons/browserconfig.xml?v=alQ2onMqbL"
+  />
+  <meta name="theme-color" content="#121212" />
+   
+  
+  <a rel="me" href="https://mastodon.social/@mwcz" style="display: none">Mastodon</a>
+
+</head>
+
+<body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<header class="pbp-navbar-container">
+  
+<nav class="pbp-navbar" role="navigation">
+  <div class="pbp-nav-logo">
+    <a href="https://clayto.com/" title="Home" id="pbp-logo">
+      <img src="https://clayto.com/images/logo.png" height="50.4" width="50.4" alt="smiling clayto.com logo">
+    </a>
+  </div>
+  <div class="pbp-navitems">
+    
+    
+    
+    <a href="https://clayto.com/" class="pbp-navitem">
+      &nbsp;BLOG</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/demos" class="pbp-navitem">
+      &nbsp;DEMOS</a>
+    
+    &nbsp;<span class="pbp-nav-separator">&middot;</span>
+    
+    
+    <a href="https://clayto.com/games" class="pbp-navitem">
+      &nbsp;GAMES</a>
+    
+    
+  </div>
+</nav>
+
+
+
+
+</header>
+  <main id="main" role="main" class="container">
+
+
+
+
+  <article class="pbp-article">
+
+  <header>
+    <h1>Advent of Code 2022</h1>
+  </header>
+
+  
+
+  <div class="pbp-article-meta">
+    <time datetime="2022-12-25T00:00:00Z">
+      Dec 25, 2022
+    </time>
+    
+    <span class="pbp-blue">&middot;</span>
+    2 minute read
+    <br>
+    <span class="pbp-article-tags">
+      
+      <a href="https://clayto.com/tags/programming" class="c-tag">#programming</a>
+      
+      <a href="https://clayto.com/tags/rust" class="c-tag">#rust</a>
+      
+    </span>
+  </div>
+
+  
+  
+  <section>
+    <h2 id="day-16">Day 16</h2>
+<p>53 valves.</p>
+<p>Permutations: 4,274,883,284,060,025,564,298,013,753,389,399,649,690,343,788,366,813,724,672,000,000,000,000</p>
+<p>Disappear each 0-rated valve into its adjoining edges.  Now there are 15 valves.</p>
+<p>Permutations: 1,307,674,368,000</p>
+<p>One last step I took was to remove all the edges between nodes complete, and then connect every node to every other node with new edges that reflect the shortest distance between them (enabled by <a href="https://crates.io/crates/petgraph">petgraph</a>&rsquo;s <a href="https://docs.rs/petgraph/latest/petgraph/algo/floyd_warshall/fn.floyd_warshall.html">Floyd-Warshall</a> implementation).</p>
+<p>The main reason for that change was to avoid having to do any more pathfinding during the cost analysis portion of the solution.</p>
+<p>I saw several redditors saying they tried simulating the human and elephant movements but eventually abandoned it because it was too hard to keep them in sync.  So naturally, I neglected learn from their mistakes and tried that next.</p>
+<p>Here&rsquo;s my recursive function for simulating the human and elephant.  While the code is messy, I was able to get it working, but found it to be far too slow.  The reason it was too slow seems to be that the total path length of both players is too long, considering the factorial permutations.</p>
+<p><a href="https://github.com/mwcz/advent-of-code-2022/blob/d57d4569c83974ecd1989e45315396b3058a11b2/src/day16.rs#L194-L325">https://github.com/mwcz/advent-of-code-2022/blob/d57d4569c83974ecd1989e45315396b3058a11b2/src/day16.rs#L194-L325</a></p>
+<p>It&rsquo;s much cheaper to forget the human, and forget the elephant.  Find the scores for every possible path (and subpath) that a single &ldquo;player&rdquo; can travel in 26 minutes.  For every pair of paths that don&rsquo;t contain any common valves (ie, disjoint sets), add their scores together.  Then find the highest score.  Those two paths are the paths the elephant and human should take.</p>
+<h2 id="day-19">Day 19</h2>
+<p>On part 1, I implemented a solution that recursed over each of the 24 minutes, but it was pretty slow.  I went looking for tips and found a crucial one: &ldquo;iterate over next choice of bot to build&rdquo;.  That made a huge difference.</p>
+<p>Take-away: if searching through choices made at timesteps, if there is a &ldquo;do nothing&rdquo; choice, then instead iterate through the non-null choices and extrapolate the time steps in between.</p>
+
+  </section>
+  <footer>
+
+    
+
+    
+
+    
+
+<section>
+  <h3>RELATED POSTS</h3>
+  <div class="pbp-related">
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2021/08/shaking-off-the-rust-3-rust-interpreter-for-lox/">Shaking Off the Rust 3: Rust Interpreter for Lox</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Just sitting here, reading Crafting Interpreters, and implementing it in Rust.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2021-08-29T23:07:40-04:00">
+      Aug 29, 2021
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2021/08/shaking-off-the-rust-3-rust-interpreter-for-lox/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Shaking Off the Rust 3: Rust Interpreter for Lox'"
+              src="https://clayto.com/2021/08/shaking-off-the-rust-3-rust-interpreter-for-lox/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2021/08/wwwwww/">WWWWWW</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Optimization techniques for visual wasm modules.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2021-08-13T00:00:00Z">
+      Aug 13, 2021
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2021/08/wwwwww/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'WWWWWW'"
+              src="https://clayto.com/2021/08/wwwwww/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/">Shaking Off the Rust 2: Ray Tracing in WebAssembly</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Learning Rust, one tetanus shot at a time.  In this post: the work of bringing a Rust ray tracer to the web.  WebAssembly, WebAssembly, WebAssembly.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2021-07-05T23:57:49-04:00">
+      Jul 5, 2021
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            <source
+              class="glass-card-bg glass-card-bg-top"
+              
+              type="image/webp"
+              
+              srcset="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.webp">
+              
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-top"
+              loading="lazy"
+              alt="thumbnail for 'Shaking Off the Rust 2: Ray Tracing in WebAssembly'"
+              src="https://clayto.com/2021/07/shaking-off-the-rust-2-ray-tracing-in-webassembly/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+    <article class="pbp-article-li pbp-article-loadmore vertical">
+  <h2 class="pbp-article-title"><a href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">Shaking Off the Rust 1: Ray Tracing in One Weekend</a></h2>
+  <div class="pbp-article-summary">
+    <section>
+      
+        Learning Rust, one tetanus shot at a time.  In this post, I work on building a Ray Tracer in Many Weekends.
+      
+    </section>
+  </div>
+  <div class="pbp-article-meta">
+    <time datetime="2021-02-08T22:38:50-05:00">
+      Feb 8, 2021
+    </time>
+  </div>
+  
+  <a tabindex="-1" class="pbp-article-thumbnail" href="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/">
+    <div class="pbp-article-thumbnail">
+      
+      <div class="glass-card">
+      
+        <div class="glass-card-ratio">
+          <picture>
+            
+            
+            
+               
+            
+            <img
+              class="glass-card-bg glass-card-bg-default"
+              loading="lazy"
+              alt="thumbnail for 'Shaking Off the Rust 1: Ray Tracing in One Weekend'"
+              src="https://clayto.com/2021/02/shaking-off-the-rust-1-ray-tracing-in-one-weekend/thumb.jpg">
+          </picture>
+          <div class="glass-card-border-outer"></div>
+          <div class="glass-card-border-inner"></div>
+          
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </a>
+  
+</article>
+
+    
+    
+  </div>
+</section>
+
+
+
+
+  </footer>
+</article>
+
+
+
+  </main>
+  <footer class="container">
+    <section class="pbp-footer">
+      
+<aside>
+  
+    <small class="footer-label">CONTACT ME</small>
+    
+    
+    
+    
+<ul class="pbp-social-links">
+  
+  <li>
+    <a title="Email me" href="mailto:mwc@clayto.com">
+      <span class="icon-mail"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my GitHub activity" href="https://github.com/mwcz" target="_blank" rel="noopener">
+      <span class="icon-github-squared"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my CodePens" href="https://codepen.io/mwcz" target="_blank" rel="noopener">
+      <span class="icon-codepen"></span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a title="my Twitter" href="https://twitter.com/mwcz" target="_blank" rel="noopener">
+      <span class="icon-twitter-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <a title="my Vimeo videos" href="https://vimeo.com/mwcz" target="_blank" rel="noopener">
+      <span class="icon-vimeo-squared"></span>
+    </a>
+  </li>
+  
+  
+  
+</ul>
+
+
+  
+</aside>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.1/anchor.min.js"></script>
+  <script>
+    anchors.options.visible = 'touch';
+    anchors.options.placement = 'right';
+    anchors.options.class = 'heading-anchor';
+    anchors.add('article > section h1,article > section h2,article > section h3,article > section h4,article > section h5,article > section h6');
+  </script>
+
+  
+    
+  
+
+</body>
+</html>
+

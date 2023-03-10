@@ -460,9 +460,8 @@ I use ColorPal a lot (my own dogfood and all that) when designing websites, and 
       
       <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
- 
-Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
-You can see that with the old method, the black pixels definitely took over the palette.</description>
+ &amp;lt;img src=&amp;ldquo;colorpal_logo.png&amp;rdquo; alt=&amp;ldquo;ColorPal logo&amp;rdquo; title=&amp;quot;&amp;quot; /&amp;gt;
+Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:</description>
     </item>
     
     <item>
@@ -548,7 +547,7 @@ It covers Newton&amp;rsquo;s laws of motion.
       <description>How to ruin a good thing by abusing CSS3 text shadows&amp;hellip;
  CSS3!
 The code:
-// Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1; // Pretty colors var the_colors = [ &amp;#34;#7f9f7f&amp;#34;, &amp;#34;#dca3a3&amp;#34;, &amp;#34;#80d4aa&amp;#34;, &amp;#34;#f8f893&amp;#34;, &amp;#34;#ffcfaf&amp;#34;, &amp;#34;#e89393&amp;#34;, &amp;#34;#9ece9e&amp;#34;, &amp;#34;#c0bed1&amp;#34;, &amp;#34;#6c6c9c&amp;#34;, &amp;#34;#71d3b4&amp;#34;, &amp;#34;#a0afa0&amp;#34;, &amp;#34;#efefef&amp;#34; ]; function make_it() { // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
+// Random factors to determine x/y offsets for text shadows and amount of blur var x_factor = Math.floor(Math.random() * 20) - 10; var y_factor = Math.floor(Math.random() * 20) - 10; var blur_factor = Math.floor(Math.random() * 10) + 1;  // Pretty colors var the_colors = [  &amp;#34;#7f9f7f&amp;#34;,  &amp;#34;#dca3a3&amp;#34;,  &amp;#34;#80d4aa&amp;#34;,  &amp;#34;#f8f893&amp;#34;,  &amp;#34;#ffcfaf&amp;#34;,  &amp;#34;#e89393&amp;#34;,  &amp;#34;#9ece9e&amp;#34;,  &amp;#34;#c0bed1&amp;#34;,  &amp;#34;#6c6c9c&amp;#34;,  &amp;#34;#71d3b4&amp;#34;,  &amp;#34;#a0afa0&amp;#34;,  &amp;#34;#efefef&amp;#34; ];  function make_it() {  // MAKE IT SHINE  // Build a string containing a comma-delimited list of the each shadow we want to apply  // sprintf would be nice here.</description>
     </item>
     
     <item>

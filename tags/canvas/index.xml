@@ -233,9 +233,8 @@ Your web browser must support WebGL, which at this point in history means a fair
       
       <guid>https://clayto.com/2012/02/colorpal-palettes-improved/</guid>
       <description>In my last post on the subject, I introduced ColorPal, my HTML5 color palette generation tool. It didn&amp;rsquo;t perform well with certain types of images, so I fixed it. :)
- 
-Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:
-You can see that with the old method, the black pixels definitely took over the palette.</description>
+ &amp;lt;img src=&amp;ldquo;colorpal_logo.png&amp;rdquo; alt=&amp;ldquo;ColorPal logo&amp;rdquo; title=&amp;quot;&amp;quot; /&amp;gt;
+Color palettes will now match the image even better. Especially for images with infrequent but important colors. Here&amp;rsquo;s a comparison of the old and new methods, on an image that is mostly black:</description>
     </item>
     
     <item>
