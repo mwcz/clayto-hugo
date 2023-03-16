@@ -14,7 +14,7 @@
     "autoprefixer": "10.3.4",
     "less": "4.1.1",
     "less-plugin-clean-css": "1.5.1",
-    "minify": "7.1.0",
+    "minify": "7.2.2",
     "purify-css": "1.2.5",
     "svgpack": "3.1.1"
   }
